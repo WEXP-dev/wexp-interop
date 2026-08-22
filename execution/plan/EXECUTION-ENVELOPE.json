@@ -1,0 +1,105 @@
+{
+  "schema_version": "wexp-emilia-execution-envelope-1",
+  "artifact_id": "WEXP-EMILIA-INTEROP-001-FINAL-CANDIDATE",
+  "state": "PREPARED_HARD_STOP",
+  "identity_verification_must_be_first": true,
+  "semantic_evaluation_during_preflight": false,
+  "frozen_inputs": {
+    "original_common_fixtures": {
+      "path": "source/original/WEXP-EMILIA-INTEROP-001/fixtures.yaml",
+      "sha256": "d972dbb549aaaa25e92c32a936acba4d9a686e9ca62fe6bd556b12be2962cfcc"
+    },
+    "five_case_comparison": {
+      "path": "records/WEXP-EMILIA-EP-COMPARISON-001.md",
+      "sha256": "272a9b08a213702ee2156438b7736b954c7a32bc4a190cce92d3d82226266934"
+    },
+    "frozen_wexp_reading": {
+      "path": "source/original/WEXP-EMILIA-INTEROP-001/wexp-reading.yaml",
+      "sha256": "a185e6760de149375e657b1429adc1ea329ed9f9705b9d1c2b505dcc8e3ea984"
+    },
+    "frozen_emilia_reading": {
+      "path": "source/original/emilia-reading.json",
+      "sha256": "b43f8ac6dce465258c75a42117d2750a6bafa163846251416e87cec371a4bad6"
+    },
+    "pair_archive": {
+      "source_path": "source/original/WEXP-EMILIA-PAIR-FREEZE-001.zip",
+      "bytes": 18158,
+      "sha256": "ae237263c86ee0b5c2b6387159d81957efe47e20161b74dd363da5a530705282"
+    },
+    "pair_freeze_directory": "source/pair-freeze",
+    "pair_freeze_manifest": {
+      "path": "source/pair-freeze/MANIFEST.sha256",
+      "sha256": "ae6e2345e51cd32aad6e1aa7ce3d4ffeb7b4b005ebcbc19dc067ee22c6b52022"
+    },
+    "pair_manifest": {
+      "path": "source/pair-freeze/PAIR-MANIFEST.sha256",
+      "sha256": "5375841c5c7d550d1dcbb3ac31e73ab6c5d68a2bc1eb4fea5249dec9dbdce604"
+    },
+    "p": {
+      "path": "source/pair-freeze/fixtures/WE-EP-P.json",
+      "bytes": 7255,
+      "sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e"
+    },
+    "p_minus_1": {
+      "path": "source/pair-freeze/fixtures/WE-EP-P-1.json",
+      "bytes": 7152,
+      "sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0"
+    },
+    "wexp_expectation": {
+      "path": "expectations/wexp/wexp-expectation.yaml",
+      "sha256": "42eeecaba33238d8c94bbb9d5bb22ab46721de6de74cff455b8115c17892088a"
+    }
+  },
+  "future_emilia_expectation": {
+    "state": "PENDING — EMILIA EXPECTATION NOT YET FROZEN",
+    "exact_source_path": "expectations/emilia/emilia-expectation.json",
+    "ingest_record_path": "expectations/emilia/EXPECTATION-INGEST.json",
+    "externally_authenticated_sha256_required_at_invocation": true,
+    "required_fixture_hashes": {
+      "P": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+      "P-1": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0"
+    },
+    "required_semantic_baseline": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2"
+  },
+  "semantic_authority": {
+    "emilia": {
+      "repository": "emiliaprotocol/emilia-protocol",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2"
+    },
+    "wexp_core": {
+      "repository": "WEXP-dev/wexp-spec",
+      "commit": "b28a46e7764c2ef14decc35394f21278fca9c988"
+    },
+    "wexp_vectors_reading_context": {
+      "repository": "WEXP-dev/wexp-vectors",
+      "commit": "c745e5abebddfd99cd62cdb3e40dddaf6582bdd9"
+    },
+    "wexp_ref_reading_context": {
+      "repository": "WEXP-dev/wexp-ref",
+      "commit": "d8f7e512a56b90b17377444c07cbc006ee76b7b5",
+      "surface": "PARTIAL"
+    }
+  },
+  "pair_delta_contract": {
+    "removed_json_pointer": "/emilia_input/observations/1/action_caid",
+    "derivative_change_json_pointer": "/emilia_input/observations/1/proof/signature_b64u",
+    "all_other_json_values_must_match": true,
+    "restoration_must_reproduce_p": true
+  },
+  "allowed_execution_result_classes": [
+    "EXPECTED RESULT REPRODUCED",
+    "EXPECTED RESULT NOT REPRODUCED",
+    "IMPLEMENTATION INPUT NOT CONSTRUCTIBLE",
+    "IMPLEMENTATION SURFACE NOT IMPLEMENTED",
+    "INFRASTRUCTURE EXECUTION UNAVAILABLE",
+    "IDENTITY FAILURE",
+    "EXPECTATION MISSING / NOT FROZEN"
+  ],
+  "prohibitions": {
+    "invent_ep_to_wexp_bridge": true,
+    "use_current_heads_as_frozen_authority": true,
+    "run_during_preparation": true,
+    "treat_not_constructible_as_fail": true,
+    "collapse_result_classes_to_pass_fail": true
+  }
+}

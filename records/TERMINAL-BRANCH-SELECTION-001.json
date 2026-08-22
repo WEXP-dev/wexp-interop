@@ -1,0 +1,31 @@
+{
+  "schema_version": "wexp-emilia-terminal-branch-selection-1",
+  "artifact": "WEXP-EMILIA-INTEROP-001",
+  "inputs": {
+    "emilia_expectation_sha256": "6e0dc6c87f853cacdeeb676b27690e54bdb8a7a7aa86611c5ffe233387e256a4",
+    "emilia_execution_receipt_sha256": "2d61071712ef4424d1b308afb6a3b8752b4effcf2525c0c08c97cff16617b77f",
+    "wexp_expectation_sha256": "42eeecaba33238d8c94bbb9d5bb22ab46721de6de74cff455b8115c17892088a",
+    "P_sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+    "P-1_sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0"
+  },
+  "branch_A_criteria": {
+    "emilia_expectation_frozen_independently": true,
+    "emilia_P_expectation_reproduced": true,
+    "emilia_P-1_expectation_reproduced": true,
+    "pair_isolates_exact_meter_action_caid_binding": true,
+    "wexp_remains_underdetermined_without_bridge": true,
+    "new_bridging_rule_inserted": false,
+    "all_criteria_met": true
+  },
+  "branch_B_criteria": {
+    "determinate_wexp_appraisal_constructible_without_new_rule": false,
+    "all_criteria_met": false
+  },
+  "branch_C_criteria": {
+    "any_implementation_failed_to_reproduce_its_own_frozen_expectation": false,
+    "all_criteria_met": false
+  },
+  "selected": "A — EXPLICIT BRIDGE REQUIRED",
+  "selection_count": 1,
+  "why": "EMILIA reproduced its independently frozen distinction for the controlled pair; WEXP remains underdetermined and implementation input remains non-constructible under the frozen public mapping surface; no bridge was inserted."
+}

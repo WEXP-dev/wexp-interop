@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this experimental interoperability record using these metadata."
+title: "WEXP × EMILIA INTEROP-001"
+authors:
+  - family-names: Sergeev
+    given-names: Mikhail
+  - family-names: Schrock
+    given-names: Iman
+license: Apache-2.0
+repository-code: "https://github.com/WEXP-dev/wexp-interop"

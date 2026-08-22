@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:wexp-emilia:expectation-ingest:1",
+  "title": "EMILIA P/P-1 expectation ingest record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "freeze_state",
+    "source_identity",
+    "source_path",
+    "source_sha256",
+    "semantic_baseline",
+    "fixtures",
+    "commitment_identity",
+    "committed_at_utc",
+    "revealed_at_utc"
+  ],
+  "properties": {
+    "schema_version": { "const": "wexp-emilia-expectation-ingest-1" },
+    "freeze_state": { "const": "FROZEN" },
+    "source_identity": { "type": "string", "minLength": 1 },
+    "source_path": { "const": "expectations/emilia/emilia-expectation.json" },
+    "source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "semantic_baseline": { "const": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2" },
+    "fixtures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["P", "P-1"],
+      "properties": {
+        "P": { "const": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e" },
+        "P-1": { "const": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0" }
+      }
+    },
+    "commitment_identity": { "type": "string", "minLength": 1 },
+    "committed_at_utc": { "type": "string", "format": "date-time", "description": "UTC timestamp; verifier requires zero offset." },
+    "revealed_at_utc": { "type": "string", "format": "date-time", "description": "UTC timestamp; verifier requires zero offset." }
+  }
+}

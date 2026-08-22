@@ -1,0 +1,156 @@
+schema_version: "wexp-emilia-pair-wexp-expectation-1"
+artifact_id: "WEXP-EMILIA-PAIR-FREEZE-001"
+phase: "PRE_IMPLEMENTATION_EXPECTATION_FREEZE"
+freeze_state: "FROZEN"
+freeze_time_utc: "2026-08-21T00:32:35Z"
+
+experiment_proposition:
+  exact: "The stronger result depends on the exact meter-observation-to-action CAID binding."
+  fixed_before_derivation: true
+  source: "EXPERIMENT-PROPOSITION.md"
+
+pinned_authority:
+  core:
+    identity: "draft-sergeev-wexp-core-01"
+    freeze_identity: "CORE-01-FROZEN-001"
+    repository: "WEXP-dev/wexp-spec"
+    repository_commit: "b28a46e7764c2ef14decc35394f21278fca9c988"
+    authoritative_xml_sha256: "84c0a16467585c29925339a10dd287c2e67bfe21ed592826254bf424dc24f56d"
+  known_issues:
+    identity: "CORE-01-KNOWN-ISSUES-001"
+    sha256: "25c703dd876f717163e1919e71ccab7e11ba8c90152756bf8933852ea3c5b60f"
+  representation_contract:
+    identity: "CORE-01-REPRESENTATION-CONTRACT-001"
+    sha256: "2da2245065ceced20ebd741b2e718935181dbc2958c95f338874e4f2bc79a38f"
+  frozen_wexp_reading:
+    path: "../WEXP-EMILIA-INTEROP-001/wexp-reading.yaml"
+    sha256: "a185e6760de149375e657b1429adc1ea329ed9f9705b9d1c2b505dcc8e3ea984"
+  frozen_vectors_context:
+    repository_commit: "c745e5abebddfd99cd62cdb3e40dddaf6582bdd9"
+    note: "Context only; no vector or engine output was used as an oracle."
+  frozen_reference_context:
+    repository_commit: "d8f7e512a56b90b17377444c07cbc006ee76b7b5"
+    declared_surface: "PARTIAL"
+    note: "Context only; no reference implementation was run."
+
+public_state_observed_at_freeze:
+  wexp_spec_head: "b28a46e7764c2ef14decc35394f21278fca9c988"
+  wexp_vectors_head: "2da7309d75762e4cf1e83b86bd606f4d473b1638"
+  wexp_ref_head: "3738c6d7767e5fafb0a97fc28336e3236761b3e6"
+  handling: "Later vectors/ref commits were observed and excluded; the frozen WEXP authority was not repinned."
+
+expectations:
+  - fixture_id: "P"
+    fixture_file: "fixtures/WE-EP-P.json"
+    fixture_sha256: "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e"
+    determination: "UNDERDETERMINED"
+    asserted_claim: "UNDETERMINED"
+    target_binding:
+      status: "UNDETERMINED"
+      basis: "The fixture supplies equal receipt, action-hash, CAID, nonce, operation, and facility identifiers, but no immutable public EP-to-WEXP profile maps them to WEXP's opaque exact target or validates their equality as target binding."
+    boundary:
+      status: "UNDETERMINED"
+      ceiling: "UNDETERMINED"
+      grounding: "UNDETERMINED"
+    base_findings: "UNDETERMINED"
+    qualifier_findings: "UNDETERMINED"
+    counter_evidence: "UNDETERMINED"
+    supported_claims_expected: "UNDETERMINED"
+    substantive_reasons_expected:
+      - "No complete logical Core AppraisalInput can be constructed from the fixture without a public mapping profile."
+      - "CAID/action correlation is not, by itself, WEXP semantic support or WEXP arguments-hash identity."
+      - "A valid controller or meter signature authenticates signed bytes but does not establish content truth, exact WEXP target binding, a controlled boundary, execution support, or IV."
+      - "A measured external effect is not itself a WEXP Core content base; an effect-to-execution predicate is profile-defined."
+      - "The independent_observer role and distinct key/control-domain facts do not automatically establish WEXP IV."
+    gaps_expected:
+      - "asserted WEXP claim is not fixed"
+      - "public EP-to-WEXP exact-target and evidence mapping profile is absent"
+      - "effect-to-execution semantic predicate is absent"
+      - "accepted boundary status, ceiling, grounding, and grounding acceptance are absent"
+      - "exact-base IV semantic and independence predicates are absent"
+      - "counter-evidence treatment and evaluation scope are absent"
+    inherited_limitations_expected:
+      - "EMILIA lifecycle or outcome labels are not WEXP verdicts"
+      - "fixture signatures and equality fields do not establish physical truth"
+      - "durable external effect lies outside the four WEXP Core content bases"
+      - "no public implementation result was consulted"
+    verdict_expected: "UNDETERMINED"
+    why:
+      core_sections:
+        - "1.1"
+        - "1.2"
+        - "4.1"
+        - "4.2"
+        - "4.3"
+        - "6"
+        - "7"
+        - "8.1"
+        - "8.2"
+        - "10"
+        - "14"
+      summary: "Core begins after profile mapping has produced a complete AppraisalInput. The public surface supplies no rule that performs this EP evidence-to-WEXP mapping."
+
+  - fixture_id: "P-1"
+    fixture_file: "fixtures/WE-EP-P-1.json"
+    fixture_sha256: "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0"
+    determination: "UNDERDETERMINED"
+    asserted_claim: "UNDETERMINED"
+    target_binding:
+      status: "UNDETERMINED"
+      basis: "The meter observation lacks action_caid while all other identifiers remain. No public WEXP mapping rule specifies whether this prevents input construction, produces an unsupported exact-binding finding, produces a not-evaluated finding, or is replaceable by another binding premise."
+    boundary:
+      status: "UNDETERMINED"
+      ceiling: "UNDETERMINED"
+      grounding: "UNDETERMINED"
+    base_findings: "UNDETERMINED"
+    qualifier_findings: "UNDETERMINED"
+    counter_evidence: "UNDETERMINED"
+    supported_claims_expected: "UNDETERMINED"
+    substantive_reasons_expected:
+      - "No complete logical Core AppraisalInput can be constructed from the fixture without a public mapping profile."
+      - "Removing a correlation field removes a possible profile premise but does not itself select a WEXP finding or verdict."
+      - "The re-created valid meter signature removes integrity failure as a confound but supplies no semantic support."
+      - "CAID absence does not prove nonoccurrence, execution failure, or counter-evidence."
+    gaps_expected:
+      - "asserted WEXP claim is not fixed"
+      - "public EP-to-WEXP exact-target and evidence mapping profile is absent"
+      - "missing-action_caid disposition is undefined for WEXP"
+      - "effect-to-execution, boundary, and IV predicates are absent"
+      - "counter-evidence treatment and evaluation scope are absent"
+    inherited_limitations_expected:
+      - "EMILIA lifecycle or outcome labels are not WEXP verdicts"
+      - "fixture signatures and remaining equality fields do not establish physical truth"
+      - "durable external effect lies outside the four WEXP Core content bases"
+      - "no public implementation result was consulted"
+    verdict_expected: "UNDETERMINED"
+    why:
+      core_sections:
+        - "1.1"
+        - "1.2"
+        - "4.1"
+        - "4.2"
+        - "4.3"
+        - "6"
+        - "7"
+        - "8.1"
+        - "8.2"
+        - "10"
+        - "14"
+      summary: "Core does not assign semantic force or missing-field disposition to action_caid; those are profile responsibilities."
+
+action_caid_removal_test:
+  does_removal_change_wexp_result: "UNDETERMINED"
+  why: "No frozen public mapping rule assigns meter action_caid a WEXP target-binding or support role. Both fixtures remain without a constructible WEXP appraisal, but equality of that meta-status does not prove that a future profile would treat the field as irrelevant."
+
+bridging_rule:
+  required: true
+  identifier: "MISSING-BRIDGE-EP-WEXP-PAIR-001"
+  exact_missing_rule: "A named immutable EP-to-WEXP profile must construct the WEXP target; define CAID namespace, normalization, equality, issuer scope, and whether the authenticated meter action_caid is a required exact-binding premise; separately validate effect-to-execution semantics, the accepted boundary and ceiling/grounding, and any exact-base IV independence claim; provide the complete AppraisalInput; and define P-1 missing-field treatment without promoting CAID equality itself into semantic support."
+  consequence: "STOP before any implementation run; no determinate WEXP verdict is available."
+
+independence_check:
+  reference_engine_run_before_freeze: false
+  independent_wexp_engine_run_before_freeze: false
+  emilia_implementation_run_by_this_executor_before_freeze: false
+  iman_internal_rehearsal_used_as_wexp_expectation_input: false
+  fixture_construction_used_iman_structural_guidance: true

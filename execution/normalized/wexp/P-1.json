@@ -1,0 +1,19 @@
+{
+  "schema_version": "wexp-emilia-final-normalized-result-1",
+  "artifact": "WEXP-EMILIA-INTEROP-001",
+  "fixture_id": "P-1",
+  "system": "WEXP",
+  "source_expectation": {
+    "path": "../../../expectations/wexp/wexp-expectation.yaml",
+    "sha256": "42eeecaba33238d8c94bbb9d5bb22ab46721de6de74cff455b8115c17892088a"
+  },
+  "determination": "UNDERDETERMINED",
+  "asserted_claim": "UNDETERMINED",
+  "verdict": "UNDETERMINED",
+  "implementation_input": "NOT CONSTRUCTIBLE UNDER FROZEN PUBLIC MAPPING SURFACE",
+  "execution_result_class": "IMPLEMENTATION INPUT NOT CONSTRUCTIBLE",
+  "implementation_invoked": false,
+  "reason": "No frozen public EP-to-WEXP mapping/profile constructs the complete Core AppraisalInput for P-1 or assigns missing meter action_caid a WEXP disposition.",
+  "bridging_contract_required_for_positive_composition": true,
+  "claim_boundary": "This is a transparent projection of the frozen WEXP expectation, not a WEXP implementation output, verdict, or appraisal."
+}

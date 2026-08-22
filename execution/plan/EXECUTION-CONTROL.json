@@ -1,0 +1,24 @@
+{
+  "schema_version": "wexp-emilia-execution-control-1",
+  "state": "PENDING — EMILIA EXPECTATION NOT YET FROZEN",
+  "wexp": {
+    "semantic_authority_commit": "b28a46e7764c2ef14decc35394f21278fca9c988",
+    "route": "IMPLEMENTATION INPUT NOT CONSTRUCTIBLE",
+    "reason": "No frozen public EP-to-WEXP profile constructs the complete Core AppraisalInput for P or P-1.",
+    "invoke_implementation": false,
+    "execution_baseline": "NOT APPLICABLE — INPUT NOT CONSTRUCTIBLE UNDER FROZEN PUBLIC MAPPING SURFACE"
+  },
+  "emilia": {
+    "semantic_authority_commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+    "route": "PENDING — EMILIA EXPECTATION NOT YET FROZEN",
+    "invoke_implementation": false,
+    "implementation": null
+  },
+  "normalization": {
+    "state": "PENDING — EMILIA EXPECTATION NOT YET FROZEN",
+    "adapter_stdout_contract": "wexp-emilia-observed-result-1",
+    "source_expectation_sha256": null,
+    "projection_record": null,
+    "note": "Populate only after the exact EMILIA expectation shape and a public reproduction command are known; freeze this control before execution."
+  }
+}

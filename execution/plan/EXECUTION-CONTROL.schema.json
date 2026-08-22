@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:wexp-emilia:execution-control:1",
+  "title": "Post-freeze execution control",
+  "description": "Requirements for the jointly reviewed control that replaces the PENDING control before execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "state", "wexp", "emilia", "normalization"],
+  "properties": {
+    "schema_version": { "const": "wexp-emilia-execution-control-1" },
+    "state": { "const": "READY — BOTH EXPECTATIONS FROZEN AND CONTROL REVIEWED" },
+    "wexp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_authority_commit", "route", "reason", "invoke_implementation", "execution_baseline"],
+      "properties": {
+        "semantic_authority_commit": { "const": "b28a46e7764c2ef14decc35394f21278fca9c988" },
+        "route": { "const": "IMPLEMENTATION INPUT NOT CONSTRUCTIBLE" },
+        "reason": { "const": "No frozen public EP-to-WEXP profile constructs the complete Core AppraisalInput for P or P-1." },
+        "invoke_implementation": { "const": false },
+        "execution_baseline": { "const": "NOT APPLICABLE — INPUT NOT CONSTRUCTIBLE UNDER FROZEN PUBLIC MAPPING SURFACE" }
+      }
+    },
+    "emilia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_authority_commit", "route", "invoke_implementation", "implementation"],
+      "properties": {
+        "semantic_authority_commit": { "const": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2" },
+        "route": { "const": "INVOKE" },
+        "invoke_implementation": { "const": true },
+        "implementation": { "$ref": "#/$defs/implementation" }
+      }
+    },
+    "normalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "adapter_stdout_contract", "source_expectation_sha256", "projection_record", "expected_results"],
+      "properties": {
+        "state": { "const": "FROZEN BEFORE EXECUTION" },
+        "adapter_stdout_contract": { "const": "wexp-emilia-observed-result-1" },
+        "source_expectation_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "projection_record": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Exact, reviewable account of the mechanical projection from Iman's frozen source bytes to expected_results; it may not strengthen or reinterpret the source."
+        },
+        "expected_results": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["P", "P-1"],
+          "description": "Each normalized JSON value is limited by the harness to depth 128 and 100000 value nodes; these are operational capture bounds, not semantic rules.",
+          "properties": {
+            "P": {},
+            "P-1": {}
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository_path",
+        "expected_head",
+        "expected_tree",
+        "require_clean",
+        "command_argv",
+        "expected_executable_sha256",
+        "adapter_entrypoint",
+        "timeout_seconds",
+        "environment",
+        "inherit_parent_environment",
+        "runtime_version_checks",
+        "container_runtime",
+        "container_image_reference",
+        "container_image_digest"
+      ],
+      "properties": {
+        "repository_path": { "type": "string", "minLength": 1 },
+        "expected_head": { "const": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2" },
+        "expected_tree": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "require_clean": { "const": true },
+        "command_argv": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "The harness rejects a known shell or env wrapper as the direct launcher. {fixture_path} and {fixture_id} are the only substitutions; adapter-internal process behavior is outside this argv assertion."
+        },
+        "expected_executable_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "adapter_entrypoint": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "argv_index", "repository_relative_path", "expected_sha256"],
+          "properties": {
+            "mode": { "enum": ["EXECUTABLE_IS_ADAPTER", "REPOSITORY_FILE", "CONTAINER_IMAGE"] },
+            "argv_index": { "type": "integer", "minimum": 0 },
+            "repository_relative_path": {
+              "anyOf": [
+                { "type": "null" },
+                { "type": "string", "minLength": 1 }
+              ]
+            },
+            "expected_sha256": {
+              "anyOf": [
+                { "type": "null" },
+                { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+              ]
+            }
+          },
+          "description": "Pins the primary adapter code as argv[0], an exact regular file whose bytes equal a tracked blob at pinned repository HEAD, or the immutable container image reference. The verifier enforces mode-specific relationships."
+        },
+        "timeout_seconds": { "type": "integer", "minimum": 1, "maximum": 3600 },
+        "environment": {
+          "type": "object",
+          "description": "Exact reviewed environment passed to the adapter; do not include secrets or private dependencies.",
+          "required": ["PATH", "LANG", "LC_ALL", "TZ", "PYTHONHASHSEED"],
+          "properties": {
+            "PATH": { "type": "string", "minLength": 1 },
+            "LANG": { "const": "C" },
+            "LC_ALL": { "const": "C" },
+            "TZ": { "const": "UTC" },
+            "PYTHONHASHSEED": { "const": "0" }
+          },
+          "additionalProperties": { "type": "string" }
+        },
+        "inherit_parent_environment": { "const": false },
+        "runtime_version_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["argv", "expected_exit_code", "expected_output_sha256"],
+            "properties": {
+              "argv": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "string", "minLength": 1 }
+              },
+              "expected_exit_code": { "const": 0 },
+              "expected_output_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            }
+          },
+          "description": "Reviewed, fixture-free version commands and exact combined-output identities for every runtime used by command_argv."
+        },
+        "container_runtime": { "enum": ["NONE", "DOCKER", "PODMAN", "OTHER"] },
+        "container_image_reference": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "pattern": "^[^\\s@]+@sha256:[0-9a-f]{64}$" }
+          ]
+        },
+        "container_image_digest": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+          ]
+        }
+      }
+    }
+  }
+}

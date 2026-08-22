@@ -1,0 +1,266 @@
+schema_version: "wexp-emilia-wexp-reading-1"
+artifact_id: "WEXP-EMILIA-INTEROP-001"
+phase: "WEXP_SIDE_FREEZE"
+freeze_state: "FROZEN"
+freeze_time: "2026-08-20T03:09:46-07:00"
+input_fixture: "fixtures.yaml"
+engine_execution: "NOT_RUN"
+emilia_comparison: "NOT_PERFORMED"
+
+pinned_authority:
+  core:
+    identity: "draft-sergeev-wexp-core-01"
+    freeze_identity: "CORE-01-FROZEN-001"
+    repository: "WEXP-dev/wexp-spec"
+    repository_commit: "b28a46e7764c2ef14decc35394f21278fca9c988"
+    authoritative_xml_sha256: "84c0a16467585c29925339a10dd287c2e67bfe21ed592826254bf424dc24f56d"
+    authoritative_xml_bytes: 103095
+  known_issues:
+    identity: "CORE-01-KNOWN-ISSUES-001"
+    sha256: "25c703dd876f717163e1919e71ccab7e11ba8c90152756bf8933852ea3c5b60f"
+    authority_class: "PROJECT_MAINTAINED_NON_IETF_ERRATA"
+  representation_contract:
+    identity: "CORE-01-REPRESENTATION-CONTRACT-001"
+    sha256: "2da2245065ceced20ebd741b2e718935181dbc2958c95f338874e4f2bc79a38f"
+    authority_class: "NON_NORMATIVE_CARRIER_DETAIL"
+  vectors:
+    repository: "WEXP-dev/wexp-vectors"
+    repository_commit: "c745e5abebddfd99cd62cdb3e40dddaf6582bdd9"
+    version: "0.2.0"
+    sets:
+      - identity: "WEXP-CORE-01-VECTORS-001"
+        set_sha256: "e315b6055148dbf05c6104c57feb991104b1ae6a47741a99cde5eb50d1900daf"
+        manifest_sha256: "c08ff4fd6e4ee7de8c6450bb3e6f72c0ac6f1242c3d7251b81f339826de38ba7"
+      - identity: "WEXP-CORE-01-VECTORS-002"
+        set_sha256: "8b2dfd5ac6f983201f8869c331b58936e3378f382a3a989b9a63c8d85791facf"
+        manifest_sha256: "06fa3306fc11748fc761542a4dff506da6ea57da7bd384b26d34af8827e7b3e2"
+        expectation_freeze: "WEXP-CORE-01-V002-EXPECTATION-FREEZE-002"
+  reference_implementation:
+    repository: "WEXP-dev/wexp-ref"
+    repository_commit: "d8f7e512a56b90b17377444c07cbc006ee76b7b5"
+    version: "0.2.0.dev0"
+    conformance_status: "PARTIAL"
+    conformance_inventory_sha256: "a4336f498083f70bfb942989902b13a7ee08b1e87b0de8fae0f780cf8c11ec4f"
+    vectors_001_lock_commit: "9615a79442ccfe3cc5456b7db7d9a2265fecc4d4"
+    vectors_001_lock_manifest_sha256: "c08ff4fd6e4ee7de8c6450bb3e6f72c0ac6f1242c3d7251b81f339826de38ba7"
+    vectors_002_lock: "ABSENT"
+
+status_vocabulary:
+  DETERMINED: "The agreed facts and pinned public authority determine a complete logical WEXP appraisal without adding a mapping premise"
+  UNDERDETERMINED: "One or more premises required to construct the complete logical Core AppraisalInput or appraisal are not established"
+
+common_core_input:
+  established:
+    semantics_version: "wexp-core-1"
+  missing_from_every_case:
+    - "exact WEXP target and profile-defined equality/binding rule"
+    - "asserted_claim"
+    - "immutable mapping and evidence profile identifiers"
+    - "evaluation time and trust configuration"
+    - "complete boundary finding: status, target binding, ceiling, grounding, and grounding acceptance"
+    - "aggregate base findings with exact target binding and semantic-validation results"
+    - "qualifier findings with exact-base semantic and independence-validation results"
+    - "recorder-relation vocabulary and validated relations"
+    - "counter-evidence disposition and affected claims"
+    - "complete evaluation scope"
+    - "profile gaps, inherited limitations, and fatal-condition treatment"
+  construction_result: "NO_COMPLETE_APPRAISAL_INPUT"
+
+non_inference_rules:
+  - "A valid signature or digest check does not establish content truth, boundary control, or semantic support"
+  - "EMILIA independent_observer or the word independent does not establish WEXP IV"
+  - "in_bounds does not establish invocation or execution"
+  - "An EMILIA lifecycle state does not determine a WEXP verdict"
+  - "CAID/action correlation does not define WEXP target equality or arguments-hash identity"
+  - "Invocation or dispatch does not establish execution or effect"
+  - "An unavailable meter or absent record does not establish nonoccurrence"
+  - "A source-role label alone does not establish a passing boundary or base finding"
+
+cases:
+  - id: "WE-EP-001"
+    result_status: "UNDERDETERMINED"
+    expected_wexp_appraisal: "UNDERDETERMINED"
+    one_line_reason: "A signed executor self-report and in_bounds do not provide an asserted WEXP claim, exact target binding, or an accepted execution-relevant boundary."
+    wexp_relevant_agreed_facts:
+      - "The executor supplied a self-report"
+      - "The signature is valid"
+      - "The EMILIA comparison fact is in_bounds"
+    determined_constraints:
+      - "The signature can authenticate bytes and may contribute attribution; it does not establish content truth, boundary control, or execution"
+      - "in_bounds does not identify a WEXP base, ceiling, or supported claim"
+      - "A self-report may be candidate evidence for an observation about what the actor asserted, not automatic evidence of execution"
+    conditional_mapping_candidates:
+      - candidate_claim: "(observation,{})"
+        condition: "A future profile validates the report semantically and binds it to the exact WEXP target at an accepted boundary"
+    case_specific_missing_information:
+      - "self-report-to-exact-observation predicate"
+      - "accepted boundary and grounding class"
+      - "exact target binding"
+    applicable_core_sections:
+      - "1.2"
+      - "4.1"
+      - "4.2"
+      - "6"
+      - "7"
+      - "8.1"
+      - "8.2"
+      - "10"
+      - "14"
+
+  - id: "WE-EP-002"
+    result_status: "UNDERDETERMINED"
+    expected_wexp_appraisal: "UNDERDETERMINED"
+    one_line_reason: "Signature and digest checks do not semantically support an exact content claim, and the verifier did not observe the effect boundary."
+    wexp_relevant_agreed_facts:
+      - "An external verifier checked signatures and digests"
+      - "The external verifier did not observe the effect boundary"
+    determined_constraints:
+      - "Authenticity and reference-integrity checks are not passing content-base findings"
+      - "The external role label does not establish WEXP independence"
+      - "These checks alone cannot establish execution or IV(execution)"
+    conditional_mapping_candidates: []
+    case_specific_missing_information:
+      - "results of the signature and digest checks"
+      - "exact content base the verifier assessed"
+      - "semantic-validation and exact-target-binding predicates"
+      - "profile-defined independence assessment"
+      - "accepted boundary finding"
+    applicable_core_sections:
+      - "1.2"
+      - "4.1"
+      - "4.2"
+      - "4.3"
+      - "6"
+      - "7"
+      - "8.1"
+      - "8.2"
+      - "10"
+      - "14"
+
+  - id: "WE-EP-003"
+    result_status: "UNDERDETERMINED"
+    expected_wexp_appraisal: "UNDERDETERMINED"
+    one_line_reason: "Core does not itself define when a system-of-record confirmation satisfies the exact execution predicate or accepted-boundary requirements."
+    wexp_relevant_agreed_facts:
+      - "A system of record confirms an exact committed operation"
+    determined_constraints:
+      - "The confirmation is candidate execution evidence, not an automatic supported execution finding"
+      - "No IV or PROV qualifier follows from the source label or confirmation alone"
+      - "A committed operation does not by itself establish a durable external effect"
+    conditional_mapping_candidates:
+      - candidate_claim: "(execution,{})"
+        condition: "A future profile binds the confirmed operation to the exact target and establishes an accepted execution-relevant controlled boundary and execution predicate"
+    case_specific_missing_information:
+      - "system-of-record commit-to-execution predicate"
+      - "profile-defined exact-target equality and binding"
+      - "accepted boundary status, ceiling, and grounding"
+    applicable_core_sections:
+      - "1.1"
+      - "1.2"
+      - "4.1"
+      - "4.2"
+      - "6"
+      - "7"
+      - "8.1"
+      - "8.2"
+      - "10"
+
+  - id: "WE-EP-004"
+    result_status: "UNDERDETERMINED"
+    expected_wexp_appraisal: "UNDERDETERMINED"
+    one_line_reason: "Dispatch and measured-effect reports lack an established exact-target correlation, boundary mapping, and WEXP IV independence predicate."
+    wexp_relevant_agreed_facts:
+      - "The controller reports dispatch"
+      - "A meter characterized as independent reports measured effect"
+    determined_constraints:
+      - "Dispatch may be candidate invocation evidence but does not imply execution"
+      - "Measured effect may be premise evidence for a profile-defined execution finding; Core does not contain an effect base"
+      - "The independent label does not establish IV without an exact-base administrative, operational, and technical independence assessment"
+      - "Execution support would not automatically establish invocation support"
+    conditional_mapping_candidates:
+      - candidate_claim: "(invocation,{})"
+        condition: "A future profile validates dispatch as an exact invocation crossing an observed invocation boundary"
+      - candidate_claim: "(execution,{})"
+        condition: "A future profile binds the measured effect to the exact action and validates an execution-relevant boundary predicate"
+      - candidate_claim: "(execution,{IV})"
+        condition: "The execution mapping passes and the meter evidence also passes exact-base IV semantic, target-binding, and independence predicates"
+    case_specific_missing_information:
+      - "dispatch-to-invocation predicate"
+      - "causal and exact-target binding between dispatch and measured effect"
+      - "effect-to-execution predicate"
+      - "meter boundary status and grounding"
+      - "IV independence criteria and assessment basis"
+    applicable_core_sections:
+      - "1.1"
+      - "1.2"
+      - "4.1"
+      - "4.2"
+      - "4.3"
+      - "6"
+      - "7"
+      - "8.1"
+      - "8.2"
+      - "10"
+      - "14"
+
+  - id: "WE-EP-005"
+    result_status: "UNDERDETERMINED"
+    expected_wexp_appraisal: "UNDERDETERMINED"
+    one_line_reason: "Meter unavailability does not determine which normalized role was unevaluated or whether the result is unsupported versus not-evaluated."
+    wexp_relevant_agreed_facts:
+      - "A meter described as required is unavailable"
+    determined_constraints:
+      - "Meter unavailability supplies no passing base, boundary, or qualifier finding"
+      - "Unavailability does not establish nonoccurrence or an evaluated semantic failure"
+      - "The meter is not automatically counter-evidence"
+      - "unsupported must not be substituted for not-evaluated without running the applicable profile predicate"
+    conditional_mapping_candidates:
+      - candidate_input_role: "boundary_finding.status=not-evaluated"
+        condition: "A future profile defines the meter as required to assess the execution-relevant boundary"
+      - candidate_input_role: "execution base semantic_validation=not-evaluated"
+        condition: "A future profile defines the meter as required to assess exact execution support"
+      - candidate_input_role: "IV(execution) independence_validation=not-evaluated"
+        condition: "A future profile defines the meter as required for the exact-base IV assessment"
+      - candidate_input_role: "counter_evidence.status=not-evaluated"
+        condition: "A future profile explicitly defines the missing meter material as applicable counter-evidence and names affected claims"
+    case_specific_missing_information:
+      - "which normalized role the meter assesses"
+      - "affected exact claim"
+      - "whether an assessment was attempted and unavailable"
+      - "evaluation-scope classification"
+    applicable_core_sections:
+      - "1.2"
+      - "4.1"
+      - "4.2"
+      - "4.3"
+      - "6"
+      - "8.2"
+      - "8.6"
+      - "10"
+      - "14"
+
+specification_assessment:
+  new_core_ambiguity_found: false
+  gaps:
+    - id: "PROFILE-GAP-001"
+      classification: "MISSING_PUBLIC_MAPPING_PROFILE"
+      description: "No pinned public EP-to-WEXP profile defines exact-target equality, CAID relationship, evidence-to-base predicates, accepted boundary grounding, meter/effect semantics, IV independence criteria, or required-meter-unavailability handling."
+    - id: "CORE-SCOPE-001"
+      classification: "INTENTIONAL_CORE_SCOPE_BOUNDARY"
+      description: "Durable external outcome or effect is not a WEXP Core content base; a profile must define any relationship between effect evidence and an exact supported WEXP claim."
+  known_issues_applicability:
+    KI-001: "NOT_TRIGGERED; if a later profile maps WE-EP-005 to applicable counter_evidence.status=not-evaluated, follow the public C14 disposition"
+    KI-002: "NOT_TRIGGERED; no non-Core token is introduced by this freeze"
+
+public_tooling_constraints:
+  - "wexp-ref is PARTIAL and is not a generic carrier or EP mapper"
+  - "E_BASE_NOT_EVALUATED, E_BOUNDARY_NOT_EVALUATED, and E_INDEPENDENCE_NOT_ESTABLISHED are outside the declared implemented diagnostic surface; E_IV_NOT_EVALUATED is implemented"
+  - "The pinned wexp-ref Core-01 lock covers vectors Set 001 at commit 9615a79442ccfe3cc5456b7db7d9a2265fecc4d4; it has no Set 002 lock"
+  - "The two public engines do not establish semantic-interpretation independence"
+
+summary:
+  case_count: 5
+  determined: 0
+  underdetermined: 5
+  comparison_performed: false
+  interop_record_created: false

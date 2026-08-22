@@ -1,0 +1,29 @@
+WEXP × EMILIA INTEROP-001 — PUBLICATION CLAIM CANDIDATE
+
+STATUS: BRANCH A — EXPLICIT BRIDGE REQUIRED
+PUBLICATION: NOT AUTHORIZED
+
+WEXP × EMILIA INTEROP-001 used independently frozen readings and expectations
+over shared byte-identical fixtures.
+
+Across the initial five cases, no genuine semantic contradiction or material
+overclaim was found.
+
+A controlled positive/hostile pair then showed that EMILIA's stronger
+reconciliation depends on exact meter-observation-to-action binding: P
+reproduced reconciled/in_bounds, while P-1, differing only by removal of that
+binding plus the derivative signature update, reproduced indeterminate/null
+with outcome_observations_not_exactly_bound.
+
+WEXP remained underdetermined for both fixtures because the frozen public WEXP
+surface does not provide an EP→WEXP mapping sufficient to construct the
+required Core AppraisalInput.
+
+The experiment therefore identifies a bounded composition boundary rather
+than semantic equivalence: positive cross-system semantic composition requires
+an explicit bridging contract not supplied by the frozen public surfaces. No
+such contract was invented, assumed, or adopted by this experiment.
+
+This candidate does not claim WEXP or EMILIA conformance, certification,
+physical truth, full interoperability, standards adoption, or validation of
+one system by the other.

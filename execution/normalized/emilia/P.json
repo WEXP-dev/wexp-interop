@@ -1,0 +1,26 @@
+{
+  "schema_version": "wexp-emilia-final-normalized-result-1",
+  "artifact": "WEXP-EMILIA-INTEROP-001",
+  "fixture_id": "P",
+  "system": "EMILIA",
+  "source_expectation_sha256": "6e0dc6c87f853cacdeeb676b27690e54bdb8a7a7aa86611c5ffe233387e256a4",
+  "source_receipt_sha256": "2d61071712ef4424d1b308afb6a3b8752b4effcf2525c0c08c97cff16617b77f",
+  "input_sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+  "expected": {
+    "valid": true,
+    "lifecycle_state": "reconciled",
+    "outcome": "in_bounds",
+    "errors": []
+  },
+  "actual": {
+    "valid": true,
+    "lifecycle_state": "reconciled",
+    "outcome": "in_bounds",
+    "errors": [],
+    "recorded_result_digest": "sha256:4ea90a5cf398ad77fe21bd5933ae85c2970cb55d1b5cd929c0f097bb9efc50b3"
+  },
+  "execution_result_class": "EXPECTED RESULT REPRODUCED",
+  "implementation_execution_source": "SUPPLIED EMILIA EXECUTION RECEIPT",
+  "rerun_by_this_executor": false,
+  "claim_boundary": "This records an EMILIA lifecycle result only; it does not state WEXP support, semantic equivalence, conformance, or physical truth. The recorded result digest is preserved from the receipt and was not independently recomputed because the receipt declares no digest serialization rule."
+}

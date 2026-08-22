@@ -1,0 +1,105 @@
+{
+  "schema": "wexp-emilia-interop-emilia-reading-1",
+  "artifact": "WEXP-EMILIA-INTEROP-001",
+  "frozen": true,
+  "emilia_baseline": {
+    "repository": "https://github.com/emiliaprotocol/emilia-protocol",
+    "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2"
+  },
+  "inputs_used": {
+    "received_package": "WEXP-EMILIA-INTEROP-001-SHAREABLE-v2.zip",
+    "received_package_sha256": "0ec17bcf9b88af17016c7e05d465012af604292210a858df5fa8f9bcf00d57a0",
+    "fixtures_file": "fixtures.yaml",
+    "fixtures_sha256": "d972dbb549aaaa25e92c32a936acba4d9a686e9ca62fe6bd556b12be2962cfcc",
+    "wexp_per_case_results_used": false
+  },
+  "common_scope": {
+    "exact_action_target": "UNSPECIFIED",
+    "wexp_asserted_claim": "UNSPECIFIED",
+    "immutable_mapping_profile": "UNSPECIFIED",
+    "evaluation_context": "UNSPECIFIED",
+    "caid_action_correlation": "UNSPECIFIED",
+    "wexp_arguments_hash_identity": "UNSPECIFIED"
+  },
+  "cases": [
+    {
+      "case_id": "WE-EP-001",
+      "lifecycle_state_or_outcome": "UNRESOLVED_FROM_FIXTURE",
+      "determination": "UNDERDETERMINED",
+      "reason": "A valid executor signature and an in_bounds self-report establish an actor claim, not accepted current pinning, exact action binding, executor admission, one-time consumption, or authoritative evidence of the effect.",
+      "missing_information": [
+        "accepted current executor pin",
+        "exact binding to the authorized action and admitted operation",
+        "Gate admission and consumption state",
+        "authenticated authoritative outcome evidence"
+      ],
+      "source_basis": [
+        "standards/posted/draft-schrock-ep-outcome-binding-00.xml",
+        "docs/architecture/GATE-ENFORCEMENT-PROFILE.md"
+      ]
+    },
+    {
+      "case_id": "WE-EP-002",
+      "lifecycle_state_or_outcome": "UNRESOLVED_FROM_FIXTURE",
+      "determination": "UNDERDETERMINED",
+      "reason": "External signature and digest checks do not by themselves establish the effect boundary. The fixture does not provide the verifier result, accepted pin, exact correlation, or the observation needed to classify the outcome.",
+      "missing_information": [
+        "external verifier result",
+        "accepted current verifier pin",
+        "exact receipt, action, operation, and nonce correlation",
+        "authenticated evidence at the relevant effect boundary"
+      ],
+      "source_basis": [
+        "standards/posted/draft-schrock-ep-outcome-binding-00.xml",
+        "packages/verify/src/outcome-binding.ts"
+      ]
+    },
+    {
+      "case_id": "WE-EP-003",
+      "lifecycle_state_or_outcome": "UNRESOLVED_FROM_FIXTURE",
+      "determination": "UNDERDETERMINED",
+      "reason": "A system of record can be authoritative for a bounded digital state only when its evidence is authenticated, currently pinned, and exactly bound to the committed operation. The fixture does not state those conditions or whether the confirmation denotes acceptance, application, or final effect.",
+      "missing_information": [
+        "authenticated system-of-record receipt",
+        "accepted current source pin and source policy",
+        "exact action, operation, CAID, nonce, and metadata binding",
+        "semantics of the confirmed state"
+      ],
+      "source_basis": [
+        "standards/posted/draft-schrock-ep-outcome-binding-00.xml",
+        "packages/verify/src/outcome-binding.ts"
+      ]
+    },
+    {
+      "case_id": "WE-EP-004",
+      "lifecycle_state_or_outcome": "UNRESOLVED_FROM_FIXTURE",
+      "determination": "UNDERDETERMINED",
+      "reason": "A controller record can evidence accepted dispatch and a pinned meter can evidence what it observed, but the fixture leaves exact command-to-observation correlation and the independence basis unspecified. EMILIA does not infer either fact.",
+      "missing_information": [
+        "exact dispatch-to-measurement correlation",
+        "accepted current controller and meter pins",
+        "declared source-policy independence basis",
+        "measurement window and effect semantics"
+      ],
+      "source_basis": [
+        "standards/posted/draft-schrock-ep-outcome-binding-00.xml",
+        "packages/verify/outcome-binding.test.ts"
+      ]
+    },
+    {
+      "case_id": "WE-EP-005",
+      "lifecycle_state_or_outcome": "INDETERMINATE",
+      "determination": "DETERMINED",
+      "reason": "The required measurement boundary is unavailable. EMILIA preserves the unknown as INDETERMINATE and does not convert it to failure, success, settlement, or permission to retry.",
+      "missing_information": [
+        "required authenticated measurement evidence"
+      ],
+      "source_basis": [
+        "standards/posted/draft-schrock-ep-outcome-binding-00.xml",
+        "docs/architecture/GATE-ENFORCEMENT-PROFILE.md",
+        "packages/verify/outcome-binding.test.ts"
+      ]
+    }
+  ],
+  "claim_boundary": "This file records EMILIA's independent reading of the supplied fixture facts. It does not establish physical truth, WEXP semantics, agreement between the systems, or execution outside completely mediated protected paths."
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "wexp-emilia-final-summary-1",
+  "artifact": "WEXP-EMILIA-INTEROP-001",
+  "source_identities": {
+    "emilia_expectation_sha256": "6e0dc6c87f853cacdeeb676b27690e54bdb8a7a7aa86611c5ffe233387e256a4",
+    "emilia_execution_receipt_sha256": "2d61071712ef4424d1b308afb6a3b8752b4effcf2525c0c08c97cff16617b77f",
+    "wexp_expectation_sha256": "42eeecaba33238d8c94bbb9d5bb22ab46721de6de74cff455b8115c17892088a",
+    "pair_package_sha256": "ae237263c86ee0b5c2b6387159d81957efe47e20161b74dd363da5a530705282"
+  },
+  "emilia": {
+    "P": "EXPECTED RESULT REPRODUCED",
+    "P-1": "EXPECTED RESULT REPRODUCED",
+    "shared_checks_true": 6,
+    "pair_distinguished": true
+  },
+  "wexp": {
+    "P": "UNDERDETERMINED",
+    "P-1": "UNDERDETERMINED",
+    "implementation_input": "NOT CONSTRUCTIBLE UNDER FROZEN PUBLIC MAPPING SURFACE",
+    "implementation_invoked": false
+  },
+  "terminal_branch": "A — EXPLICIT BRIDGE REQUIRED",
+  "branch_B_selected": false,
+  "branch_C_selected": false,
+  "genuine_semantic_disagreement": false,
+  "material_overclaim": false,
+  "publication_performed": false,
+  "claim_boundary": "The exact pair reproduces a bounded EMILIA distinction while WEXP remains underdetermined on a different semantic surface. This does not establish semantic equivalence, physical truth, conformance, or a positive WEXP appraisal."
+}

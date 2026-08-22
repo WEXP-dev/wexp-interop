@@ -1,0 +1,26 @@
+{
+  "artifact": "WEXP-EMILIA-PAIR-FREEZE-001",
+  "freeze_status": "fixed_before_emilia_execution",
+  "emilia_baseline_commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+  "pair": {
+    "P": {
+      "sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+      "expect": {
+        "valid": true,
+        "lifecycle_state": "reconciled",
+        "outcome": "in_bounds",
+        "errors": []
+      }
+    },
+    "P-1": {
+      "sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0",
+      "expect": {
+        "valid": false,
+        "lifecycle_state": "indeterminate",
+        "outcome": null,
+        "required_error": "outcome_observations_not_exactly_bound"
+      }
+    }
+  },
+  "claim_boundary": "This freezes the EMILIA verifier expectation only. It does not state WEXP semantics, semantic equivalence, conformance, or physical truth."
+}

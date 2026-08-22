@@ -1,0 +1,38 @@
+{
+  "schema_version": "wexp-emilia-preparation-environment-1",
+  "captured_at_utc": "2026-08-21T01:49:15Z",
+  "purpose": "scaffold preparation and no-execution dry validation only",
+  "host": {
+    "os": "macOS 15.7.7 (build 24G720)",
+    "kernel": "Darwin 24.6.0",
+    "architecture": "arm64"
+  },
+  "runtimes": {
+    "python": "3.14.6",
+    "node": "22.22.2",
+    "ruby": "4.0.5"
+  },
+  "git": {
+    "version": "2.54.0",
+    "workspace_is_git_worktree": false,
+    "workspace_head": null,
+    "workspace_tree": null,
+    "workspace_dirty_state": "NOT APPLICABLE — NOT A GIT WORKTREE"
+  },
+  "container_runtime": {
+    "used": false,
+    "docker_cli": "29.7.2 (build a7dcaa6)",
+    "podman_cli": null
+  },
+  "implementation_repositories": {
+    "used_during_preparation": false,
+    "wexp_head": null,
+    "wexp_tree": null,
+    "wexp_dirty_state": "NOT CHECKED OUT OR EXECUTED IN THIS WORKSPACE",
+    "emilia_head": null,
+    "emilia_tree": null,
+    "emilia_dirty_state": "NOT CHECKED OUT OR EXECUTED IN THIS WORKSPACE"
+  },
+  "frozen_remote_identities_are_records_not_local_checkout_claims": true,
+  "P_P-1_executed": false
+}

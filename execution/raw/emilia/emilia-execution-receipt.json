@@ -1,0 +1,43 @@
+{
+  "artifact": "WEXP-EMILIA-PAIR-FREEZE-001",
+  "executed_at": "2026-08-21T02:41:04Z",
+  "package_sha256": "ae237263c86ee0b5c2b6387159d81957efe47e20161b74dd363da5a530705282",
+  "expectation_freeze_sha256": "6e0dc6c87f853cacdeeb676b27690e54bdb8a7a7aa86611c5ffe233387e256a4",
+  "emilia_baseline": {
+    "repository": "https://github.com/emiliaprotocol/emilia-protocol",
+    "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+    "verifier_source": "packages/verify/src/outcome-binding.ts",
+    "verifier_source_sha256": "9a674113122f23001567eaeb673190ac4658b5273f7433e234c8ecbb5be704b0",
+    "package_entry_sha256": "f386e365a9998f08ea4947ffd415ca353c0a82766677a8e0cf3117909cccee24"
+  },
+  "results": {
+    "P": {
+      "input_sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+      "valid": true,
+      "lifecycle_state": "reconciled",
+      "outcome": "in_bounds",
+      "errors": [],
+      "result_digest": "sha256:4ea90a5cf398ad77fe21bd5933ae85c2970cb55d1b5cd929c0f097bb9efc50b3"
+    },
+    "P-1": {
+      "input_sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0",
+      "valid": false,
+      "lifecycle_state": "indeterminate",
+      "outcome": null,
+      "errors": [
+        "outcome_observations_not_exactly_bound"
+      ],
+      "result_digest": "sha256:7bfe5b1ba465546787d0ed31fa7aabd00ddd30b755b1c028230a5796d0160aca"
+    }
+  },
+  "shared_checks": {
+    "predictions_valid": true,
+    "observations_verified": true,
+    "required_sources_present": true,
+    "source_independence": true,
+    "source_requirements": true,
+    "observation_windows": true
+  },
+  "controlled_difference": "P-1 removes the meter observation action_caid and replaces only the meter signature required to keep the observation cryptographically valid.",
+  "claim_boundary": "This is an EMILIA verifier run over the frozen pair. It does not establish WEXP semantics, semantic equivalence, conformance, or physical truth."
+}

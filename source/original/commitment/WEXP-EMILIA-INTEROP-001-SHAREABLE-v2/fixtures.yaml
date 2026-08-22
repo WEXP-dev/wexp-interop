@@ -1,0 +1,67 @@
+schema_version: "wexp-emilia-interop-fixtures-1"
+artifact_id: "WEXP-EMILIA-INTEROP-001"
+phase: "WEXP_SIDE_FREEZE"
+freeze_time: "2026-08-20T03:09:46-07:00"
+
+case_source:
+  authority: "Founder correction continuing WEXP-EMILIA-INTEROP-001"
+  provenance: "Five descriptions agreed in the Mikhail x Iman correspondence and enumerated by the Founder"
+
+sentinels:
+  UNKNOWN: "Explicitly unknown in an agreed case description"
+  UNSPECIFIED: "Not stated in the agreed case description"
+
+common_unspecified:
+  exact_action_target: "UNSPECIFIED"
+  wexp_asserted_claim: "UNSPECIFIED"
+  immutable_mapping_profile: "UNSPECIFIED"
+  evaluation_context: "UNSPECIFIED"
+  caid_action_correlation: "UNSPECIFIED"
+  wexp_arguments_hash_identity: "UNSPECIFIED"
+
+cases:
+  - id: "WE-EP-001"
+    agreed_description: "executor self-report; valid signature; in_bounds"
+    agreed_facts:
+      evidence:
+        - source_role: "executor"
+          kind: "self_report"
+          signature_validity: "valid"
+      in_bounds: true
+
+  - id: "WE-EP-002"
+    agreed_description: "external verifier checks signatures and digests but does not observe the effect boundary"
+    agreed_facts:
+      evidence:
+        - source_role: "external_verifier"
+          performed_checks:
+            - "signatures"
+            - "digests"
+          check_results: "UNSPECIFIED"
+          effect_boundary_observed: false
+
+  - id: "WE-EP-003"
+    agreed_description: "system of record confirms the exact committed operation"
+    agreed_facts:
+      evidence:
+        - source_role: "system_of_record"
+          confirmation: "exact_committed_operation"
+
+  - id: "WE-EP-004"
+    agreed_description: "controller reports dispatch; independent meter reports measured effect"
+    agreed_facts:
+      evidence:
+        - source_role: "controller"
+          reported_event: "dispatch"
+        - source_role: "meter"
+          source_characterization: "independent"
+          reported_event: "measured_effect"
+      dispatch_effect_exact_correlation: "UNSPECIFIED"
+      wexp_independence_basis: "UNSPECIFIED"
+
+  - id: "WE-EP-005"
+    agreed_description: "required meter unavailable"
+    agreed_facts:
+      meter:
+        required: true
+        availability: "unavailable"
