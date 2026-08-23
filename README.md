@@ -1,24 +1,59 @@
 # WEXP × EMILIA INTEROP-001
 
-Artifact: `WEXP-EMILIA-INTEROP-001`  
-Status: **Experimental Interoperability Record**  
-Candidate state: **PRIVATE/LOCAL — NOT PUBLISHED**  
-Canonical venue: `WEXP-dev/wexp-interop`  
-Proposed Git tag: `wexp-emilia-interop-001` (**NOT CREATED**)  
-License: Apache License 2.0 (`SPDX-License-Identifier: Apache-2.0`)  
-IETF status: **NONE — NO IETF ADOPTION OR ENDORSEMENT IMPLIED**  
-Technical result: **BRANCH A — EXPLICIT BRIDGE REQUIRED**
+- Artifact: `WEXP-EMILIA-INTEROP-001`
+- Status: **Experimental Interoperability Record**
+- Publication state: **PUBLISHED 2026-08-22**
+- Canonical venue: `WEXP-dev/wexp-interop` (public)
+- Git tag: `wexp-emilia-interop-001` (signed annotated tag, created)
+- Version DOI: [`10.5281/zenodo.22056151`](https://doi.org/10.5281/zenodo.22056151)
+- License: Apache License 2.0 (`SPDX-License-Identifier: Apache-2.0`)
+- IETF status: **NONE — NO IETF ADOPTION OR ENDORSEMENT IMPLIED**
+- Technical result: **BRANCH A — EXPLICIT BRIDGE REQUIRED**
 
-This directory is the completed review candidate for the bounded WEXP × EMILIA
+This repository is the published record of the bounded WEXP × EMILIA
 experiment. It preserves the independently frozen readings and expectations,
 the byte-identical P/P-1 pair, Iman's exact EMILIA execution receipt, the
-comparison, claim ledger, and reproduction path. It is not a release,
-conformance suite, certification, adopted mapping, or standards submission.
+comparison, claim ledger, and reproduction path. Publication changed none of
+it. It remains **not** a conformance suite, certification, adopted mapping, or
+standards submission, and being published is not any of those things either.
 
-To verify the candidate without invoking WEXP or EMILIA, obtain the detached
-root-manifest hash supplied with the archive and run:
+## Published identity
 
-`python3 -B reproduction/verify_final.py --manifest-sha256 <ROOT_MANIFEST_SHA256>`
+| | Exact identity |
+| --- | --- |
+| Git commit | `2bceccb0d5c46ecd2d0e81792aa86f49aa343962` |
+| Git tree | `8ba8e1f084335db482f9afd121953d665eb2829b` |
+| Git tag | `wexp-emilia-interop-001` → tag object `eb4011bcfe65e11545ddb36ebf906637002aca4f` |
+| Publication archive | `WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip`; 200,140 bytes; SHA-256 `f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f` |
+| Detached freeze record | `WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml`; 2,260 bytes; SHA-256 `750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5` |
+| Root manifest | `MANIFEST.sha256`; 7,362 bytes; SHA-256 `4172c2d0d9f4cfaddaa4036a7d92e53d1ee6c2c290654daedaa5806e5281ad6a`; 67 payload entries |
+| Version DOI | `10.5281/zenodo.22056151` |
+| Concept DOI | `10.5281/zenodo.22056150` |
+
+The archive attached to the release and deposited at Zenodo is the
+authoritative exact-byte publication object. GitHub-generated source archives
+are convenience artifacts and are not substitutes for it.
+
+## Verifying
+
+Verification runs against the published archive, not against a working copy of
+this repository. Extract the archive and, from the extracted directory, run:
+
+```sh
+python3 -B reproduction/verify_final.py \
+  --manifest-sha256 4172c2d0d9f4cfaddaa4036a7d92e53d1ee6c2c290654daedaa5806e5281ad6a
+```
+
+Expected: `"status": "PASS"`, 67 payload entries and 15 frozen identities
+verified, with no WEXP or EMILIA implementation invoked.
+
+A Git checkout is not the verification surface. The root manifest covers the
+payload exactly, and a checkout carries `.git`, so `verify_final.py` reports
+`root manifest does not exactly cover candidate payload files` there. That is
+the verifier working, not a defect. See
+[`PUBLICATION-STATE-001.md`](PUBLICATION-STATE-001.md) for the documentation
+files on `main` that were corrected after the freeze and therefore no longer
+match their frozen digests.
 
 ## Contributors
 
@@ -137,13 +172,19 @@ It was not used as experiment authority and is not a bridge/profile.
 
 ## Review and publication state
 
-All frozen evidence remains unchanged. No public repository, Core text, WEXP
-vectors, wexp-ref, EMILIA source, or EXT-10 was modified. No bridge/profile was
-created. No publication, PR, release, IETF submission, or message to Iman was
-performed by this completion step.
+All frozen evidence remains unchanged. No Core text, WEXP vectors, wexp-ref,
+EMILIA source, or EXT-10 was modified for this experiment, and no
+bridge/profile was created.
 
-The candidate is ready for Founder review and then Iman's final end-to-end
-review. Publication remains a separate authorized action.
+Founder review and Iman's end-to-end technical review were completed, and
+publication was performed on 2026-08-22: this repository was made public, the
+signed tag `wexp-emilia-interop-001` was created, the GitHub release was
+published, and the archive was deposited at Zenodo under version DOI
+`10.5281/zenodo.22056151`.
+
+Publication is a distribution event. It added no claim, changed no frozen
+byte, and did not make this record a conformance suite, a certification, an
+adopted mapping, or an IETF submission.
 
 ## License and release identity
 
@@ -157,9 +198,9 @@ this candidate.
 
 The technically approved predecessor is the 191,735-byte archive with SHA-256
 `973d671d5326d642a480b2f546aae9d9c71f07bc5ab6df9aed730c68db8338e3`.
-The future published release will bind the artifact ID, Git commit, Git tree,
-root-manifest SHA-256, and release-archive SHA-256. Git commit/tree and the
-publication date remain pending until an actual authorized publication. The
-new candidate manifest/archive hashes are recorded in the detached freeze
-record delivered beside the ZIP; embedding either value inside the bytes it
-identifies would create a circular self-reference.
+The published release binds the artifact ID, Git commit, Git tree,
+root-manifest SHA-256 and release-archive SHA-256; all five are listed under
+**Published identity** above. The manifest and archive hashes live in the
+detached freeze record delivered beside the ZIP rather than inside it, because
+embedding either value inside the bytes it identifies would create a circular
+self-reference.

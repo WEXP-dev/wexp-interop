@@ -8,3 +8,13 @@ authors:
     given-names: Iman
 license: Apache-2.0
 repository-code: "https://github.com/WEXP-dev/wexp-interop"
+version: "001"
+date-released: "2026-08-22"
+doi: "10.5281/zenodo.22056151"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22056151"
+    description: "Version DOI for this experimental interoperability record."
+  - type: doi
+    value: "10.5281/zenodo.22056150"
+    description: "Concept DOI for all versions of this record."

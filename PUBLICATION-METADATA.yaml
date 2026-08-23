@@ -3,7 +3,7 @@ title: "WEXP × EMILIA INTEROP-001"
 status: "Experimental Interoperability Record"
 publication_venue: WEXP-dev/wexp-interop
 future_repository_url: https://github.com/WEXP-dev/wexp-interop
-expected_repository_layout: interop/WEXP-EMILIA-INTEROP-001/
+repository_layout: repository root (the published archive expands to WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/)
 release_tag: wexp-emilia-interop-001
 license: Apache-2.0
 spdx_license: Apache-2.0
@@ -43,11 +43,30 @@ claims_boundary:
   - no full-interoperability claim
   - no IETF adoption or endorsement
 release_identity:
-  git_commit: "PENDING UNTIL PUBLICATION"
-  git_tree: "PENDING UNTIL PUBLICATION"
-  manifest_sha256: "EXTERNALLY PINNED AFTER CANDIDATE FREEZE"
-  archive_sha256: "EXTERNALLY PINNED AFTER CANDIDATE FREEZE"
-  detached_record: WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE.yaml
+  git_commit: "2bceccb0d5c46ecd2d0e81792aa86f49aa343962"
+  git_tree: "8ba8e1f084335db482f9afd121953d665eb2829b"
+  git_tag: wexp-emilia-interop-001
+  git_tag_object: "eb4011bcfe65e11545ddb36ebf906637002aca4f"
+  git_tag_signed: true
+  manifest_sha256: "4172c2d0d9f4cfaddaa4036a7d92e53d1ee6c2c290654daedaa5806e5281ad6a"
+  manifest_bytes: 7362
+  manifest_payload_entries: 67
+  archive_filename: WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip
+  archive_bytes: 200140
+  archive_sha256: "f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f"
+  detached_record: WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml
+  detached_record_bytes: 2260
+  detached_record_sha256: "750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5"
   binding_note: "The exact manifest and archive hashes are recorded in the detached freeze record delivered with the archive; embedding either hash inside the bytes it identifies would create a circular self-reference."
-publication_date: "PENDING UNTIL ACTUAL RELEASE"
-publication_performed: false
+deposit:
+  venue: Zenodo
+  version_doi: "10.5281/zenodo.22056151"
+  concept_doi: "10.5281/zenodo.22056150"
+  version_label: "001"
+  deposited_files:
+    - WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip
+    - WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml
+  byte_identical_to_github_release: true
+publication_date: "2026-08-22"
+publication_performed: true
+publication_note: "Publication is a distribution event. It added no claim, changed no frozen byte, and did not make this record a conformance suite, certification, adopted mapping, or IETF submission. Every claims_boundary entry above continues to hold."
