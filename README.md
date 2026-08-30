@@ -17,6 +17,10 @@ comparison, claim ledger, and reproduction path. Publication changed none of
 it. It remains **not** a conformance suite, certification, adopted mapping, or
 standards submission, and being published is not any of those things either.
 
+This repository publishes records. It does not accept requests. To ask for an
+interoperability check, see
+[`interop-test-lab/START-HERE.md`](https://github.com/WEXP-dev/interop-test-lab/blob/main/START-HERE.md).
+
 ## Published identity
 
 | | Exact identity |
@@ -185,6 +189,26 @@ published, and the archive was deposited at Zenodo under version DOI
 Publication is a distribution event. It added no claim, changed no frozen
 byte, and did not make this record a conformance suite, a certification, an
 adopted mapping, or an IETF submission.
+
+## Bringing a system for a check
+
+Publication and intake are separate, and the separation is deliberate.
+
+| | Where |
+| --- | --- |
+| Read a published record | here |
+| Ask for an interoperability check | [`interop-test-lab`](https://github.com/WEXP-dev/interop-test-lab/blob/main/START-HERE.md) |
+
+A request is routed on its own facts to one of three routes — run it
+automatically, review it with us, or research it with us — and the rubric that
+decides is public. Most new external systems begin with review or joint
+research.
+
+Not every intake produces a published record. A record is published only where
+the result and its disclosure are separately authorized. An experiment can
+validly terminate in non-equivalence, an explicit bridge requirement, or an
+underdetermined reading, and terminating that way is a result rather than a
+failure. INTEROP-001 terminated in `Branch A — Explicit Bridge Required`.
 
 ## License and release identity
 
