@@ -1,0 +1,9 @@
+{
+  "carrier_and_mapper_evaluation_are_distinct": true,
+  "different_evaluation_status": true,
+  "different_recipient_classification": true,
+  "historical_A1_is_exact_new_EV3": true,
+  "same_agreement": true,
+  "same_decision_deny": true,
+  "unavailable_input_retained": true
+}

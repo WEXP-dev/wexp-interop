@@ -1,0 +1,53 @@
+{
+  "api_request_body": false,
+  "archive_layout": "PREPARATION.md at root plus complete payload/ subtree; preserve this arrangement for the frozen input verifier.",
+  "artifact": {
+    "bytes": 1018872,
+    "git_blob_sha1": "1a3a55254efc3a819ab08e2edaa2ac692db2e07d",
+    "md5": "53587e99181c9b6443e97017ac0d28db",
+    "path": "source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
+    "sha256": "fa42df4c859e744f199691a5f071f52a8e7102267dddeded95b68462843d2d20"
+  },
+  "concept_doi": null,
+  "content": {
+    "creators": [
+      {
+        "name": "WEXP-dev pilot contributors",
+        "type": "organization"
+      }
+    ],
+    "description": "Bounded local replay from public pre-run commit 70b4491a1ec8aab5af61f31510220067e3e5cfba. The complete pinned procedure matched all 130 expected case outcomes (39 valid, 88 malformed, 3 not-run), rejected 16 additional-output mutations and exercised two controlled trusted-producer worlds. A2 evaluated deny remains distinct from A10 not-evaluated deny; revision incompatibility including EV3 and limits on declared oversight are preserved. Both WEXP and the strong native baseline made the same local decisions. Identical trusted signed inputs cannot reveal the false world fact without the harness oracle. The complete strict typed semantic result and serialized bytes match the known private reference. Shared native verifier/consumer policy, known expectations and one coordinated environment limit independence; no general interoperability or full Core conformance is asserted.",
+    "keywords": [
+      "WEXP",
+      "WIMSE",
+      "Agent Audit Record",
+      "reproducibility",
+      "evaluation gaps",
+      "bounded interoperability",
+      "strong native baseline"
+    ],
+    "license_scope_file": "LICENSE-SCOPE.md",
+    "related_sources": [
+      "https://github.com/WEXP-dev/wexp-interop/commit/70b4491a1ec8aab5af61f31510220067e3e5cfba",
+      "https://datatracker.ietf.org/doc/html/draft-gilda-wimse-agent-audit-record-02"
+    ],
+    "rights_notice": "Multiple scoped licenses: WEXP-origin code MIT and authored metadata/prose CC-BY-4.0; native code/vectors and derived fixtures Apache-2.0; exact IETF text retains its original notices. Select an appropriate scoped/custom rights presentation supported by the deposit UI, without overriding upstream terms.",
+    "suggested_resource_type": "dataset (experimental record and reproduction package); confirm supported deposit UI entry",
+    "title": "WEXP × WIMSE AAR-02 INTEROP-001 — pkg-001",
+    "version": "pkg-001"
+  },
+  "format": "wexp-zenodo-separate-record-content/0.1.0",
+  "github_source": {
+    "archive_bearing_commit": null,
+    "exact_archive_url": null,
+    "preparation_commit": "70b4491a1ec8aab5af61f31510220067e3e5cfba"
+  },
+  "limit": "This is prepared content. It proves no deposit, record reservation, DOI assignment or publication; update external metadata only after observing the actual carrier.",
+  "reserved_doi": null,
+  "selected_workflow": "Create a new separate record, not a new EMILIA version; do not use GitHub auto-archive for a collection-wide release.",
+  "status": "prepared-content-only",
+  "upload_instructions": "publication/ZENODO-UPLOAD.md",
+  "version_doi": null,
+  "zenodo_publication_performed": false,
+  "zenodo_record_created": false
+}

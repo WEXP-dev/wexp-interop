@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "counts": {
+    "pipeline_cases": 130,
+    "pipeline_passed": 130,
+    "published_native_vectors": 102,
+    "local_fixtures": 19,
+    "output_mutations": 16,
+    "output_mutations_rejected": 16,
+    "controlled_worlds": 2
+  },
+  "compare_equal": true,
+  "semantic_results_sha256": "1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2"
+}

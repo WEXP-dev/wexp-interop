@@ -1,0 +1,137 @@
+{
+  "core_evaluator_present": false,
+  "corpus_manifests_delivered": false,
+  "files": [
+    {
+      "bytes": 9733,
+      "path": "consumer/CONTRACT-NOTES.md",
+      "sha256": "5b84e58738245325600277d8dd5df760076b029f48c7401686ff80c2a85b0891"
+    },
+    {
+      "bytes": 11474,
+      "path": "consumer/consumer_policy.py",
+      "sha256": "28dc42864e257a1430a3ebf8f9610364e849153e8810c7c386ed1315b72dbc66"
+    },
+    {
+      "bytes": 805,
+      "path": "consumer/native_baseline.py",
+      "sha256": "e560032279b76092e0b9dc8c989650b0fc252286503b53a4aaf71840d90bd069"
+    },
+    {
+      "bytes": 9601,
+      "path": "consumer/receive_output.py",
+      "sha256": "6df45e95c6464bf4d9d4515cde4d1314e554b831dacb7d0a86eae558e77d4205"
+    },
+    {
+      "bytes": 385,
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/__init__.py",
+      "sha256": "8c2e8d1d1b7e94004d29f11ecad85c02c389cb759264a139637f3b10a05c4538"
+    },
+    {
+      "bytes": 36251,
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/auditrecord.py",
+      "sha256": "146df6dd87dd216547497436646d21ffca4ebad8a235cf8e559e9d3732345b8b"
+    },
+    {
+      "bytes": 6527,
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/contextdiscovery.py",
+      "sha256": "fe1ce57bfc4c2f3a6a2684553d64a09674dc5ae54bbc456967a56c35fb105889"
+    },
+    {
+      "bytes": 62568,
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/observedeffect.py",
+      "sha256": "f4544fa42a396d80336676c9db6de6ec292598a0b8163ae9be385d4cf0b22a7d"
+    },
+    {
+      "bytes": 43542,
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/receiptsignature.py",
+      "sha256": "99c1267b79cfa5de2a1f6fe8bdbd523586c9815a7b4d7d1d17636a978264bf8f"
+    },
+    {
+      "bytes": 8033,
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/runmetrics.py",
+      "sha256": "56656e7566e2df4d0d3075850c715b7823df6427b05a5b799e40801f7ca45608"
+    },
+    {
+      "bytes": 6351,
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/sourcecoverage.py",
+      "sha256": "544cce88dfd921b408fdb059ae19032c9cce45d0d6cc52ef300523eb65824f5a"
+    },
+    {
+      "bytes": 54265,
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/w3creport.py",
+      "sha256": "08179121ac0ce86b5fa64c489f37bc3a3c2edd7767f6abec1182ca55a3f9e5b1"
+    },
+    {
+      "bytes": 224552,
+      "path": "vendor/aar01/packaging/run_vectors.py",
+      "sha256": "940eb715396eb001ae0da65a50d1bb578c3bba5bfaf7d9e3976069ca76fdbe82"
+    },
+    {
+      "bytes": 385,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/__init__.py",
+      "sha256": "8c2e8d1d1b7e94004d29f11ecad85c02c389cb759264a139637f3b10a05c4538"
+    },
+    {
+      "bytes": 17318,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/a2ajcs.py",
+      "sha256": "f0312e962322ac8af1b3b448f38a1f47b2b5bff998a9fcb653b83ad037d11958"
+    },
+    {
+      "bytes": 13505,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/anchoredchain.py",
+      "sha256": "a6d6bd3681186e375c29e6428214b6b7b29fd4db642f2a7f40c95564828bff72"
+    },
+    {
+      "bytes": 38387,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/auditrecord.py",
+      "sha256": "88c24648b2148c0ea765800b5975eadfd761508242dcf9832554b4705c41593b"
+    },
+    {
+      "bytes": 7992,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/contextdiscovery.py",
+      "sha256": "d8881c312d65c8536c70d3765d3c747663d2705c20928259b9a9c3c9bfa75239"
+    },
+    {
+      "bytes": 20048,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/mcpowasp.py",
+      "sha256": "33a08b63fe7d0f7981b117603878520f16864dcf0fed4c4a3b0c7249f448bd7b"
+    },
+    {
+      "bytes": 65335,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/observedeffect.py",
+      "sha256": "a1fb065655ad55643295ef5ecc152b185ce634b73c64a3940b15d13760ecb6e3"
+    },
+    {
+      "bytes": 43542,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/receiptsignature.py",
+      "sha256": "99c1267b79cfa5de2a1f6fe8bdbd523586c9815a7b4d7d1d17636a978264bf8f"
+    },
+    {
+      "bytes": 9206,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/runmetrics.py",
+      "sha256": "d8e8ad41911ad752e50b12afaf3382c94570ac4865c602ee5539bd03f98899f0"
+    },
+    {
+      "bytes": 6351,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/sourcecoverage.py",
+      "sha256": "544cce88dfd921b408fdb059ae19032c9cce45d0d6cc52ef300523eb65824f5a"
+    },
+    {
+      "bytes": 55074,
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/w3creport.py",
+      "sha256": "329066be50ebd127c68ec97ad380feb3ded3ef08c7dc099856ed98a518d8e962"
+    },
+    {
+      "bytes": 227924,
+      "path": "vendor/aar02/packaging/run_vectors.py",
+      "sha256": "8028d9f36c69d775c7409fb87970558b04fcec3377f4d43f11dd3e3aeee55933"
+    }
+  ],
+  "method": "Actual copied recipient distribution and fresh subprocess per call/revision",
+  "network_enforcement": false,
+  "normalized_inputs_delivered": false,
+  "os_access_sandbox": false,
+  "producer_present": false,
+  "scope": "Process/dependency separation within this one assistant-coordinated experiment; not an external team, deployment or adversarial OS sandbox."
+}

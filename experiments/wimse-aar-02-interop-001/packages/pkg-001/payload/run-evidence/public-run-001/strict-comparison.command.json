@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "compare_results.py",
+    "--results",
+    "/workspace/scratch/09ba21975d30/wimse-aar-02-public-run-001",
+    "--report",
+    "/workspace/scratch/09ba21975d30/wimse-aar-02-public-run-001/reference-comparison.json"
+  ],
+  "ended_at_utc": "2026-10-11T02:53:18.208499+00:00",
+  "exit_code": 0,
+  "started_at_utc": "2026-10-11T02:53:18.173552+00:00",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "992b71d9317c4493ffa38b72c25c1fca7d7e4cbad0f236535ba6403e5396fd70",
+  "working_directory": "/workspace/scratch/09ba21975d30/wexp-interop-aar-run-001/experiments/wimse-aar-02-interop-001/packages/pkg-001/payload"
+}

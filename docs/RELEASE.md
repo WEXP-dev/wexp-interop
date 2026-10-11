@@ -22,7 +22,7 @@ Record the repository, experiment/package, proposed tag, exact commit, observer,
 | Zenodo GitHub integration | Selected account, repository presence and observed toggle state. Absence from a list is not an observed OFF toggle. |
 | Publication target | A separate record/version lineage for the experiment, rather than the EMILIA concept DOI. |
 
-The owner or an authorized agent may perform these checks through a permitted session. Record a `Sync now` operation as an action that refreshes server-side inventory. Record grants, toggle changes or hook changes separately from observations. Do not create a test release to discover how autoarchiving is configured.
+The owner or an authorized agent may perform these checks through a permitted session. Record a `Sync now` operation as an action that requests an inventory refresh, together with the returned status and observed refresh age. A click alone does not establish completed refresh. Record grants, toggle changes or hook changes separately from observations. Do not create a test release to discover how autoarchiving is configured.
 
 An unresolved path that could place a collection release in the EMILIA DOI lineage blocks that release until the observations and selected publication method resolve it. It does not block preparation of a repository PR. General code inspection or an old empty hook list is insufficient to state that every possible automation path is permanently disabled.
 

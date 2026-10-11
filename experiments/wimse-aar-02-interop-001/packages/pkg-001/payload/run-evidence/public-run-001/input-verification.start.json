@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "verify_inputs.py",
+    "--pre-run"
+  ],
+  "started_at_utc": "2026-10-11T02:53:02.085219+00:00",
+  "working_directory": "/workspace/scratch/09ba21975d30/wexp-interop-aar-run-001/experiments/wimse-aar-02-interop-001/packages/pkg-001/payload"
+}

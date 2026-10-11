@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "verify_inputs.py",
+    "--pre-run"
+  ],
+  "ended_at_utc": "2026-10-11T02:53:02.227642+00:00",
+  "exit_code": 0,
+  "started_at_utc": "2026-10-11T02:53:02.085219+00:00",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "71a04abea07d81d7f9e3fa0250d203e023e63f1b0cd04fbd29d3895bc045f0e6",
+  "working_directory": "/workspace/scratch/09ba21975d30/wexp-interop-aar-run-001/experiments/wimse-aar-02-interop-001/packages/pkg-001/payload"
+}

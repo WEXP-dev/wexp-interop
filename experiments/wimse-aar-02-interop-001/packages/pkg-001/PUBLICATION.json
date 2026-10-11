@@ -1,0 +1,34 @@
+{
+  "experiment_id": "wimse-aar-02-interop-001",
+  "format": "wexp-aar-publication-observation/0.1.0",
+  "github": {
+    "archive": {
+      "bytes": 1018872,
+      "git_blob_sha1": "1a3a55254efc3a819ab08e2edaa2ac692db2e07d",
+      "md5": "53587e99181c9b6443e97017ac0d28db",
+      "path": "source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
+      "sha256": "fa42df4c859e744f199691a5f071f52a8e7102267dddeded95b68462843d2d20"
+    },
+    "archive_bearing_commit": null,
+    "archive_layout": "PREPARATION.md at root plus complete payload/ subtree",
+    "archive_source_url": null,
+    "provisional_branch_page": "https://github.com/WEXP-dev/wexp-interop/blob/publication/wimse-aar-02-interop-001/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
+    "state": "prepared"
+  },
+  "github_release": {
+    "performed": false,
+    "tag": null
+  },
+  "limit": "Prepared metadata. Actual archive-bearing public commit and publication observation are filled only after exact remote byte read-back; the immutable payload and ZIP remain unchanged.",
+  "package_id": "pkg-001",
+  "zenodo": {
+    "concept_doi": null,
+    "doi_reserved": false,
+    "draft_created": false,
+    "prepared_content": "publication/ZENODO-RECORD-CONTENT.json",
+    "publication_performed": false,
+    "record_id": null,
+    "selected_route": "new separate manual record; never a version of EMILIA",
+    "version_doi": null
+  }
+}

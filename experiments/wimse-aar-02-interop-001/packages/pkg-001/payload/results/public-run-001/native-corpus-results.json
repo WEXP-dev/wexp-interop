@@ -1,0 +1,1302 @@
+[
+  {
+    "corpus_digest": "9617291fd6c1721dfd9430d3f15987da716ee5c722094f74431a95a2d4b3c3c6",
+    "declared_corpus_digest": "9617291fd6c1721dfd9430d3f15987da716ee5c722094f74431a95a2d4b3c3c6",
+    "judge_ok": true,
+    "judge_stdout": "suite: agent-audit-record-conformance\nmembers: 47\n  accept: 9\n  indeterminate: 2\n  reject: 36\nverdict: every member behaves as MANIFEST.json declares\n",
+    "revision": "01",
+    "vectors": [
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A1",
+        "source": "statements/vded6715a80437cfb.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A2",
+        "source": "statements/vf410c7b4b792c0b3.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A3",
+        "source": "statements/v91afc5ba76960569.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A4",
+        "source": "statements/v49db892b2464179b.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "voluntary",
+        "draft_id": "A5",
+        "source": "statements/v092586b714b43901.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "voluntary",
+        "draft_id": "A6",
+        "source": "statements/v43e2fe48bc27164d.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A7",
+        "source": "statements/v3843cd0f05c512e2.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A8",
+        "source": "statements/v8a9e5deb2888e02c.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A9",
+        "source": "statements/vf9473c2b0e833da1.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "draft_id": "F1",
+        "source": "statements/v89164703a3e83dec.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "delegation-subject-inconsistent"
+        ],
+        "derived_tier": "",
+        "draft_id": "F2",
+        "source": "statements/vcf95da9b01a6664b.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "arguments-digest-missing"
+        ],
+        "derived_tier": "",
+        "draft_id": "F3",
+        "source": "statements/vb5b9abc4f83111a8.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "arguments-digest-forbidden"
+        ],
+        "derived_tier": "",
+        "draft_id": "F3b",
+        "source": "statements/v3d316ca718c2dfd5.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "arguments-digest-forbidden"
+        ],
+        "derived_tier": "",
+        "draft_id": "F3c",
+        "source": "statements/v48b0a2fe9334a263.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "request-digest-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "F4",
+        "source": "statements/vf3cf268dae0800ff.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "external-anchor-inconsistent"
+        ],
+        "derived_tier": "",
+        "draft_id": "F5",
+        "source": "statements/v4a450d67a3e14bd9.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "posture-agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "F6",
+        "source": "statements/vce25f7662e4f70cd.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "remediation-order"
+        ],
+        "derived_tier": "",
+        "draft_id": "F7",
+        "source": "statements/v55decc76bf3738b2.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "effect-observed-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "T1",
+        "source": "statements/v7fad746721358d9d.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "signature-invalid"
+        ],
+        "derived_tier": "",
+        "draft_id": "T2",
+        "source": "statements/v9ec5a5a966dc0028.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "duplicate-member"
+        ],
+        "derived_tier": "",
+        "draft_id": "T3",
+        "source": "statements/ve440c8b917ea6945.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "nesting-too-deep"
+        ],
+        "derived_tier": "",
+        "draft_id": "T4",
+        "source": "statements/vceed0855efea9660.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "unsafe-integer"
+        ],
+        "derived_tier": "",
+        "draft_id": "T5",
+        "source": "statements/v95d01f289bf873d3.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "D1",
+        "source": "statements/v7c9a446636835696.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "agreement-reserved-value"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "D2",
+        "source": "statements/v60025ea9854b9e10.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "D3",
+        "source": "statements/v411cfaf5151d4cc5.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "subject-interval-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "S1",
+        "source": "statements/v5d7952e7b60ac201.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "subject-after-root-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "S2",
+        "source": "statements/v4669a6b6d8bbeb60.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "subject-interval-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "I1r",
+        "source": "statements/v0f658d55b9e959cc.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-vantage"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI1",
+        "source": "statements/vbca32cc3ca51563a.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-commitment"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI2",
+        "source": "statements/v310861912d1046c5.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-scope"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI3",
+        "source": "statements/vd72e111dbe5e296f.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-coverage"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI4",
+        "source": "statements/vf5c19153992ba091.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-binding"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI5",
+        "source": "statements/v508be6e23e8482f5.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "commitment-key-is-agent-signer"
+        ],
+        "derived_tier": "",
+        "draft_id": "C1",
+        "source": "statements/v2a395d68e9697680.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "commitment-order"
+        ],
+        "derived_tier": "",
+        "draft_id": "C2",
+        "source": "statements/v1cbe908c9c03f36d.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "commitment-digest-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "C3",
+        "source": "statements/v27b72ac64d5ebd54.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "effect-observed-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "E1",
+        "source": "statements/vdf178c2ef7928a19.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "write-chain-broken"
+        ],
+        "derived_tier": "",
+        "draft_id": "E2",
+        "source": "statements/v826af5b27db24da5.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "empty-tree-constant-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "E3",
+        "source": "statements/vd8d79e7a61cca51f.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "value-outside-vocabulary"
+        ],
+        "derived_tier": "",
+        "draft_id": "V1",
+        "source": "statements/v061304592ad49c52.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "path-scope-glob"
+        ],
+        "derived_tier": "",
+        "draft_id": "V2",
+        "source": "statements/v8a6cc076ed9ea03a.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "write-scope-mismatch"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "V3",
+        "source": "statements/v806b41e10fa621b2.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "field-evidence-keys"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "FE1",
+        "source": "statements/vb5fa3c46a923c472.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "field-evidence-self-substrate"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "FE2",
+        "source": "statements/v66d14f47a3d0cf0b.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "indeterminate",
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "N1",
+        "source": "statements/v9aaa90d371011e59.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "indeterminate",
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "N2",
+        "source": "statements/vf8180cde8874edb6.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      }
+    ]
+  },
+  {
+    "corpus_digest": "048ddde8c8ce7e65368c4c46bd91192765444d287b4fcd35c3260bfcf9bb80aa",
+    "declared_corpus_digest": "048ddde8c8ce7e65368c4c46bd91192765444d287b4fcd35c3260bfcf9bb80aa",
+    "judge_ok": true,
+    "judge_stdout": "suite: agent-audit-record-conformance\nmembers: 55\n  accept: 11\n  indeterminate: 2\n  reject: 42\nverdict: every member behaves as MANIFEST.json declares\n",
+    "revision": "02",
+    "vectors": [
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A1",
+        "source": "statements/v0d65a70ec5288821.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A2",
+        "source": "statements/v8e2ef110bf6d52f6.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A3",
+        "source": "statements/v60116ba6c5fb78ec.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A4",
+        "source": "statements/vc2422b8f120772ce.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "voluntary",
+        "draft_id": "A5",
+        "source": "statements/v7a12f6c08f822bd5.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "voluntary",
+        "draft_id": "A6",
+        "source": "statements/v99868141e3bf075e.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A7",
+        "source": "statements/v3296f825d4f05710.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A8",
+        "source": "statements/vc1a226e7766254f1.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A9",
+        "source": "statements/v33bf4a991feed4ca.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A10",
+        "source": "statements/v8a2e4c0327732290.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "A11",
+        "source": "statements/vec049319d25facc6.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "draft_id": "F1",
+        "source": "statements/vaf48c7eea6dd5516.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "delegation-subject-inconsistent"
+        ],
+        "derived_tier": "",
+        "draft_id": "F2",
+        "source": "statements/v0f0e3983e267110b.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "arguments-digest-missing"
+        ],
+        "derived_tier": "",
+        "draft_id": "F3",
+        "source": "statements/vce3e9b4244967116.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "arguments-digest-forbidden"
+        ],
+        "derived_tier": "",
+        "draft_id": "F3b",
+        "source": "statements/vbc8b79104e8b6a87.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "arguments-digest-forbidden"
+        ],
+        "derived_tier": "",
+        "draft_id": "F3c",
+        "source": "statements/v8ae50eba2a0878b8.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "request-digest-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "F4",
+        "source": "statements/v504fb97e3c65e22d.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "external-anchor-inconsistent"
+        ],
+        "derived_tier": "",
+        "draft_id": "F5",
+        "source": "statements/vd6f245be7240b676.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "posture-agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "F6",
+        "source": "statements/v6df8ff36c40b1899.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "remediation-order"
+        ],
+        "derived_tier": "",
+        "draft_id": "F7",
+        "source": "statements/v2717cf80c72bd933.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "effect-observed-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "T1",
+        "source": "statements/ve6b805ce52d4a987.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "signature-invalid"
+        ],
+        "derived_tier": "",
+        "draft_id": "T2",
+        "source": "statements/v18153024f1acd938.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "duplicate-member"
+        ],
+        "derived_tier": "",
+        "draft_id": "T3",
+        "source": "statements/v8f355a9003ad7318.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "nesting-too-deep"
+        ],
+        "derived_tier": "",
+        "draft_id": "T4",
+        "source": "statements/v9bdb44d390fecf90.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "unsafe-integer"
+        ],
+        "derived_tier": "",
+        "draft_id": "T5",
+        "source": "statements/v09a2cf05eb8bd518.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "D1",
+        "source": "statements/v1879eeae11c77ad4.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "agreement-reserved-value"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "D2",
+        "source": "statements/v315d22ad8c7271a6.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "D3",
+        "source": "statements/v24916b42e97cc620.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "subject-interval-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "S1",
+        "source": "statements/vf18793293e0793fb.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "subject-after-root-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "S2",
+        "source": "statements/vf00e95f42eef8724.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "subject-interval-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "I1r",
+        "source": "statements/v64dc8171d57214d3.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-vantage"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI1",
+        "source": "statements/vb66a90c780a981e1.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-commitment"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI2",
+        "source": "statements/v50382c2ff934480c.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-scope"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI3",
+        "source": "statements/ved1c858bb30cb8b8.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-coverage"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI4",
+        "source": "statements/v2e76566de2506501.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "tier-overclaim-binding"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "TI5",
+        "source": "statements/vcdbe361d989035b4.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "commitment-key-is-agent-signer"
+        ],
+        "derived_tier": "",
+        "draft_id": "C1",
+        "source": "statements/v7c1b14e3e567ce08.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "commitment-order"
+        ],
+        "derived_tier": "",
+        "draft_id": "C2",
+        "source": "statements/va85d65c00ef6cdbe.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "commitment-digest-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "C3",
+        "source": "statements/v1503dfd2154d73da.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "effect-observed-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "E1",
+        "source": "statements/v3e452f77fbf0a249.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "write-chain-broken"
+        ],
+        "derived_tier": "",
+        "draft_id": "E2",
+        "source": "statements/v54575ab9f410be7f.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "empty-tree-constant-mismatch"
+        ],
+        "derived_tier": "",
+        "draft_id": "E3",
+        "source": "statements/v00ec2ce19f1e574e.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "value-outside-vocabulary"
+        ],
+        "derived_tier": "",
+        "draft_id": "V1",
+        "source": "statements/v205d0d2f5021e563.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "path-scope-glob"
+        ],
+        "derived_tier": "",
+        "draft_id": "V2",
+        "source": "statements/v8f42511cd88768fe.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "write-scope-mismatch"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "V3",
+        "source": "statements/v770e3bf440bbac4f.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "field-evidence-keys"
+        ],
+        "derived_tier": "authoritative",
+        "draft_id": "FE1",
+        "source": "statements/v51da190da6033d8a.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "field-evidence-self-substrate"
+        ],
+        "derived_tier": "voluntary",
+        "draft_id": "FE2",
+        "source": "statements/vda7c9c087912fcba.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "draft_id": "EV1",
+        "source": "statements/vf320e1e190cd0a35.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "draft_id": "EV2",
+        "source": "statements/v27385b926ca10f01.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "draft_id": "EV3",
+        "source": "statements/vded6715a80437cfb.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "value-outside-vocabulary"
+        ],
+        "derived_tier": "",
+        "draft_id": "EV4",
+        "source": "statements/v8f11c96059d2c3e2.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "value-outside-vocabulary"
+        ],
+        "derived_tier": "",
+        "draft_id": "OV1",
+        "source": "statements/vbb317d5ad7982c23.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "malformed"
+        ],
+        "codes": [
+          "oversight-malformed"
+        ],
+        "derived_tier": "",
+        "draft_id": "OV2",
+        "source": "statements/v6838afba287a7d82.json",
+        "verdict": "malformed",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "indeterminate",
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "N1",
+        "source": "statements/vbdf904629383722b.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      },
+      {
+        "allowed_verdicts": [
+          "indeterminate",
+          "valid"
+        ],
+        "codes": [],
+        "derived_tier": "authoritative",
+        "draft_id": "N2",
+        "source": "statements/vf5d77437325ed853.json",
+        "verdict": "valid",
+        "verdict_matches": true
+      }
+    ]
+  }
+]

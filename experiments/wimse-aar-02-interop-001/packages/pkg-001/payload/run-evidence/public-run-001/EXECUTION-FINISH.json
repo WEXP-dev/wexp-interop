@@ -1,0 +1,12 @@
+{
+  "clone_worktree_clean_after_execution": true,
+  "comparator_exit_code": 0,
+  "driver_sha256": "75162b469cfab3246f6da30e001ae342aee6af86f533e60063f1c326d77f1fa9",
+  "format": "wexp-aar-public-replay-finish/0.1.0",
+  "freeze_sha256": "ab13055e8d65601eabdf1cb463d1ec92b2dc1ed5868914fd9af8bcf4fc19138f",
+  "pilot_implementation_execution_performed": true,
+  "preparation_commit": "70b4491a1ec8aab5af61f31510220067e3e5cfba",
+  "preparation_tree": "feaec7ce219ba8aea944d3a8e8fcf0079f6932b9",
+  "recorded_at_utc": "2026-10-11T02:53:18.208784+00:00",
+  "runner_exit_code": 0
+}

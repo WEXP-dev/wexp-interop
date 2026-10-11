@@ -1,0 +1,110 @@
+{
+  "artifact": {
+    "bytes": 1018872,
+    "format": "zip",
+    "path": "source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
+    "role": "Prepared exact payload archive. This is a prospective branch-page location; an exact-commit direct-download source is assigned only after public read-back.",
+    "sha256": "fa42df4c859e744f199691a5f071f52a8e7102267dddeded95b68462843d2d20",
+    "source_url": "https://github.com/WEXP-dev/wexp-interop/blob/publication/wimse-aar-02-interop-001/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip"
+  },
+  "citation_path": "CITATION.cff",
+  "experiment_id": "wimse-aar-02-interop-001",
+  "independence": {
+    "evidence": [
+      "payload/pre-run/CONTROL-DECLARATION.json",
+      "payload/pre-run/DEPENDENCY-OVERLAP.json",
+      "payload/results/public-run-001/recipient-distribution.json"
+    ],
+    "method": "Fresh public preparation clone and separately staged recipient processes; both routes share the pinned native verifier and consumer_policy.py. No OS sandbox or enforced network isolation.",
+    "scope": "Publisher-coordinated local execution; no complete external-team reproduction. Expectations, private reference and oracle were known."
+  },
+  "license": {
+    "historical_artifact_license": "Multiple scoped terms: native/derived fixtures Apache-2.0, original IETF notices, new WEXP-origin MIT and CC-BY-4.0 grants.",
+    "scope_path": "LICENSE-SCOPE.md"
+  },
+  "limitations": [
+    "A local coordinated replay is not a blind trial, independent external-team reproduction or general interoperability.",
+    "Shared native reader and consumer_policy.py limit what decision parity establishes.",
+    "A trusted signature and an internally consistent record do not establish the reported world fact; the two-world oracle is held only by the harness.",
+    "N1/N2 returned valid; the permitted hypothetical indeterminate branch and general producer handling of it were not exercised.",
+    "L18 source decision evidence class is retained under facts.evaluation.evidence_class; oversight producer-asserted is the local trust treatment.",
+    "The receiver sorts collections without duplicate elimination; fixed outputs were duplicate-free.",
+    "Sixteen output mutations test the additional WEXP contract, not additional truth detection over the native baseline.",
+    "The historical PRIVATE profile atom, fixed policy time, published Core-01, private reference and EMILIA records remain unchanged.",
+    "Read-only verification checks byte identities and supplied logs, not independent authenticity, timestamps or truth.",
+    "No new Zenodo record, DOI, GitHub Release, IETF approval or full Core conformance is asserted."
+  ],
+  "package_id": "pkg-001",
+  "payload": {
+    "archive_container_metadata_preserved_in_git": false,
+    "mode_note": "All regular files have Git projection 100644 and ZIP mode 0644. The ZIP contains exact PREPARATION.md plus payload/; members are sorted and use fixed container timestamps. Git does not preserve ZIP container metadata; the exact ZIP is separately identified.",
+    "path": "payload",
+    "regular_files": 239,
+    "role": "frozen-run-package"
+  },
+  "publication": {
+    "carriers": [],
+    "version": "pkg-001"
+  },
+  "record_revision": 1,
+  "result": {
+    "details": "130/130 declared case outcomes matched (39 valid, 88 malformed, 3 not-run); 16/16 additional-output mutations were rejected; two controlled worlds preserve record-only support limits. A2/A10 evaluation statuses remain distinct, EV3 is malformed under revision 02, and declared oversight is not upgraded to human authority. The full strict semantic JSON and exact serialized bytes match the known private reference; neither route detects a trusted producer's false world fact from the signed record alone.",
+    "label": "No local decision difference from the strong native baseline"
+  },
+  "schema_version": "0.1.0",
+  "source_pins": [
+    {
+      "identity": "git-commit:70b4491a1ec8aab5af61f31510220067e3e5cfba; tree:feaec7ce219ba8aea944d3a8e8fcf0079f6932b9; freeze-sha256:ab13055e8d65601eabdf1cb463d1ec92b2dc1ed5868914fd9af8bcf4fc19138f",
+      "scope": "Exact input and prospective expectation commitment preceding this public-composition run.",
+      "title": "Public pre-run commitment",
+      "url": "https://github.com/WEXP-dev/wexp-interop/commit/70b4491a1ec8aab5af61f31510220067e3e5cfba"
+    },
+    {
+      "identity": "sha256:601ff41ff886d0bf603143d3a02ce382e58e2d780dfbba3351e0f16797d9a79b",
+      "scope": "Document front matter dated 2026-10-04; IETF announcement 2026-10-05T15:54:00Z; exact TXT unchanged.",
+      "title": "AAR-02 published text",
+      "url": "https://www.ietf.org/archive/id/draft-gilda-wimse-agent-audit-record-02.txt"
+    },
+    {
+      "identity": "git-commit:8d6295fb5db3e57c52df09f2fbeeb758b09f5c7d",
+      "scope": "47 published source records and their pinned reader; individual copies in payload/SOURCES.lock.json.",
+      "title": "AAR-01 native source revision",
+      "url": "https://github.com/probityai/agent-evidence-vectors/tree/8d6295fb5db3e57c52df09f2fbeeb758b09f5c7d"
+    },
+    {
+      "identity": "git-commit:c52823aedec22fffc1915c3b4d95f04de3e48813",
+      "scope": "55 published source records and their pinned reader; current-source freshness is separately bounded to the 75 retained files.",
+      "title": "AAR-02 native source revision",
+      "url": "https://github.com/probityai/agent-evidence-vectors/tree/c52823aedec22fffc1915c3b4d95f04de3e48813"
+    },
+    {
+      "identity": "sha256:1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2",
+      "scope": "Complete readable semantic projection with private-origin provenance; known before this replay, not independent proof the prior private execution occurred.",
+      "title": "Complete known private semantic reference, public copy",
+      "url": "https://github.com/WEXP-dev/wexp-interop/blob/70b4491a1ec8aab5af61f31510220067e3e5cfba/experiments/wimse-aar-02-interop-001/packages/pkg-001/payload/reference/private-pilot-semantic-results.json"
+    }
+  ],
+  "status": {
+    "comparison": "no-local-decision-difference",
+    "execution": "local-run-completed",
+    "independent_reproduction": "not-performed",
+    "integrity": "verified",
+    "publication": "prepared"
+  },
+  "summary": "Bounded local replay from a public pre-run commitment: 130 expected case outcomes, 16 output refusals and two controlled worlds; WEXP and the strong native baseline made the same local decisions.",
+  "title": "WEXP × WIMSE AAR-02 INTEROP-001",
+  "verification": {
+    "evidence": [
+      "evidence/FINAL-FREEZE.json",
+      "payload/pre-run/FREEZE.json",
+      "payload/run-evidence/EXPORT.json",
+      "payload/run-evidence/public-run-001/EXECUTION-START.json",
+      "payload/run-evidence/public-run-001/EXECUTION-FINISH.json",
+      "payload/results/public-run-001/execution-observation.json",
+      "payload/results/public-run-001/reference-comparison.json"
+    ],
+    "implementation_execution_performed": true,
+    "instructions": "REPRODUCE.md",
+    "profile": "aar-pilot-v1"
+  }
+}

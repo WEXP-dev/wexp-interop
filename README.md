@@ -2,11 +2,12 @@
 
 This repository collects versioned experimental packages and their reproduction materials. Each experiment has the same location under `experiments/`; each package has an external card and a separately identified payload. The [generated catalog](catalog.json) is an index of those cards, not a second source of experimental results.
 
-## Published records
+## Experimental records
 
 | Experiment | Package | Recorded result | Scope |
 |---|---|---|---|
 | [WEXP × EMILIA INTEROP-001](experiments/emilia-interop-001/packages/pkg-001/README.md) | `pkg-001` · [version DOI](https://doi.org/10.5281/zenodo.22056151) | **Branch A — Explicit Bridge Required** | Historical controlled-fixture record; migration replays archived evidence. |
+| [WEXP × WIMSE AAR-02 INTEROP-001](experiments/wimse-aar-02-interop-001/packages/pkg-001/README.md) | `pkg-001` · [exact carrier and archive](experiments/wimse-aar-02-interop-001/packages/pkg-001/record.json) | **No local decision difference from the strong native baseline** | 130 expected case outcomes, 16 output refusals and two controlled worlds; known reference, coordinated local execution. |
 
 An experiment's presence in this collection does not establish conformance, semantic equivalence, full interoperability, or IETF adoption. The card states what was executed, how comparison was made, and what kind of independent reproduction is available. Use those dimensions separately.
 

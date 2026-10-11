@@ -1,0 +1,202 @@
+{
+  "entries": [
+    {
+      "bytes": 433635,
+      "path": "results/public-run-001/aar01-results.json",
+      "sha256": "fe9cf7a18e13f0493a09f1873dd6f6509e6c4a0656d01d6f0446e8f5929ded7f",
+      "transformation": "none"
+    },
+    {
+      "bytes": 501805,
+      "path": "results/public-run-001/aar02-results.json",
+      "sha256": "34fc2550506b6ef4e11f0b4201080156837a939b51023d8e76818ba61636041d",
+      "transformation": "none"
+    },
+    {
+      "bytes": 33774,
+      "path": "results/public-run-001/compatibility-results.json",
+      "sha256": "a3e2a41a8306cc43d7d378929031ca57eee561f9db1ee108c264cdef36a145a5",
+      "transformation": "none"
+    },
+    {
+      "bytes": 278,
+      "path": "results/public-run-001/distinction-checks.json",
+      "sha256": "7b9a8cfc27ebfb5e37b3b011378b0ea0b9570bfb9303c97e9eda09f66f67079e",
+      "transformation": "none"
+    },
+    {
+      "bytes": 103689,
+      "path": "results/public-run-001/execution-observation.json",
+      "sha256": "924402658c900761852104d81749a55cce8e8d179e110b107285fce65f486b44",
+      "transformation": "none"
+    },
+    {
+      "bytes": 117774,
+      "path": "results/public-run-001/input-expectations.json",
+      "sha256": "260e64e6fc32e70822bd0de5c4185c1017265a7cf1fb1cad64026dce89cc527f",
+      "transformation": "none"
+    },
+    {
+      "bytes": 306888,
+      "path": "results/public-run-001/local-results.json",
+      "sha256": "24bcb7b47e59966c70632d0c844acb41b9a902ad4a52cd944faadefcaf0bc6af",
+      "transformation": "none"
+    },
+    {
+      "bytes": 32865,
+      "path": "results/public-run-001/native-corpus-results.json",
+      "sha256": "5f76522ab02c680f2278031a2c446e9ef218c4d1a5a97d0fd7189849876dd351",
+      "transformation": "none"
+    },
+    {
+      "bytes": 123341,
+      "path": "results/public-run-001/output-mutation-results.json",
+      "sha256": "71a3781a536978559576556168af8af33c5e06605522e9092b58ca0d6823281f",
+      "transformation": "none"
+    },
+    {
+      "bytes": 5192,
+      "path": "results/public-run-001/recipient-distribution.json",
+      "sha256": "ce41e7509a0e9223a80ea8ccad5983d52edfa25603acef9a824308ec0e4a6e05",
+      "transformation": "none"
+    },
+    {
+      "bytes": 859,
+      "path": "results/public-run-001/reference-comparison.json",
+      "sha256": "992b71d9317c4493ffa38b72c25c1fca7d7e4cbad0f236535ba6403e5396fd70",
+      "transformation": "none"
+    },
+    {
+      "bytes": 145886,
+      "path": "results/public-run-001/semantic-results.json",
+      "sha256": "1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2",
+      "transformation": "none"
+    },
+    {
+      "bytes": 701,
+      "path": "results/public-run-001/test-inputs/missing-revision-policy.json",
+      "sha256": "da5db318ae85311992df0df1359ec2dc9a4348264431c8d74ea7c9ffa4d0f965",
+      "transformation": "none"
+    },
+    {
+      "bytes": 701,
+      "path": "results/public-run-001/test-inputs/unknown-revision-policy.json",
+      "sha256": "98484c31ca7d61fda7eb82ed8453845a9ba55fb923e54af11b014a2e4c18df59",
+      "transformation": "none"
+    },
+    {
+      "bytes": 701,
+      "path": "results/public-run-001/test-inputs/wrong-specification-policy.json",
+      "sha256": "6907941fd4fcc4e73557e9e53eb04ba7f32ed3b989a324c0a264600da1af909c",
+      "transformation": "none"
+    },
+    {
+      "bytes": 20981,
+      "path": "results/public-run-001/trusted-producer-results.json",
+      "sha256": "37c136e96f6b82c937f34fc1d80768fc8849b18415046e31a5cb4052f34ba9ea",
+      "transformation": "none"
+    },
+    {
+      "bytes": 573,
+      "path": "run-evidence/public-run-001/EXECUTION-FINISH.json",
+      "sha256": "0799a58650325b0b3d02863d920ff1d8b76a9e4be6017681ecd322eff576434f",
+      "transformation": "none"
+    },
+    {
+      "bytes": 1527,
+      "path": "run-evidence/public-run-001/EXECUTION-START.json",
+      "sha256": "f7facb8a9b3377ffa768744fa938080dba8b53abc0530f80ea62d29781823f4d",
+      "transformation": "none"
+    },
+    {
+      "bytes": 601,
+      "path": "run-evidence/public-run-001/input-verification.command.json",
+      "sha256": "8d93005e7789147525d43f5645d6f9d421db603c9c0e5ea1ffa2b425f496670c",
+      "transformation": "none"
+    },
+    {
+      "bytes": 355,
+      "path": "run-evidence/public-run-001/input-verification.start.json",
+      "sha256": "427d7656ebfb11f0035640f2b42d8025ee93bf97e0b1920dd0d2272dbac41622",
+      "transformation": "none"
+    },
+    {
+      "bytes": 0,
+      "path": "run-evidence/public-run-001/input-verification.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "bytes": 619,
+      "path": "run-evidence/public-run-001/input-verification.stdout",
+      "sha256": "71a04abea07d81d7f9e3fa0250d203e023e63f1b0cd04fbd29d3895bc045f0e6",
+      "transformation": "none"
+    },
+    {
+      "bytes": 730,
+      "path": "run-evidence/public-run-001/retained-pilot.command.json",
+      "sha256": "2174ce2801175601d7126d65757066753379407a08da1303aba09d2c3773bcdb",
+      "transformation": "none"
+    },
+    {
+      "bytes": 484,
+      "path": "run-evidence/public-run-001/retained-pilot.start.json",
+      "sha256": "3fd9672636e12f6a86834bdec86c18420d4d2f0723b43c65f0debe8bb5fad646",
+      "transformation": "none"
+    },
+    {
+      "bytes": 0,
+      "path": "run-evidence/public-run-001/retained-pilot.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "bytes": 372,
+      "path": "run-evidence/public-run-001/retained-pilot.stdout",
+      "sha256": "3e8fc5316705805e4c0b7fa9598ff56ab53a2a20e92a82daaf3ad0cdc004473f",
+      "transformation": "none"
+    },
+    {
+      "bytes": 779,
+      "path": "run-evidence/public-run-001/strict-comparison.command.json",
+      "sha256": "d0de614d75e87b06edf4af0c4641d43ad64225c48bdf6049572a5eabc07382bd",
+      "transformation": "none"
+    },
+    {
+      "bytes": 533,
+      "path": "run-evidence/public-run-001/strict-comparison.start.json",
+      "sha256": "9de4121eb6bb86bff8249476d2dd7ca315eb16dabe868df8a13fcab0f4a91d46",
+      "transformation": "none"
+    },
+    {
+      "bytes": 0,
+      "path": "run-evidence/public-run-001/strict-comparison.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "bytes": 859,
+      "path": "run-evidence/public-run-001/strict-comparison.stdout",
+      "sha256": "992b71d9317c4493ffa38b72c25c1fca7d7e4cbad0f236535ba6403e5396fd70",
+      "transformation": "none"
+    },
+    {
+      "bytes": 6683,
+      "path": "run-evidence/run_public_replay.py",
+      "sha256": "75162b469cfab3246f6da30e001ae342aee6af86f533e60063f1c326d77f1fa9",
+      "transformation": "none"
+    }
+  ],
+  "experiment_id": "wimse-aar-02-interop-001",
+  "format": "wexp-aar-public-execution-export/0.1.0",
+  "freeze_sha256": "ab13055e8d65601eabdf1cb463d1ec92b2dc1ed5868914fd9af8bcf4fc19138f",
+  "independent_external_reproduction": false,
+  "license_note": "New WEXP-origin driver code is MIT; WEXP-origin report/observation JSON and prose are CC-BY-4.0, excluding underlying Apache/IETF material retained under its original terms.",
+  "local_coordinated_execution": true,
+  "method": "Complete copy of newly generated run output and observation journal from the ordinary fresh public preparation clone. No retained result file omitted or edited.",
+  "package_id": "pkg-001",
+  "preparation_commit": "70b4491a1ec8aab5af61f31510220067e3e5cfba",
+  "preparation_tree": "feaec7ce219ba8aea944d3a8e8fcf0079f6932b9",
+  "prior_results_exported_as_new_run": false,
+  "semantic_sha256": "1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2"
+}

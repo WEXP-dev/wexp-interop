@@ -40,6 +40,31 @@
         "label": "Branch A — Explicit Bridge Required",
         "details": "The historical record reproduced the EMILIA P/P-1 distinction and left WEXP underdetermined for both fixtures without an explicit EP-to-WEXP mapping. No semantic equivalence, conformance or full interoperability was established."
       }
+    },
+    {
+      "experiment_id": "wimse-aar-02-interop-001",
+      "package_id": "pkg-001",
+      "title": "WEXP × WIMSE AAR-02 INTEROP-001",
+      "summary": "Bounded local replay from a public pre-run commitment: 130 expected case outcomes, 16 output refusals and two controlled worlds; WEXP and the strong native baseline made the same local decisions.",
+      "status": {
+        "comparison": "no-local-decision-difference",
+        "execution": "local-run-completed",
+        "independent_reproduction": "not-performed",
+        "integrity": "verified",
+        "publication": "prepared"
+      },
+      "card": "experiments/wimse-aar-02-interop-001/packages/pkg-001/README.md",
+      "record": "experiments/wimse-aar-02-interop-001/packages/pkg-001/record.json",
+      "record_sha256": "bb401548cb4f22a057c9220178d6386c2ee69bd0ff2ea553709d6ba66131ca5d",
+      "citation": "experiments/wimse-aar-02-interop-001/packages/pkg-001/CITATION.cff",
+      "publication": {
+        "carriers": [],
+        "version": "pkg-001"
+      },
+      "result": {
+        "details": "130/130 declared case outcomes matched (39 valid, 88 malformed, 3 not-run); 16/16 additional-output mutations were rejected; two controlled worlds preserve record-only support limits. A2/A10 evaluation statuses remain distinct, EV3 is malformed under revision 02, and declared oversight is not upgraded to human authority. The full strict semantic JSON and exact serialized bytes match the known private reference; neither route detects a trusted producer's false world fact from the signed record alone.",
+        "label": "No local decision difference from the strong native baseline"
+      }
     }
   ]
 }
