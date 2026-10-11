@@ -9,18 +9,29 @@
       "path": "source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
       "sha256": "fa42df4c859e744f199691a5f071f52a8e7102267dddeded95b68462843d2d20"
     },
-    "archive_bearing_commit": null,
+    "archive_bearing_commit": "98556ac24d270464cec89135cb5388f0e39c93c2",
+    "archive_bearing_tree": "43303a49375a7ab7b285bb5308e1fd2595d36ec1",
     "archive_layout": "PREPARATION.md at root plus complete payload/ subtree",
-    "archive_source_url": null,
-    "provisional_branch_page": "https://github.com/WEXP-dev/wexp-interop/blob/publication/wimse-aar-02-interop-001/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
-    "state": "prepared"
+    "archive_source_url": "https://raw.githubusercontent.com/WEXP-dev/wexp-interop/98556ac24d270464cec89135cb5388f0e39c93c2/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
+    "commit_time_utc": "2026-10-11T03:14:09Z",
+    "commit_url": "https://github.com/WEXP-dev/wexp-interop/commit/98556ac24d270464cec89135cb5388f0e39c93c2",
+    "readback": {
+      "evidence": "evidence/GITHUB-ARCHIVE-READBACK-001.json",
+      "evidence_sha256": "0f4d828b3400d5d24faaa3f54c3b7538b284a38082cf9020fe805445f16171d1",
+      "finished_at_utc": "2026-10-11T03:15:09.117747+00:00",
+      "http_status": 200,
+      "started_at_utc": "2026-10-11T03:15:03.682570+00:00",
+      "status": "PASS"
+    },
+    "state": "published"
   },
   "github_release": {
     "performed": false,
     "tag": null
   },
-  "limit": "Prepared metadata. Actual archive-bearing public commit and publication observation are filled only after exact remote byte read-back; the immutable payload and ZIP remain unchanged.",
+  "limit": "This outer revision records the observed GitHub archive publication at the exact commit above. That archive-bearing commit retains the earlier prepared card; this revision supersedes only its outer publication state and links. The payload, PREPARATION.md and ZIP bytes are unchanged. No Zenodo record, reserved DOI or Zenodo publication exists for this package; no GitHub Release has been created. The observation is not an independent timestamp, authenticity attestation or external-team reproduction.",
   "package_id": "pkg-001",
+  "record_revision": 2,
   "zenodo": {
     "concept_doi": null,
     "doi_reserved": false,

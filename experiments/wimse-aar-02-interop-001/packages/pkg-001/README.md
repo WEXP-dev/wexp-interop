@@ -20,6 +20,23 @@ The **102 published native records are included in the 130 cases**, alongside
 corpus check is not an independent sample. Sixteen output mutations concern
 the additional WEXP contract, not extra truth detection over the baseline.
 
+## Public carrier and citation
+
+The package was published at GitHub commit
+[`98556ac24d270464cec89135cb5388f0e39c93c2`](https://github.com/WEXP-dev/wexp-interop/commit/98556ac24d270464cec89135cb5388f0e39c93c2) on
+11 October 2026. The [exact downloadable ZIP](https://raw.githubusercontent.com/WEXP-dev/wexp-interop/98556ac24d270464cec89135cb5388f0e39c93c2/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip) returned HTTP 200
+and matched the pinned size, SHA-256, MD5 and Git blob in the
+[11 October read-back observation](evidence/GITHUB-ARCHIVE-READBACK-001.json). Cite this archive-bearing
+commit using [CITATION.cff](CITATION.cff).
+
+Outer card revision 2 records that later publication observation. The
+archive-bearing commit itself retains the earlier prepared card; this
+revision updates its publication state and links. The frozen payload,
+PREPARATION.md and ZIP bytes are unchanged. No Zenodo record, reserved DOI or
+Zenodo publication exists for this package. No GitHub Release has been
+created. These carrier observations do not establish independent execution,
+an independent timestamp or wider interoperability.
+
 ## Read the evidence
 
 - [Actual results and interpretation](payload/reports/RESULTS.md)

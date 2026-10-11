@@ -4,6 +4,7 @@ title: "WEXP × WIMSE AAR-02 INTEROP-001"
 authors:
   - name: "WEXP-dev pilot contributors"
 version: "pkg-001"
+date-released: "2026-10-11"
 repository-code: "https://github.com/WEXP-dev/wexp-interop"
-url: "https://github.com/WEXP-dev/wexp-interop/blob/publication/wimse-aar-02-interop-001/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip"
+url: "https://github.com/WEXP-dev/wexp-interop/blob/98556ac24d270464cec89135cb5388f0e39c93c2/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip"
 abstract: "Local coordinated replay: 130 expected case outcomes, 16 output refusals and two controlled worlds; no local decision difference from the strong native baseline. See LICENSE-SCOPE.md for multiple applicable licenses."

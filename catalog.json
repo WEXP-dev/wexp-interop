@@ -51,14 +51,21 @@
         "execution": "local-run-completed",
         "independent_reproduction": "not-performed",
         "integrity": "verified",
-        "publication": "prepared"
+        "publication": "published"
       },
       "card": "experiments/wimse-aar-02-interop-001/packages/pkg-001/README.md",
       "record": "experiments/wimse-aar-02-interop-001/packages/pkg-001/record.json",
-      "record_sha256": "bb401548cb4f22a057c9220178d6386c2ee69bd0ff2ea553709d6ba66131ca5d",
+      "record_sha256": "ca876fc9b19a27fd1d47cc01660e0e8be9c17560a74b244725c8deba19965344",
       "citation": "experiments/wimse-aar-02-interop-001/packages/pkg-001/CITATION.cff",
       "publication": {
-        "carriers": [],
+        "carriers": [
+          {
+            "identifier": "98556ac24d270464cec89135cb5388f0e39c93c2",
+            "kind": "github-commit",
+            "url": "https://github.com/WEXP-dev/wexp-interop/commit/98556ac24d270464cec89135cb5388f0e39c93c2"
+          }
+        ],
+        "date": "2026-10-11",
         "version": "pkg-001"
       },
       "result": {

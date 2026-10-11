@@ -3,9 +3,9 @@
     "bytes": 1018872,
     "format": "zip",
     "path": "source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
-    "role": "Prepared exact payload archive. This is a prospective branch-page location; an exact-commit direct-download source is assigned only after public read-back.",
+    "role": "Exact published ZIP at the archive-bearing GitHub commit; its root PREPARATION.md and payload/ members are identified by the final freeze. HTTP read-back matched the pinned bytes, SHA-256, MD5 and Git blob.",
     "sha256": "fa42df4c859e744f199691a5f071f52a8e7102267dddeded95b68462843d2d20",
-    "source_url": "https://github.com/WEXP-dev/wexp-interop/blob/publication/wimse-aar-02-interop-001/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip"
+    "source_url": "https://raw.githubusercontent.com/WEXP-dev/wexp-interop/98556ac24d270464cec89135cb5388f0e39c93c2/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip"
   },
   "citation_path": "CITATION.cff",
   "experiment_id": "wimse-aar-02-interop-001",
@@ -43,10 +43,17 @@
     "role": "frozen-run-package"
   },
   "publication": {
-    "carriers": [],
+    "carriers": [
+      {
+        "identifier": "98556ac24d270464cec89135cb5388f0e39c93c2",
+        "kind": "github-commit",
+        "url": "https://github.com/WEXP-dev/wexp-interop/commit/98556ac24d270464cec89135cb5388f0e39c93c2"
+      }
+    ],
+    "date": "2026-10-11",
     "version": "pkg-001"
   },
-  "record_revision": 1,
+  "record_revision": 2,
   "result": {
     "details": "130/130 declared case outcomes matched (39 valid, 88 malformed, 3 not-run); 16/16 additional-output mutations were rejected; two controlled worlds preserve record-only support limits. A2/A10 evaluation statuses remain distinct, EV3 is malformed under revision 02, and declared oversight is not upgraded to human authority. The full strict semantic JSON and exact serialized bytes match the known private reference; neither route detects a trusted producer's false world fact from the signed record alone.",
     "label": "No local decision difference from the strong native baseline"
@@ -89,13 +96,14 @@
     "execution": "local-run-completed",
     "independent_reproduction": "not-performed",
     "integrity": "verified",
-    "publication": "prepared"
+    "publication": "published"
   },
   "summary": "Bounded local replay from a public pre-run commitment: 130 expected case outcomes, 16 output refusals and two controlled worlds; WEXP and the strong native baseline made the same local decisions.",
   "title": "WEXP × WIMSE AAR-02 INTEROP-001",
   "verification": {
     "evidence": [
       "evidence/FINAL-FREEZE.json",
+      "evidence/GITHUB-ARCHIVE-READBACK-001.json",
       "payload/pre-run/FREEZE.json",
       "payload/run-evidence/EXPORT.json",
       "payload/run-evidence/public-run-001/EXECUTION-START.json",
