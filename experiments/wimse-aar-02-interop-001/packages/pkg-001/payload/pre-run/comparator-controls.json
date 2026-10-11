@@ -1,0 +1,116 @@
+{
+  "format": "wexp-aar-comparator-toy-controls/0.1.0",
+  "observed_at_utc": "2026-10-11T02:41:05.573790+00:00",
+  "status": "PASS",
+  "controls": [
+    {
+      "id": "equal-bytes",
+      "input_utf8": "{\"x\":false,\"nested\":{\"values\":[1,\"1\",null]}}\n",
+      "input_sha256": "56d54892f883e83ef97cce3a8ef4d1013113fc08daff92b680d0fd170d6be34e",
+      "expected": "accepted",
+      "observed": "accepted",
+      "error": null,
+      "passed": true
+    },
+    {
+      "id": "false-versus-zero",
+      "input_utf8": "{\"x\":0,\"nested\":{\"values\":[1,\"1\",null]}}\n",
+      "input_sha256": "af838f0fc30bb44fe47eb82765f3253a2f9be63f83f564fb63dc881a5dde10e8",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "full semantic JSON differs, including JSON types",
+      "passed": true
+    },
+    {
+      "id": "integer-versus-float",
+      "input_utf8": "{\"x\":false,\"nested\":{\"values\":[1.0,\"1\",null]}}\n",
+      "input_sha256": "2ebdfd41b45588cf9ade8499853f15151739feddc6433c880f159d73a343b1b4",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "full semantic JSON differs, including JSON types",
+      "passed": true
+    },
+    {
+      "id": "duplicate-root-member",
+      "input_utf8": "{\"x\":false,\"x\":false}\n",
+      "input_sha256": "133a85b7af12128d714f694f518f725c8787914d1bfe1777d0fce9f3dc5458c2",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "duplicate JSON member: x",
+      "passed": true
+    },
+    {
+      "id": "duplicate-nested-member",
+      "input_utf8": "{\"nested\":{\"x\":1,\"x\":1}}\n",
+      "input_sha256": "cb29a97d399b266d162f7611a605f777c773d355f03ef0adb5152472e1a0a853",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "duplicate JSON member: x",
+      "passed": true
+    },
+    {
+      "id": "nan",
+      "input_utf8": "{\"x\":NaN}\n",
+      "input_sha256": "304474eea3b34071a927952d6e595c7989d205be9f0b768d97b34bdbd551997d",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "non-finite JSON number: NaN",
+      "passed": true
+    },
+    {
+      "id": "infinity",
+      "input_utf8": "{\"x\":Infinity}\n",
+      "input_sha256": "d9346dd738492643fc39160d1435d89de24bfeb890aca27113bd5301b81b7a45",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "non-finite JSON number: Infinity",
+      "passed": true
+    },
+    {
+      "id": "finite-spelling-overflow",
+      "input_utf8": "{\"x\":1e400}\n",
+      "input_sha256": "4f8864b001a245cab745d5a6e8a9162d6d4048e84ca6fe0e009e013e493c7824",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "non-finite JSON number after parsing: 1e400",
+      "passed": true
+    },
+    {
+      "id": "extra-member",
+      "input_utf8": "{\"extra\":1,\"x\":false,\"nested\":{\"values\":[1,\"1\",null]}}\n",
+      "input_sha256": "a1f5677f3d13ea61c0fadbd04f8b475ac50ac6b142aec3684228bb96d7db40b1",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "full semantic JSON differs, including JSON types",
+      "passed": true
+    },
+    {
+      "id": "same-value-different-serialization",
+      "input_utf8": " {\"x\":false,\"nested\":{\"values\":[1,\"1\",null]}}\n",
+      "input_sha256": "b751c4bb01b088e1663d73286cc82383f3db8e309e7bb5c8ce193230eb41f995",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "semantic serialized bytes differ from the fixed reference",
+      "passed": true
+    },
+    {
+      "id": "wrong-reference-pin",
+      "input_utf8": "{\"x\":false,\"nested\":{\"values\":[1,\"1\",null]}}\n",
+      "input_sha256": "56d54892f883e83ef97cce3a8ef4d1013113fc08daff92b680d0fd170d6be34e",
+      "expected": "rejected",
+      "observed": "rejected",
+      "error": "reference SHA-256 differs from the fixed pin",
+      "passed": true
+    }
+  ],
+  "type_controls": {
+    "false_is_not_zero": true,
+    "true_is_not_one": true,
+    "nested_boolean_is_not_integer": true,
+    "same_document_is_equal": true
+  },
+  "source_sha256": "8c781235b929835a9d7bf20c31a1c3dc296aa4d3a3623c723a8fbcd81d568bfe",
+  "comparator_sha256": "e75bb2e0ef13bd611054c70fe34d94866a03bc170e20bcccaa92b7a372af267c",
+  "pilot_implementation_execution_performed": false,
+  "scope": "Synthetic JSON equality/refusal controls only; no AAR source, producer, recipient, oracle or generator was executed."
+}

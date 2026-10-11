@@ -1,0 +1,40 @@
+{
+  "added_test_cases": [],
+  "allowed_semantic_result_differences": [],
+  "comparison_rule": "Strict type-preserving full JSON equality and exact serialized semantic SHA-256; no ignored field within the semantic projection.",
+  "excluded_private_context": [
+    "repository inventory and unrelated research",
+    "private reviews",
+    "old run observations/history; the exact complete semantic reference is separately supplied"
+  ],
+  "expected_nonsemantic_changes": [
+    "New package identity, documentation, licenses and source/provenance inventory.",
+    "Public pre-run freeze and new execution observations.",
+    "Run timestamps, runtime/platform strings, process timing, output paths and declared worker count.",
+    "Execution-observation's packaged Python file inventory includes new helper files; it is not a dynamic import trace."
+  ],
+  "experiment_id": "wimse-aar-02-interop-001",
+  "failure_rule": "An unexpected difference fails. Preserve the failed result and the preregistration; introduce a new candidate/freeze before any changed rerun.",
+  "format": "wexp-aar-expected-delta/0.1.0",
+  "known_reference_not_blind": true,
+  "package_id": "pkg-001",
+  "reference_path": "reference/private-pilot-semantic-results.json",
+  "reference_sha256": "1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2",
+  "removed_test_cases": [],
+  "replaced_fixtures": [],
+  "runtime_or_profile_changes": [],
+  "semantic_projection_keys": [
+    "cases",
+    "distinctions",
+    "native_corpora",
+    "output_mutations",
+    "trusted_producer"
+  ],
+  "source_private_commit": "cb65793988c600e38f5e4b1fe073860278a9dc41",
+  "unchanged": [
+    "All source envelopes, native readers and published TXT",
+    "All 19 local fixtures and oracle",
+    "Profile and policies including historical status and fixed scenario date",
+    "Producer, HOF evaluator, recipient, native baseline and retained runner"
+  ]
+}

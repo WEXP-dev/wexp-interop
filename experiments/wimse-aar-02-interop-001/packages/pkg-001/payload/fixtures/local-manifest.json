@@ -1,0 +1,221 @@
+{
+  "cases": [
+    {
+      "expected_native_verdict": "valid",
+      "id": "L01-fail-open-permit",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Not-evaluated is representable even for permit.",
+      "source": "fixtures/local/L01-fail-open-permit.dsse.json",
+      "source_locus": "AAR-02 §5.4 and §6.5",
+      "source_sha256": "686967cea06242404dd24e4891f26d4c227e6c8bfaf6a368dc8515714972e68e"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L02-fail-open-conditional",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "The same rule covers permit-with-conditions.",
+      "source": "fixtures/local/L02-fail-open-conditional.dsse.json",
+      "source_locus": "AAR-02 §5.4",
+      "source_sha256": "e4b9c5d91afb10b7450123dadc49a16e2ef0345684f8bc63f10ee52fcf4378dd"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L03-outage-deny-effect",
+      "kind": "local-extension",
+      "parent_draft_id": "A3",
+      "policy": "policies/local-aar02.json",
+      "rationale": "A leak during an outage remains disagreement, not malformed.",
+      "source": "fixtures/local/L03-outage-deny-effect.dsse.json",
+      "source_locus": "AAR-02 §5.4",
+      "source_sha256": "b8e1d6bab6254699406b7d2c3576140c0aacc1f9e6c5e1e5c242d20d1ea3d2a9"
+    },
+    {
+      "expected_native_verdict": "malformed",
+      "id": "L04-empty-unavailable",
+      "kind": "local-extension",
+      "parent_draft_id": "A2",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Closed status and conditional nonempty unique array; no defaults.",
+      "source": "fixtures/local/L04-empty-unavailable.dsse.json",
+      "source_locus": "AAR-02 §§4, 5.4; EV1–EV4",
+      "source_sha256": "1d08b2f5bc1ba020a12244a68cd9645b91e2b91fa15e77abed0c4d6e95e8a44a"
+    },
+    {
+      "expected_native_verdict": "malformed",
+      "id": "L05-duplicate-unavailable",
+      "kind": "local-extension",
+      "parent_draft_id": "A2",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Closed status and conditional nonempty unique array; no defaults.",
+      "source": "fixtures/local/L05-duplicate-unavailable.dsse.json",
+      "source_locus": "AAR-02 §§4, 5.4; EV1–EV4",
+      "source_sha256": "327c3aa18788aaa3131e133a9e2a688ebc2b7fe70aa07446c2b5099e38d5bf63"
+    },
+    {
+      "expected_native_verdict": "malformed",
+      "id": "L06-scalar-unavailable",
+      "kind": "local-extension",
+      "parent_draft_id": "A2",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Closed status and conditional nonempty unique array; no defaults.",
+      "source": "fixtures/local/L06-scalar-unavailable.dsse.json",
+      "source_locus": "AAR-02 §§4, 5.4; EV1–EV4",
+      "source_sha256": "f4e79e008fc7944d8ed90847f09434646a0c1ee373c4d022a1328fcc68371994"
+    },
+    {
+      "expected_native_verdict": "malformed",
+      "id": "L07-null-unavailable",
+      "kind": "local-extension",
+      "parent_draft_id": "A2",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Closed status and conditional nonempty unique array; no defaults.",
+      "source": "fixtures/local/L07-null-unavailable.dsse.json",
+      "source_locus": "AAR-02 §§4, 5.4; EV1–EV4",
+      "source_sha256": "e43f598610cf59715f3262f4e69df9bfafdae4bcb3a834ec991c3340f7fd09c2"
+    },
+    {
+      "expected_native_verdict": "malformed",
+      "id": "L08-evaluated-null-unavailable",
+      "kind": "local-extension",
+      "parent_draft_id": "A2",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Closed status and conditional nonempty unique array; no defaults.",
+      "source": "fixtures/local/L08-evaluated-null-unavailable.dsse.json",
+      "source_locus": "AAR-02 §§4, 5.4; EV1–EV4",
+      "source_sha256": "7f6822caa47b53032f15004aa1d369bca4428e0e582ed14c9cbb11bf41d8f174"
+    },
+    {
+      "expected_native_verdict": "malformed",
+      "id": "L09-evaluated-empty-unavailable",
+      "kind": "local-extension",
+      "parent_draft_id": "A2",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Closed status and conditional nonempty unique array; no defaults.",
+      "source": "fixtures/local/L09-evaluated-empty-unavailable.dsse.json",
+      "source_locus": "AAR-02 §§4, 5.4; EV1–EV4",
+      "source_sha256": "b6ace033e7fe2f5b5c6ae10a5d5bd0337ec5fe1617e53c4f7f443d0bd1723059"
+    },
+    {
+      "expected_native_verdict": "malformed",
+      "id": "L10-missing-evaluation-status",
+      "kind": "local-extension",
+      "parent_draft_id": "A2",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Closed status and conditional nonempty unique array; no defaults.",
+      "source": "fixtures/local/L10-missing-evaluation-status.dsse.json",
+      "source_locus": "AAR-02 §§4, 5.4; EV1–EV4",
+      "source_sha256": "7dbc52f616f1eeac37622d8d36d87d027307a08fe5d02bec299f84b756427d87"
+    },
+    {
+      "expected_native_verdict": "malformed",
+      "id": "L11-unknown-evaluation-status",
+      "kind": "local-extension",
+      "parent_draft_id": "A2",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Closed status and conditional nonempty unique array; no defaults.",
+      "source": "fixtures/local/L11-unknown-evaluation-status.dsse.json",
+      "source_locus": "AAR-02 §§4, 5.4; EV1–EV4",
+      "source_sha256": "681599d196eabb0ded06c5f4549ef92df57ce4ebbd7211cf0c2573cce1c431bc"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L12-oversight-observation",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Every defined act is representable without a digest; it remains producer asserted.",
+      "source": "fixtures/local/L12-oversight-observation.dsse.json",
+      "source_locus": "AAR-02 §5.5",
+      "source_sha256": "7dd751d5eac8bf588e04e6e8977677cc5a009e8d65d9902b468eaf1f6c6c32a3"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L13-oversight-check",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Every defined act is representable without a digest; it remains producer asserted.",
+      "source": "fixtures/local/L13-oversight-check.dsse.json",
+      "source_locus": "AAR-02 §5.5",
+      "source_sha256": "08ac405aed8a769f904e8d6a0191f9943a8c05410436e1614190a188dad37d34"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L14-oversight-decision",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Every defined act is representable without a digest; it remains producer asserted.",
+      "source": "fixtures/local/L14-oversight-decision.dsse.json",
+      "source_locus": "AAR-02 §5.5",
+      "source_sha256": "0892eaf12cda07eb50d411991d23420016b06048059cb4960d80fab560d9cabf"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L15-oversight-release",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Every defined act is representable without a digest; it remains producer asserted.",
+      "source": "fixtures/local/L15-oversight-release.dsse.json",
+      "source_locus": "AAR-02 §5.5",
+      "source_sha256": "15e3bc4a06d36e1cf94b3718914b4541510c8c6d5e4b198f7c90b7a8aece75ab"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L16-oversight-unresolved-digest",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "The reader does not resolve a well-shaped recordDigest.",
+      "source": "fixtures/local/L16-oversight-unresolved-digest.dsse.json",
+      "source_locus": "AAR-02 §5.5",
+      "source_sha256": "a9c5cfc3e7b3eb5bab2f8120377e28b1ce1c786cdb0d118fcb35f2aaf6ac615d"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L17-oversight-absent",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Absence supplies no evidence that nobody acted.",
+      "source": "fixtures/local/L17-oversight-absent.dsse.json",
+      "source_locus": "AAR-02 §4",
+      "source_sha256": "d3752250ce76527c3a0442201b4ca5d6861dcaf84124e57bfe27c294f5cf4b05"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L18-oversight-evidence-partition",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Preserve declared decision evidence class without making oversight independently verified.",
+      "source": "fixtures/local/L18-oversight-evidence-partition.dsse.json",
+      "source_locus": "AAR-02 §§5.4–5.5",
+      "source_sha256": "54073800c5eee114ac2a9be849edd8b6209363d8da454aae317dd2353b5cf6c6"
+    },
+    {
+      "expected_native_verdict": "valid",
+      "id": "L19-trusted-wrong-effect",
+      "kind": "local-extension",
+      "parent_draft_id": "A1",
+      "policy": "policies/local-aar02.json",
+      "rationale": "Coordinated false effect and all dependent bindings signed by the explicitly trusted TEST signer. Structural validity cannot establish the effect.",
+      "source": "fixtures/local/L19-trusted-wrong-effect.dsse.json",
+      "source_locus": "AAR-02 §§6.1–6.3; WEXP Core-01 §14",
+      "source_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+    }
+  ],
+  "expectation_authority": "The cited published requirements; expectations were not derived from verifier outcomes.",
+  "format": "aar-pilot-local-fixtures/0.1.0",
+  "test_key": {
+    "keyid": "807b6b79b9d51b3a45e9302ee4fedefc",
+    "note": "DELIBERATELY PUBLIC TEST KEY; never deploy.",
+    "public_key": "9d1c3abaed712acd5483da2052e4b69bb7b491f08eb249e9ec9e0d97dc91c126",
+    "seed_hex": "5db2b62f3001e1bfc80e7ace092b693b09ce7177c6264901726169492f95a5da"
+  }
+}
