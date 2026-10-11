@@ -1,0 +1,29 @@
+{
+  "source": "github",
+  "file": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+  "requested_url": "https://github.com/WEXP-dev/wexp-interop/releases/download/wexp-emilia-interop-001/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+  "started_at_utc": "2026-10-11T00:15:48.975761+00:00",
+  "expected_sha256_source": "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+  "expected_sha256": "f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f",
+  "expected_size": 200140,
+  "zenodo_record_checksum": "md5:b1bc67411d64ff80f5f1a19823a68fe0",
+  "zenodo_record_file_id": "fcc3d80b-8304-4533-ad8b-7256b02cf474",
+  "http_status": 200,
+  "effective_url_without_query": "https://release-assets.githubusercontent.com/github-production-release-asset/1342067237/9f83c258-ed49-48e0-97ee-c7b2b500f295",
+  "redirect_query_omitted": true,
+  "headers": {
+    "Content-Length": "200140",
+    "Last-Modified": "Sat, 22 Aug 2026 10:26:53 GMT",
+    "ETag": "\"0x8DF0037E2B05102\"",
+    "Date": "Sun, 11 Oct 2026 00:15:55 GMT",
+    "Content-Disposition": "attachment; filename=WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+    "Content-Type": "application/octet-stream"
+  },
+  "bytes": 200140,
+  "sha256": "f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f",
+  "md5": "b1bc67411d64ff80f5f1a19823a68fe0",
+  "expected_sha256_match": true,
+  "expected_size_match": true,
+  "zenodo_checksum_match": true,
+  "finished_at_utc": "2026-10-11T00:15:55.344962+00:00"
+}

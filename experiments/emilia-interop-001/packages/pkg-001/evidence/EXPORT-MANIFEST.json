@@ -1,0 +1,629 @@
+{
+  "schema": "wexp-public-evidence-export-001",
+  "scope": "Explicit allowlist of public-source acquisition and byte-verification material; original report bytes retained. Local preparation paths in retained logs are historical environment labels, not external dependencies.",
+  "excluded_classes": [
+    "mail and mail-search records",
+    "account settings and screenshots",
+    "private repository snapshots",
+    "temporary credential-bearing URLs",
+    "local Git candidate bundles"
+  ],
+  "entries": [
+    {
+      "source_relative_path": "archive-inspection-001.json",
+      "path": "evidence/historical-preparation/archive-inspection-001.json",
+      "bytes": 108673,
+      "sha256": "ef049b5fbfb81bb3a898702da9bc0661bdef635c394af0c8e116b153511bccfe",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "asset-download-comparison.json",
+      "path": "evidence/historical-preparation/asset-download-comparison.json",
+      "bytes": 6760,
+      "sha256": "bb9fc41414324f3c3fa9c13da678627e8c0b46bd783c0483e00dbc775a208e65",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "expected-sha-source-PUBLICATION-METADATA.yaml",
+      "path": "evidence/historical-preparation/expected-sha-source-PUBLICATION-METADATA.yaml",
+      "bytes": 3691,
+      "sha256": "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "expected-sha-source-commit.json",
+      "path": "evidence/historical-preparation/expected-sha-source-commit.json",
+      "bytes": 7530,
+      "sha256": "a16d1af745db0d7c279b492e47948319f8c5066dc2c69fd2c1a7191498730b65",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "expected-sha-source-identity.json",
+      "path": "evidence/historical-preparation/expected-sha-source-identity.json",
+      "bytes": 394,
+      "sha256": "c43630350837c6a0b42e6ef748e726bbf01637e4fb424122a0517ffc8930f3a2",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "extract_and_verify.py",
+      "path": "evidence/historical-preparation/extract_and_verify.py",
+      "bytes": 6747,
+      "sha256": "a4fb8b8dbf91b8b58d13517d80c670e1d7de030eafe48d75b89d6b12d401bf0d",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "extraction-verification-001.json",
+      "path": "evidence/historical-preparation/extraction-verification-001.json",
+      "bytes": 28749,
+      "sha256": "58ff7d91b9988a74be55cca822642cfc16dd44d9527e52659d33d27b3435335b",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-binding-check.json",
+      "path": "evidence/historical-preparation/freeze-binding-check.json",
+      "bytes": 2476,
+      "sha256": "831295b393a9f14c244d358ee23e77e26d29a42c76e0c53225d0e836c8323aa8",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-binding-replay-002.json",
+      "path": "evidence/historical-preparation/freeze-binding-replay-002.json",
+      "bytes": 4901,
+      "sha256": "6a1cb365f8a9782ac79ee228e90773db6b23884ff60349c474f3faae34b8b758",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-verifier-commands-20261011.json",
+      "path": "evidence/historical-preparation/freeze-verifier-commands-20261011.json",
+      "bytes": 4152,
+      "sha256": "d55199b9cbbb201e87a3d6ef7794d03a296741b018a6071ff9284ac672c2853a",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "github-release-374898832.json",
+      "path": "evidence/historical-preparation/github-release-374898832.json",
+      "bytes": 7589,
+      "sha256": "02137ca310f86598b69e69a5490b4532e6f4fd400362dcba4eb6cb3f81ac1744",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "github-tag-eb4011bcfe65e11545ddb36ebf906637002aca4f.json",
+      "path": "evidence/historical-preparation/github-tag-eb4011bcfe65e11545ddb36ebf906637002aca4f.json",
+      "bytes": 1546,
+      "sha256": "dfcf9d009d16c7aa4e5c8060ff5f301c1be9d919d2b34a55d58db9c2e25c110f",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "inspect_archive.py",
+      "path": "evidence/historical-preparation/inspect_archive.py",
+      "bytes": 11874,
+      "sha256": "857f2a7fba27eac89e79732715a3cfc6bf5af8ab3e0d83dc316d3a62227732ac",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "verify_freeze_bindings.py",
+      "path": "evidence/historical-preparation/verify_freeze_bindings.py",
+      "bytes": 15697,
+      "sha256": "cd67a6b3ede869ec192309c0f0caec3e7b9023476fb63a764bce9c2c64618441",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "requirements-freeze-verifier.txt",
+      "path": "evidence/historical-preparation/requirements-freeze-verifier.txt",
+      "bytes": 14,
+      "sha256": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "run_freeze_negative_checks.py",
+      "path": "evidence/historical-preparation/run_freeze_negative_checks.py",
+      "bytes": 10094,
+      "sha256": "c7af1102d45266d7c1e6a6304761e8244c53088066a8f6805c696eff17c02ec0",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "zenodo-record-22056151.json",
+      "path": "evidence/historical-preparation/zenodo-record-22056151.json",
+      "bytes": 5298,
+      "sha256": "5822a9bf63b50d06ae62389dfc629d9ebe15829b3abfaf106db3f0544c72a408",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "zenodo-record-request.json",
+      "path": "evidence/historical-preparation/zenodo-record-request.json",
+      "bytes": 1586,
+      "sha256": "87d7b1b1138e334698ac5603a05343850110a3afb418c44f9fdb1a15fa37f5c8",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip.request.json",
+      "path": "evidence/historical-preparation/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip.request.json",
+      "bytes": 1405,
+      "sha256": "000e8fde3a7e1c652433a9877c9b98d7bed06b0e8486c88459ed636570fb6dba",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml.request.json",
+      "path": "evidence/historical-preparation/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml.request.json",
+      "bytes": 1447,
+      "sha256": "37c3f20f55b024ff1fe7b2f1451048ffe6b67d988a784a88017c91edd0f84426",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "github/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip.request.json",
+      "path": "evidence/historical-preparation/github/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip.request.json",
+      "bytes": 1545,
+      "sha256": "863e771fc904bd1345625dcea2ffd7c854799b20db5a097df2f8e374c0e6ed63",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "github/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml.request.json",
+      "path": "evidence/historical-preparation/github/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml.request.json",
+      "bytes": 1575,
+      "sha256": "7cf30ae2973159c73cd534cc01ea576c2877e97d89496a101db82ceab0698b28",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N01-zip-extra-byte/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N01-zip-extra-byte/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "bytes": 200141,
+      "sha256": "4ca75eecb4ff62bef10e8f1ef33a7228938ad725bdf621576ed3cd67dd005557",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N01-zip-extra-byte/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N01-zip-extra-byte/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N01-zip-extra-byte/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N01-zip-extra-byte/stdout.txt",
+      "bytes": 421,
+      "sha256": "a4f07504ca44818fc1447802df41bca26433657f979de42780cff57c893f3d36",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N01-zip-extra-byte/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N01-zip-extra-byte/verification.json",
+      "bytes": 5641,
+      "sha256": "725e27ce45dd30c50aa09f58221168de83f858c9c73942a482eb83432e5a3cd4",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N02-root-manifest-digest-change/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N02-root-manifest-digest-change/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "bytes": 200220,
+      "sha256": "134155fb8ae0cbcbcffcabe1e964d959835eebb7263152b6e64ae155451a8f78",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N02-root-manifest-digest-change/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N02-root-manifest-digest-change/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N02-root-manifest-digest-change/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N02-root-manifest-digest-change/stdout.txt",
+      "bytes": 475,
+      "sha256": "1de43905dad94d94d097bf9bfe218b5b1938c19792ae49dd9486defc12cadbb9",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N02-root-manifest-digest-change/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N02-root-manifest-digest-change/verification.json",
+      "bytes": 5726,
+      "sha256": "380f07570a3b434a8c557579f14ba3ad13c4096d2ec272df532d15e0ff08607d",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N03-false-name-size-count/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N03-false-name-size-count/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2242,
+      "sha256": "3a22bb289b0a1f4a810e34448b2638313471b89b4d337666319ac78eb2f95491",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N03-false-name-size-count/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N03-false-name-size-count/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N03-false-name-size-count/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N03-false-name-size-count/stdout.txt",
+      "bytes": 515,
+      "sha256": "d4cec2b2e3614fde46b7b2a5cca10337cebc6027d7d0399163fccc7d72fc3f8e",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N03-false-name-size-count/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N03-false-name-size-count/verification.json",
+      "bytes": 5755,
+      "sha256": "95f5fbbcd560cfede063c3257ae2591f06d44fc8120155ba45daddb8515f028f",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N04-false-correction/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N04-false-correction/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2260,
+      "sha256": "b5838878e0b781b05df08301f7565c5079a42051962197098c58b043d95cef99",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N04-false-correction/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N04-false-correction/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N04-false-correction/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N04-false-correction/stdout.txt",
+      "bytes": 394,
+      "sha256": "2e38f1fdf7d8106596963999cdfceabc33055977940393e4eea0296b78547a45",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N04-false-correction/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N04-false-correction/verification.json",
+      "bytes": 5118,
+      "sha256": "769d5758c83ac61b0f1f871d3ce78b978922b3894fc995ed42fcae783cf1e981",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N05-malformed-yaml/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N05-malformed-yaml/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2273,
+      "sha256": "7d08ac91c6ad74c3319da542b5cf39ea95bc281b22d6a45c4b667408bc97495a",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N05-malformed-yaml/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N05-malformed-yaml/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N05-malformed-yaml/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N05-malformed-yaml/stdout.txt",
+      "bytes": 475,
+      "sha256": "08805d11ca6ca8e80e926b1d61fad70e4490d82e6bcb1c16bd9c647d2a562039",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N05-malformed-yaml/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N05-malformed-yaml/verification.json",
+      "bytes": 5195,
+      "sha256": "8d43afd6d76595c689349ad76f46effb5fc388242aa9d23511d29631060ca767",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N06-duplicate-yaml-key/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N06-duplicate-yaml-key/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2341,
+      "sha256": "bd945b6bf5970746389ce04de59b58fc18c9319fa6cfd11b5a50b45c4bbe7a37",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N06-duplicate-yaml-key/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N06-duplicate-yaml-key/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N06-duplicate-yaml-key/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N06-duplicate-yaml-key/stdout.txt",
+      "bytes": 386,
+      "sha256": "99e8800e79c343fc69b8b4daf12b1962f732e588e907212bc5588c21ccdbaab1",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N06-duplicate-yaml-key/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N06-duplicate-yaml-key/verification.json",
+      "bytes": 5114,
+      "sha256": "9c1100f609ddf4076a7770c4ea77adc1a78b993b3245f03e67fe21bc39883fc7",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N07-metadata-pin-change/expected-sha-source-PUBLICATION-METADATA.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N07-metadata-pin-change/expected-sha-source-PUBLICATION-METADATA.yaml",
+      "bytes": 3692,
+      "sha256": "da94f3900b3d5bf957513c4e79d395f9d508a9cc3d013a057454106ade5f4939",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N07-metadata-pin-change/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N07-metadata-pin-change/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N07-metadata-pin-change/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N07-metadata-pin-change/stdout.txt",
+      "bytes": 370,
+      "sha256": "7188f94a97d0e7c1dbc2865367b643575c4811e56d96da4bfd79b02c167a0e9b",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N07-metadata-pin-change/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N07-metadata-pin-change/verification.json",
+      "bytes": 5114,
+      "sha256": "3b391450f2c36ceee3f91d2a0d9e476464092dc16a865937ea55642f65789411",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N08-nested-manifest-selection/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N08-nested-manifest-selection/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N08-nested-manifest-selection/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N08-nested-manifest-selection/stdout.txt",
+      "bytes": 429,
+      "sha256": "7618f0691f91251087f80bb44321a7dea7c3405ba3cd5814190b306c9a9a5dea",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/N08-nested-manifest-selection/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/N08-nested-manifest-selection/verification.json",
+      "bytes": 5107,
+      "sha256": "e186d36ae3e34e412e3be796279bb0b896fd19b09cff5264462bc8feb7491505",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/results.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/results.json",
+      "bytes": 25271,
+      "sha256": "c29810cc90c2c84c9c65bcba5b4bd0da70319103852a72b367990d579ee123bc",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-001/run_freeze_negative_checks.py",
+      "path": "evidence/historical-preparation/freeze-negative-controls-001/run_freeze_negative_checks.py",
+      "bytes": 9857,
+      "sha256": "3aff1fcf71553b1fcafd145dc1730c80796cd4b69d467d1f34118c4083518d19",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N01-zip-extra-byte/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N01-zip-extra-byte/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "bytes": 200141,
+      "sha256": "4ca75eecb4ff62bef10e8f1ef33a7228938ad725bdf621576ed3cd67dd005557",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N01-zip-extra-byte/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N01-zip-extra-byte/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N01-zip-extra-byte/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N01-zip-extra-byte/stdout.txt",
+      "bytes": 421,
+      "sha256": "15e4f7058c105afc3da3e9b438dadab9753395317555bf201dc81c7f189538a7",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N01-zip-extra-byte/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N01-zip-extra-byte/verification.json",
+      "bytes": 5641,
+      "sha256": "04d983aeea03f997a36bdbbcfad0f087ae0822cea89a11113639ffecf93b4b8c",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N02-root-manifest-digest-change/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N02-root-manifest-digest-change/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "bytes": 200220,
+      "sha256": "134155fb8ae0cbcbcffcabe1e964d959835eebb7263152b6e64ae155451a8f78",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N02-root-manifest-digest-change/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N02-root-manifest-digest-change/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N02-root-manifest-digest-change/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N02-root-manifest-digest-change/stdout.txt",
+      "bytes": 475,
+      "sha256": "5451832d3f912c86e4ba4ba0353cf98f94a3069cff00399687c2489ab9c11772",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N02-root-manifest-digest-change/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N02-root-manifest-digest-change/verification.json",
+      "bytes": 5726,
+      "sha256": "963fe65e110d88f86d334269f986ad6d36d0fb685cf0d7654992bc32a68f8d9d",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N03-false-name-size-count/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N03-false-name-size-count/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2242,
+      "sha256": "3a22bb289b0a1f4a810e34448b2638313471b89b4d337666319ac78eb2f95491",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N03-false-name-size-count/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N03-false-name-size-count/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N03-false-name-size-count/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N03-false-name-size-count/stdout.txt",
+      "bytes": 515,
+      "sha256": "a31574114399a10fe8e110d5311eba7f446c2a7d24b9570b4b763ebdfb88c022",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N03-false-name-size-count/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N03-false-name-size-count/verification.json",
+      "bytes": 5755,
+      "sha256": "4d7ebbf59d1b2e85346cddb8d77b69e3262e58f9e8201e00bd606455e8b9e6ef",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N04-false-correction/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N04-false-correction/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2260,
+      "sha256": "6b022e76e13f2a1118316db51db9f1ebc256c38bdc6c1879c759cc8373ac92b4",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N04-false-correction/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N04-false-correction/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N04-false-correction/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N04-false-correction/stdout.txt",
+      "bytes": 388,
+      "sha256": "c111252f072213480192998e19a461d8534dc4ded6e07a0084b261b419812c86",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N04-false-correction/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N04-false-correction/verification.json",
+      "bytes": 5603,
+      "sha256": "6546ea785a3fc4cab2d48c6c156783b0a87ba6fcb90657ad24c9ea40f10a5eef",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N05-malformed-yaml/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N05-malformed-yaml/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2273,
+      "sha256": "7d08ac91c6ad74c3319da542b5cf39ea95bc281b22d6a45c4b667408bc97495a",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N05-malformed-yaml/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N05-malformed-yaml/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N05-malformed-yaml/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N05-malformed-yaml/stdout.txt",
+      "bytes": 475,
+      "sha256": "586fa810bcdfe04d8c654ea77078988a1493740e5fdb077c7b123214483a7ca0",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N05-malformed-yaml/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N05-malformed-yaml/verification.json",
+      "bytes": 5195,
+      "sha256": "6701155d117de710a6b9ba9c7e760c223b9d42d42efe8f378ac47b128848d18a",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N06-duplicate-yaml-key/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N06-duplicate-yaml-key/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2341,
+      "sha256": "bd945b6bf5970746389ce04de59b58fc18c9319fa6cfd11b5a50b45c4bbe7a37",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N06-duplicate-yaml-key/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N06-duplicate-yaml-key/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N06-duplicate-yaml-key/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N06-duplicate-yaml-key/stdout.txt",
+      "bytes": 386,
+      "sha256": "796b3579347e8684c2dc3c73e0988043ed15247e38348b88cc482e3d1744af5b",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N06-duplicate-yaml-key/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N06-duplicate-yaml-key/verification.json",
+      "bytes": 5114,
+      "sha256": "5e344268d019a502ff810cfa8db8a7b05658a173678dcaafd3faa88f3103ed32",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N07-metadata-pin-change/expected-sha-source-PUBLICATION-METADATA.yaml",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N07-metadata-pin-change/expected-sha-source-PUBLICATION-METADATA.yaml",
+      "bytes": 3692,
+      "sha256": "da94f3900b3d5bf957513c4e79d395f9d508a9cc3d013a057454106ade5f4939",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N07-metadata-pin-change/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N07-metadata-pin-change/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N07-metadata-pin-change/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N07-metadata-pin-change/stdout.txt",
+      "bytes": 370,
+      "sha256": "831b8e5f699211920de03effd14e2d44f8796acdf7593d0cfee06dee0b5b7f92",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N07-metadata-pin-change/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N07-metadata-pin-change/verification.json",
+      "bytes": 5114,
+      "sha256": "d66215de8773d20fa7d7f3abe64d351efc01e1fb7119dee4e197f047c85c4ab3",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N08-nested-manifest-selection/stderr.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N08-nested-manifest-selection/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N08-nested-manifest-selection/stdout.txt",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N08-nested-manifest-selection/stdout.txt",
+      "bytes": 429,
+      "sha256": "35eff207a4276f825a20e38977e81245cb7bb8ccd6dc587d6672358e34553559",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/N08-nested-manifest-selection/verification.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/N08-nested-manifest-selection/verification.json",
+      "bytes": 5107,
+      "sha256": "accd90b4fc50e865d73ded9296543f10a51f0e16b760f97941b1030f15b4486c",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "freeze-negative-controls-002/results.json",
+      "path": "evidence/historical-preparation/freeze-negative-controls-002/results.json",
+      "bytes": 25263,
+      "sha256": "9b619c7885953d58adabf17d73ba336060b4135ff8577277174078586cd7a98d",
+      "transformation": "none"
+    },
+    {
+      "source_relative_path": "clean-clone-003/verify_clean_clone.py",
+      "path": "evidence/historical-preparation/verify_clean_clone-003.py",
+      "bytes": 17969,
+      "sha256": "377187e715aa1e2ec44755fcc76f6aa0981fd067dc3c7038ddad89ca1225840e",
+      "transformation": "none"
+    }
+  ]
+}

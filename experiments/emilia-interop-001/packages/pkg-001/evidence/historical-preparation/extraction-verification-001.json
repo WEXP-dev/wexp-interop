@@ -1,0 +1,799 @@
+{
+  "schema": "emilia-extraction-verification-001",
+  "started_at_utc": "2026-10-11T00:18:10.801018+00:00",
+  "finished_at_utc": "2026-10-11T00:18:10.867125+00:00",
+  "archive_sha256": "f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f",
+  "inspection_sha256": "ef049b5fbfb81bb3a898702da9bc0661bdef635c394af0c8e116b153511bccfe",
+  "audit_script_sha256": "a4fb8b8dbf91b8b58d13517d80c670e1d7de030eafe48d75b89d6b12d401bf0d",
+  "extraction_root": "/workspace/scratch/09ba21975d30/emilia-pre-migration-audit/extracted-001",
+  "payload_root": "/workspace/scratch/09ba21975d30/emilia-pre-migration-audit/extracted-001/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE",
+  "member_checks": [
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/EP-WEXP-MAPPING-REQUIREMENTS-001.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0600",
+      "observed_permissions": "0600",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/records/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/records/WEXP-EMILIA-EP-COMPARISON-001.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/records/PAIR-FREEZE-RECORD.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/records/TERMINAL-BRANCH-SELECTION-001.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/records/COMMIT-REVEAL-RECORD.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/records/EMILIA-EXPECTATION-EXECUTION-VERIFICATION-001.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/publication/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/publication/FINAL-REPORT.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/publication/LIMITATIONS.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/publication/PUBLICATION-CLAIM.txt",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/LICENSE",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/CITATION.cff",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/PUBLICATION-METADATA.yaml",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/emilia-reading.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/WEXP-EMILIA-INTEROP-001/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/WEXP-EMILIA-INTEROP-001/MANIFEST.sha256",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/WEXP-EMILIA-INTEROP-001/README.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/WEXP-EMILIA-INTEROP-001/wexp-reading.yaml",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/WEXP-EMILIA-INTEROP-001/fixtures.yaml",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/commitment/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/commitment/WEXP-EMILIA-INTEROP-001-SHAREABLE-v2/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/commitment/WEXP-EMILIA-INTEROP-001-SHAREABLE-v2/MANIFEST.sha256",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/commitment/WEXP-EMILIA-INTEROP-001-SHAREABLE-v2/WEXP-COMMITMENT.sha256",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/commitment/WEXP-EMILIA-INTEROP-001-SHAREABLE-v2/README.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/commitment/WEXP-EMILIA-INTEROP-001-SHAREABLE-v2/fixtures.yaml",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/commitment/WEXP-EMILIA-INTEROP-001-SHAREABLE-v2.zip",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/EMILIA-READING-PROVENANCE.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/WEXP-EMILIA-PAIR-FREEZE-001.zip",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/wexp-expectation.yaml",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/MANIFEST.sha256",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/wexp-expectation.yaml",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/MANIFEST.sha256",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/EXPERIMENT-PROPOSITION.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/WEXP-DERIVATION.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/README.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/fixtures/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/fixtures/WE-EP-P.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/fixtures/WE-EP-P-1.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/PAIR-MANIFEST.sha256",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001/PAIR-DELTA.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/EXPERIMENT-PROPOSITION.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-DERIVATION.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/README.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/fixtures/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/fixtures/WE-EP-P.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/fixtures/WE-EP-P-1.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/WEXP-EMILIA-PAIR-FREEZE-001.zip",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/PAIR-MANIFEST.sha256",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/pair-freeze/PAIR-DELTA.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/expectations/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/expectations/emilia/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/expectations/emilia/emilia-expectation.freeze.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/expectations/wexp/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/expectations/wexp/wexp-expectation.yaml",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/README.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/execute.py",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/verify_final.py",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/README.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/environment/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/environment/PREPARATION-ENVIRONMENT.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/environment/README.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/verify.py",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/exact_json.py",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/plan/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/plan/EXECUTION-CONTROL.schema.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/plan/EXECUTION-CONTROL.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/plan/EXPECTATION-INGEST.schema.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/plan/EXECUTION-ENVELOPE.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/normalized/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/normalized/summary.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/normalized/emilia/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/normalized/emilia/P-1.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/normalized/emilia/P.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/normalized/wexp/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/normalized/wexp/P-1.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/normalized/wexp/P.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/README.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/raw/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/raw/emilia/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/raw/emilia/emilia-execution-receipt.json",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/raw/wexp/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/execution/raw/wexp/NOT-CONSTRUCTIBLE.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/comparison/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/comparison/WEXP-EMILIA-PAIR-COMPARISON-001.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/claims/",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0755",
+      "observed_permissions": "0755",
+      "bytes_equal": null
+    },
+    {
+      "name": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/claims/CLAIM-LEDGER.md",
+      "type_equal": true,
+      "permissions_equal": true,
+      "expected_permissions": "0644",
+      "observed_permissions": "0644",
+      "bytes_equal": true
+    }
+  ],
+  "regular_file_bytes_verified": 68,
+  "all_member_types_and_unix_permissions_verified": true,
+  "zip_timestamps_or_extended_metadata_restored": false,
+  "verifier": {
+    "path": "/workspace/scratch/09ba21975d30/emilia-pre-migration-audit/extracted-001/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/verify_final.py",
+    "sha256": "f4237c5db7a5668abe9a8d452ee2ca9d939eb0ccd6220a0574320ab2773dcca3",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/workspace/scratch/09ba21975d30/emilia-pre-migration-audit/extracted-001/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/reproduction/verify_final.py",
+      "--manifest-sha256",
+      "4172c2d0d9f4cfaddaa4036a7d92e53d1ee6c2c290654daedaa5806e5281ad6a"
+    ],
+    "cwd": "/workspace/scratch/09ba21975d30/emilia-pre-migration-audit/extracted-001/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE",
+    "started_at_utc": "2026-10-11T00:18:10.819745+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "returncode": 0,
+    "stdout_utf8": "{\"emilia_expectation_reproduced\": {\"P\": \"PASS\", \"P-1\": \"PASS\"}, \"frozen_identities_verified\": 15, \"implementation_execution_performed\": false, \"pair_delta\": \"PASS\", \"payload_entries_verified\": 67, \"status\": \"PASS\", \"terminal_branch\": \"A \\u2014 EXPLICIT BRIDGE REQUIRED\"}\n",
+    "stderr_utf8": "",
+    "stdout_sha256": "6c6fcd17456b0dad308f26bbbcb80bc9be07b1d9a8adff8fa14fed5e85e3bf11",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "git_migration_performed": false,
+  "fresh_git_clone_checked": false,
+  "wexp_or_emilia_implementation_executed": false,
+  "limitation": "The original verifier checks archived evidence bytes and recorded relationships. It does not execute a WEXP or EMILIA implementation or establish new interoperability."
+}

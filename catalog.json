@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1.0",
+  "generated_from": "experiments/*/packages/*/record.json",
+  "packages": [
+    {
+      "experiment_id": "emilia-interop-001",
+      "package_id": "pkg-001",
+      "title": "WEXP × EMILIA INTEROP-001",
+      "summary": "Historical controlled-fixture experiment: the frozen WEXP surface required an explicit EP-to-WEXP bridge. The migration replays archived evidence without adding an implementation run.",
+      "status": {
+        "integrity": "verified",
+        "execution": "archived-evidence-replayed",
+        "independent_reproduction": "not-performed",
+        "comparison": "explicit-bridge-required",
+        "publication": "published"
+      },
+      "card": "experiments/emilia-interop-001/packages/pkg-001/README.md",
+      "record": "experiments/emilia-interop-001/packages/pkg-001/record.json",
+      "record_sha256": "704c00b95af88b30f9b443dcbe231a296c9766f34548e42db7ced67a53b92998",
+      "citation": "experiments/emilia-interop-001/packages/pkg-001/CITATION.cff",
+      "publication": {
+        "version": "001",
+        "date": "2026-08-22",
+        "carriers": [
+          {
+            "kind": "zenodo",
+            "url": "https://zenodo.org/records/22056151",
+            "identifier": "10.5281/zenodo.22056151"
+          },
+          {
+            "kind": "github-release",
+            "url": "https://github.com/WEXP-dev/wexp-interop/releases/tag/wexp-emilia-interop-001",
+            "identifier": "wexp-emilia-interop-001"
+          }
+        ],
+        "version_doi": "10.5281/zenodo.22056151",
+        "concept_doi": "10.5281/zenodo.22056150"
+      },
+      "result": {
+        "label": "Branch A — Explicit Bridge Required",
+        "details": "The historical record reproduced the EMILIA P/P-1 distinction and left WEXP underdetermined for both fixtures without an explicit EP-to-WEXP mapping. No semantic equivalence, conformance or full interoperability was established."
+      }
+    }
+  ]
+}

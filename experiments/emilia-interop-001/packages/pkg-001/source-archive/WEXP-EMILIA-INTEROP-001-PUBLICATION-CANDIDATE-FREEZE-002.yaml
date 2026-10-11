@@ -1,0 +1,59 @@
+schema_version: wexp-emilia-publication-candidate-freeze-2
+record_id: WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002
+artifact_id: WEXP-EMILIA-INTEROP-001
+candidate_archive: WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip
+
+supersedes:
+  path: WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE.yaml
+  bytes: 981
+  sha256: 9ce73eb304c1d4a6fc1e379e6b76352d20786acf37dded177f7b64f2c2be2126
+  content_note: >-
+    The prior YAML already contained the correct 64-character root-manifest
+    SHA-256 and payload count. This successor corrects the human
+    publication-record transcription and adds explicit correction provenance.
+
+reason: publication-record transcription correction only
+correction:
+  field: root_manifest_sha256
+  erroneous_transcription: 4172c2d0d9f4cfaddaa4036a7d92e53d1ee6c2c290654daedaa5806e5281ad6
+  corrected_root_manifest_sha256: 4172c2d0d9f4cfaddaa4036a7d92e53d1ee6c2c290654daedaa5806e5281ad6a
+
+archive_bytes: 200140
+archive_sha256: f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f
+root_manifest_filename: MANIFEST.sha256
+root_manifest_bytes: 7362
+root_manifest_sha256: 4172c2d0d9f4cfaddaa4036a7d92e53d1ee6c2c290654daedaa5806e5281ad6a
+payload_entries_verified: 67
+
+identity_derivation:
+  archive_bytes: filesystem stat of candidate_archive
+  archive_hash_method: SHA-256 over exact candidate_archive bytes
+  root_manifest_hash_method: >-
+    SHA-256 over MANIFEST.sha256 extracted from the exact candidate_archive
+  payload_entries_verified: >-
+    count of successfully verified non-empty root-manifest entries
+identity_constraints:
+  hash_value_pattern: '^[0-9a-f]{64}$'
+  payload_count_source: verified manifest inventory
+
+verification:
+  zip_integrity: PASS
+  root_manifest: PASS
+  payload_entries: 67/67 PASS
+  final_verifier: PASS
+  technical_package_semantic_diff: NONE
+
+provenance:
+  discovered_by: Iman Schrock
+  classification: publication metadata transcription error
+
+technical_package_changed: false
+technical_semantics_affected: false
+fixture_bytes_affected: false
+expectation_bytes_affected: false
+execution_evidence_affected: false
+comparison_affected: false
+terminal_branch_affected: false
+publication_candidate_zip_affected: false
+technical_rerun_required: false
+publication_performed: false

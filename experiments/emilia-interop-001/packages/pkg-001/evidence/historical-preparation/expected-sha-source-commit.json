@@ -1,0 +1,82 @@
+{
+  "sha": "4075939139d56b40e6e08788959de169559919af",
+  "node_id": "C_kwDOT_5SJdoAKDQwNzU5MzkxMzlkNTZiNDBlNmUwODc4ODk1OWRlMTY5NTU5OTE5YWY",
+  "commit": {
+    "author": {
+      "name": "Mikhail Sergeev",
+      "email": "Mikhail.Sergeev@PAIkernel.org",
+      "date": "2026-08-23T14:25:07Z"
+    },
+    "committer": {
+      "name": "Mikhail Sergeev",
+      "email": "Mikhail.Sergeev@PAIkernel.org",
+      "date": "2026-08-23T14:25:07Z"
+    },
+    "message": "docs: reconcile the public record with the published state\n\nThe README and PUBLICATION-METADATA.yaml still described this record as\nPRIVATE/LOCAL — NOT PUBLISHED, with the tag NOT CREATED and no release\nperformed. The repository is public, the signed tag exists, the release was\npublished on 2026-08-22 and the archive is deposited at Zenodo under\n10.5281/zenodo.22056151. The landing surface contradicted the release it sits\non top of.\n\nCorrect both to current truth and record the published identity exactly: Git\ncommit and tree, the signed tag object, the archive and detached freeze record\nwith their byte counts and SHA-256s, the root-manifest identity, and both the\nversion and concept DOIs. Add the DOIs, version and release date to\nCITATION.cff.\n\nMANIFEST.sha256 is deliberately not regenerated. Its own SHA-256 is the\nexternally pinned root-manifest identity cited by the deposited freeze record;\nregenerating it would silently retire an identity external records already\ncite. PUBLICATION-STATE-001.md instead records exactly which three\ndocumentation files now diverge from it, with the frozen and current digest of\neach, so the divergence is auditable rather than absorbed.\n\nNo evidence byte moved: 64 of the 67 manifest entries are unchanged, the\nfifteen frozen identities are untouched, and the published archive still\nverifies PASS against the pinned root manifest. No claim changed and no\nnon-claim was weakened. The terminal result remains Branch A — Explicit Bridge\nRequired.",
+    "tree": {
+      "sha": "e31072f4ad30bc6f7c4512054f25942af55dc0ab",
+      "url": "https://api.github.com/repos/WEXP-dev/wexp-interop/git/trees/e31072f4ad30bc6f7c4512054f25942af55dc0ab"
+    },
+    "url": "https://api.github.com/repos/WEXP-dev/wexp-interop/git/commits/4075939139d56b40e6e08788959de169559919af",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\niJEEABYKADkWIQSVxLUO1WVE3AM7Ew24S2yGCrrQsQUCaosCwxsUgAAAAAAEAA5t\nYW51MiwyLjUrMS4xMiwwLDMACgkQuEtshgq60LEKZAD/aYSXlE2cLuSUCfvyfG0r\npckxphBjWWMMEC5c7Fqs21sBAM7wDzQzl2+5z7x9odAovmxbruwZwWHoBZytAkPa\nV+EI\n=sELQ\n-----END PGP SIGNATURE-----",
+      "payload": "tree e31072f4ad30bc6f7c4512054f25942af55dc0ab\nparent 2bceccb0d5c46ecd2d0e81792aa86f49aa343962\nauthor Mikhail Sergeev <Mikhail.Sergeev@PAIkernel.org> 1787495107 -0700\ncommitter Mikhail Sergeev <Mikhail.Sergeev@PAIkernel.org> 1787495107 -0700\n\ndocs: reconcile the public record with the published state\n\nThe README and PUBLICATION-METADATA.yaml still described this record as\nPRIVATE/LOCAL — NOT PUBLISHED, with the tag NOT CREATED and no release\nperformed. The repository is public, the signed tag exists, the release was\npublished on 2026-08-22 and the archive is deposited at Zenodo under\n10.5281/zenodo.22056151. The landing surface contradicted the release it sits\non top of.\n\nCorrect both to current truth and record the published identity exactly: Git\ncommit and tree, the signed tag object, the archive and detached freeze record\nwith their byte counts and SHA-256s, the root-manifest identity, and both the\nversion and concept DOIs. Add the DOIs, version and release date to\nCITATION.cff.\n\nMANIFEST.sha256 is deliberately not regenerated. Its own SHA-256 is the\nexternally pinned root-manifest identity cited by the deposited freeze record;\nregenerating it would silently retire an identity external records already\ncite. PUBLICATION-STATE-001.md instead records exactly which three\ndocumentation files now diverge from it, with the frozen and current digest of\neach, so the divergence is auditable rather than absorbed.\n\nNo evidence byte moved: 64 of the 67 manifest entries are unchanged, the\nfifteen frozen identities are untouched, and the published archive still\nverifies PASS against the pinned root manifest. No claim changed and no\nnon-claim was weakened. The terminal result remains Branch A — Explicit Bridge\nRequired.\n",
+      "verified_at": "2026-08-23T14:25:37Z"
+    }
+  },
+  "url": "https://api.github.com/repos/WEXP-dev/wexp-interop/commits/4075939139d56b40e6e08788959de169559919af",
+  "html_url": "https://github.com/WEXP-dev/wexp-interop/commit/4075939139d56b40e6e08788959de169559919af",
+  "comments_url": "https://api.github.com/repos/WEXP-dev/wexp-interop/commits/4075939139d56b40e6e08788959de169559919af/comments",
+  "author": {
+    "login": "MikhailSergeev369",
+    "id": 215734497,
+    "node_id": "U_kgDODNvY4Q",
+    "avatar_url": "https://avatars.githubusercontent.com/u/215734497?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/MikhailSergeev369",
+    "html_url": "https://github.com/MikhailSergeev369",
+    "followers_url": "https://api.github.com/users/MikhailSergeev369/followers",
+    "following_url": "https://api.github.com/users/MikhailSergeev369/following{/other_user}",
+    "gists_url": "https://api.github.com/users/MikhailSergeev369/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/MikhailSergeev369/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/MikhailSergeev369/subscriptions",
+    "organizations_url": "https://api.github.com/users/MikhailSergeev369/orgs",
+    "repos_url": "https://api.github.com/users/MikhailSergeev369/repos",
+    "events_url": "https://api.github.com/users/MikhailSergeev369/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/MikhailSergeev369/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "MikhailSergeev369",
+    "id": 215734497,
+    "node_id": "U_kgDODNvY4Q",
+    "avatar_url": "https://avatars.githubusercontent.com/u/215734497?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/MikhailSergeev369",
+    "html_url": "https://github.com/MikhailSergeev369",
+    "followers_url": "https://api.github.com/users/MikhailSergeev369/followers",
+    "following_url": "https://api.github.com/users/MikhailSergeev369/following{/other_user}",
+    "gists_url": "https://api.github.com/users/MikhailSergeev369/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/MikhailSergeev369/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/MikhailSergeev369/subscriptions",
+    "organizations_url": "https://api.github.com/users/MikhailSergeev369/orgs",
+    "repos_url": "https://api.github.com/users/MikhailSergeev369/repos",
+    "events_url": "https://api.github.com/users/MikhailSergeev369/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/MikhailSergeev369/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "2bceccb0d5c46ecd2d0e81792aa86f49aa343962",
+      "url": "https://api.github.com/repos/WEXP-dev/wexp-interop/commits/2bceccb0d5c46ecd2d0e81792aa86f49aa343962",
+      "html_url": "https://github.com/WEXP-dev/wexp-interop/commit/2bceccb0d5c46ecd2d0e81792aa86f49aa343962"
+    }
+  ]
+}
