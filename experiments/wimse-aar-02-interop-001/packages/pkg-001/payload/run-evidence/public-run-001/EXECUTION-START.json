@@ -1,0 +1,22 @@
+{
+  "clone_worktree_clean_before_execution": true,
+  "coordination": "Same owner-controlled environment; known reference and oracle; no external-team independence.",
+  "driver_sha256": "75162b469cfab3246f6da30e001ae342aee6af86f533e60063f1c326d77f1fa9",
+  "format": "wexp-aar-public-replay-start/0.1.0",
+  "freeze_sha256": "ab13055e8d65601eabdf1cb463d1ec92b2dc1ed5868914fd9af8bcf4fc19138f",
+  "input_lock_sha256": "a00401b781968a9f5aeb21313d1fc37bcd4513c2f98bc1b2c868e7fcb0004af0",
+  "input_verification_stdout_sha256": "71a04abea07d81d7f9e3fa0250d203e023e63f1b0cd04fbd29d3895bc045f0e6",
+  "journal_directory": "/workspace/scratch/09ba21975d30/wexp-work/interop/aar-publication-preparation-v0.1.0/public-run-001-journal",
+  "machine": "x86_64",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "preparation_commit": "70b4491a1ec8aab5af61f31510220067e3e5cfba",
+  "preparation_commit_date": "2026-10-11T05:50:58+03:00",
+  "preparation_parent": "b368b807195bbff578191ce2e2a6ac64f13646ae",
+  "preparation_tree": "feaec7ce219ba8aea944d3a8e8fcf0079f6932b9",
+  "public_repository": "https://github.com/WEXP-dev/wexp-interop",
+  "python_implementation": "CPython",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "recorded_at_utc": "2026-10-11T02:53:02.228134+00:00",
+  "result_directory": "/workspace/scratch/09ba21975d30/wimse-aar-02-public-run-001",
+  "timing_limit": "This start was written before invoking the retained runner. Local clock and log are not independent timestamp attestations."
+}

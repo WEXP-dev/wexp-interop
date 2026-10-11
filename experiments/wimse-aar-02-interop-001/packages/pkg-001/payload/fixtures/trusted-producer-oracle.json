@@ -1,0 +1,21 @@
+{
+  "before_utf8": "balance=100\n",
+  "claimed_after_utf8": "balance=0\n",
+  "kind": "controlled-local-test-oracle-not-carried-to-participants",
+  "logical_path": "/pilot/ledger.txt",
+  "participant_information": "Both routes receive identical signed bytes and the same trusted public key/policy; neither receives this oracle or world id.",
+  "record": "fixtures/local/L19-trusted-wrong-effect.dsse.json",
+  "record_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88",
+  "request_digest": "787c578cd4429e13cb816c299fca2e2a889fe7c7f19648ba4ff64503d5a43b5b",
+  "scope": "Only the reported effect is contrasted. Other fields are illustrative test assertions. A closed harness operation and local endpoint observations are not deployment-wide nonoccurrence evidence.",
+  "worlds": [
+    {
+      "id": "effect-consistent-control",
+      "operation": "write"
+    },
+    {
+      "id": "trusted-producer-wrong",
+      "operation": "no-op"
+    }
+  ]
+}

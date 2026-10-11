@@ -1,0 +1,36 @@
+{
+  "format": "wexp-public-archive-readback/0.1.0",
+  "repository": "WEXP-dev/wexp-interop",
+  "experiment_id": "wimse-aar-02-interop-001",
+  "package_id": "pkg-001",
+  "archive_bearing_commit": "98556ac24d270464cec89135cb5388f0e39c93c2",
+  "archive_bearing_tree": "43303a49375a7ab7b285bb5308e1fd2595d36ec1",
+  "commit_time_utc": "2026-10-11T03:14:09Z",
+  "started_at_utc": "2026-10-11T03:15:03.682570+00:00",
+  "finished_at_utc": "2026-10-11T03:15:09.117747+00:00",
+  "observer": "WEXP publication session",
+  "source_url": "https://raw.githubusercontent.com/WEXP-dev/wexp-interop/98556ac24d270464cec89135cb5388f0e39c93c2/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
+  "response_url": "https://raw.githubusercontent.com/WEXP-dev/wexp-interop/98556ac24d270464cec89135cb5388f0e39c93c2/experiments/wimse-aar-02-interop-001/packages/pkg-001/source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
+  "http_status": 200,
+  "response_headers": {
+    "Content-Type": "application/zip",
+    "Content-Length": "1018872",
+    "ETag": "\"99ea49c3605af91224dbe6cc7141224e5440840f226a13cc78ef6587c7a37811\""
+  },
+  "archive": {
+    "path": "source-archive/WEXP-WIMSE-AAR-02-INTEROP-001-pkg-001.zip",
+    "bytes": 1018872,
+    "sha256": "fa42df4c859e744f199691a5f071f52a8e7102267dddeded95b68462843d2d20",
+    "md5": "53587e99181c9b6443e97017ac0d28db",
+    "git_blob_sha1": "1a3a55254efc3a819ab08e2edaa2ac692db2e07d"
+  },
+  "exact_public_commit_tree_readback": 446,
+  "status": "PASS",
+  "zenodo_publication_performed": false,
+  "github_release_created": false,
+  "limits": [
+    "This dated observation checks the downloaded bytes at an exact GitHub commit; it is not an independent timestamp or authenticity attestation.",
+    "The GitHub commit contains a prepared historical card; subsequent outer publication metadata identifies this observed public carrier.",
+    "No Zenodo draft, DOI, publication event or external-team interoperability is established."
+  ]
+}

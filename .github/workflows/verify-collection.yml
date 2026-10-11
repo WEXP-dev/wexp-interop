@@ -1,4 +1,4 @@
-name: Verify collection and preserved EMILIA bytes
+name: Verify collection and versioned experimental evidence
 
 on:
   pull_request:
@@ -25,10 +25,11 @@ jobs:
           python-version: '3.12'
       - name: Install pinned verification dependencies
         run: python -m pip install -r requirements-verification.txt
-      - name: Validate cards, catalog, package manifests and local links
+      - name: Validate cards, catalog, manifests, local links and saved AAR evidence
         run: |
           python -B scripts/catalog.py --check
-          python -B scripts/verify_collection.py
+          python -B scripts/verify_collection.py > "$RUNNER_TEMP/wexp-collection-and-aar-evidence.json"
+          cat "$RUNNER_TEMP/wexp-collection-and-aar-evidence.json"
       - name: Exercise collection rejection controls
         run: python -B scripts/check_collection_controls.py --out "$RUNNER_TEMP/wexp-collection-controls.json"
       - name: Replay EMILIA archive and freeze checks
@@ -47,6 +48,7 @@ jobs:
         with:
           name: collection-verification-${{ github.sha }}
           path: |
+            ${{ runner.temp }}/wexp-collection-and-aar-evidence.json
             ${{ runner.temp }}/wexp-collection-controls.json
             ${{ runner.temp }}/wexp-emilia-replay/*.json
             ${{ runner.temp }}/wexp-emilia-clean-clone.json

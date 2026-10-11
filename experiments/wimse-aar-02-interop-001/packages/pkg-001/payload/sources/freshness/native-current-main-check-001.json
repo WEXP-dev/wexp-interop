@@ -1,0 +1,93 @@
+{
+  "format": "wexp-native-source-freshness/0.1.0",
+  "observed_at_utc": "2026-10-11 02:18:53 UTC",
+  "pinned_commit": "c52823aedec22fffc1915c3b4d95f04de3e48813",
+  "current_main_commit": "668703327caa27a39854d7f9aec3f7024f13b4f3",
+  "current_main_tree": "5195f15003db2cc604ae9c6441ebf5b4aad00a28",
+  "current_main_committer_date": "2026-10-11T00:19:26Z",
+  "compare_url": "https://github.com/probityai/agent-evidence-vectors/compare/c52823aedec22fffc1915c3b4d95f04de3e48813...668703327caa27a39854d7f9aec3f7024f13b4f3",
+  "base_commit": "c52823aedec22fffc1915c3b4d95f04de3e48813",
+  "head_commit": "668703327caa27a39854d7f9aec3f7024f13b4f3",
+  "total_commits": 14,
+  "changed_files": [
+    {
+      "path": "CITATION.cff",
+      "status": "modified",
+      "changes": 12
+    },
+    {
+      "path": "DISTRIBUTION.md",
+      "status": "modified",
+      "changes": 14
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "changes": 10
+    },
+    {
+      "path": "docs/guides/runner.md",
+      "status": "modified",
+      "changes": 6
+    },
+    {
+      "path": "docs/reference/citing.md",
+      "status": "modified",
+      "changes": 4
+    },
+    {
+      "path": "docs/reference/release-verification.md",
+      "status": "modified",
+      "changes": 4
+    },
+    {
+      "path": "pyproject.toml",
+      "status": "modified",
+      "changes": 5
+    },
+    {
+      "path": "release/CORPUS-DIGESTS.txt.sig",
+      "status": "modified",
+      "changes": 2
+    },
+    {
+      "path": "release/CORPUS-DIGESTS.txt.sig.ots",
+      "status": "modified",
+      "changes": 0
+    },
+    {
+      "path": "release/CORPUS-DIGESTS.txt.sig.tsr",
+      "status": "modified",
+      "changes": 0
+    },
+    {
+      "path": "scripts/pre-push-pool-test.py",
+      "status": "modified",
+      "changes": 15
+    },
+    {
+      "path": "scripts/wheel-jcs-bytes-test.py",
+      "status": "modified",
+      "changes": 36
+    },
+    {
+      "path": "scripts/workflow-steps-gate-test.py",
+      "status": "modified",
+      "changes": 79
+    },
+    {
+      "path": "scripts/workflow-steps-gate.py",
+      "status": "modified",
+      "changes": 68
+    },
+    {
+      "path": "uv.lock",
+      "status": "modified",
+      "changes": 2
+    }
+  ],
+  "changed_file_count": 15,
+  "scope": "Dated source identity comparison; no new native replay executed in this check.",
+  "retained_aar02_source_files": 75,
+  "changed_retained_source_paths": []
+}

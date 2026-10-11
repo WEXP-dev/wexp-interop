@@ -1,0 +1,500 @@
+{
+  "checks": {
+    "both_signed_records_native_valid": true,
+    "control_endpoint_matches_reported_effect": true,
+    "false_report_endpoint_does_not_match": true,
+    "no_execution_inference_in_either_route": true,
+    "same_native_decision": true,
+    "same_participant_delivery_id": true,
+    "same_participant_inputs": true,
+    "same_wexp_output_in_both_worlds": true,
+    "same_wexp_receiver_decision": true
+  },
+  "conclusion": "Both routes preserve the support limit. Neither detects the coordinated false fact from identical signed bytes alone. No WEXP superiority in truth detection is established.",
+  "external_counter_evidence_supplied": false,
+  "oracle": {
+    "before_utf8": "balance=100\n",
+    "claimed_after_utf8": "balance=0\n",
+    "kind": "controlled-local-test-oracle-not-carried-to-participants",
+    "logical_path": "/pilot/ledger.txt",
+    "participant_information": "Both routes receive identical signed bytes and the same trusted public key/policy; neither receives this oracle or world id.",
+    "record": "fixtures/local/L19-trusted-wrong-effect.dsse.json",
+    "record_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88",
+    "request_digest": "787c578cd4429e13cb816c299fca2e2a889fe7c7f19648ba4ff64503d5a43b5b",
+    "scope": "Only the reported effect is contrasted. Other fields are illustrative test assertions. A closed harness operation and local endpoint observations are not deployment-wide nonoccurrence evidence.",
+    "worlds": [
+      {
+        "id": "effect-consistent-control",
+        "operation": "write"
+      },
+      {
+        "id": "trusted-producer-wrong",
+        "operation": "no-op"
+      }
+    ]
+  },
+  "worlds": [
+    {
+      "after_sha256": "8d4f620a3324e317fc50efb165b59870cc63d636da0b6b6b41226bfe2022ceee",
+      "after_utf8": "balance=0\n",
+      "before_sha256": "b7f4dccf7a09c659eafefeb80e32c3df369b41f9ec82b94714148c589f55c61d",
+      "before_utf8": "balance=100\n",
+      "claimed_after_matches_local_endpoint": true,
+      "native_baseline": {
+        "carrier_revision": "02",
+        "decision": {
+          "admission": "record-only",
+          "authorization_established": false,
+          "classification": "reported-permit",
+          "evaluation_status": "evaluated",
+          "execution_established": false,
+          "human_participation_established": false,
+          "oversight_act": null,
+          "unavailable_input": []
+        },
+        "errors": [],
+        "format": "wexp-aar-pilot-consumer-result/0.1.0",
+        "native": {
+          "codes": [],
+          "derived_tier": "authoritative",
+          "verdict": "valid"
+        },
+        "output_validation": "not-applicable",
+        "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+        "route": "native-library",
+        "source_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+      },
+      "operation_invoked": "write",
+      "participant_delivery_id": "trusted-producer-input",
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "producer_output": {
+        "appraisal": {
+          "asserted_claim": {
+            "base": "execution",
+            "qualifiers": []
+          },
+          "asserted_claim_supported": false,
+          "boundary_ceiling": "observation",
+          "boundary_grounding": "attributed",
+          "counter_evidence": [
+            {
+              "affected_claims": [],
+              "basis_refs": [],
+              "limitations": [],
+              "reasons": [],
+              "status": "not-supplied"
+            }
+          ],
+          "evaluation_context": {
+            "evaluated_at": "2026-10-10T07:37:08Z",
+            "id": "urn:sha256:c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+            "profile_identifiers": [
+              "urn:wexp:aar-pilot:0.1.0:sha256:3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+            ],
+            "trust_configuration": "urn:sha256:c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a"
+          },
+          "evaluation_gap_entries": [
+            {
+              "affected_claims": [
+                {
+                  "base": "execution",
+                  "qualifiers": []
+                }
+              ],
+              "basis_refs": [
+                "urn:sha256:d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+              ],
+              "evaluation_context_ref": "urn:sha256:c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+              "limitations": [
+                "AAR_AUTHORIZATION_VALIDITY_NOT_ESTABLISHED",
+                "AAR_BOUNDARY_VANTAGE_NOT_EXTERNALLY_ESTABLISHED",
+                "AAR_EVALUATION_IS_DECISION_POINT_REPORT",
+                "AAR_NONOCCURRENCE_NOT_ESTABLISHED",
+                "AAR_OVERSIGHT_IS_PRODUCER_ASSERTED",
+                "AAR_PRIOR_COMMITMENT_SIGNATURE_NOT_VERIFIED",
+                "AAR_RECORD_ASSERTIONS_NOT_WORLD_TRUTH",
+                "AAR_SOURCE_LIMITATION:that the reported decision is the decision the policy engine evaluated",
+                "AAR_SOURCE_LIMITATION:that this record has been or will be retained for any period"
+              ],
+              "target": "urn:aar-pilot:record:d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88:request:787c578cd4429e13cb816c299fca2e2a889fe7c7f19648ba4ff64503d5a43b5b",
+              "token": "E_BASE_NOT_EVALUATED"
+            }
+          ],
+          "evaluation_gaps": [
+            "E_BASE_NOT_EVALUATED"
+          ],
+          "evaluation_scope": {
+            "authenticity": "evaluated",
+            "boundary-grounding": "evaluated",
+            "carrier-mapping": "evaluated",
+            "composition": "evaluated",
+            "counter-evidence": "evaluated",
+            "execution-support": "not-evaluated",
+            "independent-verification": "not-evaluated",
+            "intent-support": "not-evaluated",
+            "invocation-support": "not-evaluated",
+            "observation-support": "evaluated",
+            "provenance-support": "not-evaluated",
+            "target-binding": "evaluated"
+          },
+          "fatal_reasons": [],
+          "inherited_limitations": [
+            "AAR_AUTHORIZATION_VALIDITY_NOT_ESTABLISHED",
+            "AAR_BOUNDARY_VANTAGE_NOT_EXTERNALLY_ESTABLISHED",
+            "AAR_EVALUATION_IS_DECISION_POINT_REPORT",
+            "AAR_NONOCCURRENCE_NOT_ESTABLISHED",
+            "AAR_OVERSIGHT_IS_PRODUCER_ASSERTED",
+            "AAR_PRIOR_COMMITMENT_SIGNATURE_NOT_VERIFIED",
+            "AAR_RECORD_ASSERTIONS_NOT_WORLD_TRUTH",
+            "AAR_SOURCE_LIMITATION:that the reported decision is the decision the policy engine evaluated",
+            "AAR_SOURCE_LIMITATION:that this record has been or will be retained for any period"
+          ],
+          "maximal_supported_claims": [
+            {
+              "base": "observation",
+              "qualifiers": []
+            }
+          ],
+          "recorder_relations": [],
+          "semantics_version": "wexp-core-1",
+          "substantive_reasons": [
+            "E_BASE_EXCEEDS_BOUNDARY"
+          ],
+          "support_entries": [
+            {
+              "basis_refs": [
+                "urn:sha256:d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+              ],
+              "claim": {
+                "base": "observation",
+                "qualifiers": []
+              },
+              "limitations": [
+                "AAR_AUTHORIZATION_VALIDITY_NOT_ESTABLISHED",
+                "AAR_BOUNDARY_VANTAGE_NOT_EXTERNALLY_ESTABLISHED",
+                "AAR_EVALUATION_IS_DECISION_POINT_REPORT",
+                "AAR_NONOCCURRENCE_NOT_ESTABLISHED",
+                "AAR_OVERSIGHT_IS_PRODUCER_ASSERTED",
+                "AAR_PRIOR_COMMITMENT_SIGNATURE_NOT_VERIFIED",
+                "AAR_RECORD_ASSERTIONS_NOT_WORLD_TRUTH",
+                "AAR_SOURCE_LIMITATION:that the reported decision is the decision the policy engine evaluated",
+                "AAR_SOURCE_LIMITATION:that this record has been or will be retained for any period"
+              ]
+            }
+          ],
+          "support_relations": [
+            {
+              "relation": "support-below-claim",
+              "supported_claim": {
+                "base": "observation",
+                "qualifiers": []
+              }
+            }
+          ],
+          "supported_claims": [
+            {
+              "base": "observation",
+              "qualifiers": []
+            }
+          ],
+          "target": "urn:aar-pilot:record:d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88:request:787c578cd4429e13cb816c299fca2e2a889fe7c7f19648ba4ff64503d5a43b5b",
+          "verdict": "downgrade"
+        },
+        "context": {
+          "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+          "profile_id": "urn:wexp:aar-pilot:0.1.0",
+          "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+        },
+        "facts": {
+          "agreement": "agree",
+          "decision_reported": "permit",
+          "effect_observed": "occurred",
+          "evaluation": {
+            "evidence_class": "producer-asserted",
+            "status": "evaluated",
+            "unavailable_input": []
+          },
+          "oversight": {
+            "act": null,
+            "authority": "not-established",
+            "evidence_class": "producer-asserted",
+            "human_participation": "not-established",
+            "presence": "absent",
+            "record_digest": null
+          }
+        },
+        "format": "wexp-aar-pilot-output/0.1.0",
+        "mapping_failure": null,
+        "native": {
+          "codes": [],
+          "derived_tier": "authoritative",
+          "verdict": "valid"
+        },
+        "source": {
+          "carrier_revision": "02",
+          "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+          "record_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88",
+          "specification_sha256": "601ff41ff886d0bf603143d3a02ce382e58e2d780dfbba3351e0f16797d9a79b"
+        },
+        "status": "mapped"
+      },
+      "record_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88",
+      "wexp_recipient": {
+        "carrier_revision": "02",
+        "decision": {
+          "admission": "record-only",
+          "authorization_established": false,
+          "classification": "reported-permit",
+          "evaluation_status": "evaluated",
+          "execution_established": false,
+          "human_participation_established": false,
+          "oversight_act": null,
+          "unavailable_input": []
+        },
+        "errors": [],
+        "format": "wexp-aar-pilot-consumer-result/0.1.0",
+        "native": {
+          "codes": [],
+          "derived_tier": "authoritative",
+          "verdict": "valid"
+        },
+        "output_validation": "accepted",
+        "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+        "route": "wexp-output",
+        "source_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+      },
+      "world": "effect-consistent-control"
+    },
+    {
+      "after_sha256": "b7f4dccf7a09c659eafefeb80e32c3df369b41f9ec82b94714148c589f55c61d",
+      "after_utf8": "balance=100\n",
+      "before_sha256": "b7f4dccf7a09c659eafefeb80e32c3df369b41f9ec82b94714148c589f55c61d",
+      "before_utf8": "balance=100\n",
+      "claimed_after_matches_local_endpoint": false,
+      "native_baseline": {
+        "carrier_revision": "02",
+        "decision": {
+          "admission": "record-only",
+          "authorization_established": false,
+          "classification": "reported-permit",
+          "evaluation_status": "evaluated",
+          "execution_established": false,
+          "human_participation_established": false,
+          "oversight_act": null,
+          "unavailable_input": []
+        },
+        "errors": [],
+        "format": "wexp-aar-pilot-consumer-result/0.1.0",
+        "native": {
+          "codes": [],
+          "derived_tier": "authoritative",
+          "verdict": "valid"
+        },
+        "output_validation": "not-applicable",
+        "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+        "route": "native-library",
+        "source_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+      },
+      "operation_invoked": "no-op",
+      "participant_delivery_id": "trusted-producer-input",
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "producer_output": {
+        "appraisal": {
+          "asserted_claim": {
+            "base": "execution",
+            "qualifiers": []
+          },
+          "asserted_claim_supported": false,
+          "boundary_ceiling": "observation",
+          "boundary_grounding": "attributed",
+          "counter_evidence": [
+            {
+              "affected_claims": [],
+              "basis_refs": [],
+              "limitations": [],
+              "reasons": [],
+              "status": "not-supplied"
+            }
+          ],
+          "evaluation_context": {
+            "evaluated_at": "2026-10-10T07:37:08Z",
+            "id": "urn:sha256:c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+            "profile_identifiers": [
+              "urn:wexp:aar-pilot:0.1.0:sha256:3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+            ],
+            "trust_configuration": "urn:sha256:c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a"
+          },
+          "evaluation_gap_entries": [
+            {
+              "affected_claims": [
+                {
+                  "base": "execution",
+                  "qualifiers": []
+                }
+              ],
+              "basis_refs": [
+                "urn:sha256:d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+              ],
+              "evaluation_context_ref": "urn:sha256:c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+              "limitations": [
+                "AAR_AUTHORIZATION_VALIDITY_NOT_ESTABLISHED",
+                "AAR_BOUNDARY_VANTAGE_NOT_EXTERNALLY_ESTABLISHED",
+                "AAR_EVALUATION_IS_DECISION_POINT_REPORT",
+                "AAR_NONOCCURRENCE_NOT_ESTABLISHED",
+                "AAR_OVERSIGHT_IS_PRODUCER_ASSERTED",
+                "AAR_PRIOR_COMMITMENT_SIGNATURE_NOT_VERIFIED",
+                "AAR_RECORD_ASSERTIONS_NOT_WORLD_TRUTH",
+                "AAR_SOURCE_LIMITATION:that the reported decision is the decision the policy engine evaluated",
+                "AAR_SOURCE_LIMITATION:that this record has been or will be retained for any period"
+              ],
+              "target": "urn:aar-pilot:record:d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88:request:787c578cd4429e13cb816c299fca2e2a889fe7c7f19648ba4ff64503d5a43b5b",
+              "token": "E_BASE_NOT_EVALUATED"
+            }
+          ],
+          "evaluation_gaps": [
+            "E_BASE_NOT_EVALUATED"
+          ],
+          "evaluation_scope": {
+            "authenticity": "evaluated",
+            "boundary-grounding": "evaluated",
+            "carrier-mapping": "evaluated",
+            "composition": "evaluated",
+            "counter-evidence": "evaluated",
+            "execution-support": "not-evaluated",
+            "independent-verification": "not-evaluated",
+            "intent-support": "not-evaluated",
+            "invocation-support": "not-evaluated",
+            "observation-support": "evaluated",
+            "provenance-support": "not-evaluated",
+            "target-binding": "evaluated"
+          },
+          "fatal_reasons": [],
+          "inherited_limitations": [
+            "AAR_AUTHORIZATION_VALIDITY_NOT_ESTABLISHED",
+            "AAR_BOUNDARY_VANTAGE_NOT_EXTERNALLY_ESTABLISHED",
+            "AAR_EVALUATION_IS_DECISION_POINT_REPORT",
+            "AAR_NONOCCURRENCE_NOT_ESTABLISHED",
+            "AAR_OVERSIGHT_IS_PRODUCER_ASSERTED",
+            "AAR_PRIOR_COMMITMENT_SIGNATURE_NOT_VERIFIED",
+            "AAR_RECORD_ASSERTIONS_NOT_WORLD_TRUTH",
+            "AAR_SOURCE_LIMITATION:that the reported decision is the decision the policy engine evaluated",
+            "AAR_SOURCE_LIMITATION:that this record has been or will be retained for any period"
+          ],
+          "maximal_supported_claims": [
+            {
+              "base": "observation",
+              "qualifiers": []
+            }
+          ],
+          "recorder_relations": [],
+          "semantics_version": "wexp-core-1",
+          "substantive_reasons": [
+            "E_BASE_EXCEEDS_BOUNDARY"
+          ],
+          "support_entries": [
+            {
+              "basis_refs": [
+                "urn:sha256:d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+              ],
+              "claim": {
+                "base": "observation",
+                "qualifiers": []
+              },
+              "limitations": [
+                "AAR_AUTHORIZATION_VALIDITY_NOT_ESTABLISHED",
+                "AAR_BOUNDARY_VANTAGE_NOT_EXTERNALLY_ESTABLISHED",
+                "AAR_EVALUATION_IS_DECISION_POINT_REPORT",
+                "AAR_NONOCCURRENCE_NOT_ESTABLISHED",
+                "AAR_OVERSIGHT_IS_PRODUCER_ASSERTED",
+                "AAR_PRIOR_COMMITMENT_SIGNATURE_NOT_VERIFIED",
+                "AAR_RECORD_ASSERTIONS_NOT_WORLD_TRUTH",
+                "AAR_SOURCE_LIMITATION:that the reported decision is the decision the policy engine evaluated",
+                "AAR_SOURCE_LIMITATION:that this record has been or will be retained for any period"
+              ]
+            }
+          ],
+          "support_relations": [
+            {
+              "relation": "support-below-claim",
+              "supported_claim": {
+                "base": "observation",
+                "qualifiers": []
+              }
+            }
+          ],
+          "supported_claims": [
+            {
+              "base": "observation",
+              "qualifiers": []
+            }
+          ],
+          "target": "urn:aar-pilot:record:d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88:request:787c578cd4429e13cb816c299fca2e2a889fe7c7f19648ba4ff64503d5a43b5b",
+          "verdict": "downgrade"
+        },
+        "context": {
+          "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+          "profile_id": "urn:wexp:aar-pilot:0.1.0",
+          "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+        },
+        "facts": {
+          "agreement": "agree",
+          "decision_reported": "permit",
+          "effect_observed": "occurred",
+          "evaluation": {
+            "evidence_class": "producer-asserted",
+            "status": "evaluated",
+            "unavailable_input": []
+          },
+          "oversight": {
+            "act": null,
+            "authority": "not-established",
+            "evidence_class": "producer-asserted",
+            "human_participation": "not-established",
+            "presence": "absent",
+            "record_digest": null
+          }
+        },
+        "format": "wexp-aar-pilot-output/0.1.0",
+        "mapping_failure": null,
+        "native": {
+          "codes": [],
+          "derived_tier": "authoritative",
+          "verdict": "valid"
+        },
+        "source": {
+          "carrier_revision": "02",
+          "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+          "record_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88",
+          "specification_sha256": "601ff41ff886d0bf603143d3a02ce382e58e2d780dfbba3351e0f16797d9a79b"
+        },
+        "status": "mapped"
+      },
+      "record_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88",
+      "wexp_recipient": {
+        "carrier_revision": "02",
+        "decision": {
+          "admission": "record-only",
+          "authorization_established": false,
+          "classification": "reported-permit",
+          "evaluation_status": "evaluated",
+          "execution_established": false,
+          "human_participation_established": false,
+          "oversight_act": null,
+          "unavailable_input": []
+        },
+        "errors": [],
+        "format": "wexp-aar-pilot-consumer-result/0.1.0",
+        "native": {
+          "codes": [],
+          "derived_tier": "authoritative",
+          "verdict": "valid"
+        },
+        "output_validation": "accepted",
+        "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+        "route": "wexp-output",
+        "source_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+      },
+      "world": "trusted-producer-wrong"
+    }
+  ]
+}

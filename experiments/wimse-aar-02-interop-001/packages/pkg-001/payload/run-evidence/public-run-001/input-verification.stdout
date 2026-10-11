@@ -1,0 +1,14 @@
+{
+  "format": "wexp-aar-input-verification/0.1.0",
+  "status": "PASS",
+  "mode": "pre-run-exact-inventory",
+  "frozen_input_files": 202,
+  "exact_copied_files": 172,
+  "retained_source_files": 139,
+  "prospective_pipeline_cases": 130,
+  "prospective_output_mutations": 16,
+  "known_reference_sha256": "1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2",
+  "unfrozen_additions": [],
+  "implementation_execution_performed": false,
+  "scope": "Input identities and prospective conditions relative to the freeze. No pilot/source/producer/recipient execution; no source authenticity or result-truth claim."
+}

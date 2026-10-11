@@ -1,0 +1,892 @@
+{
+  "derived_local_fixtures": {
+    "modification_notice": "NOTICE.md",
+    "parents": "fixtures/local-manifest.json parent_draft_id",
+    "paths": "fixtures/local/*.dsse.json",
+    "scope": "Apache-2.0"
+  },
+  "effective_from": "new public distribution of this package",
+  "format": "wexp-aar-license-scope/0.1.0",
+  "hof": {
+    "limit": "The private source had no public license declaration. This statement is the new grant and does not alter the old source.",
+    "path": "vendor/core_hof/evaluator.py",
+    "scope": "MIT from this publication"
+  },
+  "ietf": "Exact IETF TXT retains its original BCP 78/IETF Trust notices.",
+  "native": "Exact upstream code and vectors retain Apache-2.0 and Sankalp Gilda attribution.",
+  "new_wexp_python_helpers": {
+    "paths": [
+      "compare_results.py",
+      "verify_inputs.py",
+      "check_comparator.py"
+    ],
+    "scope": "MIT"
+  },
+  "not_a_historical_license_claim": true,
+  "preserved_inputs": [
+    {
+      "path": "consumer/CONTRACT-NOTES.md",
+      "scope": "CC-BY-4.0-WEXP-origin-only",
+      "sha256": "5b84e58738245325600277d8dd5df760076b029f48c7401686ff80c2a85b0891"
+    },
+    {
+      "path": "consumer/consumer_policy.py",
+      "scope": "MIT-new-public-grant",
+      "sha256": "28dc42864e257a1430a3ebf8f9610364e849153e8810c7c386ed1315b72dbc66"
+    },
+    {
+      "path": "consumer/native_baseline.py",
+      "scope": "MIT-new-public-grant",
+      "sha256": "e560032279b76092e0b9dc8c989650b0fc252286503b53a4aaf71840d90bd069"
+    },
+    {
+      "path": "consumer/receive_output.py",
+      "scope": "MIT-new-public-grant",
+      "sha256": "6df45e95c6464bf4d9d4515cde4d1314e554b831dacb7d0a86eae558e77d4205"
+    },
+    {
+      "path": "fixtures/local/L01-fail-open-permit.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "686967cea06242404dd24e4891f26d4c227e6c8bfaf6a368dc8515714972e68e"
+    },
+    {
+      "path": "fixtures/local/L02-fail-open-conditional.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "e4b9c5d91afb10b7450123dadc49a16e2ef0345684f8bc63f10ee52fcf4378dd"
+    },
+    {
+      "path": "fixtures/local/L03-outage-deny-effect.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "b8e1d6bab6254699406b7d2c3576140c0aacc1f9e6c5e1e5c242d20d1ea3d2a9"
+    },
+    {
+      "path": "fixtures/local/L04-empty-unavailable.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "1d08b2f5bc1ba020a12244a68cd9645b91e2b91fa15e77abed0c4d6e95e8a44a"
+    },
+    {
+      "path": "fixtures/local/L05-duplicate-unavailable.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "327c3aa18788aaa3131e133a9e2a688ebc2b7fe70aa07446c2b5099e38d5bf63"
+    },
+    {
+      "path": "fixtures/local/L06-scalar-unavailable.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "f4e79e008fc7944d8ed90847f09434646a0c1ee373c4d022a1328fcc68371994"
+    },
+    {
+      "path": "fixtures/local/L07-null-unavailable.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "e43f598610cf59715f3262f4e69df9bfafdae4bcb3a834ec991c3340f7fd09c2"
+    },
+    {
+      "path": "fixtures/local/L08-evaluated-null-unavailable.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "7f6822caa47b53032f15004aa1d369bca4428e0e582ed14c9cbb11bf41d8f174"
+    },
+    {
+      "path": "fixtures/local/L09-evaluated-empty-unavailable.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "b6ace033e7fe2f5b5c6ae10a5d5bd0337ec5fe1617e53c4f7f443d0bd1723059"
+    },
+    {
+      "path": "fixtures/local/L10-missing-evaluation-status.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "7dbc52f616f1eeac37622d8d36d87d027307a08fe5d02bec299f84b756427d87"
+    },
+    {
+      "path": "fixtures/local/L11-unknown-evaluation-status.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "681599d196eabb0ded06c5f4549ef92df57ce4ebbd7211cf0c2573cce1c431bc"
+    },
+    {
+      "path": "fixtures/local/L12-oversight-observation.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "7dd751d5eac8bf588e04e6e8977677cc5a009e8d65d9902b468eaf1f6c6c32a3"
+    },
+    {
+      "path": "fixtures/local/L13-oversight-check.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "08ac405aed8a769f904e8d6a0191f9943a8c05410436e1614190a188dad37d34"
+    },
+    {
+      "path": "fixtures/local/L14-oversight-decision.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "0892eaf12cda07eb50d411991d23420016b06048059cb4960d80fab560d9cabf"
+    },
+    {
+      "path": "fixtures/local/L15-oversight-release.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "15e3bc4a06d36e1cf94b3718914b4541510c8c6d5e4b198f7c90b7a8aece75ab"
+    },
+    {
+      "path": "fixtures/local/L16-oversight-unresolved-digest.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "a9c5cfc3e7b3eb5bab2f8120377e28b1ce1c786cdb0d118fcb35f2aaf6ac615d"
+    },
+    {
+      "path": "fixtures/local/L17-oversight-absent.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "d3752250ce76527c3a0442201b4ca5d6861dcaf84124e57bfe27c294f5cf4b05"
+    },
+    {
+      "path": "fixtures/local/L18-oversight-evidence-partition.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "54073800c5eee114ac2a9be849edd8b6209363d8da454aae317dd2353b5cf6c6"
+    },
+    {
+      "path": "fixtures/local/L19-trusted-wrong-effect.dsse.json",
+      "scope": "Apache-2.0-derived-fixture",
+      "sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+    },
+    {
+      "path": "fixtures/local-manifest.json",
+      "scope": "CC-BY-4.0-WEXP-origin-only",
+      "sha256": "9420b6557bfce4d2092a79f827651d6c1c1cb7b785557fe58f6724a9b71b1fa5"
+    },
+    {
+      "path": "fixtures/trusted-producer-oracle.json",
+      "scope": "CC-BY-4.0-WEXP-origin-only",
+      "sha256": "d5f6f31b6d19b49b5de8f63d2ce5caa3da4e74ae7bdb900b34b8e6396baf7b65"
+    },
+    {
+      "path": "generate_local_fixtures.py",
+      "scope": "MIT-new-public-grant",
+      "sha256": "65b2896b68fcce38c411944c054264037cd59954355c6cd1e5fd32b18b3a0149"
+    },
+    {
+      "path": "policies/aar01.json",
+      "scope": "CC-BY-4.0-WEXP-origin-only",
+      "sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec"
+    },
+    {
+      "path": "policies/aar02.json",
+      "scope": "CC-BY-4.0-WEXP-origin-only",
+      "sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588"
+    },
+    {
+      "path": "policies/local-aar02.json",
+      "scope": "CC-BY-4.0-WEXP-origin-only",
+      "sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a"
+    },
+    {
+      "path": "probe_native.py",
+      "scope": "MIT-new-public-grant",
+      "sha256": "7214b5043c9036bb01a92a2a52384808059d9dabe8f9880edec116b0cd2fb6ae"
+    },
+    {
+      "path": "producer.py",
+      "scope": "MIT-new-public-grant",
+      "sha256": "690d167479cfddae091c53ab78cd50bd130368b776ab5a22f78f12b2d1ea4a5b"
+    },
+    {
+      "path": "profile.json",
+      "scope": "CC-BY-4.0-WEXP-origin-only",
+      "sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+    },
+    {
+      "path": "run_pilot.py",
+      "scope": "MIT-new-public-grant",
+      "sha256": "33c2d7b4c44077070322b1648e0988e9dcfb146d34d89f2114d2a3fbaf49f4b1"
+    },
+    {
+      "path": "sources/draft-gilda-wimse-agent-audit-record-01.txt",
+      "scope": "IETF-original-notices",
+      "sha256": "93ca132dfa65a397a6e64a0ffc47fc69952f2f92ed6c8d3fed3861d47586e763"
+    },
+    {
+      "path": "sources/draft-gilda-wimse-agent-audit-record-02.txt",
+      "scope": "IETF-original-notices",
+      "sha256": "601ff41ff886d0bf603143d3a02ce382e58e2d780dfbba3351e0f16797d9a79b"
+    },
+    {
+      "path": "sources/draft-sergeev-wexp-core-01.txt",
+      "scope": "IETF-original-notices",
+      "sha256": "50c137713a08ebba7c7b284f97107a2259c9a2d3e0eaefdaede3a77d09fa902b"
+    },
+    {
+      "path": "vendor/aar01/LICENSE",
+      "scope": "Apache-2.0",
+      "sha256": "8b506a9d145be0a6fbef3f0519996faf84c770f8ab8d32d120c8682f2ad6181f"
+    },
+    {
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/__init__.py",
+      "scope": "Apache-2.0",
+      "sha256": "8c2e8d1d1b7e94004d29f11ecad85c02c389cb759264a139637f3b10a05c4538"
+    },
+    {
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/auditrecord.py",
+      "scope": "Apache-2.0",
+      "sha256": "146df6dd87dd216547497436646d21ffca4ebad8a235cf8e559e9d3732345b8b"
+    },
+    {
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/contextdiscovery.py",
+      "scope": "Apache-2.0",
+      "sha256": "fe1ce57bfc4c2f3a6a2684553d64a09674dc5ae54bbc456967a56c35fb105889"
+    },
+    {
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/observedeffect.py",
+      "scope": "Apache-2.0",
+      "sha256": "f4544fa42a396d80336676c9db6de6ec292598a0b8163ae9be385d4cf0b22a7d"
+    },
+    {
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/receiptsignature.py",
+      "scope": "Apache-2.0",
+      "sha256": "99c1267b79cfa5de2a1f6fe8bdbd523586c9815a7b4d7d1d17636a978264bf8f"
+    },
+    {
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/runmetrics.py",
+      "scope": "Apache-2.0",
+      "sha256": "56656e7566e2df4d0d3075850c715b7823df6427b05a5b799e40801f7ca45608"
+    },
+    {
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/sourcecoverage.py",
+      "scope": "Apache-2.0",
+      "sha256": "544cce88dfd921b408fdb059ae19032c9cce45d0d6cc52ef300523eb65824f5a"
+    },
+    {
+      "path": "vendor/aar01/packaging/agent_evidence_vectors/w3creport.py",
+      "scope": "Apache-2.0",
+      "sha256": "08179121ac0ce86b5fa64c489f37bc3a3c2edd7767f6abec1182ca55a3f9e5b1"
+    },
+    {
+      "path": "vendor/aar01/packaging/run_vectors.py",
+      "scope": "Apache-2.0",
+      "sha256": "940eb715396eb001ae0da65a50d1bb578c3bba5bfaf7d9e3976069ca76fdbe82"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/INDEX.md",
+      "scope": "Apache-2.0",
+      "sha256": "dd697763eb9bbede0196318e5cef70b53aec571d91c9ba9da00c81dbbf4c4c90"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/MANIFEST.json",
+      "scope": "Apache-2.0",
+      "sha256": "e944f85af55ae08e408a730beb03a49b47c94d9a9313874bc788ec2f3b7b6d8a"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/README.md",
+      "scope": "Apache-2.0",
+      "sha256": "a72d6dbeaad204a1a54a1278ececda0c05f90cfd236199558e2ffccf9b70da92"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v061304592ad49c52.json",
+      "scope": "Apache-2.0",
+      "sha256": "061304592ad49c52d80534c0e5739fed0f68f4e7eb148a88559f24cec7416a3b"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v092586b714b43901.json",
+      "scope": "Apache-2.0",
+      "sha256": "092586b714b4390153417bd1fdd784c41ac8557b467c826187de614bf0f96a12"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v0f658d55b9e959cc.json",
+      "scope": "Apache-2.0",
+      "sha256": "0f658d55b9e959cc80acbf6590d1df78cc8f56ed0834c12b47e4d618fae915ec"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v1cbe908c9c03f36d.json",
+      "scope": "Apache-2.0",
+      "sha256": "1cbe908c9c03f36d46eb2a0c9c10e8d13dae33b762f3d831239803065b93b7ba"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v27b72ac64d5ebd54.json",
+      "scope": "Apache-2.0",
+      "sha256": "27b72ac64d5ebd5448bc0ce21b0184dd1d0774ab54b06bc770319e033cdbb8e6"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v2a395d68e9697680.json",
+      "scope": "Apache-2.0",
+      "sha256": "2a395d68e9697680f1f466b0298690b0416e7b7f3976d0c92d8da4128a3c345c"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v310861912d1046c5.json",
+      "scope": "Apache-2.0",
+      "sha256": "310861912d1046c568220c8019f8c9a6d70fcf4edd3b89a4dd6445082bc09bec"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v3843cd0f05c512e2.json",
+      "scope": "Apache-2.0",
+      "sha256": "3843cd0f05c512e252a06f6974d7a349a6d393ddffad6348ce63d102a1c60939"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v3d316ca718c2dfd5.json",
+      "scope": "Apache-2.0",
+      "sha256": "3d316ca718c2dfd5b667c6624043bab370d884d3d5d8726288b9540037322323"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v411cfaf5151d4cc5.json",
+      "scope": "Apache-2.0",
+      "sha256": "411cfaf5151d4cc5e73bcbb11ae9ada0acf8bf3f07fcc95961edbd97b4a7b22a"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v43e2fe48bc27164d.json",
+      "scope": "Apache-2.0",
+      "sha256": "43e2fe48bc27164d414b64027f52d9a468a03d21ceb893df27c533bbcd9cf37e"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v4669a6b6d8bbeb60.json",
+      "scope": "Apache-2.0",
+      "sha256": "4669a6b6d8bbeb60750e84a5ce4f5d02bca7ededf300608e09262a5c8fc35666"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v48b0a2fe9334a263.json",
+      "scope": "Apache-2.0",
+      "sha256": "48b0a2fe9334a263c24f1c4ad8f8944ff17816746ebd93c3ab1a760a864bcb1e"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v49db892b2464179b.json",
+      "scope": "Apache-2.0",
+      "sha256": "49db892b2464179bcb9731179603b26cca7489b961deff0db7189786f3122b1a"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v4a450d67a3e14bd9.json",
+      "scope": "Apache-2.0",
+      "sha256": "4a450d67a3e14bd9ba64913c86867158b96eda54bbe051dc9d57eaafe10ddd11"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v508be6e23e8482f5.json",
+      "scope": "Apache-2.0",
+      "sha256": "508be6e23e8482f5bb6480a1570ac7e9f972714b1ab7386caa31c8188c6546d9"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v55decc76bf3738b2.json",
+      "scope": "Apache-2.0",
+      "sha256": "55decc76bf3738b2286cc874a9bf64121bff6d96d8700a2f856ea0166f69b3a3"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v5d7952e7b60ac201.json",
+      "scope": "Apache-2.0",
+      "sha256": "5d7952e7b60ac2014b6ea63d86f439aea196f76a5965e0d46b80718f419f3b3b"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v60025ea9854b9e10.json",
+      "scope": "Apache-2.0",
+      "sha256": "60025ea9854b9e100adc5929429e6e5c2779f29924027cbc68121c08f29eb18c"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v66d14f47a3d0cf0b.json",
+      "scope": "Apache-2.0",
+      "sha256": "66d14f47a3d0cf0b7ba667c097ab31da5152a09167a1c2e6411e22854df12aee"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v7c9a446636835696.json",
+      "scope": "Apache-2.0",
+      "sha256": "7c9a4466368356968a757d3ba7f4b31c289d6e0c8f6b5eb25dcf922ccc4cfdc6"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v7fad746721358d9d.json",
+      "scope": "Apache-2.0",
+      "sha256": "7fad746721358d9d4d4e3599320737c1e3321a237479be10dc2d7cf7c9ab14e3"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v806b41e10fa621b2.json",
+      "scope": "Apache-2.0",
+      "sha256": "806b41e10fa621b2788497628a3de0363cc7f3172814875ea4d241986bef3dbe"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v826af5b27db24da5.json",
+      "scope": "Apache-2.0",
+      "sha256": "826af5b27db24da521f1c713e8347a734c8726c696f202e1503340a3e0f9ebcf"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v89164703a3e83dec.json",
+      "scope": "Apache-2.0",
+      "sha256": "89164703a3e83dec932d13acde70887e4ad6d6edf5ea2c985ee10eb610190ddf"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v8a6cc076ed9ea03a.json",
+      "scope": "Apache-2.0",
+      "sha256": "8a6cc076ed9ea03aa5f3880d09d71523b9b2a97488018bc4d24eec99bcbe3f43"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v8a9e5deb2888e02c.json",
+      "scope": "Apache-2.0",
+      "sha256": "8a9e5deb2888e02cff6a49ece2d77c5880cacb9a9cba59ce8a3aec24e34a636c"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v91afc5ba76960569.json",
+      "scope": "Apache-2.0",
+      "sha256": "91afc5ba76960569cd511adc2099bf706671ba742a539cb136297ba8f73c749d"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v95d01f289bf873d3.json",
+      "scope": "Apache-2.0",
+      "sha256": "95d01f289bf873d31baedeb50114e02a6b5a994d5b748153b12fed4e116fc61e"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v9aaa90d371011e59.json",
+      "scope": "Apache-2.0",
+      "sha256": "9aaa90d371011e59acb4a35821f52114fb7e93d89e3b420b5926692447c20858"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/v9ec5a5a966dc0028.json",
+      "scope": "Apache-2.0",
+      "sha256": "9ec5a5a966dc0028a20f6ef6c27e9e9258713856b4c81207d686f7d785243923"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vb5b9abc4f83111a8.json",
+      "scope": "Apache-2.0",
+      "sha256": "b5b9abc4f83111a8da9cfb3140d1c51922b47809e6d08d74d2fe08355a3efda6"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vb5fa3c46a923c472.json",
+      "scope": "Apache-2.0",
+      "sha256": "b5fa3c46a923c472be1047e17cdc711a4a87af6ba579c346dd00cc6ba8cdc3c5"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vbca32cc3ca51563a.json",
+      "scope": "Apache-2.0",
+      "sha256": "bca32cc3ca51563a43b735cb0d140c66bc51f3f48c58f860d957e5c10c6cfc19"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vce25f7662e4f70cd.json",
+      "scope": "Apache-2.0",
+      "sha256": "ce25f7662e4f70cd1a7a0e29d75f08dbedbfd09e09b81b8b7c5ea34ee0ab1f66"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vceed0855efea9660.json",
+      "scope": "Apache-2.0",
+      "sha256": "ceed0855efea966081b8d15f0d9c7d4715a783a8a976022ae292a5da60703473"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vcf95da9b01a6664b.json",
+      "scope": "Apache-2.0",
+      "sha256": "cf95da9b01a6664ba1192231dead1a7695164a47d1890d864fb14fe90b350c43"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vd72e111dbe5e296f.json",
+      "scope": "Apache-2.0",
+      "sha256": "d72e111dbe5e296ff2466a2e5638ce09e11380c76f3bd2e92552b5d0069334f4"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vd8d79e7a61cca51f.json",
+      "scope": "Apache-2.0",
+      "sha256": "d8d79e7a61cca51fa148d998600e6cc658b064b9609525010b79cb26b99a1bd0"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vded6715a80437cfb.json",
+      "scope": "Apache-2.0",
+      "sha256": "ded6715a80437cfbdb0b2f112a10dbb9ce3e3d15cb401e4b35ca61d41d6cdc87"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vdf178c2ef7928a19.json",
+      "scope": "Apache-2.0",
+      "sha256": "df178c2ef7928a194e3f8c130e605b2436543d84ada46df487f1cacce4025da6"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/ve440c8b917ea6945.json",
+      "scope": "Apache-2.0",
+      "sha256": "e440c8b917ea6945ce0dfd4e714bef5a79149744e1f54f04a0727d852dea8275"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vf3cf268dae0800ff.json",
+      "scope": "Apache-2.0",
+      "sha256": "f3cf268dae0800ff3c902003d62e57d12d89c8a3426727f2b1006328978478c4"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vf410c7b4b792c0b3.json",
+      "scope": "Apache-2.0",
+      "sha256": "f410c7b4b792c0b30bfb7c0a96f59a3213e4100def30f3c8a2dda11522e3e758"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vf5c19153992ba091.json",
+      "scope": "Apache-2.0",
+      "sha256": "f5c19153992ba0910676cb1e322a9d33162fac34e343a54d7079714fdf3ada48"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vf8180cde8874edb6.json",
+      "scope": "Apache-2.0",
+      "sha256": "f8180cde8874edb663ac3793f118f113907be244bd56f1c4e8fd1464f41b1729"
+    },
+    {
+      "path": "vendor/aar01/vectors-agent-audit-record/statements/vf9473c2b0e833da1.json",
+      "scope": "Apache-2.0",
+      "sha256": "f9473c2b0e833da10308cc80a7c1f7a0bd32a1cef6453eb85346354ba099b5cf"
+    },
+    {
+      "path": "vendor/aar02/LICENSE",
+      "scope": "Apache-2.0",
+      "sha256": "8b506a9d145be0a6fbef3f0519996faf84c770f8ab8d32d120c8682f2ad6181f"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/__init__.py",
+      "scope": "Apache-2.0",
+      "sha256": "8c2e8d1d1b7e94004d29f11ecad85c02c389cb759264a139637f3b10a05c4538"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/a2ajcs.py",
+      "scope": "Apache-2.0",
+      "sha256": "f0312e962322ac8af1b3b448f38a1f47b2b5bff998a9fcb653b83ad037d11958"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/anchoredchain.py",
+      "scope": "Apache-2.0",
+      "sha256": "a6d6bd3681186e375c29e6428214b6b7b29fd4db642f2a7f40c95564828bff72"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/auditrecord.py",
+      "scope": "Apache-2.0",
+      "sha256": "88c24648b2148c0ea765800b5975eadfd761508242dcf9832554b4705c41593b"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/contextdiscovery.py",
+      "scope": "Apache-2.0",
+      "sha256": "d8881c312d65c8536c70d3765d3c747663d2705c20928259b9a9c3c9bfa75239"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/mcpowasp.py",
+      "scope": "Apache-2.0",
+      "sha256": "33a08b63fe7d0f7981b117603878520f16864dcf0fed4c4a3b0c7249f448bd7b"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/observedeffect.py",
+      "scope": "Apache-2.0",
+      "sha256": "a1fb065655ad55643295ef5ecc152b185ce634b73c64a3940b15d13760ecb6e3"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/receiptsignature.py",
+      "scope": "Apache-2.0",
+      "sha256": "99c1267b79cfa5de2a1f6fe8bdbd523586c9815a7b4d7d1d17636a978264bf8f"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/runmetrics.py",
+      "scope": "Apache-2.0",
+      "sha256": "d8e8ad41911ad752e50b12afaf3382c94570ac4865c602ee5539bd03f98899f0"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/sourcecoverage.py",
+      "scope": "Apache-2.0",
+      "sha256": "544cce88dfd921b408fdb059ae19032c9cce45d0d6cc52ef300523eb65824f5a"
+    },
+    {
+      "path": "vendor/aar02/packaging/agent_evidence_vectors/w3creport.py",
+      "scope": "Apache-2.0",
+      "sha256": "329066be50ebd127c68ec97ad380feb3ded3ef08c7dc099856ed98a518d8e962"
+    },
+    {
+      "path": "vendor/aar02/packaging/run_vectors.py",
+      "scope": "Apache-2.0",
+      "sha256": "8028d9f36c69d775c7409fb87970558b04fcec3377f4d43f11dd3e3aeee55933"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/INDEX.md",
+      "scope": "Apache-2.0",
+      "sha256": "1d85f52ce8d2ab9c5a80daf583eb3e6aca7a0746191f5894f207d11060deb3bc"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/MANIFEST.json",
+      "scope": "Apache-2.0",
+      "sha256": "ee281a0504d3b58f4cfdefe432aead24185b224456d50d8ea1d3397f372ec352"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/README.md",
+      "scope": "Apache-2.0",
+      "sha256": "46587c3ab8f0a1d6f2246fc056756dda7338ff5b03508cc1022b3b4ab1420425"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/canonical.py",
+      "scope": "Apache-2.0",
+      "sha256": "ced55cfb183bebd53e2f7223b7279e230ceb84a042bd113b1dcc33948ac84c74"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/check_vectors.py",
+      "scope": "Apache-2.0",
+      "sha256": "2ff7244df4965f2aa17ff7ba6c743b14927376fe4d1a9725a5f6757664c96701"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/digest.py",
+      "scope": "Apache-2.0",
+      "sha256": "2cb7a56f17bb88988ee9fb2a0c5fff5dcda935580c242a5a9ffe32d5fe6c4c32"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/gen_vectors.py",
+      "scope": "Apache-2.0",
+      "sha256": "5983e1ec7eef7d87a7abc984a715210faf4fde76f9c810cab6594a670067f182"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v00ec2ce19f1e574e.json",
+      "scope": "Apache-2.0",
+      "sha256": "00ec2ce19f1e574e58692ffa48a1acf30dc66aec335c71932293792069beda72"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v09a2cf05eb8bd518.json",
+      "scope": "Apache-2.0",
+      "sha256": "09a2cf05eb8bd5189c06da1e27b7d9ce15361032e3dd9e33c415d1afa00eb668"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v0d65a70ec5288821.json",
+      "scope": "Apache-2.0",
+      "sha256": "0d65a70ec528882170927d08c9396a7efa7cef211d047626be7dc0736a6fc09b"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v0f0e3983e267110b.json",
+      "scope": "Apache-2.0",
+      "sha256": "0f0e3983e267110be78ac3b0b9948f295d92bca93a799041af6cfdb21ced7855"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v1503dfd2154d73da.json",
+      "scope": "Apache-2.0",
+      "sha256": "1503dfd2154d73da2c0b0b5ad3c665e25ec65265888f7322cba39bfe2ad6f78e"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v18153024f1acd938.json",
+      "scope": "Apache-2.0",
+      "sha256": "18153024f1acd938fb3394b7ef09845f49ac020d22cfd5b23635d7b154e14bf7"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v1879eeae11c77ad4.json",
+      "scope": "Apache-2.0",
+      "sha256": "1879eeae11c77ad4dd2129a97f2b73b704bdb86c9024d292ae73b3fd004470c1"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v205d0d2f5021e563.json",
+      "scope": "Apache-2.0",
+      "sha256": "205d0d2f5021e563d3ba07a25a5e79ff62c62580bc08fffe8d6e90efe865b473"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v24916b42e97cc620.json",
+      "scope": "Apache-2.0",
+      "sha256": "24916b42e97cc620f98f00b836ec212d1a755517cab1ff04cc1c0bd286ce9230"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v2717cf80c72bd933.json",
+      "scope": "Apache-2.0",
+      "sha256": "2717cf80c72bd933b1362663fc6338a3f6e8c66769988ccd4b659024d2d44cb5"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v27385b926ca10f01.json",
+      "scope": "Apache-2.0",
+      "sha256": "27385b926ca10f01ae1fd3fa0b557e721870c898d501bc1ae9fcf331934e4c9d"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v2e76566de2506501.json",
+      "scope": "Apache-2.0",
+      "sha256": "2e76566de250650127c8da01d0f917fb69adeee9ac223d4c999681f2fb39d6b3"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v315d22ad8c7271a6.json",
+      "scope": "Apache-2.0",
+      "sha256": "315d22ad8c7271a69d62ab88fbc7d6333766c8c7816cdcd8d4fbea61e2db0816"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v3296f825d4f05710.json",
+      "scope": "Apache-2.0",
+      "sha256": "3296f825d4f057109b87f8d04a0779a5185db3d865bfb03d7a6f83abb5484d37"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v33bf4a991feed4ca.json",
+      "scope": "Apache-2.0",
+      "sha256": "33bf4a991feed4ca7822b24fd48a03a66bbc265628c63b39076e4e26541bac3e"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v3e452f77fbf0a249.json",
+      "scope": "Apache-2.0",
+      "sha256": "3e452f77fbf0a249a0bbb309a8332cbe52a5b4a5222576576b733d554ae7e014"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v50382c2ff934480c.json",
+      "scope": "Apache-2.0",
+      "sha256": "50382c2ff934480c1ebe1db59c0aa693aead6ca4f190dceed632ca49f45e7f86"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v504fb97e3c65e22d.json",
+      "scope": "Apache-2.0",
+      "sha256": "504fb97e3c65e22d0e5c6bc585b5a2d4f1699da55dc86afa561767c5ab7f3dfb"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v51da190da6033d8a.json",
+      "scope": "Apache-2.0",
+      "sha256": "51da190da6033d8a53b1915d445aeb1a2608ee8cfe69e8532aedd1926b44173e"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v54575ab9f410be7f.json",
+      "scope": "Apache-2.0",
+      "sha256": "54575ab9f410be7f374c5ad2b2187706ac955592e58c5fdd6e0c6e73db6925b2"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v60116ba6c5fb78ec.json",
+      "scope": "Apache-2.0",
+      "sha256": "60116ba6c5fb78ec8a801ad0d982de93dc16941507eeb324b4e10555de3e5992"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v64dc8171d57214d3.json",
+      "scope": "Apache-2.0",
+      "sha256": "64dc8171d57214d3e24806ecda2b41672a280702f0c9ae203d0882b6ba52e381"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v6838afba287a7d82.json",
+      "scope": "Apache-2.0",
+      "sha256": "6838afba287a7d82d5345c61489f7bd59f75a26cc183822287a8300df1224494"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v6df8ff36c40b1899.json",
+      "scope": "Apache-2.0",
+      "sha256": "6df8ff36c40b1899a89ca8a43512b3ecc1f62f6db0d5a555235e556f49c0e85a"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v770e3bf440bbac4f.json",
+      "scope": "Apache-2.0",
+      "sha256": "770e3bf440bbac4f613eaae402c04f86c46695343cf14e71fcfa917556ceda85"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v7a12f6c08f822bd5.json",
+      "scope": "Apache-2.0",
+      "sha256": "7a12f6c08f822bd56893e7f0b7ddbdb6af43291ab495512826d261d4365e49fd"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v7c1b14e3e567ce08.json",
+      "scope": "Apache-2.0",
+      "sha256": "7c1b14e3e567ce0806f8d46365449ef8507045661ae1da2792a156537e1ac9a1"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v8a2e4c0327732290.json",
+      "scope": "Apache-2.0",
+      "sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v8ae50eba2a0878b8.json",
+      "scope": "Apache-2.0",
+      "sha256": "8ae50eba2a0878b8c1b8ff74cdd1b5b3a818423663f04b85bb94c4fbd678b0b0"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v8e2ef110bf6d52f6.json",
+      "scope": "Apache-2.0",
+      "sha256": "8e2ef110bf6d52f6ec15a40c6e9423d05460ec8bd9a5f46d32c7cbc17fa75f36"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v8f11c96059d2c3e2.json",
+      "scope": "Apache-2.0",
+      "sha256": "8f11c96059d2c3e289dc868dfb72ec1254f756b42c2fef17ee1683a9a7a2356a"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v8f355a9003ad7318.json",
+      "scope": "Apache-2.0",
+      "sha256": "8f355a9003ad73189eee99aac560920974f60dc9324c62219685c6a7787d1ac6"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v8f42511cd88768fe.json",
+      "scope": "Apache-2.0",
+      "sha256": "8f42511cd88768feb56586298a3dc94c64473704c5c02504693d8404804f267b"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v99868141e3bf075e.json",
+      "scope": "Apache-2.0",
+      "sha256": "99868141e3bf075e1e0de588a88f2d6a2652892ee64dd9175736bc0c60beda5d"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/v9bdb44d390fecf90.json",
+      "scope": "Apache-2.0",
+      "sha256": "9bdb44d390fecf907808f30849ca1ea0839af7196e4b8ab20f638b3e2e851331"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/va85d65c00ef6cdbe.json",
+      "scope": "Apache-2.0",
+      "sha256": "a85d65c00ef6cdbeb5f11352bc705f9f39f0eb6081fec5b885405df9e7f9c544"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vaf48c7eea6dd5516.json",
+      "scope": "Apache-2.0",
+      "sha256": "af48c7eea6dd5516ad4a80bff6485c9d62bfa2feeb42f6fb93a17145a30f703e"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vb66a90c780a981e1.json",
+      "scope": "Apache-2.0",
+      "sha256": "b66a90c780a981e11c155270f424c78a0c10c0abba29f32e585a1c2a63f93395"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vbb317d5ad7982c23.json",
+      "scope": "Apache-2.0",
+      "sha256": "bb317d5ad7982c232190fdcec9b717b519a01f39dffafd7619a8502b8dc9e089"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vbc8b79104e8b6a87.json",
+      "scope": "Apache-2.0",
+      "sha256": "bc8b79104e8b6a87224ed89c864c69dcde11b6c4d4a714174b06e9073681e64d"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vbdf904629383722b.json",
+      "scope": "Apache-2.0",
+      "sha256": "bdf904629383722b37cbb0766c0fbf4aaf77ea60edcc795c19d2aecf193bddce"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vc1a226e7766254f1.json",
+      "scope": "Apache-2.0",
+      "sha256": "c1a226e7766254f1137580ad3eaa40cf7e0d1beea98dc906ae918ad2206d3b02"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vc2422b8f120772ce.json",
+      "scope": "Apache-2.0",
+      "sha256": "c2422b8f120772ceffb3f3c716f4f1324de5a1d68b941d27bf105f64d4cbaaf5"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vcdbe361d989035b4.json",
+      "scope": "Apache-2.0",
+      "sha256": "cdbe361d989035b4584ee631342b1f2fcbe8452499ae920b7e9bc149850bfbb3"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vce3e9b4244967116.json",
+      "scope": "Apache-2.0",
+      "sha256": "ce3e9b4244967116bd4e6b7810b419562a869624ccd3f776419a7473471e9763"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vd6f245be7240b676.json",
+      "scope": "Apache-2.0",
+      "sha256": "d6f245be7240b676909e0b2c7b4161507cd50e956809fb0bc063230d696e2d1f"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vda7c9c087912fcba.json",
+      "scope": "Apache-2.0",
+      "sha256": "da7c9c087912fcbac6defe8aa6e2aa46a7415b86eec69fe8b6228e24c2170afb"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vded6715a80437cfb.json",
+      "scope": "Apache-2.0",
+      "sha256": "ded6715a80437cfbdb0b2f112a10dbb9ce3e3d15cb401e4b35ca61d41d6cdc87"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/ve6b805ce52d4a987.json",
+      "scope": "Apache-2.0",
+      "sha256": "e6b805ce52d4a987a1e68c5122aa31c7e64fe54a4d5954473dab24b82eaa41fb"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vec049319d25facc6.json",
+      "scope": "Apache-2.0",
+      "sha256": "ec049319d25facc649d2a418cb1f83310d0fd74e4cc08977eacbfa1c65a6a2b0"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/ved1c858bb30cb8b8.json",
+      "scope": "Apache-2.0",
+      "sha256": "ed1c858bb30cb8b89c192fc0646a6a893736bb6657d6412503b7964c60b3f363"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vf00e95f42eef8724.json",
+      "scope": "Apache-2.0",
+      "sha256": "f00e95f42eef87241b03fb9912022ddd5970ccf01736d98fb5c075a9c7964d59"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vf18793293e0793fb.json",
+      "scope": "Apache-2.0",
+      "sha256": "f18793293e0793fb79ee03a820924fb0bb981ed71345922f43c44a53b26b0cdd"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vf320e1e190cd0a35.json",
+      "scope": "Apache-2.0",
+      "sha256": "f320e1e190cd0a356dff70d1cc6fcb790f0d08109923595a98c4a72e9f033d88"
+    },
+    {
+      "path": "vendor/aar02/vectors-agent-audit-record/statements/vf5d77437325ed853.json",
+      "scope": "Apache-2.0",
+      "sha256": "f5d77437325ed85330eb9f8384562694006228146a55196b09f06be772b7c8ac"
+    },
+    {
+      "path": "vendor/core_hof/evaluator.py",
+      "scope": "MIT-new-public-grant",
+      "sha256": "d7ac0f306c9ee0d6c6c0ce4af3bb18bc572bd9ebdd0b9ab72aa5ec3d136c1e00"
+    }
+  ],
+  "wexp_origin_prose_json": {
+    "material": "New package/pre-run prose and metadata, WEXP-authored retained manifest/oracle/profile/policies and reference presentation; underlying third-party content is excluded.",
+    "scope": "CC-BY-4.0"
+  }
+}

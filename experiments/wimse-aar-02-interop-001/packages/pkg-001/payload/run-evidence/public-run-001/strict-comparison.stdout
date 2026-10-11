@@ -1,0 +1,16 @@
+{
+  "format": "wexp-aar-public-reference-comparison/0.1.0",
+  "status": "PASS",
+  "semantic_sha256": "1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2",
+  "reference_sha256": "1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2",
+  "comparison": "full strict typed JSON and exact semantic bytes; zero permitted semantic delta",
+  "pipeline_cases": 130,
+  "output_mutation_inputs_compared": 16,
+  "controlled_worlds": 2,
+  "implementation_execution_performed_by_comparator": false,
+  "limitations": [
+    "This checks the supplied run data; it does not authenticate execution or its timestamp.",
+    "The private reference was known before the public run; this is not blind or external-team reproduction.",
+    "WEXP/native-baseline comparison is performed by the retained runner, separately from this reference comparison."
+  ]
+}

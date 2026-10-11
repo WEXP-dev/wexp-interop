@@ -1,0 +1,1736 @@
+
+
+
+
+Workload Identity in Multi System Environments                  S. Gilda
+Internet-Draft                                            4 October 2026
+Intended status: Informational                                          
+Expires: 7 April 2027
+
+
+      An Audit Record Format for AI Agent Authorization Decisions
+                draft-gilda-wimse-agent-audit-record-02
+
+Abstract
+
+   This document defines a record format for AI agent authorization
+   decisions.  The format is one in-toto predicate type, signed inside a
+   DSSE envelope.  It carries the seven minimum audit fields that the
+   WIMSE AI Identity Management System framework requires, and two
+   properties that make those fields checkable: a canonicalization
+   contract, and both the authorization decision and the observed effect
+   with a derived three-valued agreement between them.  That framework
+   places the record format out of scope and takes no IANA action.  This
+   document supplies the format.  It defines no policy.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-gilda-wimse-agent-audit-
+   record/.
+
+   Discussion of this document takes place on the Workload Identity in
+   Multi System Environments Working Group mailing list
+   (mailto:wimse@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/wimse/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/wimse/.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                  [Page 1]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 7 April 2027.
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
+   2.  Conventions and Definitions . . . . . . . . . . . . . . . . .   4
+   3.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   4
+   4.  Audit Record Specification  . . . . . . . . . . . . . . . . .   5
+     4.1.  Canonical form  . . . . . . . . . . . . . . . . . . . . .   5
+       4.1.1.  JSON profile  . . . . . . . . . . . . . . . . . . . .   6
+       4.1.2.  Duplicate members and nesting depth . . . . . . . . .   6
+     4.2.  Subject convention  . . . . . . . . . . . . . . . . . . .   6
+     4.3.  Timestamps and correlation  . . . . . . . . . . . . . . .   7
+     4.4.  Tamper-evidence . . . . . . . . . . . . . . . . . . . . .   7
+     4.5.  Mapping to the seven minimum fields . . . . . . . . . . .   7
+     4.6.  Verifying a record  . . . . . . . . . . . . . . . . . . .   9
+   5.  Predicate members . . . . . . . . . . . . . . . . . . . . . .   9
+     5.1.  Record identity and hash algorithm  . . . . . . . . . . .  12
+     5.2.  Identity, delegation and resource . . . . . . . . . . . .  12
+     5.3.  Decision, effect and agreement  . . . . . . . . . . . . .  13
+     5.4.  Evaluation  . . . . . . . . . . . . . . . . . . . . . . .  15
+     5.5.  Oversight . . . . . . . . . . . . . . . . . . . . . . . .  15
+     5.6.  Correlation, posture and remediation  . . . . . . . . . .  16
+     5.7.  Observation and tier  . . . . . . . . . . . . . . . . . .  17
+     5.8.  A worked reading of the example . . . . . . . . . . . . .  18
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .  19
+     6.1.  The vantage claim is not self-proving . . . . . . . . . .  19
+     6.2.  A producer that observes only itself  . . . . . . . . . .  19
+     6.3.  Withheld rows . . . . . . . . . . . . . . . . . . . . . .  20
+
+
+
+Gilda                     Expires 7 April 2027                  [Page 2]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+     6.4.  Well-formed disagreement  . . . . . . . . . . . . . . . .  20
+     6.5.  A decision that was not evaluated . . . . . . . . . . . .  20
+     6.6.  Revocation without a bound  . . . . . . . . . . . . . . .  20
+     6.7.  Relationship to other tamper-evidence mechanisms  . . . .  21
+     6.8.  Two implementations that both differ from the canonical
+           form  . . . . . . . . . . . . . . . . . . . . . . . . . .  21
+   7.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  21
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  22
+   9.  Normative References  . . . . . . . . . . . . . . . . . . . .  22
+   10. Informative References  . . . . . . . . . . . . . . . . . . .  23
+   Appendix A.  Design rationale . . . . . . . . . . . . . . . . . .  24
+     A.1.  The canonicalization contract . . . . . . . . . . . . . .  24
+     A.2.  The decision and the observed effect  . . . . . . . . . .  24
+     A.3.  Why the tier carries five clauses . . . . . . . . . . . .  25
+   Appendix B.  Conformance vectors  . . . . . . . . . . . . . . . .  25
+   Document History  . . . . . . . . . . . . . . . . . . . . . . . .  30
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  31
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  31
+
+1.  Introduction
+
+   This document defines one record format for the audit events that
+   Section 11 of [AIMS] requires, and it defines nothing else.  It
+   specifies no policy model, no compliance criteria and no retention
+   rule, and it does not extend or amend [AIMS].
+
+   The goals are:
+
+   *  to make an audit record from one deployment comparable with one
+      from another;
+
+   *  to make "tamper-evident" a property a verifier can test on the
+      bytes it holds;
+
+   *  to carry the authorization decision and the observed effect in one
+      signed record, so a disagreement between them is detectable;
+
+   *  to give the seven minimum fields of Section 11 of [AIMS] one
+      member each.
+
+   Policy belongs to a deployment, and a record format belongs to
+   everyone who has to read the record.  Two implementations that each
+   satisfy Section 11 in their own format produce audit trails that
+   cannot be compared, correlated across a service boundary, or checked
+   by a party that trusts neither producer.  Section 11 asks for all
+   three.
+
+
+
+
+
+Gilda                     Expires 7 April 2027                  [Page 3]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   Comparable has a narrow meaning here.  Two records are comparable
+   when a third party holding both can decide, from the bytes alone,
+   whether they describe the same request, whether their decisions
+   agree, and whether either was enforced.
+
+   The consequence is concrete: two deployments that each hash a request
+   differently cannot join their records on a request digest, so a
+   delegation that crossed between them is reconstructable in neither
+   log.
+
+   Section 11 of [AIMS] is normative about the existence of agent audit
+   records and silent about their form.  It requires that "deployments
+   MUST produce durable audit logs covering authorization decisions and
+   subsequent remediations", that "Audit records MUST be tamper-evident
+   and retained according to the security policy of the deployment", and
+   that audit events record seven minimum fields.
+
+   Section 12 then places the policy model and document format out of
+   scope, stating that they are "not recommended as a target for
+   standardization within this specification".  Section 13 places
+   compliance criteria out of scope, and Section 16 records no IANA
+   actions.  Appendix A sets out the canonicalization contract and the
+   reason the decision and the observed effect belong in one record.
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in BCP
+   14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+3.  Terminology
+
+   The following terms are used throughout this document.  Two of them,
+   _observer_ and _decision point_, are defined here; the rest are taken
+   from the documents named beside them.
+
+   Agent, Tool, Service, Resource, LLM:  as [AIMS] uses them.
+
+   Agent identifier:  a WIMSE identifier as defined in [WIMSE-ID].
+
+   Statement, subject, predicate:  as [IN-TOTO] uses them.
+
+   Observer:  the party that produces a record under this document.  An
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                  [Page 4]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+      observer watches from a layer the agent cannot address.  A host-
+      side view of a guest filesystem, a hypervisor-level read of guest
+      state, and kernel-level supervision below the observed process are
+      such layers.  An in-process library, a wrapper the agent links,
+      and an importer holding another party's log are not.
+
+   Decision point:  the party that evaluated the authorization request,
+      whatever its architecture.
+
+   Interval:  the period between the before-state and the after-state
+      that one record covers.
+
+   Tier:  the degree to which a record's own members corroborate what it
+      claims about how it was observed.  A verifier derives the tier
+      under the rule in Section 5.7 and never reads it from the record.
+
+   Every digest in this document is written as lowercase hexadecimal in
+   the algorithm the record declares in its hashAlgorithm member.
+
+4.  Audit Record Specification
+
+   A record is an in-toto Statement [IN-TOTO] carried in a DSSE envelope
+   [DSSE].  Its predicateType is
+
+   =========== NOTE: "\" line wrapping per RFC 8792 ============
+
+   https://probityai.github.io/agent-evidence-vectors/predicate/v1/\
+   agent-audit-record
+
+   Seventeen required predicate members and one optional member are
+   defined in Section 5.  Each of the seventeen is required unless a
+   rule in that section makes it conditional, no member has a default,
+   and a verifier MUST NOT supply one for an absent member (vectors F1
+   and EV3).  Two members are conditional on a sibling value,
+   resource.argumentsDigest and correlation.externalAnchor, and each is
+   specified where it is defined.  The optional member is oversight
+   (Section 5.5); its absence says nothing about whether a person acted.
+
+   A verifier MUST reject a value outside any closed vocabulary this
+   document defines, and MUST NOT ignore the member (vector V1).  The
+   closed vocabularies reuse terms registered in [VOCABULARY].
+
+4.1.  Canonical form
+
+   Two implementations derive the same bytes from the same Statement
+   only if they agree on the serialization and on what makes a Statement
+   malformed.  Both are fixed below.
+
+
+
+
+Gilda                     Expires 7 April 2027                  [Page 5]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+4.1.1.  JSON profile
+
+   Producers and verifiers MUST canonicalize the Statement with
+   [RFC8785], and the signature covers those bytes and no other
+   serialization (vector T2).  Producers and verifiers MUST enforce the
+   [RFC7493] I-JSON safe-integer profile: an integer of magnitude at or
+   above 2^53 makes the Statement malformed (vector T5).
+
+4.1.2.  Duplicate members and nesting depth
+
+   A member name repeated at any depth makes the Statement malformed.  A
+   verifier MUST reject such a Statement and MUST NOT retain any one
+   occurrence (vector T3).  A Statement nested deeper than 128 levels
+   MUST be rejected (vector T4).
+
+4.2.  Subject convention
+
+   A record carries two subject entries.  The first is the request, by
+   digest: its name is the correlation identifier and its sha256 digest
+   is the request digest defined in Section 5.  The second is the after-
+   state root of the interval the predicate carries, and its name is the
+   first entry's name with the suffix /after.
+
+   "subject": [
+     { "name": "urn:example:corr:7f3a",
+       "digest": { "sha256": "9f86d081884c7d659a2feaa0c55ad015..." } },
+     { "name": "urn:example:corr:7f3a/after",
+       "digest": { "sha256": "60303ae22b998861bce3b28f33eec1be..." } }
+   ]
+
+   A verifier MUST bind on the digest map and MUST NOT bind on either
+   name.  A name is a correlation identifier a producer chooses; a
+   digest is a value a verifier recomputes from the bytes it holds.  The
+   names exist so that a reader can tell the two entries apart.
+
+   The second entry MUST be present if and only if the predicate carries
+   an interval (vectors S1 and I1r), and its digest MUST equal the
+   interval's after-state root (vector S2).
+
+   A decision that permitted nothing, and a decision that was denied,
+   still carry an interval whose before-state and after-state roots are
+   equal and whose write set is empty (vector A2).  A consumer therefore
+   reads an absence of effect from the members of a record it holds, and
+   never from a record it does not have.
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                  [Page 6]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+4.3.  Timestamps and correlation
+
+   Every time value in a record MUST be an [RFC3339] date-time.  A
+   producer SHOULD express it in UTC with the "Z" offset, so that two
+   records from different deployments sort together without a conversion
+   step.  The correlation identifier is the first subject entry's name,
+   so one identifier binds the request digest, the interval and the
+   record.
+
+4.4.  Tamper-evidence
+
+   A record satisfies the tamper-evidence requirement of Section 11 of
+   [AIMS] when all three of the following hold.
+
+   The DSSE pre-authentication encoding covers the [RFC8785] canonical
+   bytes of the whole Statement, and every one of the seven minimum
+   fields is inside that pre-image.
+
+   DSSE PAE = "DSSEv1" SP len("application/vnd.in-toto+json") SP
+              "application/vnd.in-toto+json" SP
+              len(JCS(statement)) SP JCS(statement)
+
+   The request digest, the ordered write chain of the effect, and both
+   agreement values are recomputable from other members of the same
+   record.  A verifier therefore still refuses a record that the key
+   holder altered and signed again (vector T1).
+
+   The canonical form is fixed as in Section 4.1, so two verifiers
+   derive identical bytes from identical documents.  Any one of the
+   three failing is a refusal.
+
+   This document does not address the retention half of the Section 11
+   requirement.  Retention is a property of a deployment, and a record
+   cannot assert it about itself.  A record under this document SHOULD
+   state that in its doesNotAssert member, so that a reader need not
+   infer coverage.
+
+4.5.  Mapping to the seven minimum fields
+
+   +====================+=============================================+
+   | Section 11 field   | Members                                     |
+   +====================+=============================================+
+   | authenticated      | agent.id, agent.credentialDigest,           |
+   | agent identifier   | agent.authentication, agent.signers         |
+   +--------------------+---------------------------------------------+
+   | delegated subject, | delegation.subject, delegation.subjectKind, |
+   | when present       | delegation.authorityDigest                  |
+   +--------------------+---------------------------------------------+
+
+
+
+Gilda                     Expires 7 April 2027                  [Page 7]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   | resource or tool   | resource.kind, resource.id,                 |
+   | being accessed     | resource.binding, resource.argumentsDigest  |
+   +--------------------+---------------------------------------------+
+   | action requested   | decision, evaluation and effect, with the   |
+   | and authorization  | derived agreement, and oversight when       |
+   | decision           | present                                     |
+   +--------------------+---------------------------------------------+
+   | timestamp and      | correlation and the interval timestamps     |
+   | correlation        |                                             |
+   | identifier         |                                             |
+   +--------------------+---------------------------------------------+
+   | posture assessment | posture, carrying both vantages and         |
+   | or risk state      | assessedAt                                  |
+   +--------------------+---------------------------------------------+
+   | remediation or     | remediation                                 |
+   | revocation events  |                                             |
+   | and cause          |                                             |
+   +--------------------+---------------------------------------------+
+
+     Table 1: The seven minimum fields of Section 11 and the members
+                             that carry them
+
+   Each field also carries an evidence partition in fieldEvidence,
+   stating whether the observing substrate covered the value or the
+   producer asserted it.  All seven fields can be recorded by an agent
+   about itself.  A record that says which ones were is checkable; a
+   record that does not say is not.
+
+   The fourth field pairs an action with a decision, and this format
+   carries decision, effect and the derived agreement together.  A
+   record whose decision and effect disagree is well formed, and the
+   disagreement is visible in signed bytes:
+
+   "decision": { "action": "write", "reported": "deny" },
+   "effect":   {
+     "observed": "occurred",
+     "writes": [ { "path": "/srv/ledger/settlements.jsonl" } ]
+   },
+   "agreement": "disagree"
+
+   A log that carries the decision alone records that case as a clean
+   denial, because it has no other value to disagree with.
+
+
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                  [Page 8]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+4.6.  Verifying a record
+
+   A verifier holds a DSSE envelope and reaches a verdict from the bytes
+   inside it.  The checks below are the ones this document has already
+   stated, in the order a verifier can apply them without reading a
+   member twice.
+
+   The envelope's signature comes first, over the [RFC8785] canonical
+   bytes of the whole Statement.  A statement whose signature does not
+   verify is malformed, and nothing further is read from it.  A verifier
+   scored against Appendix B reports it as malformed (vector T2).
+
+   The JSON profile comes second: the safe-integer bound of [RFC7493],
+   no member name repeated at any depth, and no nesting past 128 levels.
+   Each of the three makes a Statement malformed, so a verifier that
+   finds one of them has nothing further to check.
+
+   Membership comes third.  Every one of the seventeen required members
+   is present unless a rule in Section 5 makes it conditional on a
+   sibling value, and every value sits inside the closed vocabulary its
+   member declares.
+
+   The recomputes come last, and a signature cannot supply them.  The
+   three that Section 4.4 requires come first: a verifier derives the
+   request digest from the four members Section 5 names and compares it
+   with the first subject entry, it replays the write chain from the
+   before-state root and compares the result with the second subject
+   entry, and it derives both agreement values from the members they are
+   functions of.
+
+   A fourth recompute binds the prior commitment rather than the
+   record's content.  A verifier recomputes the commitment digest,
+   checks that the commitment precedes the interval, and checks that the
+   commitment key is absent from agent.signers.
+
+   The tier follows from those results.  A verifier reads the five
+   clauses of Section 5.7 against the members it has just checked and
+   assigns authoritative or voluntary itself.
+
+   This document requires no particular order and no particular
+   reporting shape.  A verifier that stops at the first failure and a
+   verifier that reports every failure are both conformant.
+
+5.  Predicate members
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                  [Page 9]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   {
+     "recordId": "...",
+     "tier": "authoritative",
+     "hashAlgorithm": "sha256",
+     "agent": {
+       "id": "spiffe://prod.example.org/ns/payments/sa/reconciler",
+       "credentialDigest": "...",
+       "authentication": "wimse-wpt",
+       "signers": ["..."]
+     },
+     "delegation": {
+       "subject": "user:alice@example.org",
+       "subjectKind": "user",
+       "authorityDigest": "..."
+     },
+     "resource": {
+       "kind": "tool",
+       "id": "mcp://files/write",
+       "binding": "digest-bound",
+       "argumentsDigest": "..."
+     },
+     "decision": {
+       "action": "write",
+       "requestDigest": "...",
+       "reported": "deny",
+       "decisionPointId": "pdp://prod.example.org/authz-1",
+       "policyDigest": "...",
+       "reportedAt": "2026-09-19T11:04:02Z"
+     },
+     "evaluation": { "status": "evaluated" },
+     "effect": {
+       "observed": "occurred",
+       "interval": {
+         "beforeRoot": "...",
+         "afterRoot": "...",
+         "baseResolution": "supplied",
+         "openedAt": "2026-09-19T11:04:01Z",
+         "sealedAt": "2026-09-19T11:04:06Z"
+       },
+       "pathScope": ["/srv/ledger/"],
+       "writes": [
+         {
+           "path": "/srv/ledger/settlements.jsonl",
+           "preStateDigest": "...",
+           "postStateDigest": "...",
+           "requestDigest": "...",
+           "inScope": true
+         }
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 10]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+       ]
+     },
+     "agreement": "disagree",
+     "correlation": {
+       "id": "req:7f3a91c4",
+       "scope": "cross-party",
+       "timeBasis": "beacon-anchored",
+       "externalAnchor": { "kind": "rfc3161", "digest": "..." }
+     },
+     "posture": {
+       "reported": "sinkhole",
+       "reportedDigest": "...",
+       "observed": "allowlist",
+       "observedDigest": "...",
+       "assessedAt": "2026-09-19T06:00:00Z",
+       "agreement": "disagree"
+     },
+     "remediation": [
+       {
+         "cause": "session-revoked",
+         "signalReceivedAt": "2026-09-19T11:04:07Z",
+         "enforcedAt": "2026-09-19T11:04:09Z",
+         "enforcement": "session-terminated",
+         "postEnforcementEffect": "none",
+         "postEnforcementRoot": "..."
+       }
+     ],
+     "observation": {
+       "vantage": "below-observed",
+       "coverage": { "scopeComplete": true, "gaps": [] },
+       "priorCommitment": {
+         "committedAt": "2026-09-19T11:03:58Z",
+         "witnessNonce": "...",
+         "commitmentDigest": "...",
+         "keyid": "...",
+         "sig": "..."
+       }
+     },
+     "fieldEvidence": {
+       "agent": "producer-asserted",
+       "correlation": "producer-asserted",
+       "decision": "producer-asserted",
+       "delegation": "producer-asserted",
+       "posture": "substrate-covered",
+       "remediation": "substrate-covered",
+       "resource": "substrate-covered"
+     },
+     "doesNotAssert": ["..."],
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 11]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+     "issuedAt": "2026-09-19T11:04:11Z"
+   }
+
+5.1.  Record identity and hash algorithm
+
+   recordId is the producer's identifier for this record.  It is opaque
+   to a verifier except where the commitment digest is recomputed, which
+   reads it as one of its four inputs.
+
+   hashAlgorithm names the algorithm every digest in the record is taken
+   under.  One value governs the whole record: the subject digests, the
+   credential, authority, policy and posture digests, the interval
+   roots, the write pre-state and post-state digests, and the commitment
+   digest are all taken under it.
+
+   A record carrying digests in two algorithms is therefore not
+   representable, and that is the point.  A verifier comparing two roots
+   has to know they were taken under the same algorithm, and a per-
+   member choice would let a producer choose which comparison a reader
+   could make.
+
+   issuedAt is the time the producer sealed the record, and it is at or
+   after the interval's sealedAt because the record cannot be issued
+   before the interval it describes has closed.
+
+   A verifier that does not implement the declared algorithm cannot
+   recompute anything the record binds.  It has no verdict to reach on
+   such a record, and reporting that it could not read one is the honest
+   outcome rather than a refusal on the record's content.
+
+5.2.  Identity, delegation and resource
+
+   agent.id carries the WIMSE identifier verbatim, and
+   agent.credentialDigest the digest of the credential the identifier
+   was read from. agent.authentication is the mechanism, over the closed
+   set wimse-wpt, http-message-signature, mtls, oauth-access-token,
+   none, drawn from Section 9 of [AIMS]. agent.signers is the set of key
+   identifiers the agent signs its own records with, as the observer
+   knows them, and it MAY be empty.
+
+   delegation.subjectKind is one of user, system, none.  Field 2 of
+   Section 11 is the only conditional one, so an absent delegated
+   subject is conformant and is spelled subjectKind of none beside a
+   subject of the literal none.
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 12]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   A subjectKind of none beside any other subject value is malformed and
+   a verifier MUST NOT prefer either member (vector F2).
+   delegation.authorityDigest is required unconditionally, and a
+   decision taken under no authority carries the digest of the explicit
+   deny-all document.
+
+   resource.kind is one of path, uri, tool, the three shapes the single
+   category of external endpoints in Section 4 of [AIMS] takes.
+   resource.binding of digest-bound MUST carry argumentsDigest, and not-
+   bindable MUST NOT carry it in any spelling, including null and the
+   empty string (vectors F3, F3b and F3c).
+
+   Where a decision point can canonicalize the arguments of a call, it
+   SHOULD bind them by digest.  A tool call whose arguments it cannot
+   canonicalize has nothing to bind, so that call is representable and
+   it cannot reach the strongest tier.
+
+5.3.  Decision, effect and agreement
+
+   decision.reported is one of permit, deny, permit-with-conditions.
+   decision.requestDigest MUST equal the first subject entry's sha256
+   digest and MUST equal the [RFC8785] digest over the members action,
+   argumentsDigest, resourceId and resourceKind (vector F4).  The hashed
+   object holds argumentsDigest exactly when resource.binding is digest-
+   bound.  Under not-bindable it holds the other three members and no
+   argumentsDigest member at all, so every conforming implementation
+   derives one digest for a given request (vector A6).  Altering the
+   action, the resource or the arguments after signing therefore breaks
+   a recompute even where the signature was applied again.
+
+   Each write carries requestDigest: the request digest of the request
+   the observer attributes the write to, or the literal unattributed
+   where the observer cannot attribute it.  An attribution is an
+   observation, and an observer that cannot tie a write to a request
+   says so rather than guessing.
+
+   effect.observed describes this record's request, not the whole
+   interval, and it is one of occurred, none, unknown.  It MUST be
+   derivable from the write set: occurred when at least one write is
+   attributed to decision.requestDigest; none when no write is
+   attributed to it and no unattributed write lies inside pathScope; and
+   unknown otherwise.  A write attributed to a different request belongs
+   to that request's record and does not enter this one's value (vectors
+   A7 and T1).  A value of none beside an empty write set requires the
+   before-state and after-state roots to be equal (vector E1).
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 13]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   The ordered write chain MUST reproduce the after-state root from the
+   before-state root (vector E2).  A baseResolution of empty-tree MUST
+   carry the empty-tree constant for the declared hash algorithm (vector
+   E3).
+
+   A member of pathScope MUST NOT contain a glob metacharacter, and a
+   universal scope is the single literal / (vector V2).  A write outside
+   pathScope MUST carry inScope of false, which is derived from the path
+   and never a producer opinion (vector V3).
+
+   agreement is one of agree, disagree, not-exercised, indeterminate,
+   one-sided, and it MUST be derivable from decision.reported and
+   effect.observed by the table below (vectors D1, D2 and D3).
+   posture.agreement MUST be derivable from the two carried postures on
+   the same terms: agree when they are equal byte for byte, disagree
+   when both are present and unequal (vector F6).
+
+       +========================+=================+===============+
+       | decision.reported      | effect.observed | agreement     |
+       +========================+=================+===============+
+       | permit or permit-with- | occurred        | agree         |
+       | conditions             |                 |               |
+       +------------------------+-----------------+---------------+
+       | deny                   | none            | agree         |
+       +------------------------+-----------------+---------------+
+       | deny                   | occurred        | disagree      |
+       +------------------------+-----------------+---------------+
+       | permit or permit-with- | none            | not-exercised |
+       | conditions             |                 |               |
+       +------------------------+-----------------+---------------+
+       | any                    | unknown         | indeterminate |
+       +------------------------+-----------------+---------------+
+
+          Table 2: Deriving agreement from the reported decision
+                         and the observed effect
+
+   A permit allows an action and does not require it, so a permitted
+   call that failed or was never made is not-exercised, and a deny that
+   leaked is disagree.  The two are different facts and an incident
+   review needs to tell them apart (vector A9).  An unattributed write
+   inside pathScope leaves the observer unable to rule the request's
+   effect in or out, so the record says indeterminate rather than
+   choosing (vector A8).
+
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 14]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   The table never produces one-sided. one-sided is in the closed set
+   and this version never produces it, because decision and effect are
+   both required and neither side can be absent.  It is reserved so that
+   a version admitting a record with one side missing does not have to
+   change a closed vocabulary, and a record carrying it under this
+   version is malformed (vector D2).
+
+   A verifier MUST NOT reject a record because either agreement value is
+   disagree, not-exercised or indeterminate (vectors A3, A8 and A9).  A
+   disagreement is the record working, and what it means for admission
+   is a consumer policy decision.
+
+5.4.  Evaluation
+
+   evaluation says whether the decision point evaluated the request at
+   all. evaluation.status is one of evaluated, not-evaluated.  A
+   decision point that could not evaluate still reports what it enforced
+   in decision.reported, so a record from a verifier that lost an input
+   and denied carries deny, and beside an effect of none derives agree.
+   Without this member that record is byte-for-byte the record of a
+   correctly enforced denial (vectors A2 and A10), and an incident
+   review cannot tell the two apart.  The construction follows Section 5
+   of [EVALUATION], which requires a verifier's own record of a refusal
+   to make the same distinction.
+
+   Under not-evaluated the member MUST carry unavailableInput, a non-
+   empty array naming each input the decision point could not obtain,
+   each at most once, from the closed set standing-source, key-source,
+   consumption-state (vectors EV1 and EV4).  Under evaluated it MUST NOT
+   carry unavailableInput in any spelling (vector EV2).
+
+   evaluation is not an input to agreement.  "Could not evaluate" is not
+   a decision, so it is not a fourth value of decision.reported, and the
+   agreement table is unchanged: a leak during an outage is still
+   disagree.  A verifier MUST NOT reject a record because
+   evaluation.status is not-evaluated, whatever decision.reported is.  A
+   permit recorded as not-evaluated is a decision point failing open,
+   and the format represents it so that it can be found.  The evidence
+   class of evaluation is the one fieldEvidence declares for decision.
+
+5.5.  Oversight
+
+   oversight is optional.  When present it records the kind of act a
+   person took on this request before or at the decision, so that a
+   permit bound to a user confirmation (Section 10.7 of [AIMS]) says
+   whether that person observed the request, checked a stated property
+   of it, chose, or released an action already within authority they
+   held.  The four kinds are those of [OVERSIGHT-ACTS], Sections 2.3 to
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 15]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   2.9.
+
+   oversight.act is required in the member and is one of observation,
+   check, decision, release (vector OV1). oversight.recordDigest is
+   optional and, when present, is the digest of the overseer's own
+   signed record, bound as delegation.authorityDigest binds the
+   authority document.  No other member is defined, and a verifier MUST
+   reject an oversight member carrying one (vector OV2).  The act is
+   producer-asserted: its evidence class is the one fieldEvidence
+   declares for decision, and a verifier does not resolve recordDigest.
+
+5.6.  Correlation, posture and remediation
+
+   correlation.scope is one of producer, cross-party, and it is required
+   because Section 11 asks systems to "correlate events across Agents,
+   Tools, Services, Resources and LLMs", which a producer-scoped
+   identifier cannot do.  A record a producer distributes beyond its own
+   deployment SHOULD carry a scope of cross-party.
+
+   correlation.timeBasis of beacon-anchored MUST carry externalAnchor,
+   and asserted MUST NOT carry it (vector F5). externalAnchor.kind is
+   one of rfc3161, transparency-log, opentimestamps, of which [RFC3161]
+   and [RFC9162] define the first two.  No offline validation rule for
+   an anchor token is defined here, and vector N1 records both readings
+   a conforming verifier can reach.
+
+   posture.reported and posture.observed are over the closed set
+   no_network, allowlist, sinkhole, unsafe_bypass_egress, each with a
+   digest pinning the posture document. posture.assessedAt carries the
+   time the assessment was made, which Appendix A gives the reason for.
+   A consumer weighing either posture SHOULD read assessedAt beside it.
+
+   remediation carries one member per event.  Its cause is one of
+   session-revoked, risk-elevated, subject-disabled, token-replay-
+   suspected, policy-changed, operator-action.  Its enforcement is one
+   of access-attenuated, session-terminated, tokens-discarded,
+   privileges-reduced, reevaluated, not-enforced.  In each member
+   enforcedAt MUST be at or after signalReceivedAt (vector F7).
+
+   A verifier MUST NOT reject a record because enforcement is not-
+   enforced (vector A4).  A record carries that value when a remediation
+   signal arrived and enforcement did not follow it.
+
+
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 16]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   postEnforcementEffect and postEnforcementRoot make the Section 11
+   delay requirement checkable by a third party.  A revocation that
+   arrived, was recorded, and was followed by an observed effect is a
+   recorded enforcement failure.  This document defines no bound on the
+   delay, because Section 11 carries no unit for "undue", and vector N2
+   records that case as indeterminate.
+
+5.7.  Observation and tier
+
+   observation.vantage is one of below-observed, peer, self.  An
+   observer that could not read part of pathScope SHOULD name that path
+   in coverage.gaps, because the tier recompute below reads the gap list
+   and not the observer's confidence. observation.priorCommitment is the
+   observer's commitment, made before the interval opened, to the
+   before-state and to a nonce the observer chose.
+
+   Its committedAt MUST be strictly before the interval's openedAt
+   (vector C2).  Its commitmentDigest MUST recompute as the [RFC8785]
+   digest over authorityDigest, beforeRoot, recordId and witnessNonce
+   (vector C3).  Its keyid MUST NOT appear in agent.signers (vector C1),
+   and that disjointness is the one byte-pure discriminator between an
+   observer and a self-observing party.
+
+   doesNotAssert is the negative-scope member the sections above refer
+   to: an array of explicit statements about what this record does not
+   claim.  A record under this version SHOULD carry two entries.  The
+   first entry records that it makes no claim about retention.  The
+   second records that it makes no claim that the reported decision is
+   the decision the policy engine evaluated.
+
+   fieldEvidence carries exactly the seven keys named in the mapping
+   table, each one of substrate-covered or producer-asserted.  Both
+   terms are reused unchanged from the field-evidence partition
+   registered in [VOCABULARY], as the four posture values above are
+   reused from its containment-posture terms.  A missing key is
+   malformed (vector FE1), and no key may declare substrate-covered
+   while vantage is self (vector FE2).
+
+   tier is one of voluntary, authoritative.  A verifier MUST recompute
+   it and MUST NOT take the declared value as the tier.  Vectors TI1
+   through TI5 each declare authoritative while failing one clause, so a
+   verifier that reads the declared value passes all five.
+
+
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 17]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   A record is authoritative if and only if all five of these hold, and
+   voluntary otherwise: vantage is below-observed (vector TI1);
+   priorCommitment is present and complete (vector TI2); pathScope is
+   non-empty (vector TI3); coverage.scopeComplete is true or every gap
+   names a path outside pathScope (vector TI4); and resource.binding is
+   digest-bound (vector TI5).
+
+   A record declaring authoritative that fails a clause is malformed,
+   and a verifier MUST NOT downgrade it to voluntary (vector TI1).
+   Downgrading would let a producer emit an authoritative-shaped record
+   and rely on the verifier to relabel it.
+
+   The opposite mismatch is well formed.  A record declaring voluntary
+   while meeting all five clauses is not malformed, and a verifier reads
+   it at the tier the recompute gives.  Treating the two directions
+   differently is deliberate: a producer that over-claims is relying on
+   somebody else to correct it, and a producer that under-claims is not.
+
+   A verifier MUST NOT read a voluntary record as evidence that its
+   content corresponds to any independently observed fact (vector A5).
+
+5.8.  A worked reading of the example
+
+   The record at the head of Section 5 reports a write that was denied
+   and happened anyway.  Each rule above lands on one of its members.
+
+   decision.reported is deny, and the single write is attributed to the
+   record's own request, so effect.observed derives as occurred.  The
+   third row of the agreement table maps that pair to disagree, which is
+   the value the record carries, so the derivation holds and vector D1
+   does not apply.
+
+   posture.reported is sinkhole and posture.observed is allowlist.  Both
+   are present and they are unequal, so posture.agreement derives as
+   disagree, which is again the carried value.
+
+   The tier recompute passes all five clauses. vantage is below-
+   observed; priorCommitment carries all five of its own members;
+   pathScope holds one entry; coverage.scopeComplete is true with no
+   gaps; and resource.binding is digest-bound.  The declared
+   authoritative is therefore the tier a verifier derives.
+
+   evaluation.status is evaluated and the member names no unavailable
+   input, so vector EV2 does not apply.  The record carries no oversight
+   member and claims nothing about a human act.
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 18]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   The ordering checks hold on the timestamps as written.  Vector C2
+   tests the first: committedAt at 11:03:58Z falls strictly before
+   openedAt at 11:04:01Z.  Vector F7 tests the second: enforcedAt at
+   11:04:09Z falls two seconds after signalReceivedAt at 11:04:07Z.
+
+   The single write lies under /srv/ledger/, the one member of
+   pathScope, so its inScope of true is derived from the path and vector
+   V3 does not apply. fieldEvidence carries all seven keys, so vector
+   FE1 does not apply, and vantage is not self, so vector FE2 does not
+   either.
+
+   What the record says, read whole, is that a write was denied and
+   happened anyway, that the posture the decision point read was not the
+   posture an observer saw, and that a revocation signal was enforced
+   two seconds after it arrived.  All three are well formed, and a
+   verifier accepts the record.
+
+6.  Security Considerations
+
+   A record is checkable for internal coherence and says nothing about
+   the world outside its own bytes.  Where a consumer needs a fact about
+   that world, it has to establish that fact somewhere else.
+
+6.1.  The vantage claim is not self-proving
+
+   The vantage claim in a record is an assertion about the world, and
+   the record makes it coherent with its own members without making it
+   self-proving.  A consumer that requires the vantage to be true MUST
+   anchor the observer's key out of band, exactly as it would anchor any
+   signer.  Such a consumer MUST read authoritative as coherence with a
+   claimed observation.vantage, and never as proof of one (vector A5).
+
+6.2.  A producer that observes only itself
+
+   A producer that observes only itself can satisfy every field of this
+   format, and the observation.priorCommitment member raises the cost of
+   doing so.  It binds the before-state, the authority and the record
+   identifier under the observer's signature before the interval opens.
+   A forgery therefore has to be decided on before the forger knows what
+   it will be lying about.
+
+   It does not reduce the cost to zero, and a producer holding two keys
+   satisfies every clause.  That residual is detectable by a key
+   inventory outside the record and by no function of the bytes inside
+   it.  A consumer that depends on the vantage SHOULD keep such an
+   inventory.
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 19]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+6.3.  Withheld rows
+
+   A record can omit a remediation event, or a claimed access that the
+   observer saw, and no function of a Statement detects a row that was
+   never written.  No quantity of extra carried material changes that,
+   because extra material is material a withholding producer also
+   declines to carry.
+
+   The coverage, fieldEvidence and doesNotAssert members exist so that a
+   blind spot travels where the observer is honest about it.  An
+   observer that knows of a blind spot SHOULD record it in the
+   doesNotAssert member.  None of these members is a defence against a
+   producer that conceals one.
+
+6.4.  Well-formed disagreement
+
+   A disagreement between the reported decision and the observed effect
+   is well formed, as is a disagreement between the two postures, and as
+   is a remediation event recording that enforcement did not occur.  A
+   verifier MUST accept all three (vectors A3 and A4).  A format that
+   refused to represent a failed enforcement would mean that no record
+   ever reports one.  This clause prevents that.
+
+6.5.  A decision that was not evaluated
+
+   A record whose evaluation.status is not-evaluated is well formed
+   beside any reported decision, and a verifier MUST accept it (vector
+   A10).  A deny that was not evaluated is a decision point failing
+   closed, and a permit that was not evaluated is one failing open.
+   Both are facts an audit trail exists to carry.  A consumer SHOULD
+   treat a not-evaluated permit as an enforcement failure for policy
+   purposes, and this document leaves that to the consumer.
+
+6.6.  Revocation without a bound
+
+   Section 11 of [AIMS] requires that revoked or downgraded
+   authorization be enforced "without undue delay" and specifies no
+   bound.  This document carries signalReceivedAt and enforcedAt, and
+   defines no bound of its own.  A record with an arbitrarily large gap
+   between them is well formed.  A consumer SHOULD set a bound on that
+   gap as policy and read a record that exceeds it accordingly.
+
+
+
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 20]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+6.7.  Relationship to other tamper-evidence mechanisms
+
+   A signature over canonical bytes detects an editor who cannot sign.
+   A trusted timestamp [RFC3161] adds an assertion about when the bytes
+   existed, and an append-only log [RFC6962] [RFC9162] adds an assertion
+   that they were published.  This document requires neither, and a
+   deployment MAY carry a record under this format in such a log.
+
+   None of the three detects a producer that signed a false record.  The
+   recomputes in Section 4.4 address that case.
+
+6.8.  Two implementations that both differ from the canonical form
+
+   Appendix A gives the mechanism by which two implementations can share
+   a serialization that is not [RFC8785].  Neither party can see the
+   failure from inside it.  Every signature each of them produces
+   verifies for the other, and the records fail only for a third party
+   that canonicalizes correctly.
+
+   A consumer therefore derives the canonical bytes itself and does not
+   accept a producer's report of them.  Section 4.1 is normative for
+   that reason, and vector T2 is the member that tests it.
+
+7.  Privacy Considerations
+
+   A record under this document carries an agent identifier, a delegated
+   subject, a resource identifier and a set of paths.  The delegated
+   subject in particular may identify a natural person.  Deployments
+   SHOULD consider which of these a given consumer needs before
+   distributing a record.  The doesNotAssert member is the place to
+   record what a distributed record deliberately omits.
+
+   The format binds five documents by digest and carries none of them:
+   the credential, the authority document, the policy, and both posture
+   documents.  A consumer that needs their content SHOULD resolve them
+   out of band.
+
+   That separation is deliberate and is the privacy-preserving default,
+   because it lets a record travel to a party entitled to verify the
+   decision without carrying the material the decision was made from.  A
+   consumer entitled to the decision receives the digest and resolves
+   the document only if it needs the content.
+
+
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 21]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+8.  IANA Considerations
+
+   This document has no IANA actions.  The predicate type is a URI under
+   a namespace the author controls and requires no registration to be
+   used, consistent with the in-toto Attestation Framework's treatment
+   of predicate type identifiers [IN-TOTO].
+
+   A registered identifier would be the alternative.  It is not proposed
+   here, because a record carries its predicate type inside the bytes
+   its producer signed.  A later revision SHOULD NOT move the URI once
+   records carrying it exist, since moving it invalidates every
+   signature over them.
+
+9.  Normative References
+
+   [AIMS]     Kasselman, P., Lombardo, J., Rosomakho, Y., Campbell, B.,
+              Steele, N., and A. Parecki, "AI Identity Management
+              System", Work in Progress, Internet-Draft, draft-ietf-
+              wimse-aims-00, 15 September 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
+              aims-00>.
+
+   [DSSE]     Secure Systems Lab, "Dead Simple Signing Envelope", 2026,
+              <https://github.com/secure-systems-lab/dsse>.
+
+   [IN-TOTO]  in-toto, "in-toto Attestation Framework Specification",
+              2026, <https://github.com/in-
+              toto/attestation/blob/main/spec/README.md>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC3339]  Klyne, G. and C. Newman, "Date and Time on the Internet:
+              Timestamps", RFC 3339, DOI 10.17487/RFC3339, July 2002,
+              <https://www.rfc-editor.org/rfc/rfc3339>.
+
+   [RFC7493]  Bray, T., Ed., "The I-JSON Message Format", RFC 7493,
+              DOI 10.17487/RFC7493, March 2015,
+              <https://www.rfc-editor.org/rfc/rfc7493>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 22]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   [RFC8785]  Rundgren, A., Jordan, B., and S. Erdtman, "JSON
+              Canonicalization Scheme (JCS)", RFC 8785,
+              DOI 10.17487/RFC8785, June 2020,
+              <https://www.rfc-editor.org/rfc/rfc8785>.
+
+   [WIMSE-ID] Rosomakho, Y. and J. A. Salowey, "Workload Identifier",
+              Work in Progress, Internet-Draft, draft-ietf-wimse-
+              identifier-03, 6 July 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
+              identifier-03>.
+
+10.  Informative References
+
+   [EVALUATION]
+              Jackson, W., "Verifier-Side Evaluation Semantics for
+              Delegated Authority Chains", Work in Progress, Internet-
+              Draft, draft-jackson-wimse-evaluation-03, 30 September
+              2026, <https://datatracker.ietf.org/doc/html/draft-
+              jackson-wimse-evaluation-03>.
+
+   [OVERSIGHT-ACTS]
+              Ehstand, A., "Terminology for Human Oversight Acts in
+              Automated and Agentic Systems", Work in Progress,
+              Internet-Draft, draft-ehstand-oversight-acts-00, 26
+              September 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ehstand-oversight-acts-00>.
+
+   [RFC3161]  Adams, C., Cain, P., Pinkas, D., and R. Zuccherato,
+              "Internet X.509 Public Key Infrastructure Time-Stamp
+              Protocol (TSP)", RFC 3161, DOI 10.17487/RFC3161, August
+              2001, <https://www.rfc-editor.org/rfc/rfc3161>.
+
+   [RFC6962]  Laurie, B., Langley, A., and E. Kasper, "Certificate
+              Transparency", RFC 6962, DOI 10.17487/RFC6962, June 2013,
+              <https://www.rfc-editor.org/rfc/rfc6962>.
+
+   [RFC9162]  Laurie, B., Messeri, E., and R. Stradling, "Certificate
+              Transparency Version 2.0", RFC 9162, DOI 10.17487/RFC9162,
+              December 2021, <https://www.rfc-editor.org/rfc/rfc9162>.
+
+   [VECTORS]  "Agent evidence conformance vectors", n.d.,
+              <https://github.com/probityai/agent-evidence-vectors>.
+
+   [VOCABULARY]
+              "Agent evidence vocabulary", n.d.,
+              <https://github.com/probityai/agent-evidence-vocabulary>.
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 23]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+Appendix A.  Design rationale
+
+   Two requirements of this document are not derivable from Section 11
+   of [AIMS] on its own: the canonicalization contract, and carrying the
+   observed effect beside the reported decision.  Neither is restated
+   normatively here.
+
+A.1.  The canonicalization contract
+
+   The word "tamper-evident" appears once in [AIMS] and is not defined
+   there.  Read narrowly it means a record whose alteration is
+   detectable, which a signature provides.  Two gaps remain.
+
+   A signature over a serialization is only as good as the agreement on
+   which bytes were signed, and that agreement is a property of a
+   written contract between two implementations; neither one's code
+   establishes it.  Two implementations can agree with each other on a
+   canonical form and both differ from [RFC8785], and no amount of
+   signing or hash-chaining detects that.
+
+   Each verifies its own records and rejects the other's, or worse,
+   accepts a record whose meaning it has silently changed.  A
+   canonicalization contract is therefore part of the tamper-evidence
+   requirement; it is not an implementation detail, and Section 4.1
+   makes it normative.
+
+   A signature also says nothing about the producer.  The party that
+   holds the signing key can alter a record and sign it again, and every
+   signature check still passes.
+
+   Detecting that requires fields whose values are recomputable from
+   other fields in the same record, so that an internally inconsistent
+   record is refusable regardless of who signed it.  A hash chain
+   catches an alteration by a party with no signing key; only a
+   recompute catches the key holder, and Section 4.4 specifies three of
+   them.
+
+A.2.  The decision and the observed effect
+
+   The fourth of the seven minimum fields pairs "action requested and
+   authorization decision".  A record carrying only the decision is a
+   self-report: it states what an enforcement point concluded, and a
+   deployment that mis-enforces its own conclusion produces a clean
+   audit trail of the decision it failed to apply.  Section 11 asks for
+   enough to "reconstruct agent behavior and authorization context after
+   execution", and behaviour is not reconstructable from a decision.
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 24]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   This document therefore requires both sides in one record: the
+   decision as reported by the enforcement point, and the effect as
+   observed.  It also requires a three-valued agreement between them,
+   which a verifier derives from the two values; it is not a claim the
+   record makes.  A decision reported as denied beside an effect
+   observed as having occurred is then a refusable inconsistency in
+   signed bytes.  Today it is undetectable.
+
+   The same construction applies to the sixth field.  Section 8 of
+   [AIMS] defines posture assessment as an evaluation performed at
+   credential provisioning, while the sixth field asks for the posture
+   "influencing the decision".
+
+   A conformant record may therefore carry a posture that was accurate
+   at issuance and inaccurate at decision time, with nothing in the
+   record to say which.  Carrying posture as the decision point read it,
+   beside the posture as it was observed and its assessedAt, makes that
+   difference visible without constraining either value.
+
+A.3.  Why the tier carries five clauses
+
+   Each clause of the tier recompute closes one route by which a record
+   could claim an observer's vantage while carrying nothing that
+   distinguishes it from a self-report.
+
+   vantage of below-observed is the claim itself, and the four clauses
+   under it make the claim cost something.  The prior commitment binds
+   the before-state before the interval opens, so a producer cannot
+   decide after the fact what it saw.  A non-empty pathScope means the
+   record names the ground it covers.  A complete coverage claim, or a
+   gap list naming only paths outside that ground, means the record does
+   not quietly exclude the interesting part.  And a digest-bound
+   resource means the arguments of the call are pinned.
+
+   Dropping any one of them admits a record that carries the authority
+   of the rest while resting on nothing.  That is why the corpus in
+   Appendix B carries one reject member per clause.
+
+Appendix B.  Conformance vectors
+
+   The table below is the conformance corpus for this format.  Each row
+   gives a member identifier, the accept member it derives from, its
+   input, and the verdict a conforming verifier reaches.  A reject
+   differs from the accept member in its from column by one mutation, so
+   refusing every input scores nothing on this corpus.
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 25]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   An accept member has no parent and its from column reads root.  An
+   indeterminate member has more than one conforming verdict and its row
+   gives each.
+
+   Every row names the rule it tests.  Three rules this document adds
+   have no member in the table: the binding on the digest map in
+   Section 4.2, the [RFC3339] requirement in Section 4.3, and the single
+   hash algorithm of Section 5.1.  An implementation SHOULD be run
+   against every member of the corpus before it is described as
+   conforming to this document, and the three rules above are checked by
+   reading them.
+
+   The corpus travels with the predicate schema: the revision of this
+   document that freezes the predicate type URI is the revision that
+   publishes these members in [VECTORS], in that repository's manifest
+   layout.
+
+    +=====+======+====================================+===============+
+    | id  | from | what it is                         | expected      |
+    +=====+======+====================================+===============+
+    | A1  | root | every member present, permit       | valid         |
+    |     |      | beside occurred, all five tier     |               |
+    |     |      | clauses met                        |               |
+    +-----+------+------------------------------------+---------------+
+    | A2  | root | deny beside none, equal roots,     | valid         |
+    |     |      | empty write set                    |               |
+    +-----+------+------------------------------------+---------------+
+    | A3  | root | A1 with deny beside occurred and   | valid         |
+    |     |      | agreement of disagree              |               |
+    +-----+------+------------------------------------+---------------+
+    | A4  | root | A1 plus a remediation event with   | valid         |
+    |     |      | enforcement of not-enforced        |               |
+    +-----+------+------------------------------------+---------------+
+    | A5  | root | A1 with vantage of self, no prior  | valid         |
+    |     |      | commitment, tier of voluntary      |               |
+    +-----+------+------------------------------------+---------------+
+    | A6  | root | A1 with binding of not-bindable,   | valid         |
+    |     |      | argumentsDigest absent from the    |               |
+    |     |      | record and from the request-digest |               |
+    |     |      | preimage, tier of voluntary        |               |
+    +-----+------+------------------------------------+---------------+
+    | A7  | root | A2 plus one in-scope write inside  | valid,        |
+    |     |      | the interval attributed to a       | agreement of  |
+    |     |      | different request, roots and chain | agree         |
+    |     |      | moved to match                     |               |
+    +-----+------+------------------------------------+---------------+
+    | A8  | root | A2 plus one in-scope unattributed  | valid,        |
+    |     |      | write inside the interval,         | agreement of  |
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 26]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+    |     |      | effect.observed of unknown         | indeterminate |
+    +-----+------+------------------------------------+---------------+
+    | A9  | root | A1 with permit beside an empty     | valid,        |
+    |     |      | write set, equal roots,            | agreement of  |
+    |     |      | effect.observed of none            | not-exercised |
+    +-----+------+------------------------------------+---------------+
+    | A10 | root | A2 with evaluation.status of not-  | valid,        |
+    |     |      | evaluated and unavailableInput of  | agreement of  |
+    |     |      | standing-source                    | agree         |
+    +-----+------+------------------------------------+---------------+
+    | A11 | root | A1 plus oversight with act of      | valid         |
+    |     |      | check and a recordDigest           |               |
+    +-----+------+------------------------------------+---------------+
+    | F1  | A1   | A1 with the whole agent member     | malformed     |
+    |     |      | removed                            |               |
+    +-----+------+------------------------------------+---------------+
+    | F2  | A1   | subjectKind of none beside a named | malformed     |
+    |     |      | subject                            |               |
+    +-----+------+------------------------------------+---------------+
+    | F3  | A1   | digest-bound with argumentsDigest  | malformed     |
+    |     |      | removed                            |               |
+    +-----+------+------------------------------------+---------------+
+    | F3b | A6   | not-bindable carrying              | malformed     |
+    |     |      | argumentsDigest of null            |               |
+    +-----+------+------------------------------------+---------------+
+    | F3c | A6   | not-bindable carrying              | malformed     |
+    |     |      | argumentsDigest of the empty       |               |
+    |     |      | string                             |               |
+    +-----+------+------------------------------------+---------------+
+    | F4  | A1   | action changed, requestDigest left | malformed     |
+    |     |      | at its original value              |               |
+    +-----+------+------------------------------------+---------------+
+    | F5  | A1   | beacon-anchored with               | malformed     |
+    |     |      | externalAnchor removed             |               |
+    +-----+------+------------------------------------+---------------+
+    | F6  | A1   | two unequal postures declared as   | malformed     |
+    |     |      | agree                              |               |
+    +-----+------+------------------------------------+---------------+
+    | F7  | A4   | enforcedAt one second before       | malformed     |
+    |     |      | signalReceivedAt                   |               |
+    +-----+------+------------------------------------+---------------+
+    | T1  | A1   | effect.observed edited to none,    | malformed     |
+    |     |      | writes intact, signed again with   |               |
+    |     |      | the real key                       |               |
+    +-----+------+------------------------------------+---------------+
+    | T2  | A1   | serialized in declaration order,   | malformed     |
+    |     |      | not [RFC8785] order                |               |
+    +-----+------+------------------------------------+---------------+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 27]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+    | T3  | A1   | a member name repeated at depth    | malformed     |
+    |     |      | three                              |               |
+    +-----+------+------------------------------------+---------------+
+    | T4  | A1   | nesting 129 levels deep            | malformed     |
+    +-----+------+------------------------------------+---------------+
+    | T5  | A1   | an integer of magnitude exactly    | malformed     |
+    |     |      | 2^53                               |               |
+    +-----+------+------------------------------------+---------------+
+    | D1  | A1   | agreement of disagree with both    | malformed     |
+    |     |      | sides agreeing                     |               |
+    +-----+------+------------------------------------+---------------+
+    | D2  | A1   | agreement of one-sided with both   | malformed     |
+    |     |      | values present                     |               |
+    +-----+------+------------------------------------+---------------+
+    | D3  | A9   | agreement of disagree beside       | malformed     |
+    |     |      | permit and none                    |               |
+    +-----+------+------------------------------------+---------------+
+    | S1  | A1   | second subject entry removed,      | malformed     |
+    |     |      | interval left present              |               |
+    +-----+------+------------------------------------+---------------+
+    | S2  | A1   | second subject entry's digest set  | malformed     |
+    |     |      | to the before-state root           |               |
+    +-----+------+------------------------------------+---------------+
+    | I1r | A1   | interval removed, second subject   | malformed     |
+    |     |      | entry left present                 |               |
+    +-----+------+------------------------------------+---------------+
+    | TI1 | A1   | authoritative declared with        | malformed     |
+    |     |      | vantage of self                    |               |
+    +-----+------+------------------------------------+---------------+
+    | TI2 | A1   | authoritative declared with no     | malformed     |
+    |     |      | prior commitment                   |               |
+    +-----+------+------------------------------------+---------------+
+    | TI3 | A1   | authoritative declared with an     | malformed     |
+    |     |      | empty pathScope                    |               |
+    +-----+------+------------------------------------+---------------+
+    | TI4 | A1   | authoritative declared with a      | malformed     |
+    |     |      | coverage gap inside pathScope      |               |
+    +-----+------+------------------------------------+---------------+
+    | TI5 | A6   | authoritative declared on A6       | malformed     |
+    +-----+------+------------------------------------+---------------+
+    | C1  | A1   | commitment keyid added to          | malformed     |
+    |     |      | agent.signers                      |               |
+    +-----+------+------------------------------------+---------------+
+    | C2  | A1   | committedAt one second after       | malformed     |
+    |     |      | openedAt                           |               |
+    +-----+------+------------------------------------+---------------+
+    | C3  | A1   | witnessNonce changed,              | malformed     |
+    |     |      | commitmentDigest left at its       |               |
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 28]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+    |     |      | original value                     |               |
+    +-----+------+------------------------------------+---------------+
+    | E1  | A2   | observed of none with a non-empty  | malformed     |
+    |     |      | write set                          |               |
+    +-----+------+------------------------------------+---------------+
+    | E2  | A1   | a second write whose pre-state is  | malformed     |
+    |     |      | not the first write's post-state   |               |
+    +-----+------+------------------------------------+---------------+
+    | E3  | A1   | empty-tree under sha256 carrying   | malformed     |
+    |     |      | the sha1 constant                  |               |
+    +-----+------+------------------------------------+---------------+
+    | V1  | A4   | enforcement of quarantined,        | malformed     |
+    |     |      | outside the closed set             |               |
+    +-----+------+------------------------------------+---------------+
+    | V2  | A1   | a pathScope member carrying a glob | malformed     |
+    |     |      | metacharacter                      |               |
+    +-----+------+------------------------------------+---------------+
+    | V3  | A1   | a write outside pathScope carrying | malformed     |
+    |     |      | inScope of true                    |               |
+    +-----+------+------------------------------------+---------------+
+    | FE1 | A1   | six of the seven fieldEvidence     | malformed     |
+    |     |      | keys present                       |               |
+    +-----+------+------------------------------------+---------------+
+    | FE2 | A5   | substrate-covered declared beside  | malformed     |
+    |     |      | vantage of self                    |               |
+    +-----+------+------------------------------------+---------------+
+    | EV1 | A10  | not-evaluated with                 | malformed     |
+    |     |      | unavailableInput removed           |               |
+    +-----+------+------------------------------------+---------------+
+    | EV2 | A2   | evaluated carrying                 | malformed     |
+    |     |      | unavailableInput of standing-      |               |
+    |     |      | source                             |               |
+    +-----+------+------------------------------------+---------------+
+    | EV3 | A1   | the evaluation member removed,     | malformed     |
+    |     |      | which is the shape of a revision   |               |
+    |     |      | 01 record                          |               |
+    +-----+------+------------------------------------+---------------+
+    | EV4 | A10  | unavailableInput of network,       | malformed     |
+    |     |      | outside the closed set             |               |
+    +-----+------+------------------------------------+---------------+
+    | OV1 | A11  | oversight.act of approval, outside | malformed     |
+    |     |      | the closed set                     |               |
+    +-----+------+------------------------------------+---------------+
+    | OV2 | A11  | oversight carrying a member this   | malformed     |
+    |     |      | document does not define           |               |
+    +-----+------+------------------------------------+---------------+
+    | N1  | A1   | an anchor token digest carried     | indeterminate |
+    |     |      | with no offline validation rule    |               |
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 29]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+    |     |      | defined                            |               |
+    +-----+------+------------------------------------+---------------+
+    | N2  | A4   | enforcement forty days after the   | indeterminate |
+    |     |      | signal, ordering intact            |               |
+    +-----+------+------------------------------------+---------------+
+
+      Table 3: The conformance corpus, one member for every normative
+                          rule this document adds
+
+Document History
+
+   Changes in -02:
+
+   *  A required evaluation member records whether the decision point
+      evaluated the request, and under not-evaluated names the
+      unavailable inputs from a closed set (Section 5.4).  Under -01 a
+      verifier that lost its standing source and denied wrote a record
+      identical to a correctly enforced denial. decision.reported and
+      the agreement table are unchanged.
+
+   *  An optional oversight member records the kind of act a person took
+      behind a decision, and may bind the overseer's own signed record
+      by digest (Section 5.5).
+
+   *  A record conforming to -01 is malformed under -02, because it
+      carries no evaluation member and no member has a default (vector
+      EV3).  The predicate type URI does not change: no revision has yet
+      frozen it, and the corpus in [VECTORS] is regenerated against this
+      revision.
+
+   *  Eight members are added to Appendix B: A10, A11, EV1 to EV4, OV1
+      and OV2.
+
+   Changes in -01:
+
+   *  The request-digest preimage under not-bindable is stated: three
+      members, with no argumentsDigest member in any spelling.  Under
+      -00 the text named four members and forbade the fourth, so the
+      preimage was open and three spellings gave three digests.
+
+   *  Each write carries the request digest it is attributed to, or
+      unattributed. effect.observed describes this record's request, and
+      it gains unknown for an unattributed write inside the scope.  A
+      write that belongs to another request no longer changes this
+      record's agreement.
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 30]
+
+Internet-Draft             Agent Audit Record               October 2026
+
+
+   *  agreement gains not-exercised, for a permit beside no effect, and
+      indeterminate, for an effect the observer could not attribute.
+      Under -00 a permitted call that was never made read as disagree,
+      the value a leaked deny also takes.
+
+   *  A statement whose signature fails is malformed, so Section 4.6 and
+      vector T2 report the same verdict.
+
+   *  Six members are added to Appendix B: A7, A8, A9, F3b, F3c and D3.
+
+   -00 was the first revision.
+
+Acknowledgments
+
+   Cliff Singletary pointed out that -01 could not record a decision
+   point that was unable to evaluate, and proposed the separate member
+   that leaves decision.reported and the agreement table untouched.
+   Andreas Ehstand asked whether the human act behind a permit belongs
+   in this format and proposed the member that names its kind.
+
+Author's Address
+
+   Sankalp Gilda
+   Email: sankalp.gilda@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gilda                     Expires 7 April 2027                 [Page 31]

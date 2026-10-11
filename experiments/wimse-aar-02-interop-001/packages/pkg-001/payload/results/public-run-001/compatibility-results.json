@@ -1,0 +1,939 @@
+[
+  {
+    "authority": {
+      "kind": "explicit-cross-revision-test",
+      "selected_revision": "02",
+      "source_revision": "01",
+      "source_vector": "A1"
+    },
+    "checks": {
+      "native_matches_source_expectation": true,
+      "no_appraisal_on_input_failure": true,
+      "no_authorization_inference": true,
+      "no_execution_inference": true,
+      "no_human_inference": true,
+      "receiver_accepts_actual_output": true,
+      "receiver_and_native_decisions_equal": true
+    },
+    "group": "compatibility",
+    "id": "compat-01-A1-as-02",
+    "native_baseline": {
+      "carrier_revision": "02",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "native-record-malformed"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "output_validation": "not-applicable",
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "route": "native-library",
+      "source_sha256": "ded6715a80437cfbdb0b2f112a10dbb9ce3e3d15cb401e4b35ca61d41d6cdc87"
+    },
+    "normalized_input": null,
+    "passed": true,
+    "policy": "policies/aar02.json",
+    "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+    "producer_output": {
+      "appraisal": null,
+      "context": {
+        "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+        "profile_id": "urn:wexp:aar-pilot:0.1.0",
+        "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+      },
+      "facts": null,
+      "format": "wexp-aar-pilot-output/0.1.0",
+      "mapping_failure": {
+        "code": "native-record-malformed",
+        "stage": "native-validation"
+      },
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "source": {
+        "carrier_revision": "02",
+        "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+        "record_sha256": "ded6715a80437cfbdb0b2f112a10dbb9ce3e3d15cb401e4b35ca61d41d6cdc87",
+        "specification_sha256": "601ff41ff886d0bf603143d3a02ce382e58e2d780dfbba3351e0f16797d9a79b"
+      },
+      "status": "mapping-failure"
+    },
+    "source": "vendor/aar01/vectors-agent-audit-record/statements/vded6715a80437cfb.json",
+    "source_sha256": "ded6715a80437cfbdb0b2f112a10dbb9ce3e3d15cb401e4b35ca61d41d6cdc87",
+    "wexp_recipient": {
+      "carrier_revision": "02",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "native-record-malformed"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "output_validation": "accepted",
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "route": "wexp-output",
+      "source_sha256": "ded6715a80437cfbdb0b2f112a10dbb9ce3e3d15cb401e4b35ca61d41d6cdc87"
+    }
+  },
+  {
+    "authority": {
+      "kind": "explicit-cross-revision-test",
+      "selected_revision": "02",
+      "source_revision": "01",
+      "source_vector": "A2"
+    },
+    "checks": {
+      "native_matches_source_expectation": true,
+      "no_appraisal_on_input_failure": true,
+      "no_authorization_inference": true,
+      "no_execution_inference": true,
+      "no_human_inference": true,
+      "receiver_accepts_actual_output": true,
+      "receiver_and_native_decisions_equal": true
+    },
+    "group": "compatibility",
+    "id": "compat-01-A2-as-02",
+    "native_baseline": {
+      "carrier_revision": "02",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "native-record-malformed"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "output_validation": "not-applicable",
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "route": "native-library",
+      "source_sha256": "f410c7b4b792c0b30bfb7c0a96f59a3213e4100def30f3c8a2dda11522e3e758"
+    },
+    "normalized_input": null,
+    "passed": true,
+    "policy": "policies/aar02.json",
+    "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+    "producer_output": {
+      "appraisal": null,
+      "context": {
+        "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+        "profile_id": "urn:wexp:aar-pilot:0.1.0",
+        "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+      },
+      "facts": null,
+      "format": "wexp-aar-pilot-output/0.1.0",
+      "mapping_failure": {
+        "code": "native-record-malformed",
+        "stage": "native-validation"
+      },
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "source": {
+        "carrier_revision": "02",
+        "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+        "record_sha256": "f410c7b4b792c0b30bfb7c0a96f59a3213e4100def30f3c8a2dda11522e3e758",
+        "specification_sha256": "601ff41ff886d0bf603143d3a02ce382e58e2d780dfbba3351e0f16797d9a79b"
+      },
+      "status": "mapping-failure"
+    },
+    "source": "vendor/aar01/vectors-agent-audit-record/statements/vf410c7b4b792c0b3.json",
+    "source_sha256": "f410c7b4b792c0b30bfb7c0a96f59a3213e4100def30f3c8a2dda11522e3e758",
+    "wexp_recipient": {
+      "carrier_revision": "02",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "native-record-malformed"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "output_validation": "accepted",
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "route": "wexp-output",
+      "source_sha256": "f410c7b4b792c0b30bfb7c0a96f59a3213e4100def30f3c8a2dda11522e3e758"
+    }
+  },
+  {
+    "authority": {
+      "kind": "explicit-cross-revision-test",
+      "selected_revision": "01",
+      "source_revision": "02",
+      "source_vector": "A10"
+    },
+    "checks": {
+      "exact_dispatch_failure": true,
+      "native_matches_source_expectation": true,
+      "no_appraisal_on_input_failure": true,
+      "no_authorization_inference": true,
+      "no_execution_inference": true,
+      "no_human_inference": true,
+      "receiver_accepts_actual_output": true,
+      "receiver_and_native_decisions_equal": true
+    },
+    "group": "compatibility",
+    "id": "compat-02-A10-as-01",
+    "native_baseline": {
+      "carrier_revision": "01",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "revision02-members-in-01-profile"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "output_validation": "not-applicable",
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "route": "native-library",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    },
+    "normalized_input": null,
+    "passed": true,
+    "policy": "policies/aar01.json",
+    "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+    "producer_output": {
+      "appraisal": null,
+      "context": {
+        "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+        "profile_id": "urn:wexp:aar-pilot:0.1.0",
+        "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+      },
+      "facts": null,
+      "format": "wexp-aar-pilot-output/0.1.0",
+      "mapping_failure": {
+        "code": "revision02-members-in-01-profile",
+        "stage": "revision-selection"
+      },
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "source": {
+        "carrier_revision": "01",
+        "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+        "record_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845",
+        "specification_sha256": "93ca132dfa65a397a6e64a0ffc47fc69952f2f92ed6c8d3fed3861d47586e763"
+      },
+      "status": "mapping-failure"
+    },
+    "source": "vendor/aar02/vectors-agent-audit-record/statements/v8a2e4c0327732290.json",
+    "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845",
+    "wexp_recipient": {
+      "carrier_revision": "01",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "revision02-members-in-01-profile"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "output_validation": "accepted",
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "route": "wexp-output",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    }
+  },
+  {
+    "authority": {
+      "kind": "explicit-cross-revision-test",
+      "selected_revision": "01",
+      "source_revision": "02",
+      "source_vector": "A11"
+    },
+    "checks": {
+      "exact_dispatch_failure": true,
+      "native_matches_source_expectation": true,
+      "no_appraisal_on_input_failure": true,
+      "no_authorization_inference": true,
+      "no_execution_inference": true,
+      "no_human_inference": true,
+      "receiver_accepts_actual_output": true,
+      "receiver_and_native_decisions_equal": true
+    },
+    "group": "compatibility",
+    "id": "compat-02-A11-as-01",
+    "native_baseline": {
+      "carrier_revision": "01",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "revision02-members-in-01-profile"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "output_validation": "not-applicable",
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "route": "native-library",
+      "source_sha256": "ec049319d25facc649d2a418cb1f83310d0fd74e4cc08977eacbfa1c65a6a2b0"
+    },
+    "normalized_input": null,
+    "passed": true,
+    "policy": "policies/aar01.json",
+    "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+    "producer_output": {
+      "appraisal": null,
+      "context": {
+        "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+        "profile_id": "urn:wexp:aar-pilot:0.1.0",
+        "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+      },
+      "facts": null,
+      "format": "wexp-aar-pilot-output/0.1.0",
+      "mapping_failure": {
+        "code": "revision02-members-in-01-profile",
+        "stage": "revision-selection"
+      },
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "source": {
+        "carrier_revision": "01",
+        "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+        "record_sha256": "ec049319d25facc649d2a418cb1f83310d0fd74e4cc08977eacbfa1c65a6a2b0",
+        "specification_sha256": "93ca132dfa65a397a6e64a0ffc47fc69952f2f92ed6c8d3fed3861d47586e763"
+      },
+      "status": "mapping-failure"
+    },
+    "source": "vendor/aar02/vectors-agent-audit-record/statements/vec049319d25facc6.json",
+    "source_sha256": "ec049319d25facc649d2a418cb1f83310d0fd74e4cc08977eacbfa1c65a6a2b0",
+    "wexp_recipient": {
+      "carrier_revision": "01",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "revision02-members-in-01-profile"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "output_validation": "accepted",
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "route": "wexp-output",
+      "source_sha256": "ec049319d25facc649d2a418cb1f83310d0fd74e4cc08977eacbfa1c65a6a2b0"
+    }
+  },
+  {
+    "authority": {
+      "kind": "explicit-cross-revision-test",
+      "selected_revision": "01",
+      "source_revision": "02",
+      "source_vector": "EV1"
+    },
+    "checks": {
+      "exact_dispatch_failure": true,
+      "native_matches_source_expectation": true,
+      "no_appraisal_on_input_failure": true,
+      "no_authorization_inference": true,
+      "no_execution_inference": true,
+      "no_human_inference": true,
+      "receiver_accepts_actual_output": true,
+      "receiver_and_native_decisions_equal": true
+    },
+    "group": "compatibility",
+    "id": "compat-02-EV1-as-01",
+    "native_baseline": {
+      "carrier_revision": "01",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "revision02-members-in-01-profile"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "output_validation": "not-applicable",
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "route": "native-library",
+      "source_sha256": "f320e1e190cd0a356dff70d1cc6fcb790f0d08109923595a98c4a72e9f033d88"
+    },
+    "normalized_input": null,
+    "passed": true,
+    "policy": "policies/aar01.json",
+    "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+    "producer_output": {
+      "appraisal": null,
+      "context": {
+        "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+        "profile_id": "urn:wexp:aar-pilot:0.1.0",
+        "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+      },
+      "facts": null,
+      "format": "wexp-aar-pilot-output/0.1.0",
+      "mapping_failure": {
+        "code": "revision02-members-in-01-profile",
+        "stage": "revision-selection"
+      },
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "source": {
+        "carrier_revision": "01",
+        "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+        "record_sha256": "f320e1e190cd0a356dff70d1cc6fcb790f0d08109923595a98c4a72e9f033d88",
+        "specification_sha256": "93ca132dfa65a397a6e64a0ffc47fc69952f2f92ed6c8d3fed3861d47586e763"
+      },
+      "status": "mapping-failure"
+    },
+    "source": "vendor/aar02/vectors-agent-audit-record/statements/vf320e1e190cd0a35.json",
+    "source_sha256": "f320e1e190cd0a356dff70d1cc6fcb790f0d08109923595a98c4a72e9f033d88",
+    "wexp_recipient": {
+      "carrier_revision": "01",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "revision02-members-in-01-profile"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "output_validation": "accepted",
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "route": "wexp-output",
+      "source_sha256": "f320e1e190cd0a356dff70d1cc6fcb790f0d08109923595a98c4a72e9f033d88"
+    }
+  },
+  {
+    "authority": {
+      "kind": "explicit-cross-revision-test",
+      "selected_revision": "01",
+      "source_revision": "02",
+      "source_vector": "OV1"
+    },
+    "checks": {
+      "exact_dispatch_failure": true,
+      "native_matches_source_expectation": true,
+      "no_appraisal_on_input_failure": true,
+      "no_authorization_inference": true,
+      "no_execution_inference": true,
+      "no_human_inference": true,
+      "receiver_accepts_actual_output": true,
+      "receiver_and_native_decisions_equal": true
+    },
+    "group": "compatibility",
+    "id": "compat-02-OV1-as-01",
+    "native_baseline": {
+      "carrier_revision": "01",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "revision02-members-in-01-profile"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "output_validation": "not-applicable",
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "route": "native-library",
+      "source_sha256": "bb317d5ad7982c232190fdcec9b717b519a01f39dffafd7619a8502b8dc9e089"
+    },
+    "normalized_input": null,
+    "passed": true,
+    "policy": "policies/aar01.json",
+    "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+    "producer_output": {
+      "appraisal": null,
+      "context": {
+        "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+        "profile_id": "urn:wexp:aar-pilot:0.1.0",
+        "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+      },
+      "facts": null,
+      "format": "wexp-aar-pilot-output/0.1.0",
+      "mapping_failure": {
+        "code": "revision02-members-in-01-profile",
+        "stage": "revision-selection"
+      },
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "source": {
+        "carrier_revision": "01",
+        "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+        "record_sha256": "bb317d5ad7982c232190fdcec9b717b519a01f39dffafd7619a8502b8dc9e089",
+        "specification_sha256": "93ca132dfa65a397a6e64a0ffc47fc69952f2f92ed6c8d3fed3861d47586e763"
+      },
+      "status": "mapping-failure"
+    },
+    "source": "vendor/aar02/vectors-agent-audit-record/statements/vbb317d5ad7982c23.json",
+    "source_sha256": "bb317d5ad7982c232190fdcec9b717b519a01f39dffafd7619a8502b8dc9e089",
+    "wexp_recipient": {
+      "carrier_revision": "01",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "revision02-members-in-01-profile"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "output_validation": "accepted",
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "route": "wexp-output",
+      "source_sha256": "bb317d5ad7982c232190fdcec9b717b519a01f39dffafd7619a8502b8dc9e089"
+    }
+  },
+  {
+    "authority": {
+      "kind": "receiver-owned-dispatch-policy"
+    },
+    "checks": {
+      "exact_dispatch_failure": true,
+      "native_matches_source_expectation": true,
+      "no_appraisal_on_input_failure": true,
+      "no_authorization_inference": true,
+      "no_execution_inference": true,
+      "no_human_inference": true,
+      "receiver_accepts_actual_output": true,
+      "receiver_and_native_decisions_equal": true
+    },
+    "group": "compatibility",
+    "id": "missing-revision",
+    "native_baseline": {
+      "carrier_revision": null,
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-not-selected",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "carrier-revision-not-selected"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "output_validation": "not-applicable",
+      "policy_sha256": "da5db318ae85311992df0df1359ec2dc9a4348264431c8d74ea7c9ffa4d0f965",
+      "route": "native-library",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    },
+    "normalized_input": null,
+    "passed": true,
+    "policy": "test-inputs/missing-revision-policy.json",
+    "policy_sha256": "da5db318ae85311992df0df1359ec2dc9a4348264431c8d74ea7c9ffa4d0f965",
+    "producer_output": {
+      "appraisal": null,
+      "context": {
+        "policy_sha256": "da5db318ae85311992df0df1359ec2dc9a4348264431c8d74ea7c9ffa4d0f965",
+        "profile_id": "urn:wexp:aar-pilot:0.1.0",
+        "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+      },
+      "facts": null,
+      "format": "wexp-aar-pilot-output/0.1.0",
+      "mapping_failure": {
+        "code": "carrier-revision-not-selected",
+        "stage": "revision-selection"
+      },
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "source": {
+        "carrier_revision": null,
+        "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+        "record_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845",
+        "specification_sha256": null
+      },
+      "status": "mapping-failure"
+    },
+    "source": "vendor/aar02/vectors-agent-audit-record/statements/v8a2e4c0327732290.json",
+    "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845",
+    "wexp_recipient": {
+      "carrier_revision": null,
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-not-selected",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "carrier-revision-not-selected"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "output_validation": "accepted",
+      "policy_sha256": "da5db318ae85311992df0df1359ec2dc9a4348264431c8d74ea7c9ffa4d0f965",
+      "route": "wexp-output",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    }
+  },
+  {
+    "authority": {
+      "kind": "receiver-owned-dispatch-policy"
+    },
+    "checks": {
+      "exact_dispatch_failure": true,
+      "native_matches_source_expectation": true,
+      "no_appraisal_on_input_failure": true,
+      "no_authorization_inference": true,
+      "no_execution_inference": true,
+      "no_human_inference": true,
+      "receiver_accepts_actual_output": true,
+      "receiver_and_native_decisions_equal": true
+    },
+    "group": "compatibility",
+    "id": "unknown-revision",
+    "native_baseline": {
+      "carrier_revision": "03",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-not-selected",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "unsupported-carrier-revision"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "output_validation": "not-applicable",
+      "policy_sha256": "98484c31ca7d61fda7eb82ed8453845a9ba55fb923e54af11b014a2e4c18df59",
+      "route": "native-library",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    },
+    "normalized_input": null,
+    "passed": true,
+    "policy": "test-inputs/unknown-revision-policy.json",
+    "policy_sha256": "98484c31ca7d61fda7eb82ed8453845a9ba55fb923e54af11b014a2e4c18df59",
+    "producer_output": {
+      "appraisal": null,
+      "context": {
+        "policy_sha256": "98484c31ca7d61fda7eb82ed8453845a9ba55fb923e54af11b014a2e4c18df59",
+        "profile_id": "urn:wexp:aar-pilot:0.1.0",
+        "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+      },
+      "facts": null,
+      "format": "wexp-aar-pilot-output/0.1.0",
+      "mapping_failure": {
+        "code": "unsupported-carrier-revision",
+        "stage": "revision-selection"
+      },
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "source": {
+        "carrier_revision": "03",
+        "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+        "record_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845",
+        "specification_sha256": null
+      },
+      "status": "mapping-failure"
+    },
+    "source": "vendor/aar02/vectors-agent-audit-record/statements/v8a2e4c0327732290.json",
+    "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845",
+    "wexp_recipient": {
+      "carrier_revision": "03",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-not-selected",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "unsupported-carrier-revision"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "output_validation": "accepted",
+      "policy_sha256": "98484c31ca7d61fda7eb82ed8453845a9ba55fb923e54af11b014a2e4c18df59",
+      "route": "wexp-output",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    }
+  },
+  {
+    "authority": {
+      "kind": "receiver-owned-dispatch-policy"
+    },
+    "checks": {
+      "exact_dispatch_failure": true,
+      "native_matches_source_expectation": true,
+      "no_appraisal_on_input_failure": true,
+      "no_authorization_inference": true,
+      "no_execution_inference": true,
+      "no_human_inference": true,
+      "receiver_accepts_actual_output": true,
+      "receiver_and_native_decisions_equal": true
+    },
+    "group": "compatibility",
+    "id": "wrong-specification",
+    "native_baseline": {
+      "carrier_revision": "02",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "carrier-specification-mismatch"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "output_validation": "not-applicable",
+      "policy_sha256": "6907941fd4fcc4e73557e9e53eb04ba7f32ed3b989a324c0a264600da1af909c",
+      "route": "native-library",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    },
+    "normalized_input": null,
+    "passed": true,
+    "policy": "test-inputs/wrong-specification-policy.json",
+    "policy_sha256": "6907941fd4fcc4e73557e9e53eb04ba7f32ed3b989a324c0a264600da1af909c",
+    "producer_output": {
+      "appraisal": null,
+      "context": {
+        "policy_sha256": "6907941fd4fcc4e73557e9e53eb04ba7f32ed3b989a324c0a264600da1af909c",
+        "profile_id": "urn:wexp:aar-pilot:0.1.0",
+        "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+      },
+      "facts": null,
+      "format": "wexp-aar-pilot-output/0.1.0",
+      "mapping_failure": {
+        "code": "carrier-specification-mismatch",
+        "stage": "revision-selection"
+      },
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "source": {
+        "carrier_revision": "02",
+        "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+        "record_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845",
+        "specification_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "status": "mapping-failure"
+    },
+    "source": "vendor/aar02/vectors-agent-audit-record/statements/v8a2e4c0327732290.json",
+    "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845",
+    "wexp_recipient": {
+      "carrier_revision": "02",
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "errors": [
+        "carrier-specification-mismatch"
+      ],
+      "format": "wexp-aar-pilot-consumer-result/0.1.0",
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "output_validation": "accepted",
+      "policy_sha256": "6907941fd4fcc4e73557e9e53eb04ba7f32ed3b989a324c0a264600da1af909c",
+      "route": "wexp-output",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "carrier_revision": "02",
+  "core_txt_sha256": "50c137713a08ebba7c7b284f97107a2259c9a2d3e0eaefdaede3a77d09fa902b",
+  "evaluated_at": "2026-10-10T07:37:08Z",
+  "observer_public_key": "60b9ca613738a46a9350086999c93389e65c342482bbf65c6589d43116de5e7a",
+  "policy_id": "aar-record-only-0.1.0",
+  "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+  "profile_id": "urn:wexp:aar-pilot:0.1.0",
+  "profile_sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca",
+  "requested_claim": {
+    "base": "execution",
+    "qualifiers": []
+  },
+  "specification_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+}

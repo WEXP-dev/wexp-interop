@@ -1,0 +1,42 @@
+{
+  "profile_id": "urn:wexp:aar-pilot:0.1.0",
+  "version": "0.1.0",
+  "status": "PRIVATE_EXPERIMENTAL_BOUNDED_MAPPING",
+  "relationship": "MAPPING",
+  "core_txt_sha256": "50c137713a08ebba7c7b284f97107a2259c9a2d3e0eaefdaede3a77d09fa902b",
+  "carrier_revisions": {
+    "01": "93ca132dfa65a397a6e64a0ffc47fc69952f2f92ed6c8d3fed3861d47586e763",
+    "02": "601ff41ff886d0bf603143d3a02ce382e58e2d780dfbba3351e0f16797d9a79b"
+  },
+  "predicate_type": "https://probityai.github.io/agent-evidence-vectors/predicate/v1/agent-audit-record",
+  "requested_claim": {"base": "execution", "qualifiers": []},
+  "revision_selection": "Receiver-owned policy selects the exact carrier revision and verifier before interpretation. The shared predicateType never selects a revision. No fallback, default, or rewrite of a legacy record. The 01 pilot profile refuses evaluation or oversight members as a local dispatch restriction; this is not an intrinsic AAR-01 malformed verdict.",
+  "target": "urn:aar-pilot:record:<SHA256 exact envelope bytes>:request:<recomputed requestDigest>. This identifies the exact signed report's action reference, not a globally unique physical execution or a join across records.",
+  "logical_equality": "All opaque target, context, profile, basis-reference and limitation atoms use exact Unicode codepoint equality, scoped by this immutable profile revision; no Unicode normalization, URI dereference, aliases, case folding or cross-profile equality is inferred. Digest atoms contain lowercase hexadecimal. Logical collections are sets, compared after duplicate elimination; JSON array order is only a deterministic representation. The profile identity is profile_id plus SHA256 of these exact profile bytes. Reformatting an envelope changes the record-scoped target even if its signed Statement is unchanged; cross-record joins are outside this profile.",
+  "boundary": "After native validation under the pinned receiver key, attributed grounding is accepted only for the reporting boundary, with ceiling observation. Declared below-observed vantage and derived authoritative native tier do not independently establish an execution-relevant boundary.",
+  "base_predicates": {
+    "observation": "Native signature, full selected-reader validation, recomputed request digest and subject binding establish that an authenticated canonical Statement reports an event concerning its exact action reference. DSSE authenticates the canonical Statement preimage; the raw-envelope hash is only the local artifact identity. No fact about action occurrence is inferred.",
+    "intent": "Needs an authenticated decision-point artifact binding the exact action and arguments. The single observer envelope and its decision field do not supply that artifact; semantic assessment is not-evaluated.",
+    "invocation": "Needs evidence of the exact invocation crossing an established invocation boundary. No such independently established boundary artifact is supplied; semantic assessment is not-evaluated.",
+    "execution": "Needs evidence at an established execution-relevant controlled boundary for this exact action. Self-described vantage, internal recomputes and a trusted signature do not supply external boundary establishment; semantic assessment is not-evaluated."
+  },
+  "qualifiers": "All admissible IV roles and execution PROV are explicitly not-evaluated: the packet supplies no accepted independent verification or provenance predicate. Different test keys and a carried oversight digest do not supply IV.",
+  "native_facets": "Preserve decision-point evaluation (including unavailable inputs), reported decision, observed effect, agreement and producer-asserted oversight independently of Core appraisal status. Authorization validity, nonoccurrence and human participation are not Core bases.",
+  "core_slice": "Reuse the exact existing HOF partial evaluator only for complete inputs produced by this closed profile: one supported observation, no positive qualifiers, requested execution not supported with its semantic assessment not-evaluated, no composition and no supplied counter-evidence. A profile-specific guard precedes invocation. This is not full Core conformance or a standardized mapper-to-evaluator interface.",
+  "counter_evidence": "The input packet contains only the selected record and policy. Discovery is bounded to that packet and returns not-supplied. A separate test oracle is never silently inserted into the participants' evidence. This does not show no counter-evidence exists.",
+  "required_limitations": [
+    "AAR_RECORD_ASSERTIONS_NOT_WORLD_TRUTH",
+    "AAR_BOUNDARY_VANTAGE_NOT_EXTERNALLY_ESTABLISHED",
+    "AAR_EVALUATION_IS_DECISION_POINT_REPORT",
+    "AAR_OVERSIGHT_IS_PRODUCER_ASSERTED",
+    "AAR_NONOCCURRENCE_NOT_ESTABLISHED",
+    "AAR_AUTHORIZATION_VALIDITY_NOT_ESTABLISHED",
+    "AAR_PRIOR_COMMITMENT_SIGNATURE_NOT_VERIFIED"
+  ],
+  "scope_exclusions": [
+    "No authorization-policy evaluation, live standing/key/consumption-source lookup, oversight-record resolution, timestamp-anchor validation, completeness or retention audit.",
+    "No PROV/IV qualification, composition, general carrier conformance, real deployment execution verification or external implementation interoperability.",
+    "The native reader rejects floats as outside its implemented value space; the draft's I-JSON/JCS text is broader. Passing the published vectors does not establish all JSON/schema behavior.",
+    "The native reader does not verify priorCommitment.sig; the draft does not specify its signing preimage."
+  ]
+}

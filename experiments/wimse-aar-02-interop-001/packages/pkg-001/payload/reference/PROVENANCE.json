@@ -1,0 +1,26 @@
+{
+  "format": "wexp-prior-run-reference/0.1.0",
+  "independent_pre_run_timestamp": false,
+  "known_before_public_run": true,
+  "limitations": [
+    "The previous private result is a reference, not a new public execution.",
+    "Its hash alone does not prove the private execution occurred.",
+    "This public replay is not blind and is not independent-team reproduction."
+  ],
+  "private_run": {
+    "date_utc": "2026-10-10",
+    "python": "3.12.14",
+    "scope": "corrected retained local pilot run"
+  },
+  "public_copy": {
+    "bytes": 145886,
+    "git_blob_sha1": "cb29396f4b87099ba35f489b84da4ff6530f6eae",
+    "path": "reference/private-pilot-semantic-results.json",
+    "sha256": "1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2"
+  },
+  "scope": "Complete semantic projection supplied as exact readable bytes. Private source access is not needed to compare the new public run.",
+  "source_commit": "cb65793988c600e38f5e4b1fe073860278a9dc41",
+  "source_path": "interop/wimse-aar-02-pilot-v0.1.0/results/semantic-results.json",
+  "source_repository": "WEXP-dev/wexp-work",
+  "source_visibility": "private"
+}

@@ -1,0 +1,4249 @@
+{
+  "cases": [
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-A1",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "ded6715a80437cfbdb0b2f112a10dbb9ce3e3d15cb401e4b35ca61d41d6cdc87"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-deny-evaluation-unknown-in-01",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-A2",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "f410c7b4b792c0b30bfb7c0a96f59a3213e4100def30f3c8a2dda11522e3e758"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-decision-effect-disagreement",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-A3",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "91afc5ba76960569cd511adc2099bf706671ba742a539cb136297ba8f73c749d"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-A4",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "49db892b2464179bcb9731179603b26cca7489b961deff0db7189786f3122b1a"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-A5",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "voluntary",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "092586b714b4390153417bd1fdd784c41ac8557b467c826187de614bf0f96a12"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-A6",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "voluntary",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "43e2fe48bc27164d414b64027f52d9a468a03d21ceb893df27c533bbcd9cf37e"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-deny-evaluation-unknown-in-01",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-A7",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "3843cd0f05c512e252a06f6974d7a349a6d393ddffad6348ce63d102a1c60939"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-deny-evaluation-unknown-in-01",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-A8",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "8a9e5deb2888e02cff6a49ece2d77c5880cacb9a9cba59ce8a3aec24e34a636c"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-A9",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "f9473c2b0e833da10308cc80a7c1f7a0bd32a1cef6453eb85346354ba099b5cf"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-F1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "89164703a3e83dec932d13acde70887e4ad6d6edf5ea2c985ee10eb610190ddf"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-F2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "delegation-subject-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "cf95da9b01a6664ba1192231dead1a7695164a47d1890d864fb14fe90b350c43"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-F3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "arguments-digest-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "b5b9abc4f83111a8da9cfb3140d1c51922b47809e6d08d74d2fe08355a3efda6"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-F3b",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "arguments-digest-forbidden"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "3d316ca718c2dfd5b667c6624043bab370d884d3d5d8726288b9540037322323"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-F3c",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "arguments-digest-forbidden"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "48b0a2fe9334a263c24f1c4ad8f8944ff17816746ebd93c3ab1a760a864bcb1e"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-F4",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "request-digest-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "f3cf268dae0800ff3c902003d62e57d12d89c8a3426727f2b1006328978478c4"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-F5",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "external-anchor-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "4a450d67a3e14bd9ba64913c86867158b96eda54bbe051dc9d57eaafe10ddd11"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-F6",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "posture-agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "ce25f7662e4f70cd1a7a0e29d75f08dbedbfd09e09b81b8b7c5ea34ee0ab1f66"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-F7",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "remediation-order"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "55decc76bf3738b2286cc874a9bf64121bff6d96d8700a2f856ea0166f69b3a3"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-T1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "effect-observed-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "7fad746721358d9d4d4e3599320737c1e3321a237479be10dc2d7cf7c9ab14e3"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-T2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "signature-invalid"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "9ec5a5a966dc0028a20f6ef6c27e9e9258713856b4c81207d686f7d785243923"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-T3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "duplicate-member"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "e440c8b917ea6945ce0dfd4e714bef5a79149744e1f54f04a0727d852dea8275"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-T4",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "nesting-too-deep"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "ceed0855efea966081b8d15f0d9c7d4715a783a8a976022ae292a5da60703473"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-T5",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "unsafe-integer"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "95d01f289bf873d31baedeb50114e02a6b5a994d5b748153b12fed4e116fc61e"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-D1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "7c9a4466368356968a757d3ba7f4b31c289d6e0c8f6b5eb25dcf922ccc4cfdc6"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-D2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "agreement-reserved-value"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "60025ea9854b9e100adc5929429e6e5c2779f29924027cbc68121c08f29eb18c"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-D3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "411cfaf5151d4cc5e73bcbb11ae9ada0acf8bf3f07fcc95961edbd97b4a7b22a"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-S1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "subject-interval-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "5d7952e7b60ac2014b6ea63d86f439aea196f76a5965e0d46b80718f419f3b3b"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-S2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "subject-after-root-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "4669a6b6d8bbeb60750e84a5ce4f5d02bca7ededf300608e09262a5c8fc35666"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-I1r",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "subject-interval-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "0f658d55b9e959cc80acbf6590d1df78cc8f56ed0834c12b47e4d618fae915ec"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-TI1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-vantage"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "bca32cc3ca51563a43b735cb0d140c66bc51f3f48c58f860d957e5c10c6cfc19"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-TI2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-commitment"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "310861912d1046c568220c8019f8c9a6d70fcf4edd3b89a4dd6445082bc09bec"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-TI3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-scope"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "d72e111dbe5e296ff2466a2e5638ce09e11380c76f3bd2e92552b5d0069334f4"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-TI4",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-coverage"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "f5c19153992ba0910676cb1e322a9d33162fac34e343a54d7079714fdf3ada48"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-TI5",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-binding"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "508be6e23e8482f5bb6480a1570ac7e9f972714b1ab7386caa31c8188c6546d9"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-C1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "commitment-key-is-agent-signer"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "2a395d68e9697680f1f466b0298690b0416e7b7f3976d0c92d8da4128a3c345c"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-C2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "commitment-order"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "1cbe908c9c03f36d46eb2a0c9c10e8d13dae33b762f3d831239803065b93b7ba"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-C3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "commitment-digest-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "27b72ac64d5ebd5448bc0ce21b0184dd1d0774ab54b06bc770319e033cdbb8e6"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-E1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "effect-observed-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "df178c2ef7928a194e3f8c130e605b2436543d84ada46df487f1cacce4025da6"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-E2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "write-chain-broken"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "826af5b27db24da521f1c713e8347a734c8726c696f202e1503340a3e0f9ebcf"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-E3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "empty-tree-constant-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "d8d79e7a61cca51fa148d998600e6cc658b064b9609525010b79cb26b99a1bd0"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-V1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "value-outside-vocabulary"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "061304592ad49c52d80534c0e5739fed0f68f4e7eb148a88559f24cec7416a3b"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-V2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "path-scope-glob"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "8a6cc076ed9ea03aa5f3880d09d71523b9b2a97488018bc4d24eec99bcbe3f43"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-V3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "write-scope-mismatch"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "806b41e10fa621b2788497628a3de0363cc7f3172814875ea4d241986bef3dbe"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-FE1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "field-evidence-keys"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "b5fa3c46a923c472be1047e17cdc711a4a87af6ba579c346dd00cc6ba8cdc3c5"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-FE2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "field-evidence-self-substrate"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "66d14f47a3d0cf0b7ba667c097ab31da5152a09167a1c2e6411e22854df12aee"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-N1",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "9aaa90d371011e59acb4a35821f52114fb7e93d89e3b420b5926692447c20858"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "unknown-in-01",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar01-N2",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "f8180cde8874edb663ac3793f118f113907be244bd56f1c4e8fd1464f41b1729"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-A1",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "0d65a70ec528882170927d08c9396a7efa7cef211d047626be7dc0736a6fc09b"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-evaluated-deny",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-A2",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "8e2ef110bf6d52f6ec15a40c6e9423d05460ec8bd9a5f46d32c7cbc17fa75f36"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-decision-effect-disagreement",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-A3",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "60116ba6c5fb78ec8a801ad0d982de93dc16941507eeb324b4e10555de3e5992"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-A4",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "c2422b8f120772ceffb3f3c716f4f1324de5a1d68b941d27bf105f64d4cbaaf5"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-A5",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "voluntary",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "7a12f6c08f822bd56893e7f0b7ddbdb6af43291ab495512826d261d4365e49fd"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-A6",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "voluntary",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "99868141e3bf075e1e0de588a88f2d6a2652892ee64dd9175736bc0c60beda5d"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-evaluated-deny",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-A7",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "3296f825d4f057109b87f8d04a0779a5185db3d865bfb03d7a6f83abb5484d37"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-evaluated-deny",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-A8",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "c1a226e7766254f1137580ad3eaa40cf7e0d1beea98dc906ae918ad2206d3b02"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-A9",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "33bf4a991feed4ca7822b24fd48a03a66bbc265628c63b39076e4e26541bac3e"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-not-evaluated-deny",
+        "evaluation_status": "not-evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": [
+          "standing-source"
+        ]
+      },
+      "id": "aar02-A10",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": "check",
+        "unavailable_input": []
+      },
+      "id": "aar02-A11",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "ec049319d25facc649d2a418cb1f83310d0fd74e4cc08977eacbfa1c65a6a2b0"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-F1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "af48c7eea6dd5516ad4a80bff6485c9d62bfa2feeb42f6fb93a17145a30f703e"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-F2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "delegation-subject-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "0f0e3983e267110be78ac3b0b9948f295d92bca93a799041af6cfdb21ced7855"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-F3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "arguments-digest-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "ce3e9b4244967116bd4e6b7810b419562a869624ccd3f776419a7473471e9763"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-F3b",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "arguments-digest-forbidden"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "bc8b79104e8b6a87224ed89c864c69dcde11b6c4d4a714174b06e9073681e64d"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-F3c",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "arguments-digest-forbidden"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "8ae50eba2a0878b8c1b8ff74cdd1b5b3a818423663f04b85bb94c4fbd678b0b0"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-F4",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "request-digest-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "504fb97e3c65e22d0e5c6bc585b5a2d4f1699da55dc86afa561767c5ab7f3dfb"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-F5",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "external-anchor-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "d6f245be7240b676909e0b2c7b4161507cd50e956809fb0bc063230d696e2d1f"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-F6",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "posture-agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "6df8ff36c40b1899a89ca8a43512b3ecc1f62f6db0d5a555235e556f49c0e85a"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-F7",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "remediation-order"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "2717cf80c72bd933b1362663fc6338a3f6e8c66769988ccd4b659024d2d44cb5"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-T1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "effect-observed-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "e6b805ce52d4a987a1e68c5122aa31c7e64fe54a4d5954473dab24b82eaa41fb"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-T2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "signature-invalid"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "18153024f1acd938fb3394b7ef09845f49ac020d22cfd5b23635d7b154e14bf7"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-T3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "duplicate-member"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "8f355a9003ad73189eee99aac560920974f60dc9324c62219685c6a7787d1ac6"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-T4",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "nesting-too-deep"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "9bdb44d390fecf907808f30849ca1ea0839af7196e4b8ab20f638b3e2e851331"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-T5",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "unsafe-integer"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "09a2cf05eb8bd5189c06da1e27b7d9ce15361032e3dd9e33c415d1afa00eb668"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-D1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "1879eeae11c77ad4dd2129a97f2b73b704bdb86c9024d292ae73b3fd004470c1"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-D2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "agreement-reserved-value"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "315d22ad8c7271a69d62ab88fbc7d6333766c8c7816cdcd8d4fbea61e2db0816"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-D3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "agreement-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "24916b42e97cc620f98f00b836ec212d1a755517cab1ff04cc1c0bd286ce9230"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-S1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "subject-interval-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "f18793293e0793fb79ee03a820924fb0bb981ed71345922f43c44a53b26b0cdd"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-S2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "subject-after-root-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "f00e95f42eef87241b03fb9912022ddd5970ccf01736d98fb5c075a9c7964d59"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-I1r",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "subject-interval-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "64dc8171d57214d3e24806ecda2b41672a280702f0c9ae203d0882b6ba52e381"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-TI1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-vantage"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "b66a90c780a981e11c155270f424c78a0c10c0abba29f32e585a1c2a63f93395"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-TI2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-commitment"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "50382c2ff934480c1ebe1db59c0aa693aead6ca4f190dceed632ca49f45e7f86"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-TI3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-scope"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "ed1c858bb30cb8b89c192fc0646a6a893736bb6657d6412503b7964c60b3f363"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-TI4",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-coverage"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "2e76566de250650127c8da01d0f917fb69adeee9ac223d4c999681f2fb39d6b3"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-TI5",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "tier-overclaim-binding"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "cdbe361d989035b4584ee631342b1f2fcbe8452499ae920b7e9bc149850bfbb3"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-C1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "commitment-key-is-agent-signer"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "7c1b14e3e567ce0806f8d46365449ef8507045661ae1da2792a156537e1ac9a1"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-C2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "commitment-order"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "a85d65c00ef6cdbeb5f11352bc705f9f39f0eb6081fec5b885405df9e7f9c544"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-C3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "commitment-digest-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "1503dfd2154d73da2c0b0b5ad3c665e25ec65265888f7322cba39bfe2ad6f78e"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-E1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "effect-observed-underivable"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "3e452f77fbf0a249a0bbb309a8332cbe52a5b4a5222576576b733d554ae7e014"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-E2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "write-chain-broken"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "54575ab9f410be7f374c5ad2b2187706ac955592e58c5fdd6e0c6e73db6925b2"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-E3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "empty-tree-constant-mismatch"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "00ec2ce19f1e574e58692ffa48a1acf30dc66aec335c71932293792069beda72"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-V1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "value-outside-vocabulary"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "205d0d2f5021e563d3ba07a25a5e79ff62c62580bc08fffe8d6e90efe865b473"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-V2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "path-scope-glob"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "8f42511cd88768feb56586298a3dc94c64473704c5c02504693d8404804f267b"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-V3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "write-scope-mismatch"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "770e3bf440bbac4f613eaae402c04f86c46695343cf14e71fcfa917556ceda85"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-FE1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "field-evidence-keys"
+        ],
+        "derived_tier": "authoritative",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "51da190da6033d8a53b1915d445aeb1a2608ee8cfe69e8532aedd1926b44173e"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-FE2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "field-evidence-self-substrate"
+        ],
+        "derived_tier": "voluntary",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "da7c9c087912fcbac6defe8aa6e2aa46a7415b86eec69fe8b6228e24c2170afb"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-EV1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "f320e1e190cd0a356dff70d1cc6fcb790f0d08109923595a98c4a72e9f033d88"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-EV2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "27385b926ca10f01ae1fd3fa0b557e721870c898d501bc1ae9fcf331934e4c9d"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-EV3",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "ded6715a80437cfbdb0b2f112a10dbb9ce3e3d15cb401e4b35ca61d41d6cdc87"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-EV4",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "value-outside-vocabulary"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "8f11c96059d2c3e289dc868dfb72ec1254f756b42c2fef17ee1683a9a7a2356a"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-OV1",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "value-outside-vocabulary"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "bb317d5ad7982c232190fdcec9b717b519a01f39dffafd7619a8502b8dc9e089"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-OV2",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "oversight-malformed"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "6838afba287a7d82d5345c61489f7bd59f75a26cc183822287a8300df1224494"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-N1",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "bdf904629383722b37cbb0766c0fbf4aaf77ea60edcc795c19d2aecf193bddce"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "aar02-N2",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "f5d77437325ed85330eb9f8384562694006228146a55196b09f06be772b7c8ac"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-not-evaluated-permit",
+        "evaluation_status": "not-evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": [
+          "standing-source"
+        ]
+      },
+      "id": "L01-fail-open-permit",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "686967cea06242404dd24e4891f26d4c227e6c8bfaf6a368dc8515714972e68e"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-not-evaluated-permit",
+        "evaluation_status": "not-evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": [
+          "key-source",
+          "consumption-state"
+        ]
+      },
+      "id": "L02-fail-open-conditional",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "e4b9c5d91afb10b7450123dadc49a16e2ef0345684f8bc63f10ee52fcf4378dd"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-decision-effect-disagreement",
+        "evaluation_status": "not-evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": [
+          "standing-source"
+        ]
+      },
+      "id": "L03-outage-deny-effect",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "b8e1d6bab6254699406b7d2c3576140c0aacc1f9e6c5e1e5c242d20d1ea3d2a9"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L04-empty-unavailable",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "1d08b2f5bc1ba020a12244a68cd9645b91e2b91fa15e77abed0c4d6e95e8a44a"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L05-duplicate-unavailable",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "327c3aa18788aaa3131e133a9e2a688ebc2b7fe70aa07446c2b5099e38d5bf63"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L06-scalar-unavailable",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "f4e79e008fc7944d8ed90847f09434646a0c1ee373c4d022a1328fcc68371994"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L07-null-unavailable",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "e43f598610cf59715f3262f4e69df9bfafdae4bcb3a834ec991c3340f7fd09c2"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L08-evaluated-null-unavailable",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "7f6822caa47b53032f15004aa1d369bca4428e0e582ed14c9cbb11bf41d8f174"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L09-evaluated-empty-unavailable",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "evaluation-inconsistent"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "b6ace033e7fe2f5b5c6ae10a5d5bd0337ec5fe1617e53c4f7f443d0bd1723059"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L10-missing-evaluation-status",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "7dbc52f616f1eeac37622d8d36d87d027307a08fe5d02bec299f84b756427d87"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L11-unknown-evaluation-status",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "value-outside-vocabulary"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "681599d196eabb0ded06c5f4549ef92df57ce4ebbd7211cf0c2573cce1c431bc"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": "observation",
+        "unavailable_input": []
+      },
+      "id": "L12-oversight-observation",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "7dd751d5eac8bf588e04e6e8977677cc5a009e8d65d9902b468eaf1f6c6c32a3"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": "check",
+        "unavailable_input": []
+      },
+      "id": "L13-oversight-check",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "08ac405aed8a769f904e8d6a0191f9943a8c05410436e1614190a188dad37d34"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": "decision",
+        "unavailable_input": []
+      },
+      "id": "L14-oversight-decision",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "0892eaf12cda07eb50d411991d23420016b06048059cb4960d80fab560d9cabf"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": "release",
+        "unavailable_input": []
+      },
+      "id": "L15-oversight-release",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "15e3bc4a06d36e1cf94b3718914b4541510c8c6d5e4b198f7c90b7a8aece75ab"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": "release",
+        "unavailable_input": []
+      },
+      "id": "L16-oversight-unresolved-digest",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "a9c5cfc3e7b3eb5bab2f8120377e28b1ce1c786cdb0d118fcb35f2aaf6ac615d"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L17-oversight-absent",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "d3752250ce76527c3a0442201b4ca5d6861dcaf84124e57bfe27c294f5cf4b05"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": "check",
+        "unavailable_input": []
+      },
+      "id": "L18-oversight-evidence-partition",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "54073800c5eee114ac2a9be849edd8b6209363d8da454aae317dd2353b5cf6c6"
+    },
+    {
+      "checks": {
+        "bounded_core_result": true,
+        "native_matches_source_expectation": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "record-only",
+        "authorization_established": false,
+        "classification": "reported-permit",
+        "evaluation_status": "evaluated",
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "L19-trusted-wrong-effect",
+      "mapping_status": "mapped",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a",
+      "source_sha256": "d52e7426bdfa3f6990a748661021ad63e3845a43ae06522cf573069d1abc2e88"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "compat-01-A1-as-02",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "ded6715a80437cfbdb0b2f112a10dbb9ce3e3d15cb401e4b35ca61d41d6cdc87"
+    },
+    {
+      "checks": {
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "source-invalid",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "compat-01-A2-as-02",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [
+          "member-missing"
+        ],
+        "derived_tier": "",
+        "verdict": "malformed"
+      },
+      "policy_sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588",
+      "source_sha256": "f410c7b4b792c0b30bfb7c0a96f59a3213e4100def30f3c8a2dda11522e3e758"
+    },
+    {
+      "checks": {
+        "exact_dispatch_failure": true,
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "compat-02-A10-as-01",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    },
+    {
+      "checks": {
+        "exact_dispatch_failure": true,
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "compat-02-A11-as-01",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "ec049319d25facc649d2a418cb1f83310d0fd74e4cc08977eacbfa1c65a6a2b0"
+    },
+    {
+      "checks": {
+        "exact_dispatch_failure": true,
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "compat-02-EV1-as-01",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "f320e1e190cd0a356dff70d1cc6fcb790f0d08109923595a98c4a72e9f033d88"
+    },
+    {
+      "checks": {
+        "exact_dispatch_failure": true,
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "compat-02-OV1-as-01",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [],
+        "derived_tier": "authoritative",
+        "verdict": "valid"
+      },
+      "policy_sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec",
+      "source_sha256": "bb317d5ad7982c232190fdcec9b717b519a01f39dffafd7619a8502b8dc9e089"
+    },
+    {
+      "checks": {
+        "exact_dispatch_failure": true,
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-not-selected",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "missing-revision",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "policy_sha256": "da5db318ae85311992df0df1359ec2dc9a4348264431c8d74ea7c9ffa4d0f965",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    },
+    {
+      "checks": {
+        "exact_dispatch_failure": true,
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-not-selected",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "unknown-revision",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "policy_sha256": "98484c31ca7d61fda7eb82ed8453845a9ba55fb923e54af11b014a2e4c18df59",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    },
+    {
+      "checks": {
+        "exact_dispatch_failure": true,
+        "native_matches_source_expectation": true,
+        "no_appraisal_on_input_failure": true,
+        "no_authorization_inference": true,
+        "no_execution_inference": true,
+        "no_human_inference": true,
+        "receiver_accepts_actual_output": true,
+        "receiver_and_native_decisions_equal": true
+      },
+      "decision": {
+        "admission": "quarantine",
+        "authorization_established": false,
+        "classification": "revision-policy-mismatch",
+        "evaluation_status": null,
+        "execution_established": false,
+        "human_participation_established": false,
+        "oversight_act": null,
+        "unavailable_input": []
+      },
+      "id": "wrong-specification",
+      "mapping_status": "mapping-failure",
+      "native": {
+        "codes": [],
+        "derived_tier": "",
+        "verdict": "not-run"
+      },
+      "policy_sha256": "6907941fd4fcc4e73557e9e53eb04ba7f32ed3b989a324c0a264600da1af909c",
+      "source_sha256": "8a2e4c0327732290ec614781bb76039723828d968a59146c172292c0f95da845"
+    }
+  ],
+  "distinctions": {
+    "carrier_and_mapper_evaluation_are_distinct": true,
+    "different_evaluation_status": true,
+    "different_recipient_classification": true,
+    "historical_A1_is_exact_new_EV3": true,
+    "same_agreement": true,
+    "same_decision_deny": true,
+    "unavailable_input_retained": true
+  },
+  "native_corpora": [
+    {
+      "corpus_digest": "9617291fd6c1721dfd9430d3f15987da716ee5c722094f74431a95a2d4b3c3c6",
+      "count": 47,
+      "judge_ok": true,
+      "revision": "01"
+    },
+    {
+      "corpus_digest": "048ddde8c8ce7e65368c4c46bd91192765444d287b4fcd35c3260bfcf9bb80aa",
+      "count": 55,
+      "judge_ok": true,
+      "revision": "02"
+    }
+  ],
+  "output_mutations": [
+    {
+      "errors": [
+        "output-source-binding-mismatch"
+      ],
+      "id": "source-version",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-source-binding-mismatch"
+      ],
+      "id": "source-digest",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-policy-binding-mismatch"
+      ],
+      "id": "policy-digest",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-policy-binding-mismatch"
+      ],
+      "id": "profile-digest",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-facts-mismatch"
+      ],
+      "id": "evaluation-laundering",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-facts-mismatch"
+      ],
+      "id": "lost-unavailable-input",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-facts-mismatch"
+      ],
+      "id": "oversight-human-upgrade",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-facts-mismatch"
+      ],
+      "id": "oversight-authority-upgrade",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-appraisal-mismatch:asserted_claim_supported",
+        "output-appraisal-mismatch:supported_claims",
+        "output-appraisal-mismatch:verdict"
+      ],
+      "id": "false-core-accept",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-appraisal-mismatch:inherited_limitations"
+      ],
+      "id": "lost-limitations",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-appraisal-mismatch:evaluation_gap_entries",
+        "output-appraisal-mismatch:evaluation_gaps"
+      ],
+      "id": "lost-gap",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-appraisal-mismatch:target"
+      ],
+      "id": "foreign-target",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-appraisal-mismatch:support_entries"
+      ],
+      "id": "wrong-basis",
+      "passed": true
+    },
+    {
+      "errors": [
+        "native-record-malformed",
+        "output-appraises-unadmitted-source",
+        "output-status-mismatch"
+      ],
+      "id": "fake-appraisal-on-EV3",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-json-invalid"
+      ],
+      "id": "duplicate-output-member",
+      "passed": true
+    },
+    {
+      "errors": [
+        "output-json-invalid"
+      ],
+      "id": "nonfinite-output-value",
+      "passed": true
+    }
+  ],
+  "trusted_producer": {
+    "both_signed_records_native_valid": true,
+    "control_endpoint_matches_reported_effect": true,
+    "false_report_endpoint_does_not_match": true,
+    "no_execution_inference_in_either_route": true,
+    "same_native_decision": true,
+    "same_participant_delivery_id": true,
+    "same_participant_inputs": true,
+    "same_wexp_output_in_both_worlds": true,
+    "same_wexp_receiver_decision": true
+  }
+}

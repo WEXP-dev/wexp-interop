@@ -1,0 +1,14 @@
+{
+  "blind_experiment": false,
+  "computed_dependency_observation": "pre-run/DEPENDENCY-OVERLAP.json",
+  "declaration_status": "author/team declaration, not computed from source hashes",
+  "environment_control": "The same WEXP task owner and coordinated AI session prepare and control both routes and the harness.",
+  "expectation_access": "The preparation team can read both implementations, all known private reference results, expectations and oracle.",
+  "external_team_reproduction": false,
+  "format": "wexp-aar-experiment-control-declaration/0.1.0",
+  "network_enforcement": false,
+  "original_consumer_authoring": "The private pilot reports a separate implementation task using the agreed contract/public source before a later read-only harness review. This public replay inherits that code; it adds no external-team independence.",
+  "os_access_sandbox": false,
+  "participant_delivery": "The retained runner stages consumer and native packaging only. Source, receiver policy and output are delivered; the oracle and world id are withheld from recipient inputs.",
+  "trusted_producer_scope": "Record-alone decisions are compared using identical signed bytes. The harness has the before/after oracle; the recipients do not."
+}

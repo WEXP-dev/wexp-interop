@@ -1,0 +1,47 @@
+{
+  "format": "wexp-published-source-retrieval/0.1.0",
+  "results": [
+    {
+      "source_url": "https://www.ietf.org/archive/id/draft-gilda-wimse-agent-audit-record-01.txt",
+      "source_revision": "draft-gilda-wimse-agent-audit-record-01",
+      "sha256": "93ca132dfa65a397a6e64a0ffc47fc69952f2f92ed6c8d3fed3861d47586e763",
+      "bytes": 67962,
+      "requested_at_utc": "2026-10-11T02:17:57.195986+00:00",
+      "status": 200,
+      "resolved_url": "https://www.ietf.org/archive/id/draft-gilda-wimse-agent-audit-record-01.txt",
+      "observed_sha256": "93ca132dfa65a397a6e64a0ffc47fc69952f2f92ed6c8d3fed3861d47586e763",
+      "observed_bytes": 67962,
+      "equal_to_retained": true,
+      "saved_file": "draft-gilda-wimse-agent-audit-record-01.txt",
+      "finished_at_utc": "2026-10-11T02:18:01.850609+00:00"
+    },
+    {
+      "source_url": "https://www.ietf.org/archive/id/draft-gilda-wimse-agent-audit-record-02.txt",
+      "source_revision": "draft-gilda-wimse-agent-audit-record-02",
+      "sha256": "601ff41ff886d0bf603143d3a02ce382e58e2d780dfbba3351e0f16797d9a79b",
+      "bytes": 76016,
+      "requested_at_utc": "2026-10-11T02:17:57.196953+00:00",
+      "status": 200,
+      "resolved_url": "https://www.ietf.org/archive/id/draft-gilda-wimse-agent-audit-record-02.txt",
+      "observed_sha256": "601ff41ff886d0bf603143d3a02ce382e58e2d780dfbba3351e0f16797d9a79b",
+      "observed_bytes": 76016,
+      "equal_to_retained": true,
+      "saved_file": "draft-gilda-wimse-agent-audit-record-02.txt",
+      "finished_at_utc": "2026-10-11T02:18:01.874036+00:00"
+    },
+    {
+      "source_url": "https://www.ietf.org/archive/id/draft-sergeev-wexp-core-01.txt",
+      "source_revision": "draft-sergeev-wexp-core-01",
+      "sha256": "50c137713a08ebba7c7b284f97107a2259c9a2d3e0eaefdaede3a77d09fa902b",
+      "bytes": 108917,
+      "requested_at_utc": "2026-10-11T02:17:57.197455+00:00",
+      "status": 200,
+      "resolved_url": "https://www.ietf.org/archive/id/draft-sergeev-wexp-core-01.txt",
+      "observed_sha256": "50c137713a08ebba7c7b284f97107a2259c9a2d3e0eaefdaede3a77d09fa902b",
+      "observed_bytes": 108917,
+      "equal_to_retained": true,
+      "saved_file": "draft-sergeev-wexp-core-01.txt",
+      "finished_at_utc": "2026-10-11T02:18:01.925106+00:00"
+    }
+  ]
+}

@@ -114,9 +114,13 @@ def execute(root: Path):
             historical_files = {path.relative_to(package).as_posix() for path in (package / "evidence/historical-preparation").rglob("*") if path.is_file()}
             if exported_paths != historical_files:
                 raise ValueError("export allowlist differs from preserved historical files")
-        counts.append({"experiment_id": record["experiment_id"], "package_id": record["package_id"],
-                       "manifest_entries": verify_manifest(package)})
-    return {"status": "PASS", "scope": "cards/catalog/manifests/local links only",
+        checked = {"experiment_id": record["experiment_id"], "package_id": record["package_id"],
+                   "manifest_entries": verify_manifest(package)}
+        if record["verification"]["profile"] == "aar-pilot-v1":
+            from verify_aar import execute_package
+            checked["aar_saved_evidence"] = execute_package(package, record)
+        counts.append(checked)
+    return {"status": "PASS", "scope": "cards/catalog/manifests/local links; bounded AAR saved-evidence checks where selected",
             "packages": counts, "local_links_checked": check_links(root),
             "experiment_execution_performed": False}
 

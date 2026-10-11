@@ -1,0 +1,192 @@
+{
+  "continuation_rule": "Keep every frozen input byte unchanged. Append actual run evidence and final reports at new paths after publication of the preparation commit.",
+  "created_at_utc": "2026-10-11T02:46:17.269257+00:00",
+  "critical_bindings": [
+    {
+      "bytes": 107643,
+      "git_blob_sha1": "58f233e4f7fc31540ee4e6d91712b58451de4417",
+      "path": "SOURCES.lock.json",
+      "sha256": "d914f535510463702567df863facc63a5a9b7d4bf588f2d2433e928059b9a44a"
+    },
+    {
+      "bytes": 80580,
+      "git_blob_sha1": "6d67c13114622c3b57ca0bd7842e76454553dfdb",
+      "path": "PROVENANCE.json",
+      "sha256": "27864b8a4539a6c7ad2ad596a2299694e4a9b7623955c81bad165b83393eb837"
+    },
+    {
+      "bytes": 5551,
+      "git_blob_sha1": "d54ad7ee804070ea1c7b37765cbf3de0db0a831a",
+      "path": "profile.json",
+      "sha256": "3e75e47f77f620793223d4b05785cf576e065f9834da5a667f027eee1dc8b2ca"
+    },
+    {
+      "bytes": 701,
+      "git_blob_sha1": "cf9f65d336f0c97503cb5bfaf877c8248594f4be",
+      "path": "policies/aar01.json",
+      "sha256": "345079e1c002b6f68d0c217b7a0f593dbb4402882a667749abd736069bc2efec"
+    },
+    {
+      "bytes": 701,
+      "git_blob_sha1": "6863cf777f13b6906381f0c6c24bac6b6ab5f746",
+      "path": "policies/aar02.json",
+      "sha256": "6c59560f658143386b47c37160ca089090ffd6828dbffbd595cfbbf97c431588"
+    },
+    {
+      "bytes": 701,
+      "git_blob_sha1": "481c18d9509dede70d7f3ba82728e6b33b84a81f",
+      "path": "policies/local-aar02.json",
+      "sha256": "c57861db60dc316eb3893a2c2f17a92788438eb2dbd3e808ee85406e89c82d3a"
+    },
+    {
+      "bytes": 10102,
+      "git_blob_sha1": "98e874a801392983dabbbd2fbd4d224067972263",
+      "path": "fixtures/local-manifest.json",
+      "sha256": "9420b6557bfce4d2092a79f827651d6c1c1cb7b785557fe58f6724a9b71b1fa5"
+    },
+    {
+      "bytes": 967,
+      "git_blob_sha1": "8bde4cfa2842585de1e7f18bafebff4ef21c90c2",
+      "path": "fixtures/trusted-producer-oracle.json",
+      "sha256": "d5f6f31b6d19b49b5de8f63d2ce5caa3da4e74ae7bdb900b34b8e6396baf7b65"
+    },
+    {
+      "bytes": 145886,
+      "git_blob_sha1": "cb29396f4b87099ba35f489b84da4ff6530f6eae",
+      "path": "reference/private-pilot-semantic-results.json",
+      "sha256": "1a97015e506db61bbf481cfac3ff3c2e53186cb935b491cb190bc370a1c62ef2"
+    },
+    {
+      "bytes": 1129,
+      "git_blob_sha1": "22c93b61ef4ef1d35bace8f910084da397594c64",
+      "path": "reference/PROVENANCE.json",
+      "sha256": "5052be96b14dfc8c0aaa4c474a55a356ab456df45c6312ace282ef1c25e46a60"
+    },
+    {
+      "bytes": 119837,
+      "git_blob_sha1": "192b08fc272838e7cbd8f8608446067f631f56ed",
+      "path": "pre-run/EXPECTATIONS.json",
+      "sha256": "f0e2fbc71d7ba633b236c24ef4983f3c0c3e6c6d135ae818f148e958cca85703"
+    },
+    {
+      "bytes": 110081,
+      "git_blob_sha1": "3e7056a2c66fca0824f5f86ef7defbb77249073d",
+      "path": "pre-run/OUTPUT-MUTATION-INPUTS.json",
+      "sha256": "b232732eb12f79c0914b89cbbb7983be3ea8ce308a72e8f8ef343c5d42c1537b"
+    },
+    {
+      "bytes": 1913,
+      "git_blob_sha1": "731471962239ddc05dc6bbe8f8c4959d52401ed3",
+      "path": "pre-run/EXPECTED-DELTA.json",
+      "sha256": "cec836ad8bc9d558f781c28df1810ad09d9a0f672c6ad714b0f3fd9311349a5c"
+    },
+    {
+      "bytes": 23098,
+      "git_blob_sha1": "9849941012925ccfcc0d6806c7e7ba9f57698d3a",
+      "path": "pre-run/DEPENDENCY-OVERLAP.json",
+      "sha256": "ef645d135648e5ca3da05635a8fc5c6cac988b653865c52be294e8c5bb226000"
+    },
+    {
+      "bytes": 1235,
+      "git_blob_sha1": "1be3830a23cef5b8d423fef26cf1ea4fb55802f6",
+      "path": "pre-run/CONTROL-DECLARATION.json",
+      "sha256": "17538f73b4a5820d3db72c44fd83cd6c021b74630877099b33b87b6e650030a2"
+    },
+    {
+      "bytes": 1265,
+      "git_blob_sha1": "3fca3800e235c4ba8bfc830fb9272564c6f46cb8",
+      "path": "pre-run/RUNTIME.json",
+      "sha256": "ecdd38cdc27b1d07d716d699cde06088e376649148de24f122ac955910796a48"
+    },
+    {
+      "bytes": 8769,
+      "git_blob_sha1": "69376c7ed18f59a38e68364fe614732a3daa32e0",
+      "path": "compare_results.py",
+      "sha256": "e75bb2e0ef13bd611054c70fe34d94866a03bc170e20bcccaa92b7a372af267c"
+    },
+    {
+      "bytes": 8869,
+      "git_blob_sha1": "fadd1165b934c59e86efdbfe8db713ac3323b983",
+      "path": "verify_inputs.py",
+      "sha256": "7fbd840c1eb88ab8322eba3559aac197e9d922e5505a7f1c28e819d19517a6c6"
+    },
+    {
+      "bytes": 3203,
+      "git_blob_sha1": "c05582dfd19d27e5881a9ccd81ca8889143c3a72",
+      "path": "check_comparator.py",
+      "sha256": "8c781235b929835a9d7bf20c31a1c3dc296aa4d3a3623c723a8fbcd81d568bfe"
+    },
+    {
+      "bytes": 4382,
+      "git_blob_sha1": "9e7b04f740128cafea9142276977e9c578e3d24f",
+      "path": "pre-run/comparator-controls.json",
+      "sha256": "55c694e86271ac756bbd6b21fbe62fb9a2ecf8ea55de4ee46cd4b41e838e9c21"
+    },
+    {
+      "bytes": 2966,
+      "git_blob_sha1": "5195f2fc38faa22d5f94d90c6aa472154e91b295",
+      "path": "README.md",
+      "sha256": "164f22501a1cd3c96cac4fbbf163f23de42957433ddc3f7a2ca97ec9198850c2"
+    },
+    {
+      "bytes": 5467,
+      "git_blob_sha1": "051e2bdd391823a38068deea806ddfd4c266f211",
+      "path": "docs/EXPERIMENT.md",
+      "sha256": "05301e303646ebf4093e5da4d6ef03fb3e9de1a8e6aa2b40e0cebc122008481c"
+    },
+    {
+      "bytes": 3299,
+      "git_blob_sha1": "ace98ea77b6b382627bbc020d9f1f5740650b6c8",
+      "path": "docs/REPRODUCE.md",
+      "sha256": "3add6781ec0d6652ee89202bebf4a3887aa21ce07e448a20bd5ba921701dc8ee"
+    },
+    {
+      "bytes": 2068,
+      "git_blob_sha1": "594c61414993aca506f93031bd83538e163acfdd",
+      "path": "docs/EXPECTED-DELTA.md",
+      "sha256": "0bbcab687a3beeb2fab05e7295f5636df5c019de3a0937e4859a230d97c1668c"
+    },
+    {
+      "bytes": 4590,
+      "git_blob_sha1": "4f2f2a0190b320f3b30173a9e293b5d5e3b59302",
+      "path": "docs/LIMITATIONS.md",
+      "sha256": "d7f55307b2a793236ec018f6b79bced3d7f6aed1317f248b8ec0dec4e5618858"
+    },
+    {
+      "bytes": 1840,
+      "git_blob_sha1": "9c0f8663ed4e58ce8116d9614883cb4bcb3c7930",
+      "path": "NOTICE.md",
+      "sha256": "81152f6ea8e686efadf01ac5ca4e34267e9911867bd37ddf504847ef74f0af91"
+    },
+    {
+      "bytes": 36974,
+      "git_blob_sha1": "31bba6dc66027bd48862130f2e2970ed1c274260",
+      "path": "LICENSES/SCOPE.json",
+      "sha256": "767353177e1379d9976068f1381a4ba0f5108efa300edd93b9d05aab3618707f"
+    }
+  ],
+  "experiment_id": "wimse-aar-02-interop-001",
+  "format": "wexp-aar-public-prerun-freeze/0.1.0",
+  "frozen_input_files": 202,
+  "identity_limit": "This unsigned local freeze fixes bytes relative to a later public Git commit. Its local timestamp is not an independent timestamp attestation.",
+  "implementation_execution_performed_at_freeze": false,
+  "input_lock": {
+    "bytes": 52580,
+    "git_blob_sha1": "71681c08c87e26274ec5632a42df6b059f9fd7ac",
+    "path": "pre-run/INPUTS.lock.json",
+    "sha256": "a00401b781968a9f5aeb21313d1fc37bcd4513c2f98bc1b2c868e7fcb0004af0"
+  },
+  "known_reference_not_blind": true,
+  "outer_preparation_sha256": "8a944659da567727545d8befcd8ddff84eafd6d1cb16bc2cae0db7dc0628c4c5",
+  "package_id": "pkg-001",
+  "permitted_semantic_delta": [],
+  "prospective_counts": {
+    "controlled_worlds": 2,
+    "local_fixtures_included_in_pipeline": 19,
+    "output_mutations": 16,
+    "pipeline_cases": 130,
+    "published_corpus_records_included_in_pipeline": 102
+  },
+  "publication_commit_binding": "The actual remote preparation commit and tree are recorded before the first retained implementation run, outside these immutable inputs.",
+  "synthetic_comparator_controls_performed": true
+}
