@@ -1,0 +1,29 @@
+{
+  "source": "github",
+  "file": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+  "requested_url": "https://github.com/WEXP-dev/wexp-interop/releases/download/wexp-emilia-interop-001/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+  "started_at_utc": "2026-10-11T00:15:48.977097+00:00",
+  "expected_sha256_source": "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+  "expected_sha256": "750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5",
+  "expected_size": 2260,
+  "zenodo_record_checksum": "md5:6d8fde104c9c71639e704a6dad269d7c",
+  "zenodo_record_file_id": "3175e417-ac8c-41bb-bff4-e8958369feb4",
+  "http_status": 200,
+  "effective_url_without_query": "https://release-assets.githubusercontent.com/github-production-release-asset/1342067237/92247474-b395-4b73-886c-7fc1b6f11d56",
+  "redirect_query_omitted": true,
+  "headers": {
+    "Content-Length": "2260",
+    "Last-Modified": "Sat, 22 Aug 2026 10:26:53 GMT",
+    "ETag": "\"0x8DF0037E2B5069F\"",
+    "Date": "Sun, 11 Oct 2026 00:15:55 GMT",
+    "Content-Disposition": "attachment; filename=WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+    "Content-Type": "application/octet-stream"
+  },
+  "bytes": 2260,
+  "sha256": "750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5",
+  "md5": "6d8fde104c9c71639e704a6dad269d7c",
+  "expected_sha256_match": true,
+  "expected_size_match": true,
+  "zenodo_checksum_match": true,
+  "finished_at_utc": "2026-10-11T00:15:55.425196+00:00"
+}

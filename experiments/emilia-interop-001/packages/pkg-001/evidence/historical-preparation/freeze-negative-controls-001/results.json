@@ -1,0 +1,466 @@
+{
+  "schema": "emilia-freeze-bindings-negative-controls-001",
+  "started_at_utc": "2026-10-11T01:10:45.173805+00:00",
+  "finished_at_utc": "2026-10-11T01:10:45.824093+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "run_freeze_negative_checks.py",
+    "--verifier",
+    "verify_freeze_bindings.py",
+    "--archive",
+    "zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+    "--freeze",
+    "zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+    "--metadata",
+    "expected-sha-source-PUBLICATION-METADATA.yaml",
+    "--metadata-sha256",
+    "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+    "--metadata-git-blob",
+    "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+    "--metadata-source-url",
+    "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+    "--manifest-member",
+    "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+    "--out-dir",
+    "freeze-negative-controls-001"
+  ],
+  "working_directory": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+  },
+  "suite_script_sha256": "3aff1fcf71553b1fcafd145dc1730c80796cd4b69d467d1f34118c4083518d19",
+  "verifier_script_sha256": "cd67a6b3ede869ec192309c0f0caec3e7b9023476fb63a764bce9c2c64618441",
+  "original_input_identities": {
+    "archive": {
+      "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "bytes": 200140,
+      "sha256": "f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f"
+    },
+    "freeze": {
+      "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2260,
+      "sha256": "750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5"
+    },
+    "metadata": {
+      "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+      "bytes": 3691,
+      "sha256": "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d"
+    }
+  },
+  "cases": [
+    {
+      "id": "N01-zip-extra-byte",
+      "mutation": "Append LF to an otherwise readable ZIP.",
+      "mutated_inputs": [
+        {
+          "role": "archive",
+          "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N01-zip-extra-byte/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+          "bytes": 200141,
+          "sha256": "4ca75eecb4ff62bef10e8f1ef33a7228938ad725bdf621576ed3cd67dd005557"
+        }
+      ],
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/verify_freeze_bindings.py",
+        "--archive",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N01-zip-extra-byte/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+        "--freeze",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+        "--metadata",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+        "--metadata-sha256",
+        "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+        "--metadata-git-blob",
+        "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+        "--metadata-source-url",
+        "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+        "--manifest-member",
+        "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+        "--out",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N01-zip-extra-byte/verification.json"
+      ],
+      "expected": {
+        "status": "FAIL",
+        "required_failed_checks": [
+          "archive_size_binding_matches_bytes",
+          "archive_sha256_binding_matches_bytes"
+        ],
+        "error_contains": null
+      },
+      "observed": {
+        "returncode": 1,
+        "status": "FAIL",
+        "failed_checks": [
+          "archive_size_binding_matches_bytes",
+          "archive_sha256_binding_matches_bytes"
+        ],
+        "error": null
+      },
+      "result_path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N01-zip-extra-byte/verification.json",
+      "result_sha256": "725e27ce45dd30c50aa09f58221168de83f858c9c73942a482eb83432e5a3cd4",
+      "expected_rejection_observed": true
+    },
+    {
+      "id": "N02-root-manifest-digest-change",
+      "mutation": "Rebuild ZIP with one root-manifest digest character changed; valid manifest syntax and same uncompressed manifest size/count.",
+      "mutated_inputs": [
+        {
+          "role": "archive",
+          "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N02-root-manifest-digest-change/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+          "bytes": 200220,
+          "sha256": "134155fb8ae0cbcbcffcabe1e964d959835eebb7263152b6e64ae155451a8f78"
+        }
+      ],
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/verify_freeze_bindings.py",
+        "--archive",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N02-root-manifest-digest-change/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+        "--freeze",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+        "--metadata",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+        "--metadata-sha256",
+        "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+        "--metadata-git-blob",
+        "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+        "--metadata-source-url",
+        "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+        "--manifest-member",
+        "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+        "--out",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N02-root-manifest-digest-change/verification.json"
+      ],
+      "expected": {
+        "status": "FAIL",
+        "required_failed_checks": [
+          "archive_sha256_binding_matches_bytes",
+          "manifest_sha256_binding_matches_bytes"
+        ],
+        "error_contains": null
+      },
+      "observed": {
+        "returncode": 1,
+        "status": "FAIL",
+        "failed_checks": [
+          "archive_size_binding_matches_bytes",
+          "archive_sha256_binding_matches_bytes",
+          "manifest_sha256_binding_matches_bytes"
+        ],
+        "error": null
+      },
+      "result_path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N02-root-manifest-digest-change/verification.json",
+      "result_sha256": "380f07570a3b434a8c557579f14ba3ad13c4096d2ec272df532d15e0ff08607d",
+      "expected_rejection_observed": true
+    },
+    {
+      "id": "N03-false-name-size-count",
+      "mutation": "Change freeze's declared archive name, size and payload count while retaining a syntactically valid YAML inventory.",
+      "mutated_inputs": [
+        {
+          "role": "freeze",
+          "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N03-false-name-size-count/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+          "bytes": 2242,
+          "sha256": "3a22bb289b0a1f4a810e34448b2638313471b89b4d337666319ac78eb2f95491"
+        }
+      ],
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/verify_freeze_bindings.py",
+        "--archive",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+        "--freeze",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N03-false-name-size-count/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+        "--metadata",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+        "--metadata-sha256",
+        "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+        "--metadata-git-blob",
+        "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+        "--metadata-source-url",
+        "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+        "--manifest-member",
+        "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+        "--out",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N03-false-name-size-count/verification.json"
+      ],
+      "expected": {
+        "status": "FAIL",
+        "required_failed_checks": [
+          "archive_name_matches_metadata",
+          "archive_size_binding_matches_bytes",
+          "manifest_nonempty_entry_count_matches_declared"
+        ],
+        "error_contains": null
+      },
+      "observed": {
+        "returncode": 1,
+        "status": "FAIL",
+        "failed_checks": [
+          "freeze_bytes_match_preexisting_metadata",
+          "freeze_sha256_match_preexisting_metadata",
+          "archive_name_matches_metadata",
+          "archive_size_binding_matches_bytes",
+          "manifest_nonempty_entry_count_matches_declared"
+        ],
+        "error": null
+      },
+      "result_path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N03-false-name-size-count/verification.json",
+      "result_sha256": "95f5fbbcd560cfede063c3257ae2591f06d44fc8120155ba45daddb8515f028f",
+      "expected_rejection_observed": true
+    },
+    {
+      "id": "N04-false-correction",
+      "mutation": "Set corrected manifest digest to a well-formed but wrong SHA-256.",
+      "mutated_inputs": [
+        {
+          "role": "freeze",
+          "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N04-false-correction/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+          "bytes": 2260,
+          "sha256": "b5838878e0b781b05df08301f7565c5079a42051962197098c58b043d95cef99"
+        }
+      ],
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/verify_freeze_bindings.py",
+        "--archive",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+        "--freeze",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N04-false-correction/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+        "--metadata",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+        "--metadata-sha256",
+        "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+        "--metadata-git-blob",
+        "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+        "--metadata-source-url",
+        "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+        "--manifest-member",
+        "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+        "--out",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N04-false-correction/verification.json"
+      ],
+      "expected": {
+        "status": "FAIL",
+        "required_failed_checks": [
+          "corrected_manifest_pin_matches_binding"
+        ],
+        "error_contains": null
+      },
+      "observed": {
+        "returncode": 2,
+        "status": "ERROR",
+        "failed_checks": [],
+        "error": {
+          "type": "ValueError",
+          "message": "corrected_root_manifest_sha256 must be a nonempty string"
+        }
+      },
+      "result_path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N04-false-correction/verification.json",
+      "result_sha256": "769d5758c83ac61b0f1f871d3ce78b978922b3894fc995ed42fcae783cf1e981",
+      "expected_rejection_observed": false
+    },
+    {
+      "id": "N05-malformed-yaml",
+      "mutation": "Append an unclosed YAML flow sequence.",
+      "mutated_inputs": [
+        {
+          "role": "freeze",
+          "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N05-malformed-yaml/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+          "bytes": 2273,
+          "sha256": "7d08ac91c6ad74c3319da542b5cf39ea95bc281b22d6a45c4b667408bc97495a"
+        }
+      ],
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/verify_freeze_bindings.py",
+        "--archive",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+        "--freeze",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N05-malformed-yaml/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+        "--metadata",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+        "--metadata-sha256",
+        "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+        "--metadata-git-blob",
+        "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+        "--metadata-source-url",
+        "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+        "--manifest-member",
+        "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+        "--out",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N05-malformed-yaml/verification.json"
+      ],
+      "expected": {
+        "status": "ERROR",
+        "required_failed_checks": [],
+        "error_contains": "expected the node content"
+      },
+      "observed": {
+        "returncode": 2,
+        "status": "ERROR",
+        "failed_checks": [],
+        "error": {
+          "type": "ParserError",
+          "message": "while parsing a flow node\nexpected the node content, but found '<stream end>'\n  in \"<unicode string>\", line 61, column 1:\n    \n    ^"
+        }
+      },
+      "result_path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N05-malformed-yaml/verification.json",
+      "result_sha256": "8d43afd6d76595c689349ad76f46effb5fc388242aa9d23511d29631060ca767",
+      "expected_rejection_observed": true
+    },
+    {
+      "id": "N06-duplicate-yaml-key",
+      "mutation": "Append a second archive_sha256 key; a permissive last-key-wins loader would collapse it.",
+      "mutated_inputs": [
+        {
+          "role": "freeze",
+          "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N06-duplicate-yaml-key/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+          "bytes": 2341,
+          "sha256": "bd945b6bf5970746389ce04de59b58fc18c9319fa6cfd11b5a50b45c4bbe7a37"
+        }
+      ],
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/verify_freeze_bindings.py",
+        "--archive",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+        "--freeze",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N06-duplicate-yaml-key/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+        "--metadata",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+        "--metadata-sha256",
+        "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+        "--metadata-git-blob",
+        "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+        "--metadata-source-url",
+        "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+        "--manifest-member",
+        "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+        "--out",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N06-duplicate-yaml-key/verification.json"
+      ],
+      "expected": {
+        "status": "ERROR",
+        "required_failed_checks": [],
+        "error_contains": "duplicate mapping key"
+      },
+      "observed": {
+        "returncode": 2,
+        "status": "ERROR",
+        "failed_checks": [],
+        "error": {
+          "type": "ValueError",
+          "message": "freeze: duplicate mapping key 'archive_sha256'"
+        }
+      },
+      "result_path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N06-duplicate-yaml-key/verification.json",
+      "result_sha256": "9c1100f609ddf4076a7770c4ea77adc1a78b993b3245f03e67fe21bc39883fc7",
+      "expected_rejection_observed": true
+    },
+    {
+      "id": "N07-metadata-pin-change",
+      "mutation": "Append whitespace to metadata without changing its independently supplied byte pins.",
+      "mutated_inputs": [
+        {
+          "role": "metadata",
+          "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N07-metadata-pin-change/expected-sha-source-PUBLICATION-METADATA.yaml",
+          "bytes": 3692,
+          "sha256": "da94f3900b3d5bf957513c4e79d395f9d508a9cc3d013a057454106ade5f4939"
+        }
+      ],
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/verify_freeze_bindings.py",
+        "--archive",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+        "--freeze",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+        "--metadata",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N07-metadata-pin-change/expected-sha-source-PUBLICATION-METADATA.yaml",
+        "--metadata-sha256",
+        "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+        "--metadata-git-blob",
+        "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+        "--metadata-source-url",
+        "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+        "--manifest-member",
+        "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+        "--out",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N07-metadata-pin-change/verification.json"
+      ],
+      "expected": {
+        "status": "ERROR",
+        "required_failed_checks": [],
+        "error_contains": "metadata SHA-256 pin mismatch"
+      },
+      "observed": {
+        "returncode": 2,
+        "status": "ERROR",
+        "failed_checks": [],
+        "error": {
+          "type": "ValueError",
+          "message": "metadata SHA-256 pin mismatch"
+        }
+      },
+      "result_path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N07-metadata-pin-change/verification.json",
+      "result_sha256": "3b391450f2c36ceee3f91d2a0d9e476464092dc16a865937ea55642f65789411",
+      "expected_rejection_observed": true
+    },
+    {
+      "id": "N08-nested-manifest-selection",
+      "mutation": "Select an existing nested manifest instead of the root manifest.",
+      "mutated_inputs": [],
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/verify_freeze_bindings.py",
+        "--archive",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+        "--freeze",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+        "--metadata",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+        "--metadata-sha256",
+        "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+        "--metadata-git-blob",
+        "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+        "--metadata-source-url",
+        "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+        "--manifest-member",
+        "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/source/original/WEXP-EMILIA-INTEROP-001/MANIFEST.sha256",
+        "--out",
+        "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N08-nested-manifest-selection/verification.json"
+      ],
+      "expected": {
+        "status": "ERROR",
+        "required_failed_checks": [],
+        "error_contains": "declared root manifest"
+      },
+      "observed": {
+        "returncode": 2,
+        "status": "ERROR",
+        "failed_checks": [],
+        "error": {
+          "type": "ValueError",
+          "message": "explicit manifest member must select the declared root manifest, not a nested copy"
+        }
+      },
+      "result_path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N08-nested-manifest-selection/verification.json",
+      "result_sha256": "e186d36ae3e34e412e3be796279bb0b896fd19b09cff5264462bc8feb7491505",
+      "expected_rejection_observed": true
+    }
+  ],
+  "expected_rejections_observed": 7,
+  "cases_total": 8,
+  "passed": false,
+  "limits": "These are bounded verifier rejection controls, not exhaustive parser testing, certification, or an interop implementation run."
+}

@@ -1,0 +1,53 @@
+artifact_id: WEXP-EMILIA-INTEROP-001
+title: "WEXP × EMILIA INTEROP-001"
+status: "Experimental Interoperability Record"
+publication_venue: WEXP-dev/wexp-interop
+future_repository_url: https://github.com/WEXP-dev/wexp-interop
+expected_repository_layout: interop/WEXP-EMILIA-INTEROP-001/
+release_tag: wexp-emilia-interop-001
+license: Apache-2.0
+spdx_license: Apache-2.0
+license_scope:
+  joint_artifact_contributions: Apache-2.0
+  background_material: "Independently owned pre-existing specifications, code, trademarks, and other background work retain their existing ownership and licensing; inclusion or reference here does not relicense them beyond rights contributed to this joint artifact."
+  trademark_rights_granted: false
+notice: "NOT REQUIRED"
+contributors:
+  - name: Mikhail Sergeev
+    roles:
+      - WEXP-side experiment design and analysis
+      - Frozen WEXP reading and P/P-1 expectation and derivation
+      - Controlled-pair and WEXP-side package construction
+      - Cross-system comparison and integration record
+      - Publication-candidate assembly
+  - name: Iman Schrock
+    roles:
+      - Independent EMILIA-side reading and P/P-1 expectation
+      - EMILIA structural fixture guidance
+      - EMILIA verifier execution and execution evidence
+      - End-to-end technical review of the approved baseline
+technical_baseline:
+  prior_candidate_filename: WEXP-EMILIA-INTEROP-001-FINAL-CANDIDATE.zip
+  prior_candidate_bytes: 191735
+  prior_candidate_sha256: 973d671d5326d642a480b2f546aae9d9c71f07bc5ab6df9aed730c68db8338e3
+  prior_root_manifest_sha256: 82822637f60944dbe6a0c508532790f0173de6e0b0b116b66b6e29447302dd62
+  prior_payload_entries_verified: 64
+  review_status: TECHNICAL RESULT CLEAN
+terminal_result: "Branch A — Explicit Bridge Required"
+ietf_status: none
+ietf_statement: "NO IETF ADOPTION OR ENDORSEMENT IMPLIED."
+claims_boundary:
+  - no semantic equivalence
+  - no conformance claim
+  - no physical-truth claim
+  - no full-interoperability claim
+  - no IETF adoption or endorsement
+release_identity:
+  git_commit: "PENDING UNTIL PUBLICATION"
+  git_tree: "PENDING UNTIL PUBLICATION"
+  manifest_sha256: "EXTERNALLY PINNED AFTER CANDIDATE FREEZE"
+  archive_sha256: "EXTERNALLY PINNED AFTER CANDIDATE FREEZE"
+  detached_record: WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE.yaml
+  binding_note: "The exact manifest and archive hashes are recorded in the detached freeze record delivered with the archive; embedding either hash inside the bytes it identifies would create a circular self-reference."
+publication_date: "PENDING UNTIL ACTUAL RELEASE"
+publication_performed: false

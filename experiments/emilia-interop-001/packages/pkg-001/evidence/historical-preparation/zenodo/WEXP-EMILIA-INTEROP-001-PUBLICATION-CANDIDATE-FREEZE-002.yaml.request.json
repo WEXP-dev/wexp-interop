@@ -1,0 +1,27 @@
+{
+  "source": "zenodo",
+  "file": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+  "requested_url": "https://zenodo.org/api/records/22056151/files/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml/content",
+  "started_at_utc": "2026-10-11T00:15:48.976482+00:00",
+  "expected_sha256_source": "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+  "expected_sha256": "750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5",
+  "expected_size": 2260,
+  "zenodo_record_checksum": "md5:6d8fde104c9c71639e704a6dad269d7c",
+  "zenodo_record_file_id": "3175e417-ac8c-41bb-bff4-e8958369feb4",
+  "http_status": 200,
+  "effective_url_without_query": "https://zenodo.org/api/records/22056151/files/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml/content",
+  "redirect_query_omitted": false,
+  "headers": {
+    "date": "Sun, 11 Oct 2026 00:15:53 GMT",
+    "content-type": "application/octet-stream",
+    "content-length": "2260",
+    "content-disposition": "attachment; filename=WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml"
+  },
+  "bytes": 2260,
+  "sha256": "750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5",
+  "md5": "6d8fde104c9c71639e704a6dad269d7c",
+  "expected_sha256_match": true,
+  "expected_size_match": true,
+  "zenodo_checksum_match": true,
+  "finished_at_utc": "2026-10-11T00:15:53.677297+00:00"
+}

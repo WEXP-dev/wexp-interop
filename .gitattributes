@@ -1,0 +1,8 @@
+# All shipped bytes are hash-addressed, including cards and the generated catalog.
+# Disable text conversion for the entire collection; Git still preserves only
+# the regular/executable mode distinction, not full archive metadata.
+* -text
+experiments/**/packages/*/payload/** -text
+experiments/**/packages/*/source-archive/** -text
+experiments/**/packages/*/publication-history/** -text
+experiments/**/packages/*/evidence/** -text

@@ -1,0 +1,41 @@
+{
+  "checked_at_utc": "2026-10-11T00:16:59.570867+00:00",
+  "inputs": {
+    "freeze": "zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+    "zip": "zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+    "prior_expected_hash_source": "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml"
+  },
+  "record_classification": "YAML inventory and publication-transcription correction record; no signature or trusted timestamp object appears in this record",
+  "checks": {
+    "freeze_bytes_match_preexisting_metadata": true,
+    "freeze_sha256_match_preexisting_metadata": true,
+    "archive_name_matches_metadata": true,
+    "archive_size_binding_matches_bytes": true,
+    "archive_sha256_binding_matches_bytes": true,
+    "archive_sha256_binding_matches_preexisting_metadata": true,
+    "manifest_size_binding_matches_bytes": true,
+    "manifest_sha256_binding_matches_bytes": true,
+    "manifest_sha256_binding_matches_preexisting_metadata": true,
+    "manifest_nonempty_entry_count_matches_declared": true,
+    "corrected_manifest_pin_matches_binding": true
+  },
+  "all_byte_and_binding_checks_passed": true,
+  "signature_or_timestamp_verification": "not performed; record carries no such proof",
+  "github_tag_verification_scope": "GitHub API reports a valid PGP signature over tag object eb4011bcfe65e11545ddb36ebf906637002aca4f pointing at commit 2bceccb0d5c46ecd2d0e81792aa86f49aa343962. This is not a signature over the release ZIP or freeze. No independent local PGP verification was performed.",
+  "historical_declarations_not_revalidated": [
+    "verification.zip_integrity/final_verifier/technical_package_semantic_diff",
+    "provenance.discovered_by",
+    "supersedes prior record identity and correction history",
+    "all technical_*_affected and *_affected statements"
+  ],
+  "manifest_note": "67 nonempty manifest records counted here; payload member verification and safe extraction are a separate check.",
+  "no_research_execution_claim": "No WEXP or EMILIA implementation was executed by this binding check.",
+  "tag_payload_observations": {
+    "tag_object_sha": "eb4011bcfe65e11545ddb36ebf906637002aca4f",
+    "signed_payload_commit": "2bceccb0d5c46ecd2d0e81792aa86f49aa343962",
+    "archive_sha256_literal_present": false,
+    "freeze_sha256_literal_present": false,
+    "github_signature_verification": true,
+    "github_signature_verification_reason": "valid"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "collection-toolchain-001",
+  "observed_at_utc": "2026-10-11T02:18:09.783396+00:00",
+  "python_profile": "3.12",
+  "platform_profile": "POSIX; executed locally on Linux x86_64",
+  "python_dependencies_file": "requirements-verification.txt",
+  "python_dependencies_sha256": "27e5ad275a010327728a48efd96733f47f1e381e2fe9554511da422c9262e910",
+  "github_actions": [
+    {
+      "repository": "actions/checkout",
+      "tag": "v4.3.0",
+      "commit": "08eba0b27e820071cde6df949e0beb9ba4906955"
+    },
+    {
+      "repository": "actions/setup-python",
+      "tag": "v5.6.0",
+      "commit": "a26af69be951a213d495a4c3e4e4022e16d87065"
+    },
+    {
+      "repository": "actions/upload-artifact",
+      "tag": "v4.6.2",
+      "commit": "ea165f8d65b6e75b540449e92b4886f43607fa02"
+    }
+  ],
+  "action_pin_observation": "Exact tag-to-commit mappings observed with git ls-remote against the named public action repositories on the recorded date; pins are selected versions, not a latest-version claim."
+}

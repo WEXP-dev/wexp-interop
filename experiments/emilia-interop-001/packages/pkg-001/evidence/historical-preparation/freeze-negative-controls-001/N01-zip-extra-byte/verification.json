@@ -1,0 +1,99 @@
+{
+  "schema": "emilia-freeze-bindings-verification-001",
+  "verifier_version": "0.1.0",
+  "started_at_utc": "2026-10-11T01:10:45.236389+00:00",
+  "status": "FAIL",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "PyYAML": "6.0.3"
+  },
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/verify_freeze_bindings.py",
+    "--archive",
+    "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N01-zip-extra-byte/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+    "--freeze",
+    "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+    "--metadata",
+    "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+    "--metadata-sha256",
+    "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+    "--metadata-git-blob",
+    "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+    "--metadata-source-url",
+    "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+    "--manifest-member",
+    "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+    "--out",
+    "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N01-zip-extra-byte/verification.json"
+  ],
+  "working_directory": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit",
+  "script_sha256": "cd67a6b3ede869ec192309c0f0caec3e7b9023476fb63a764bce9c2c64618441",
+  "checks": {
+    "freeze_bytes_match_preexisting_metadata": true,
+    "freeze_sha256_match_preexisting_metadata": true,
+    "archive_name_matches_metadata": true,
+    "archive_size_binding_matches_bytes": false,
+    "archive_sha256_binding_matches_bytes": false,
+    "archive_sha256_binding_matches_preexisting_metadata": true,
+    "manifest_size_binding_matches_bytes": true,
+    "manifest_sha256_binding_matches_bytes": true,
+    "manifest_sha256_binding_matches_preexisting_metadata": true,
+    "manifest_nonempty_entry_count_matches_declared": true,
+    "corrected_manifest_pin_matches_binding": true
+  },
+  "additional_checks": {
+    "archive_size_matches_preexisting_metadata": false,
+    "manifest_size_matches_preexisting_metadata": true,
+    "manifest_entry_count_matches_preexisting_metadata": true
+  },
+  "all_byte_and_binding_checks_passed": false,
+  "record_classification": "Unsigned YAML inventory and transcription-correction record.",
+  "limits": [
+    "Caller-supplied metadata pins select the comparison source; their historical provenance is not established by this script.",
+    "The cited metadata source is postpublication. Matching observed bytes does not prove continuous non-modification or a publication-time commitment.",
+    "No signature, trusted timestamp, authorship, human review, or Git tag is verified.",
+    "No historical PASS, provenance, supersedes history, or unaffected-semantics declaration is revalidated.",
+    "Only the root manifest member is read from the ZIP; payload hashes, extraction safety, modes, and fresh-clone behavior require separate checks.",
+    "No WEXP or EMILIA implementation is executed. PASS establishes only the listed input and byte/binding conditions."
+  ],
+  "wexp_or_emilia_implementation_executed": false,
+  "inputs": {
+    "archive": {
+      "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/freeze-negative-controls-001/N01-zip-extra-byte/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+      "bytes": 200141,
+      "sha256": "4ca75eecb4ff62bef10e8f1ef33a7228938ad725bdf621576ed3cd67dd005557"
+    },
+    "freeze": {
+      "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/zenodo/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+      "bytes": 2260,
+      "sha256": "750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5"
+    },
+    "metadata": {
+      "path": "/workspace/scratch/09ba21975d30/wexp-work/interop/collection-migration-preparation-v0.1.0/audit/expected-sha-source-PUBLICATION-METADATA.yaml",
+      "bytes": 3691,
+      "sha256": "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+      "git_blob_sha1": "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+      "expected_sha256": "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+      "expected_git_blob_sha1": "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+      "historical_source_url": "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml"
+    }
+  },
+  "manifest_observation": {
+    "member": "WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/MANIFEST.sha256",
+    "bytes": 7362,
+    "sha256": "4172c2d0d9f4cfaddaa4036a7d92e53d1ee6c2c290654daedaa5806e5281ad6a",
+    "nonempty_entries": 67,
+    "syntax_and_unique_paths_checked": true,
+    "listed_payload_hashes_verified": false
+  },
+  "finished_at_utc": "2026-10-11T01:10:45.259591+00:00",
+  "failed_checks": [
+    "archive_size_binding_matches_bytes",
+    "archive_sha256_binding_matches_bytes"
+  ],
+  "failed_additional_checks": [
+    "archive_size_matches_preexisting_metadata"
+  ]
+}

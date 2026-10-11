@@ -1,0 +1,72 @@
+artifact_id: WEXP-EMILIA-INTEROP-001
+title: "WEXP × EMILIA INTEROP-001"
+status: "Experimental Interoperability Record"
+publication_venue: WEXP-dev/wexp-interop
+future_repository_url: https://github.com/WEXP-dev/wexp-interop
+repository_layout: repository root (the published archive expands to WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE/)
+release_tag: wexp-emilia-interop-001
+license: Apache-2.0
+spdx_license: Apache-2.0
+license_scope:
+  joint_artifact_contributions: Apache-2.0
+  background_material: "Independently owned pre-existing specifications, code, trademarks, and other background work retain their existing ownership and licensing; inclusion or reference here does not relicense them beyond rights contributed to this joint artifact."
+  trademark_rights_granted: false
+notice: "NOT REQUIRED"
+contributors:
+  - name: Mikhail Sergeev
+    roles:
+      - WEXP-side experiment design and analysis
+      - Frozen WEXP reading and P/P-1 expectation and derivation
+      - Controlled-pair and WEXP-side package construction
+      - Cross-system comparison and integration record
+      - Publication-candidate assembly
+  - name: Iman Schrock
+    roles:
+      - Independent EMILIA-side reading and P/P-1 expectation
+      - EMILIA structural fixture guidance
+      - EMILIA verifier execution and execution evidence
+      - End-to-end technical review of the approved baseline
+technical_baseline:
+  prior_candidate_filename: WEXP-EMILIA-INTEROP-001-FINAL-CANDIDATE.zip
+  prior_candidate_bytes: 191735
+  prior_candidate_sha256: 973d671d5326d642a480b2f546aae9d9c71f07bc5ab6df9aed730c68db8338e3
+  prior_root_manifest_sha256: 82822637f60944dbe6a0c508532790f0173de6e0b0b116b66b6e29447302dd62
+  prior_payload_entries_verified: 64
+  review_status: TECHNICAL RESULT CLEAN
+terminal_result: "Branch A — Explicit Bridge Required"
+ietf_status: none
+ietf_statement: "NO IETF ADOPTION OR ENDORSEMENT IMPLIED."
+claims_boundary:
+  - no semantic equivalence
+  - no conformance claim
+  - no physical-truth claim
+  - no full-interoperability claim
+  - no IETF adoption or endorsement
+release_identity:
+  git_commit: "2bceccb0d5c46ecd2d0e81792aa86f49aa343962"
+  git_tree: "8ba8e1f084335db482f9afd121953d665eb2829b"
+  git_tag: wexp-emilia-interop-001
+  git_tag_object: "eb4011bcfe65e11545ddb36ebf906637002aca4f"
+  git_tag_signed: true
+  manifest_sha256: "4172c2d0d9f4cfaddaa4036a7d92e53d1ee6c2c290654daedaa5806e5281ad6a"
+  manifest_bytes: 7362
+  manifest_payload_entries: 67
+  archive_filename: WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip
+  archive_bytes: 200140
+  archive_sha256: "f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f"
+  detached_record: WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml
+  detached_record_bytes: 2260
+  detached_record_sha256: "750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5"
+  binding_note: "The exact manifest and archive hashes are recorded in the detached freeze record delivered with the archive; embedding either hash inside the bytes it identifies would create a circular self-reference."
+deposit:
+  venue: Zenodo
+  version_doi: "10.5281/zenodo.22056151"
+  concept_doi: "10.5281/zenodo.22056150"
+  version_label: "001"
+  deposited_files:
+    - WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip
+    - WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml
+  byte_identical_to_github_release: true
+publication_date: "2026-08-22"
+publication_performed: true
+publication_note: "Publication is a distribution event. It added no claim, changed no frozen byte, and did not make this record a conformance suite, certification, adopted mapping, or IETF submission. Every claims_boundary entry above continues to hold."

@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1.0",
+  "record_revision": 1,
+  "experiment_id": "emilia-interop-001",
+  "package_id": "pkg-001",
+  "title": "WEXP × EMILIA INTEROP-001",
+  "summary": "Historical controlled-fixture experiment: the frozen WEXP surface required an explicit EP-to-WEXP bridge. The migration replays archived evidence without adding an implementation run.",
+  "status": {
+    "integrity": "verified",
+    "execution": "archived-evidence-replayed",
+    "independent_reproduction": "not-performed",
+    "comparison": "explicit-bridge-required",
+    "publication": "published"
+  },
+  "publication": {
+    "version": "001",
+    "date": "2026-08-22",
+    "carriers": [
+      {
+        "kind": "zenodo",
+        "url": "https://zenodo.org/records/22056151",
+        "identifier": "10.5281/zenodo.22056151"
+      },
+      {
+        "kind": "github-release",
+        "url": "https://github.com/WEXP-dev/wexp-interop/releases/tag/wexp-emilia-interop-001",
+        "identifier": "wexp-emilia-interop-001"
+      }
+    ],
+    "version_doi": "10.5281/zenodo.22056151",
+    "concept_doi": "10.5281/zenodo.22056150"
+  },
+  "artifact": {
+    "path": "source-archive/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+    "format": "zip",
+    "bytes": 200140,
+    "sha256": "f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f",
+    "source_url": "https://zenodo.org/api/records/22056151/files/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip/content",
+    "role": "Authoritative selected archive container from Zenodo version record 22056151, identified by file ID fcc3d80b-8304-4533-ad8b-7256b02cf474 and the recorded digest; the GitHub release asset is a compared copy."
+  },
+  "payload": {
+    "path": "payload",
+    "role": "verified-extraction",
+    "regular_files": 68,
+    "archive_container_metadata_preserved_in_git": false,
+    "mode_note": "Archive MANIFEST.sha256 has 0600; Git represents it as 100644. Other regular files are 100644. Actual POSIX checkout is checked separately under umask 0022. ZIP order, timestamps, directory entries and extended metadata remain in the ZIP."
+  },
+  "verification": {
+    "profile": "emilia-archive-v1",
+    "instructions": "REPRODUCE.md",
+    "evidence": [
+      "evidence/SOURCES.json",
+      "evidence/historical-preparation/archive-inspection-001.json",
+      "evidence/historical-preparation/freeze-binding-replay-002.json",
+      "evidence/historical-preparation/extraction-verification-001.json"
+    ],
+    "implementation_execution_performed": false
+  },
+  "independence": {
+    "scope": "No separate external reproduction of this complete collection package is claimed. The archived record contains narrower contributor roles, separately frozen readings and EMILIA-side execution evidence; migration checks do not broaden those roles.",
+    "method": "Historical commitments and contributor execution records retained byte-for-byte; current migration verification is performed in the publisher-controlled preparation environment.",
+    "evidence": [
+      "payload/records/COMMIT-REVEAL-RECORD.md",
+      "payload/records/EMILIA-EXPECTATION-EXECUTION-VERIFICATION-001.md"
+    ]
+  },
+  "result": {
+    "label": "Branch A — Explicit Bridge Required",
+    "details": "The historical record reproduced the EMILIA P/P-1 distinction and left WEXP underdetermined for both fixtures without an explicit EP-to-WEXP mapping. No semantic equivalence, conformance or full interoperability was established."
+  },
+  "source_pins": [
+    {
+      "title": "Published EMILIA ZIP",
+      "url": "https://zenodo.org/records/22056151",
+      "identity": "sha256:f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f",
+      "scope": "Selected version DOI and exact ZIP; not a general permanence or truth claim."
+    },
+    {
+      "title": "Public expected SHA-256 source",
+      "url": "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+      "identity": "git-blob:ae90a4ab9331d986d163c0f6db18cd9201ff5d61; sha256:45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+      "scope": "Public commit dated 2026-08-23, after the 2026-08-22 release; not an independent publication-time commitment or proof against intermediate asset replacement."
+    },
+    {
+      "title": "Pre-migration public main",
+      "url": "https://github.com/WEXP-dev/wexp-interop/tree/d951b0b4170c3b169deb3cfe5ced85232a0a4f88",
+      "identity": "git-commit:d951b0b4170c3b169deb3cfe5ced85232a0a4f88",
+      "scope": "All 69 earlier main file blobs and Git modes are retained: 65 in payload, four later publication documents in publication-history."
+    }
+  ],
+  "license": {
+    "scope_path": "LICENSE-SCOPE.md",
+    "historical_artifact_license": "Apache-2.0 for joint artifact contributions; background material retains its own terms"
+  },
+  "citation_path": "CITATION.cff",
+  "limitations": [
+    "This package migration does not rerun a WEXP or EMILIA implementation, change the historical result, or establish new interoperability.",
+    "The selected ZIP is authoritative for archive composition; payload is its verified file-byte extraction, not the published container bytes.",
+    "FREEZE-002 is an unsigned inventory and transcription correction; it is not a signature, timestamp, authorship proof or independent verification.",
+    "The public SHA-256 anchor is dated after publication. Current matches do not prove continuous non-replacement or independently establish the original release-day bytes.",
+    "The archived pre-publication fields and later publication-history documents are historical; source precedence depends on the type of fact.",
+    "Git preserves file bytes and the executable-bit projection, not complete ZIP metadata. A later commit requires its own verification.",
+    "No physical-truth claim, conformance claim, IETF adoption or endorsement is implied."
+  ]
+}

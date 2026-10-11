@@ -1,0 +1,36 @@
+{
+  "schema": "emilia-public-sources-001",
+  "observed_source_retrieval_date_utc": "2026-10-11",
+  "archive": {
+    "path": "source-archive/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip",
+    "zenodo_record": 22056151,
+    "zenodo_file_id": "fcc3d80b-8304-4533-ad8b-7256b02cf474",
+    "sha256": "f27b4ffc4259a91cdb11dd28424946612b723b0cffe62e588d1740c6a15c951f",
+    "md5": "b1bc67411d64ff80f5f1a19823a68fe0",
+    "bytes": 200140,
+    "source_url": "https://zenodo.org/api/records/22056151/files/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE.zip/content"
+  },
+  "freeze": {
+    "path": "source-archive/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml",
+    "zenodo_file_id": "3175e417-ac8c-41bb-bff4-e8958369feb4",
+    "sha256": "750b9632a1e4e3774618b3e7150b66ab2ac714b9123a70ee917d798d4a6acff5",
+    "md5": "6d8fde104c9c71639e704a6dad269d7c",
+    "bytes": 2260,
+    "source_url": "https://zenodo.org/api/records/22056151/files/WEXP-EMILIA-INTEROP-001-PUBLICATION-CANDIDATE-FREEZE-002.yaml/content",
+    "classification": "unsigned declarative inventory and transcription correction"
+  },
+  "public_expected_sha256": {
+    "url": "https://github.com/WEXP-dev/wexp-interop/blob/4075939139d56b40e6e08788959de169559919af/PUBLICATION-METADATA.yaml",
+    "commit": "4075939139d56b40e6e08788959de169559919af",
+    "git_blob": "ae90a4ab9331d986d163c0f6db18cd9201ff5d61",
+    "sha256": "45885e423193ebadb83f34c80e1941e38e13c7b01ea1f38c89ced69e4e10f73d",
+    "commit_date": "2026-08-23T14:25:07Z",
+    "meaning": "Public post-publication anchor; neither trusted publication time nor proof of continuous non-replacement"
+  },
+  "authority_by_fact": {
+    "archive_composition_and_original_results": "selected pinned archive",
+    "doi_and_publication_event": "identified publication-system record",
+    "collection_location_and_checked_relationships": "versioned package card and exact verification reports"
+  },
+  "public_evidence_scope": "Every required source is in this package or linked by an exact public identity. No private correspondence or account observation is required."
+}
