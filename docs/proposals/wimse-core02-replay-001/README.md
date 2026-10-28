@@ -13,16 +13,21 @@ route is called independently implemented or independently operated.
 Expected results are specified before the run. A CI definition is not execution
 evidence: actual outcomes require the identified run and retained observations.
 No two-world operations, Coverage evaluation or AAC integration are performed.
-A later [observations record](#observations) will identify actual runs without
-rewriting this pre-run contract or the historical package.
+The [observations record](RESULTS.md) identifies the executed runs and retained
+archives without rewriting the pre-run contract or the historical package.
 
 ## Observations
 
-No completed run is recorded by this initial source commit. Results are written
-to a new external output directory. The dedicated workflow preserves complete
-observations; a separate subsequent record must identify observed runs, failures,
-source revisions and durable evidence. Do not interpret a proposal-page presence
-or an absent result record as a successful experiment.
+[Run-001 results and reproduction](RESULTS.md) record 130/130 passing case
+checks, 35 complete Core-02 appraisals and 95 cases with no Core appraisal.
+Native and WEXP recipient decisions agree for all 130 inputs. Two workflow
+runs, each on Python 3.12/3.13 and in normal/optimized modes, produced identical
+full observations. Exact original archives and a read-only verifier are included.
+
+These are bounded same-project observations, not independent interoperability
+or a new result for the historical two-world experiment. The initial pre-run
+commit remains available separately; its no-run statement describes its own
+point in the chronology, before execution.
 
 ## Licensing
 
