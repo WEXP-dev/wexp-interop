@@ -1,0 +1,28 @@
+name: Capture pinned public collection source
+on:
+  push:
+    branches: ['maintenance/catalog-record-20261028']
+    paths: ['.github/workflows/catalog-source-capture.yml']
+permissions:
+  contents: read
+jobs:
+  capture:
+    if: github.repository_id == '1342067237'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          ref: c8e04e8959eb8f45fad0f7230b5b4c68e606d9c5
+          persist-credentials: false
+      - name: Export the exact public source without executing experiment code
+        run: |
+          test "$(git rev-parse HEAD)" = c8e04e8959eb8f45fad0f7230b5b4c68e606d9c5
+          git archive --format=zip HEAD > "$RUNNER_TEMP/wexp-interop-c8e04e8-source.zip"
+          sha256sum "$RUNNER_TEMP/wexp-interop-c8e04e8-source.zip" > "$RUNNER_TEMP/source.sha256"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: public-collection-source-c8e04e8
+          path: |
+            ${{ runner.temp }}/wexp-interop-c8e04e8-source.zip
+            ${{ runner.temp }}/source.sha256
+          retention-days: 7
