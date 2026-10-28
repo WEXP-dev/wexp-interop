@@ -1,0 +1,43 @@
+{
+  "schema": "wexp-aac-preparation-sources/2",
+  "observed_date": "2026-10-28",
+  "status": "PREPARATION_NOT_INTEROP",
+  "aac": {
+    "repository": "action-state-group/agent-action-capsule",
+    "commit": "1d1752bf3956a9800d66b13f129d419d7252fa6d",
+    "path": "spec/interop-profile-v0.md",
+    "blob": "2cb317004370f753fd524ebb0c2b20b9721a8a95",
+    "relationship": "REFERENCE",
+    "commitment_check": "NOT_CHECKED"
+  },
+  "core": {
+    "repository": "WEXP-dev/wexp-appraisal-core-spec",
+    "commit": "8e93013418ee578ac5e522ca7a8d86346b4e2a99",
+    "document": "draft-sergeev-wexp-core-02",
+    "semantics": "wexp-core-2",
+    "xml_sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782"
+  },
+  "coverage": {
+    "repository": "WEXP-dev/wexp-coverage-spec",
+    "commit": "90e0faec458f63fe7f2faa8a100c805cca66ede0",
+    "document": "draft-sergeev-wexp-coverage-00",
+    "rule_set": "coverage/0.2.0",
+    "xml_sha256": "a2bc01d01527e1ca9e867c11341ff259b0788a941b3d1aef979f8937b82cfe62"
+  },
+  "vectors": {
+    "repository": "WEXP-dev/wexp-vectors",
+    "commit": "a9e5cd5ad6083aff893d9303b9b6503a7f2e02f7",
+    "core_manifest_sha256": "b802781f9c551988c452556ab975df6e17a98b9791f378c76b04056042eec4ae",
+    "core_corpus_sha256": "d5d2c9d54185f04ac59ac2b5642853a6ebd00c3d28a3239d62682186f5df323f",
+    "coverage_manifest_sha256": "0219c013766f02fc51b84f9132d1e7387881dfbc265d940b27f0c1a62979bf08"
+  },
+  "appraiser": {
+    "repository": "WEXP-dev/wexp-ref",
+    "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+    "corpus_dependency_commit": "d6827a5e08fdf0aabecee5c025c369273c438db5"
+  },
+  "new_aac_run": false,
+  "upstream_pr": null,
+  "independent_review": false,
+  "refresh_rule": "Recheck heads and record changes separately. Never silently move a historical pin."
+}

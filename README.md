@@ -11,6 +11,18 @@ This repository collects versioned experimental packages and their reproduction 
 
 An experiment's presence in this collection does not establish conformance, semantic equivalence, full interoperability, or IETF adoption. The card states what was executed, how comparison was made, and what kind of independent reproduction is available. Use those dimensions separately.
 
+## Proposals and bounded follow-on trials
+
+[AAC completeness preparation](docs/proposals/aac-completeness-001/README.md)
+contains the proposed clarification, two examples, an upstream patch and current
+public tooling pins. No AAC integration or jointly agreed profile is claimed.
+
+[WIMSE / Core-02 migration trial](docs/proposals/wimse-core02-replay-001/RESULTS.md)
+records a new bounded 130-case replay, complete outputs and unchanged native
+recipient decisions. It does not rerun the historical two-world operations or
+replace the frozen package above. These follow-on materials are outside the
+formal results catalog; their own source, scope and evidence records govern.
+
 ## Find and verify a package
 
 - Read the package `README.md`, `record.json` and reproduction instructions first.

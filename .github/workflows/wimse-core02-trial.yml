@@ -1,0 +1,76 @@
+name: Bounded WIMSE Core-02 migration trial
+
+on:
+  pull_request:
+    paths:
+      - 'docs/proposals/wimse-core02-replay-001/**'
+      - '.github/workflows/wimse-core02-trial.yml'
+  push:
+    paths:
+      - 'docs/proposals/wimse-core02-replay-001/**'
+      - '.github/workflows/wimse-core02-trial.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  trial:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.12', '3.13']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+    steps:
+      - name: Check out exact proposed source
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify preserved first-run evidence without executing its code
+        run: |
+          cd docs/proposals/wimse-core02-replay-001
+          python -B verify_evidence.py --record evidence/run-001/RECORD.json --expected-record-sha256 2a3a0f8a375f7f5eb01419f737502b9f6b35f426f2ee743307799e0cbbe67781
+          python -O -B verify_evidence.py --record evidence/run-001/RECORD.json --expected-record-sha256 2a3a0f8a375f7f5eb01419f737502b9f6b35f426f2ee743307799e0cbbe67781
+          python -B test_evidence.py
+          python -O -B test_evidence.py
+      - name: Check out unchanged historical public input package
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          repository: WEXP-dev/wexp-interop
+          ref: b3bce9abd047e41af06ff8aff1d9ead8c6b0ed93
+          path: trial-inputs/legacy
+          persist-credentials: false
+      - name: Check out pinned public Core-02 implementation
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          repository: WEXP-dev/wexp-ref
+          ref: 56289024c9ee748111f1f1d4f42728ffe04d8d69
+          path: trial-inputs/ref
+          persist-credentials: false
+      - name: Verify historical package without rerunning its old producer
+        run: |
+          cd trial-inputs/legacy
+          python -B scripts/verify_aar.py
+      - name: Freeze run identity and execute both modes
+        run: |
+          mkdir -p "$RUNNER_TEMP/trial-results"
+          git rev-parse HEAD > "$RUNNER_TEMP/trial-results/source-commit.txt"
+          python -B docs/proposals/wimse-core02-replay-001/run.py --legacy "$GITHUB_WORKSPACE/trial-inputs/legacy" --ref "$GITHUB_WORKSPACE/trial-inputs/ref" --out "$RUNNER_TEMP/trial-results/normal"
+          python -O -B docs/proposals/wimse-core02-replay-001/run.py --legacy "$GITHUB_WORKSPACE/trial-inputs/legacy" --ref "$GITHUB_WORKSPACE/trial-inputs/ref" --out "$RUNNER_TEMP/trial-results/optimized"
+          cmp "$RUNNER_TEMP/trial-results/normal/observed.json" "$RUNNER_TEMP/trial-results/optimized/observed.json"
+      - name: Retain full observations including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: wimse-core02-trial-${{ github.event.pull_request.head.sha || github.sha }}-${{ matrix.python }}
+          path: ${{ runner.temp }}/trial-results/
+          if-no-files-found: warn
+          retention-days: 14

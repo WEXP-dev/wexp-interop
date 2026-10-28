@@ -1,0 +1,30 @@
+{
+  "id": "urn:wexp:experimental:aar-record-only-core02:1",
+  "status": "experimental bounded mapping, not a general AAR mapping",
+  "semantics": "wexp-core-2",
+  "legacy_repository": "WEXP-dev/wexp-interop",
+  "legacy_commit": "b3bce9abd047e41af06ff8aff1d9ead8c6b0ed93",
+  "ref_repository": "WEXP-dev/wexp-ref",
+  "ref_commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+  "appraiser_sha256": "e0ea740ce09a65cc6a48495a39730483da1f00583e1e864e6269a2eab4187ddd",
+  "source_specification": "draft-sergeev-wexp-core-02",
+  "source_xml_sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+  "expected_cases": 130,
+  "requested_claim": {
+    "base": "execution",
+    "qualifiers": []
+  },
+  "normalization": "Same record-scoped target and native record-only trust policy; new profile-scoped basis and limitation atoms; capability map encoded as unordered entries; new context bound to both policy and profile.",
+  "boundary": "Attributed reporting boundary with ceiling observation, accepted explicitly by this profile. Not an observed execution boundary.",
+  "required_limitations": [
+    "AAR_RECORD_ASSERTIONS_NOT_WORLD_TRUTH",
+    "AAR_BOUNDARY_VANTAGE_NOT_EXTERNALLY_ESTABLISHED",
+    "AAR_EVALUATION_IS_DECISION_POINT_REPORT",
+    "AAR_OVERSIGHT_IS_PRODUCER_ASSERTED",
+    "AAR_NONOCCURRENCE_NOT_ESTABLISHED",
+    "AAR_AUTHORIZATION_VALIDITY_NOT_ESTABLISHED",
+    "AAR_PRIOR_COMMITMENT_SIGNATURE_NOT_VERIFIED"
+  ],
+  "prediction": "On each admitted native record: exact support only for observation, requested execution unsupported, downgrade, boundary-exceeded reason and execution-support gap. On native/dispatch failure: no Core appraisal.",
+  "scope": "130 historical input cases only. No new two-world operations, live deployment, independent implementation, AAC mapping or Coverage evaluation."
+}
