@@ -1,0 +1,52 @@
+{
+  "aac_execution": false,
+  "archives": [
+    {
+      "artifact_id": 12780681745,
+      "bytes": 252140,
+      "git_blob": "ac6a4eda685706a807299be6076883d55b981205",
+      "original_archive_bytes_preserved": true,
+      "path": "push-python312.zip",
+      "run_id": 40604969823,
+      "sha256": "f42aabcfd3a4060947371790e0cc8f2952dd9d31ba2c8518ca48d4ef1328b895"
+    },
+    {
+      "artifact_id": 12779768279,
+      "bytes": 252141,
+      "git_blob": "cea4513fdc4a49e8ef7a60175209d8b89f5bc30b",
+      "original_archive_bytes_preserved": true,
+      "path": "push-python313.zip",
+      "run_id": 40604969823,
+      "sha256": "924ca402b560ba40dc73f3f6e672c15231b989638e6f3be31a2475e1f014617d"
+    },
+    {
+      "artifact_id": 12779903227,
+      "bytes": 252140,
+      "git_blob": "b0a4ffcaa30c9dabb2a0c1fa34f2b69835475a21",
+      "original_archive_bytes_preserved": true,
+      "path": "pr-python312.zip",
+      "run_id": 40604995949,
+      "sha256": "260869efee594aa876f347ebcedaae147878847f3a96409f4c40902cdf8d5c06"
+    },
+    {
+      "artifact_id": 12780976038,
+      "bytes": 252143,
+      "git_blob": "0eedf2a9cbb7f3098370f1f15dad893593724ac4",
+      "original_archive_bytes_preserved": true,
+      "path": "pr-python313.zip",
+      "run_id": 40604995949,
+      "sha256": "815b8d5b181462b4aff9d04a584a9dbe3518efb9e7ffcbfe76c967fb584cfe40"
+    }
+  ],
+  "cases_per_run": 130,
+  "coverage_evaluation": false,
+  "external_independent_reproduction": false,
+  "mapped_per_run": 35,
+  "new_two_world_operations": false,
+  "observed_sha256_all_eight_mode_runs": "882cb96cef3fb00192988396ac0ebe4f742070b1d55c2141afe7aebabcb390ae",
+  "preservation_workflow_commit": "ba7b710343d70bfe0dff3261ea37293607965c24",
+  "schema": "wexp-bounded-migration-evidence/1",
+  "scope": "Exact four public Actions ZIP archives. Same-project bounded replay, not full conformance or deployment validation.",
+  "source_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+  "unmapped_per_run": 95
+}
