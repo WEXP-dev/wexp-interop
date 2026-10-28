@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.2.0",
+  "record_revision": 1,
+  "experiment_id": "wimse-aar-02-interop-001",
+  "package_id": "pkg-002",
+  "title": "WIMSE AAR / Appraisal Core-02 bounded migration",
+  "summary": "Catalog admission of the already recorded Core-02 migration; 130 cases, 35 full appraisals, equal native/recipient decisions. No new experiment at admission.",
+  "status": {
+    "integrity": "verified",
+    "execution": "local-run-completed",
+    "independent_reproduction": "not-performed",
+    "comparison": "no-local-decision-difference",
+    "publication": "prepared"
+  },
+  "publication": {
+    "version": "wimse-aar-02-interop-001/pkg-002",
+    "carriers": []
+  },
+  "artifact": {
+    "path": "source-archive/push-python312.zip",
+    "format": "zip",
+    "bytes": 252140,
+    "sha256": "f42aabcfd3a4060947371790e0cc8f2952dd9d31ba2c8518ca48d4ef1328b895",
+    "source_url": "https://github.com/WEXP-dev/wexp-interop/blob/5f3e15a943114a36639309355b4e5a166f9f4d95/docs/proposals/wimse-core02-replay-001/evidence/run-001/push-python312.zip",
+    "role": "Original primary Actions observations ZIP; not a new standalone reproduction archive."
+  },
+  "payload": {
+    "path": "payload",
+    "role": "frozen-run-package",
+    "regular_files": 8,
+    "archive_container_metadata_preserved_in_git": false,
+    "mode_note": "Eight exact regular source files, mode 100644. The payload is a separate source snapshot, not extraction of the primary observations ZIP; original ZIP bytes are retained separately."
+  },
+  "verification": {
+    "profile": "wimse-core02-migration-v1",
+    "instructions": "REPRODUCE.md",
+    "evidence": [
+      "evidence/SOURCE-MANIFEST.json",
+      "evidence/ADMISSION.json",
+      "source-archive/RECORD.json"
+    ],
+    "implementation_execution_performed": true
+  },
+  "independence": {
+    "scope": "Author-coordinated original runs; shared native verifier and policy, known expectations; not external independent reproduction.",
+    "method": "Separate original processes/staged receiver, without OS/network sandbox. Admission is data-only, not another run.",
+    "evidence": [
+      "source-archive/RECORD.json",
+      "evidence/ADMISSION.json"
+    ]
+  },
+  "result": {
+    "label": "No local decision difference from the strong native baseline",
+    "details": "130/130 cases per original run; 35 mapped and 95 unmapped, all twenty appraisal components on admitted records. Observation only, not execution. New catalog packaging adds no experimental result."
+  },
+  "source_pins": [
+    {
+      "title": "Frozen pre-run source",
+      "url": "https://github.com/WEXP-dev/wexp-interop/tree/70d6c5d1fca0843859008c98fd6a57e265ff3f68/docs/proposals/wimse-core02-replay-001",
+      "identity": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+      "scope": "Protocol, profile, producer, receiver and runner fixed before original execution."
+    },
+    {
+      "title": "Historical input and native baseline",
+      "url": "https://github.com/WEXP-dev/wexp-interop/tree/b3bce9abd047e41af06ff8aff1d9ead8c6b0ed93",
+      "identity": "b3bce9abd047e41af06ff8aff1d9ead8c6b0ed93",
+      "scope": "Unchanged AAR inputs/readers and recipient policy; required for a fresh replay."
+    },
+    {
+      "title": "Core-02 implementation",
+      "url": "https://github.com/WEXP-dev/wexp-ref/tree/56289024c9ee748111f1f1d4f42728ffe04d8d69",
+      "identity": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+      "scope": "Normalized-input appraiser; required for a fresh replay."
+    },
+    {
+      "title": "Saved original run record",
+      "url": "https://github.com/WEXP-dev/wexp-interop/blob/5f3e15a943114a36639309355b4e5a166f9f4d95/docs/proposals/wimse-core02-replay-001/evidence/run-001/RECORD.json",
+      "identity": "sha256:2a3a0f8a375f7f5eb01419f737502b9f6b35f426f2ee743307799e0cbbe67781",
+      "scope": "Four original CI archives, source identity and same-project limits."
+    }
+  ],
+  "license": {
+    "scope_path": "LICENSE-SCOPE.md",
+    "historical_artifact_license": "Preserved source terms; see LICENSE-SCOPE.md. No blanket relicensing."
+  },
+  "citation_path": "CITATION.cff",
+  "limitations": [
+    "Recorded implementation_execution_performed refers to original runs, not this catalog admission.",
+    "Known expectations and shared native verifier/policy; no external independent reproduction or full conformance.",
+    "No AAC, Coverage, pg-ledger, PostgreSQL or new two-world execution.",
+    "Primary artifact contains observations only; fresh replay needs the separately pinned public dependency checkouts."
+  ]
+}

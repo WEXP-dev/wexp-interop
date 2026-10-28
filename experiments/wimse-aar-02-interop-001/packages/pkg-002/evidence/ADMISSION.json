@@ -1,0 +1,19 @@
+{
+  "schema": "wimse-core02-catalog-admission/1",
+  "date": "2026-10-28",
+  "source_result_commit": "c8e04e8959eb8f45fad0f7230b5b4c68e606d9c5",
+  "pre_run_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+  "saved_archives_commit": "5f3e15a943114a36639309355b4e5a166f9f4d95",
+  "preserved_run_ids": [
+    40604969823,
+    40604995949
+  ],
+  "case_count_per_run": 130,
+  "mapped": 35,
+  "unmapped": 95,
+  "new_experiment_execution_performed": false,
+  "source_manifest_sha256": "7c4ede32db16ce0251ef4216757402b3415dddff7c9f88b5bc90ce2f747dc28c",
+  "legacy_pkg001_changed": false,
+  "new_claims": [],
+  "packaging": "Primary artifact is the original push/Python-3.12 Actions ZIP, not a newly built standalone implementation archive. All four original run ZIPs and a frozen source snapshot are included separately. Public dependency checkouts remain necessary for a fresh replay."
+}

@@ -32,6 +32,10 @@ jobs:
           cat "$RUNNER_TEMP/wexp-collection-and-aar-evidence.json"
       - name: Exercise collection rejection controls
         run: python -B scripts/check_collection_controls.py --out "$RUNNER_TEMP/wexp-collection-controls.json"
+      - name: Read-only Core-02 catalog regression checks
+        run: |
+          python -B -m unittest discover -s scripts -p 'test_wimse_core02_catalog.py'
+          python -O -B -m unittest discover -s scripts -p 'test_wimse_core02_catalog.py'
       - name: Replay EMILIA archive and freeze checks
         run: python -B scripts/verify_emilia.py --out "$RUNNER_TEMP/wexp-emilia-replay"
       - name: Check a fresh Git clone of the exact event commit
