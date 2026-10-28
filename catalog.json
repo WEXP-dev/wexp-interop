@@ -83,15 +83,22 @@
         "execution": "local-run-completed",
         "independent_reproduction": "not-performed",
         "comparison": "no-local-decision-difference",
-        "publication": "prepared"
+        "publication": "published"
       },
       "card": "experiments/wimse-aar-02-interop-001/packages/pkg-002/README.md",
       "record": "experiments/wimse-aar-02-interop-001/packages/pkg-002/record.json",
-      "record_sha256": "0758142cc407bf89f713061abe84594862d91fbd8fbeebbe419f9f45e72228ce",
+      "record_sha256": "0f0f52a451e5a9ec229d476aeff4633d85414aa995dbe8ee46951dbe970204a1",
       "citation": "experiments/wimse-aar-02-interop-001/packages/pkg-002/CITATION.cff",
       "publication": {
         "version": "wimse-aar-02-interop-001/pkg-002",
-        "carriers": []
+        "carriers": [
+          {
+            "kind": "github-commit",
+            "url": "https://github.com/WEXP-dev/wexp-interop/commit/868e5a3a03af3772732748e6ff629de1d2e147ac",
+            "identifier": "868e5a3a03af3772732748e6ff629de1d2e147ac"
+          }
+        ],
+        "date": "2026-10-28"
       },
       "result": {
         "label": "No local decision difference from the strong native baseline",
