@@ -119,6 +119,9 @@ def execute(root: Path):
         if record["verification"]["profile"] == "aar-pilot-v1":
             from verify_aar import execute_package
             checked["aar_saved_evidence"] = execute_package(package, record)
+        elif record["verification"]["profile"] == "wimse-core02-migration-v1":
+            from verify_wimse_core02 import verify_package
+            checked["wimse_core02_saved_evidence"] = verify_package(package, record)
         counts.append(checked)
     return {"status": "PASS", "scope": "cards/catalog/manifests/local links; bounded AAR saved-evidence checks where selected",
             "packages": counts, "local_links_checked": check_links(root),

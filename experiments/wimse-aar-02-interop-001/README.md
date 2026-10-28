@@ -9,3 +9,7 @@ checks incompatible revisions and compares identical signed records in two
 controlled worlds. The package separates preparation, actual execution and
 publication metadata. No external-team reproduction or general
 interoperability is claimed.
+
+## Core-02 migration catalog admission
+
+[Package 002](packages/pkg-002/README.md) records the already executed bounded Core-02 migration. It preserves package 001 and adds no experiment at catalog admission.

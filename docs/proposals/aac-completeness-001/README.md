@@ -17,11 +17,12 @@ already separates declared kinds, per-property checks and completeness-dependent
 requirements. `coverage_declaration_commitment` remains `NOT_CHECKED`. The
 examples preserve that result and the native Evidence Result semantics.
 
-No upstream AAC PR is claimed by this page. The patch can be applied to a clean
-fork with `git apply --check` and `git apply`; contributions must follow AAC's
-current contribution and sign-off rules. Recheck the upstream head before
-submission. Do not overwrite concurrent changes or treat this proposal as
-accepted upstream.
+The informative contribution is now proposed in [AAC PR #429](https://github.com/action-state-group/agent-action-capsule/pull/429),
+opened on 28 October 2026 at head `c4d6179290d98530d6c139f5089a694435416b12`.
+It adds one companion document; it is not an accepted verification method or an
+executed AAC experiment. The frozen patch and reviewed source snapshot above
+remain unchanged. Consult the upstream PR for its current review/merge status;
+publication of a proposal does not establish joint agreement.
 
 ## First experiment to agree
 

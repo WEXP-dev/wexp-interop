@@ -32,7 +32,7 @@ An archive's `publication_performed: false` can remain correct as a pre-publicat
 
 ## Five independent status dimensions
 
-`schemas/record.schema.json` fixes the following vocabulary for the two current use cases. Do not add synonyms such as `partial`, `limited` or `bridge-needed`. Extend the schema deliberately when a real case requires a new meaning; preserve the older schema and explain the change.
+`schemas/record.schema.json` fixes the following vocabulary for the two historical use cases; see the separately versioned extension below. Do not add synonyms such as `partial`, `limited` or `bridge-needed`. Extend the schema deliberately when a real case requires a new meaning; preserve the older schema and explain the change.
 
 | Dimension | Values | Meaning |
 |---|---|---|
@@ -46,7 +46,7 @@ Independence statements distinguish observable common code/dependencies from dec
 
 ## Cards and generated catalog
 
-Each `record.json` conforms to schema version `0.1.0`, has an integer `record_revision`, and resides outside `payload/`. Its identity must agree with its directory. Citations, reproduction instructions and evidence references are package-relative paths.
+Each `record.json` declares a supported schema version (`0.1.0` for historical cards, or `0.2.0` below), has an integer `record_revision`, and resides outside `payload/`. Its identity must agree with its directory. Citations, reproduction instructions and evidence references are package-relative paths.
 
 `catalog.json` is generated only by:
 
@@ -65,3 +65,19 @@ Once published, source archives and frozen run contents are retained byte-for-by
 `.gitattributes` disables text normalization for all shipped bytes, including cards and the generated catalog as well as payloads, source archives, evidence and preserved publication history. It does not preserve ZIP ordering, timestamps or all Unix permissions. A migration checks case-folding and Unicode normalization collisions, types, executable-bit projection and a fresh Git clone of the exact candidate commit.
 
 New release tags use `<experiment-id>/<package-id>`, for example `wimse-aar-02-interop-001/pkg-001`. The legacy `wexp-emilia-interop-001` tag remains unchanged. Repository-wide release settings and any GitHub–Zenodo integration are considered before creating a new release. Each experiment gets its own publication lineage; the EMILIA concept DOI is never reused for the collection or another experiment.
+
+## Card revision 0.2.0 and saved Core-02 migration admission
+
+The original `schemas/record.schema.json` (0.1.0) and historical cards are preserved.
+`schemas/record-0.2.0.schema.json` adds verification profile `wimse-core02-migration-v1`.
+The loader selects a closed schema by the card's explicit version; catalog entry
+shape remains 0.1.0. No historical vocabulary is relabeled.
+
+For this profile, `local-run-completed` and `implementation_execution_performed: true`
+refer to the identified original implementation runs. Catalog admission and its
+checker execute no producer/appraiser/recipient. The primary artifact is an exact
+existing Actions observations ZIP; the separate frozen source snapshot is not
+its extraction. All four ZIPs are retained, with a pinned source inventory and
+read-only result checks. Fresh execution additionally needs the two specified
+public dependency checkouts. New package metadata does not change old observations,
+create independence or turn a recorded migration into AAC/Coverage interoperability.

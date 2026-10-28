@@ -8,6 +8,7 @@ This repository collects versioned experimental packages and their reproduction 
 |---|---|---|---|
 | [WEXP × EMILIA INTEROP-001](experiments/emilia-interop-001/packages/pkg-001/README.md) | `pkg-001` · [version DOI](https://doi.org/10.5281/zenodo.22056151) | **Branch A — Explicit Bridge Required** | Historical controlled-fixture record; migration replays archived evidence. |
 | [WEXP × WIMSE AAR-02 INTEROP-001](experiments/wimse-aar-02-interop-001/packages/pkg-001/README.md) | `pkg-001` · [exact carrier and archive](experiments/wimse-aar-02-interop-001/packages/pkg-001/record.json) | **No local decision difference from the strong native baseline** | 130 expected case outcomes, 16 output refusals and two controlled worlds; known reference, coordinated local execution. |
+| [WIMSE AAR / Core-02 bounded migration](experiments/wimse-aar-02-interop-001/packages/pkg-002/README.md) | `pkg-002` · [retained run identities](experiments/wimse-aar-02-interop-001/packages/pkg-002/record.json) | **No local decision difference from the strong native baseline** | 130 original cases, 35 full appraisals; catalog admission adds no execution. |
 
 An experiment's presence in this collection does not establish conformance, semantic equivalence, full interoperability, or IETF adoption. The card states what was executed, how comparison was made, and what kind of independent reproduction is available. Use those dimensions separately.
 
@@ -18,15 +19,15 @@ contains the proposed clarification, two examples, an upstream patch and current
 public tooling pins. No AAC integration or jointly agreed profile is claimed.
 
 [WIMSE / Core-02 migration trial](docs/proposals/wimse-core02-replay-001/RESULTS.md)
-records a new bounded 130-case replay, complete outputs and unchanged native
-recipient decisions. It does not rerun the historical two-world operations or
-replace the frozen package above. These follow-on materials are outside the
-formal results catalog; their own source, scope and evidence records govern.
+preserves the original bounded 130-case replay and its complete observations.
+That result is now represented by [package 002](experiments/wimse-aar-02-interop-001/packages/pkg-002/README.md)
+in the catalog; admitting it adds no run and does not replace package 001.
+AAC preparation remains outside the completed-results catalog.
 
 ## Find and verify a package
 
 - Read the package `README.md`, `record.json` and reproduction instructions first.
-- Use the exact source archive and its digest for the historical published object. An extracted `payload/` is a useful view of its file bytes; it does not reproduce ZIP container metadata.
+- Use the exact source archive and its digest for the historical published object. Read the card's payload/archive relation: a payload may be a verified extraction or a separately pinned source snapshot; it does not reproduce ZIP container metadata.
 - Keep the package identifier, source revisions, inputs and run identity when reporting a reproduction.
 - [Cite the particular record](CITATION.md), including its version DOI or exact public carrier. The collection has no separate DOI.
 

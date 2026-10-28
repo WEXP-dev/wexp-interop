@@ -72,6 +72,38 @@
         "details": "130/130 declared case outcomes matched (39 valid, 88 malformed, 3 not-run); 16/16 additional-output mutations were rejected; two controlled worlds preserve record-only support limits. A2/A10 evaluation statuses remain distinct, EV3 is malformed under revision 02, and declared oversight is not upgraded to human authority. The full strict semantic JSON and exact serialized bytes match the known private reference; neither route detects a trusted producer's false world fact from the signed record alone.",
         "label": "No local decision difference from the strong native baseline"
       }
+    },
+    {
+      "experiment_id": "wimse-aar-02-interop-001",
+      "package_id": "pkg-002",
+      "title": "WIMSE AAR / Appraisal Core-02 bounded migration",
+      "summary": "Catalog admission of the already recorded Core-02 migration; 130 cases, 35 full appraisals, equal native/recipient decisions. No new experiment at admission.",
+      "status": {
+        "integrity": "verified",
+        "execution": "local-run-completed",
+        "independent_reproduction": "not-performed",
+        "comparison": "no-local-decision-difference",
+        "publication": "published"
+      },
+      "card": "experiments/wimse-aar-02-interop-001/packages/pkg-002/README.md",
+      "record": "experiments/wimse-aar-02-interop-001/packages/pkg-002/record.json",
+      "record_sha256": "0f0f52a451e5a9ec229d476aeff4633d85414aa995dbe8ee46951dbe970204a1",
+      "citation": "experiments/wimse-aar-02-interop-001/packages/pkg-002/CITATION.cff",
+      "publication": {
+        "version": "wimse-aar-02-interop-001/pkg-002",
+        "carriers": [
+          {
+            "kind": "github-commit",
+            "url": "https://github.com/WEXP-dev/wexp-interop/commit/868e5a3a03af3772732748e6ff629de1d2e147ac",
+            "identifier": "868e5a3a03af3772732748e6ff629de1d2e147ac"
+          }
+        ],
+        "date": "2026-10-28"
+      },
+      "result": {
+        "label": "No local decision difference from the strong native baseline",
+        "details": "130/130 cases per original run; 35 mapped and 95 unmapped, all twenty appraisal components on admitted records. Observation only, not execution. New catalog packaging adds no experimental result."
+      }
     }
   ]
 }

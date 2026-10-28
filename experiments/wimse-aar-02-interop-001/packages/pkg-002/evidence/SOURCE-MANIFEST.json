@@ -1,0 +1,78 @@
+{
+  "schema": "wimse-core02-catalog-sources/1",
+  "interpretation": "Frozen sources and saved-data checker; no implementation execution by catalog admission.",
+  "files": [
+    {
+      "path": "payload/PROTOCOL.md",
+      "source_path": "docs/proposals/wimse-core02-replay-001/PROTOCOL.md",
+      "source_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+      "sha256": "d7b3575f8aa4306bb144b1aa4bb49f2b1a6e2ce67dbc0c749ac7b175d16018c1",
+      "git_blob": "085720d6bd0d8a84bbff1d13a83ed8c49b21e408",
+      "bytes": 5674,
+      "mode": "100644"
+    },
+    {
+      "path": "payload/README.md",
+      "source_path": "docs/proposals/wimse-core02-replay-001/README.md",
+      "source_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+      "sha256": "462a9b92e49c4ad7b522118e5773ad135a912228f4592f64073ca1e2eb600eda",
+      "git_blob": "46622fcdda36dbd65b136cd0ec263afedef309d0",
+      "bytes": 1714,
+      "mode": "100644"
+    },
+    {
+      "path": "payload/common.py",
+      "source_path": "docs/proposals/wimse-core02-replay-001/common.py",
+      "source_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+      "sha256": "5b02f594a504a8ea43ae5d2e7b49f1fa9efcdf294f9fd18ddfd34fcb4efb2e46",
+      "git_blob": "3e5c389bf0d539e2b05ba6807c5dca23ccbf6a01",
+      "bytes": 1466,
+      "mode": "100644"
+    },
+    {
+      "path": "payload/producer.py",
+      "source_path": "docs/proposals/wimse-core02-replay-001/producer.py",
+      "source_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+      "sha256": "f11c00e612fbc11e40b0f408142296f109bc711d5808816c719c1ffbf725e914",
+      "git_blob": "80ee00674787e6b46dac407215c6fca2528b62fb",
+      "bytes": 4314,
+      "mode": "100644"
+    },
+    {
+      "path": "payload/profile.json",
+      "source_path": "docs/proposals/wimse-core02-replay-001/profile.json",
+      "source_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+      "sha256": "5e8e26c5185809dff65f89775ec0af53604a40d17f88e50c828353b3fdc7c072",
+      "git_blob": "a7583dd294955c72949d5b34af1e664dd7168490",
+      "bytes": 1829,
+      "mode": "100644"
+    },
+    {
+      "path": "payload/receiver.py",
+      "source_path": "docs/proposals/wimse-core02-replay-001/receiver.py",
+      "source_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+      "sha256": "15b3bd8c8dd6e2f887736bc4f62ff225698c44a9b0571e3b3df0c826647e90d2",
+      "git_blob": "32ed9abcff07cc188e97dd11de27e6dc207bef00",
+      "bytes": 6114,
+      "mode": "100644"
+    },
+    {
+      "path": "payload/run.py",
+      "source_path": "docs/proposals/wimse-core02-replay-001/run.py",
+      "source_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+      "sha256": "3f832962ace6f21ff0130e273dceb0d8a81de7152d185b5aaded1eb72a9ab27e",
+      "git_blob": "0bef9884e44b1442805195e04b29cc90d0f8d28a",
+      "bytes": 8997,
+      "mode": "100644"
+    },
+    {
+      "path": "payload/verify_evidence.py",
+      "source_path": "docs/proposals/wimse-core02-replay-001/verify_evidence.py",
+      "source_commit": "c8e04e8959eb8f45fad0f7230b5b4c68e606d9c5",
+      "sha256": "20e5e5b1cf6f2fa44706580eaf2b32f23b12f1cd78905e2573c435890880af74",
+      "git_blob": "5c24d30e730da58c80d9fe37f582fb60cfeec809",
+      "bytes": 8228,
+      "mode": "100644"
+    }
+  ]
+}

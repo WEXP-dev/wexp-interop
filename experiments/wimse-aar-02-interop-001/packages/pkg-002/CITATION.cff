@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite this exact catalog package and the original run identities; catalog admission is not a new execution."
+title: "WIMSE AAR / Appraisal Core-02 bounded migration — catalog package 002"
+type: dataset
+version: "wimse-aar-02-interop-001/pkg-002"
+date-released: 2026-10-28
+authors:
+  - name: "WEXP-dev contributors"
+repository-code: "https://github.com/WEXP-dev/wexp-interop"
+url: "https://github.com/WEXP-dev/wexp-interop/tree/main/experiments/wimse-aar-02-interop-001/packages/pkg-002"

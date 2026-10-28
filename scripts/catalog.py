@@ -33,13 +33,18 @@ def load_json(path: Path):
 
 
 def load_records(root: Path = ROOT):
-    schema = load_json(root / "schemas/record.schema.json")
-    Draft202012Validator.check_schema(schema)
-    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    validators = {}
+    for version, name in (("0.1.0", "record.schema.json"), ("0.2.0", "record-0.2.0.schema.json")):
+        schema = load_json(root / "schemas" / name)
+        Draft202012Validator.check_schema(schema)
+        validators[version] = Draft202012Validator(schema, format_checker=FormatChecker())
     records = []
     identities = set()
     for path in sorted(root.glob("experiments/*/packages/*/record.json")):
         data = load_json(path)
+        if not isinstance(data, dict) or data.get("schema_version") not in validators:
+            raise ValueError("unsupported package card schema version")
+        validator = validators[data["schema_version"]]
         errors = sorted(validator.iter_errors(data), key=lambda error: list(map(str, error.path)))
         if errors:
             raise ValueError(f"{path.relative_to(root)}: {'/'.join(map(str, errors[0].path))}: {errors[0].message}")
