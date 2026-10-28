@@ -1,0 +1,23 @@
+name: Preserve reviewed WIMSE Core-02 first-run archives
+on:
+  push:
+    branches: ['preservation/wimse-core02-run001-20261028']
+    paths: ['.github/workflows/preserve-wimse-core02-run001.yml', 'scripts/preserve_wimse_core02_run001.py']
+permissions:
+  contents: read
+jobs:
+  preserve:
+    if: github.repository_id == '1342067237' && github.repository == 'WEXP-dev/wexp-interop'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          persist-credentials: false
+      - name: Preserve only the four reviewed public archives in a new evidence branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -B scripts/preserve_wimse_core02_run001.py
