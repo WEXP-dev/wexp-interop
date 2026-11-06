@@ -21,6 +21,15 @@ WORKSPACE_COMMIT = '428f03752bce590b221ea053c361d48a714e7702'
 EMULATOR_COMMIT = 'cfebeee5bb3da7d5a9a13d319aaaab17c1348641'
 RECEIPT_SHA256 = '510a71486c25d7e8ac2814af268b705b156444ca5ec896d0da176dc8911e7dde'
 STATEMENT_SHA256 = '18df0c526cbebabb192f1a8f8bb0ba2cfded48266984cc76f73c2cd4a8d866d9'
+RUN_RECORD_SHA256 = '3c83c3b2925c723a38780893b39e387320fdcf2de27d18e078e4f23ea0109b63'
+PACKAGE_COMPARISON_SHA256 = 'd6b39595efb3a989d4faafc04045563e9f47e59c6595f10359a7f9f92fa7b5cd'
+WEXP_REF_COMMIT = '56289024c9ee748111f1f1d4f42728ffe04d8d69'
+WEXP_CHECK_COMMIT = '25ec856e053d8ab40ed60bb88b70c84768d45e34'
+SET_FIELDS = {'qualifiers', 'profile_identifiers', 'basis_refs', 'reasons', 'limitations', 'base_findings',
+              'qualifier_findings', 'recorder_relations', 'counter_evidence', 'evaluation_scope',
+              'profile_evaluation_gaps', 'inherited_limitations', 'fatal_conditions', 'affected_claims',
+              'fatal_reasons', 'substantive_reasons', 'evaluation_gaps', 'evaluation_gap_entries',
+              'supported_claims', 'maximal_supported_claims', 'support_entries', 'support_relations'}
 CASES = ('a', 'b1', 'b2', 'c')
 
 
@@ -44,6 +53,34 @@ def unique(pairs):
 def load(raw):
     return json.loads(raw, object_pairs_hook=unique,
                       parse_constant=lambda text: (_ for _ in ()).throw(ValueError('non-JSON constant')))
+
+
+def encoded(value):
+    return json.dumps(value, ensure_ascii=True, sort_keys=True, separators=(',', ':'), allow_nan=False)
+
+
+def logical(value, field=None):
+    if type(value) is dict:
+        return {key: logical(item, key) for key, item in value.items()}
+    if type(value) is list:
+        items = [logical(item) for item in value]
+        return sorted(items, key=encoded) if field in SET_FIELDS else items
+    return value
+
+
+def same(left, right):
+    # Harness set semantics: pure data comparison, Booleans distinct from numbers, null distinct from absent.
+    return encoded(logical(left)) == encoded(logical(right))
+
+
+def comparison_equal(comparison, package):
+    # Re-derive every equality from the saved observed results and the frozen expectations; flags are not trusted.
+    for cid in CASES:
+        expected = load((package / f'payload/expectations/{cid}.json').read_bytes())['expected']
+        row = comparison['cases'][cid]
+        for engine in ('wexp_ref', 'wexp_check'):
+            require(row[f'{engine}_equals_expected'] is True and same(row[f'{engine}_observed'], expected),
+                    f'saved {engine} result for {cid} does not equal the frozen expectation')
 
 
 def checked_path(root, name):
@@ -100,19 +137,25 @@ def verify_package(package, card=None):
     for name in ('DERIVATION.md', 'AMBIGUITIES.json'):
         require(delivered.get(name) == sha((package / 'payload/expectations' / name).read_bytes()), 'delivered file differs: ' + name)
     comparison = load((package / 'payload/comparison.json').read_bytes())
-    require(set(comparison['cases']) == set(CASES) and all(
-        comparison['cases'][c]['wexp_ref_equals_expected'] is True and comparison['cases'][c]['wexp_check_equals_expected'] is True for c in CASES),
-        'recorded workspace comparison is not 4/4 for both appraisers')
+    require(set(comparison['cases']) == set(CASES), 'recorded workspace comparison case set')
+    comparison_equal(comparison, package)
     result = {'status': 'PASS_PACKAGE_EVIDENCE', 'payload_files': 31, 'archive_members': len(names),
               'cases': 4, 'workspace_run_equal_both_engines': True, 'package_run_checked': False,
               'new_experiment_execution_performed': False, 'independent_authentication_of_execution': False}
     if card['status']['execution'] == 'local-run-completed':
-        record = load((package / 'evidence/RUN-RECORD.json').read_bytes())
-        package_comparison = load((package / 'evidence/comparison.json').read_bytes())
-        require(record['payload_archive_sha256'] == ARCHIVE_SHA256 and record['new_experiment_execution_performed'] is True, 'package run record scope')
-        require(set(package_comparison['cases']) == set(CASES) and all(
-            package_comparison['cases'][c]['wexp_ref_equals_expected'] is True and package_comparison['cases'][c]['wexp_check_equals_expected'] is True for c in CASES),
-            'package run comparison is not 4/4 for both appraisers')
+        record_raw = (package / 'evidence/RUN-RECORD.json').read_bytes()
+        comparison_raw = (package / 'evidence/comparison.json').read_bytes()
+        require(sha(record_raw) == RUN_RECORD_SHA256, 'package run record differs from reviewed pin')
+        require(sha(comparison_raw) == PACKAGE_COMPARISON_SHA256, 'package run comparison differs from reviewed pin')
+        record = load(record_raw)
+        package_comparison = load(comparison_raw)
+        require(record['payload_archive_sha256'] == ARCHIVE_SHA256 and record['new_experiment_execution_performed'] is True
+                and record['comparison_output_sha256'] == PACKAGE_COMPARISON_SHA256
+                and record['engines']['wexp_ref']['commit'] == WEXP_REF_COMMIT
+                and record['engines']['wexp_check']['commit'] == WEXP_CHECK_COMMIT, 'package run record scope')
+        require({'git-commit:' + WEXP_REF_COMMIT, 'git-commit:' + WEXP_CHECK_COMMIT}.issubset({p['identity'] for p in card['source_pins']}), 'appraiser pins absent from card')
+        require(set(package_comparison['cases']) == set(CASES), 'package run comparison case set')
+        comparison_equal(package_comparison, package)
         require(card['status']['comparison'] == 'no-local-decision-difference' and card['verification']['implementation_execution_performed'] is True, 'card status/run disagreement')
         result.update(package_run_checked=True, package_run_equal_both_engines=True)
     else:

@@ -15,7 +15,7 @@ These check the card, the generated catalog, the package manifest, the payload i
 
 ## Repeat the appraisal (a new run, recorded separately)
 
-From `payload/`, with Python 3.12 and public checkouts of `WEXP-dev/wexp-ref` at `56289024c9ee748111f1f1d4f42728ffe04d8d69` and `WEXP-dev/wexp-check` at `25ec856e053d8ab40ed60bb88b70c84768d45e34`:
+From `payload/`, with Python 3.12, a public checkout of `WEXP-dev/wexp-ref` at `56289024c9ee748111f1f1d4f42728ffe04d8d69` and a checkout of `WEXP-dev/wexp-check` at `25ec856e053d8ab40ed60bb88b70c84768d45e34` (at the time of this card that commit exists only in the author's local repository and on no public branch; until it is pushed, the second appraiser's revision is not publicly retrievable):
 
 ```sh
 python3.12 -B run_case.py --wexp-ref /path/to/wexp-ref --wexp-check /path/to/wexp-check --output /path/outside/the/package/comparison.json

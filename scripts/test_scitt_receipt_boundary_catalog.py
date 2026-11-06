@@ -54,6 +54,19 @@ class PackageEvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'independence scope'):
             verify_package(self.package)
 
+    def test_relabelled_observed_result_refused(self):
+        p = self.package / 'evidence/comparison.json'
+        data = json.loads(p.read_bytes())
+        data['cases']['a']['wexp_ref_observed']['verdict'] = 'accept'
+        p.write_text(json.dumps(data, indent=1, sort_keys=True) + '\n')
+        with self.assertRaisesRegex(ValueError, 'reviewed pin'):
+            verify_package(self.package)
+
+    def test_altered_run_record_refused(self):
+        self.edit_json('evidence/RUN-RECORD.json', lambda d: d['engines']['wexp_ref'].update(commit='0' * 40))
+        with self.assertRaisesRegex(ValueError, 'reviewed pin'):
+            verify_package(self.package)
+
     def test_relabelled_comparison_refused(self):
         self.edit_json('payload/comparison.json', lambda d: d['cases']['a'].update(wexp_check_equals_expected=False))
         with self.assertRaisesRegex(ValueError, 'source bytes differ'):

@@ -46,7 +46,7 @@ Independence statements distinguish observable common code/dependencies from dec
 
 ## Cards and generated catalog
 
-Each `record.json` declares a supported schema version (`0.1.0` for historical cards, or `0.2.0` below), has an integer `record_revision`, and resides outside `payload/`. Its identity must agree with its directory. Citations, reproduction instructions and evidence references are package-relative paths.
+Each `record.json` declares a supported schema version (`0.1.0` for historical cards, `0.2.0` or `0.3.0` below), has an integer `record_revision`, and resides outside `payload/`. Its identity must agree with its directory. Citations, reproduction instructions and evidence references are package-relative paths.
 
 `catalog.json` is generated only by:
 
@@ -54,7 +54,7 @@ Each `record.json` declares a supported schema version (`0.1.0` for historical c
 python3 -B scripts/catalog.py
 ```
 
-The catalog includes each card's SHA-256 and selected fields. `scripts/catalog.py --check` fails if a manually edited or stale catalog differs. `scripts/verify_collection.py` additionally verifies package manifests, reference paths and local links in newly authored Markdown. For the bounded `aar-pilot-v1` package it also invokes `scripts/verify_aar.py` to check the pinned preparation inputs, saved complete results/journal and exact ZIP composition. Those read-only checks verify evidence of the separately recorded local AAR execution; they do not invoke its implementations or independently authenticate that execution. Schema validity and catalog consistency do not independently appraise a result.
+The catalog includes each card's SHA-256 and selected fields. `scripts/catalog.py --check` fails if a manually edited or stale catalog differs. `scripts/verify_collection.py` additionally verifies package manifests, reference paths and local links in newly authored Markdown. For the bounded `aar-pilot-v1` package it also invokes `scripts/verify_aar.py` to check the pinned preparation inputs, saved complete results/journal and exact ZIP composition; for `wimse-core02-migration-v1` it invokes `scripts/verify_wimse_core02.py`, and for `scitt-receipt-boundary-v1` it invokes `scripts/verify_scitt_receipt_boundary.py`. Those read-only checks verify evidence of the separately recorded local AAR execution; they do not invoke its implementations or independently authenticate that execution. Schema validity and catalog consistency do not independently appraise a result.
 
 A `PACKAGE-MANIFEST.sha256` lists every file below that package except itself. It identifies the current external package metadata and payload without replacing any historical payload manifest. A later card correction increments `record_revision`, regenerates the package manifest/catalog and explains the correction in Git history. It must not rewrite a frozen archive, run or expectation file.
 
@@ -81,3 +81,19 @@ its extraction. All four ZIPs are retained, with a pinned source inventory and
 read-only result checks. Fresh execution additionally needs the two specified
 public dependency checkouts. New package metadata does not change old observations,
 create independence or turn a recorded migration into AAC/Coverage interoperability.
+
+## Card revision 0.3.0 and the SCITT receipt boundary package
+
+`schemas/record-0.3.0.schema.json` is 0.2.0 with one added verification profile,
+`scitt-receipt-boundary-v1`; `$id`, title and the `schema_version` constant change, nothing
+else. Schemas 0.1.0 and 0.2.0 and their cards are preserved and still loaded. Catalog entry
+shape remains 0.1.0.
+
+For this profile, `local-run-completed` and `implementation_execution_performed: true` refer to
+the package run made from the committed composition with the two pinned appraisers named in the
+card; the read-only verifier pins the payload inventory, the primary archive, the Receipt and
+Signed Statement digests, the frozen expectations' delivered digest list, and the package run
+record and comparison, and re-derives every recorded equality from the saved observed results
+and the frozen expectations under the harness set semantics. It executes no appraiser, emulator
+or Transparency Service. A passing check does not make the mapping a SCITT profile or the case
+a vector of `wexp-vectors`.

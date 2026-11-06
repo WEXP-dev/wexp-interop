@@ -3,7 +3,6 @@ message: "Cite this exact package and its source pins; the package records a bou
 title: "SCITT Receipt as the Core-02 boundary finding, case 001 — package 001"
 type: dataset
 version: "scitt-receipt-boundary-001/pkg-001"
-date-released: 2026-11-06
 authors:
   - name: "WEXP-dev contributors"
 repository-code: "https://github.com/WEXP-dev/wexp-interop"

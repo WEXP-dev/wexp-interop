@@ -47,5 +47,8 @@
   "new_experiment_execution_performed": true,
   "independent_authentication_of_execution": false,
   "same_result_as_workspace_run": true,
-  "recorded_at_utc": "2026-11-06T20:40:23Z"
+  "recorded_at_utc": "2026-11-06T20:40:23Z",
+  "dependencies": "standard library only; run_case.py restricts PYTHONPATH to one appraiser checkout per process and PATH to /usr/bin:/bin",
+  "note_on_comparison_bytes": "evidence/comparison.json is byte-identical to payload/comparison.json because the harness is deterministic; this record (preparation commit, clean checkouts, interpreter, time) is the distinct evidence of the second run",
+  "expected_delta_statement": "No EXPECTED-DELTA file was committed before this run; the preparation commit implied zero difference from the workspace run and same_result_as_workspace_run was recorded after the run"
 }
