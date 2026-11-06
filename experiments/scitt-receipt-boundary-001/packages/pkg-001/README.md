@@ -4,7 +4,7 @@
 
 One Signed Statement was registered with the pinned SCITT API emulator (`scitt-community/scitt-api-emulator`, tag `pre-archive`, commit `cfebeee5`), its Receipt was retrieved and verified, and the Receipt was mapped to the `boundary_finding` of a `draft-sergeev-wexp-core-02` appraisal with `ceiling_base = observation`. Four normalized inputs exercise what the Receipt bounds and what it does not supply: an asserted execution base exceeds the ceiling; an asserted observation base is accepted only with a positive observation finding; the Receipt alone adds nothing; a Receipt whose inclusion proof was not checked makes the ceiling unusable.
 
-Read [the card](record.json), [reproduction instructions](REPRODUCE.md), the frozen [mapping](payload/MAPPING.md), [source pin](payload/SOURCE-PIN.md), [case README](payload/README.md), [source inventory](evidence/SOURCE-MANIFEST.json) and [license scope](LICENSE-SCOPE.md).
+Read [the card](record.json), [reproduction instructions](REPRODUCE.md), the frozen [mapping](payload/MAPPING.md), [source pin](payload/SOURCE-PIN.md), [case README](payload/README.md), [source inventory](evidence/SOURCE-MANIFEST.json), [pre-PR grounding check](evidence/GROUNDING-CHECK.md) and [license scope](LICENSE-SCOPE.md).
 
 ## Preserved material
 
@@ -13,6 +13,17 @@ Read [the card](record.json), [reproduction instructions](REPRODUCE.md), the fro
 Labels such as A1-A6, P08 or R47 in the frozen payload refer to open-reading records kept in the author's other repositories (the section 7 matrix work and the corpus re-derivation in `WEXP-dev/wexp-vectors` branches not yet on main); they are not needed to read this package.
 
 The order of evidence is in the workspace history and repeated here: inputs and mapping first, the isolated derivation second, the appraisers last. The isolated session saw the Core text, the mapping as background, the inputs, a representation note and the section 13 fixture C01; it saw no implementation and no corpus.
+
+## Next
+
+Package 002 is intended to repeat the same mapping against the SCITT + SCRAPI reference
+implementation presented by John Andersen at the IETF 127 hackathon (14-15 November 2026): one
+Signed Statement registered through SCRAPI, the Receipt in the RFC 9942 COSE Receipts format with
+RFC 9943 header labels, the same four inputs and the same `boundary_finding` mapping, a new source
+pin recorded in its own `SOURCE-PIN.md`, and a fresh isolated derivation of the expectations before
+any appraiser runs. The pinned revision is recorded when that package is prepared, not here. What
+changes with a conformant Transparency Service is the strength of the limitation, not the ceiling:
+the Receipt still bounds the appraisal to observation.
 
 ## Scope
 
