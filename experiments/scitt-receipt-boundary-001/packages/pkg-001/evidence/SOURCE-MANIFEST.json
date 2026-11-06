@@ -1,0 +1,179 @@
+{
+  "schema": "scitt-receipt-boundary-source-manifest-001",
+  "source": {
+    "repository": "WEXP-dev/wexp-work",
+    "visibility": "private workspace",
+    "commit": "428f03752bce590b221ea053c361d48a714e7702",
+    "path": "interop/scitt-receipt-boundary",
+    "note": "Payload is the frozen case directory at that commit. One edit: expectations/FILES-READ.txt had an absolute local directory prefix removed (one path per line and the header line; original SHA-256 73bcf41b58ae315dcea3ea390da0c166529b539c2b302abc6e79a6c01a6036a7); every other file is byte-identical. The workspace tracked harness/run_emulator.sh as mode 100755; the archive and payload record all files as 100644."
+  },
+  "frozen_in_workspace_history": {
+    "materials_commit": "11a45738d073774a15eb7455537cf9040c6b4188",
+    "expectations_freeze_commit": "545ed13bfaff873c137d02e6b3e2b438ed84e615",
+    "first_run_commit": "8e92c53",
+    "review_fixes_commit": "428f03752bce590b221ea053c361d48a714e7702"
+  },
+  "archive": {
+    "path": "source-archive/scitt-receipt-boundary-001-run-materials.zip",
+    "bytes": 36382,
+    "sha256": "ab8441e581c903288e9a115736482ffab684391bc73ccc283f82bfbb07d9dc29",
+    "construction": "deterministic ZIP of the payload files: sorted paths, fixed date 2026-11-06 00:00:00, mode 100644, deflate; payload is its exact extraction"
+  },
+  "files": [
+    {
+      "path": "payload/MAPPING.md",
+      "bytes": 8099,
+      "sha256": "3784315c3a8b87c660d60bfbfc17bd72a05236b1ba257ac23cdae2ca03cd0d58"
+    },
+    {
+      "path": "payload/README.md",
+      "bytes": 6023,
+      "sha256": "ee60dad2a7f9549a9148ddb3f72b4ba2682c64c6f2073b183e8959aa0fdaa644"
+    },
+    {
+      "path": "payload/RUN-RECORD.json",
+      "bytes": 3647,
+      "sha256": "0aaa4754bbfd414df68f5fad1ee54169c37be6dcd9691d50ac8068c78d362da9"
+    },
+    {
+      "path": "payload/SOURCE-PIN.md",
+      "bytes": 2739,
+      "sha256": "9468c98fed48875505c9c54d4187175c5fd4325f961438de4c403b0c578ff138"
+    },
+    {
+      "path": "payload/artifacts/SHA256SUMS.txt",
+      "bytes": 336,
+      "sha256": "58e6f905364ac2b4b5151446ee0d9dff24d5817a3df21730a3cda8b54657cc0c"
+    },
+    {
+      "path": "payload/artifacts/entry-id.txt",
+      "bytes": 1,
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "path": "payload/artifacts/receipt.cbor",
+      "bytes": 667,
+      "sha256": "510a71486c25d7e8ac2814af268b705b156444ca5ec896d0da176dc8911e7dde"
+    },
+    {
+      "path": "payload/artifacts/service_parameters.json",
+      "bytes": 572,
+      "sha256": "6094df4e9e534c7b74080a6483681904e0170b3200bce06c39ff667c8217f47f"
+    },
+    {
+      "path": "payload/artifacts/signed-statement.cose",
+      "bytes": 836,
+      "sha256": "18df0c526cbebabb192f1a8f8bb0ba2cfded48266984cc76f73c2cd4a8d866d9"
+    },
+    {
+      "path": "payload/comparison.json",
+      "bytes": 21392,
+      "sha256": "d6b39595efb3a989d4faafc04045563e9f47e59c6595f10359a7f9f92fa7b5cd"
+    },
+    {
+      "path": "payload/expectations/AMBIGUITIES.json",
+      "bytes": 3349,
+      "sha256": "45f2cc8efa1c2bdbe8a96462d38a282492062647810ef8f2a0333c00b7ec9a60"
+    },
+    {
+      "path": "payload/expectations/DELIVERED-SHA256SUMS.txt",
+      "bytes": 574,
+      "sha256": "86647bbf9ef3c45549240776ffdcf1fe2463a8518b39f81c6c511de11a8e3d0f"
+    },
+    {
+      "path": "payload/expectations/DERIVATION.md",
+      "bytes": 22782,
+      "sha256": "90e0227effb89f5c898990bde13d1f9c582287b3f1b44e8e49252a1c9f5104ab"
+    },
+    {
+      "path": "payload/expectations/FILES-READ.txt",
+      "bytes": 728,
+      "sha256": "67dfaa07a006dbada25b8a20fc068837b65e51884d8b56c089fe12cd682ecc43"
+    },
+    {
+      "path": "payload/expectations/a.json",
+      "bytes": 2106,
+      "sha256": "765a5964c21e56eda55c5c130821a950b55888f3c01b40e4f8bd4a51f21c98e4"
+    },
+    {
+      "path": "payload/expectations/b1.json",
+      "bytes": 2771,
+      "sha256": "2ce240852847f5dede09b639a45e774632380f368fc8574a8fd3b962e8c83d18"
+    },
+    {
+      "path": "payload/expectations/b2.json",
+      "bytes": 2113,
+      "sha256": "ad24be4dd5baedf3169b5abc798f45c5ef39b53130be3689679537f52c21266b"
+    },
+    {
+      "path": "payload/expectations/c.json",
+      "bytes": 2635,
+      "sha256": "aefbe4c0760baa54c137acac2c8f8e8c15cb5eabd253f6c50915c56342153fc0"
+    },
+    {
+      "path": "payload/expectations/handoff/BRIEF.md",
+      "bytes": 2756,
+      "sha256": "4d807860505eb66e92c9ff4380a059a20ba5ad789a7d9dfdf6c42ee5ac07574e"
+    },
+    {
+      "path": "payload/expectations/handoff/FORMAT-REFERENCE-C01.json",
+      "bytes": 4759,
+      "sha256": "0147c30e9492375e2d9a1dea7db85dde9d503eb5c7453d3399b1931065967aad"
+    },
+    {
+      "path": "payload/expectations/handoff/REPRESENTATION.md",
+      "bytes": 1358,
+      "sha256": "be98d97bdf09f7c0966b3810a131c0484402c996ffbd01b09ac76b91dd26061b"
+    },
+    {
+      "path": "payload/harness/run_emulator.sh",
+      "bytes": 2382,
+      "sha256": "a41f07bdb4dda29bff5821492cdaddcffbdca55b77b2efd227b3d51c3f09727c"
+    },
+    {
+      "path": "payload/harness/shim/archivist/__init__.py",
+      "bytes": 409,
+      "sha256": "fb4534b482d6be437a7ae5dbbde1209a1aecdd7f9b05c3bc773816f3437489fb"
+    },
+    {
+      "path": "payload/harness/shim/archivist/archivist.py",
+      "bytes": 212,
+      "sha256": "8e62940723c0bc26b1f70845e73ec7407abf452f2d12894f4ce126f19b196cd8"
+    },
+    {
+      "path": "payload/harness/venv-freeze.txt",
+      "bytes": 435,
+      "sha256": "09bd2e13175f8b5977e6f235d79c273ea913d135da35d3129a500c39762added"
+    },
+    {
+      "path": "payload/inputs/a.json",
+      "bytes": 2623,
+      "sha256": "8d119893a919ac20490f1bca3a92ed1c99566dcbd28d6fbb4f278b562451ce35"
+    },
+    {
+      "path": "payload/inputs/b1.json",
+      "bytes": 2628,
+      "sha256": "1eb3ec22e94794644d5ea1c74c154d8774831065c3f426895c779d6b1a7efe87"
+    },
+    {
+      "path": "payload/inputs/b2.json",
+      "bytes": 2246,
+      "sha256": "d5cb6c457428c1570d7d225a380d1b13cc397965ffa34edbda431560c887eac1"
+    },
+    {
+      "path": "payload/inputs/c.json",
+      "bytes": 2638,
+      "sha256": "7221446784d8818f0a80dd82d2be7316222522020d7159006c211298e304c001"
+    },
+    {
+      "path": "payload/profiles.json",
+      "bytes": 129,
+      "sha256": "44f6431a366d80385d43b1aa49b399c4d28e6098c2e34271107b0d54acbbbeba"
+    },
+    {
+      "path": "payload/run_case.py",
+      "bytes": 3518,
+      "sha256": "fcb1e58cc99da0774a72dd7a04abaa4d9e7791643e8047c22480027782fc926f"
+    }
+  ]
+}

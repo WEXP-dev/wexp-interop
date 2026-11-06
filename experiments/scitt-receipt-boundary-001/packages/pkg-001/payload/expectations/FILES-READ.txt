@@ -1,0 +1,16 @@
+Files opened in this session (all under the handoff directory):
+BRIEF.md
+REPRESENTATION.md
+profiles.json
+inputs/a.json
+inputs/b1.json
+inputs/b2.json
+inputs/c.json
+FORMAT-REFERENCE-C01.json
+MAPPING.md
+spec/draft-sergeev-wexp-core-02.txt
+  - section-heading grep over the whole file (table of contents only)
+  - read in full: lines 397-702 (sections 2-5), 703-1190 (6, 6.1, 6.2), 1191-1776 (7, 8.1-8.6), 2077-2590 (12, 13)
+Directory listing: ls -laR of handoff/ (names and sizes only)
+Written (not read as sources): expected/a.json, expected/b1.json, expected/b2.json, expected/c.json, DERIVATION.md, AMBIGUITIES.json, FILES-READ.txt
+Nothing outside handoff/ was opened, listed, searched, imported or executed; no network access.
