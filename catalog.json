@@ -45,25 +45,25 @@
       "experiment_id": "scitt-receipt-boundary-001",
       "package_id": "pkg-001",
       "title": "SCITT Receipt as the Core-02 boundary finding, case 001",
-      "summary": "One Signed Statement registered with the pinned SCITT API emulator; its verified Receipt mapped to the boundary_finding of a draft-sergeev-wexp-core-02 appraisal with ceiling observation. Four inputs; expectations derived in isolation from the Core text before any appraiser ran. Package composition committed before the package run.",
+      "summary": "One Signed Statement registered with the pinned SCITT API emulator; its verified Receipt mapped to the boundary_finding of a draft-sergeev-wexp-core-02 appraisal with ceiling observation. Four inputs; expectations derived in isolation from the Core text before any appraiser ran; two appraisers equal them 4/4 in the workspace run and in the package run.",
       "status": {
         "integrity": "verified",
-        "execution": "not-run",
+        "execution": "local-run-completed",
         "independent_reproduction": "not-performed",
-        "comparison": "not-evaluated",
+        "comparison": "no-local-decision-difference",
         "publication": "prepared"
       },
       "card": "experiments/scitt-receipt-boundary-001/packages/pkg-001/README.md",
       "record": "experiments/scitt-receipt-boundary-001/packages/pkg-001/record.json",
-      "record_sha256": "398088fcce285c654c9fb57901330e0701495dbe3a76ea2a816e20be9b0e994c",
+      "record_sha256": "ab49bcdc29211aa10fe8d67b5e137f8273ad31046184382814539dfc2f76a930",
       "citation": "experiments/scitt-receipt-boundary-001/packages/pkg-001/CITATION.cff",
       "publication": {
         "version": "scitt-receipt-boundary-001/pkg-001",
         "carriers": []
       },
       "result": {
-        "label": "Prepared; package run not yet recorded",
-        "details": "Workspace run: wexp_ref.core02 (56289024) and wexp_check (25ec856) each equal the four frozen expectations on all twenty components. The package run on this public composition is recorded in a later card revision."
+        "label": "Both appraisers equal the frozen expectations on all four inputs",
+        "details": "Package run from the committed composition (preparation commit 48555a16): wexp_ref.core02 (56289024) and wexp_check (25ec856) each equal the four frozen expectations on all twenty result components, identical to the workspace run. a: downgrade, E_BASE_EXCEEDS_BOUNDARY; b1: accept with the Receipt basis and limitation in the support entry; b2: downgrade, E_MISSING_REQUIRED_EVIDENCE; c: downgrade, gap E_BOUNDARY_NOT_EVALUATED, ceiling unavailable, grounding not-evaluated preserved. One open reading recorded by the isolated session (b2, inherited boundary limitations) is followed by both appraisers."
       }
     },
     {

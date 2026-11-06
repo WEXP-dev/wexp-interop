@@ -1,15 +1,15 @@
 {
   "schema_version": "0.3.0",
-  "record_revision": 1,
+  "record_revision": 2,
   "experiment_id": "scitt-receipt-boundary-001",
   "package_id": "pkg-001",
   "title": "SCITT Receipt as the Core-02 boundary finding, case 001",
-  "summary": "One Signed Statement registered with the pinned SCITT API emulator; its verified Receipt mapped to the boundary_finding of a draft-sergeev-wexp-core-02 appraisal with ceiling observation. Four inputs; expectations derived in isolation from the Core text before any appraiser ran. Package composition committed before the package run.",
+  "summary": "One Signed Statement registered with the pinned SCITT API emulator; its verified Receipt mapped to the boundary_finding of a draft-sergeev-wexp-core-02 appraisal with ceiling observation. Four inputs; expectations derived in isolation from the Core text before any appraiser ran; two appraisers equal them 4/4 in the workspace run and in the package run.",
   "status": {
     "integrity": "verified",
-    "execution": "not-run",
+    "execution": "local-run-completed",
     "independent_reproduction": "not-performed",
-    "comparison": "not-evaluated",
+    "comparison": "no-local-decision-difference",
     "publication": "prepared"
   },
   "publication": {
@@ -36,11 +36,13 @@
     "instructions": "REPRODUCE.md",
     "evidence": [
       "evidence/SOURCE-MANIFEST.json",
+      "evidence/RUN-RECORD.json",
+      "evidence/comparison.json",
       "payload/RUN-RECORD.json",
       "payload/comparison.json",
       "payload/expectations/DELIVERED-SHA256SUMS.txt"
     ],
-    "implementation_execution_performed": false
+    "implementation_execution_performed": true
   },
   "independence": {
     "scope": "Expectations were derived by an isolated session that received only the Core-02 text, the mapping, the inputs, a representation note and the section 13 fixture C01; the appraisers were run afterwards. Same project throughout; no external reproduction of the packaged procedure.",
@@ -48,12 +50,13 @@
     "evidence": [
       "payload/expectations/FILES-READ.txt",
       "payload/expectations/DELIVERED-SHA256SUMS.txt",
-      "payload/RUN-RECORD.json"
+      "payload/RUN-RECORD.json",
+      "evidence/RUN-RECORD.json"
     ]
   },
   "result": {
-    "label": "Prepared; package run not yet recorded",
-    "details": "Workspace run: wexp_ref.core02 (56289024) and wexp_check (25ec856) each equal the four frozen expectations on all twenty components. The package run on this public composition is recorded in a later card revision."
+    "label": "Both appraisers equal the frozen expectations on all four inputs",
+    "details": "Package run from the committed composition (preparation commit 48555a16): wexp_ref.core02 (56289024) and wexp_check (25ec856) each equal the four frozen expectations on all twenty result components, identical to the workspace run. a: downgrade, E_BASE_EXCEEDS_BOUNDARY; b1: accept with the Receipt basis and limitation in the support entry; b2: downgrade, E_MISSING_REQUIRED_EVIDENCE; c: downgrade, gap E_BOUNDARY_NOT_EVALUATED, ceiling unavailable, grounding not-evaluated preserved. One open reading recorded by the isolated session (b2, inherited boundary limitations) is followed by both appraisers."
   },
   "source_pins": [
     {
