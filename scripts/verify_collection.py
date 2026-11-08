@@ -122,8 +122,11 @@ def execute(root: Path):
         elif record["verification"]["profile"] == "wimse-core02-migration-v1":
             from verify_wimse_core02 import verify_package
             checked["wimse_core02_saved_evidence"] = verify_package(package, record)
+        elif record["verification"]["profile"] == "scitt-receipt-boundary-v1":
+            from verify_scitt_receipt_boundary import verify_package as verify_scitt_package
+            checked["scitt_receipt_boundary_evidence"] = verify_scitt_package(package, record)
         counts.append(checked)
-    return {"status": "PASS", "scope": "cards/catalog/manifests/local links; bounded AAR saved-evidence checks where selected",
+    return {"status": "PASS", "scope": "cards/catalog/manifests/local links; bounded saved-evidence checks for the profiles that select them",
             "packages": counts, "local_links_checked": check_links(root),
             "experiment_execution_performed": False}
 

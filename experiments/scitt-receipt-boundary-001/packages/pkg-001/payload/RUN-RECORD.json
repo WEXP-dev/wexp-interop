@@ -1,0 +1,88 @@
+{
+  "case": "interop/scitt-receipt-boundary-001",
+  "inputs_and_mapping_commit": "11a45738d073774a15eb7455537cf9040c6b4188",
+  "expectations_freeze_commit": "545ed13bfaff873c137d02e6b3e2b438ed84e615",
+  "delivered_sha256sums_sha256": "86647bbf9ef3c45549240776ffdcf1fe2463a8518b39f81c6c511de11a8e3d0f",
+  "receipt_source": {
+    "repository": "scitt-community/scitt-api-emulator",
+    "commit": "cfebeee5bb3da7d5a9a13d319aaaab17c1348641",
+    "tag": "pre-archive",
+    "tree_alg": "CCF",
+    "receipt_sha256": "510a71486c25d7e8ac2814af268b705b156444ca5ec896d0da176dc8911e7dde",
+    "signed_statement_sha256": "18df0c526cbebabb192f1a8f8bb0ba2cfded48266984cc76f73c2cd4a8d866d9",
+    "verify_receipt": "Receipt verified"
+  },
+  "specification": {
+    "document": "draft-sergeev-wexp-core-02",
+    "xml_sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+    "rfc": "RFC 9943 (architecture), sections 6.3, 7 and 9.2 quoted in MAPPING.md"
+  },
+  "engines": {
+    "wexp_ref": {
+      "repository": "WEXP-dev/wexp-ref",
+      "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+      "module": "wexp_ref.core02"
+    },
+    "wexp_check": {
+      "repository": "WEXP-dev/wexp-check",
+      "commit": "25ec856e053d8ab40ed60bb88b70c84768d45e34",
+      "module": "wexp_check"
+    }
+  },
+  "interpreter": "CPython 3.12.13",
+  "platform": "macOS-15.7.9-arm64-arm-64bit",
+  "comparison": {
+    "method": "run_case.py: twenty components, set semantics for harness set collections, each engine in its own interpreter process",
+    "cases": {
+      "a": {
+        "wexp_ref_equals_expected": true,
+        "wexp_check_equals_expected": true
+      },
+      "b1": {
+        "wexp_ref_equals_expected": true,
+        "wexp_check_equals_expected": true
+      },
+      "b2": {
+        "wexp_ref_equals_expected": true,
+        "wexp_check_equals_expected": true
+      },
+      "c": {
+        "wexp_ref_equals_expected": true,
+        "wexp_check_equals_expected": true
+      }
+    },
+    "equal": "4/4 for both engines",
+    "divergences": []
+  },
+  "divergence_classification": {
+    "wexp_check_defects": [],
+    "wexp_ref_defects": [],
+    "expectation_errors": [],
+    "text_ambiguities_causing_divergence": [],
+    "open_reading_recorded_without_divergence": {
+      "id": "b2",
+      "question": "are boundary limitations inherited when the supported boundary is neither a support premise nor a reason or gap source",
+      "primary_equals_frozen_and_both_engines": true,
+      "engines_equal_alternative": [
+        {
+          "id": "b2",
+          "engine": "wexp_ref",
+          "engine_equals_alternative": false
+        },
+        {
+          "id": "b2",
+          "engine": "wexp_check",
+          "engine_equals_alternative": false
+        }
+      ],
+      "relation_to_known_issues": "not one of A1-A6 (section 7 matrix) nor of the five set 001 re-derivation readings (P08, P18, P19, R12, R47); new, concerns section 8.1 limitation union"
+    }
+  },
+  "order_of_evidence": "inputs and mapping committed first; expectations derived in isolation and committed second; engines run only afterwards",
+  "recorded_at_utc": "2026-11-06T20:13:03Z",
+  "notes": [
+    "expectations/DELIVERED-SHA256SUMS.txt lists the four expected files under expected/ as delivered; they are committed flat as expectations/<id>.json with unchanged bytes",
+    "evaluation_context.evaluated_at in the inputs is local wall-clock time written with a Z suffix (the receipt issued_at decodes to 20:02:24Z); carried through unchanged, left as frozen",
+    "review of 8e92c53 applied as documentation-only changes; no input, expectation or result changed"
+  ]
+}

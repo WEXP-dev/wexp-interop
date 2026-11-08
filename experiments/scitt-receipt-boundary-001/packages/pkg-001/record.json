@@ -1,0 +1,120 @@
+{
+  "schema_version": "0.3.0",
+  "record_revision": 4,
+  "experiment_id": "scitt-receipt-boundary-001",
+  "package_id": "pkg-001",
+  "title": "SCITT Receipt as the Core-02 boundary finding, case 001",
+  "summary": "One Signed Statement registered with the pinned SCITT API emulator; its verified Receipt mapped to the boundary_finding of a draft-sergeev-wexp-core-02 appraisal with ceiling observation. Four inputs; expectations derived in isolation from the Core text before any appraiser ran; two appraisers equal them 4/4 in the workspace run and in the package run.",
+  "status": {
+    "integrity": "verified",
+    "execution": "local-run-completed",
+    "independent_reproduction": "not-performed",
+    "comparison": "no-local-decision-difference",
+    "publication": "prepared"
+  },
+  "publication": {
+    "version": "scitt-receipt-boundary-001/pkg-001",
+    "carriers": []
+  },
+  "artifact": {
+    "path": "source-archive/scitt-receipt-boundary-001-run-materials.zip",
+    "format": "zip",
+    "bytes": 36382,
+    "sha256": "ab8441e581c903288e9a115736482ffab684391bc73ccc283f82bfbb07d9dc29",
+    "source_url": "https://github.com/WEXP-dev/wexp-work/tree/428f03752bce590b221ea053c361d48a714e7702/interop/scitt-receipt-boundary",
+    "role": "Deterministic ZIP of the frozen case directory (receipt and statement bytes, mapping, inputs, isolated-session expectations, workspace run record) as committed in the private workspace at the named commit, with one path-prefix edit recorded in evidence/SOURCE-MANIFEST.json. The source URL identifies the private workspace commit; it is not publicly resolvable. Payload is this archive's exact extraction."
+  },
+  "payload": {
+    "path": "payload",
+    "role": "verified-extraction",
+    "regular_files": 31,
+    "archive_container_metadata_preserved_in_git": false,
+    "mode_note": "All 31 regular files are mode 100644 in the archive and in Git; the workspace tracked harness/run_emulator.sh as 100755. ZIP entries carry a fixed date; no other container metadata is meaningful."
+  },
+  "verification": {
+    "profile": "scitt-receipt-boundary-v1",
+    "instructions": "REPRODUCE.md",
+    "evidence": [
+      "evidence/SOURCE-MANIFEST.json",
+      "evidence/RUN-RECORD.json",
+      "evidence/comparison.json",
+      "payload/RUN-RECORD.json",
+      "payload/comparison.json",
+      "payload/expectations/DELIVERED-SHA256SUMS.txt",
+      "evidence/GROUNDING-CHECK.md"
+    ],
+    "implementation_execution_performed": true
+  },
+  "independence": {
+    "scope": "Expectations were derived by an isolated session that received only the Core-02 text, the mapping, the inputs, a representation note and the section 13 fixture C01; the appraisers were run afterwards. Same project throughout; no external reproduction of the packaged procedure.",
+    "method": "Order of evidence in the workspace history: inputs and mapping committed, then the isolated derivation committed verbatim with its digest list, then both appraisers run. The package run repeats the comparison from this public composition. The stated baseline for the comparison dimension is the set of frozen expectations derived in isolation from the Core text; the two appraisers are compared with it and with each other, not with a native implementation.",
+    "evidence": [
+      "payload/expectations/FILES-READ.txt",
+      "payload/expectations/DELIVERED-SHA256SUMS.txt",
+      "payload/RUN-RECORD.json",
+      "evidence/RUN-RECORD.json"
+    ]
+  },
+  "result": {
+    "label": "Both appraisers equal the frozen expectations on all four inputs",
+    "details": "Package run from the committed composition (preparation commit 48555a16): wexp_ref.core02 (56289024) and wexp_check (25ec856) each equal the four frozen expectations on all twenty result components, identical to the workspace run. a: downgrade, E_BASE_EXCEEDS_BOUNDARY; b1: accept with the Receipt basis and limitation in the support entry; b2: downgrade, E_MISSING_REQUIRED_EVIDENCE; c: downgrade, gap E_BOUNDARY_NOT_EVALUATED, ceiling unavailable, grounding not-evaluated preserved. One open reading recorded by the isolated session (b2, inherited boundary limitations) is followed by both appraisers."
+  },
+  "source_pins": [
+    {
+      "title": "Frozen case directory in the workspace",
+      "url": "https://github.com/WEXP-dev/wexp-work/tree/428f03752bce590b221ea053c361d48a714e7702/interop/scitt-receipt-boundary",
+      "identity": "git-commit:428f03752bce590b221ea053c361d48a714e7702",
+      "scope": "Private workspace; materials committed at 11a45738, expectations frozen at 545ed13b, first run at 8e92c53, review fixes at 428f0375."
+    },
+    {
+      "title": "SCITT API emulator",
+      "url": "https://github.com/scitt-community/scitt-api-emulator/tree/cfebeee5bb3da7d5a9a13d319aaaab17c1348641",
+      "identity": "git-commit:cfebeee5bb3da7d5a9a13d319aaaab17c1348641",
+      "scope": "Tag pre-archive, 2024-03-26; archived repository; CCF tree algorithm; registration verifies no issuer signature and applies no policy."
+    },
+    {
+      "title": "Receipt bytes",
+      "url": "https://github.com/WEXP-dev/wexp-work/tree/428f03752bce590b221ea053c361d48a714e7702/interop/scitt-receipt-boundary/artifacts",
+      "identity": "sha256:510a71486c25d7e8ac2814af268b705b156444ca5ec896d0da176dc8911e7dde",
+      "scope": "The one Receipt (667 bytes) returned at registration and verified; keys are ad hoc, so a re-registration yields different bytes."
+    },
+    {
+      "title": "Core-02 published text",
+      "url": "https://datatracker.ietf.org/doc/draft-sergeev-wexp-core/02/",
+      "identity": "sha256:de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+      "scope": "XML of draft-sergeev-wexp-core-02; sections 6, 7, 8, 10, 12, 13 govern the mapping and the expectations."
+    },
+    {
+      "title": "wexp_ref.core02",
+      "url": "https://github.com/WEXP-dev/wexp-ref/tree/56289024c9ee748111f1f1d4f42728ffe04d8d69",
+      "identity": "git-commit:56289024c9ee748111f1f1d4f42728ffe04d8d69",
+      "scope": "First appraiser; required for a fresh run."
+    },
+    {
+      "title": "wexp_check",
+      "url": "https://github.com/WEXP-dev/wexp-check",
+      "identity": "git-commit:25ec856e053d8ab40ed60bb88b70c84768d45e34",
+      "scope": "Second appraiser, written from the published text; the commit is local to its repository until pushed."
+    },
+    {
+      "title": "RFC 9943",
+      "url": "https://www.rfc-editor.org/rfc/rfc9943.txt",
+      "identity": "RFC 9943",
+      "scope": "SCITT architecture; sections 6.3, 7 and 9.2 quoted in payload/MAPPING.md."
+    }
+  ],
+  "license": {
+    "scope_path": "LICENSE-SCOPE.md",
+    "historical_artifact_license": "New prose CC BY 4.0, new code MIT per the collection; payload harness code Apache-2.0 as in the workspace; emulator-produced bytes carry no license text; RFC and Internet-Draft quotations retain IETF terms"
+  },
+  "citation_path": "CITATION.cff",
+  "limitations": [
+    "The emulator revision is archived and predates RFC 9942 receipts; its registration verifies no issuer signature, applies no registration policy, proves inclusion in a synthetic one-shot tree and uses a self-signed same-run service identity. The case shows the mapping discipline, not interoperability with a production Transparency Service.",
+    "Not a SCITT profile, not a WEXP mapping profile, not a wexp-vectors vector; the profile identity in the inputs is local to this case.",
+    "The Receipt bounds the appraisal to observation and establishes nothing about execution, intent, invocation, PROV, IV, coverage, content truth or boundary control.",
+    "Same-project work: the isolated derivation, both appraisers and the review are separate sessions of one project; no external independent reproduction.",
+    "The second appraiser's revision (wexp_check 25ec856) exists only in its author's local repository until pushed; the first appraiser's revision is public. No EXPECTED-DELTA file was committed before the package run; the preparation commit implied zero difference from the workspace run.",
+    "evaluation_context.evaluated_at in the inputs is local wall-clock time written with a Z suffix; carried through unchanged.",
+    "No release, tag or DOI exists for this package; the card is prepared only."
+  ]
+}

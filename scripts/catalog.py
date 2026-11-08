@@ -34,7 +34,8 @@ def load_json(path: Path):
 
 def load_records(root: Path = ROOT):
     validators = {}
-    for version, name in (("0.1.0", "record.schema.json"), ("0.2.0", "record-0.2.0.schema.json")):
+    for version, name in (("0.1.0", "record.schema.json"), ("0.2.0", "record-0.2.0.schema.json"),
+                          ("0.3.0", "record-0.3.0.schema.json")):
         schema = load_json(root / "schemas" / name)
         Draft202012Validator.check_schema(schema)
         validators[version] = Draft202012Validator(schema, format_checker=FormatChecker())

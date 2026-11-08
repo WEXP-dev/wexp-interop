@@ -1,0 +1,54 @@
+{
+  "schema": "scitt-receipt-boundary-package-run-001",
+  "preparation_commit": "48555a16da9127a307dee4eecf427d7c0a8ae6c3",
+  "payload_archive_sha256": "ab8441e581c903288e9a115736482ffab684391bc73ccc283f82bfbb07d9dc29",
+  "source_manifest_sha256": "af579564fa959780e21c6da578f4e56d01da9a092c6cf786638fd7f7f33a872a",
+  "command": "python3.12 -B run_case.py --wexp-ref <wexp-ref checkout> --wexp-check <wexp-check checkout> --output <outside the package>",
+  "run_from": "payload/",
+  "engines": {
+    "wexp_ref": {
+      "repository": "WEXP-dev/wexp-ref",
+      "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+      "checkout_clean": true
+    },
+    "wexp_check": {
+      "repository": "WEXP-dev/wexp-check",
+      "commit": "25ec856e053d8ab40ed60bb88b70c84768d45e34",
+      "checkout_clean": true,
+      "note": "commit local to its repository until pushed"
+    }
+  },
+  "interpreter": "CPython 3.12.13",
+  "platform": "macOS-15.7.9-arm64-arm-64bit",
+  "cases": {
+    "a": {
+      "wexp_check_equals_expected": true,
+      "wexp_ref_equals_expected": true
+    },
+    "b1": {
+      "wexp_check_equals_expected": true,
+      "wexp_ref_equals_expected": true
+    },
+    "b2": {
+      "wexp_check_equals_expected": true,
+      "wexp_ref_equals_expected": true
+    },
+    "c": {
+      "wexp_check_equals_expected": true,
+      "wexp_ref_equals_expected": true
+    }
+  },
+  "equal_to_frozen_expectations": {
+    "wexp_ref": 4,
+    "wexp_check": 4,
+    "of": 4
+  },
+  "comparison_output_sha256": "d6b39595efb3a989d4faafc04045563e9f47e59c6595f10359a7f9f92fa7b5cd",
+  "new_experiment_execution_performed": true,
+  "independent_authentication_of_execution": false,
+  "same_result_as_workspace_run": true,
+  "recorded_at_utc": "2026-11-06T20:40:23Z",
+  "dependencies": "standard library only; run_case.py restricts PYTHONPATH to one appraiser checkout per process and PATH to /usr/bin:/bin",
+  "note_on_comparison_bytes": "evidence/comparison.json is byte-identical to payload/comparison.json because the harness is deterministic; this record (preparation commit, clean checkouts, interpreter, time) is the distinct evidence of the second run",
+  "expected_delta_statement": "No EXPECTED-DELTA file was committed before this run; the preparation commit implied zero difference from the workspace run and same_result_as_workspace_run was recorded after the run"
+}
