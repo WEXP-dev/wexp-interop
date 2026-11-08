@@ -1,6 +1,6 @@
 {
   "schema_version": "0.3.0",
-  "record_revision": 4,
+  "record_revision": 5,
   "experiment_id": "scitt-receipt-boundary-001",
   "package_id": "pkg-001",
   "title": "SCITT Receipt as the Core-02 boundary finding, case 001",
@@ -94,7 +94,7 @@
       "title": "wexp_check",
       "url": "https://github.com/WEXP-dev/wexp-check",
       "identity": "git-commit:25ec856e053d8ab40ed60bb88b70c84768d45e34",
-      "scope": "Second appraiser, written from the published text; the commit is local to its repository until pushed."
+      "scope": "Second appraiser, written from the published text; public since 2026-11-08T22:20:56Z as an ancestor of main of WEXP-dev/wexp-check (main created at 391eda1787f35a3ad1a8906f38462e5715d8b750; no file of wexp_check/ changed after 25ec856)."
     },
     {
       "title": "RFC 9943",
@@ -113,7 +113,7 @@
     "Not a SCITT profile, not a WEXP mapping profile, not a wexp-vectors vector; the profile identity in the inputs is local to this case.",
     "The Receipt bounds the appraisal to observation and establishes nothing about execution, intent, invocation, PROV, IV, coverage, content truth or boundary control.",
     "Same-project work: the isolated derivation, both appraisers and the review are separate sessions of one project; no external independent reproduction.",
-    "The second appraiser's revision (wexp_check 25ec856) exists only in its author's local repository until pushed; the first appraiser's revision is public. No EXPECTED-DELTA file was committed before the package run; the preparation commit implied zero difference from the workspace run.",
+    "The second appraiser's revision (wexp_check 25ec856) was local to its author's repository at card revision 4; it has been public since 2026-11-08T22:20:56Z as an ancestor of main of WEXP-dev/wexp-check. No EXPECTED-DELTA file was committed before the package run; the preparation commit implied zero difference from the workspace run.",
     "evaluation_context.evaluated_at in the inputs is local wall-clock time written with a Z suffix; carried through unchanged.",
     "No release, tag or DOI exists for this package; the card is prepared only."
   ]

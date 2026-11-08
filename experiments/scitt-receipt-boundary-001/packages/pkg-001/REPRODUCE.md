@@ -15,7 +15,7 @@ These check the card, the generated catalog, the package manifest, the payload i
 
 ## Repeat the appraisal (a new run, recorded separately)
 
-From `payload/`, with Python 3.12, a public checkout of `WEXP-dev/wexp-ref` at `56289024c9ee748111f1f1d4f42728ffe04d8d69` and a checkout of `WEXP-dev/wexp-check` at `25ec856e053d8ab40ed60bb88b70c84768d45e34` (at the time of this card that commit exists only in the author's local repository and on no public branch; until it is pushed, the second appraiser's revision is not publicly retrievable):
+From `payload/`, with Python 3.12, a public checkout of `WEXP-dev/wexp-ref` at `56289024c9ee748111f1f1d4f42728ffe04d8d69` and a checkout of `WEXP-dev/wexp-check` at `25ec856e053d8ab40ed60bb88b70c84768d45e34` (public since 2026-11-08T22:20:56Z, when `main` of `WEXP-dev/wexp-check` was created at `391eda1787f35a3ad1a8906f38462e5715d8b750`, a descendant that changes no file of `wexp_check/`; card revision 4 recorded it as local only):
 
 ```sh
 git clone https://github.com/WEXP-dev/wexp-ref.git /path/to/wexp-ref
@@ -26,11 +26,11 @@ python3.12 -B run_case.py --wexp-ref /path/to/wexp-ref --wexp-check /path/to/wex
 ```
 
 Both appraisers are standard-library Python; no installation step is needed, the script puts one
-checkout at a time on `PYTHONPATH`. The second clone succeeds only once the named `wexp-check`
-commit has been pushed (see the limitations in the card).
+checkout at a time on `PYTHONPATH`. The named `wexp-check` commit is reachable from that repository's
+public `main`.
 
 The script runs each appraiser in its own interpreter process on the four inputs and compares every result component with the frozen expectations under the harness set semantics. Write the output outside the package; a repeated run is a new record, not a change to this one.
 
 ## Repeat the SCITT registration (optional; different bytes)
 
-`payload/harness/run_emulator.sh <new-dir>` clones the pinned emulator revision, installs its PyPI dependencies into a new virtual environment, starts the CCF emulator with error injection disabled, creates and registers the same statement, retrieves the Receipt twice and verifies it. Keys are generated ad hoc, so the resulting bytes differ from `payload/artifacts/`; the structure and the "Receipt verified" outcome repeat. The emulator source is not installed as a package; it runs from its checkout with a documented import shim for an SDK that is no longer on PyPI. Concretely, the script puts the emulator checkout and `harness/shim` on `PYTHONPATH` and runs `python -m scitt_emulator.cli`; `harness/shim/archivist/` is a two-file placeholder for the `archivist` module that the pinned source imports at load time (RKVST backend), which is never used with the CCF tree algorithm. Python 3.12 or newer, `git`, network access to GitHub and PyPI, and a free local port 8765 are required; the run takes well under a minute. Expected final lines: `receipt bytes identical on retrieve`, `Receipt verified`, then the digests of the new artifacts. This procedure was followed literally from a copy of the package in a fresh directory before the card was finalized.
+`sh payload/harness/run_emulator.sh /absolute/path/to/new-dir` clones the pinned emulator revision (the script is mode 100644 in Git and in the archive, so invoke it through `sh`; running it directly fails; the directory must not exist yet), installs its PyPI dependencies into a new virtual environment, starts the CCF emulator with error injection disabled, creates and registers the same statement, retrieves the Receipt twice and verifies it. Keys are generated ad hoc, so the resulting bytes differ from `payload/artifacts/`; the structure and the "Receipt verified" outcome repeat. The emulator source is not installed as a package; it runs from its checkout with a documented import shim for an SDK that is no longer on PyPI. Concretely, the script puts the emulator checkout and `harness/shim` on `PYTHONPATH` and runs `python -m scitt_emulator.cli`; `harness/shim/archivist/` is a two-file placeholder for the `archivist` module that the pinned source imports at load time (RKVST backend), which is never used with the CCF tree algorithm. Python 3.12 or newer, `git`, network access to GitHub and PyPI, and a free local port 8765 are required; the run takes well under a minute. Expected final lines: `receipt bytes identical on retrieve`, `Receipt verified`, then the digests of the new artifacts. This procedure was followed literally from a copy of the package in a fresh directory before the card was finalized.
