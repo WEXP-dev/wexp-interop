@@ -1,0 +1,162 @@
+﻿2026-11-10T10:41:18.1690116Z Current runner version: '2.338.2'
+2026-11-10T10:41:18.1712774Z ##[group]Runner Image Provisioner
+2026-11-10T10:41:18.1713688Z Hosted Compute Agent
+2026-11-10T10:41:18.1714258Z Version: 20261028.624
+2026-11-10T10:41:18.1715227Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-10T10:41:18.1716109Z Build Date: 2026-10-28T21:51:42Z
+2026-11-10T10:41:18.1716770Z Worker ID: {a8cddd11-77a9-41fb-b495-2bd508e09ea7}
+2026-11-10T10:41:18.1717467Z Region: westus
+2026-11-10T10:41:18.1717983Z Cloud: Azure
+2026-11-10T10:41:18.1718561Z ##[endgroup]
+2026-11-10T10:41:18.1719901Z ##[group]Operating System
+2026-11-10T10:41:18.1720488Z Ubuntu
+2026-11-10T10:41:18.1721003Z 24.04.5
+2026-11-10T10:41:18.1721497Z LTS
+2026-11-10T10:41:18.1721992Z ##[endgroup]
+2026-11-10T10:41:18.1722551Z ##[group]Runner Image
+2026-11-10T10:41:18.1723112Z Image: ubuntu-24.04
+2026-11-10T10:41:18.1723654Z Version: 20261101.360.1
+2026-11-10T10:41:18.1725036Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-10T10:41:18.1726530Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-10T10:41:18.1727441Z ##[endgroup]
+2026-11-10T10:41:18.1728565Z ##[group]GITHUB_TOKEN Permissions
+2026-11-10T10:41:18.1730830Z Contents: read
+2026-11-10T10:41:18.1731743Z Metadata: read
+2026-11-10T10:41:18.1732299Z ##[endgroup]
+2026-11-10T10:41:18.1734213Z Secret source: Actions
+2026-11-10T10:41:18.1735331Z Cache mode: write
+2026-11-10T10:41:18.1736000Z Prepare workflow directory
+2026-11-10T10:41:18.2033478Z Prepare all required actions
+2026-11-10T10:41:18.2080447Z Getting action download info
+2026-11-10T10:41:18.5411716Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-10T10:41:18.7843725Z Complete job name: scitt-receipt-boundary-001 pkg-001, read-only checks and a repeated appraisal
+2026-11-10T10:41:18.8592591Z ##[group]Run actions/setup-python@v5
+2026-11-10T10:41:18.8593458Z with:
+2026-11-10T10:41:18.8593986Z   python-version: 3.12
+2026-11-10T10:41:18.8594548Z   check-latest: false
+2026-11-10T10:41:18.8598500Z   token: ***
+2026-11-10T10:41:18.8599069Z   update-environment: true
+2026-11-10T10:41:18.8599894Z   allow-prereleases: false
+2026-11-10T10:41:18.8600447Z   freethreaded: false
+2026-11-10T10:41:18.8601137Z ##[endgroup]
+2026-11-10T10:41:19.1678690Z ##[group]Installed versions
+2026-11-10T10:41:19.1761552Z (node:2199) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-10T10:41:19.1763180Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-10T10:41:19.1764251Z Successfully set up CPython (3.12.16)
+2026-11-10T10:41:19.1765840Z ##[endgroup]
+2026-11-10T10:41:19.1999516Z ##[group]Run set -eux
+2026-11-10T10:41:19.2000244Z [36;1mset -eux[0m
+2026-11-10T10:41:19.2001023Z [36;1mgit clone https://github.com/WEXP-dev/wexp-interop.git wexp-interop[0m
+2026-11-10T10:41:19.2002083Z [36;1mgit -C wexp-interop checkout a45c88e9e345978fa4392bfa0fd76a5e645b1751[0m
+2026-11-10T10:41:19.2003067Z [36;1mgit clone https://github.com/WEXP-dev/wexp-ref.git /tmp/wexp-ref[0m
+2026-11-10T10:41:19.2004035Z [36;1mgit -C /tmp/wexp-ref checkout 56289024c9ee748111f1f1d4f42728ffe04d8d69[0m
+2026-11-10T10:41:19.2005191Z [36;1mgit clone https://github.com/WEXP-dev/wexp-check.git /tmp/wexp-check[0m
+2026-11-10T10:41:19.2006244Z [36;1mgit -C /tmp/wexp-check checkout 25ec856e053d8ab40ed60bb88b70c84768d45e34[0m
+2026-11-10T10:41:19.2007104Z [36;1mpython3 --version[0m
+2026-11-10T10:41:19.2007946Z [36;1mfor d in wexp-interop /tmp/wexp-ref /tmp/wexp-check; do git -C "$d" rev-parse HEAD; done[0m
+2026-11-10T10:41:19.2041348Z shell: /usr/bin/bash -e {0}
+2026-11-10T10:41:19.2042167Z env:
+2026-11-10T10:41:19.2042805Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:41:19.2043700Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-10T10:41:19.2044595Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:41:19.2045859Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:41:19.2046670Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:41:19.2047458Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-10T10:41:19.2048162Z ##[endgroup]
+2026-11-10T10:41:19.2119907Z + git clone https://github.com/WEXP-dev/wexp-interop.git wexp-interop
+2026-11-10T10:41:19.2211420Z Cloning into 'wexp-interop'...
+2026-11-10T10:41:20.9346765Z + git -C wexp-interop checkout a45c88e9e345978fa4392bfa0fd76a5e645b1751
+2026-11-10T10:41:20.9736588Z Note: switching to 'a45c88e9e345978fa4392bfa0fd76a5e645b1751'.
+2026-11-10T10:41:20.9737146Z 
+2026-11-10T10:41:20.9737653Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-10T10:41:20.9738716Z changes and commit them, and you can discard any commits you make in this
+2026-11-10T10:41:20.9739632Z state without impacting any branches by switching back to a branch.
+2026-11-10T10:41:20.9740208Z 
+2026-11-10T10:41:20.9740506Z If you want to create a new branch to retain commits you create, you may
+2026-11-10T10:41:20.9741409Z do so (now or later) by using -c with the switch command. Example:
+2026-11-10T10:41:20.9741867Z 
+2026-11-10T10:41:20.9742139Z   git switch -c <new-branch-name>
+2026-11-10T10:41:20.9742361Z 
+2026-11-10T10:41:20.9742617Z Or undo this operation with:
+2026-11-10T10:41:20.9742824Z 
+2026-11-10T10:41:20.9743094Z   git switch -
+2026-11-10T10:41:20.9743392Z 
+2026-11-10T10:41:20.9743857Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-10T10:41:20.9744653Z 
+2026-11-10T10:41:20.9745383Z HEAD is now at a45c88e Merge PR #8: scitt-receipt-boundary-001/pkg-001 card revision 5
+2026-11-10T10:41:20.9746347Z + git clone https://github.com/WEXP-dev/wexp-ref.git /tmp/wexp-ref
+2026-11-10T10:41:20.9756585Z Cloning into '/tmp/wexp-ref'...
+2026-11-10T10:41:21.5879367Z + git -C /tmp/wexp-ref checkout 56289024c9ee748111f1f1d4f42728ffe04d8d69
+2026-11-10T10:41:21.5927104Z Note: switching to '56289024c9ee748111f1f1d4f42728ffe04d8d69'.
+2026-11-10T10:41:21.5927634Z 
+2026-11-10T10:41:21.5928048Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-10T10:41:21.5928890Z changes and commit them, and you can discard any commits you make in this
+2026-11-10T10:41:21.5929471Z state without impacting any branches by switching back to a branch.
+2026-11-10T10:41:21.5929782Z 
+2026-11-10T10:41:21.5930071Z If you want to create a new branch to retain commits you create, you may
+2026-11-10T10:41:21.5931033Z do so (now or later) by using -c with the switch command. Example:
+2026-11-10T10:41:21.5931558Z 
+2026-11-10T10:41:21.5931792Z   git switch -c <new-branch-name>
+2026-11-10T10:41:21.5932539Z 
+2026-11-10T10:41:21.5932745Z Or undo this operation with:
+2026-11-10T10:41:21.5933000Z 
+2026-11-10T10:41:21.5933192Z   git switch -
+2026-11-10T10:41:21.5933460Z 
+2026-11-10T10:41:21.5933759Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-10T10:41:21.5934134Z 
+2026-11-10T10:41:21.5934638Z HEAD is now at 5628902 Core-02: reject JSON exponent overflow before appraisal; locked run from frozen corpus; lock to vectors#14 (#20)
+2026-11-10T10:41:21.5935731Z + git clone https://github.com/WEXP-dev/wexp-check.git /tmp/wexp-check
+2026-11-10T10:41:21.5941513Z Cloning into '/tmp/wexp-check'...
+2026-11-10T10:41:22.0396801Z + git -C /tmp/wexp-check checkout 25ec856e053d8ab40ed60bb88b70c84768d45e34
+2026-11-10T10:41:22.0425745Z Note: switching to '25ec856e053d8ab40ed60bb88b70c84768d45e34'.
+2026-11-10T10:41:22.0426406Z 
+2026-11-10T10:41:22.0426885Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-10T10:41:22.0427914Z changes and commit them, and you can discard any commits you make in this
+2026-11-10T10:41:22.0428565Z state without impacting any branches by switching back to a branch.
+2026-11-10T10:41:22.0429140Z 
+2026-11-10T10:41:22.0429504Z If you want to create a new branch to retain commits you create, you may
+2026-11-10T10:41:22.0430778Z do so (now or later) by using -c with the switch command. Example:
+2026-11-10T10:41:22.0431060Z 
+2026-11-10T10:41:22.0431278Z   git switch -c <new-branch-name>
+2026-11-10T10:41:22.0431470Z 
+2026-11-10T10:41:22.0431679Z Or undo this operation with:
+2026-11-10T10:41:22.0431870Z 
+2026-11-10T10:41:22.0432022Z   git switch -
+2026-11-10T10:41:22.0432200Z 
+2026-11-10T10:41:22.0432428Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-10T10:41:22.0432787Z 
+2026-11-10T10:41:22.0433196Z HEAD is now at 25ec856 Apply review findings: check 1 uses the scalar-text rule, catalog check inside appraise, exact citations
+2026-11-10T10:41:22.0433876Z + python3 --version
+2026-11-10T10:41:22.0576110Z Python 3.12.16
+2026-11-10T10:41:22.0578103Z + for d in wexp-interop /tmp/wexp-ref /tmp/wexp-check
+2026-11-10T10:41:22.0578797Z + git -C wexp-interop rev-parse HEAD
+2026-11-10T10:41:22.0596384Z a45c88e9e345978fa4392bfa0fd76a5e645b1751
+2026-11-10T10:41:22.0598376Z + for d in wexp-interop /tmp/wexp-ref /tmp/wexp-check
+2026-11-10T10:41:22.0599661Z + git -C /tmp/wexp-ref rev-parse HEAD
+2026-11-10T10:41:22.0609629Z 56289024c9ee748111f1f1d4f42728ffe04d8d69
+2026-11-10T10:41:22.0611561Z + for d in wexp-interop /tmp/wexp-ref /tmp/wexp-check
+2026-11-10T10:41:22.0612626Z + git -C /tmp/wexp-check rev-parse HEAD
+2026-11-10T10:41:22.0622994Z 25ec856e053d8ab40ed60bb88b70c84768d45e34
+2026-11-10T10:41:22.0672532Z ##[group]Run set -x
+2026-11-10T10:41:22.0672908Z [36;1mset -x[0m
+2026-11-10T10:41:22.0673329Z [36;1mpython -B scripts/catalog.py --check[0m
+2026-11-10T10:41:22.0673741Z [36;1mpython -B scripts/verify_collection.py[0m
+2026-11-10T10:41:22.0674159Z [36;1mpython -B scripts/verify_scitt_receipt_boundary.py[0m
+2026-11-10T10:41:22.0674750Z [36;1mpython -B -m unittest discover -s scripts -p 'test_scitt_receipt_boundary_catalog.py'[0m
+2026-11-10T10:41:22.0689569Z shell: /usr/bin/bash -e {0}
+2026-11-10T10:41:22.0689931Z env:
+2026-11-10T10:41:22.0690323Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:41:22.0690905Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-10T10:41:22.0691532Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:41:22.0692026Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:41:22.0692477Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:41:22.0693053Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-10T10:41:22.0693447Z ##[endgroup]
+2026-11-10T10:41:22.0730041Z + python -B scripts/catalog.py --check
+2026-11-10T10:41:22.1319060Z Traceback (most recent call last):
+2026-11-10T10:41:22.1325431Z   File "/home/runner/work/dps-scitt-decision-layer/dps-scitt-decision-layer/wexp-interop/scripts/catalog.py", line 16, in <module>
+2026-11-10T10:41:22.1326515Z     from jsonschema import Draft202012Validator, FormatChecker
+2026-11-10T10:41:22.1327000Z ModuleNotFoundError: No module named 'jsonschema'
+2026-11-10T10:41:22.1377087Z ##[error]Process completed with exit code 1.
+2026-11-10T10:41:22.1491350Z Cleaning up orphan processes
+2026-11-10T10:41:22.1800234Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

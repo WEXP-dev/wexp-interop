@@ -49,13 +49,13 @@
       "status": {
         "integrity": "verified",
         "execution": "local-run-completed",
-        "independent_reproduction": "not-performed",
+        "independent_reproduction": "performed",
         "comparison": "no-local-decision-difference",
         "publication": "prepared"
       },
       "card": "experiments/scitt-receipt-boundary-001/packages/pkg-001/README.md",
       "record": "experiments/scitt-receipt-boundary-001/packages/pkg-001/record.json",
-      "record_sha256": "2dc4b30add971924405e27b9ccc5e08a248e2c040e50ea0e398e5ab9ef28029f",
+      "record_sha256": "822b8e0564061c3a82b8fa1909f983c46f5d761a850eb1278b1de3dd9961f830",
       "citation": "experiments/scitt-receipt-boundary-001/packages/pkg-001/CITATION.cff",
       "publication": {
         "version": "scitt-receipt-boundary-001/pkg-001",
