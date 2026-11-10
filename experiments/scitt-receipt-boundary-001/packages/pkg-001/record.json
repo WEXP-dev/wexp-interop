@@ -1,6 +1,6 @@
 {
   "schema_version": "0.3.0",
-  "record_revision": 6,
+  "record_revision": 7,
   "experiment_id": "scitt-receipt-boundary-001",
   "package_id": "pkg-001",
   "title": "SCITT Receipt as the Core-02 boundary finding, case 001",

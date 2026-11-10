@@ -30,7 +30,7 @@ WEXP_CHECK_COMMIT = '25ec856e053d8ab40ed60bb88b70c84768d45e34'
 EXTERNAL_REPRODUCTION_DIR = 'evidence/external-reproduction-20261110-lemonnier'
 EXTERNAL_REPRODUCTION_FILES = {
     'EVIDENCE-INDEX.json': 'da5523fed01302f52cb42e219d3db9497ebf879e3f4d97d0006cf7ec7b0ee5c8',
-    'NOTE.md': 'bfa975d5bdbd44bd3e79c8f48d4ad4c89ee75a19ab0c9068e465ffb03b0a82ed',
+    'NOTE.md': '3d758ae09ab7a557ae43cf0e3ae16a4c5d61d5236a514c09c3f5287c7763aef0',
     'artifacts-42801235872.json': '244563f989470892c537c9a4622920af0d228ee4528f7d00c64a06d6cd95856c',
     'artifacts-42801386609.json': '244563f989470892c537c9a4622920af0d228ee4528f7d00c64a06d6cd95856c',
     'corpus-comparison.extracted-from-log.json': '294f4cdc047994b838ede57d655beab8ec8ef3c05342903cc62d8884e1a0c9ab',
