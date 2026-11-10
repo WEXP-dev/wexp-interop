@@ -1,0 +1,1230 @@
+﻿2026-11-10T10:42:22.8227666Z Current runner version: '2.338.2'
+2026-11-10T10:42:22.8249875Z ##[group]Runner Image Provisioner
+2026-11-10T10:42:22.8250614Z Hosted Compute Agent
+2026-11-10T10:42:22.8251180Z Version: 20261028.624
+2026-11-10T10:42:22.8251725Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-10T10:42:22.8252392Z Build Date: 2026-10-28T21:51:42Z
+2026-11-10T10:42:22.8253099Z Worker ID: {d50634cc-ddea-405d-be50-e186d4066b59}
+2026-11-10T10:42:22.8253719Z Region: westus2
+2026-11-10T10:42:22.8254235Z Cloud: Azure
+2026-11-10T10:42:22.8254702Z ##[endgroup]
+2026-11-10T10:42:22.8256278Z ##[group]Operating System
+2026-11-10T10:42:22.8257070Z Ubuntu
+2026-11-10T10:42:22.8257594Z 24.04.5
+2026-11-10T10:42:22.8258068Z LTS
+2026-11-10T10:42:22.8258535Z ##[endgroup]
+2026-11-10T10:42:22.8259010Z ##[group]Runner Image
+2026-11-10T10:42:22.8259624Z Image: ubuntu-24.04
+2026-11-10T10:42:22.8260119Z Version: 20261101.360.1
+2026-11-10T10:42:22.8261249Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-10T10:42:22.8262526Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-10T10:42:22.8263431Z ##[endgroup]
+2026-11-10T10:42:22.8264384Z ##[group]GITHUB_TOKEN Permissions
+2026-11-10T10:42:22.8266837Z Contents: read
+2026-11-10T10:42:22.8267353Z Metadata: read
+2026-11-10T10:42:22.8267917Z ##[endgroup]
+2026-11-10T10:42:22.8269808Z Secret source: Actions
+2026-11-10T10:42:22.8270673Z Cache mode: write
+2026-11-10T10:42:22.8271283Z Prepare workflow directory
+2026-11-10T10:42:22.8540569Z Prepare all required actions
+2026-11-10T10:42:22.8586744Z Getting action download info
+2026-11-10T10:42:23.1722027Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-10T10:42:23.4445675Z Complete job name: scitt-receipt-boundary-001 pkg-001, read-only checks and a repeated appraisal
+2026-11-10T10:42:23.5227274Z ##[group]Run actions/setup-python@v5
+2026-11-10T10:42:23.5228024Z with:
+2026-11-10T10:42:23.5228411Z   python-version: 3.12
+2026-11-10T10:42:23.5228802Z   check-latest: false
+2026-11-10T10:42:23.5231739Z   token: ***
+2026-11-10T10:42:23.5232118Z   update-environment: true
+2026-11-10T10:42:23.5232539Z   allow-prereleases: false
+2026-11-10T10:42:23.5233064Z   freethreaded: false
+2026-11-10T10:42:23.5233589Z ##[endgroup]
+2026-11-10T10:42:23.9367803Z ##[group]Installed versions
+2026-11-10T10:42:23.9504181Z (node:1990) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-10T10:42:23.9505930Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-10T10:42:23.9520212Z Successfully set up CPython (3.12.16)
+2026-11-10T10:42:23.9521705Z ##[endgroup]
+2026-11-10T10:42:23.9735950Z ##[group]Run set -eux
+2026-11-10T10:42:23.9736816Z [36;1mset -eux[0m
+2026-11-10T10:42:23.9737455Z [36;1mgit clone https://github.com/WEXP-dev/wexp-interop.git wexp-interop[0m
+2026-11-10T10:42:23.9738314Z [36;1mgit -C wexp-interop checkout a45c88e9e345978fa4392bfa0fd76a5e645b1751[0m
+2026-11-10T10:42:23.9739164Z [36;1mgit clone https://github.com/WEXP-dev/wexp-ref.git /tmp/wexp-ref[0m
+2026-11-10T10:42:23.9739972Z [36;1mgit -C /tmp/wexp-ref checkout 56289024c9ee748111f1f1d4f42728ffe04d8d69[0m
+2026-11-10T10:42:23.9740781Z [36;1mgit clone https://github.com/WEXP-dev/wexp-check.git /tmp/wexp-check[0m
+2026-11-10T10:42:23.9741629Z [36;1mgit -C /tmp/wexp-check checkout 25ec856e053d8ab40ed60bb88b70c84768d45e34[0m
+2026-11-10T10:42:23.9742287Z [36;1mpython3 --version[0m
+2026-11-10T10:42:23.9742989Z [36;1mfor d in wexp-interop /tmp/wexp-ref /tmp/wexp-check; do git -C "$d" rev-parse HEAD; done[0m
+2026-11-10T10:42:23.9775092Z shell: /usr/bin/bash -e {0}
+2026-11-10T10:42:23.9775613Z env:
+2026-11-10T10:42:23.9776319Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:23.9777063Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-10T10:42:23.9777780Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:23.9778668Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:23.9779321Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:23.9779982Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-10T10:42:23.9780567Z ##[endgroup]
+2026-11-10T10:42:23.9849895Z + git clone https://github.com/WEXP-dev/wexp-interop.git wexp-interop
+2026-11-10T10:42:23.9987960Z Cloning into 'wexp-interop'...
+2026-11-10T10:42:24.9429742Z + git -C wexp-interop checkout a45c88e9e345978fa4392bfa0fd76a5e645b1751
+2026-11-10T10:42:24.9855749Z Note: switching to 'a45c88e9e345978fa4392bfa0fd76a5e645b1751'.
+2026-11-10T10:42:24.9856702Z 
+2026-11-10T10:42:24.9857276Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-10T10:42:24.9858303Z changes and commit them, and you can discard any commits you make in this
+2026-11-10T10:42:24.9859326Z state without impacting any branches by switching back to a branch.
+2026-11-10T10:42:24.9859907Z 
+2026-11-10T10:42:24.9860364Z If you want to create a new branch to retain commits you create, you may
+2026-11-10T10:42:24.9861468Z do so (now or later) by using -c with the switch command. Example:
+2026-11-10T10:42:24.9862122Z 
+2026-11-10T10:42:24.9862542Z   git switch -c <new-branch-name>
+2026-11-10T10:42:24.9863112Z 
+2026-11-10T10:42:24.9863471Z Or undo this operation with:
+2026-11-10T10:42:24.9864037Z 
+2026-11-10T10:42:24.9864377Z   git switch -
+2026-11-10T10:42:24.9864824Z 
+2026-11-10T10:42:24.9865690Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-10T10:42:24.9866795Z 
+2026-11-10T10:42:24.9867411Z HEAD is now at a45c88e Merge PR #8: scitt-receipt-boundary-001/pkg-001 card revision 5
+2026-11-10T10:42:24.9868979Z + git clone https://github.com/WEXP-dev/wexp-ref.git /tmp/wexp-ref
+2026-11-10T10:42:24.9878870Z Cloning into '/tmp/wexp-ref'...
+2026-11-10T10:42:25.3824389Z + git -C /tmp/wexp-ref checkout 56289024c9ee748111f1f1d4f42728ffe04d8d69
+2026-11-10T10:42:25.3870611Z Note: switching to '56289024c9ee748111f1f1d4f42728ffe04d8d69'.
+2026-11-10T10:42:25.3871000Z 
+2026-11-10T10:42:25.3871314Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-10T10:42:25.3872016Z changes and commit them, and you can discard any commits you make in this
+2026-11-10T10:42:25.3872754Z state without impacting any branches by switching back to a branch.
+2026-11-10T10:42:25.3873209Z 
+2026-11-10T10:42:25.3873519Z If you want to create a new branch to retain commits you create, you may
+2026-11-10T10:42:25.3874291Z do so (now or later) by using -c with the switch command. Example:
+2026-11-10T10:42:25.3874747Z 
+2026-11-10T10:42:25.3874937Z   git switch -c <new-branch-name>
+2026-11-10T10:42:25.3875692Z 
+2026-11-10T10:42:25.3875871Z Or undo this operation with:
+2026-11-10T10:42:25.3876459Z 
+2026-11-10T10:42:25.3876687Z   git switch -
+2026-11-10T10:42:25.3877040Z 
+2026-11-10T10:42:25.3877439Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-10T10:42:25.3877942Z 
+2026-11-10T10:42:25.3878568Z HEAD is now at 5628902 Core-02: reject JSON exponent overflow before appraisal; locked run from frozen corpus; lock to vectors#14 (#20)
+2026-11-10T10:42:25.3879585Z + git clone https://github.com/WEXP-dev/wexp-check.git /tmp/wexp-check
+2026-11-10T10:42:25.3888236Z Cloning into '/tmp/wexp-check'...
+2026-11-10T10:42:25.7073423Z + git -C /tmp/wexp-check checkout 25ec856e053d8ab40ed60bb88b70c84768d45e34
+2026-11-10T10:42:25.7103630Z Note: switching to '25ec856e053d8ab40ed60bb88b70c84768d45e34'.
+2026-11-10T10:42:25.7104037Z 
+2026-11-10T10:42:25.7104304Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-10T10:42:25.7104988Z changes and commit them, and you can discard any commits you make in this
+2026-11-10T10:42:25.7105595Z state without impacting any branches by switching back to a branch.
+2026-11-10T10:42:25.7105944Z 
+2026-11-10T10:42:25.7106340Z If you want to create a new branch to retain commits you create, you may
+2026-11-10T10:42:25.7107218Z do so (now or later) by using -c with the switch command. Example:
+2026-11-10T10:42:25.7107561Z 
+2026-11-10T10:42:25.7107691Z   git switch -c <new-branch-name>
+2026-11-10T10:42:25.7107917Z 
+2026-11-10T10:42:25.7108046Z Or undo this operation with:
+2026-11-10T10:42:25.7108259Z 
+2026-11-10T10:42:25.7108363Z   git switch -
+2026-11-10T10:42:25.7108530Z 
+2026-11-10T10:42:25.7108784Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-10T10:42:25.7109157Z 
+2026-11-10T10:42:25.7109645Z HEAD is now at 25ec856 Apply review findings: check 1 uses the scalar-text rule, catalog check inside appraise, exact citations
+2026-11-10T10:42:25.7110301Z + python3 --version
+2026-11-10T10:42:25.7249935Z Python 3.12.16
+2026-11-10T10:42:25.7252645Z + for d in wexp-interop /tmp/wexp-ref /tmp/wexp-check
+2026-11-10T10:42:25.7253089Z + git -C wexp-interop rev-parse HEAD
+2026-11-10T10:42:25.7272021Z a45c88e9e345978fa4392bfa0fd76a5e645b1751
+2026-11-10T10:42:25.7274323Z + for d in wexp-interop /tmp/wexp-ref /tmp/wexp-check
+2026-11-10T10:42:25.7274787Z + git -C /tmp/wexp-ref rev-parse HEAD
+2026-11-10T10:42:25.7285383Z 56289024c9ee748111f1f1d4f42728ffe04d8d69
+2026-11-10T10:42:25.7287763Z + for d in wexp-interop /tmp/wexp-ref /tmp/wexp-check
+2026-11-10T10:42:25.7288209Z + git -C /tmp/wexp-check rev-parse HEAD
+2026-11-10T10:42:25.7298876Z 25ec856e053d8ab40ed60bb88b70c84768d45e34
+2026-11-10T10:42:25.7343354Z ##[group]Run python -m pip install -r requirements-verification.txt
+2026-11-10T10:42:25.7343774Z [36;1mpython -m pip install -r requirements-verification.txt[0m
+2026-11-10T10:42:25.7344085Z [36;1mpython -m pip freeze[0m
+2026-11-10T10:42:25.7362686Z shell: /usr/bin/bash -e {0}
+2026-11-10T10:42:25.7362896Z env:
+2026-11-10T10:42:25.7363116Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:25.7363474Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-10T10:42:25.7363846Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:25.7364352Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:25.7364747Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:25.7365263Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-10T10:42:25.7365635Z ##[endgroup]
+2026-11-10T10:42:26.6466905Z Collecting PyYAML==6.0.3 (from -r requirements-verification.txt (line 2))
+2026-11-10T10:42:26.6996640Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-10T10:42:26.7188754Z Collecting jsonschema==4.25.1 (from -r requirements-verification.txt (line 3))
+2026-11-10T10:42:26.7251896Z   Downloading jsonschema-4.25.1-py3-none-any.whl.metadata (7.6 kB)
+2026-11-10T10:42:26.7408149Z Collecting attrs==26.1.0 (from -r requirements-verification.txt (line 4))
+2026-11-10T10:42:26.7472090Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-11-10T10:42:26.7649244Z Collecting jsonschema-specifications==2025.9.1 (from -r requirements-verification.txt (line 5))
+2026-11-10T10:42:26.7713522Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-11-10T10:42:26.8042636Z Collecting referencing==0.37.0 (from -r requirements-verification.txt (line 6))
+2026-11-10T10:42:26.8108054Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-11-10T10:42:27.0394040Z Collecting rpds-py==2026.9.1 (from -r requirements-verification.txt (line 7))
+2026-11-10T10:42:27.0462884Z   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-11-10T10:42:27.0688689Z Collecting typing-extensions==4.16.0 (from -r requirements-verification.txt (line 8))
+2026-11-10T10:42:27.0751704Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-10T10:42:27.0905599Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-11-10T10:42:27.1330240Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 29.0 MB/s  0:00:00
+2026-11-10T10:42:27.1330947Z Downloading jsonschema-4.25.1-py3-none-any.whl (90 kB)
+2026-11-10T10:42:27.1416415Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-11-10T10:42:27.1501274Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-11-10T10:42:27.1601699Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-11-10T10:42:27.1689321Z Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+2026-11-10T10:42:27.1783606Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-10T10:42:27.2430488Z Installing collected packages: typing-extensions, rpds-py, PyYAML, attrs, referencing, jsonschema-specifications, jsonschema
+2026-11-10T10:42:27.5764001Z 
+2026-11-10T10:42:27.5774943Z Successfully installed PyYAML-6.0.3 attrs-26.1.0 jsonschema-4.25.1 jsonschema-specifications-2025.9.1 referencing-0.37.0 rpds-py-2026.9.1 typing-extensions-4.16.0
+2026-11-10T10:42:27.5781396Z 
+2026-11-10T10:42:27.5781609Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+2026-11-10T10:42:27.5782079Z [notice] To update, run: pip install --upgrade pip
+2026-11-10T10:42:27.8141399Z attrs==26.1.0
+2026-11-10T10:42:27.8141697Z jsonschema==4.25.1
+2026-11-10T10:42:27.8141992Z jsonschema-specifications==2025.9.1
+2026-11-10T10:42:27.8142312Z PyYAML==6.0.3
+2026-11-10T10:42:27.8142973Z referencing==0.37.0
+2026-11-10T10:42:27.8143204Z rpds-py==2026.9.1
+2026-11-10T10:42:27.8143460Z typing_extensions==4.16.0
+2026-11-10T10:42:27.8445766Z ##[group]Run set -x
+2026-11-10T10:42:27.8446006Z [36;1mset -x[0m
+2026-11-10T10:42:27.8446432Z [36;1mpython -B scripts/catalog.py --check[0m
+2026-11-10T10:42:27.8446697Z [36;1mpython -B scripts/verify_collection.py[0m
+2026-11-10T10:42:27.8446994Z [36;1mpython -B scripts/verify_scitt_receipt_boundary.py[0m
+2026-11-10T10:42:27.8447394Z [36;1mpython -B -m unittest discover -s scripts -p 'test_scitt_receipt_boundary_catalog.py'[0m
+2026-11-10T10:42:27.8465470Z shell: /usr/bin/bash -e {0}
+2026-11-10T10:42:27.8465674Z env:
+2026-11-10T10:42:27.8465912Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:27.8466549Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-10T10:42:27.8466886Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:27.8467185Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:27.8467484Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:27.8467824Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-10T10:42:27.8468084Z ##[endgroup]
+2026-11-10T10:42:27.8504843Z + python -B scripts/catalog.py --check
+2026-11-10T10:42:28.0531806Z {"status": "PASS", "mode": "check", "packages": 4, "catalog_sha256": "ff9138dc022d6319830e0c509fb97cdc074057a02a09db550bc37dfad0d82a40"}
+2026-11-10T10:42:28.0671657Z + python -B scripts/verify_collection.py
+2026-11-10T10:42:29.3458455Z {
+2026-11-10T10:42:29.3458737Z   "status": "PASS",
+2026-11-10T10:42:29.3459187Z   "scope": "cards/catalog/manifests/local links; bounded saved-evidence checks for the profiles that select them",
+2026-11-10T10:42:29.3459602Z   "packages": [
+2026-11-10T10:42:29.3459764Z     {
+2026-11-10T10:42:29.3459952Z       "experiment_id": "emilia-interop-001",
+2026-11-10T10:42:29.3529528Z       "package_id": "pkg-001",
+2026-11-10T10:42:29.3529967Z       "manifest_entries": 170
+2026-11-10T10:42:29.3530239Z     },
+2026-11-10T10:42:29.3530484Z     {
+2026-11-10T10:42:29.3530839Z       "experiment_id": "scitt-receipt-boundary-001",
+2026-11-10T10:42:29.3531305Z       "package_id": "pkg-001",
+2026-11-10T10:42:29.3531657Z       "manifest_entries": 41,
+2026-11-10T10:42:29.3532021Z       "scitt_receipt_boundary_evidence": {
+2026-11-10T10:42:29.3532342Z         "status": "PASS_PACKAGE_EVIDENCE",
+2026-11-10T10:42:29.3532630Z         "payload_files": 31,
+2026-11-10T10:42:29.3532900Z         "archive_members": 31,
+2026-11-10T10:42:29.3533220Z         "cases": 4,
+2026-11-10T10:42:29.3533976Z         "workspace_run_equal_both_engines": true,
+2026-11-10T10:42:29.3534290Z         "package_run_checked": true,
+2026-11-10T10:42:29.3534615Z         "new_experiment_execution_performed": false,
+2026-11-10T10:42:29.3535045Z         "independent_authentication_of_execution": false,
+2026-11-10T10:42:29.3535407Z         "package_run_equal_both_engines": true
+2026-11-10T10:42:29.3535719Z       }
+2026-11-10T10:42:29.3535932Z     },
+2026-11-10T10:42:29.3536528Z     {
+2026-11-10T10:42:29.3536808Z       "experiment_id": "wimse-aar-02-interop-001",
+2026-11-10T10:42:29.3537182Z       "package_id": "pkg-001",
+2026-11-10T10:42:29.3537465Z       "manifest_entries": 251,
+2026-11-10T10:42:29.3537733Z       "aar_saved_evidence": {
+2026-11-10T10:42:29.3538057Z         "experiment_id": "wimse-aar-02-interop-001",
+2026-11-10T10:42:29.3538425Z         "package_id": "pkg-001",
+2026-11-10T10:42:29.3538742Z         "status": "PASS",
+2026-11-10T10:42:29.3539117Z         "preparation_commit": "70b4491a1ec8aab5af61f31510220067e3e5cfba",
+2026-11-10T10:42:29.3539694Z         "preparation_tree": "feaec7ce219ba8aea944d3a8e8fcf0079f6932b9",
+2026-11-10T10:42:29.3540443Z         "preparation_freeze_sha256": "ab13055e8d65601eabdf1cb463d1ec92b2dc1ed5868914fd9af8bcf4fc19138f",
+2026-11-10T10:42:29.3541064Z         "frozen_input_files": 202,
+2026-11-10T10:42:29.3541384Z         "payload_files": 239,
+2026-11-10T10:42:29.3541675Z         "zip_members": 240,
+2026-11-10T10:42:29.3542513Z         "archive_sha256": "fa42df4c859e744f199691a5f071f52a8e7102267dddeded95b68462843d2d20",
+2026-11-10T10:42:29.3543074Z         "outer_manifest_entries": 251,
+2026-11-10T10:42:29.3543461Z         "full_strict_reference_comparison": "PASS",
+2026-11-10T10:42:29.3543828Z         "pipeline_cases": 130,
+2026-11-10T10:42:29.3544133Z         "output_mutations": 16,
+2026-11-10T10:42:29.3544442Z         "controlled_worlds": 2,
+2026-11-10T10:42:29.3544834Z         "recorded_implementation_execution": true,
+2026-11-10T10:42:29.3545305Z         "implementation_execution_performed_by_this_verifier": false
+2026-11-10T10:42:29.3545718Z       }
+2026-11-10T10:42:29.3545950Z     },
+2026-11-10T10:42:29.3546343Z     {
+2026-11-10T10:42:29.3546623Z       "experiment_id": "wimse-aar-02-interop-001",
+2026-11-10T10:42:29.3547008Z       "package_id": "pkg-002",
+2026-11-10T10:42:29.3547329Z       "manifest_entries": 20,
+2026-11-10T10:42:29.3547645Z       "wimse_core02_saved_evidence": {
+2026-11-10T10:42:29.3547997Z         "status": "PASS_CATALOG_ADMISSION",
+2026-11-10T10:42:29.3548501Z         "original_source_commit": "70d6c5d1fca0843859008c98fd6a57e265ff3f68",
+2026-11-10T10:42:29.3548982Z         "source_files": 8,
+2026-11-10T10:42:29.3549244Z         "archives": 4,
+2026-11-10T10:42:29.3549486Z         "recorded_mode_runs": 8,
+2026-11-10T10:42:29.3549830Z         "cases_per_original_run": 130,
+2026-11-10T10:42:29.3550165Z         "mapped_per_original_run": 35,
+2026-11-10T10:42:29.3550649Z         "observed_sha256": "882cb96cef3fb00192988396ac0ebe4f742070b1d55c2141afe7aebabcb390ae",
+2026-11-10T10:42:29.3551037Z         "new_experiment_execution_performed": false,
+2026-11-10T10:42:29.3551318Z         "independent_authentication_of_execution": false
+2026-11-10T10:42:29.3551561Z       }
+2026-11-10T10:42:29.3551744Z     }
+2026-11-10T10:42:29.3551895Z   ],
+2026-11-10T10:42:29.3552056Z   "local_links_checked": 132,
+2026-11-10T10:42:29.3552271Z   "experiment_execution_performed": false
+2026-11-10T10:42:29.3552485Z }
+2026-11-10T10:42:29.3625128Z + python -B scripts/verify_scitt_receipt_boundary.py
+2026-11-10T10:42:29.4087188Z {
+2026-11-10T10:42:29.4087408Z   "archive_members": 31,
+2026-11-10T10:42:29.4087616Z   "cases": 4,
+2026-11-10T10:42:29.4087822Z   "independent_authentication_of_execution": false,
+2026-11-10T10:42:29.4088099Z   "new_experiment_execution_performed": false,
+2026-11-10T10:42:29.4088350Z   "package_run_checked": true,
+2026-11-10T10:42:29.4088566Z   "package_run_equal_both_engines": true,
+2026-11-10T10:42:29.4088822Z   "payload_files": 31,
+2026-11-10T10:42:29.4089355Z   "status": "PASS_PACKAGE_EVIDENCE",
+2026-11-10T10:42:29.4089579Z   "workspace_run_equal_both_engines": true
+2026-11-10T10:42:29.4089792Z }
+2026-11-10T10:42:29.4143630Z + python -B -m unittest discover -s scripts -p test_scitt_receipt_boundary_catalog.py
+2026-11-10T10:42:29.6644186Z .........
+2026-11-10T10:42:29.6644615Z ----------------------------------------------------------------------
+2026-11-10T10:42:29.6645100Z Ran 9 tests in 0.166s
+2026-11-10T10:42:29.6645282Z 
+2026-11-10T10:42:29.6645376Z OK
+2026-11-10T10:42:29.6759405Z ##[group]Run python3.12 -B run_case.py --wexp-ref /tmp/wexp-ref --wexp-check /tmp/wexp-check --output /tmp/pkg-001-comparison.json
+2026-11-10T10:42:29.6760143Z [36;1mpython3.12 -B run_case.py --wexp-ref /tmp/wexp-ref --wexp-check /tmp/wexp-check --output /tmp/pkg-001-comparison.json[0m
+2026-11-10T10:42:29.6760583Z [36;1msha256sum /tmp/pkg-001-comparison.json[0m
+2026-11-10T10:42:29.6760836Z [36;1mcat /tmp/pkg-001-comparison.json[0m
+2026-11-10T10:42:29.6779099Z shell: /usr/bin/bash -e {0}
+2026-11-10T10:42:29.6779323Z env:
+2026-11-10T10:42:29.6779556Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:29.6779914Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-10T10:42:29.6780249Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:29.6780547Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:29.6780857Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-10T10:42:29.6781345Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-10T10:42:29.6781614Z ##[endgroup]
+2026-11-10T10:42:29.9427468Z a wexp_ref==expected True wexp_check==expected True
+2026-11-10T10:42:29.9428083Z b1 wexp_ref==expected True wexp_check==expected True
+2026-11-10T10:42:29.9428515Z b2 wexp_ref==expected True wexp_check==expected True
+2026-11-10T10:42:29.9428925Z c wexp_ref==expected True wexp_check==expected True
+2026-11-10T10:42:29.9505946Z 166dd11e838d93799a1a3c501b6d97698477f5a955796a4e0a68af6a48f82907  /tmp/pkg-001-comparison.json
+2026-11-10T10:42:29.9515560Z {
+2026-11-10T10:42:29.9515780Z  "cases": {
+2026-11-10T10:42:29.9516016Z   "a": {
+2026-11-10T10:42:29.9516459Z    "wexp_check_equals_expected": true,
+2026-11-10T10:42:29.9516823Z    "wexp_check_observed": {
+2026-11-10T10:42:29.9517133Z     "asserted_claim": {
+2026-11-10T10:42:29.9517418Z      "base": "execution",
+2026-11-10T10:42:29.9517700Z      "qualifiers": []
+2026-11-10T10:42:29.9517968Z     },
+2026-11-10T10:42:29.9518238Z     "asserted_claim_supported": false,
+2026-11-10T10:42:29.9518575Z     "boundary_ceiling": "observation",
+2026-11-10T10:42:29.9518893Z     "boundary_grounding": "attributed",
+2026-11-10T10:42:29.9519213Z     "counter_evidence": [
+2026-11-10T10:42:29.9519479Z      {
+2026-11-10T10:42:29.9519708Z       "affected_claims": [],
+2026-11-10T10:42:29.9519989Z       "basis_refs": [],
+2026-11-10T10:42:29.9520241Z       "limitations": [],
+2026-11-10T10:42:29.9520501Z       "reasons": [],
+2026-11-10T10:42:29.9520770Z       "status": "not-supplied"
+2026-11-10T10:42:29.9521196Z      }
+2026-11-10T10:42:29.9521385Z     ],
+2026-11-10T10:42:29.9521582Z     "evaluation_context": {
+2026-11-10T10:42:29.9521872Z      "evaluated_at": "2026-11-06T12:02:24Z",
+2026-11-10T10:42:29.9522228Z      "id": "C-scitt-001",
+2026-11-10T10:42:29.9522513Z      "profile_identifiers": [
+2026-11-10T10:42:29.9522885Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1"
+2026-11-10T10:42:29.9523420Z      ],
+2026-11-10T10:42:29.9523750Z      "trust_configuration": "scitt-receipt-boundary-001-trust-1"
+2026-11-10T10:42:29.9524278Z     },
+2026-11-10T10:42:29.9524525Z     "evaluation_gap_entries": [],
+2026-11-10T10:42:29.9524839Z     "evaluation_gaps": [],
+2026-11-10T10:42:29.9525119Z     "evaluation_scope": [
+2026-11-10T10:42:29.9525373Z      {
+2026-11-10T10:42:29.9525605Z       "capability": "authenticity",
+2026-11-10T10:42:29.9525916Z       "status": "evaluated"
+2026-11-10T10:42:29.9526306Z      },
+2026-11-10T10:42:29.9526700Z      {
+2026-11-10T10:42:29.9526861Z       "capability": "boundary-grounding",
+2026-11-10T10:42:29.9527077Z       "status": "evaluated"
+2026-11-10T10:42:29.9527258Z      },
+2026-11-10T10:42:29.9527401Z      {
+2026-11-10T10:42:29.9527572Z       "capability": "carrier-mapping",
+2026-11-10T10:42:29.9527795Z       "status": "evaluated"
+2026-11-10T10:42:29.9527972Z      },
+2026-11-10T10:42:29.9528119Z      {
+2026-11-10T10:42:29.9528283Z       "capability": "composition",
+2026-11-10T10:42:29.9528665Z       "status": "evaluated"
+2026-11-10T10:42:29.9528845Z      },
+2026-11-10T10:42:29.9528988Z      {
+2026-11-10T10:42:29.9529149Z       "capability": "counter-evidence",
+2026-11-10T10:42:29.9529367Z       "status": "evaluated"
+2026-11-10T10:42:29.9529539Z      },
+2026-11-10T10:42:29.9529689Z      {
+2026-11-10T10:42:29.9529852Z       "capability": "execution-support",
+2026-11-10T10:42:29.9530064Z       "status": "evaluated"
+2026-11-10T10:42:29.9530234Z      },
+2026-11-10T10:42:29.9530372Z      {
+2026-11-10T10:42:29.9530555Z       "capability": "independent-verification",
+2026-11-10T10:42:29.9530784Z       "status": "evaluated"
+2026-11-10T10:42:29.9530955Z      },
+2026-11-10T10:42:29.9531095Z      {
+2026-11-10T10:42:29.9531255Z       "capability": "intent-support",
+2026-11-10T10:42:29.9531461Z       "status": "evaluated"
+2026-11-10T10:42:29.9531638Z      },
+2026-11-10T10:42:29.9531775Z      {
+2026-11-10T10:42:29.9531937Z       "capability": "invocation-support",
+2026-11-10T10:42:29.9532144Z       "status": "evaluated"
+2026-11-10T10:42:29.9532312Z      },
+2026-11-10T10:42:29.9532456Z      {
+2026-11-10T10:42:29.9532621Z       "capability": "observation-support",
+2026-11-10T10:42:29.9532828Z       "status": "evaluated"
+2026-11-10T10:42:29.9532993Z      },
+2026-11-10T10:42:29.9533129Z      {
+2026-11-10T10:42:29.9533287Z       "capability": "provenance-support",
+2026-11-10T10:42:29.9533500Z       "status": "evaluated"
+2026-11-10T10:42:29.9533682Z      },
+2026-11-10T10:42:29.9533827Z      {
+2026-11-10T10:42:29.9533990Z       "capability": "target-binding",
+2026-11-10T10:42:29.9534205Z       "status": "evaluated"
+2026-11-10T10:42:29.9534378Z      }
+2026-11-10T10:42:29.9534522Z     ],
+2026-11-10T10:42:29.9534670Z     "fatal_reasons": [],
+2026-11-10T10:42:29.9534860Z     "inherited_limitations": [
+2026-11-10T10:42:29.9535049Z      [
+2026-11-10T10:42:29.9535259Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9535537Z       "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9535741Z      ]
+2026-11-10T10:42:29.9535879Z     ],
+2026-11-10T10:42:29.9536189Z     "maximal_supported_claims": [],
+2026-11-10T10:42:29.9536420Z     "recorder_relations": [],
+2026-11-10T10:42:29.9536623Z     "semantics_version": "wexp-core-2",
+2026-11-10T10:42:29.9536839Z     "substantive_reasons": [
+2026-11-10T10:42:29.9537036Z      "E_BASE_EXCEEDS_BOUNDARY"
+2026-11-10T10:42:29.9537218Z     ],
+2026-11-10T10:42:29.9537369Z     "support_entries": [],
+2026-11-10T10:42:29.9537557Z     "support_relations": [],
+2026-11-10T10:42:29.9537749Z     "supported_claims": [],
+2026-11-10T10:42:29.9537980Z     "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9538223Z     "verdict": "downgrade"
+2026-11-10T10:42:29.9538391Z    },
+2026-11-10T10:42:29.9538551Z    "wexp_ref_equals_expected": true,
+2026-11-10T10:42:29.9538760Z    "wexp_ref_observed": {
+2026-11-10T10:42:29.9538940Z     "asserted_claim": {
+2026-11-10T10:42:29.9539112Z      "base": "execution",
+2026-11-10T10:42:29.9539289Z      "qualifiers": []
+2026-11-10T10:42:29.9539454Z     },
+2026-11-10T10:42:29.9539615Z     "asserted_claim_supported": false,
+2026-11-10T10:42:29.9539838Z     "boundary_ceiling": "observation",
+2026-11-10T10:42:29.9540055Z     "boundary_grounding": "attributed",
+2026-11-10T10:42:29.9540258Z     "counter_evidence": [
+2026-11-10T10:42:29.9540426Z      {
+2026-11-10T10:42:29.9540580Z       "affected_claims": [],
+2026-11-10T10:42:29.9540767Z       "basis_refs": [],
+2026-11-10T10:42:29.9540941Z       "limitations": [],
+2026-11-10T10:42:29.9541113Z       "reasons": [],
+2026-11-10T10:42:29.9541412Z       "status": "not-supplied"
+2026-11-10T10:42:29.9541592Z      }
+2026-11-10T10:42:29.9541737Z     ],
+2026-11-10T10:42:29.9541893Z     "evaluation_context": {
+2026-11-10T10:42:29.9542108Z      "evaluated_at": "2026-11-06T12:02:24Z",
+2026-11-10T10:42:29.9542330Z      "id": "C-scitt-001",
+2026-11-10T10:42:29.9542517Z      "profile_identifiers": [
+2026-11-10T10:42:29.9542753Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1"
+2026-11-10T10:42:29.9543007Z      ],
+2026-11-10T10:42:29.9543355Z      "trust_configuration": "scitt-receipt-boundary-001-trust-1"
+2026-11-10T10:42:29.9543622Z     },
+2026-11-10T10:42:29.9543784Z     "evaluation_gap_entries": [],
+2026-11-10T10:42:29.9543989Z     "evaluation_gaps": [],
+2026-11-10T10:42:29.9544175Z     "evaluation_scope": [
+2026-11-10T10:42:29.9544350Z      {
+2026-11-10T10:42:29.9544509Z       "capability": "authenticity",
+2026-11-10T10:42:29.9544715Z       "status": "evaluated"
+2026-11-10T10:42:29.9544884Z      },
+2026-11-10T10:42:29.9545024Z      {
+2026-11-10T10:42:29.9545186Z       "capability": "boundary-grounding",
+2026-11-10T10:42:29.9545401Z       "status": "evaluated"
+2026-11-10T10:42:29.9545569Z      },
+2026-11-10T10:42:29.9545707Z      {
+2026-11-10T10:42:29.9545863Z       "capability": "carrier-mapping",
+2026-11-10T10:42:29.9546248Z       "status": "evaluated"
+2026-11-10T10:42:29.9546418Z      },
+2026-11-10T10:42:29.9546563Z      {
+2026-11-10T10:42:29.9546778Z       "capability": "composition",
+2026-11-10T10:42:29.9546981Z       "status": "evaluated"
+2026-11-10T10:42:29.9547147Z      },
+2026-11-10T10:42:29.9547287Z      {
+2026-11-10T10:42:29.9547444Z       "capability": "counter-evidence",
+2026-11-10T10:42:29.9547646Z       "status": "evaluated"
+2026-11-10T10:42:29.9547809Z      },
+2026-11-10T10:42:29.9547947Z      {
+2026-11-10T10:42:29.9548108Z       "capability": "execution-support",
+2026-11-10T10:42:29.9548316Z       "status": "evaluated"
+2026-11-10T10:42:29.9548509Z      },
+2026-11-10T10:42:29.9548651Z      {
+2026-11-10T10:42:29.9548846Z       "capability": "independent-verification",
+2026-11-10T10:42:29.9549083Z       "status": "evaluated"
+2026-11-10T10:42:29.9549268Z      },
+2026-11-10T10:42:29.9549410Z      {
+2026-11-10T10:42:29.9549569Z       "capability": "intent-support",
+2026-11-10T10:42:29.9549775Z       "status": "evaluated"
+2026-11-10T10:42:29.9549949Z      },
+2026-11-10T10:42:29.9550092Z      {
+2026-11-10T10:42:29.9550262Z       "capability": "invocation-support",
+2026-11-10T10:42:29.9550482Z       "status": "evaluated"
+2026-11-10T10:42:29.9550650Z      },
+2026-11-10T10:42:29.9550785Z      {
+2026-11-10T10:42:29.9550947Z       "capability": "observation-support",
+2026-11-10T10:42:29.9551161Z       "status": "evaluated"
+2026-11-10T10:42:29.9551327Z      },
+2026-11-10T10:42:29.9551463Z      {
+2026-11-10T10:42:29.9551621Z       "capability": "provenance-support",
+2026-11-10T10:42:29.9551831Z       "status": "evaluated"
+2026-11-10T10:42:29.9551995Z      },
+2026-11-10T10:42:29.9552131Z      {
+2026-11-10T10:42:29.9552301Z       "capability": "target-binding",
+2026-11-10T10:42:29.9552511Z       "status": "evaluated"
+2026-11-10T10:42:29.9552675Z      }
+2026-11-10T10:42:29.9552813Z     ],
+2026-11-10T10:42:29.9552963Z     "fatal_reasons": [],
+2026-11-10T10:42:29.9553156Z     "inherited_limitations": [
+2026-11-10T10:42:29.9553341Z      [
+2026-11-10T10:42:29.9553547Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9553821Z       "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9554023Z      ]
+2026-11-10T10:42:29.9554160Z     ],
+2026-11-10T10:42:29.9554333Z     "maximal_supported_claims": [],
+2026-11-10T10:42:29.9554545Z     "recorder_relations": [],
+2026-11-10T10:42:29.9554745Z     "semantics_version": "wexp-core-2",
+2026-11-10T10:42:29.9554958Z     "substantive_reasons": [
+2026-11-10T10:42:29.9555149Z      "E_BASE_EXCEEDS_BOUNDARY"
+2026-11-10T10:42:29.9555322Z     ],
+2026-11-10T10:42:29.9555471Z     "support_entries": [],
+2026-11-10T10:42:29.9555656Z     "support_relations": [],
+2026-11-10T10:42:29.9555989Z     "supported_claims": [],
+2026-11-10T10:42:29.9556390Z     "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9556646Z     "verdict": "downgrade"
+2026-11-10T10:42:29.9556814Z    }
+2026-11-10T10:42:29.9556956Z   },
+2026-11-10T10:42:29.9557099Z   "b1": {
+2026-11-10T10:42:29.9557263Z    "wexp_check_equals_expected": true,
+2026-11-10T10:42:29.9557469Z    "wexp_check_observed": {
+2026-11-10T10:42:29.9557652Z     "asserted_claim": {
+2026-11-10T10:42:29.9557936Z      "base": "observation",
+2026-11-10T10:42:29.9558115Z      "qualifiers": []
+2026-11-10T10:42:29.9558278Z     },
+2026-11-10T10:42:29.9558436Z     "asserted_claim_supported": true,
+2026-11-10T10:42:29.9558652Z     "boundary_ceiling": "observation",
+2026-11-10T10:42:29.9558870Z     "boundary_grounding": "attributed",
+2026-11-10T10:42:29.9559078Z     "counter_evidence": [
+2026-11-10T10:42:29.9559248Z      {
+2026-11-10T10:42:29.9559396Z       "affected_claims": [],
+2026-11-10T10:42:29.9559579Z       "basis_refs": [],
+2026-11-10T10:42:29.9559753Z       "limitations": [],
+2026-11-10T10:42:29.9559926Z       "reasons": [],
+2026-11-10T10:42:29.9560100Z       "status": "not-supplied"
+2026-11-10T10:42:29.9560276Z      }
+2026-11-10T10:42:29.9560415Z     ],
+2026-11-10T10:42:29.9560561Z     "evaluation_context": {
+2026-11-10T10:42:29.9560763Z      "evaluated_at": "2026-11-06T12:02:24Z",
+2026-11-10T10:42:29.9560978Z      "id": "C-scitt-001",
+2026-11-10T10:42:29.9561162Z      "profile_identifiers": [
+2026-11-10T10:42:29.9561399Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1"
+2026-11-10T10:42:29.9561648Z      ],
+2026-11-10T10:42:29.9561857Z      "trust_configuration": "scitt-receipt-boundary-001-trust-1"
+2026-11-10T10:42:29.9562219Z     },
+2026-11-10T10:42:29.9562379Z     "evaluation_gap_entries": [],
+2026-11-10T10:42:29.9562581Z     "evaluation_gaps": [],
+2026-11-10T10:42:29.9562767Z     "evaluation_scope": [
+2026-11-10T10:42:29.9562945Z      {
+2026-11-10T10:42:29.9563099Z       "capability": "authenticity",
+2026-11-10T10:42:29.9563301Z       "status": "evaluated"
+2026-11-10T10:42:29.9563474Z      },
+2026-11-10T10:42:29.9563611Z      {
+2026-11-10T10:42:29.9563769Z       "capability": "boundary-grounding",
+2026-11-10T10:42:29.9563978Z       "status": "evaluated"
+2026-11-10T10:42:29.9564151Z      },
+2026-11-10T10:42:29.9564289Z      {
+2026-11-10T10:42:29.9564446Z       "capability": "carrier-mapping",
+2026-11-10T10:42:29.9564648Z       "status": "evaluated"
+2026-11-10T10:42:29.9564815Z      },
+2026-11-10T10:42:29.9564965Z      {
+2026-11-10T10:42:29.9565122Z       "capability": "composition",
+2026-11-10T10:42:29.9565320Z       "status": "evaluated"
+2026-11-10T10:42:29.9565490Z      },
+2026-11-10T10:42:29.9565627Z      {
+2026-11-10T10:42:29.9565786Z       "capability": "counter-evidence",
+2026-11-10T10:42:29.9565988Z       "status": "evaluated"
+2026-11-10T10:42:29.9566333Z      },
+2026-11-10T10:42:29.9566471Z      {
+2026-11-10T10:42:29.9566633Z       "capability": "execution-support",
+2026-11-10T10:42:29.9566850Z       "status": "evaluated"
+2026-11-10T10:42:29.9567026Z      },
+2026-11-10T10:42:29.9567159Z      {
+2026-11-10T10:42:29.9567329Z       "capability": "independent-verification",
+2026-11-10T10:42:29.9567551Z       "status": "evaluated"
+2026-11-10T10:42:29.9567718Z      },
+2026-11-10T10:42:29.9567854Z      {
+2026-11-10T10:42:29.9568014Z       "capability": "intent-support",
+2026-11-10T10:42:29.9568211Z       "status": "evaluated"
+2026-11-10T10:42:29.9568376Z      },
+2026-11-10T10:42:29.9568515Z      {
+2026-11-10T10:42:29.9568675Z       "capability": "invocation-support",
+2026-11-10T10:42:29.9568889Z       "status": "evaluated"
+2026-11-10T10:42:29.9569058Z      },
+2026-11-10T10:42:29.9569194Z      {
+2026-11-10T10:42:29.9569356Z       "capability": "observation-support",
+2026-11-10T10:42:29.9569567Z       "status": "evaluated"
+2026-11-10T10:42:29.9569741Z      },
+2026-11-10T10:42:29.9569885Z      {
+2026-11-10T10:42:29.9570042Z       "capability": "provenance-support",
+2026-11-10T10:42:29.9570246Z       "status": "evaluated"
+2026-11-10T10:42:29.9570541Z      },
+2026-11-10T10:42:29.9570680Z      {
+2026-11-10T10:42:29.9570836Z       "capability": "target-binding",
+2026-11-10T10:42:29.9571040Z       "status": "evaluated"
+2026-11-10T10:42:29.9571204Z      }
+2026-11-10T10:42:29.9571339Z     ],
+2026-11-10T10:42:29.9571482Z     "fatal_reasons": [],
+2026-11-10T10:42:29.9571665Z     "inherited_limitations": [
+2026-11-10T10:42:29.9571846Z      [
+2026-11-10T10:42:29.9572050Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9572409Z       "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9572609Z      ]
+2026-11-10T10:42:29.9572749Z     ],
+2026-11-10T10:42:29.9572905Z     "maximal_supported_claims": [
+2026-11-10T10:42:29.9573096Z      {
+2026-11-10T10:42:29.9573254Z       "base": "observation",
+2026-11-10T10:42:29.9573446Z       "qualifiers": []
+2026-11-10T10:42:29.9573610Z      }
+2026-11-10T10:42:29.9573755Z     ],
+2026-11-10T10:42:29.9573910Z     "recorder_relations": [],
+2026-11-10T10:42:29.9574117Z     "semantics_version": "wexp-core-2",
+2026-11-10T10:42:29.9574335Z     "substantive_reasons": [],
+2026-11-10T10:42:29.9574526Z     "support_entries": [
+2026-11-10T10:42:29.9574703Z      {
+2026-11-10T10:42:29.9574855Z       "basis_refs": [
+2026-11-10T10:42:29.9575026Z        [
+2026-11-10T10:42:29.9575231Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9575489Z         "observer-1"
+2026-11-10T10:42:29.9575653Z        ],
+2026-11-10T10:42:29.9575794Z        [
+2026-11-10T10:42:29.9575996Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9576467Z         "receipt-510a7148"
+2026-11-10T10:42:29.9576644Z        ]
+2026-11-10T10:42:29.9576781Z       ],
+2026-11-10T10:42:29.9576924Z       "claim": {
+2026-11-10T10:42:29.9577092Z        "base": "observation",
+2026-11-10T10:42:29.9577289Z        "qualifiers": []
+2026-11-10T10:42:29.9577456Z       },
+2026-11-10T10:42:29.9577601Z       "limitations": [
+2026-11-10T10:42:29.9577759Z        [
+2026-11-10T10:42:29.9577966Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9578227Z         "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9578425Z        ]
+2026-11-10T10:42:29.9578562Z       ]
+2026-11-10T10:42:29.9578701Z      }
+2026-11-10T10:42:29.9578839Z     ],
+2026-11-10T10:42:29.9578996Z     "support_relations": [
+2026-11-10T10:42:29.9579164Z      {
+2026-11-10T10:42:29.9579322Z       "relation": "equal",
+2026-11-10T10:42:29.9579500Z       "supported_claim": {
+2026-11-10T10:42:29.9579680Z        "base": "observation",
+2026-11-10T10:42:29.9579866Z        "qualifiers": []
+2026-11-10T10:42:29.9580031Z       }
+2026-11-10T10:42:29.9580173Z      }
+2026-11-10T10:42:29.9580309Z     ],
+2026-11-10T10:42:29.9580453Z     "supported_claims": [
+2026-11-10T10:42:29.9580624Z      {
+2026-11-10T10:42:29.9580774Z       "base": "observation",
+2026-11-10T10:42:29.9580956Z       "qualifiers": []
+2026-11-10T10:42:29.9581116Z      }
+2026-11-10T10:42:29.9581259Z     ],
+2026-11-10T10:42:29.9581450Z     "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9581692Z     "verdict": "accept"
+2026-11-10T10:42:29.9581852Z    },
+2026-11-10T10:42:29.9582015Z    "wexp_ref_equals_expected": true,
+2026-11-10T10:42:29.9582223Z    "wexp_ref_observed": {
+2026-11-10T10:42:29.9582401Z     "asserted_claim": {
+2026-11-10T10:42:29.9582572Z      "base": "observation",
+2026-11-10T10:42:29.9582756Z      "qualifiers": []
+2026-11-10T10:42:29.9582919Z     },
+2026-11-10T10:42:29.9583081Z     "asserted_claim_supported": true,
+2026-11-10T10:42:29.9583301Z     "boundary_ceiling": "observation",
+2026-11-10T10:42:29.9583510Z     "boundary_grounding": "attributed",
+2026-11-10T10:42:29.9583717Z     "counter_evidence": [
+2026-11-10T10:42:29.9583885Z      {
+2026-11-10T10:42:29.9584038Z       "affected_claims": [],
+2026-11-10T10:42:29.9584220Z       "basis_refs": [],
+2026-11-10T10:42:29.9584388Z       "limitations": [],
+2026-11-10T10:42:29.9584560Z       "reasons": [],
+2026-11-10T10:42:29.9584728Z       "status": "not-supplied"
+2026-11-10T10:42:29.9585116Z      }
+2026-11-10T10:42:29.9585256Z     ],
+2026-11-10T10:42:29.9585414Z     "evaluation_context": {
+2026-11-10T10:42:29.9585608Z      "evaluated_at": "2026-11-06T12:02:24Z",
+2026-11-10T10:42:29.9585816Z      "id": "C-scitt-001",
+2026-11-10T10:42:29.9585999Z      "profile_identifiers": [
+2026-11-10T10:42:29.9586390Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1"
+2026-11-10T10:42:29.9586637Z      ],
+2026-11-10T10:42:29.9586950Z      "trust_configuration": "scitt-receipt-boundary-001-trust-1"
+2026-11-10T10:42:29.9587214Z     },
+2026-11-10T10:42:29.9587374Z     "evaluation_gap_entries": [],
+2026-11-10T10:42:29.9587573Z     "evaluation_gaps": [],
+2026-11-10T10:42:29.9587765Z     "evaluation_scope": [
+2026-11-10T10:42:29.9587934Z      {
+2026-11-10T10:42:29.9588095Z       "capability": "authenticity",
+2026-11-10T10:42:29.9588297Z       "status": "evaluated"
+2026-11-10T10:42:29.9588467Z      },
+2026-11-10T10:42:29.9588606Z      {
+2026-11-10T10:42:29.9588778Z       "capability": "boundary-grounding",
+2026-11-10T10:42:29.9588988Z       "status": "evaluated"
+2026-11-10T10:42:29.9589154Z      },
+2026-11-10T10:42:29.9589291Z      {
+2026-11-10T10:42:29.9589447Z       "capability": "carrier-mapping",
+2026-11-10T10:42:29.9589657Z       "status": "evaluated"
+2026-11-10T10:42:29.9589825Z      },
+2026-11-10T10:42:29.9589961Z      {
+2026-11-10T10:42:29.9590113Z       "capability": "composition",
+2026-11-10T10:42:29.9590312Z       "status": "evaluated"
+2026-11-10T10:42:29.9590481Z      },
+2026-11-10T10:42:29.9590641Z      {
+2026-11-10T10:42:29.9590796Z       "capability": "counter-evidence",
+2026-11-10T10:42:29.9591003Z       "status": "evaluated"
+2026-11-10T10:42:29.9591172Z      },
+2026-11-10T10:42:29.9591312Z      {
+2026-11-10T10:42:29.9591470Z       "capability": "execution-support",
+2026-11-10T10:42:29.9591684Z       "status": "evaluated"
+2026-11-10T10:42:29.9591849Z      },
+2026-11-10T10:42:29.9591986Z      {
+2026-11-10T10:42:29.9592161Z       "capability": "independent-verification",
+2026-11-10T10:42:29.9592392Z       "status": "evaluated"
+2026-11-10T10:42:29.9592568Z      },
+2026-11-10T10:42:29.9592702Z      {
+2026-11-10T10:42:29.9592864Z       "capability": "intent-support",
+2026-11-10T10:42:29.9593071Z       "status": "evaluated"
+2026-11-10T10:42:29.9593240Z      },
+2026-11-10T10:42:29.9593379Z      {
+2026-11-10T10:42:29.9593548Z       "capability": "invocation-support",
+2026-11-10T10:42:29.9593755Z       "status": "evaluated"
+2026-11-10T10:42:29.9593926Z      },
+2026-11-10T10:42:29.9594066Z      {
+2026-11-10T10:42:29.9594230Z       "capability": "observation-support",
+2026-11-10T10:42:29.9594441Z       "status": "evaluated"
+2026-11-10T10:42:29.9594609Z      },
+2026-11-10T10:42:29.9594744Z      {
+2026-11-10T10:42:29.9594905Z       "capability": "provenance-support",
+2026-11-10T10:42:29.9595112Z       "status": "evaluated"
+2026-11-10T10:42:29.9595280Z      },
+2026-11-10T10:42:29.9595428Z      {
+2026-11-10T10:42:29.9595583Z       "capability": "target-binding",
+2026-11-10T10:42:29.9595786Z       "status": "evaluated"
+2026-11-10T10:42:29.9595951Z      }
+2026-11-10T10:42:29.9596233Z     ],
+2026-11-10T10:42:29.9596387Z     "fatal_reasons": [],
+2026-11-10T10:42:29.9596580Z     "inherited_limitations": [
+2026-11-10T10:42:29.9596762Z      [
+2026-11-10T10:42:29.9596965Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9597238Z       "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9597437Z      ]
+2026-11-10T10:42:29.9597572Z     ],
+2026-11-10T10:42:29.9597739Z     "maximal_supported_claims": [
+2026-11-10T10:42:29.9597928Z      {
+2026-11-10T10:42:29.9598076Z       "base": "observation",
+2026-11-10T10:42:29.9598259Z       "qualifiers": []
+2026-11-10T10:42:29.9598423Z      }
+2026-11-10T10:42:29.9598562Z     ],
+2026-11-10T10:42:29.9598710Z     "recorder_relations": [],
+2026-11-10T10:42:29.9598910Z     "semantics_version": "wexp-core-2",
+2026-11-10T10:42:29.9599126Z     "substantive_reasons": [],
+2026-11-10T10:42:29.9599316Z     "support_entries": [
+2026-11-10T10:42:29.9599754Z      {
+2026-11-10T10:42:29.9599908Z       "basis_refs": [
+2026-11-10T10:42:29.9600074Z        [
+2026-11-10T10:42:29.9600279Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9600537Z         "observer-1"
+2026-11-10T10:42:29.9600702Z        ],
+2026-11-10T10:42:29.9600845Z        [
+2026-11-10T10:42:29.9601040Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9601291Z         "receipt-510a7148"
+2026-11-10T10:42:29.9601557Z        ]
+2026-11-10T10:42:29.9601701Z       ],
+2026-11-10T10:42:29.9601845Z       "claim": {
+2026-11-10T10:42:29.9602016Z        "base": "observation",
+2026-11-10T10:42:29.9602194Z        "qualifiers": []
+2026-11-10T10:42:29.9602356Z       },
+2026-11-10T10:42:29.9602502Z       "limitations": [
+2026-11-10T10:42:29.9602662Z        [
+2026-11-10T10:42:29.9602855Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9603113Z         "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9603317Z        ]
+2026-11-10T10:42:29.9603459Z       ]
+2026-11-10T10:42:29.9603598Z      }
+2026-11-10T10:42:29.9603737Z     ],
+2026-11-10T10:42:29.9603895Z     "support_relations": [
+2026-11-10T10:42:29.9604067Z      {
+2026-11-10T10:42:29.9604213Z       "relation": "equal",
+2026-11-10T10:42:29.9604392Z       "supported_claim": {
+2026-11-10T10:42:29.9604569Z        "base": "observation",
+2026-11-10T10:42:29.9604751Z        "qualifiers": []
+2026-11-10T10:42:29.9604912Z       }
+2026-11-10T10:42:29.9605048Z      }
+2026-11-10T10:42:29.9605184Z     ],
+2026-11-10T10:42:29.9605330Z     "supported_claims": [
+2026-11-10T10:42:29.9605499Z      {
+2026-11-10T10:42:29.9605650Z       "base": "observation",
+2026-11-10T10:42:29.9605840Z       "qualifiers": []
+2026-11-10T10:42:29.9606000Z      }
+2026-11-10T10:42:29.9606298Z     ],
+2026-11-10T10:42:29.9606490Z     "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9606732Z     "verdict": "accept"
+2026-11-10T10:42:29.9606907Z    }
+2026-11-10T10:42:29.9607050Z   },
+2026-11-10T10:42:29.9607189Z   "b2": {
+2026-11-10T10:42:29.9607351Z    "wexp_check_equals_expected": true,
+2026-11-10T10:42:29.9607562Z    "wexp_check_observed": {
+2026-11-10T10:42:29.9607743Z     "asserted_claim": {
+2026-11-10T10:42:29.9607923Z      "base": "observation",
+2026-11-10T10:42:29.9608099Z      "qualifiers": []
+2026-11-10T10:42:29.9608261Z     },
+2026-11-10T10:42:29.9608414Z     "asserted_claim_supported": false,
+2026-11-10T10:42:29.9608628Z     "boundary_ceiling": "observation",
+2026-11-10T10:42:29.9608838Z     "boundary_grounding": "attributed",
+2026-11-10T10:42:29.9625254Z     "counter_evidence": [
+2026-11-10T10:42:29.9625470Z      {
+2026-11-10T10:42:29.9625644Z       "affected_claims": [],
+2026-11-10T10:42:29.9625845Z       "basis_refs": [],
+2026-11-10T10:42:29.9626178Z       "limitations": [],
+2026-11-10T10:42:29.9626379Z       "reasons": [],
+2026-11-10T10:42:29.9626574Z       "status": "not-supplied"
+2026-11-10T10:42:29.9626766Z      }
+2026-11-10T10:42:29.9626917Z     ],
+2026-11-10T10:42:29.9627066Z     "evaluation_context": {
+2026-11-10T10:42:29.9627263Z      "evaluated_at": "2026-11-06T12:02:24Z",
+2026-11-10T10:42:29.9627486Z      "id": "C-scitt-001",
+2026-11-10T10:42:29.9627677Z      "profile_identifiers": [
+2026-11-10T10:42:29.9627926Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1"
+2026-11-10T10:42:29.9628193Z      ],
+2026-11-10T10:42:29.9628411Z      "trust_configuration": "scitt-receipt-boundary-001-trust-1"
+2026-11-10T10:42:29.9628666Z     },
+2026-11-10T10:42:29.9628836Z     "evaluation_gap_entries": [],
+2026-11-10T10:42:29.9629042Z     "evaluation_gaps": [],
+2026-11-10T10:42:29.9629235Z     "evaluation_scope": [
+2026-11-10T10:42:29.9629408Z      {
+2026-11-10T10:42:29.9629570Z       "capability": "authenticity",
+2026-11-10T10:42:29.9629777Z       "status": "evaluated"
+2026-11-10T10:42:29.9629957Z      },
+2026-11-10T10:42:29.9630095Z      {
+2026-11-10T10:42:29.9630258Z       "capability": "boundary-grounding",
+2026-11-10T10:42:29.9630641Z       "status": "evaluated"
+2026-11-10T10:42:29.9630818Z      },
+2026-11-10T10:42:29.9630955Z      {
+2026-11-10T10:42:29.9631113Z       "capability": "carrier-mapping",
+2026-11-10T10:42:29.9631315Z       "status": "evaluated"
+2026-11-10T10:42:29.9631475Z      },
+2026-11-10T10:42:29.9631611Z      {
+2026-11-10T10:42:29.9631759Z       "capability": "composition",
+2026-11-10T10:42:29.9631952Z       "status": "evaluated"
+2026-11-10T10:42:29.9632114Z      },
+2026-11-10T10:42:29.9632250Z      {
+2026-11-10T10:42:29.9632503Z       "capability": "counter-evidence",
+2026-11-10T10:42:29.9632718Z       "status": "evaluated"
+2026-11-10T10:42:29.9632888Z      },
+2026-11-10T10:42:29.9633034Z      {
+2026-11-10T10:42:29.9633196Z       "capability": "execution-support",
+2026-11-10T10:42:29.9633404Z       "status": "evaluated"
+2026-11-10T10:42:29.9633573Z      },
+2026-11-10T10:42:29.9633711Z      {
+2026-11-10T10:42:29.9633886Z       "capability": "independent-verification",
+2026-11-10T10:42:29.9634117Z       "status": "evaluated"
+2026-11-10T10:42:29.9634292Z      },
+2026-11-10T10:42:29.9634432Z      {
+2026-11-10T10:42:29.9634590Z       "capability": "intent-support",
+2026-11-10T10:42:29.9634793Z       "status": "evaluated"
+2026-11-10T10:42:29.9634964Z      },
+2026-11-10T10:42:29.9635100Z      {
+2026-11-10T10:42:29.9635257Z       "capability": "invocation-support",
+2026-11-10T10:42:29.9635464Z       "status": "evaluated"
+2026-11-10T10:42:29.9635634Z      },
+2026-11-10T10:42:29.9635772Z      {
+2026-11-10T10:42:29.9635931Z       "capability": "observation-support",
+2026-11-10T10:42:29.9636296Z       "status": "evaluated"
+2026-11-10T10:42:29.9636469Z      },
+2026-11-10T10:42:29.9636607Z      {
+2026-11-10T10:42:29.9636769Z       "capability": "provenance-support",
+2026-11-10T10:42:29.9636983Z       "status": "evaluated"
+2026-11-10T10:42:29.9637149Z      },
+2026-11-10T10:42:29.9637284Z      {
+2026-11-10T10:42:29.9637437Z       "capability": "target-binding",
+2026-11-10T10:42:29.9637637Z       "status": "evaluated"
+2026-11-10T10:42:29.9637809Z      }
+2026-11-10T10:42:29.9637943Z     ],
+2026-11-10T10:42:29.9638089Z     "fatal_reasons": [],
+2026-11-10T10:42:29.9638281Z     "inherited_limitations": [
+2026-11-10T10:42:29.9638467Z      [
+2026-11-10T10:42:29.9638672Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9638957Z       "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9639160Z      ]
+2026-11-10T10:42:29.9639299Z     ],
+2026-11-10T10:42:29.9639454Z     "maximal_supported_claims": [],
+2026-11-10T10:42:29.9639662Z     "recorder_relations": [],
+2026-11-10T10:42:29.9639867Z     "semantics_version": "wexp-core-2",
+2026-11-10T10:42:29.9640081Z     "substantive_reasons": [
+2026-11-10T10:42:29.9640281Z      "E_MISSING_REQUIRED_EVIDENCE"
+2026-11-10T10:42:29.9640470Z     ],
+2026-11-10T10:42:29.9640619Z     "support_entries": [],
+2026-11-10T10:42:29.9640805Z     "support_relations": [],
+2026-11-10T10:42:29.9641000Z     "supported_claims": [],
+2026-11-10T10:42:29.9641225Z     "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9641479Z     "verdict": "downgrade"
+2026-11-10T10:42:29.9641649Z    },
+2026-11-10T10:42:29.9641811Z    "wexp_ref_equals_expected": true,
+2026-11-10T10:42:29.9642018Z    "wexp_ref_observed": {
+2026-11-10T10:42:29.9642200Z     "asserted_claim": {
+2026-11-10T10:42:29.9642379Z      "base": "observation",
+2026-11-10T10:42:29.9642557Z      "qualifiers": []
+2026-11-10T10:42:29.9642719Z     },
+2026-11-10T10:42:29.9642878Z     "asserted_claim_supported": false,
+2026-11-10T10:42:29.9643103Z     "boundary_ceiling": "observation",
+2026-11-10T10:42:29.9643310Z     "boundary_grounding": "attributed",
+2026-11-10T10:42:29.9643514Z     "counter_evidence": [
+2026-11-10T10:42:29.9643682Z      {
+2026-11-10T10:42:29.9643834Z       "affected_claims": [],
+2026-11-10T10:42:29.9644019Z       "basis_refs": [],
+2026-11-10T10:42:29.9644195Z       "limitations": [],
+2026-11-10T10:42:29.9644367Z       "reasons": [],
+2026-11-10T10:42:29.9644544Z       "status": "not-supplied"
+2026-11-10T10:42:29.9644896Z      }
+2026-11-10T10:42:29.9645034Z     ],
+2026-11-10T10:42:29.9645192Z     "evaluation_context": {
+2026-11-10T10:42:29.9645395Z      "evaluated_at": "2026-11-06T12:02:24Z",
+2026-11-10T10:42:29.9645605Z      "id": "C-scitt-001",
+2026-11-10T10:42:29.9645787Z      "profile_identifiers": [
+2026-11-10T10:42:29.9646148Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1"
+2026-11-10T10:42:29.9646442Z      ],
+2026-11-10T10:42:29.9646653Z      "trust_configuration": "scitt-receipt-boundary-001-trust-1"
+2026-11-10T10:42:29.9647007Z     },
+2026-11-10T10:42:29.9647162Z     "evaluation_gap_entries": [],
+2026-11-10T10:42:29.9647363Z     "evaluation_gaps": [],
+2026-11-10T10:42:29.9647549Z     "evaluation_scope": [
+2026-11-10T10:42:29.9647732Z      {
+2026-11-10T10:42:29.9647890Z       "capability": "authenticity",
+2026-11-10T10:42:29.9648088Z       "status": "evaluated"
+2026-11-10T10:42:29.9648257Z      },
+2026-11-10T10:42:29.9648396Z      {
+2026-11-10T10:42:29.9648558Z       "capability": "boundary-grounding",
+2026-11-10T10:42:29.9648770Z       "status": "evaluated"
+2026-11-10T10:42:29.9648934Z      },
+2026-11-10T10:42:29.9649072Z      {
+2026-11-10T10:42:29.9649224Z       "capability": "carrier-mapping",
+2026-11-10T10:42:29.9649427Z       "status": "evaluated"
+2026-11-10T10:42:29.9649601Z      },
+2026-11-10T10:42:29.9649736Z      {
+2026-11-10T10:42:29.9649889Z       "capability": "composition",
+2026-11-10T10:42:29.9650081Z       "status": "evaluated"
+2026-11-10T10:42:29.9650258Z      },
+2026-11-10T10:42:29.9650395Z      {
+2026-11-10T10:42:29.9650552Z       "capability": "counter-evidence",
+2026-11-10T10:42:29.9650751Z       "status": "evaluated"
+2026-11-10T10:42:29.9650919Z      },
+2026-11-10T10:42:29.9651057Z      {
+2026-11-10T10:42:29.9651214Z       "capability": "execution-support",
+2026-11-10T10:42:29.9651420Z       "status": "evaluated"
+2026-11-10T10:42:29.9651599Z      },
+2026-11-10T10:42:29.9651744Z      {
+2026-11-10T10:42:29.9651919Z       "capability": "independent-verification",
+2026-11-10T10:42:29.9652145Z       "status": "evaluated"
+2026-11-10T10:42:29.9652316Z      },
+2026-11-10T10:42:29.9652455Z      {
+2026-11-10T10:42:29.9652612Z       "capability": "intent-support",
+2026-11-10T10:42:29.9652812Z       "status": "evaluated"
+2026-11-10T10:42:29.9652979Z      },
+2026-11-10T10:42:29.9653120Z      {
+2026-11-10T10:42:29.9653283Z       "capability": "invocation-support",
+2026-11-10T10:42:29.9653493Z       "status": "evaluated"
+2026-11-10T10:42:29.9653660Z      },
+2026-11-10T10:42:29.9653796Z      {
+2026-11-10T10:42:29.9653961Z       "capability": "observation-support",
+2026-11-10T10:42:29.9654176Z       "status": "evaluated"
+2026-11-10T10:42:29.9654341Z      },
+2026-11-10T10:42:29.9654475Z      {
+2026-11-10T10:42:29.9654634Z       "capability": "provenance-support",
+2026-11-10T10:42:29.9654837Z       "status": "evaluated"
+2026-11-10T10:42:29.9655002Z      },
+2026-11-10T10:42:29.9655151Z      {
+2026-11-10T10:42:29.9655313Z       "capability": "target-binding",
+2026-11-10T10:42:29.9655522Z       "status": "evaluated"
+2026-11-10T10:42:29.9655702Z      }
+2026-11-10T10:42:29.9655843Z     ],
+2026-11-10T10:42:29.9655997Z     "fatal_reasons": [],
+2026-11-10T10:42:29.9656428Z     "inherited_limitations": [
+2026-11-10T10:42:29.9656615Z      [
+2026-11-10T10:42:29.9656819Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9657095Z       "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9657296Z      ]
+2026-11-10T10:42:29.9657439Z     ],
+2026-11-10T10:42:29.9657599Z     "maximal_supported_claims": [],
+2026-11-10T10:42:29.9657807Z     "recorder_relations": [],
+2026-11-10T10:42:29.9658012Z     "semantics_version": "wexp-core-2",
+2026-11-10T10:42:29.9658223Z     "substantive_reasons": [
+2026-11-10T10:42:29.9658424Z      "E_MISSING_REQUIRED_EVIDENCE"
+2026-11-10T10:42:29.9658611Z     ],
+2026-11-10T10:42:29.9658758Z     "support_entries": [],
+2026-11-10T10:42:29.9658947Z     "support_relations": [],
+2026-11-10T10:42:29.9659132Z     "supported_claims": [],
+2026-11-10T10:42:29.9659361Z     "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9659741Z     "verdict": "downgrade"
+2026-11-10T10:42:29.9659912Z    }
+2026-11-10T10:42:29.9660047Z   },
+2026-11-10T10:42:29.9660184Z   "c": {
+2026-11-10T10:42:29.9660348Z    "wexp_check_equals_expected": true,
+2026-11-10T10:42:29.9660562Z    "wexp_check_observed": {
+2026-11-10T10:42:29.9660745Z     "asserted_claim": {
+2026-11-10T10:42:29.9660921Z      "base": "observation",
+2026-11-10T10:42:29.9661099Z      "qualifiers": []
+2026-11-10T10:42:29.9661348Z     },
+2026-11-10T10:42:29.9661508Z     "asserted_claim_supported": false,
+2026-11-10T10:42:29.9661719Z     "boundary_ceiling": null,
+2026-11-10T10:42:29.9661920Z     "boundary_grounding": "not-evaluated",
+2026-11-10T10:42:29.9662134Z     "counter_evidence": [
+2026-11-10T10:42:29.9662300Z      {
+2026-11-10T10:42:29.9662447Z       "affected_claims": [],
+2026-11-10T10:42:29.9662632Z       "basis_refs": [],
+2026-11-10T10:42:29.9662803Z       "limitations": [],
+2026-11-10T10:42:29.9662978Z       "reasons": [],
+2026-11-10T10:42:29.9663156Z       "status": "not-supplied"
+2026-11-10T10:42:29.9663331Z      }
+2026-11-10T10:42:29.9663471Z     ],
+2026-11-10T10:42:29.9663621Z     "evaluation_context": {
+2026-11-10T10:42:29.9663819Z      "evaluated_at": "2026-11-06T12:02:24Z",
+2026-11-10T10:42:29.9664027Z      "id": "C-scitt-001",
+2026-11-10T10:42:29.9664203Z      "profile_identifiers": [
+2026-11-10T10:42:29.9664439Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1"
+2026-11-10T10:42:29.9664687Z      ],
+2026-11-10T10:42:29.9664904Z      "trust_configuration": "scitt-receipt-boundary-001-trust-1"
+2026-11-10T10:42:29.9665155Z     },
+2026-11-10T10:42:29.9665311Z     "evaluation_gap_entries": [
+2026-11-10T10:42:29.9665492Z      {
+2026-11-10T10:42:29.9665637Z       "affected_claims": [
+2026-11-10T10:42:29.9665815Z        {
+2026-11-10T10:42:29.9665965Z         "base": "observation",
+2026-11-10T10:42:29.9666291Z         "qualifiers": []
+2026-11-10T10:42:29.9666458Z        }
+2026-11-10T10:42:29.9666598Z       ],
+2026-11-10T10:42:29.9666749Z       "basis_refs": [
+2026-11-10T10:42:29.9666908Z        [
+2026-11-10T10:42:29.9667109Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9667367Z         "receipt-510a7148"
+2026-11-10T10:42:29.9667535Z        ]
+2026-11-10T10:42:29.9667673Z       ],
+2026-11-10T10:42:29.9667839Z       "evaluation_context_ref": "C-scitt-001",
+2026-11-10T10:42:29.9668065Z       "limitations": [
+2026-11-10T10:42:29.9668228Z        [
+2026-11-10T10:42:29.9668425Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9668688Z         "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9668892Z        ]
+2026-11-10T10:42:29.9669036Z       ],
+2026-11-10T10:42:29.9669221Z       "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9669475Z       "token": "E_BOUNDARY_NOT_EVALUATED"
+2026-11-10T10:42:29.9669679Z      }
+2026-11-10T10:42:29.9669816Z     ],
+2026-11-10T10:42:29.9669971Z     "evaluation_gaps": [
+2026-11-10T10:42:29.9670152Z      "E_BOUNDARY_NOT_EVALUATED"
+2026-11-10T10:42:29.9670330Z     ],
+2026-11-10T10:42:29.9670478Z     "evaluation_scope": [
+2026-11-10T10:42:29.9670645Z      {
+2026-11-10T10:42:29.9670798Z       "capability": "authenticity",
+2026-11-10T10:42:29.9671000Z       "status": "evaluated"
+2026-11-10T10:42:29.9671173Z      },
+2026-11-10T10:42:29.9671316Z      {
+2026-11-10T10:42:29.9671473Z       "capability": "boundary-grounding",
+2026-11-10T10:42:29.9671683Z       "status": "not-evaluated"
+2026-11-10T10:42:29.9671863Z      },
+2026-11-10T10:42:29.9672005Z      {
+2026-11-10T10:42:29.9672157Z       "capability": "carrier-mapping",
+2026-11-10T10:42:29.9672359Z       "status": "evaluated"
+2026-11-10T10:42:29.9672527Z      },
+2026-11-10T10:42:29.9672662Z      {
+2026-11-10T10:42:29.9672813Z       "capability": "composition",
+2026-11-10T10:42:29.9673006Z       "status": "evaluated"
+2026-11-10T10:42:29.9673170Z      },
+2026-11-10T10:42:29.9673305Z      {
+2026-11-10T10:42:29.9673462Z       "capability": "counter-evidence",
+2026-11-10T10:42:29.9673782Z       "status": "evaluated"
+2026-11-10T10:42:29.9673955Z      },
+2026-11-10T10:42:29.9674088Z      {
+2026-11-10T10:42:29.9674247Z       "capability": "execution-support",
+2026-11-10T10:42:29.9674452Z       "status": "evaluated"
+2026-11-10T10:42:29.9674620Z      },
+2026-11-10T10:42:29.9674759Z      {
+2026-11-10T10:42:29.9674937Z       "capability": "independent-verification",
+2026-11-10T10:42:29.9675160Z       "status": "evaluated"
+2026-11-10T10:42:29.9675329Z      },
+2026-11-10T10:42:29.9675565Z      {
+2026-11-10T10:42:29.9675726Z       "capability": "intent-support",
+2026-11-10T10:42:29.9675932Z       "status": "evaluated"
+2026-11-10T10:42:29.9676230Z      },
+2026-11-10T10:42:29.9676366Z      {
+2026-11-10T10:42:29.9676526Z       "capability": "invocation-support",
+2026-11-10T10:42:29.9676736Z       "status": "evaluated"
+2026-11-10T10:42:29.9676902Z      },
+2026-11-10T10:42:29.9677038Z      {
+2026-11-10T10:42:29.9677197Z       "capability": "observation-support",
+2026-11-10T10:42:29.9677412Z       "status": "evaluated"
+2026-11-10T10:42:29.9677582Z      },
+2026-11-10T10:42:29.9677716Z      {
+2026-11-10T10:42:29.9677881Z       "capability": "provenance-support",
+2026-11-10T10:42:29.9678090Z       "status": "evaluated"
+2026-11-10T10:42:29.9678256Z      },
+2026-11-10T10:42:29.9678389Z      {
+2026-11-10T10:42:29.9678549Z       "capability": "target-binding",
+2026-11-10T10:42:29.9678747Z       "status": "evaluated"
+2026-11-10T10:42:29.9678913Z      }
+2026-11-10T10:42:29.9679051Z     ],
+2026-11-10T10:42:29.9679198Z     "fatal_reasons": [],
+2026-11-10T10:42:29.9679379Z     "inherited_limitations": [
+2026-11-10T10:42:29.9679560Z      [
+2026-11-10T10:42:29.9679760Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9680033Z       "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9680238Z      ]
+2026-11-10T10:42:29.9680384Z     ],
+2026-11-10T10:42:29.9680535Z     "maximal_supported_claims": [],
+2026-11-10T10:42:29.9680742Z     "recorder_relations": [],
+2026-11-10T10:42:29.9680945Z     "semantics_version": "wexp-core-2",
+2026-11-10T10:42:29.9681150Z     "substantive_reasons": [],
+2026-11-10T10:42:29.9681337Z     "support_entries": [],
+2026-11-10T10:42:29.9681523Z     "support_relations": [],
+2026-11-10T10:42:29.9681707Z     "supported_claims": [],
+2026-11-10T10:42:29.9681923Z     "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9682168Z     "verdict": "downgrade"
+2026-11-10T10:42:29.9682336Z    },
+2026-11-10T10:42:29.9682495Z    "wexp_ref_equals_expected": true,
+2026-11-10T10:42:29.9682701Z    "wexp_ref_observed": {
+2026-11-10T10:42:29.9682881Z     "asserted_claim": {
+2026-11-10T10:42:29.9683056Z      "base": "observation",
+2026-11-10T10:42:29.9683230Z      "qualifiers": []
+2026-11-10T10:42:29.9683389Z     },
+2026-11-10T10:42:29.9683542Z     "asserted_claim_supported": false,
+2026-11-10T10:42:29.9683744Z     "boundary_ceiling": null,
+2026-11-10T10:42:29.9683940Z     "boundary_grounding": "not-evaluated",
+2026-11-10T10:42:29.9684157Z     "counter_evidence": [
+2026-11-10T10:42:29.9684320Z      {
+2026-11-10T10:42:29.9684466Z       "affected_claims": [],
+2026-11-10T10:42:29.9684652Z       "basis_refs": [],
+2026-11-10T10:42:29.9684823Z       "limitations": [],
+2026-11-10T10:42:29.9684997Z       "reasons": [],
+2026-11-10T10:42:29.9685176Z       "status": "not-supplied"
+2026-11-10T10:42:29.9685349Z      }
+2026-11-10T10:42:29.9685484Z     ],
+2026-11-10T10:42:29.9685625Z     "evaluation_context": {
+2026-11-10T10:42:29.9685822Z      "evaluated_at": "2026-11-06T12:02:24Z",
+2026-11-10T10:42:29.9686173Z      "id": "C-scitt-001",
+2026-11-10T10:42:29.9686373Z      "profile_identifiers": [
+2026-11-10T10:42:29.9686623Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1"
+2026-11-10T10:42:29.9686868Z      ],
+2026-11-10T10:42:29.9687079Z      "trust_configuration": "scitt-receipt-boundary-001-trust-1"
+2026-11-10T10:42:29.9687340Z     },
+2026-11-10T10:42:29.9687492Z     "evaluation_gap_entries": [
+2026-11-10T10:42:29.9687675Z      {
+2026-11-10T10:42:29.9687945Z       "affected_claims": [
+2026-11-10T10:42:29.9688115Z        {
+2026-11-10T10:42:29.9688269Z         "base": "observation",
+2026-11-10T10:42:29.9688457Z         "qualifiers": []
+2026-11-10T10:42:29.9688624Z        }
+2026-11-10T10:42:29.9688763Z       ],
+2026-11-10T10:42:29.9688908Z       "basis_refs": [
+2026-11-10T10:42:29.9689066Z        [
+2026-11-10T10:42:29.9689271Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9689533Z         "receipt-510a7148"
+2026-11-10T10:42:29.9689792Z        ]
+2026-11-10T10:42:29.9689935Z       ],
+2026-11-10T10:42:29.9690105Z       "evaluation_context_ref": "C-scitt-001",
+2026-11-10T10:42:29.9690325Z       "limitations": [
+2026-11-10T10:42:29.9690498Z        [
+2026-11-10T10:42:29.9690697Z         "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9690963Z         "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9691164Z        ]
+2026-11-10T10:42:29.9691303Z       ],
+2026-11-10T10:42:29.9691498Z       "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9691754Z       "token": "E_BOUNDARY_NOT_EVALUATED"
+2026-11-10T10:42:29.9691950Z      }
+2026-11-10T10:42:29.9692089Z     ],
+2026-11-10T10:42:29.9692237Z     "evaluation_gaps": [
+2026-11-10T10:42:29.9692416Z      "E_BOUNDARY_NOT_EVALUATED"
+2026-11-10T10:42:29.9692596Z     ],
+2026-11-10T10:42:29.9692742Z     "evaluation_scope": [
+2026-11-10T10:42:29.9692913Z      {
+2026-11-10T10:42:29.9693065Z       "capability": "authenticity",
+2026-11-10T10:42:29.9693275Z       "status": "evaluated"
+2026-11-10T10:42:29.9693448Z      },
+2026-11-10T10:42:29.9693586Z      {
+2026-11-10T10:42:29.9693746Z       "capability": "boundary-grounding",
+2026-11-10T10:42:29.9693957Z       "status": "not-evaluated"
+2026-11-10T10:42:29.9694131Z      },
+2026-11-10T10:42:29.9694267Z      {
+2026-11-10T10:42:29.9694427Z       "capability": "carrier-mapping",
+2026-11-10T10:42:29.9694629Z       "status": "evaluated"
+2026-11-10T10:42:29.9694794Z      },
+2026-11-10T10:42:29.9694934Z      {
+2026-11-10T10:42:29.9695090Z       "capability": "composition",
+2026-11-10T10:42:29.9695285Z       "status": "evaluated"
+2026-11-10T10:42:29.9695451Z      },
+2026-11-10T10:42:29.9695590Z      {
+2026-11-10T10:42:29.9695747Z       "capability": "counter-evidence",
+2026-11-10T10:42:29.9695949Z       "status": "evaluated"
+2026-11-10T10:42:29.9696316Z      },
+2026-11-10T10:42:29.9696465Z      {
+2026-11-10T10:42:29.9696622Z       "capability": "execution-support",
+2026-11-10T10:42:29.9696834Z       "status": "evaluated"
+2026-11-10T10:42:29.9697003Z      },
+2026-11-10T10:42:29.9697140Z      {
+2026-11-10T10:42:29.9697315Z       "capability": "independent-verification",
+2026-11-10T10:42:29.9697538Z       "status": "evaluated"
+2026-11-10T10:42:29.9697707Z      },
+2026-11-10T10:42:29.9697843Z      {
+2026-11-10T10:42:29.9698000Z       "capability": "intent-support",
+2026-11-10T10:42:29.9698199Z       "status": "evaluated"
+2026-11-10T10:42:29.9698367Z      },
+2026-11-10T10:42:29.9698506Z      {
+2026-11-10T10:42:29.9698663Z       "capability": "invocation-support",
+2026-11-10T10:42:29.9698868Z       "status": "evaluated"
+2026-11-10T10:42:29.9699034Z      },
+2026-11-10T10:42:29.9699172Z      {
+2026-11-10T10:42:29.9699332Z       "capability": "observation-support",
+2026-11-10T10:42:29.9699536Z       "status": "evaluated"
+2026-11-10T10:42:29.9699698Z      },
+2026-11-10T10:42:29.9699836Z      {
+2026-11-10T10:42:29.9699994Z       "capability": "provenance-support",
+2026-11-10T10:42:29.9700193Z       "status": "evaluated"
+2026-11-10T10:42:29.9700371Z      },
+2026-11-10T10:42:29.9700508Z      {
+2026-11-10T10:42:29.9700662Z       "capability": "target-binding",
+2026-11-10T10:42:29.9700862Z       "status": "evaluated"
+2026-11-10T10:42:29.9701078Z      }
+2026-11-10T10:42:29.9701222Z     ],
+2026-11-10T10:42:29.9701367Z     "fatal_reasons": [],
+2026-11-10T10:42:29.9701552Z     "inherited_limitations": [
+2026-11-10T10:42:29.9701731Z      [
+2026-11-10T10:42:29.9701930Z       "wexp-work/interop/scitt-receipt-boundary-001/mapping-1",
+2026-11-10T10:42:29.9702320Z       "L-ts-no-issuer-signature-check"
+2026-11-10T10:42:29.9702533Z      ]
+2026-11-10T10:42:29.9702676Z     ],
+2026-11-10T10:42:29.9702831Z     "maximal_supported_claims": [],
+2026-11-10T10:42:29.9703038Z     "recorder_relations": [],
+2026-11-10T10:42:29.9703242Z     "semantics_version": "wexp-core-2",
+2026-11-10T10:42:29.9703455Z     "substantive_reasons": [],
+2026-11-10T10:42:29.9703646Z     "support_entries": [],
+2026-11-10T10:42:29.9703829Z     "support_relations": [],
+2026-11-10T10:42:29.9704107Z     "supported_claims": [],
+2026-11-10T10:42:29.9704333Z     "target": "wexp-interop:scitt-receipt-boundary-001",
+2026-11-10T10:42:29.9704579Z     "verdict": "downgrade"
+2026-11-10T10:42:29.9704760Z    }
+2026-11-10T10:42:29.9704902Z   }
+2026-11-10T10:42:29.9705038Z  },
+2026-11-10T10:42:29.9705183Z  "python": "3.12.16"
+2026-11-10T10:42:29.9705351Z }
+2026-11-10T10:42:29.9784984Z Post job cleanup.
+2026-11-10T10:42:30.0812473Z (node:2084) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-10T10:42:30.0813108Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-10T10:42:30.0932195Z Cleaning up orphan processes
+2026-11-10T10:42:30.1302419Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

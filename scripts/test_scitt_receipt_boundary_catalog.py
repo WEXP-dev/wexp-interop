@@ -6,7 +6,7 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
-from verify_scitt_receipt_boundary import ROOT, REL, verify_package
+from verify_scitt_receipt_boundary import EXTERNAL_REPRODUCTION_DIR, ROOT, REL, verify_package
 
 
 class PackageEvidenceTests(unittest.TestCase):
@@ -50,8 +50,43 @@ class PackageEvidenceTests(unittest.TestCase):
             verify_package(self.package)
 
     def test_false_independence(self):
+        # `performed` without the external reproduction evidence is refused.
+        shutil.rmtree(self.package / EXTERNAL_REPRODUCTION_DIR)
         self.edit_json('record.json', lambda d: d['status'].update(independent_reproduction='performed'))
-        with self.assertRaisesRegex(ValueError, 'independence scope'):
+        with self.assertRaisesRegex(ValueError, 'independence scope changed: external reproduction evidence absent'):
+            verify_package(self.package)
+
+    def test_unknown_independence_value_refused(self):
+        self.edit_json('record.json', lambda d: d['status'].update(independent_reproduction='partial'))
+        with self.assertRaisesRegex(ValueError, 'independence scope changed'):
+            verify_package(self.package)
+
+    def test_external_reproduction_checked(self):
+        result = verify_package(self.package)
+        self.assertTrue(result['external_reproduction_checked'])
+
+    def test_missing_external_evidence_refused(self):
+        (self.package / EXTERNAL_REPRODUCTION_DIR / 'job-129779506462.log').unlink()
+        with self.assertRaisesRegex(ValueError, 'evidence absent: job-129779506462.log'):
+            verify_package(self.package)
+
+    def test_changed_external_evidence_refused(self):
+        p = self.package / EXTERNAL_REPRODUCTION_DIR / 'pkg-001-comparison.extracted-from-log.json'
+        data = json.loads(p.read_bytes())
+        data['cases']['a']['wexp_check_observed']['verdict'] = 'accept'
+        p.write_text(json.dumps(data, indent=1, sort_keys=True) + '\n')
+        with self.assertRaisesRegex(ValueError, 'evidence differs: pkg-001-comparison'):
+            verify_package(self.package)
+
+    def test_changed_external_note_refused(self):
+        p = self.package / EXTERNAL_REPRODUCTION_DIR / 'NOTE.md'
+        p.write_bytes(p.read_bytes() + b'x')
+        with self.assertRaisesRegex(ValueError, 'evidence differs: NOTE.md'):
+            verify_package(self.package)
+
+    def test_extra_external_evidence_refused(self):
+        (self.package / EXTERNAL_REPRODUCTION_DIR / 'EXTRA.txt').write_text('x')
+        with self.assertRaisesRegex(ValueError, 'external reproduction file set'):
             verify_package(self.package)
 
     def test_relabelled_observed_result_refused(self):
