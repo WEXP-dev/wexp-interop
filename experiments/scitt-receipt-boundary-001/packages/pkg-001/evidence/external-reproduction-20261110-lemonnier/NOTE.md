@@ -3,7 +3,7 @@
 Laurent Lemonnier ran the published checks and the repeated appraisal of this package in GitHub
 Actions in his own repository, `Laurent-Lemonnier/dps-scitt-decision-layer`, workflow
 `.github/workflows/wexp-reproduce.yml`, on a GitHub-hosted runner with Python 3.12.16. He reported
-the result by email on 2026-11-10 and asked that it be recorded in this collection under his name.
+the result by email on 2026-11-10 and agreed to it being recorded in this collection under his name.
 Every fact below was re-read from the GitHub API and the job logs; `EVIDENCE-INDEX.json` gives the
 source, retrieval time, run, attempt, job and SHA-256 of each file in this directory.
 

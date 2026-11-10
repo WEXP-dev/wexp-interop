@@ -55,7 +55,7 @@
       },
       "card": "experiments/scitt-receipt-boundary-001/packages/pkg-001/README.md",
       "record": "experiments/scitt-receipt-boundary-001/packages/pkg-001/record.json",
-      "record_sha256": "822b8e0564061c3a82b8fa1909f983c46f5d761a850eb1278b1de3dd9961f830",
+      "record_sha256": "c5318ee9b4e475e761667c0e54cd5c3a5ffd46b22d415f26b54b8adcf1e1cf26",
       "citation": "experiments/scitt-receipt-boundary-001/packages/pkg-001/CITATION.cff",
       "publication": {
         "version": "scitt-receipt-boundary-001/pkg-001",
