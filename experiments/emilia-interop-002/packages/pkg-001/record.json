@@ -1,6 +1,6 @@
 {
   "schema_version": "0.4.0",
-  "record_revision": 1,
+  "record_revision": 2,
   "experiment_id": "emilia-interop-002",
   "package_id": "pkg-001",
   "title": "WEXP × EMILIA INTEROP-002 — historical INTEROP-002 result",
@@ -91,6 +91,10 @@
       "scope": "Original pin recorded in the fixtures; EMILIA was not run by this package."
     }
   ],
+  "license": {
+    "scope_path": "LICENSE-SCOPE.md",
+    "historical_artifact_license": "Apache-2.0 for the code and machine-readable vectors of both sides, including B-01, with the record of contributions preserved; confirmed by the EMILIA-side contributor in correspondence dated 2026-11-12 (see LICENSE-SCOPE.md). Narrative documents are not separately covered by that confirmation; background material retains its own terms."
+  },
   "citation_path": "CITATION.cff",
   "limitations": [
     "This package migration does not rerun any WEXP, EMILIA or bridge implementation and executes no archived code; the historical execution status EXECUTED remains only in payload/execution/EXECUTION-RECORD-001.json.",
@@ -98,7 +102,7 @@
     "Candidate 003 is a publication candidate: its own records state publication_authorized false and that counterparty exact-byte review was not yet performed. Those historical bytes are unchanged.",
     "The selected ZIP is authoritative for archive composition; payload is its verified file-byte extraction, not the container bytes. The ZIP has no directory entries and its member modes carry no file-type bit.",
     "No public carrier, release tag or DOI exists for this package; the Zenodo fields are intentionally empty pending a separate decision.",
-    "License terms for the archived content are not stated in Candidate 003 and are pending the contributor's confirmation; this card declares none and must not be published until they are recorded.",
+    "License: Apache-2.0 for code and machine-readable vectors of both sides, as confirmed on 2026-11-12; narrative documents are not separately covered by that confirmation and no broader grant is inferred.",
     "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): physical truth of an execution or effect",
     "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): correctness, security, or completeness of WEXP or EMILIA",
     "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): global minimality of the bridge",

@@ -55,7 +55,7 @@
       },
       "card": "experiments/emilia-interop-002/packages/pkg-001/README.md",
       "record": "experiments/emilia-interop-002/packages/pkg-001/record.json",
-      "record_sha256": "13b156222a6adb6665472d39172dcd4265694beea3b6f7523bb26caac2bb1ca2",
+      "record_sha256": "88315acaeae0af9bce87bfe0654fa497b40c2a9c9f3f2bfdf4208a1687bae547",
       "citation": "experiments/emilia-interop-002/packages/pkg-001/CITATION.cff",
       "publication": {
         "version": "emilia-interop-002/pkg-001",

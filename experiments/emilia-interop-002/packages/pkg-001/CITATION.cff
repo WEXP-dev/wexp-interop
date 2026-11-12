@@ -6,8 +6,8 @@ authors:
     given-names: Mikhail
   - family-names: Schrock
     given-names: Iman
+license: Apache-2.0
 repository-code: "https://github.com/WEXP-dev/wexp-interop"
 version: "emilia-interop-002/pkg-001"
 # Prepared, not published. No release date, DOI or Zenodo record yet:
 # those fields are intentionally empty pending a separate decision.
-# License: pending the EMILIA-side contributor's confirmation; intentionally not stated.

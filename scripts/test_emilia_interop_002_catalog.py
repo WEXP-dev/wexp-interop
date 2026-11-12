@@ -50,7 +50,10 @@ class SplitVerdictCardTests(unittest.TestCase):
             load_records(self.root)
 
     def test_missing_license_cannot_be_published(self):
-        self.edit(lambda d: d['status'].update(publication='published'))
+        def change(d):
+            d.pop('license', None)
+            d['status'].update(publication='published')
+        self.edit(change)
         with self.assertRaisesRegex(ValueError, 'prepared'):
             load_records(self.root)
 

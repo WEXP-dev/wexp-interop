@@ -63,7 +63,7 @@ Prepared, not published. The candidate's own records state `publication_authoriz
 
 ## License
 
-**Pending.** Candidate 003 contains no license statement. License terms for the archived content await the EMILIA-side contributor's confirmation. Until then this card declares no license, `LICENSE-SCOPE.md` is intentionally absent, and the package must not be published.
+Apache-2.0 for the code and machine-readable vectors of both sides, including B-01, with the record of contributions preserved. The EMILIA-side contributor confirmed this in correspondence dated 12 November 2026; Candidate 003 itself contains no license statement. See [LICENSE-SCOPE.md](LICENSE-SCOPE.md) for scope, including what the confirmation does not cover.
 
 ## Limitations
 
