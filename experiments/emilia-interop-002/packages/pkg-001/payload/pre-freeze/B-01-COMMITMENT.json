@@ -1,0 +1,58 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-B-01-COMMITMENT-001",
+  "status": "COMMITMENT_BOUND_BYTES_WITHHELD",
+  "case_id": "WEXP-EMILIA-INTEROP-002-B01-OPERATION-REBIND-001",
+  "designates": "B-01, the single independently committed blind hostile case of charter §6",
+  "contributor": "Iman Schrock",
+  "attacked_invariants": ["I-01", "I-03a"],
+  "byte_count": 7276,
+  "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+
+  "message_provenance": {
+    "from": "Iman Schrock <team@emiliaprotocol.ai>",
+    "gmail_message_id": "1a03128812c3f9d4",
+    "received": "2026-08-24",
+    "evidence_class": "FOUNDER_REPORTED_EXTERNAL_EVENT",
+    "independently_observed": false,
+    "note": "No authenticated mail connector exists in the local execution contour, so the message identity is recorded as supplied rather than measured here."
+  },
+
+  "validation": {
+    "case_id_designates_b01_and_is_stable": true,
+    "attacked_invariants_within_charter_admissible_set": true,
+    "charter_admissible_set": ["I-01", "I-02", "I-03a", "I-03b", "I-04", "I-05"],
+    "byte_count_positive": true,
+    "byte_count_within_1_MiB": true,
+    "sha256_is_64_lowercase_hex": true,
+    "no_file_in_repository_matches_the_committed_digest": true,
+    "no_file_in_repository_matches_the_committed_byte_count": true,
+    "no_b01_fixture_file_exists": true,
+    "closure_plan_step_1_reconciliation": "The closure plan required case_id to equal the literal string 'B-01'. The received identifier is qualified and designates the same case. The plan's equality rule was too narrow and is corrected in the same commit rather than silently waived."
+  },
+
+  "withheld_by_design": {
+    "blind_bytes_present": false,
+    "attachment_received": false,
+    "case_body_received": false,
+    "expected_result_supplied": false,
+    "bridge_dependent_hint_supplied": false,
+    "reveal_authorized": false
+  },
+
+  "non_inference_boundary": {
+    "rule": "The identifier and the attacked-invariant list are commitment metadata. They are not permission to reverse-engineer the blind case.",
+    "prohibited": [
+      "inferring case contents from the identifier",
+      "tuning any open fixture against the identifier or the attacked-invariant list",
+      "tuning a future bridge against either",
+      "treating the named invariants as the only ones B-01 may exercise"
+    ],
+    "open_fixture_provenance_protection": "H-01-b, the open rebind fixture attacking I-01 and I-03a, was committed at 2ade0bbe81005a835ff5321603de97c00de4a3d9 on 2026-08-23T14:57:40-07:00 — before this commitment was received on 2026-08-24. It therefore cannot have been tuned against it, and the overlap in attacked invariants is convergence rather than contamination. No open fixture has been modified since."
+  },
+
+  "non_claims": [
+    "A bound commitment is not a revealed case and confers no knowledge of its contents.",
+    "Binding this commitment does not authorize a Design Freeze; it satisfies one precondition of three.",
+    "Reveal remains unauthorized and is accepted only after the bridge candidate and Execution Freeze are fixed, and only if the bytes match this digest."
+  ]
+}

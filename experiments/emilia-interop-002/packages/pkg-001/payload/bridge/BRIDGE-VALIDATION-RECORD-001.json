@@ -1,0 +1,725 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-VALIDATION-RECORD-001",
+  "status": "OPEN_CASE_VALIDATION_PASS_BLIND_CASE_PENDING",
+  "bridge_identity": {
+    "artifact_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+    "version": 1,
+    "spec_path": "bridge/BRIDGE-CANDIDATE.yaml",
+    "spec_sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+    "implementation_path": "bridge/bridge_lib.py",
+    "implementation_sha256": "845e4e43d374478a581607d3192110eb4786e9a27743d36a2b6a6541c6968386",
+    "generic_bridge_framework": false
+  },
+  "design_freeze": {
+    "artifact": "experiments/WEXP-EMILIA-INTEROP-002/pre-freeze/DESIGN-FREEZE-MANIFEST.json",
+    "artifact_id": "WEXP-EMILIA-INTEROP-002-DESIGN-FREEZE-001",
+    "bytes": 16408,
+    "sha256": "cd16600c3f9eff046e036f476dcbd7fc17fa36fdda91bfdf20bb5b71e200685f",
+    "blob": "f89a21ad8c88d1042e789599502a491cd780ad01",
+    "commit": "e0c16a69f3d16f21aebdaeb457464d3960b53723",
+    "candidate_anchor_sha256": "9cda9acbb37d8e0b3f7b02fb5676c66e0d2abff48f932304c96998a4fee9d2df"
+  },
+  "element_inventory": [
+    {
+      "element_id": "BE-01",
+      "purpose": "Resolve each observation's relying-party source pin and derive canonical key identity from DER SPKI bytes.",
+      "mapping_requirements_served": [
+        "M-05",
+        "M-06",
+        "M-14"
+      ],
+      "predicate_classes": [
+        "identity",
+        "issuer",
+        "normalization"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-02",
+      "purpose": "Verify the Ed25519 signature over the domain-separated canonical observation body.",
+      "mapping_requirements_served": [
+        "M-12"
+      ],
+      "predicate_classes": [
+        "grounding",
+        "identity"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-03",
+      "purpose": "Refuse a source pin that is malformed, compromised at or before attested_at, not yet valid, or expired at attested_at.",
+      "mapping_requirements_served": [
+        "M-05",
+        "M-12"
+      ],
+      "predicate_classes": [
+        "timing",
+        "issuer",
+        "trust-set"
+      ],
+      "depends_on": [
+        "BE-01"
+      ]
+    },
+    {
+      "element_id": "BE-04",
+      "purpose": "Enforce the Section 6 exact-equality binding between the relying party's expectation and each observation.",
+      "mapping_requirements_served": [
+        "M-01",
+        "M-06",
+        "M-17"
+      ],
+      "predicate_classes": [
+        "equality",
+        "correlation",
+        "identity",
+        "evaluation-scope"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-05",
+      "purpose": "Require action_caid as an exact-binding premise on every accepted observation.",
+      "mapping_requirements_served": [
+        "M-08",
+        "M-15"
+      ],
+      "predicate_classes": [
+        "identity",
+        "correlation",
+        "causal-provenance"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-06",
+      "purpose": "Fix the CAID namespace, the normalization function, and the equality relation.",
+      "mapping_requirements_served": [
+        "M-02",
+        "M-03",
+        "M-04"
+      ],
+      "predicate_classes": [
+        "normalization",
+        "equality"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-07",
+      "purpose": "Enforce the relying party's observation-window requirement and the attestation-delay bound.",
+      "mapping_requirements_served": [
+        "M-17"
+      ],
+      "predicate_classes": [
+        "timing",
+        "evaluation-scope",
+        "relying-party-policy"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-08",
+      "purpose": "Enforce relying-party source requirements, quorum, and per-group prediction coverage.",
+      "mapping_requirements_served": [
+        "M-07",
+        "M-16",
+        "M-17"
+      ],
+      "predicate_classes": [
+        "relying-party-policy",
+        "trust-set",
+        "evaluation-scope",
+        "counter-evidence"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-09",
+      "purpose": "Establish or refuse source and control-domain independence for the independent-observer role.",
+      "mapping_requirements_served": [
+        "M-14"
+      ],
+      "predicate_classes": [
+        "independence",
+        "identity",
+        "trust-set"
+      ],
+      "depends_on": [
+        "BE-01"
+      ]
+    },
+    {
+      "element_id": "BE-10",
+      "purpose": "Decide the WEXP IV predicate for the exact base named by the claim.",
+      "mapping_requirements_served": [
+        "M-13"
+      ],
+      "predicate_classes": [
+        "independence",
+        "trust-set",
+        "relying-party-policy",
+        "claim-ceiling"
+      ],
+      "depends_on": [
+        "BE-08",
+        "BE-09"
+      ]
+    },
+    {
+      "element_id": "BE-11",
+      "purpose": "Construct the positive observation-base finding for the exact action target.",
+      "mapping_requirements_served": [
+        "M-01",
+        "M-07",
+        "M-18"
+      ],
+      "predicate_classes": [
+        "identity",
+        "grounding",
+        "evaluation-scope"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-12",
+      "purpose": "Construct the boundary finding and fix ceiling_base at observation.",
+      "mapping_requirements_served": [
+        "M-10",
+        "M-11"
+      ],
+      "predicate_classes": [
+        "boundary",
+        "grounding",
+        "claim-ceiling"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-13",
+      "purpose": "Construct the evaluation context and the evaluation scope.",
+      "mapping_requirements_served": [
+        "M-17",
+        "M-18"
+      ],
+      "predicate_classes": [
+        "evaluation-scope",
+        "relying-party-policy",
+        "trust-set"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-14",
+      "purpose": "Construct the counter-evidence entry set and keep absence distinct from opposition.",
+      "mapping_requirements_served": [
+        "M-16"
+      ],
+      "predicate_classes": [
+        "counter-evidence",
+        "evaluation-scope"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-15",
+      "purpose": "Refuse every claim expansion beyond the frozen ceiling, and admit no externally asserted property as evidence.",
+      "mapping_requirements_served": [
+        "M-11"
+      ],
+      "predicate_classes": [
+        "claim-ceiling",
+        "counter-evidence",
+        "boundary"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-16",
+      "purpose": "Refuse every attempted conversion of evidence or appraisal into authority.",
+      "mapping_requirements_served": [
+        "M-16"
+      ],
+      "predicate_classes": [
+        "non-authority",
+        "claim-ceiling"
+      ],
+      "depends_on": []
+    },
+    {
+      "element_id": "BE-17",
+      "purpose": "Assemble the complete AppraisalInput or emit an explicit typed failure.",
+      "mapping_requirements_served": [
+        "M-15",
+        "M-18"
+      ],
+      "predicate_classes": [
+        "normalization",
+        "evaluation-scope",
+        "grounding",
+        "claim-ceiling"
+      ],
+      "depends_on": [
+        "BE-12",
+        "BE-13",
+        "BE-14"
+      ]
+    }
+  ],
+  "element_count": 17,
+  "mapping_coverage": {
+    "classified": 18,
+    "of": 18,
+    "RESOLVED": [
+      "M-01",
+      "M-02",
+      "M-03",
+      "M-04",
+      "M-06",
+      "M-07",
+      "M-08",
+      "M-10",
+      "M-11",
+      "M-12",
+      "M-13",
+      "M-14",
+      "M-15",
+      "M-16",
+      "M-17",
+      "M-18"
+    ],
+    "NOT_APPLICABLE": [],
+    "FAIL_CLOSED_NON_CONSTRUCTIBLE": [
+      "M-05",
+      "M-09"
+    ],
+    "load_bearing_for_cc1_all_classified": true
+  },
+  "predicate_inventory": {
+    "defined": 16,
+    "of": 16,
+    "classes": [
+      "boundary",
+      "causal-provenance",
+      "claim-ceiling",
+      "correlation",
+      "counter-evidence",
+      "equality",
+      "evaluation-scope",
+      "grounding",
+      "identity",
+      "independence",
+      "issuer",
+      "non-authority",
+      "normalization",
+      "relying-party-policy",
+      "timing",
+      "trust-set"
+    ]
+  },
+  "open_case_results": [
+    {
+      "case_id": "C-00",
+      "fixture_path": "fixtures/C-00.json",
+      "fixture_sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+      "attacked_invariants": [],
+      "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+      "cc1_supported": true,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "supported",
+      "accepted_observations": [
+        {
+          "index": 0,
+          "source_id": "ep:executor:grid-1",
+          "role": "executor",
+          "basis_ref": "sha256:db46f4fb2ab84400e8e4cc3dfeaed7c21c08293bf66edb30aec81560148f7c1c"
+        },
+        {
+          "index": 1,
+          "source_id": "ep:observer:meter-7",
+          "role": "independent_observer",
+          "basis_ref": "sha256:903f1476e1847c30368cb5c9da6af09b894ce6d9582de7139e22815d88beee20"
+        }
+      ],
+      "rejected_observations": [],
+      "gaps": [],
+      "expansion_refusals": [],
+      "authority_refusals": [],
+      "invariant_verdicts": {}
+    },
+    {
+      "case_id": "H-01-a",
+      "fixture_path": "fixtures/H-01-a.json",
+      "fixture_sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0",
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "not-evaluated",
+      "accepted_observations": [
+        {
+          "index": 0,
+          "source_id": "ep:executor:grid-1",
+          "role": "executor",
+          "basis_ref": "sha256:db46f4fb2ab84400e8e4cc3dfeaed7c21c08293bf66edb30aec81560148f7c1c"
+        }
+      ],
+      "rejected_observations": [
+        {
+          "index": 1,
+          "source_id": "ep:observer:meter-7",
+          "role": "independent_observer",
+          "reasons": [
+            "caid_premise_absent"
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "token": "source_requirement_unmet",
+          "detail": "independent_observer/revenue_meter"
+        },
+        {
+          "token": "prediction_group_unobserved",
+          "detail": "delivered_mw@facility:plant-7"
+        }
+      ],
+      "expansion_refusals": [],
+      "authority_refusals": [],
+      "invariant_verdicts": {
+        "I-01": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        },
+        "I-03a": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        }
+      }
+    },
+    {
+      "case_id": "H-01-b",
+      "fixture_path": "fixtures/H-01-b.json",
+      "fixture_sha256": "fbfb2046305ca6e9a8a3bbaf2e15c7acc30b8929d7625a3d90643c882276fe47",
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv_independence_validation": "not-evaluated",
+      "accepted_observations": [],
+      "rejected_observations": [
+        {
+          "index": 0,
+          "source_id": "ep:executor:grid-1",
+          "role": "executor",
+          "reasons": [
+            "exact_binding_mismatch:action_caid",
+            "exact_binding_mismatch:action_hash",
+            "exact_binding_mismatch:operation_id"
+          ]
+        },
+        {
+          "index": 1,
+          "source_id": "ep:observer:meter-7",
+          "role": "independent_observer",
+          "reasons": [
+            "exact_binding_mismatch:action_caid",
+            "exact_binding_mismatch:action_hash",
+            "exact_binding_mismatch:operation_id"
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "token": "source_requirement_unmet",
+          "detail": "executor/cosa.actuator"
+        },
+        {
+          "token": "source_requirement_unmet",
+          "detail": "independent_observer/revenue_meter"
+        },
+        {
+          "token": "prediction_group_unobserved",
+          "detail": "controller_status@facility:plant-7"
+        },
+        {
+          "token": "prediction_group_unobserved",
+          "detail": "delivered_mw@facility:plant-7"
+        }
+      ],
+      "expansion_refusals": [],
+      "authority_refusals": [],
+      "invariant_verdicts": {
+        "I-01": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        },
+        "I-03a": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        }
+      }
+    },
+    {
+      "case_id": "H-01-c",
+      "fixture_path": "fixtures/H-01-c.json",
+      "fixture_sha256": "4737ed60826f981beed70a34303a3a79ea40207858e55c62f1ab81fe48271aa5",
+      "attacked_invariants": [
+        "I-03b"
+      ],
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv_independence_validation": "not-evaluated",
+      "accepted_observations": [],
+      "rejected_observations": [
+        {
+          "index": 0,
+          "source_id": "ep:executor:grid-1",
+          "role": "executor",
+          "reasons": [
+            "window_mismatch:exact"
+          ]
+        },
+        {
+          "index": 1,
+          "source_id": "ep:observer:meter-7",
+          "role": "independent_observer",
+          "reasons": [
+            "window_mismatch:exact"
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "token": "source_requirement_unmet",
+          "detail": "executor/cosa.actuator"
+        },
+        {
+          "token": "source_requirement_unmet",
+          "detail": "independent_observer/revenue_meter"
+        },
+        {
+          "token": "prediction_group_unobserved",
+          "detail": "controller_status@facility:plant-7"
+        },
+        {
+          "token": "prediction_group_unobserved",
+          "detail": "delivered_mw@facility:plant-7"
+        }
+      ],
+      "expansion_refusals": [],
+      "authority_refusals": [],
+      "invariant_verdicts": {
+        "I-03b": {
+          "preserved": true,
+          "criterion": "claim refused on evaluation context alone, with causal binding left intact"
+        }
+      }
+    },
+    {
+      "case_id": "H-02",
+      "fixture_path": "fixtures/H-02.json",
+      "fixture_sha256": "18350d7511035c0debd3ea5c7f02cabd3a095ba03be910dc10fa2b3b1cf314aa",
+      "attacked_invariants": [
+        "I-02",
+        "I-04"
+      ],
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "not-evaluated",
+      "accepted_observations": [
+        {
+          "index": 0,
+          "source_id": "ep:executor:grid-1",
+          "role": "executor",
+          "basis_ref": "sha256:db46f4fb2ab84400e8e4cc3dfeaed7c21c08293bf66edb30aec81560148f7c1c"
+        }
+      ],
+      "rejected_observations": [],
+      "gaps": [
+        {
+          "token": "source_requirement_unmet",
+          "detail": "independent_observer/revenue_meter"
+        },
+        {
+          "token": "prediction_group_unobserved",
+          "detail": "delivered_mw@facility:plant-7"
+        }
+      ],
+      "expansion_refusals": [],
+      "authority_refusals": [],
+      "invariant_verdicts": {
+        "I-02": {
+          "preserved": true,
+          "criterion": "no phase promotion: claim refused and no base above observation is supported"
+        },
+        "I-04": {
+          "preserved": true,
+          "criterion": "no claim expansion admitted and the ceiling holds at observation"
+        }
+      }
+    },
+    {
+      "case_id": "H-03",
+      "fixture_path": "fixtures/H-03.json",
+      "fixture_sha256": "ec7904648898cf8f6590cc7d1d223516ec38dde7365e4c96168061bb2192c7fb",
+      "attacked_invariants": [
+        "I-04",
+        "I-05"
+      ],
+      "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+      "cc1_supported": true,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "supported",
+      "accepted_observations": [
+        {
+          "index": 0,
+          "source_id": "ep:executor:grid-1",
+          "role": "executor",
+          "basis_ref": "sha256:db46f4fb2ab84400e8e4cc3dfeaed7c21c08293bf66edb30aec81560148f7c1c"
+        },
+        {
+          "index": 1,
+          "source_id": "ep:observer:meter-7",
+          "role": "independent_observer",
+          "basis_ref": "sha256:903f1476e1847c30368cb5c9da6af09b894ce6d9582de7139e22815d88beee20"
+        }
+      ],
+      "rejected_observations": [],
+      "gaps": [],
+      "expansion_refusals": [
+        {
+          "property": "completion",
+          "disposition": "asserted_not_admitted",
+          "reason": "an assertion attached to a fixture is not evidence; every finding is derived from the observation set and the relying-party policy",
+          "above_ceiling": true
+        },
+        {
+          "property": "independent_verification",
+          "disposition": "asserted_not_admitted",
+          "reason": "an assertion attached to a fixture is not evidence; every finding is derived from the observation set and the relying-party policy",
+          "above_ceiling": false
+        }
+      ],
+      "authority_refusals": [
+        {
+          "from": "ep_receipt",
+          "to": "reusable_permission",
+          "disposition": "refused",
+          "reason": "no_independent_authority_source"
+        },
+        {
+          "from": "outcome_observation",
+          "to": "local_authorization",
+          "disposition": "refused",
+          "reason": "no_independent_authority_source"
+        },
+        {
+          "from": "mapped_appraisal",
+          "to": "gate_admission",
+          "disposition": "refused",
+          "reason": "no_independent_authority_source"
+        },
+        {
+          "from": "mapped_appraisal",
+          "to": "delegated_authority",
+          "disposition": "refused",
+          "reason": "no_independent_authority_source"
+        },
+        {
+          "from": "mapped_appraisal",
+          "to": "future_action_approval",
+          "disposition": "refused",
+          "reason": "no_independent_authority_source"
+        }
+      ],
+      "invariant_verdicts": {
+        "I-04": {
+          "preserved": true,
+          "criterion": "no claim expansion admitted and the ceiling holds at observation"
+        },
+        "I-05": {
+          "preserved": true,
+          "criterion": "every attempted authority conversion refused; none admitted"
+        }
+      }
+    }
+  ],
+  "h_suff": {
+    "status": "OPEN_CASE_VALIDATION_PASS / BLIND_CASE_PENDING",
+    "positive_control_constructs": true,
+    "hostile_cases_all_fail_closed_or_safe": true,
+    "blind_case": "NOT RUN. B-01 is committed, unrevealed, and unauthorized for reveal.",
+    "explicitly_not_claimed": "Final H-SUFF across the blind case is NOT claimed and cannot be until reveal."
+  },
+  "h_min": {
+    "status": "PARTIAL_ON_OPEN_SURFACE",
+    "necessity_supported": [
+      "BE-01",
+      "BE-02",
+      "BE-05",
+      "BE-07",
+      "BE-08",
+      "BE-09",
+      "BE-10",
+      "BE-11",
+      "BE-12",
+      "BE-13",
+      "BE-14",
+      "BE-15",
+      "BE-16",
+      "BE-17"
+    ],
+    "necessity_not_established": [
+      "BE-03",
+      "BE-04",
+      "BE-06"
+    ],
+    "plan": "bridge/ABLATION-PLAN-001.json"
+  },
+  "claim_ceiling_compliance": {
+    "ceiling_base_on_every_constructed_case": [
+      "observation"
+    ],
+    "any_base_above_observation_supported": false,
+    "expansion_attempts_admitted": 0,
+    "expansion_attempts_refused": 2
+  },
+  "non_authority_compliance": {
+    "authority_conversion_attempts": 5,
+    "refused": 5,
+    "admitted": 0,
+    "bridge_emits_no_authority_bearing_field": true
+  },
+  "b01_non_use": {
+    "bytes_requested": false,
+    "bytes_inspected": false,
+    "bytes_reconstructed": false,
+    "special_rule_for_committed_identifier": false,
+    "tuned_against_attacked_invariants": false,
+    "open_fixtures_changed_since_commitment": false,
+    "statement": "The commitment metadata is used only as a frozen commitment. No element exists because of B-01, and no element's rationale is \"to pass B-01\". H-01-b independently attacks I-01 and I-03a and was committed at 2ade0bbe on 2026-08-23, before the commitment arrived on 2026-08-24; its pre-commitment provenance is preserved and it was not touched while this bridge was authored."
+  },
+  "recorded_divergences": [
+    {
+      "case_id": "H-03",
+      "subject": "independent_verification",
+      "fixture_position": "H-03 asserts independent_verification with supported_by_evidence false, on the stated ground that a source labelled independent_observer is a role label in the source registry, not an independent verification of the WEXP claim.",
+      "bridge_position": "The bridge agrees that a role label cannot establish IV, and does not use one. Its IV finding rests on BE-10's declared predicate: a relying-party-supplied requirement the presenter may not widen or select, a met quorum, canonical DER key distinctness, and declared control-domain distinctness, with every contributing observation independently accepted. The attempted expansion is still refused as an assertion; the IV finding is derived separately from the evidence.",
+      "resolution": "NOT RESOLVED HERE. Recorded for EMILIA-side fairness review and Founder review.",
+      "why_not_resolved_locally": "Whether that predicate constitutes WEXP independent verification is the open scientific question CC-1 was selected to probe. Weakening the predicate so the fixture's rationale went unchallenged would make the positive control unconstructible and would be tuning the bridge to a case. Neither the fixture nor the predicate was altered.",
+      "affects_h03_verdict": false,
+      "h03_verdict_basis": "H-03 tests refusal of expansion and of authority conversion. Both attempted expansions were refused as assertions and all five authority conversions were refused, so I-04 and I-05 are preserved independently of this divergence."
+    }
+  ]
+}

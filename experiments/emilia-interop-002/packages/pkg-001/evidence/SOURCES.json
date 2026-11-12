@@ -1,0 +1,43 @@
+{
+  "schema": "emilia-interop-002-sources-001",
+  "selected_archive": {
+    "file_name": "WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip",
+    "package_path": "source-archive/WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip",
+    "bytes": 192089,
+    "sha256": "37412ba521b9bca9901b54142290356a0aedf8bc7cd635e731d7660916cf770e",
+    "named_information_uri": "ni:///sha-256;N0ErpSG5vKmQG1QUIpA1agrt-Lx81jXnMddmCRbPdw4",
+    "members": 57,
+    "directory_entries": 0,
+    "member_modes": "0644 without Unix file-type bit, all members",
+    "public_carrier": null,
+    "acquisition": "Copied byte-for-byte from a retained copy of the candidate; selected by size and SHA-256. No public carrier existed at preparation time."
+  },
+  "internal_manifest": {
+    "path": "payload/publication-candidate/PUBLICATION-CANDIDATE-MANIFEST-003.json",
+    "sha256": "b7d3e62036d3905e686fba4e28c8051eeece13a89a15e5d722f51c241604c50b",
+    "entries": 56,
+    "self_excluded": true,
+    "status_field": "CANDIDATE / NOT PUBLISHED"
+  },
+  "verdict_record": {
+    "path": "payload/publication-candidate/FINAL-RECORD-002.json",
+    "sha256": "4768decf3721e2dfcfddab2028e0ea35e6352d00efb1bf24ecdaf67c7c389266",
+    "json_pointer": "/TWO_SCOPES_NOT_ONE_VERDICT"
+  },
+  "freeze_record": null,
+  "freeze_record_note": "Candidate 003 has no separate FREEZE record of the INTEROP-001 kind; its internal manifest and frozen-identity records are inside the archive.",
+  "original_pins": {
+    "wexp_core_01": {
+      "artifact": "draft-sergeev-wexp-core-01",
+      "sha256": "84c0a16467585c29925339a10dd287c2e67bfe21ed592826254bf424dc24f56d",
+      "semantics_version": "wexp-core-1",
+      "recorded_in": "payload/bridge/BRIDGE-CANDIDATE.yaml"
+    },
+    "emilia_commit": {
+      "repository": "https://github.com/emiliaprotocol/emilia-protocol",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "recorded_in": "payload/fixtures/*.json",
+      "run_by_this_package": false
+    }
+  }
+}

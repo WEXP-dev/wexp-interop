@@ -1,0 +1,299 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-EXECUTION-FREEZE-001",
+  "freeze_status": "EFFECTIVE",
+  "execution_frozen": true,
+  "b01": "STILL_BLIND",
+  "expectations": "NOT_YET_COMMITTED",
+  "execution_authorized": false,
+  "publication_authorized": false,
+  "effective_date": "2026-08-24",
+  "granted_by": "Mikhail Sergeev, Founder",
+  "decision_record": "execution-freeze/FOUNDER-EXECUTION-FREEZE-DECISION-001.md",
+  "charter_basis": "DRAFT-004 §9.2",
+  "naming_note": "No established repository convention reserves a path for this artifact — unlike the Design Freeze, whose name the publication allowlist already reserved — so the identity suggested by the granting order is used as-is. Checked before naming rather than assumed.",
+  "granted_against": {
+    "candidate": "execution-freeze/EXECUTION-FREEZE-CANDIDATE-001.json",
+    "bytes": 8949,
+    "sha256": "de7671955f4316ae540374a43cf742666312453e32bd428b4b2a53da1c95c218",
+    "git_blob": "1118ed9bab84835ec7954c8b205ec85279a73798",
+    "commit": "cb938c86996dc6123fcc55a15bf62ab086478985",
+    "re_verified_before_materialization": "All four values re-measured from the working tree and the object store. The freeze proceeded only because all four matched.",
+    "candidate_edited": false,
+    "why_not_edited": "The candidate is the anchor this decision names. A freeze whose anchor moves afterwards cannot be checked, so the state advance lives here instead."
+  },
+  "frozen_items": {
+    "1_design_freeze": {
+      "artifact_id": "WEXP-EMILIA-INTEROP-002-DESIGN-FREEZE-001",
+      "path": "experiments/WEXP-EMILIA-INTEROP-002/pre-freeze/DESIGN-FREEZE-MANIFEST.json",
+      "bytes": 16408,
+      "sha256": "cd16600c3f9eff046e036f476dcbd7fc17fa36fdda91bfdf20bb5b71e200685f",
+      "git_blob": "f89a21ad8c88d1042e789599502a491cd780ad01",
+      "commit": "e0c16a69f3d16f21aebdaeb457464d3960b53723",
+      "freeze_status": "EFFECTIVE",
+      "re_measured": "yes — byte count, sha256 and blob all re-derived from the working tree"
+    },
+    "2_bridge": {
+      "path": "experiments/WEXP-EMILIA-INTEROP-002/bridge/BRIDGE-CANDIDATE.yaml",
+      "bytes": 43239,
+      "sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+      "git_blob": "9ad6b8d0b16b3e645128b31e1415f54dc220b637",
+      "artifact_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+      "commit": "5513ea95ea43dc44d62099edc6f2f6709fb79fe1",
+      "element_count": 17,
+      "element_inventory": [
+        "BE-01",
+        "BE-02",
+        "BE-03",
+        "BE-04",
+        "BE-05",
+        "BE-06",
+        "BE-07",
+        "BE-08",
+        "BE-09",
+        "BE-10",
+        "BE-11",
+        "BE-12",
+        "BE-13",
+        "BE-14",
+        "BE-15",
+        "BE-16",
+        "BE-17"
+      ],
+      "bytes_changed_under_this_order": 0,
+      "blob_correction": "The order that authorized this preparation carried blob 9ad6b8d0b16b30bd53ecb2b1d9e4a26e8f0d1d1e for this file. No such object exists. The value came from an error in my own previous terminal report, which padded a 12-character output into a 40-character string. The true blob is 9ad6b8d0b16b3e645128b31e1415f54dc220b637, confirmed three ways: git rev-parse against the commit, git hash-object against the working tree, and a manual SHA-1 over 'blob <len>\\0' plus the content. The CONTENT is exactly what was authorized — 43239 bytes and sha256 8ae49924…4bfa both match — so this is a corrected identifier, not a changed artifact."
+    },
+    "3_experiment_policy": {
+      "path": "experiments/WEXP-EMILIA-INTEROP-002/execution-freeze/EXPERIMENT-POLICY-001.json",
+      "bytes": 7461,
+      "sha256": "2d54fb332bc62d5db048470ccb6cab15f994cf2ac550be42eaa32657d2e9aabd",
+      "git_blob": "a12bb5a917a994c561983202e109196df72238c5"
+    },
+    "4_comparison_policy": {
+      "path": "experiments/WEXP-EMILIA-INTEROP-002/execution-freeze/COMPARISON-POLICY-001.json",
+      "bytes": 5601,
+      "sha256": "3e2f02e011817a9619963c7941d10fe3f6fef6eaa7d316d8ffaecf4bf7245e84",
+      "git_blob": "ab9843b5bec05f9d5e233cbde79ee12831ab4dd2"
+    },
+    "5_hosted_infrastructure_baseline": {
+      "path": "experiments/WEXP-EMILIA-INTEROP-002/execution-freeze/HOSTED-INFRASTRUCTURE-BASELINE-001.json",
+      "bytes": 12405,
+      "sha256": "40dc3a65465a98a2f94768126a32a88b96725a84652e7fc0d0cbfb965f8b19f9",
+      "git_blob": "a217a73246b7fdf3dccc830cc7e3c61628b40cb6",
+      "canary_run_id": 32702288659,
+      "canary_execution_status": "EXECUTED",
+      "semantic_projection_sha256": "bc409c308491de92ffb2f7786c305f6c88c7785b10df9541b82a4b83c7644c5f"
+    },
+    "6_ablation_plan": {
+      "path": "experiments/WEXP-EMILIA-INTEROP-002/bridge/ABLATION-PLAN-001.json",
+      "bytes": 36891,
+      "sha256": "7ecccb454ec1a9db1a8e6a4cf6fd8c72157d5334a5a0dc5890b7cc59cdf97692",
+      "git_blob": "39d9ba0bc977d748ccb95bef5ba12ce413313e85"
+    },
+    "7_b01_commitment": {
+      "case_id": "WEXP-EMILIA-INTEROP-002-B01-OPERATION-REBIND-001",
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "byte_count": 7276,
+      "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+      "bytes_present": false,
+      "reveal_authorized": false,
+      "record": {
+        "path": "experiments/WEXP-EMILIA-INTEROP-002/pre-freeze/B-01-COMMITMENT.json",
+        "bytes": 3161,
+        "sha256": "98ff4b84fb53a7dfabfbeef8f3b238399ce3162ee7d6fdbc46670bbb5c4af9ed",
+        "git_blob": "e0ea4d9884bd0b538a693de0780be176180fe75e"
+      }
+    },
+    "8_permitted_report_level_verdicts": {
+      "execution_status": [
+        "EXECUTED",
+        "INFRASTRUCTURE_UNAVAILABLE",
+        "EXPERIMENT_INVALID"
+      ],
+      "bridge_sufficiency": [
+        "SUPPORTED",
+        "REJECTED",
+        "INCONCLUSIVE",
+        "NOT_EVALUATED"
+      ],
+      "local_minimality": [
+        "SUPPORTED",
+        "REJECTED",
+        "NOT_ESTABLISHED",
+        "NOT_EVALUATED"
+      ],
+      "source": "DRAFT-004 §8 verbatim; no token added",
+      "current_state": {
+        "bridge_sufficiency": "NOT_EVALUATED",
+        "local_minimality": "NOT_EVALUATED",
+        "why": "B-01 has not been revealed or run. Neither axis can be decided from the open surface alone."
+      }
+    }
+  },
+  "frozen_item_count": "8 of 8",
+  "also_bound_for_completeness": {
+    "bridge_validation_record": {
+      "path": "experiments/WEXP-EMILIA-INTEROP-002/bridge/BRIDGE-VALIDATION-RECORD-001.json",
+      "bytes": 22315,
+      "sha256": "7d76a4b2935e021efe356bd5d2374ce852cfc5f4e82a1970b0edb1c13dc4b6d7",
+      "git_blob": "2276b4334eb35b3967a4ce13f8debdb65f9b11b8"
+    },
+    "trust_boundary_revalidation": {
+      "path": "experiments/WEXP-EMILIA-INTEROP-002/execution-freeze/TRUST-BOUNDARY-REVALIDATION-001.json",
+      "bytes": 5942,
+      "sha256": "c7bc54930957885e10fb8247fb0ae4c8afcb96e2c17f955b0341e935705df933",
+      "git_blob": "8cf92511c8e696f0340096012b2bb30e92115d5d"
+    },
+    "fairness_review_item": {
+      "path": "experiments/WEXP-EMILIA-INTEROP-002/execution-freeze/H-03-FAIRNESS-REVIEW-ITEM-001.json",
+      "bytes": 3094,
+      "sha256": "9cf603886a6ebe069491667876f384ce8eb055ce60076aa4ba4fa3478e070220",
+      "git_blob": "16c3d61604209019753085d301ab3fb7d697ccdf"
+    },
+    "frozen_cases": {
+      "C-00": {
+        "path": "experiments/WEXP-EMILIA-INTEROP-002/fixtures/C-00.json",
+        "bytes": 7255,
+        "sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+        "git_blob": "d47aa45468beca7a715391a6599cdb587d3b890f"
+      },
+      "H-01-a": {
+        "path": "experiments/WEXP-EMILIA-INTEROP-002/fixtures/H-01-a.json",
+        "bytes": 7152,
+        "sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0",
+        "git_blob": "51dcf267a30bda706c74b2b5a2c13108d5086ff0"
+      },
+      "H-01-b": {
+        "path": "experiments/WEXP-EMILIA-INTEROP-002/fixtures/H-01-b.json",
+        "bytes": 7933,
+        "sha256": "fbfb2046305ca6e9a8a3bbaf2e15c7acc30b8929d7625a3d90643c882276fe47",
+        "git_blob": "03223b82e3ee520201f7db8135c14ec38b56db5c"
+      },
+      "H-01-c": {
+        "path": "experiments/WEXP-EMILIA-INTEROP-002/fixtures/H-01-c.json",
+        "bytes": 7970,
+        "sha256": "4737ed60826f981beed70a34303a3a79ea40207858e55c62f1ab81fe48271aa5",
+        "git_blob": "e3f888622100172aa7fd49ece4bda23826752e1c"
+      },
+      "H-02": {
+        "path": "experiments/WEXP-EMILIA-INTEROP-002/fixtures/H-02.json",
+        "bytes": 6299,
+        "sha256": "18350d7511035c0debd3ea5c7f02cabd3a095ba03be910dc10fa2b3b1cf314aa",
+        "git_blob": "07770c0c3da2624d4b508a7b827e77e5d6e4cfe4"
+      },
+      "H-03": {
+        "path": "experiments/WEXP-EMILIA-INTEROP-002/fixtures/H-03.json",
+        "bytes": 9646,
+        "sha256": "ec7904648898cf8f6590cc7d1d223516ec38dde7365e4c96168061bb2192c7fb",
+        "git_blob": "aa0bfea04de8718e42f2cc31f477a4a24365fd7b"
+      }
+    },
+    "expectation_templates": [
+      {
+        "path": "experiments/WEXP-EMILIA-INTEROP-002/execution-freeze/EXPECTATION-COMMITMENT-WEXP.template.json",
+        "bytes": 2100,
+        "sha256": "79b0a4979e50f8737c7c24f92cbc26617ec10fcf1760c50d2de9791aab8c32f9",
+        "git_blob": "abb489fda365d7057d89f48ef0c2950a6d0d5f0a"
+      },
+      {
+        "path": "experiments/WEXP-EMILIA-INTEROP-002/execution-freeze/EXPECTATION-COMMITMENT-EMILIA.template.json",
+        "bytes": 2660,
+        "sha256": "722aa147d3e09ddb495f97522b2a071c963c903a067138b6b45271ba7ba61cbe",
+        "git_blob": "66860860589f4415575e213384636e28bb6b4488"
+      }
+    ]
+  },
+  "immutability_rule": {
+    "statement": "After this Execution Freeze, none of the following may change under this freeze identity.",
+    "must_not_change": [
+      "bridge bytes — BRIDGE-CANDIDATE.yaml and every element it declares",
+      "the experiment policy",
+      "the comparison policy",
+      "the hosted infrastructure baseline",
+      "the ablation plan",
+      "the B-01 commitment metadata",
+      "the permitted report-level verdict vocabulary",
+      "the Design Freeze, which remains immutable under its own freeze identity"
+    ],
+    "why": "The bridge was frozen before the blind case became visible. That ordering is the entire evidential content of a blind case: if the bridge can still move once B-01 is readable, the case stops testing anything.",
+    "any_necessary_change_requires": [
+      "an explicitly identified successor Execution Freeze",
+      "this freeze preserved intact, not overwritten",
+      "a non-retroactive treatment of anything already recorded under this identity"
+    ],
+    "prohibited": "No silent repair under the same experiment or freeze identity. Editing a frozen item without a successor does not produce a corrected experiment; it produces a record nobody can rely on.",
+    "charter_basis": "DRAFT-004 §9.2 post-freeze clause 4 — the bridge, cases, authorities, policies and verdict rules remain unchanged.",
+    "verification": "Every frozen item above carries a digest, so later divergence is caught by re-measurement rather than by memory."
+  },
+  "current_evidence_not_promoted": {
+    "bridge_sufficiency": "NOT_EVALUATED",
+    "local_minimality": "NOT_EVALUATED",
+    "pre_execution_h_min_evidence": {
+      "supported": 14,
+      "not_established": [
+        "BE-03",
+        "BE-04",
+        "BE-06"
+      ],
+      "status": "EVIDENCE, NOT A VERDICT"
+    },
+    "rule": "Pre-execution evidence MUST NOT be converted into a final verdict. B-01 has not been revealed or run, and neither axis can be decided without it.",
+    "elements_retained": "All 17 elements remain. BE-03, BE-04 and BE-06 were not deleted to improve the count.",
+    "h03_fairness_item": "PRESERVED_NOT_RESOLVED",
+    "contributor_contacted": false
+  },
+  "state_machine": {
+    "founder_execution_freeze": "GRANTED_AND_EFFECTIVE",
+    "execution_surface": "FROZEN",
+    "bridge": "FROZEN",
+    "b01_reveal": "NOT_AUTHORIZED",
+    "b01_bytes": "ABSENT",
+    "expectations": "NOT_YET_COMMITTED",
+    "execution": "NOT_AUTHORIZED",
+    "publication": "NOT_AUTHORIZED",
+    "superseded_state": {
+      "freeze_status": "CANDIDATE",
+      "execution_frozen": false,
+      "founder_execution_freeze": "NOT_TAKEN"
+    }
+  },
+  "not_authorized_by_this_freeze": {
+    "b01_reveal": "NOT AUTHORIZED — a separate Founder B-01 REVEAL GO is required, and availability of bytes is never authorization",
+    "execution": "NOT AUTHORIZED — a separate Founder EXECUTION GO is required, after reveal verification and after both expectations are committed",
+    "publication": "NOT AUTHORIZED",
+    "bridge_changes": "PROHIBITED",
+    "design_freeze_changes": "PROHIBITED",
+    "generic_promotion": "NOT AUTHORIZED — charter §13 still governs",
+    "rule": "execution_frozen true implies none of the above. It means the execution surface is fixed, nothing more."
+  },
+  "next_chronology": {
+    "charter_basis": "DRAFT-004 §9.2 post-freeze clauses 1-5, §6 B-01 admission discipline, §15 decision gates",
+    "steps": [
+      "1. separate Founder B-01 REVEAL GO — an act, never inferred from availability",
+      "2. request the exact previously committed B-01 bytes from the EMILIA-side contributor",
+      "3. receive the bytes without modifying them",
+      "4. verify case identifier, byte_count == 7276, and sha256 == 8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66, BEFORE any semantic execution consumes them",
+      "5. only after successful verification, admit the revealed bytes as the frozen blind fixture; an exact allowlist entry MAY then be created for that path",
+      "6. commit the WEXP-side expectation",
+      "7. commit the EMILIA-side expectation",
+      "8. separate Founder EXECUTION GO",
+      "9. execute the unchanged frozen procedure"
+    ],
+    "constraints": [
+      "The revealed case MUST NOT be altered to accommodate the bridge result.",
+      "No wildcard may admit B-01; the allowlist is exact-path only.",
+      "Reveal authorization is an act, not an observation. No tooling, workflow or monitor may infer it from bytes becoming available.",
+      "Expectations are committed after reveal verification and before any implementation execution. An expectation recorded after a result is not an expectation."
+    ],
+    "performed_under_this_order": "NONE. No step above was taken."
+  },
+  "what_this_freeze_does_not_establish": [
+    "It does not establish that the bridge is sufficient. Bridge Sufficiency is NOT_EVALUATED.",
+    "It does not establish that the bridge is minimal. Local Minimality is NOT_EVALUATED.",
+    "It does not resolve the H-03 fairness item, which remains the contributor's to answer.",
+    "It does not make any pinned authority endorsed, adopted or standardized.",
+    "It does not make the canary a semantic result — that run was X-001 infrastructure validation."
+  ]
+}

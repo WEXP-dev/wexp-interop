@@ -1,0 +1,120 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-EXPERIMENT-POLICY-001",
+  "status": "CANDIDATE_BOUND_NOT_FROZEN",
+  "charter_basis": "DRAFT-004 §9.2 requires the Execution Freeze to bind an exact experiment policy. This is the smallest policy that does that and adds nothing.",
+  "adds_no_new_vocabulary": "Every status, relation and verdict token used here already exists in DRAFT-004 §8 or in the frozen Prototype-000 framework. No new semantic outcome vocabulary is introduced.",
+
+  "bound_design_freeze": {
+    "artifact_id": "WEXP-EMILIA-INTEROP-002-DESIGN-FREEZE-001",
+    "path": "experiments/WEXP-EMILIA-INTEROP-002/pre-freeze/DESIGN-FREEZE-MANIFEST.json",
+    "bytes": 16408,
+    "sha256": "cd16600c3f9eff046e036f476dcbd7fc17fa36fdda91bfdf20bb5b71e200685f",
+    "blob": "f89a21ad8c88d1042e789599502a491cd780ad01",
+    "commit": "e0c16a69f3d16f21aebdaeb457464d3960b53723",
+    "freeze_status": "EFFECTIVE",
+    "revision_under_this_policy": "PROHIBITED"
+  },
+
+  "bound_bridge": {
+    "artifact_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+    "path": "experiments/WEXP-EMILIA-INTEROP-002/bridge/BRIDGE-CANDIDATE.yaml",
+    "bytes": 43239,
+    "sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+    "blob": "9ad6b8d0b16b3e645128b31e1415f54dc220b637",
+    "commit": "5513ea95ea43dc44d62099edc6f2f6709fb79fe1",
+    "element_count": 17,
+    "element_inventory": ["BE-01","BE-02","BE-03","BE-04","BE-05","BE-06","BE-07","BE-08","BE-09","BE-10","BE-11","BE-12","BE-13","BE-14","BE-15","BE-16","BE-17"],
+    "revision_under_this_policy": "PROHIBITED"
+  },
+
+  "bound_cases": {
+    "positive_control": {"case_id": "C-00", "sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e"},
+    "open_hostile": [
+      {"case_id": "H-01-a", "sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0", "attacked_invariants": ["I-01","I-03a"]},
+      {"case_id": "H-01-b", "sha256": "fbfb2046305ca6e9a8a3bbaf2e15c7acc30b8929d7625a3d90643c882276fe47", "attacked_invariants": ["I-01","I-03a"]},
+      {"case_id": "H-01-c", "sha256": "4737ed60826f981beed70a34303a3a79ea40207858e55c62f1ab81fe48271aa5", "attacked_invariants": ["I-03b"]},
+      {"case_id": "H-02", "sha256": "18350d7511035c0debd3ea5c7f02cabd3a095ba03be910dc10fa2b3b1cf314aa", "attacked_invariants": ["I-02","I-04"]},
+      {"case_id": "H-03", "sha256": "ec7904648898cf8f6590cc7d1d223516ec38dde7365e4c96168061bb2192c7fb", "attacked_invariants": ["I-04","I-05"]}
+    ],
+    "blind_case": {
+      "case_id": "WEXP-EMILIA-INTEROP-002-B01-OPERATION-REBIND-001",
+      "bound_as": "COMMITMENT METADATA ONLY",
+      "attacked_invariants": ["I-01","I-03a"],
+      "byte_count": 7276,
+      "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+      "bytes_present": false,
+      "reveal_authorized": false
+    }
+  },
+
+  "intended_claim": {
+    "candidate_id": "CC-1",
+    "typed_claim": "(observation, {IV})",
+    "core01_basis": "base §4.2 observation; qualifier §4.3 IV; admissible under §4.4"
+  },
+
+  "claim_ceilings": {
+    "positive": "Under the frozen evaluation context, an independently verified observation that an event concerning the exact action instance operation:plant-7:001 was recorded — and nothing above the observation base.",
+    "non_claim_ceiling": "charter §14, all nine items, unchanged",
+    "structural_enforcement": "Core-01 §7 excludes any base above ceiling_base, which is observation on every case that constructs."
+  },
+
+  "generalization_rule": {
+    "source": "charter §13",
+    "state": "PROHIBITED_UNLESS_SEPARATELY_AUTHORIZED",
+    "effect": "Any apparently reusable finding is labelled CANDIDATE_GENERIC only. Promotion needs a separate Founder decision, reproduction with at least one non-EMILIA external system, and a change process independent of the publication decision."
+  },
+
+  "failure_discipline": {
+    "typed_outcomes": ["CONSTRUCTED_CLAIM_SUPPORTED","CONSTRUCTED_CLAIM_UNSUPPORTED","NON_CONSTRUCTIBLE","INDETERMINATE"],
+    "rule": "If a complete AppraisalInput cannot be constructed, emit an explicit typed failure. Never synthesize a missing source fact, never turn a missing premise into an assumption, never treat absence of evidence as evidence.",
+    "fail_closed_results_are_valid_output": "A hostile case yielding rejection, non-constructibility, indeterminacy or a lower ceiling is a pre-authorized safe result. A bridge does not fail because it refuses to construct an unsafe claim."
+  },
+
+  "no_repair_after_semantic_failure": {
+    "rule": "After execution begins, neither the bridge, the cases, the authorities, the policies nor the verdict rules may be changed in response to a semantic result. An unfavourable semantic result is recorded as the result.",
+    "charter_basis": "DRAFT-004 §9.2 post-freeze clause 4 — the bridge, cases, authorities, policies and verdict rules remain unchanged.",
+    "if_a_change_is_genuinely_necessary": "It requires an explicitly identified successor freeze with the prior freeze preserved, and a new experiment identity or equivalent non-retroactive treatment. Never a silent edit under this identity."
+  },
+
+  "infrastructure_failure_is_not_a_semantic_result": {
+    "rule": "INFRASTRUCTURE_UNAVAILABLE and EXPERIMENT_INVALID are execution statuses, not bridge verdicts. Infrastructure absence is never interpreted as bridge rejection, and a procedure defect is never interpreted as a semantic result.",
+    "charter_basis": "DRAFT-004 §8",
+    "consequence": "When execution status is not EXECUTED, bridge sufficiency and local minimality are NOT_EVALUATED — not REJECTED."
+  },
+
+  "expectation_chronology": {
+    "order": [
+      "1. Execution Freeze granted by the Founder",
+      "2. B-01 revealed and verified against its prior commitment",
+      "3. revealed bytes admitted as the frozen blind fixture",
+      "4. each party commits its expectations",
+      "5. implementation execution",
+      "6. comparison and verdicts"
+    ],
+    "rule": "Expectations are committed AFTER the Execution Freeze and after reveal verification, and BEFORE any implementation execution. An expectation recorded after seeing a result is not an expectation.",
+    "current_state": "NOT_YET_COMMITTED — no party has been asked, and no expectation exists."
+  },
+
+  "reveal_chronology": {
+    "rule": "Reveal is an act, not an observation. Availability of bytes is never authorization. The experiment monitor, the bridge author, the tooling and the workflow MUST NOT infer that reveal has been authorized from the fact that bytes have become available.",
+    "sequence": [
+      "Execution Freeze effective and bridge bytes immovable",
+      "separate Founder reveal authorization",
+      "bytes received and checked against byte count and SHA-256 BEFORE any semantic execution consumes them",
+      "an exact allowlist entry MAY then be created for the revealed path",
+      "the revealed case MUST NOT be altered to accommodate the bridge result"
+    ],
+    "current_state": "NOT AUTHORIZED"
+  },
+
+  "report_level_verdict_vocabulary": {
+    "execution_status": ["EXECUTED","INFRASTRUCTURE_UNAVAILABLE","EXPERIMENT_INVALID"],
+    "bridge_sufficiency": ["SUPPORTED","REJECTED","INCONCLUSIVE","NOT_EVALUATED"],
+    "local_minimality": ["SUPPORTED","REJECTED","NOT_ESTABLISHED","NOT_EVALUATED"],
+    "source": "DRAFT-004 §8, verbatim. Nothing added."
+  },
+
+  "execution_authorized": false,
+  "publication_authorized": false
+}

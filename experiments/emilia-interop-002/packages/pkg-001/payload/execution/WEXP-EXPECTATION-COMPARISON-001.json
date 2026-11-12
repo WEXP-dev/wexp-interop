@@ -1,0 +1,172 @@
+{
+  "matched": 23,
+  "total": 23,
+  "rows": [
+    {
+      "field": "typed_outcome",
+      "expected": "INDETERMINATE",
+      "observed": "INDETERMINATE",
+      "match": true
+    },
+    {
+      "field": "cc1_supported",
+      "expected": false,
+      "observed": false,
+      "match": true
+    },
+    {
+      "field": "ceiling_base",
+      "expected": null,
+      "observed": null,
+      "match": true
+    },
+    {
+      "field": "iv_independence_validation",
+      "expected": "not-evaluated",
+      "observed": "not-evaluated",
+      "match": true
+    },
+    {
+      "field": "rejection_reason_set",
+      "expected": [
+        "exact_binding_mismatch:operation_id"
+      ],
+      "observed": [
+        "exact_binding_mismatch:operation_id"
+      ],
+      "match": true
+    },
+    {
+      "field": "accepted_observations",
+      "expected": 0,
+      "observed": 0,
+      "match": true
+    },
+    {
+      "field": "rejected_observations",
+      "expected": 2,
+      "observed": 2,
+      "match": true
+    },
+    {
+      "field": "gaps (token multiset)",
+      "expected": [
+        "prediction_group_unobserved",
+        "prediction_group_unobserved",
+        "source_requirement_unmet",
+        "source_requirement_unmet"
+      ],
+      "observed": [
+        "prediction_group_unobserved",
+        "prediction_group_unobserved",
+        "source_requirement_unmet",
+        "source_requirement_unmet"
+      ],
+      "match": true
+    },
+    {
+      "field": "appraisal_input_assembled",
+      "expected": true,
+      "observed": true,
+      "match": true
+    },
+    {
+      "field": "I-01",
+      "expected": "PRESERVED",
+      "observed": "PRESERVED",
+      "match": true
+    },
+    {
+      "field": "I-03a",
+      "expected": "PRESERVED",
+      "observed": "PRESERVED",
+      "match": true
+    },
+    {
+      "field": "boundary_finding.status",
+      "expected": "unsupported",
+      "observed": "unsupported",
+      "match": true
+    },
+    {
+      "field": "boundary_finding.ceiling_base",
+      "expected": null,
+      "observed": null,
+      "match": true
+    },
+    {
+      "field": "boundary_finding.grounding",
+      "expected": "not-evaluated",
+      "observed": "not-evaluated",
+      "match": true
+    },
+    {
+      "field": "boundary_finding.reasons",
+      "expected": [
+        "no_accepted_bound_observation"
+      ],
+      "observed": [
+        "no_accepted_bound_observation"
+      ],
+      "match": true
+    },
+    {
+      "field": "observation_base.target_binding",
+      "expected": "unsupported",
+      "observed": "unsupported",
+      "match": true
+    },
+    {
+      "field": "observation_base.semantic_validation",
+      "expected": "not-evaluated",
+      "observed": "not-evaluated",
+      "match": true
+    },
+    {
+      "field": "IV qualifier.independence_validation",
+      "expected": "not-evaluated",
+      "observed": "not-evaluated",
+      "match": true
+    },
+    {
+      "field": "IV qualifier.reasons",
+      "expected": [
+        "independence_evidence_absent"
+      ],
+      "observed": [
+        "independence_evidence_absent"
+      ],
+      "match": true
+    },
+    {
+      "field": "H-MIN supported count",
+      "expected": 15,
+      "observed": 15,
+      "match": true
+    },
+    {
+      "field": "H-MIN not-established set",
+      "expected": [
+        "BE-03",
+        "BE-06"
+      ],
+      "observed": [
+        "BE-03",
+        "BE-06"
+      ],
+      "match": true
+    },
+    {
+      "field": "BE-04 necessary via B-01",
+      "expected": true,
+      "observed": true,
+      "match": true
+    },
+    {
+      "field": "BE-06 does not fire on B-01",
+      "expected": false,
+      "observed": false,
+      "match": true
+    }
+  ]
+}

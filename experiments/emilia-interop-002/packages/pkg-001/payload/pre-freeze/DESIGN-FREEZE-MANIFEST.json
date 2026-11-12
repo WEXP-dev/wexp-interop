@@ -1,0 +1,288 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-DESIGN-FREEZE-001",
+  "freeze_status": "EFFECTIVE",
+  "design_frozen": true,
+  "effective_date": "2026-08-24",
+  "granted_by": "Mikhail Sergeev, Founder",
+  "decision_record": "pre-freeze/FOUNDER-DESIGN-FREEZE-DECISION-001.md",
+  "charter_basis": "DRAFT-004 §9.1",
+  "naming_note": "Path and artifact_id follow established repository practice rather than a fresh name: the publication allowlist — itself part of the frozen surface — already admits `pre-freeze/DESIGN-FREEZE-MANIFEST.json` as the freeze manifest, and `DESIGN-FREEZE-MANIFEST.template.json` already declared the artifact_id WEXP-EMILIA-INTEROP-002-DESIGN-FREEZE-001. Inventing a different path would have contradicted a frozen artifact.",
+  "frozen_surface": {
+    "bound_by_reference": "pre-freeze/DESIGN-FREEZE-CANDIDATE-MANIFEST-001.json",
+    "candidate_manifest_identity": {
+      "bytes": 18725,
+      "sha256": "9cda9acbb37d8e0b3f7b02fb5676c66e0d2abff48f932304c96998a4fee9d2df",
+      "git_blob": "628542e850b5a5655c4b007738baaad0a660f966",
+      "commit": "8e8fb7fd9664b2e4924eb99d9dd9500951191b2c"
+    },
+    "verified_before_freeze": "All four values were re-measured from the working tree and the object store immediately before this artifact was written. The freeze proceeds only because all four matched the Founder decision exactly.",
+    "covered_file_count": 16,
+    "this_freeze_adds_no_surface": "This artifact binds exactly the surface the candidate manifest already enumerated. It introduces no new frozen item, and it changes none of them."
+  },
+  "bound_items": {
+    "1_charter": {
+      "artifact": "WEXP-EMILIA-INTEROP-002-CHARTER-DRAFT-004",
+      "path": "INTEROP-002-CHARTER.md",
+      "bytes": 34728,
+      "sha256": "814cd13fd1eae62633fc014673ee3c3d65a0048d43a25703604066b450feae61",
+      "git_blob": "7cc0ce4d92d96ace21d1850873d99eb98ac53ffb",
+      "git_commit": "d688a9f57b2d80ab4dbe6308f933b2e73df50e4e"
+    },
+    "2_wexp_normative_authority": {
+      "classification": "NORMATIVE_AUTHORITY",
+      "artifact": "draft-sergeev-wexp-core-01",
+      "repository": "WEXP-dev/wexp-spec",
+      "path": "drafts/core/01/draft-sergeev-wexp-core-01.xml",
+      "commit": "b3465c4ec218389c9701e2fb225e8dc2f8aec234",
+      "blob": "b0a8d4928f8907918b75faa92f290ad7c2a8326d",
+      "bytes": 103095,
+      "sha256": "84c0a16467585c29925339a10dd287c2e67bfe21ed592826254bf424dc24f56d"
+    },
+    "3_emilia_normative_authority": {
+      "classification": "NORMATIVE_SEMANTIC_AUTHORITY",
+      "artifact": "draft-schrock-ep-outcome-binding-00",
+      "normative_sections": "Sections 3 through 6",
+      "section_map": "§3 Source-Routed Predicted Effects; §4 Outcome Observation; §5 Relying-Party Source Policy; §6 Verification and Reconciliation",
+      "repository": "emiliaprotocol/emilia-protocol",
+      "path": "standards/posted/draft-schrock-ep-outcome-binding-00.xml",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "blob": "51c521fe6aa2e61273b34b538440c2decc7f8b3c",
+      "bytes": 15178,
+      "sha256": "7bb88cdc29e628f507464ebaaf8623d524a9f96f8c6b9bd495d8783e7c808b53",
+      "bound_as": "the EMILIA-side contributor's explicit correction, charter §10"
+    },
+    "4_emilia_reproducibility_envelope": {
+      "classification": "REPRODUCIBILITY_ENVELOPE",
+      "repository": "emiliaprotocol/emilia-protocol",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "is_semantic_authority": false
+    },
+    "5_emilia_non_normative_classifications": [
+      {
+        "classification": "NON_NORMATIVE_EXECUTABLE_FIXTURE",
+        "path": "conformance/vectors/outcome-binding.sources.v1.json",
+        "vector": "accept_executor_and_independent_observer",
+        "blob": "d1542229050c423d564de841d5050ea35b6a8651",
+        "bytes": 34794,
+        "sha256": "6c966c4a2d1e478a5698024a6830e6fa0fa9bdf6e2b1f1b6f7bd7543d9879636",
+        "creates_semantic_authority": false
+      },
+      {
+        "classification": "NON_NORMATIVE_REFERENCE_IMPLEMENTATION",
+        "path": "packages/verify/src/outcome-binding.ts",
+        "blob": "424a5a1e169b8a57bddac6a9d84569509401ad8a",
+        "bytes": 72532,
+        "sha256": "9a674113122f23001567eaeb673190ac4658b5273f7433e234c8ecbb5be704b0",
+        "creates_semantic_authority": false
+      },
+      {
+        "classification": "RELATED_BUT_NON_DEFINING_AUTHORITY",
+        "artifact": "draft-schrock-action-evidence-boundary-04",
+        "short_name": "AEB-04",
+        "blob": "866a328d7276cd34d7fe34a1e28754c82da7dc67",
+        "bytes": 52202,
+        "sha256": "83f97307a51e7f62200df243f765cb28ee436faae70871df9cb02b15c8d43dd5",
+        "explicitly_not": "the document defining the B-01 observation-rebinding case"
+      }
+    ],
+    "6_caid_authority": {
+      "classification": "TYPED_ACTION_IDENTIFIER_AUTHORITY",
+      "artifact": "draft-schrock-canonical-action-identifier-02",
+      "repository": "emiliaprotocol/emilia-protocol",
+      "path": "standards/posted/draft-schrock-canonical-action-identifier-02.xml",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "blob": "5fd2b22715223070ecd7a4f8820f83e25411431c",
+      "bytes": 55234,
+      "sha256": "777487b04ac473ad70ff2dd8a0c396657744bb7fd9e92499d4ec0bee67762015"
+    },
+    "7_emilia_authority_rule": "Neither EMILIA implementation bytes nor EMILIA conformance vectors create semantic authority. Where either disagrees with Sections 3 through 6, the sections win.",
+    "8_open_cases": {
+      "C-00": {
+        "path": "fixtures/C-00.json",
+        "bytes": 7255,
+        "sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+        "git_blob": "d47aa45468beca7a715391a6599cdb587d3b890f",
+        "role": "positive control"
+      },
+      "H-01-a": {
+        "path": "fixtures/H-01-a.json",
+        "bytes": 7152,
+        "sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0",
+        "git_blob": "51dcf267a30bda706c74b2b5a2c13108d5086ff0",
+        "attacked_invariants": [
+          "I-01",
+          "I-03a"
+        ]
+      },
+      "H-01-b": {
+        "path": "fixtures/H-01-b.json",
+        "bytes": 7933,
+        "sha256": "fbfb2046305ca6e9a8a3bbaf2e15c7acc30b8929d7625a3d90643c882276fe47",
+        "git_blob": "03223b82e3ee520201f7db8135c14ec38b56db5c",
+        "attacked_invariants": [
+          "I-01",
+          "I-03a"
+        ]
+      },
+      "H-01-c": {
+        "path": "fixtures/H-01-c.json",
+        "bytes": 7970,
+        "sha256": "4737ed60826f981beed70a34303a3a79ea40207858e55c62f1ab81fe48271aa5",
+        "git_blob": "e3f888622100172aa7fd49ece4bda23826752e1c",
+        "attacked_invariants": [
+          "I-03b"
+        ]
+      },
+      "H-02": {
+        "path": "fixtures/H-02.json",
+        "bytes": 6299,
+        "sha256": "18350d7511035c0debd3ea5c7f02cabd3a095ba03be910dc10fa2b3b1cf314aa",
+        "git_blob": "07770c0c3da2624d4b508a7b827e77e5d6e4cfe4",
+        "attacked_invariants": [
+          "I-02",
+          "I-04"
+        ]
+      },
+      "H-03": {
+        "path": "fixtures/H-03.json",
+        "bytes": 9646,
+        "sha256": "ec7904648898cf8f6590cc7d1d223516ec38dde7365e4c96168061bb2192c7fb",
+        "git_blob": "aa0bfea04de8718e42f2cc31f477a4a24365fd7b",
+        "attacked_invariants": [
+          "I-04",
+          "I-05"
+        ]
+      }
+    },
+    "9_fixture_register": {
+      "path": "fixtures/FIXTURE-REGISTER-001.json",
+      "bytes": 7083,
+      "sha256": "668f19fa3c15a09fa0a0764b3b8b18267b6a3f1a2912d54031c832be134497e0",
+      "git_blob": "440ff2f54f4baa7c435b4e13c06da3157085141c"
+    },
+    "10_blind_case_commitment_metadata_only": {
+      "case_id": "WEXP-EMILIA-INTEROP-002-B01-OPERATION-REBIND-001",
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "byte_count": 7276,
+      "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+      "bytes_included_in_this_freeze": false,
+      "blind_bytes_present": false,
+      "reveal_authorized": false
+    },
+    "11_roles_and_role_fusion": {
+      "record": "pre-freeze/ROLE-AND-CLAIM-RECORD.template.json",
+      "sha256": "21d509f702701ca23bcabb5a75529b28620f87fcb5ceb3d069c341676c2f1aef",
+      "role_fusion": "One unavoidable intra-WEXP fusion: founder, wexp_design_owner and experiment_operator held by one person.",
+      "assurance_effect": "WEXP-side approval, bridge authorship and execution are not independent of one another; nothing depending on that separation may be claimed. Cross-party independence is preserved, because the EMILIA-side contributor is a genuinely separate party."
+    },
+    "12_intended_wexp_claim": {
+      "candidate_id": "CC-1",
+      "typed_claim": "(observation, {IV})",
+      "core01_citations": "base §4.2 observation; qualifier §4.3 IV; admissibility §4.4",
+      "record": "pre-freeze/FOUNDER-CLAIM-DECISION-001.md",
+      "sha256": "53747c56a38930b59991253bb0c2b8514e78f5604e985b758b688516d1d7b7a2"
+    },
+    "13_positive_claim_ceiling": "Under the frozen evaluation context, an independently verified observation that an event concerning the exact action instance operation:plant-7:001 was recorded — and nothing above the observation base.",
+    "14_non_claim_ceiling": {
+      "source": "charter §14",
+      "count": 9,
+      "items": [
+        "physical truth of an execution or effect",
+        "correctness, security, or completeness of WEXP or EMILIA",
+        "global minimality of the bridge",
+        "universal EP↔WEXP interoperability",
+        "conformance, certification, adoption, or IETF endorsement",
+        "WEXP independent verification merely from an EMILIA role label",
+        "that an EP receipt, outcome observation, or mapped appraisal grants reusable permission, local authorization, Gate admission, delegated authority, or approval for a future action",
+        "a generic Bridge Framework",
+        "validity beyond the frozen authorities, bridge, cases, and verdict rules"
+      ],
+      "complete": true
+    },
+    "15_publication_allowlist": {
+      "record": "pre-freeze/PUBLICATION-ALLOWLIST.template.json",
+      "bytes": 3781,
+      "sha256": "0863e87245fa8d915109de2734777c502512f332525871d99e9d2c838d5e8599",
+      "matching": "EXACT_PATH_ONLY",
+      "wildcards_permitted": false,
+      "default": "DENY",
+      "b01_admitted": false,
+      "residual": "Three entries still carry sha256 PENDING_AT_FREEZE. They are publication-time names and publication is not authorized, so they stay pending. Resolving them requires a publication decision — not an edit to this frozen allowlist."
+    },
+    "16_generalization_rule": {
+      "source": "charter §13",
+      "state": "PROHIBITED_UNLESS_SEPARATELY_AUTHORIZED",
+      "text": "INTEROP-002 cannot by itself change WEXP Core, the EMILIA specification, or the generic Prototype-000 core. Any apparently reusable finding is labelled CANDIDATE_GENERIC only; promotion requires a separate Founder decision, reproduction with at least one non-EMILIA external system, and a change process independent of the INTEROP-002 publication decision. A third exemplar inside the WEXP × EMILIA line is not external replication by itself."
+    }
+  },
+  "immutability_rule": {
+    "statement": "After this freeze, the frozen design surface MUST NOT be modified in response to future bridge implementation results, a future B-01 reveal, future execution results, or any outcome whether favorable or unfavorable.",
+    "why": "A design surface that can move after seeing the result is not a prediction. The whole evidential value of freezing before bridge authoring is that the surface could not have been chosen to suit what came back.",
+    "any_necessary_change_requires": [
+      "a new explicit successor design-freeze decision",
+      "the prior freeze preserved intact, not overwritten",
+      "a new experiment identity, or an equivalent treatment that is non-retroactive on its face"
+    ],
+    "prohibited": "No silent repair under this freeze identity. Editing a frozen item without a successor decision does not produce a corrected experiment; it produces an experiment whose record cannot be trusted.",
+    "charter_basis": "DRAFT-004 §9.1: a change to any bound item invalidates the Design Freeze and requires an explicitly identified successor, not a silent edit.",
+    "verification": "Every bound item above carries a digest. Any later divergence is detectable by re-measurement, not by inspection or memory."
+  },
+  "not_authorized_by_this_freeze": {
+    "b01_reveal": "NOT AUTHORIZED",
+    "bridge": "NOT YET CREATED",
+    "execution_freeze": "NOT CREATED",
+    "execution": "NOT AUTHORIZED",
+    "publication": "NOT AUTHORIZED",
+    "generic_interop_core_promotion": "NOT AUTHORIZED",
+    "bridge_work_beyond_next_charter_step": "NOT AUTHORIZED",
+    "rule": "design_frozen true implies none of the above. It means the design surface is fixed, nothing more. Each item remains its own decision with its own gate."
+  },
+  "next_charter_gate": {
+    "gate": "BRIDGE-CANDIDATE construction",
+    "charter_basis": "§9.1 'Before bridge authoring begins, the Design Freeze MUST bind…' — the freeze is the precondition for bridge authoring, and §7 states what a bridge candidate must be.",
+    "authorization_state": "NOT AUTHORIZED UNDER THE ORDER THAT MATERIALIZED THIS FREEZE. No bridge was authored.",
+    "mapping_requirements_source": {
+      "artifact": "EP-WEXP-MAPPING-REQUIREMENTS-001.md",
+      "repository": "WEXP-dev/wexp-interop",
+      "commit": "e59222e4e1633b9bf0fb5711cc9f0e3cbeed4180",
+      "blob": "44be43323af0a83b0a3cbcdb845a56174b098014",
+      "bytes": 4610,
+      "sha256": "9cb35aa71d2e9dd9b7d8077966f2852b30f6febf82fc10bac325dee2452413f4",
+      "functions": "M-01 through M-18, eighteen in total",
+      "status": "design input — not a bridge, not experiment authority, not a normative profile"
+    }
+  },
+  "state_record_drift_recorded_not_silent": {
+    "what": "Two files listed in the candidate manifest's package_files change as a direct consequence of this freeze, because the Founder decision required it: the decision template becomes the recorded decision, and the candidate state record advances to frozen.",
+    "files": [
+      {
+        "path": "pre-freeze/FOUNDER-DESIGN-FREEZE-DECISION-001.md",
+        "sha256_at_candidate": "cabe10acc660cf3bf7aea6bfc90da8e00e0eb60982b3eb218b4e73526146fc80",
+        "sha256_after_freeze": "c65906896987975567cd787d0ce03038568f4e9e285559e2f3bff79083c71008",
+        "reason": "order §1: complete the decision with GRANTED / 2026-08-24 / Mikhail Sergeev and bind the candidate identity. Scope text unchanged."
+      },
+      {
+        "path": "pre-freeze/DESIGN-FREEZE-CANDIDATE-001.json",
+        "sha256_at_candidate": "d9e0ebd4a106de7d724afeffbf4746ab65ea18cd2dc18d35882aaceef118399d",
+        "sha256_after_freeze": "599be65affd45305128e13ee3a183b3f57c02166f443a66250b2900cbeec252d",
+        "reason": "order §4: advance design_frozen false → true and the status to the effective freeze status."
+      }
+    ],
+    "why_this_is_not_a_frozen_surface_change": "Neither file carries a design decision input. One records the Founder's decision about the surface; the other records process state. The substantive surface — charter, both authorities, all six fixtures, the fixture register, the B-01 commitment, roles, CC-1, both ceilings, the allowlist, §13 — is byte-identical and verified so.",
+    "candidate_manifest_itself": "UNCHANGED. 18725 bytes, sha256 9cda9acb…9d2df, blob 628542e8…f966. It is the freeze anchor and it was not touched."
+  },
+  "provenance_boundary": {
+    "DRAFT-002": "exact-byte reviewed by the EMILIA-side contributor",
+    "DRAFT-004": "exact-byte reviewed by the EMILIA-side contributor",
+    "DRAFT-003": "historical infrastructure and security-contract successor; NOT independently exact-byte reviewed. Not upgraded by this freeze."
+  },
+  "what_this_freeze_does_not_establish": [
+    "It does not establish that the frozen design is correct, sufficient, or minimal. Those are what the experiment is for.",
+    "It does not establish any WEXP or EMILIA claim. CC-1 is the claim the experiment will attempt, not a claim it has made.",
+    "It does not make the pinned authorities endorsed, adopted, or standardized.",
+    "It does not make any hosted identity an execution authority; §9.2.1 binds those, and no such manifest exists."
+  ]
+}

@@ -1,0 +1,825 @@
+# WEXP x EMILIA INTEROP-002 — experiment-specific bridge candidate.
+#
+# This is NOT a generic Bridge Framework. It is one experiment's mapping from
+# the frozen EMILIA outcome-binding evidence to a WEXP Core-01 AppraisalInput,
+# authored after the effective Design Freeze and against frozen authorities
+# only. Charter Sections 7 and 13 govern it. Nothing here may be promoted to
+# interop_core, to a WEXP or EMILIA profile, or to a reusable mapping.
+
+schema: wexp-emilia-bridge-candidate-1
+artifact_id: WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001
+version: 1
+status: CANDIDATE_OPEN_CASE_VALIDATED_BLIND_CASE_PENDING
+generic_bridge_framework: false
+element_namespace:
+  prefix: BE
+  note: >-
+    Bridge elements are BE-nn. They are deliberately NOT numbered B-nn. B-01 in
+    this experiment is the independently committed blind hostile case, and a
+    shared namespace would make every later sentence about "B-01" ambiguous at
+    exactly the moment ambiguity is most expensive. This is a representation
+    choice only; it changes no frozen scientific semantics.
+
+design_freeze:
+  artifact: experiments/WEXP-EMILIA-INTEROP-002/pre-freeze/DESIGN-FREEZE-MANIFEST.json
+  artifact_id: WEXP-EMILIA-INTEROP-002-DESIGN-FREEZE-001
+  bytes: 16408
+  sha256: cd16600c3f9eff046e036f476dcbd7fc17fa36fdda91bfdf20bb5b71e200685f
+  blob: f89a21ad8c88d1042e789599502a491cd780ad01
+  commit: e0c16a69f3d16f21aebdaeb457464d3960b53723
+  candidate_anchor_sha256: 9cda9acbb37d8e0b3f7b02fb5676c66e0d2abff48f932304c96998a4fee9d2df
+
+authorities:
+  wexp_normative:
+    artifact: draft-sergeev-wexp-core-01
+    sha256: 84c0a16467585c29925339a10dd287c2e67bfe21ed592826254bf424dc24f56d
+    sections_relied_on: "4.1 exact action target; 4.2 content bases; 4.3 qualifiers; 4.4 admissible domain; 6 normalized appraisal input; 7 boundary ceiling"
+  emilia_normative:
+    artifact: draft-schrock-ep-outcome-binding-00
+    normative_sections: Sections 3 through 6
+    sha256: 7bb88cdc29e628f507464ebaaf8623d524a9f96f8c6b9bd495d8783e7c808b53
+  caid_authority:
+    artifact: draft-schrock-canonical-action-identifier-02
+    sha256: 777487b04ac473ad70ff2dd8a0c396657744bb7fd9e92499d4ec0bee67762015
+  mapping_requirements_design_input:
+    artifact: EP-WEXP-MAPPING-REQUIREMENTS-001.md
+    repository: WEXP-dev/wexp-interop
+    commit: e59222e4e1633b9bf0fb5711cc9f0e3cbeed4180
+    sha256: 9cb35aa71d2e9dd9b7d8077966f2852b30f6febf82fc10bac325dee2452413f4
+    status: non-normative design input; not authority
+  non_authority:
+    - artifact: packages/verify/src/outcome-binding.ts
+      note: >-
+        EMILIA reference implementation. Consulted to reproduce the signing
+        construction exactly; it is not authority. Where it and Sections 3
+        through 6 disagree, the sections win.
+    - artifact: conformance/vectors/outcome-binding.sources.v1.json
+      note: EMILIA conformance vector. Evidence, never a requirement.
+    - artifact: draft-schrock-action-evidence-boundary-04
+      note: AEB-04. Related to admission and consumption; non-defining here.
+
+target_claim:
+  candidate_id: CC-1
+  typed_claim: "(observation, {IV})"
+  core01_basis: "base 4.2 observation; qualifier 4.3 IV; admissible under 4.4"
+  positive_ceiling: >-
+    Under the frozen evaluation context, an independently verified observation
+    that an event concerning the exact action instance operation:plant-7:001
+    was recorded — and nothing above the observation base.
+  may_never_upgrade_to:
+    - execution
+    - completion
+    - physical effect
+    - authorization
+    - permission
+    - Gate admission
+    - delegated authority
+    - future-action approval
+    - generic interoperability
+
+failure_discipline:
+  rule: >-
+    If a complete AppraisalInput cannot be constructed, emit an explicit typed
+    failure. Never synthesize a missing source fact, never downgrade a missing
+    premise into an assumption, and never treat absence of evidence as evidence.
+  typed_outcomes:
+    - CONSTRUCTED_CLAIM_SUPPORTED
+    - CONSTRUCTED_CLAIM_UNSUPPORTED
+    - NON_CONSTRUCTIBLE
+    - INDETERMINATE
+
+# ---------------------------------------------------------------------------
+# Bridge elements. Exactly one reviewable purpose each.
+# ---------------------------------------------------------------------------
+elements:
+
+  - element_id: BE-01
+    purpose: Resolve each observation's relying-party source pin and derive canonical key identity from DER SPKI bytes.
+    source_authority: EMILIA outcome-binding-00 Section 4
+    target_wexp_construction: Precondition for every finding's basis_refs; supplies accepted source identity.
+    mapping_requirements_served: [M-05, M-06, M-14]
+    predicate_classes: [identity, issuer, normalization]
+    failure_behavior: >-
+      Observation not accepted; reason source_key_not_pinned or
+      source_key_mismatch or source_metadata_not_pinned. Never falls back to
+      caller-provided key_id or key text.
+    rationale: >-
+      Section 4 requires the verifier to pin source_id, public key, role,
+      source_class, control_domain_id, status, validity and any required
+      facility, and to derive key identity from canonical DER rather than from
+      key_id. Re-encoding a key must not create a new identity.
+    depends_on: []
+
+  - element_id: BE-02
+    purpose: Verify the Ed25519 signature over the domain-separated canonical observation body.
+    source_authority: EMILIA outcome-binding-00 Section 4
+    target_wexp_construction: Contributes semantic_validation for base and qualifier findings.
+    mapping_requirements_served: [M-12]
+    predicate_classes: [grounding, identity]
+    failure_behavior: Observation not accepted; reason signature_invalid.
+    rationale: >-
+      Signing input is the literal domain string "EP-OUTCOME-OBSERVATION-v1"
+      followed by a zero octet, then the canonical JSON of the observation with
+      proof removed. Reproduced byte-exactly and confirmed against the frozen
+      C-00 signatures before any case was scored.
+    depends_on: []
+
+  - element_id: BE-03
+    purpose: Refuse a source pin that is malformed, compromised at or before attested_at, not yet valid, or expired at attested_at.
+    source_authority: EMILIA outcome-binding-00 Sections 4 and 6
+    target_wexp_construction: Gates whether an accepted identity may ground a finding.
+    mapping_requirements_served: [M-05, M-12]
+    predicate_classes: [timing, issuer, trust-set]
+    failure_behavior: Observation not accepted; reason source_pin_not_current.
+    rationale: >-
+      Section 6 requires refusing such sources, and a retired key may verify a
+      historical observation only while attested_at is inside its pinned
+      validity interval. Required by the frozen normative authority regardless
+      of whether the frozen open case set happens to exercise it.
+    depends_on: [BE-01]
+
+  - element_id: BE-04
+    purpose: Enforce the Section 6 exact-equality binding between the relying party's expectation and each observation.
+    source_authority: EMILIA outcome-binding-00 Section 6
+    target_wexp_construction: Establishes target_binding for base and qualifier findings; this is the exact action target of Core 4.1.
+    mapping_requirements_served: [M-01, M-06, M-17]
+    predicate_classes: [equality, correlation, identity, evaluation-scope]
+    failure_behavior: >-
+      Observation not accepted; reason exact_binding_mismatch with the exact
+      field named. No partial credit and no "same enough" relation exists.
+    rationale: >-
+      Section 6 verbatim - "Require exact equality of receipt identifier and
+      digest, action digest, optional CAID, consumption nonce, operation
+      identifier, required facility, and source metadata." Core 4.1 forbids
+      treating a correlation hint, shared timestamp or common signer as an
+      exact target binding, so the conjunction is the binding and no single
+      member of it is.
+    depends_on: []
+
+  - element_id: BE-05
+    purpose: Require action_caid as an exact-binding premise on every accepted observation.
+    source_authority: Bridge decision under M-08, within EMILIA Section 6 and WEXP Core 4.1
+    target_wexp_construction: Precondition of target_binding; its absence yields the M-15 typed disposition.
+    mapping_requirements_served: [M-08, M-15]
+    predicate_classes: [identity, correlation, causal-provenance]
+    failure_behavior: >-
+      Observation not accepted; reason caid_premise_absent; typed disposition
+      NON_CONSTRUCTIBLE for that observation, recorded as a gap and explicitly
+      NOT as counter-evidence.
+    rationale: >-
+      Section 6 makes CAID optional for EP's own verdict. This bridge makes it
+      required, because the WEXP claim concerns a particular action instance and
+      INTEROP-001 stalled at exactly this gap. Making it required is the
+      decision M-08 asks for; the cost is that a valid EP observation without
+      action_caid cannot carry this WEXP claim, and that cost is stated rather
+      than hidden.
+    depends_on: []
+
+  - element_id: BE-06
+    purpose: Fix the CAID namespace, the normalization function, and the equality relation.
+    source_authority: draft-schrock-canonical-action-identifier-02
+    target_wexp_construction: Supplies the comparison used by BE-04 and BE-05.
+    mapping_requirements_served: [M-02, M-03, M-04]
+    predicate_classes: [normalization, equality]
+    failure_behavior: Value outside the admitted namespace is non-comparable; observation not accepted; reason caid_out_of_domain.
+    rationale: >-
+      Namespace admitted - caid:sha256: followed by exactly 64 lowercase hex
+      characters, pinned to CAID-02 at the frozen commit. Normalization - NONE.
+      Deciding that no normalization occurs is itself the M-03 decision, and it
+      is the safe one - any normalization would create a class of distinct
+      identifiers that compare equal. Equality - octet equality over the whole
+      string.
+    depends_on: []
+
+  - element_id: BE-07
+    purpose: Enforce the relying party's observation-window requirement and the attestation-delay bound.
+    source_authority: EMILIA outcome-binding-00 Sections 4 and 5
+    target_wexp_construction: Part of the evaluation context under which the appraisal is admissible.
+    mapping_requirements_served: [M-17]
+    predicate_classes: [timing, evaluation-scope, relying-party-policy]
+    failure_behavior: Observation not accepted; reason window_mismatch or attestation_delay_exceeded or observation_time_invalid.
+    rationale: >-
+      Section 5 defines relation exact, within and covers against observed_from
+      and observed_until, bounds max_attestation_delay_ms at 86400000, and
+      forbids a presenter widening, replacing or selecting these requirements.
+      Section 4 additionally requires observed_from <= observed_until <=
+      attested_at and attested_at not in the verifier's future. A causally
+      related observation assessed under the wrong window is inadmissible, which
+      is exactly the I-03b property.
+    depends_on: []
+
+  - element_id: BE-08
+    purpose: Enforce relying-party source requirements, quorum, and per-group prediction coverage.
+    source_authority: EMILIA outcome-binding-00 Sections 3, 5 and 6
+    target_wexp_construction: Determines whether the evidence set is sufficient or indeterminate.
+    mapping_requirements_served: [M-07, M-16, M-17]
+    predicate_classes: [relying-party-policy, trust-set, evaluation-scope, counter-evidence]
+    failure_behavior: >-
+      Requirement unmet yields lifecycle indeterminate for that group and no
+      base support derived from it; reason source_requirement_unmet or
+      prediction_group_unobserved.
+    rationale: >-
+      Section 6 - group predictions by required source role and class, and if
+      any group lacks an accepted observation return indeterminate with a null
+      outcome. min_distinct_sources must be between 1 and 16 and the
+      distinctness dimensions are the relying party's to declare.
+    depends_on: []
+
+  - element_id: BE-09
+    purpose: Establish or refuse source and control-domain independence for the independent-observer role.
+    source_authority: EMILIA outcome-binding-00 Section 5
+    target_wexp_construction: The evidence on which the IV qualifier's independence_validation rests.
+    mapping_requirements_served: [M-14]
+    predicate_classes: [independence, identity, trust-set]
+    failure_behavior: independence_validation unsupported; reason independence_not_distinct.
+    rationale: >-
+      Section 5 - an independent_observer observation must use a canonical key
+      identity and a control_domain_id distinct from every accepted
+      non-independent source, even when min_distinct_sources is one; re-encoding
+      the same Ed25519 key must not create a distinct source; different keys
+      under the same declared control domain must not satisfy independence.
+    depends_on: [BE-01]
+
+  - element_id: BE-10
+    purpose: Decide the WEXP IV predicate for the exact base named by the claim.
+    source_authority: WEXP Core-01 Section 4.3, under M-13
+    target_wexp_construction: qualifier_findings entry with qualifier IV and qualified_base observation.
+    mapping_requirements_served: [M-13]
+    predicate_classes: [independence, trust-set, relying-party-policy, claim-ceiling]
+    failure_behavior: >-
+      independence_validation not-evaluated when the evidence to decide it is
+      absent, unsupported when it was decided against. Never supported by
+      default and never inferred from a label.
+    rationale: >-
+      Core 4.3 - a different key, signer, organization label or trust root is
+      not sufficient by itself, and the applied IV profile must define the
+      administrative, operational and technical criteria it evaluates. M-13 - an
+      EMILIA role label alone must not satisfy it. This bridge therefore defines
+      IV as the conjunction of - the relying party (not the presenter) declared
+      an independent_observer requirement; its quorum is met by accepted
+      observations; canonical DER key identity is distinct from every accepted
+      non-independent source; declared control_domain_id is distinct likewise;
+      each contributing observation independently passed BE-01 through BE-07.
+      Administrative criterion - the control-domain declaration in the relying
+      party's pinned registry. Operational criterion - the requirement is
+      supplied by the relying party and a presenter may not widen or select it.
+      Technical criterion - canonical DER key distinctness, not key_id text.
+      WHETHER THIS CONSTITUTES WEXP INDEPENDENT VERIFICATION IS THE QUESTION
+      THE EXPERIMENT ASKS. The bridge states the predicate; it does not settle it.
+    depends_on: [BE-08, BE-09]
+
+  - element_id: BE-11
+    purpose: Construct the positive observation-base finding for the exact action target.
+    source_authority: WEXP Core-01 Sections 4.1, 4.2 and 6
+    target_wexp_construction: base_findings entry with base observation.
+    mapping_requirements_served: [M-01, M-07, M-18]
+    predicate_classes: [identity, grounding, evaluation-scope]
+    failure_behavior: target_binding or semantic_validation unsupported; no base finding is invented.
+    rationale: >-
+      Core 4.2 - observation is a positive finding that an event concerning the
+      exact action target was recorded or reported, and absence of evidence does
+      not support it. Core 6 - a passing finding must state that the evidence was
+      semantically validated, accepted under the evaluation context, and bound to
+      the exact target and exact base. An authenticated meter observation
+      therefore occupies the observation base material role and nothing higher,
+      which is the M-07 decision - authentication alone does not imply semantic
+      truth about the physical world.
+    depends_on: []
+
+  - element_id: BE-12
+    purpose: Construct the boundary finding and fix ceiling_base at observation.
+    source_authority: WEXP Core-01 Section 7
+    target_wexp_construction: boundary_finding with ceiling_base observation and grounding attributed.
+    mapping_requirements_served: [M-10, M-11]
+    predicate_classes: [boundary, grounding, claim-ceiling]
+    failure_behavior: status not-evaluated or unsupported, which under Core 7 adds no base at all.
+    rationale: >-
+      M-10 accepted boundary - the relying party's declared evidence boundary,
+      namely the pinned source registry, the declared source requirements and
+      windows, and the facility. M-11 ceiling - observation, because M-09 is not
+      constructible by this bridge, so no higher base can be reached from this
+      evidence. Grounding is attributed and not attested - Core 7 allows a valid
+      signature associated with an accepted identity to reach attributed, and no
+      boundary-grounding profile applies here. Core 7 also makes the boundary an
+      exclusion rule only, so it never creates the observation finding that
+      BE-11 must establish positively.
+    depends_on: []
+
+  - element_id: BE-13
+    purpose: Construct the evaluation context and the evaluation scope.
+    source_authority: WEXP Core-01 Section 6; EMILIA Section 5
+    target_wexp_construction: evaluation_context and evaluation_scope fields.
+    mapping_requirements_served: [M-17, M-18]
+    predicate_classes: [evaluation-scope, relying-party-policy, trust-set]
+    failure_behavior: AppraisalInput is not constructible; typed failure NON_CONSTRUCTIBLE.
+    rationale: >-
+      M-17 requires an exact evaluation scope covering time, facility or
+      resource, operation, evidence set and claim set. trust_configuration is a
+      digest over the relying party's pinned source registry, source
+      requirements and observation windows, so a change to any of them is a
+      different evaluation context rather than the same one silently reused.
+    depends_on: []
+
+  - element_id: BE-14
+    purpose: Construct the counter-evidence entry set and keep absence distinct from opposition.
+    source_authority: WEXP Core-01 Section 6, under M-16
+    target_wexp_construction: counter_evidence entries.
+    mapping_requirements_served: [M-16]
+    predicate_classes: [counter-evidence, evaluation-scope]
+    failure_behavior: A material unresolved entry is carried, never collapsed into a single status.
+    rationale: >-
+      M-16 - which EP facts constitute counter-evidence, how conflicts resolve,
+      and how absence differs from evidence against. This bridge admits two
+      kinds - two accepted observations from distinct sources reporting
+      conflicting values for the same effect_type and target yields
+      unresolved-material; an accepted and bound observation whose observed
+      effect fails the relying party's predicate yields resolved-no-defeat for
+      CC-1, because a failed effect predicate does not defeat the claim that an
+      event was recorded. Absence of any observation is never counter-evidence;
+      it produces a gap and a not-supplied entry.
+    depends_on: []
+
+  - element_id: BE-15
+    purpose: Refuse every claim expansion beyond the frozen ceiling, and admit no externally asserted property as evidence.
+    source_authority: WEXP Core-01 Sections 4.4 and 7; charter I-04
+    target_wexp_construction: Enforced over the assembled AppraisalInput and over the reported claim.
+    mapping_requirements_served: [M-11]
+    predicate_classes: [claim-ceiling, counter-evidence, boundary]
+    failure_behavior: The expansion is refused and recorded as asserted_not_admitted, with the reason; it is never silently dropped.
+    rationale: >-
+      I-04 - the mapped claim must not be stronger than the evidence and the
+      frozen mapping support, and completion, external effect, semantic truth,
+      independent verification and a higher ceiling must not be silently added.
+      An assertion attached to a fixture is not evidence, so it is not admitted
+      as evidence; every bridge finding is derived from the observation set and
+      the relying party's policy instead. Core 7 independently caps any base
+      above ceiling_base.
+    depends_on: []
+
+  - element_id: BE-16
+    purpose: Refuse every attempted conversion of evidence or appraisal into authority.
+    source_authority: charter I-05
+    target_wexp_construction: Recorded refusals; no authority-bearing output field exists at all.
+    mapping_requirements_served: [M-16]
+    predicate_classes: [non-authority, claim-ceiling]
+    failure_behavior: Each request is refused with reason no_independent_authority_source; missing authority is never inferred.
+    rationale: >-
+      I-05 - an EP receipt, outcome observation, correlation or mapped appraisal
+      may support only the frozen appraisal claim for which it is admitted, and
+      must not become reusable permission, local authorization, Gate admission,
+      delegated authority, a capability for future action, or approval under
+      another policy. The bridge emits no field that could carry any of those,
+      which is a stronger guarantee than refusing them one at a time; it also
+      refuses them one at a time so the refusal is visible in the record.
+    depends_on: []
+
+  - element_id: BE-17
+    purpose: Assemble the complete AppraisalInput or emit an explicit typed failure.
+    source_authority: WEXP Core-01 Section 6, under M-18
+    target_wexp_construction: The whole AppraisalInput object and the typed outcome.
+    mapping_requirements_served: [M-15, M-18]
+    predicate_classes: [normalization, evaluation-scope, grounding, claim-ceiling]
+    failure_behavior: >-
+      Any Core-required field that cannot be constructed produces a typed
+      failure carrying the exact field and diagnostic. No field is defaulted and
+      no evidence is synthesized.
+    rationale: >-
+      M-18 requires a total, versioned construction procedure for every required
+      Core input field with fail-closed diagnostics. Core 6 requires
+      claim-independent mapping, so all four bases and both qualifiers are
+      evaluated and reported even though only CC-1 is asserted; this is what
+      lets an incomparable supported alternative be reported rather than hidden.
+      Core 6 also requires exactly one not-supplied counter-evidence entry when
+      none was supplied, one aggregated boundary finding, and at most one
+      aggregate per key.
+    depends_on: [BE-12, BE-13, BE-14]
+
+dependency_model:
+  meaning: >-
+    depends_on lists GENUINE OUTPUT DEPENDENCE only - the dependent cannot
+    compute at all without that element's result, and fails closed if it is
+    absent. Elements that merely run earlier in the pipeline are deliberately
+    NOT listed as dependencies. Treating execution order as dependence is how an
+    ablation study accidentally concludes that every element is necessary, which
+    would be a statement about the harness rather than about the bridge.
+  ablation_semantics: >-
+    Removing an element means the element is not in the bridge and its check does
+    not run. It does NOT mean the bridge detects its own missing part and refuses
+    to proceed. The distinction decides whether H-MIN measures anything.
+
+no_hidden_fallback:
+  floating_branch: false
+  default_value: false
+  inferred_authority: false
+  unpinned_external_semantics: false
+  statement: >-
+    Every authority is pinned by digest above. No element consults a network
+    resource, a branch name, an environment variable, or a value not present in
+    the frozen fixture and the frozen authorities. There is no "same enough"
+    relation anywhere - every comparison is octet equality or an explicitly
+    named interval relation.
+
+b01_non_use:
+  bytes_requested: false
+  bytes_inspected: false
+  bytes_reconstructed: false
+  special_rule_for_committed_identifier: false
+  tuned_against_attacked_invariants: false
+  open_fixtures_changed_since_commitment: false
+  statement: >-
+    The commitment metadata is used only as a frozen commitment. No element
+    exists because of B-01, and no element's rationale is "to pass B-01".
+    H-01-b independently attacks I-01 and I-03a and was committed at 2ade0bbe on
+    2026-08-23, before the commitment arrived on 2026-08-24; its pre-commitment
+    provenance is preserved and it was not touched while this bridge was authored.
+
+# ---------------------------------------------------------------------------
+# Mapping requirement coverage. Every M-01..M-18 classified exactly once.
+# RESOLVED / NOT_APPLICABLE / FAIL_CLOSED_NON_CONSTRUCTIBLE
+# ---------------------------------------------------------------------------
+mapping_coverage:
+  source: EP-WEXP-MAPPING-REQUIREMENTS-001.md at wexp-interop e59222e4, sha256 9cb35aa7…13f4
+  totals:
+    RESOLVED: 16
+    NOT_APPLICABLE: 0
+    FAIL_CLOSED_NON_CONSTRUCTIBLE: 2
+  requirements:
+
+    - id: M-01
+      classification: RESOLVED
+      elements: [BE-04, BE-11]
+      load_bearing_for_cc1: true
+      rationale: >-
+        The typed WEXP asserted target is the exact action instance identified
+        by the conjunction of expectedReceiptId, expectedReceiptDigest,
+        expectedActionHash, expectedActionCaid, expectedConsumptionNonce,
+        expectedOperationId and expectedFacilityId, each matched by octet
+        equality against every accepted observation. Non-constructible outcome
+        is defined - if no accepted observation satisfies the whole conjunction,
+        target_binding is unsupported and no base finding is created.
+
+    - id: M-02
+      classification: RESOLVED
+      elements: [BE-06]
+      load_bearing_for_cc1: true
+      rationale: >-
+        Exactly one CAID namespace is admitted, caid:sha256:, pinned to CAID-02
+        at emilia-protocol 9a04bea7, blob 5fd2b227, sha256 777487b0…2015. Any
+        other namespace is out of domain.
+
+    - id: M-03
+      classification: RESOLVED
+      elements: [BE-06]
+      load_bearing_for_cc1: true
+      rationale: >-
+        Normalization does not occur. That is the decision, not an omission -
+        M-03 asks whether normalization happens and what the exact function is
+        if it does. Declining to normalize is the conservative answer because
+        any normalization creates a class of distinct identifiers that compare
+        equal. Values outside caid:sha256: plus 64 lowercase hex are
+        non-comparable and the observation is not accepted.
+
+    - id: M-04
+      classification: RESOLVED
+      elements: [BE-06, BE-04]
+      load_bearing_for_cc1: true
+      rationale: >-
+        Equality is octet equality over the complete identifier string after the
+        null normalization of M-03. Ambiguous or non-comparable identifiers fail
+        closed and are never resolved by proximity, prefix or suffix.
+
+    - id: M-05
+      classification: FAIL_CLOSED_NON_CONSTRUCTIBLE
+      elements: [BE-01, BE-03]
+      load_bearing_for_cc1: false
+      rationale: >-
+        The frozen evidence contains no issuer or authority attestation for the
+        CAID value. Nothing in the fixture evidences which issuer scope makes
+        this CAID usable for the mapped claim, and the bridge will not invent
+        one. CONSEQUENCE, CARRIED AS A LIMITATION ON EVERY FINDING - the bridge
+        uses the CAID for equality only and never as an independently sufficient
+        binding or as a source of authority. The exact target binding rests on
+        the whole Section 6 conjunction, of which the CAID is one member, so the
+        gap constrains the claim without silently defeating it. Recorded as
+        caid_issuer_scope_not_evidenced.
+
+    - id: M-06
+      classification: RESOLVED
+      elements: [BE-04, BE-01]
+      load_bearing_for_cc1: true
+      rationale: >-
+        The identity and correlation predicates among action, operation,
+        receipt, nonce, facility and digests are exactly the Section 6
+        equality set, taken conjunctively, plus the pinned source metadata
+        match. This is frozen EMILIA normative text, not a bridge invention.
+
+    - id: M-07
+      classification: RESOLVED
+      elements: [BE-11, BE-08]
+      load_bearing_for_cc1: true
+      rationale: >-
+        An authenticated meter observation occupies the observation base
+        material role, and contributes evidence to the IV qualifier through
+        BE-09. It is NOT a boundary fact, NOT an execution premise, and NOT a
+        warrant for the physical truth of the measured value. Authentication
+        establishes who said it and that it was not altered; it does not
+        establish that 5.2 MW flowed. That distinction is exactly what M-07
+        warns against collapsing.
+
+    - id: M-08
+      classification: RESOLVED
+      elements: [BE-05]
+      load_bearing_for_cc1: true
+      rationale: >-
+        Yes - the meter observation's action_caid IS a required exact-binding
+        premise. The exact predicate - the field is present, is in the admitted
+        namespace, and is octet-equal to options.expectedActionCaid. EMILIA
+        Section 6 treats the CAID as optional for EP's own verdict; this bridge
+        requires it because the WEXP claim concerns one action instance and
+        INTEROP-001 stalled precisely where this premise was missing.
+
+    - id: M-09
+      classification: FAIL_CLOSED_NON_CONSTRUCTIBLE
+      elements: []
+      load_bearing_for_cc1: false
+      rationale: >-
+        This bridge does NOT define an effect-to-execution predicate. No
+        evidence predicate, timing relation or identity binding in the frozen
+        material establishes that an observed effect supports a typed WEXP
+        execution claim, and inventing one would be the exact overreach
+        INTEROP-001 refused. This is deliberate and it is a real experimental
+        output, not a hole to be filled later under the same freeze.
+        CONSEQUENCE - the execution base is not constructible from this
+        evidence, which is what fixes ceiling_base at observation in M-11. It is
+        also why CC-1 stops where it does. Classified fail-closed rather than
+        not-applicable, because Core 6 requires claim-independent mapping - the
+        execution base IS evaluated, and this is the result of evaluating it.
+
+    - id: M-10
+      classification: RESOLVED
+      elements: [BE-12]
+      load_bearing_for_cc1: true
+      rationale: >-
+        The accepted boundary is the relying party's declared evidence boundary
+        - the pinned source registry, the declared source requirements, the
+        declared observation windows, and facility:plant-7. Grounding is
+        attributed, because a valid signature associated with an accepted
+        identity reaches attributed under Core 7 and no boundary-grounding
+        profile applies. Attribution is not proof of actual boundary control,
+        and Core 7 says so; the limitation is carried.
+
+    - id: M-11
+      classification: RESOLVED
+      elements: [BE-12, BE-15]
+      load_bearing_for_cc1: true
+      rationale: >-
+        ceiling_base is observation. It follows from M-09 being non-constructible
+        and from the evidence being observational - signed statements that
+        events concerning the target were recorded. Core 7 then excludes every
+        higher base structurally, independently of what any fixture asserts.
+
+    - id: M-12
+      classification: RESOLVED
+      elements: [BE-02, BE-03, BE-07]
+      load_bearing_for_cc1: true
+      rationale: >-
+        Grounding facts and validation predicates - Ed25519 verification against
+        the canonical DER SPKI of the pinned key over the domain-separated
+        canonical body; pin currency at attested_at; window relation and
+        attestation delay; time ordering observed_from <= observed_until <=
+        attested_at <= now. A finding is grounded only when all of these pass
+        for the observation it rests on.
+
+    - id: M-13
+      classification: RESOLVED
+      elements: [BE-10, BE-09]
+      load_bearing_for_cc1: true
+      rationale: >-
+        The IV predicate is defined in full in BE-10 and is explicitly NOT
+        satisfied by an EMILIA role label. It requires a relying-party-supplied
+        requirement the presenter cannot widen or select, a met quorum, canonical
+        DER key distinctness, declared control-domain distinctness, and each
+        contributing observation independently accepted. Whether that predicate
+        IS WEXP independent verification is the open scientific question; the
+        bridge states it precisely so the question can be answered rather than
+        assumed either way.
+
+    - id: M-14
+      classification: RESOLVED
+      elements: [BE-09]
+      load_bearing_for_cc1: true
+      rationale: >-
+        Independence is established by canonical key identity distinctness
+        derived from DER SPKI bytes, and by declared control_domain_id
+        distinctness, both against every accepted non-independent source.
+        Re-encoding the same key does not create a distinct source and different
+        keys inside one declared control domain do not satisfy independence.
+        Common dependencies beyond the declared control domain are NOT visible
+        in the frozen evidence, and that limitation is carried rather than
+        assumed away.
+
+    - id: M-15
+      classification: RESOLVED
+      elements: [BE-05, BE-17]
+      load_bearing_for_cc1: true
+      rationale: >-
+        A missing meter action_caid is typed as NON_CONSTRUCTIBLE for that
+        observation - it is a gap, not counter-evidence, not a downgrade, and
+        not a rejection of the claim on the merits. The observation is not
+        accepted; if its role group then lacks accepted evidence the group is
+        indeterminate. Absence of evidence is thereby kept distinct from
+        evidence against, which is the distinction M-15 and M-16 both turn on.
+
+    - id: M-16
+      classification: RESOLVED
+      elements: [BE-14, BE-08]
+      load_bearing_for_cc1: true
+      rationale: >-
+        Counter-evidence is defined in BE-14 - conflicting values from distinct
+        accepted sources for the same effect_type and target are
+        unresolved-material; an accepted bound observation whose effect fails
+        the relying party's predicate is resolved-no-defeat for CC-1, since a
+        failed effect predicate does not defeat the claim that an event was
+        recorded. Absence produces the single not-supplied entry Core 6
+        requires, never a defeating entry.
+
+    - id: M-17
+      classification: RESOLVED
+      elements: [BE-13, BE-07, BE-04]
+      load_bearing_for_cc1: true
+      rationale: >-
+        The evaluation scope is exact - time is options.now with the declared
+        windows; facility is expectedFacilityId; operation is
+        expectedOperationId; the evidence set is the accepted observations
+        enumerated by digest; the claim set is exactly {CC-1}. The
+        trust_configuration digest covers the pinned registry, requirements and
+        windows, so any change to them yields a different evaluation context
+        rather than a silent reuse of this one.
+
+    - id: M-18
+      classification: RESOLVED
+      elements: [BE-17]
+      load_bearing_for_cc1: true
+      rationale: >-
+        A total, versioned construction procedure produces every Core-required
+        AppraisalInput field - semantics_version wexp-core-1, target,
+        asserted_claim, evaluation_context, boundary_finding, base_findings,
+        qualifier_findings, recorder_relations, counter_evidence,
+        evaluation_scope, profile_evaluation_gaps, inherited_limitations and
+        fatal_conditions - with a named fail-closed diagnostic for every field
+        that cannot be constructed. Mapping is claim-independent as Core 6
+        requires - all four bases and both qualifiers are evaluated.
+
+# ---------------------------------------------------------------------------
+# The sixteen predicate classes, defined explicitly. No hidden default.
+# ---------------------------------------------------------------------------
+predicate_classes:
+
+  normalization:
+    definition: The function applied to a value before comparison.
+    this_bridge: >-
+      Identity function everywhere. No case folding, no whitespace trimming, no
+      Unicode normalization, no digest re-encoding, no timestamp reformatting.
+      JSON canonicalization is applied ONLY to reconstruct the EP signing
+      preimage, never to make two different values compare equal.
+    elements: [BE-06, BE-01, BE-17]
+
+  equality:
+    definition: The relation deciding that two values are the same value.
+    this_bridge: >-
+      Octet equality on the exact strings. There is no tolerance, no prefix
+      match, no case-insensitive compare and no "same enough" relation anywhere
+      in this bridge.
+    elements: [BE-04, BE-06]
+
+  issuer:
+    definition: Which authority scope makes an identifier or key usable for the mapped claim.
+    this_bridge: >-
+      For keys - the relying party's pinned source registry, which must carry
+      source_id, public key, role, source_class, control_domain_id, status and
+      validity. For CAIDs - NOT ESTABLISHED; see M-05. The bridge therefore uses
+      CAIDs for equality only and never as an authority.
+    elements: [BE-01, BE-03]
+
+  identity:
+    definition: What makes two references denote the same entity.
+    this_bridge: >-
+      Key identity is the canonical DER SubjectPublicKeyInfo byte string, never
+      key_id text and never caller-provided key material. Action-instance
+      identity is the whole Section 6 conjunction, never any single member of it.
+      Source identity is the pinned source_id together with its pinned metadata.
+    elements: [BE-01, BE-04, BE-05, BE-09]
+
+  correlation:
+    definition: The relation asserting that two records concern the same action.
+    this_bridge: >-
+      Correlation is NOT a binding. Core 4.1 forbids treating a correlation hint,
+      record identifier, shared timestamp, similar payload or common signer as an
+      exact target binding, so this bridge derives binding only from the full
+      equality conjunction and treats everything weaker as a hint with no force.
+    elements: [BE-04, BE-05]
+
+  timing:
+    definition: Admissible temporal relations among evidence events.
+    this_bridge: >-
+      observed_from <= observed_until <= attested_at <= now; the declared window
+      relation exact, within or covers; attested_at minus observed_until within
+      max_attestation_delay_ms and that bound within 86400000 ms; the pin valid
+      at attested_at. All comparisons on RFC 3339 instants parsed to UTC.
+    elements: [BE-03, BE-07]
+
+  causal-provenance:
+    definition: What distinguishes an observation of THIS action instance from a coincident, replayed, reordered, substituted or rebound one.
+    this_bridge: >-
+      The Section 6 conjunction plus the required action_caid premise. A
+      rebinding that changes the expected action instance while leaving the
+      observations intact must fail, and it fails on binding rather than on
+      cryptography, which is the only way the property is actually tested.
+      Missing or ambiguous provenance fails closed. I-03a.
+    elements: [BE-04, BE-05]
+
+  relying-party-policy:
+    definition: The requirements the relying party imposes independently of the presenter.
+    this_bridge: >-
+      sourceRequirements, observationWindows and the pinned sourceKeys registry,
+      all taken from the relying party's side of the input. A presenter may not
+      widen, replace or select them, per EMILIA Section 5, and this bridge never
+      derives a requirement from the observations themselves.
+    elements: [BE-07, BE-08, BE-10]
+
+  trust-set:
+    definition: Which sources may contribute to which findings.
+    this_bridge: >-
+      Exactly the pinned registry entries that are current at attested_at,
+      partitioned by declared role and source_class. A source outside the
+      registry contributes nothing, and a source inside it contributes only to
+      the role and class it is pinned as.
+    elements: [BE-03, BE-08, BE-09, BE-10]
+
+  evaluation-scope:
+    definition: The bounded space within which the appraisal is made.
+    this_bridge: >-
+      Time as declared by the windows and options.now; facility
+      expectedFacilityId; operation expectedOperationId; evidence set the
+      enumerated accepted observations; claim set exactly {CC-1}. Anything
+      outside the scope is not-evaluated, which is reported as distinct from
+      unsupported.
+    elements: [BE-04, BE-07, BE-08, BE-13, BE-14]
+
+  boundary:
+    definition: The accepted evidence or execution boundary against which the claim is appraised.
+    this_bridge: >-
+      The relying party's declared evidence boundary at facility:plant-7 under
+      the pinned registry, with grounding attributed. Under Core 7 it can only
+      exclude, never create - a supported boundary does not by itself produce
+      an observation finding.
+    elements: [BE-12, BE-15]
+
+  grounding:
+    definition: What makes a finding more than an assertion.
+    this_bridge: >-
+      asserted-only for anything a producer merely states; attributed once a
+      valid Ed25519 signature ties it to a current pinned identity; attested
+      never, because no boundary-grounding profile applies here. The bridge
+      reports attributed and carries the limitation that attribution is not
+      proof of boundary control.
+    elements: [BE-02, BE-12, BE-17]
+
+  counter-evidence:
+    definition: Facts that oppose rather than merely fail to support the claim.
+    this_bridge: >-
+      Conflicting values from distinct accepted sources for one effect_type and
+      target - unresolved-material. An accepted bound observation whose effect
+      fails the relying party's predicate - resolved-no-defeat for CC-1. Absence
+      of evidence - never counter-evidence, always a gap and the single
+      not-supplied entry.
+    elements: [BE-14, BE-08]
+
+  independence:
+    definition: What makes one source independent of another for the purposes of the claim.
+    this_bridge: >-
+      Canonical DER key distinctness AND declared control_domain_id distinctness
+      from every accepted non-independent source, with re-encoding of one key
+      not creating two sources and different keys in one control domain not
+      creating independence. Common dependencies beyond the declared control
+      domain are invisible in the frozen evidence and that is carried as a
+      limitation, not assumed away.
+    elements: [BE-09, BE-10]
+
+  claim-ceiling:
+    definition: The maximum claim the evidence and boundary can support.
+    this_bridge: >-
+      observation. Enforced twice and deliberately so - structurally by Core 7
+      against ceiling_base, and explicitly by BE-15 against any attached
+      assertion. Neither path can be satisfied by an assertion, only by evidence.
+    elements: [BE-10, BE-12, BE-15, BE-16, BE-17]
+
+  non-authority:
+    definition: The rule that evidence and appraisal never become authority.
+    this_bridge: >-
+      The bridge emits no permission, authorization, admission, delegation or
+      approval field at all, so there is nothing for an authority conversion to
+      populate; and it additionally refuses each attempted conversion by name so
+      the refusal appears in the record. Missing authority is never inferred
+      from a successful appraisal. I-05.
+    elements: [BE-16, BE-15]

@@ -1,0 +1,143 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-COUNTERPARTY-FAIRNESS-REVIEW-002",
+  "record_kind": "COUNTERPARTY_FAIRNESS_REVIEW_BINDING",
+  "date": "2026-08-24",
+  "supersedes": {
+    "artifact": "publication-candidate/COUNTERPARTY-FAIRNESS-REVIEW-001.json",
+    "sha256": "810009d7a4d430758ca05c7144944aa385837664af2c3f245297e3ebb83e0f19",
+    "in": "PROVENANCE CLASSIFICATION ONLY",
+    "semantic_content_changed": false,
+    "note": "Record 001 is preserved byte-identical inside this candidate and inside candidate 001. It is superseded only in how the message's evidence class is described. Its review outcome and all four precisions are carried forward unchanged."
+  },
+  "counterparty_fairness_review": "PASS_WITH_PRECISIONS",
+  "charter_basis": "DRAFT-004 section 16 contribution 3, and section 15 PUBLICATION GO.",
+  "provenance": {
+    "source": "Iman Schrock <team@emiliaprotocol.ai>",
+    "role": "authorized EMILIA-side contributor, charter section 10",
+    "gmail_message_id": "1a0353ed454b67f8",
+    "gmail_thread_id": "1a01f401f0f71580",
+    "date": "2026-08-24",
+    "evidence_class": "INDEPENDENTLY_OBSERVED_IN_FOUNDER_CONTOUR",
+    "CONTOUR_DISTINCTION": {
+      "why_this_section_exists": "An upgrade to a provenance classification is worth nothing if it blurs WHICH contour did the observing. The distinction is stated explicitly so no later reader can read this as a stronger local claim than it is.",
+      "founder_contour": {
+        "authenticated_gmail": true,
+        "independently_read_the_message": true,
+        "observed": [
+          "message_id 1a0353ed454b67f8",
+          "thread_id 1a01f401f0f71580",
+          "sender Iman Schrock <team@emiliaprotocol.ai>",
+          "date 2026-08-24"
+        ],
+        "classification": "INDEPENDENTLY_OBSERVED"
+      },
+      "local_execution_contour": {
+        "authenticated_gmail": false,
+        "independently_read_the_message": false,
+        "why": "No mail connector is authenticated in the local execution contour. The session is non-interactive and cannot complete an OAuth flow.",
+        "classification": "NOT LOCALLY MEASURED",
+        "explicitly_not_claimed": "This record does NOT claim that the local execution contour authenticated Gmail, read the message, or measured its identifiers. It did not."
+      },
+      "net_effect": "The message identity and its substance are independently observed evidence in the Founder contour, and remain unmeasured in the local execution contour. That is an accurate strengthening, not a promotion to local measurement."
+    },
+    "what_the_upgrade_does_not_extend_to": {
+      "statement": "This upgrade covers EXACTLY ONE provenance boundary: the fairness review message. No other record's classification is changed, and none may be inferred to have changed.",
+      "still_FOUNDER_RELAYED_and_not_independently_observed": [
+        "expectations/EXPECTATION-EMILIA-B01-001.json — the precommitted EMILIA expectation",
+        "pre-freeze/EMILIA-AUTHORITY-CORRECTION-001.json — the authority correction",
+        "pre-freeze/B-01-COMMITMENT.json — the B-01 commitment provenance",
+        "pre-freeze/B01-COMMITMENT-REQUEST-STATE-001.json — the request state"
+      ],
+      "why_they_are_untouched": "They concern different messages, which were not read in any contour under this order. Upgrading them by association would be exactly the fabrication this discipline exists to prevent."
+    }
+  },
+  "independently_observed_substance": {
+    "recorded_as": "the substance of the message as independently read in the Founder contour",
+    "A_b01_description_fair": {
+      "confirmed": true,
+      "content": "Only the expected operation identifier is rebound; the action digest and the CAID remain fixed."
+    },
+    "B_native_output_correction_accurate": {
+      "confirmed": true,
+      "content": "Accurate with the byte-identity precision: the INTEROP-001 native EMILIA P and P-1 results support C-00 and H-01-a only where the INTEROP-002 inputs are byte-identical."
+    },
+    "C_no_frozen_procedure_found": {
+      "confirmed": true,
+      "content": "No already-defined and already-frozen INTEROP-002 procedure was found for producing the missing EMILIA native outputs."
+    },
+    "D_h03_fair_only_if_claims_stay_separate": {
+      "confirmed": true,
+      "content": "An EMILIA role label alone does not establish IV; WEXP may derive its own IV from the frozen four-part predicate; that does not establish independent verification of EMILIA semantics."
+    },
+    "E_final_scope_should_be_split": {
+      "confirmed": true,
+      "content": "WEXP bridge sufficiency may be SUPPORTED; the joint WEXP x EMILIA comparison remains INCONCLUSIVE where native EMILIA output is absent."
+    },
+    "F_p1_b01_field_match": {
+      "confirmed": true,
+      "content": "Useful as anti-tuning evidence and as semantic precedent, but it is not an EMILIA execution of B-01."
+    },
+    "G_comfortable_subject_to_distinctions": {
+      "confirmed": true,
+      "content": "Comfortable with the final record if those distinctions are preserved, and requests an exact-byte check of the publication candidate before Publication GO."
+    }
+  },
+  "precisions_bound": [
+    {
+      "id": "P-1",
+      "subject": "H-03 IV semantics",
+      "content": "An EMILIA role label alone does not establish independent verification. WEXP may derive IV from its frozen four-part predicate where that predicate is satisfied. That IV is a WEXP conclusion and does NOT establish independent verification of EMILIA semantics.",
+      "effect": "H-03 resolved by SCOPE SEPARATION. No frozen artifact altered."
+    },
+    {
+      "id": "P-2",
+      "subject": "native output support",
+      "content": "The INTEROP-001 P and P-1 native outputs support C-00 and H-01-a ONLY because the corresponding inputs are byte-identical. No native EMILIA output is established for H-01-b, H-01-c, H-02, H-03 or B-01.",
+      "effect": "F-01 correction preserved and narrowed."
+    },
+    {
+      "id": "P-3",
+      "subject": "verifier availability",
+      "content": "An available verifier implementation is NOT a frozen execution procedure.",
+      "effect": "The implementation is NOT run and results are NOT backfilled. Recorded as a standing prohibition."
+    },
+    {
+      "id": "P-4",
+      "subject": "scope of the comparison",
+      "content": "WEXP bridge sufficiency and joint WEXP x EMILIA comparison are different claims at different scopes and must not be collapsed.",
+      "effect": "Two explicit scoped verdicts replace the F-02 ambiguity."
+    }
+  ],
+  "the_five_questions_and_their_disposition": {
+    "A_expectation_fairly_represented": "PASS",
+    "B_native_output_absence_accurate": "PASS, with the precision recorded in F-01 below",
+    "C_preexisting_frozen_path_overlooked": "ANSWERED — see the precision on byte-identity and on verifier availability",
+    "D_h03_divergence_fairly_characterized": "PASS, resolved by scope separation rather than semantic compromise",
+    "E_f02_characterized_without_overstating_interoperability": "PASS_WITH_PRECISIONS — the single verdict is replaced by two explicit scopes"
+  },
+  "what_this_review_does_not_do": [
+    "It does not authorize publication. PUBLICATION GO is a separate Founder decision.",
+    "It does not rewrite any measured result.",
+    "It does not convert an expectation into a native output.",
+    "It does not extend any claim beyond the frozen charter section 14 ceiling."
+  ],
+  "semantic_delta_from_001": {
+    "verdicts_changed": false,
+    "precisions_changed": false,
+    "results_changed": false,
+    "only_change": "the provenance classification of the fairness-review message, plus the addition of the independently observed message substance and thread identifier",
+    "checked_mechanically": "see publication-candidate/CANDIDATE-CHECKS-002.json"
+  },
+  "disclosure_flag_carried_forward": {
+    "item": "team@emiliaprotocol.ai appears in this candidate as provenance attribution",
+    "state": "PENDING_IMAN_CONFIRMATION",
+    "not_removed_on_our_authority": true,
+    "raised_in": "the exact-byte review carrier, as an explicit question"
+  },
+  "exact_byte_review": {
+    "state": "NOT YET PERFORMED",
+    "requested_by_the_contributor": true,
+    "note": "He asked for it himself under substance item G."
+  },
+  "publication_authorized": false
+}

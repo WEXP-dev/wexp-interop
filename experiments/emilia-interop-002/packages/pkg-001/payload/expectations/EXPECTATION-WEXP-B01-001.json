@@ -1,0 +1,99 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-EXPECTATION-WEXP-B01-001",
+  "status": "COMMITTED",
+  "party": "WEXP",
+  "date": "2026-08-24",
+
+  "method": {
+    "how_this_was_produced": "Reasoned from the frozen bridge element definitions while reading the verified B-01 bytes. Each element's declared predicate was applied by hand to the fixture's fields.",
+    "bridge_executed_against_b01": false,
+    "why_not": "An expectation obtained by running the bridge and recording the output is a measurement wearing a prediction's clothes. The evidential value of a committed expectation is that it was written before the answer was known, and running first would destroy exactly that.",
+    "if_execution_disagrees": "The disagreement is the finding. This artifact is NOT to be edited to match the observed result; a successor record states both."
+  },
+
+  "bound_inputs": {
+    "intended_claim": "CC-1 (observation, {IV})",
+    "bridge": {"artifact": "bridge/BRIDGE-CANDIDATE.yaml", "sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa", "elements": 17},
+    "comparison_policy": {"path": "execution-freeze/COMPARISON-POLICY-001.json", "sha256": "3e2f02e011817a9619963c7941d10fe3f6fef6eaa7d316d8ffaecf4bf7245e84"},
+    "execution_freeze": {"sha256": "0317bf37a564f11e587853f1f61c6ada062ad7fb1476a008db5fa539c49a4295"},
+    "b01_fixture": {
+      "path": "fixtures/B-01.json",
+      "bytes": 7276,
+      "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+      "git_blob": "cd2177571dc5c1f4c013c4770e313d5739b561d2",
+      "blind_case_status": "REVEALED_COMMITMENT_VERIFIED"
+    }
+  },
+
+  "what_the_case_actually_does": {
+    "delta_from_C_00": "exactly one field: options.expectedOperationId, operation:plant-7:001 -> operation:plant-7:002",
+    "everything_else_identical": "predicted_effects, both observations and their Ed25519 signatures, source registry, source requirements, observation windows, now, expectedReceiptId, expectedReceiptDigest, expectedActionHash, expectedConsumptionNonce, expectedActionCaid and expectedFacilityId are byte-identical to C-00",
+    "why_this_is_sharper_than_H_01_b": "H-01-b rebound three fields at once — action hash, CAID and operation id — so a bridge could catch it on any one of them. B-01 rebinds ONLY the operation identifier and leaves the action digest and the CAID matching. A bridge that established instance identity from the CAID, or from the action hash, would accept this case. It is caught only by requiring the whole Section 6 conjunction. The contributor picked the narrower attack, and it tests something the open set could not."
+  },
+
+  "expected_bridge_construction_state": {
+    "per_observation_element_trace": {
+      "BE-01 source pin and canonical key": "PASS for both — both source_ids are pinned, presented keys match the pinned DER, role/source_class/facility match the registry",
+      "BE-02 signature": "PASS for both — signature bytes are byte-identical to C-00's, and the signed body differs only outside the observation object",
+      "BE-03 pin currency": "PASS for both — status active, attested_at 2026-07-19 inside the pinned validity interval",
+      "BE-04 Section 6 exact equality": "FAIL for both, on operation_id only. Observations attest operation:plant-7:001; the relying party expects operation:plant-7:002. receipt_id, receipt_digest, action_hash, consumption_nonce and facility all match.",
+      "BE-05 action_caid premise": "PASS for both — action_caid is present",
+      "BE-06 CAID namespace and equality": "PASS for both — caid:sha256:6666... is in the admitted namespace and equals expectedActionCaid. This element does NOT fire on B-01.",
+      "BE-07 windows and timing": "PASS for both — observed_from/until exactly match the declared window, attestation delay 15000 ms is inside 30000 ms, attested_at precedes now"
+    },
+    "expected_rejection_reason_set": ["exact_binding_mismatch:operation_id"],
+    "expected_accepted_observations": 0,
+    "expected_rejected_observations": 2,
+    "expected_gaps": ["source_requirement_unmet", "source_requirement_unmet", "prediction_group_unobserved", "prediction_group_unobserved"],
+    "expected_appraisal_input_assembled": true,
+    "expected_boundary_finding": {"status": "unsupported", "ceiling_base": null, "grounding": "not-evaluated", "reason": "no_accepted_bound_observation"},
+    "expected_observation_base_finding": {"target_binding": "unsupported", "semantic_validation": "not-evaluated"},
+    "expected_iv_qualifier": {"independence_validation": "not-evaluated", "reason": "independence_evidence_absent"}
+  },
+
+  "expected_claim_support_or_refusal": {
+    "cc1_supported": false,
+    "basis": "The observation base cannot be supported because no observation is bound to the asserted action instance, and the IV qualifier cannot be evaluated because no accepted independent-observer observation exists to establish distinctness against."
+  },
+
+  "expected_case_level_verdict": {
+    "typed_outcome": "INDETERMINATE",
+    "vocabulary_source": "the frozen experiment policy; no token added",
+    "why_indeterminate_and_not_unsupported": "The AppraisalInput assembles — evaluation context, boundary finding and counter-evidence are all constructible — so the outcome is not NON_CONSTRUCTIBLE. Both relying-party source requirements are unmet and both prediction groups lack an accepted observation, which is the indeterminate branch rather than a decided refusal on the merits."
+  },
+
+  "expected_attacked_invariant_behaviour": {
+    "I-01": {
+      "expected": "PRESERVED",
+      "why": "Evidence attesting operation:plant-7:001 is not usable as evidence for operation:plant-7:002. Equality of action type, action digest and CAID is insufficient, and the bridge refuses on the operation identifier."
+    },
+    "I-03a": {
+      "expected": "PRESERVED",
+      "why": "The provenance binding needed to attribute these observations to the asserted action instance is absent, and the bridge fails closed rather than supplying it by inference."
+    },
+    "comparison_policy_criterion": "claim refused and refusal is attributable to instance binding or the CAID premise — satisfied by the reason exact_binding_mismatch:operation_id"
+  },
+
+  "reasoned_consequence_for_h_min": {
+    "claim": "NOT PART OF THIS EXPECTATION'S VERDICT — recorded because it follows from the same reasoning and should be on the record before execution rather than after.",
+    "open_surface_state": "BE-04 and BE-06 masked each other on H-01-b, because that case mutated fields covered by both. Each was therefore NOT_ESTABLISHED individually.",
+    "expected_effect_of_B_01": "B-01 does not fire BE-06 at all, because the CAID matches. If BE-04 alone were removed, nothing else in the bridge would refuse this case. That would make BE-04 individually necessary against the complete frozen case set.",
+    "expected_h_min_movement": "14/17 SUPPORTED could become 15/17, with BE-03 and BE-06 still NOT_ESTABLISHED.",
+    "not_measured": true,
+    "not_a_verdict": "Local Minimality remains NOT_EVALUATED until the frozen ablation set is actually run under a separate EXECUTION GO."
+  },
+
+  "chronology": {
+    "committed_after": "B-01 reveal and COMMITMENT_MATCH verification",
+    "committed_before": "any implementation execution, and before the EMILIA-side expectation is requested or seen",
+    "derived_from_the_other_party": false,
+    "emilia_expectation_seen": false
+  },
+
+  "non_claims": [
+    "This is an expectation, not a result. It predicts what the frozen bridge will do; it does not establish it.",
+    "It says nothing about whether EMILIA's own native result agrees, and nothing about what EMILIA should conclude.",
+    "It is not an execution authorization and confers none.",
+    "Being right would not validate the bridge, and being wrong would not invalidate the experiment. Either way the record states both."
+  ]
+}

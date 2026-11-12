@@ -1,0 +1,67 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-H03-FAIRNESS-REQUIREMENT-001",
+  "record_kind": "fairness-gate-determination",
+  "date": "2026-08-24",
+  "supersedes": "H-03-FAIRNESS-TIMING-001.json, which answered a different question",
+
+  "question_asked_now": "What does the FROZEN charter and process REQUIRE for the H-03 fairness item: (A) contributor acknowledgement before execution, (B) disclosure before execution without acknowledgement, or (C) final-record review only?",
+  "question_answered_earlier": "When would it be BEST to raise it. That earlier answer was AFTER_BOTH_EXPECTATIONS, offered as a recommendation. The instruction now is to prefer the frozen charter over convenience, and requirement and preference are different questions.",
+
+  "determination": "C",
+  "determination_label": "FINAL_RECORD_REVIEW_ONLY",
+
+  "charter_basis": [
+    {
+      "section": "16, minimum contribution requested from the EMILIA side",
+      "verbatim": "verify the exact final record and whether it represents the native EMILIA result fairly",
+      "reading": "Fairness verification is placed on the final record. It is the third and last of the three contributions the charter asks for, and it is the only one that mentions fairness."
+    },
+    {
+      "section": "15, EXECUTION GO",
+      "verbatim": "Requires an exact Execution Freeze, successful pre-run disclosure review, and verified readiness to receive B-01 reveal.",
+      "reading": "Three preconditions, none of them a fairness acknowledgement. The pre-run review named here is a DISCLOSURE review, concerned with what may leak, not with semantic fairness."
+    },
+    {
+      "section": "15, PUBLICATION GO",
+      "verbatim": "Requires independent byte verification, disclosure audit, WEXP-side claim review, EMILIA-side fairness review, and an exact publication candidate.",
+      "reading": "EMILIA-side fairness review is an explicit precondition of publication, and of nothing earlier. The charter puts the gate exactly where option C puts it."
+    },
+    {
+      "section": "9.2, post-freeze sequence",
+      "verbatim": "1 reveal and verify; 2 admit; 3 each party commits expectations before any implementation execution; 4 the bridge, cases, authorities, policies and verdict rules remain unchanged; 5 execution proceeds",
+      "reading": "Five steps between the Execution Freeze and execution. None of them is a fairness step. Inserting one would add a gate the frozen process does not contain."
+    }
+  ],
+
+  "why_A_is_not_required": "No frozen clause conditions execution on the contributor acknowledging anything. Requiring acknowledgement would hand one party a veto over whether the other party's frozen bridge may run, which is not a power the charter grants and not one it should acquire by drift.",
+
+  "why_B_is_not_required_though_it_remains_permissible": "Disclosure before execution is harmless now that both expectations are fixed, and it was my earlier recommendation as the earliest safe moment. But the charter does not require it, and this order says to prefer the charter. It stays available as a Founder courtesy rather than a process obligation. Nothing is lost by waiting, because publication cannot happen without the contributor's fairness review in any case.",
+
+  "a_finding_that_settles_the_earlier_worry": {
+    "the_worry": "That withholding the H-03 item until after the EMILIA expectation might have shaped or unfairly constrained that expectation.",
+    "what_the_expectation_turned_out_to_be": "The contributor's expectation is about EMILIA's OWN native verifier: valid false, lifecycle_state indeterminate, outcome null, failed check exact_bindings.",
+    "consequence": "The H-03 item concerns how the WEXP bridge derives the IV qualifier. It has no bearing on whether EP's own exact-bindings check passes. It could not have contaminated this expectation, and withholding it cost the contributor nothing.",
+    "note": "This is a fact about what actually happened, not a justification constructed afterwards. It is recorded because it retires the worry rather than leaving it open."
+  },
+
+  "what_must_happen_at_the_final_record": [
+    "The H-03 divergence is presented to the contributor in full: the fixture's stated ground that a role label is not independent verification, and BE-10's four-part predicate that does not use a role label.",
+    "It is presented as an open question, not as a position to be ratified.",
+    "The contributor's answer is recorded whether or not it agrees with the bridge.",
+    "If the contributor holds that BE-10 misreads EMILIA's independence semantics, that is recorded as a finding about the bridge, and the frozen result is not rewritten to accommodate it."
+  ],
+
+  "unchanged_by_this_determination": {
+    "bridge": true,
+    "h03_fixture": true,
+    "b01": true,
+    "design_freeze": true,
+    "execution_freeze": true,
+    "comparison_policy": true,
+    "wexp_expectation": true,
+    "emilia_expectation": true
+  },
+
+  "item_state": "PRESERVED_NOT_RESOLVED",
+  "contributor_contacted_under_this_order": false
+}

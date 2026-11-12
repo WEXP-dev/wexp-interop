@@ -1,0 +1,381 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-MANIFEST-003",
+  "candidate_root_identity": "WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003",
+  "status": "CANDIDATE / NOT PUBLISHED",
+  "date": "2026-08-30",
+  "counterparty_fairness_review": "PASS_WITH_PRECISIONS",
+  "counterparty_exact_byte_review": "NOT YET PERFORMED",
+  "publication_authorized": false,
+  "file_count": 56,
+  "total_bytes": 592956,
+  "manifest_excludes_itself": "A manifest cannot contain its own digest. The package digest below binds everything including this manifest.",
+  "verdicts_bound": {
+    "WEXP_BRIDGE_SUFFICIENCY": "SUPPORTED",
+    "JOINT_WEXP_EMILIA_COMPARISON": "INCONCLUSIVE for every case lacking native EMILIA output",
+    "inconclusive_cases": [
+      "H-01-b",
+      "H-01-c",
+      "H-02",
+      "H-03",
+      "B-01"
+    ],
+    "H_MIN": "NOT_ESTABLISHED (15/17)",
+    "H_03": "RESOLVED_BY_SCOPE_SEPARATION",
+    "ANTI_TUNING_EVIDENCE": "SUPPORTED",
+    "SEMANTIC_PRECEDENT": "SUPPORTED",
+    "claim_ceiling_statement": "This is a claim ceiling, not a failed experiment."
+  },
+  "files": [
+    {
+      "path": "INTEROP-002-CHARTER.md",
+      "class": "frozen charter",
+      "bytes": 34728,
+      "sha256": "814cd13fd1eae62633fc014673ee3c3d65a0048d43a25703604066b450feae61"
+    },
+    {
+      "path": "pre-freeze/DESIGN-FREEZE-MANIFEST.json",
+      "class": "freeze manifest",
+      "bytes": 16408,
+      "sha256": "cd16600c3f9eff046e036f476dcbd7fc17fa36fdda91bfdf20bb5b71e200685f"
+    },
+    {
+      "path": "execution-freeze/EXECUTION-FREEZE-001.json",
+      "class": "freeze manifest",
+      "bytes": 14817,
+      "sha256": "0317bf37a564f11e587853f1f61c6ada062ad7fb1476a008db5fa539c49a4295"
+    },
+    {
+      "path": "pre-freeze/EMILIA-AUTHORITY-CORRECTION-001.json",
+      "class": "public authority pins",
+      "bytes": 12663,
+      "sha256": "eb22f673b25fb1146766f7b4797f4d5f986825657f9d507aae970d42451df506"
+    },
+    {
+      "path": "bridge/BRIDGE-CANDIDATE.yaml",
+      "class": "bridge candidate and element inventory",
+      "bytes": 43239,
+      "sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa"
+    },
+    {
+      "path": "bridge/BRIDGE-VALIDATION-RECORD-001.json",
+      "class": "bridge element inventory and validation",
+      "bytes": 22315,
+      "sha256": "7d76a4b2935e021efe356bd5d2374ce852cfc5f4e82a1970b0edb1c13dc4b6d7"
+    },
+    {
+      "path": "bridge/ABLATION-PLAN-001.json",
+      "class": "ablation results",
+      "bytes": 36891,
+      "sha256": "7ecccb454ec1a9db1a8e6a4cf6fd8c72157d5334a5a0dc5890b7cc59cdf97692"
+    },
+    {
+      "path": "bridge/README.md",
+      "class": "reproduction instructions",
+      "bytes": 5300,
+      "sha256": "2987434df8fdff6bb6d897ae6190de5cf7765595d60439186910edf25593b772"
+    },
+    {
+      "path": "bridge/bridge_lib.py",
+      "class": "reproduction: bridge implementation",
+      "bytes": 29030,
+      "sha256": "845e4e43d374478a581607d3192110eb4786e9a27743d36a2b6a6541c6968386"
+    },
+    {
+      "path": "bridge/run_open_cases.py",
+      "class": "reproduction: open-case runner",
+      "bytes": 16148,
+      "sha256": "6add2a0fa3dce6e513b5bbb7167a7b01a9a0a01989d3186562f31ec8a86f14f3"
+    },
+    {
+      "path": "bridge/tests/test_bridge_open_cases.py",
+      "class": "reproduction: tests",
+      "bytes": 8167,
+      "sha256": "6eb7cac099cca803dc22b21c7aae643ff4724addb4e766c05e461776787e62de"
+    },
+    {
+      "path": "execution/run_execution_001.py",
+      "class": "reproduction: execution driver",
+      "bytes": 11523,
+      "sha256": "a4347bff7e098061a8423faf31a5adbf07761ff4744cf74e2d146d684652aceb"
+    },
+    {
+      "path": "execution-freeze/EXPERIMENT-POLICY-001.json",
+      "class": "frozen policy",
+      "bytes": 7461,
+      "sha256": "2d54fb332bc62d5db048470ccb6cab15f994cf2ac550be42eaa32657d2e9aabd"
+    },
+    {
+      "path": "execution-freeze/COMPARISON-POLICY-001.json",
+      "class": "frozen policy",
+      "bytes": 5601,
+      "sha256": "3e2f02e011817a9619963c7941d10fe3f6fef6eaa7d316d8ffaecf4bf7245e84"
+    },
+    {
+      "path": "execution-freeze/HOSTED-INFRASTRUCTURE-BASELINE-001.json",
+      "class": "hosted infrastructure baseline",
+      "bytes": 12405,
+      "sha256": "40dc3a65465a98a2f94768126a32a88b96725a84652e7fc0d0cbfb965f8b19f9"
+    },
+    {
+      "path": "execution-freeze/TRUST-BOUNDARY-REVALIDATION-001.json",
+      "class": "trust boundary record",
+      "bytes": 5942,
+      "sha256": "c7bc54930957885e10fb8247fb0ae4c8afcb96e2c17f955b0341e935705df933"
+    },
+    {
+      "path": "execution-freeze/H-03-FAIRNESS-REVIEW-ITEM-001.json",
+      "class": "fairness review item",
+      "bytes": 3094,
+      "sha256": "9cf603886a6ebe069491667876f384ce8eb055ce60076aa4ba4fa3478e070220"
+    },
+    {
+      "path": "fixtures/C-00.json",
+      "class": "open case fixture",
+      "bytes": 7255,
+      "sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e"
+    },
+    {
+      "path": "fixtures/H-01-a.json",
+      "class": "open case fixture",
+      "bytes": 7152,
+      "sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0"
+    },
+    {
+      "path": "fixtures/H-01-b.json",
+      "class": "open case fixture",
+      "bytes": 7933,
+      "sha256": "fbfb2046305ca6e9a8a3bbaf2e15c7acc30b8929d7625a3d90643c882276fe47"
+    },
+    {
+      "path": "fixtures/H-01-c.json",
+      "class": "open case fixture",
+      "bytes": 7970,
+      "sha256": "4737ed60826f981beed70a34303a3a79ea40207858e55c62f1ab81fe48271aa5"
+    },
+    {
+      "path": "fixtures/H-02.json",
+      "class": "open case fixture",
+      "bytes": 6299,
+      "sha256": "18350d7511035c0debd3ea5c7f02cabd3a095ba03be910dc10fa2b3b1cf314aa"
+    },
+    {
+      "path": "fixtures/H-03.json",
+      "class": "open case fixture",
+      "bytes": 9646,
+      "sha256": "ec7904648898cf8f6590cc7d1d223516ec38dde7365e4c96168061bb2192c7fb"
+    },
+    {
+      "path": "fixtures/B-01.json",
+      "class": "revealed blind case",
+      "bytes": 7276,
+      "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66"
+    },
+    {
+      "path": "fixtures/FIXTURE-REGISTER-001.json",
+      "class": "case fixture register",
+      "bytes": 7083,
+      "sha256": "668f19fa3c15a09fa0a0764b3b8b18267b6a3f1a2912d54031c832be134497e0"
+    },
+    {
+      "path": "pre-freeze/B-01-COMMITMENT.json",
+      "class": "commitment record",
+      "bytes": 3161,
+      "sha256": "98ff4b84fb53a7dfabfbeef8f3b238399ce3162ee7d6fdbc46670bbb5c4af9ed"
+    },
+    {
+      "path": "reveal/B01-REVEAL-GO-001.json",
+      "class": "reveal authorization record",
+      "bytes": 3100,
+      "sha256": "d3c3811b2d77339dae08c23e80145d0cae8102f4d70c4619b8fc60a8a0f6385f"
+    },
+    {
+      "path": "reveal/B01-INTAKE-ATTEMPT-001.json",
+      "class": "reveal intake record (fail-closed evidence)",
+      "bytes": 2950,
+      "sha256": "64a79e8dea051388906b2f4e8de18345d01d6a01a9bb76411cfb46d4a04c14d8"
+    },
+    {
+      "path": "reveal/B01-COMMITMENT-VERIFICATION-001.json",
+      "class": "reveal verification record",
+      "bytes": 1208,
+      "sha256": "b8f0bb98a858938a76b5c784f830ddf18f8d636132a5f2f904b4752e2af912b8"
+    },
+    {
+      "path": "reveal/verify_b01_commitment.py",
+      "class": "reproduction: commitment verifier",
+      "bytes": 6330,
+      "sha256": "25525eb7b9f4fd36bc7d55f614f241011436fa957da61587d4b3adc5cb776afc"
+    },
+    {
+      "path": "expectations/EXPECTATION-WEXP-B01-001.json",
+      "class": "party expectation",
+      "bytes": 7925,
+      "sha256": "24196f70c3e10e52b0e4067f02db0a908e3fa626b07a08c10c58f7e88e4fa70b"
+    },
+    {
+      "path": "expectations/EXPECTATION-EMILIA-B01-001.json",
+      "class": "party expectation",
+      "bytes": 3155,
+      "sha256": "453162203b49a96f85928623afb606ccaef5bc194d6632d6e679223a44043c46"
+    },
+    {
+      "path": "expectations/PRE-EXECUTION-EXPECTATION-COMPARISON-001.json",
+      "class": "pre-execution comparison",
+      "bytes": 4051,
+      "sha256": "091613084058cfc9a40dc452f578b128c5276ce33351471f54f1d59055116adf"
+    },
+    {
+      "path": "expectations/H-03-FAIRNESS-REQUIREMENT-001.json",
+      "class": "fairness gate determination",
+      "bytes": 5059,
+      "sha256": "a8e7b8e18731279d6d9cfa80b69f0dda9c4974608c8ccf5248e145814fdfad53"
+    },
+    {
+      "path": "execution/native/NATIVE-OUTPUT-MANIFEST-001.json",
+      "class": "native output manifest",
+      "bytes": 6469,
+      "sha256": "5773862d6f66d1f748e0ad711cb85f71005f9ce588b2699e1f592f12ebe960ee"
+    },
+    {
+      "path": "execution/native/wexp-native-C-00.json",
+      "class": "native output",
+      "bytes": 6406,
+      "sha256": "b85755ba14a6fbbae99a79dfeec4c2c9b2c0f6d417bd79a6a7a66c5e4392dda5"
+    },
+    {
+      "path": "execution/native/wexp-native-H-01-a.json",
+      "class": "native output",
+      "bytes": 6962,
+      "sha256": "0fb40f6750e4bf03facd3c88ae1b1e56456eaef2f924b758cf60e46d5654d34b"
+    },
+    {
+      "path": "execution/native/wexp-native-H-01-b.json",
+      "class": "native output",
+      "bytes": 7833,
+      "sha256": "7a855eeee56e2d97be8833f1a2841bdcbe5e65ad41b28f3c85797d400bd3e67b"
+    },
+    {
+      "path": "execution/native/wexp-native-H-01-c.json",
+      "class": "native output",
+      "bytes": 7569,
+      "sha256": "b5ec33896083da5ef9df62ed00d51e4b79c01c4c58c652400ed2b5a2bf7cbba2"
+    },
+    {
+      "path": "execution/native/wexp-native-H-02.json",
+      "class": "native output",
+      "bytes": 6832,
+      "sha256": "32d9736d5dd598d710ed7ab8db5923ffb41dec8bd0a13bb57c39d069b44eea16"
+    },
+    {
+      "path": "execution/native/wexp-native-H-03.json",
+      "class": "native output",
+      "bytes": 7478,
+      "sha256": "e36b832880386bd1538c60a7d1cebb25eaaf7ea3f7ce8a13b79018aa95a0bb32"
+    },
+    {
+      "path": "execution/native/wexp-native-B-01.json",
+      "class": "native output",
+      "bytes": 7611,
+      "sha256": "9f33e1e135179509c6a08311c51c870cddff4ce92144d858d71c4a4598467a72"
+    },
+    {
+      "path": "execution/native/emilia-native-ABSENT.json",
+      "class": "native output absence record",
+      "bytes": 1051,
+      "sha256": "e4ddaaba481fe6d007c16b2775fec68f8c0929ccd5a04edc44929ca4cdf0720f"
+    },
+    {
+      "path": "execution/EXECUTION-RECORD-001.json",
+      "class": "execution record (preserved, superseded in state only)",
+      "bytes": 18873,
+      "sha256": "600a817c0be11f1cd841c611ec3875d1f3ec2d00df1d0c39856b59ebe9eedbae"
+    },
+    {
+      "path": "execution/EXECUTION-RESULTS-001.json",
+      "class": "execution results and ablation",
+      "bytes": 45748,
+      "sha256": "e808e0889da1b7e7f41a46f014f8f6b1622342bd1e5555b59efe63bbcd248ef7"
+    },
+    {
+      "path": "execution/WEXP-EXPECTATION-COMPARISON-001.json",
+      "class": "expectation comparison",
+      "bytes": 3679,
+      "sha256": "86f7ab655c943c2ec278bb880c2e1c85d40daabd09d5480f23019f0a567baf3c"
+    },
+    {
+      "path": "fairness/FINDINGS-STATUS-001.json",
+      "class": "findings status, F-01 correction",
+      "bytes": 5874,
+      "sha256": "97baaf00edbafc394ef5e050d657a5f1ae6852dcfcab6f7e611c4beb3ebdfbd0"
+    },
+    {
+      "path": "fairness/EMILIA-NATIVE-OUTPUT-SEARCH-001.json",
+      "class": "native output search record",
+      "bytes": 7724,
+      "sha256": "4a4ff9e6226408fadb98742fd20917a2533873dcbf76eb137a9585fa518a54fd"
+    },
+    {
+      "path": "fairness/FINAL-RECORD-FAIRNESS-PACKAGE-001.md",
+      "class": "contributor fairness review package",
+      "bytes": 9337,
+      "sha256": "8c3be1e5a20b686cd7594e8f5d92398457961c8dde303ab186757423f3956e7c"
+    },
+    {
+      "path": "publication-candidate/CANDIDATE-CHECKS-002.json",
+      "class": "candidate 002 verification record (historical authoritative artifact)",
+      "bytes": 5214,
+      "sha256": "4f09204750986a25ba654eef5b21dd9c1ecb2bf8d977f87f2cc780e86eee8821"
+    },
+    {
+      "path": "publication-candidate/COUNTERPARTY-FAIRNESS-REVIEW-001.json",
+      "class": "contributor fairness review and provenance",
+      "bytes": 3783,
+      "sha256": "810009d7a4d430758ca05c7144944aa385837664af2c3f245297e3ebb83e0f19"
+    },
+    {
+      "path": "publication-candidate/COUNTERPARTY-FAIRNESS-REVIEW-002.json",
+      "class": "contributor fairness review and provenance (AUTHORITATIVE, supersedes 001 in provenance classification only)",
+      "bytes": 8349,
+      "sha256": "556e5aea835444e7836ffd65c787c21c8a81f8f4ca1fa578856ad60928dc43c6"
+    },
+    {
+      "path": "publication-candidate/H-03-RESOLUTION-001.json",
+      "class": "H-03 resolution",
+      "bytes": 2993,
+      "sha256": "eac857123063037bc1d377711c93807f8fe07e5107253781c1178b5a8e5d1407"
+    },
+    {
+      "path": "publication-candidate/FINAL-RECORD-002.json",
+      "class": "machine-readable final record",
+      "bytes": 16303,
+      "sha256": "4768decf3721e2dfcfddab2028e0ea35e6352d00efb1bf24ecdaf67c7c389266"
+    },
+    {
+      "path": "publication-candidate/FINAL-REPORT-001.md",
+      "class": "human-readable final report",
+      "bytes": 9090,
+      "sha256": "c9af4ef0bc451da0ab2ef69c581840e11e66ceb8c6a21ddd03a6217f9fa200f7"
+    },
+    {
+      "path": "publication-candidate/PUBLICATION-ALLOWLIST-003.json",
+      "class": "exact-path publication allowlist",
+      "bytes": 14493,
+      "sha256": "3367da4599efb046bd24321e9b9bb10ca03b96df0ba27afad150ecfdcba32909"
+    }
+  ],
+  "supersedes": {
+    "candidate_root": "WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-002",
+    "candidate_bytes": 189353,
+    "candidate_sha256": "45b5061e79768c0296a8490442305eb6dd1bbc9e7abb561e22ab737c43e22dd1",
+    "reason": "packaging/reproducibility correction only: update the stale post-reveal B-01 test, include the omitted historical Candidate 002 checks artifact, and align the final-record fairness reference with authoritative fairness review 002",
+    "candidate_002_overwritten": false,
+    "candidate_002_retained": true
+  },
+  "fairness_provenance": "INDEPENDENTLY_OBSERVED_IN_FOUNDER_CONTOUR",
+  "authoritative_fairness_record": "publication-candidate/COUNTERPARTY-FAIRNESS-REVIEW-002.json",
+  "substantive_delta_from_candidate_002": "NONE — packaging/reproducibility correction only",
+  "disclosure_flag": {
+    "item": "team@emiliaprotocol.ai in provenance attribution",
+    "state": "PENDING_IMAN_CONFIRMATION"
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-EXECUTION-RECORD-001",
+  "status": "EXECUTED / FINAL RECORD PREPARED / NOT PUBLISHED",
+  "date": "2026-08-24",
+  "authority": "FOUNDER EXECUTION GO, 2026-08-24. Execution only.",
+  "execution_status": "EXECUTED",
+  "bound_freeze": {
+    "execution_freeze_sha256": "0317bf37a564f11e587853f1f61c6ada062ad7fb1476a008db5fa539c49a4295",
+    "frozen_pairs_reverified_immediately_before_execution": 18,
+    "mismatches": 0
+  },
+  "b01": {
+    "bytes": 7276,
+    "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+    "git_blob": "cd2177571dc5c1f4c013c4770e313d5739b561d2",
+    "commitment_state": "COMMITMENT_MATCH"
+  },
+  "case_results": [
+    {
+      "case_id": "C-00",
+      "blind": false,
+      "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+      "cc1_supported": true,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "supported",
+      "rejection_reasons": [],
+      "attacked_invariants": [],
+      "invariant_verdicts": {}
+    },
+    {
+      "case_id": "H-01-a",
+      "blind": false,
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "not-evaluated",
+      "rejection_reasons": [
+        "caid_premise_absent"
+      ],
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "invariant_verdicts": {
+        "I-01": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        },
+        "I-03a": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        }
+      }
+    },
+    {
+      "case_id": "H-01-b",
+      "blind": false,
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv_independence_validation": "not-evaluated",
+      "rejection_reasons": [
+        "exact_binding_mismatch:action_caid",
+        "exact_binding_mismatch:action_hash",
+        "exact_binding_mismatch:operation_id"
+      ],
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "invariant_verdicts": {
+        "I-01": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        },
+        "I-03a": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        }
+      }
+    },
+    {
+      "case_id": "H-01-c",
+      "blind": false,
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv_independence_validation": "not-evaluated",
+      "rejection_reasons": [
+        "window_mismatch:exact"
+      ],
+      "attacked_invariants": [
+        "I-03b"
+      ],
+      "invariant_verdicts": {
+        "I-03b": {
+          "preserved": true,
+          "criterion": "claim refused on evaluation context alone, with causal binding left intact"
+        }
+      }
+    },
+    {
+      "case_id": "H-02",
+      "blind": false,
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "not-evaluated",
+      "rejection_reasons": [],
+      "attacked_invariants": [
+        "I-02",
+        "I-04"
+      ],
+      "invariant_verdicts": {
+        "I-02": {
+          "preserved": true,
+          "criterion": "no phase promotion: claim refused and no base above observation is supported"
+        },
+        "I-04": {
+          "preserved": true,
+          "criterion": "no claim expansion admitted and the ceiling holds at observation"
+        }
+      }
+    },
+    {
+      "case_id": "H-03",
+      "blind": false,
+      "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+      "cc1_supported": true,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "supported",
+      "rejection_reasons": [],
+      "attacked_invariants": [
+        "I-04",
+        "I-05"
+      ],
+      "invariant_verdicts": {
+        "I-04": {
+          "preserved": true,
+          "criterion": "no claim expansion admitted and the ceiling holds at observation"
+        },
+        "I-05": {
+          "preserved": true,
+          "criterion": "every attempted authority conversion refused; none admitted"
+        }
+      }
+    },
+    {
+      "case_id": "B-01",
+      "blind": true,
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv_independence_validation": "not-evaluated",
+      "rejection_reasons": [
+        "exact_binding_mismatch:operation_id"
+      ],
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "invariant_verdicts": {
+        "I-01": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        },
+        "I-03a": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        }
+      }
+    }
+  ],
+  "b01_observed_result": {
+    "typed_outcome": "INDETERMINATE",
+    "cc1_supported": false,
+    "ceiling_base": null,
+    "iv_independence_validation": "not-evaluated",
+    "rejection_reason_set": [
+      "exact_binding_mismatch:operation_id"
+    ],
+    "accepted_observations": 0,
+    "rejected_observations": 2,
+    "appraisal_input_assembled": true,
+    "I-01": "PRESERVED",
+    "I-03a": "PRESERVED",
+    "native_output_sha256": "16ee77ebed572f209dd9c436f293028a8e59a29f15bd04938c636822a33ab8e3",
+    "appraisal_input_canonical_sha256": "8fd49ec52ecf93451d573b4945461cc3960e231f26601a09e0b194b031e79414"
+  },
+  "wexp_expectation_match": {
+    "verdict": "REPRODUCED_EXACTLY",
+    "fields_compared": 23,
+    "fields_matched": 23,
+    "differences": 0,
+    "including_the_unmeasured_h_min_prediction": "The expectation's reasoned prediction that B-01 would move H-MIN from 14/17 to 15/17 by making BE-04 individually necessary was recorded before execution and is confirmed by measurement.",
+    "expectation_edited": false
+  },
+  "emilia_expectation_match": {
+    "verdict": "NOT_VERIFIABLE_IN_THIS_CONTOUR",
+    "why": "Verifying it requires an EMILIA native output. None exists here and the frozen surface never defined a way to produce one. The expectation is neither confirmed nor contradicted.",
+    "what_can_be_stated": "The WEXP observed result and the EMILIA precommitted expectation correspond on three axes: terminal state (INDETERMINATE / lifecycle_state indeterminate), no positive outcome carried (cc1_supported false, ceiling null / outcome null), and attributed cause (exact_binding_mismatch:operation_id / failed_check exact_bindings).",
+    "how_much_that_is_worth": "Less than it looks, and this was recorded BEFORE execution, not after. BE-04 was deliberately built on EP Section 6, so the WEXP side is applying a predicate adopted from the EMILIA side. The correspondence on cause is substantially BY CONSTRUCTION. What it does show is that the adoption is faithful enough to fire on the same field.",
+    "expectation_edited": false
+  },
+  "h_suff": {
+    "verdict": "SUPPORTED",
+    "derivation_under_frozen_policy": [
+      {
+        "condition": "execution status EXECUTED",
+        "met": true
+      },
+      {
+        "condition": "C-00 constructs the declared complete WEXP input as declared",
+        "met": true,
+        "evidence": "CONSTRUCTED_CLAIM_SUPPORTED, ceiling_base observation, IV supported, AppraisalInput b0f77acf3c810879..."
+      },
+      {
+        "condition": "every precommitted expectation relevant to the conclusion reproduced",
+        "met": true,
+        "evidence": "The WEXP expectation reproduced on 23 of 23 compared fields.",
+        "reading_applied": "The conclusion is bridge sufficiency, a property of the WEXP bridge. The EMILIA expectation is about EMILIA's own verifier and is not evidence about the bridge, so it is not treated as relevant to THIS conclusion.",
+        "alternative_reading_flagged": "If the Founder or the contributor reads that clause as also requiring the EMILIA expectation to be reproduced, this condition is unmet-because-unverifiable and H-SUFF becomes INCONCLUSIVE. That reading is recorded rather than silently resolved."
+      },
+      {
+        "condition": "I-01, I-02, I-03a, I-03b, I-04, I-05 preserved across ALL frozen cases INCLUDING B-01",
+        "met": true,
+        "evidence": {
+          "I-01": [
+            "H-01-a:PRESERVED",
+            "H-01-b:PRESERVED",
+            "B-01:PRESERVED"
+          ],
+          "I-03a": [
+            "H-01-a:PRESERVED",
+            "H-01-b:PRESERVED",
+            "B-01:PRESERVED"
+          ],
+          "I-03b": [
+            "H-01-c:PRESERVED"
+          ],
+          "I-02": [
+            "H-02:PRESERVED"
+          ],
+          "I-04": [
+            "H-02:PRESERVED",
+            "H-03:PRESERVED"
+          ],
+          "I-05": [
+            "H-03:PRESERVED"
+          ]
+        }
+      }
+    ],
+    "fail_closed_is_not_rejection": "H-01-a, H-01-b, H-01-c, H-02 and B-01 all refuse to construct. Under the frozen policy these are pre-authorized safe results, not bridge failures.",
+    "explicitly_not_claimed": [
+      "that WEXP proves execution",
+      "that EMILIA is validated as correct",
+      "that this bridge generalizes",
+      "interoperability of the two specifications in general",
+      "any claim above the observation base"
+    ]
+  },
+  "h_min": {
+    "verdict": "NOT_ESTABLISHED",
+    "why": "The frozen policy makes SUPPORTED conditional on EVERY declared element being shown necessary. Two are not. NOT_ESTABLISHED is the policy's named outcome when the ablation set cannot decide necessity for at least one element.",
+    "supported_count": 15,
+    "of": 17,
+    "necessity_supported": [
+      "BE-01",
+      "BE-02",
+      "BE-04",
+      "BE-05",
+      "BE-07",
+      "BE-08",
+      "BE-09",
+      "BE-10",
+      "BE-11",
+      "BE-12",
+      "BE-13",
+      "BE-14",
+      "BE-15",
+      "BE-16",
+      "BE-17"
+    ],
+    "necessity_not_established": [
+      "BE-03",
+      "BE-06"
+    ],
+    "movement_caused_by_b01": {
+      "before": "14/17, NOT_ESTABLISHED BE-03 BE-04 BE-06",
+      "after": "15/17, NOT_ESTABLISHED BE-03 BE-06",
+      "moved": [
+        "BE-04"
+      ]
+    },
+    "be_03_why_undecided": "No frozen case carries a stale, compromised, not-yet-valid or expired source pin, so nothing in the complete case set can discriminate it. It is retained because EMILIA outcome-binding Sections 4 and 6 require refusing such sources. Removing it to raise the count would trade a normative requirement for a number.",
+    "be_06_why_undecided": "B-01 leaves the CAID matching, so BE-06 never fires on it. BE-06 and BE-04 still mask each other on H-01-b, which mutates fields covered by both. B-01 broke the mask for BE-04 only.",
+    "prohibited_and_not_done": [
+      "forcing H-MIN to SUPPORTED",
+      "deleting BE-03 or BE-06 to raise the count",
+      "counting the two-element BE-04+BE-06 diagnostic as single-element necessity evidence",
+      "claiming global minimality, multi-element minimality, uniqueness or a generic minimal mapping"
+    ]
+  },
+  "be_04_necessity_on_b01": {
+    "verdict": "SUPPORTED",
+    "discriminated_by_b01": true,
+    "discriminating_cases": [
+      "B-01"
+    ],
+    "observed_consequence_of_removal": {
+      "before": "INDETERMINATE, cc1_supported false, ceiling null, IV not-evaluated",
+      "after": "CONSTRUCTED_CLAIM_SUPPORTED, cc1_supported true, ceiling observation, IV supported",
+      "consequence_class": "invariant_no_longer_preserved"
+    },
+    "reading": "With BE-04 absent, nothing else in the bridge refuses B-01: the action digest and the CAID both still match, so evidence attesting operation:plant-7:001 would be carried into a supported observation-base claim about operation:plant-7:002. That is exactly the I-01 and I-03a break the case was built to attempt.",
+    "why_the_open_set_could_not_show_this": "H-01-b rebinds action_hash, action_caid and operation_id together, so BE-06 alone still refuses it and BE-04 looks dispensable. B-01 rebinds the operation identifier ONLY. The blind case tested something the open set structurally could not."
+  },
+  "case_level_relations": {
+    "policy_vocabulary_only": true,
+    "relations": {
+      "C-00": {
+        "relation": "underdetermined",
+        "reason": "emilia_native_output_absent"
+      },
+      "H-01-a": {
+        "relation": "underdetermined",
+        "reason": "emilia_native_output_absent"
+      },
+      "H-01-b": {
+        "relation": "underdetermined",
+        "reason": "emilia_native_output_absent"
+      },
+      "H-01-c": {
+        "relation": "underdetermined",
+        "reason": "emilia_native_output_absent"
+      },
+      "H-02": {
+        "relation": "underdetermined",
+        "reason": "emilia_native_output_absent"
+      },
+      "H-03": {
+        "relation": "underdetermined",
+        "reason": "emilia_native_output_absent"
+      },
+      "B-01": {
+        "relation": "underdetermined",
+        "reason": "emilia_native_output_absent"
+      }
+    },
+    "why": "The frozen policy derives relations from the TWO preserved native outputs. Only one party's native output exists, so no case can be decided. underdetermined is the policy's own token for this.",
+    "not_done": "The EMILIA expectation was NOT substituted for an EMILIA native output in order to manufacture relations."
+  },
+  "unexpected_findings": [
+    {
+      "id": "F-01",
+      "severity": "structural",
+      "title": "No EMILIA native output exists in this contour, for any case",
+      "detail": "Every fixture carries emilia_input plus an emilia_baseline provenance stanza naming a repository, commit and conformance vector. None carries a native result, and the frozen surface defines no mechanism to produce one locally. The comparison policy's two-native-output basis is therefore unsatisfiable here.",
+      "consequence": "All seven case-level relations are underdetermined, and the EMILIA expectation is not verifiable.",
+      "what_was_not_done": "EMILIA's reference implementation was not run to fill the gap. A reference implementation is not the party, and its output would be a WEXP-side artifact wearing the other party's name.",
+      "affects_h_suff": false,
+      "affects_h_min": false
+    },
+    {
+      "id": "F-02",
+      "severity": "interpretive",
+      "title": "The H-SUFF expectation clause admits two readings",
+      "detail": "'every precommitted expectation relevant to the conclusion reproduced' can be read narrowly (WEXP only, since sufficiency is a property of the WEXP bridge) or broadly (both expectations). The narrow reading yields SUPPORTED; the broad reading yields INCONCLUSIVE because the EMILIA expectation is unverifiable here.",
+      "applied": "narrow",
+      "flagged_for": "Founder and EMILIA-side review at the publication gate",
+      "not_done": "The policy text was not edited to remove the ambiguity."
+    },
+    {
+      "id": "F-03",
+      "severity": "informational",
+      "title": "H-03 and C-00 assemble a byte-identical AppraisalInput",
+      "detail": "Both produce canonical digest b0f77acf3c810879... H-03 is C-00 plus attempted expansions and attempted authority conversions. All were refused, and the refusals leave no residue in the assembled input.",
+      "reading": "Evidence that the refusal path is non-contaminating: a refused assertion does not alter what the bridge constructs. Recorded as an observation, not as a verdict."
+    },
+    {
+      "id": "F-04",
+      "severity": "informational",
+      "title": "The complete frozen case set still cannot decide BE-03 or BE-06",
+      "detail": "This is a limit of the case set, not a defect found in the bridge. Deciding them would need cases the frozen set does not contain: a non-current source pin, and a CAID-only rebinding.",
+      "not_done": "No case was added. The frozen set is frozen."
+    }
+  ],
+  "procedure_notes": [
+    {
+      "note": "Two comparison-script errors were made and corrected during execution, both in MY checker, never in a frozen artifact or a result.",
+      "first": "A hand-typed H-03 fixture digest in the pre-flight gate was wrong. The file matched the frozen manifest exactly; the typed constant did not. The gate was re-run driven entirely by digests read out of the frozen manifests instead of from memory.",
+      "second": "The expectation comparison probed boundary_finding.reason and a top-level iv_reason. The bridge emits boundary_finding.reasons as a list and carries the IV reason in appraisal_input.qualifier_findings[].reasons. Both contained exactly the predicted tokens. The checker was fixed; the expectation and the result were not."
+    },
+    {
+      "note": "run_open_cases.main() was never called. It rewrites ABLATION-PLAN-001.json and BRIDGE-VALIDATION-RECORD-001.json, both frozen. The driver imports that module only to reuse its frozen invariant criteria verbatim, so the criteria applied to B-01 are byte-identically those frozen before B-01 was revealed."
+    },
+    {
+      "note": "The six open cases reproduced their pre-execution results exactly, which is the regression control for the driver itself."
+    }
+  ],
+  "h_03_fairness_review": {
+    "state": "PRESERVED_NOT_RESOLVED",
+    "determination": "C — final-record review only",
+    "contributor_contacted_during_execution": false,
+    "unchanged_by_execution": "Execution did not touch the H-03 divergence. H-03's I-04 and I-05 verdicts rest on refusal of expansion and of authority conversion, both observed, and are independent of the IV-semantics question.",
+    "due_at": "the publication gate, before any PUBLICATION GO"
+  },
+  "frozen_surface": {
+    "modified": false,
+    "design_freeze": "unchanged",
+    "execution_freeze": "unchanged",
+    "bridge": "unchanged",
+    "b01": "unchanged",
+    "open_fixtures": "unchanged",
+    "wexp_expectation": "unchanged",
+    "emilia_expectation": "unchanged",
+    "experiment_policy": "unchanged",
+    "comparison_policy": "unchanged",
+    "everything_written_by_execution_is_new_and_lives_under": "experiments/WEXP-EMILIA-INTEROP-002/execution/"
+  },
+  "publication_authorized": false,
+  "non_claims": [
+    "This is one bridge, one claim, seven cases. Section 13 no-generalization governs.",
+    "Nothing here shows that WEXP proves execution.",
+    "Nothing here certifies EMILIA as correct, or the two specifications as interoperable in general.",
+    "H-SUFF SUPPORTED is a statement about this bridge on this frozen case set and nothing wider.",
+    "H-MIN is NOT_ESTABLISHED. This bridge is not shown to be minimal.",
+    "No claim above the observation base is supported on any case."
+  ]
+}

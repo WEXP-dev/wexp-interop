@@ -1,0 +1,320 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-HOSTED-INFRASTRUCTURE-BASELINE-001",
+  "status": "CANDIDATE_BOUND_NOT_FROZEN",
+  "charter_basis": "DRAFT-004 §9.2.1. Bound now because the Execution Freeze is being prepared; it becomes effective only if the Founder grants that freeze.",
+  "purpose": "Records the exact hosted infrastructure that satisfied the §11 properties at a measured moment. It is not an execution authority and it authorizes nothing.",
+  "public_lab": {
+    "repository": "WEXP-dev/interop-test-lab",
+    "visibility": "public",
+    "fork": false,
+    "archived": false,
+    "default_branch": "main",
+    "commit": "127bfa7539be6b33c78e8aeaad88362a61c227a8",
+    "tree": "c28d75a525ba632c2634bfe8c8e93d51f7dbedb7",
+    "blob_count_at_commit": 34
+  },
+  "workflow": {
+    "path": ".github/workflows/interop-hosted.yml",
+    "name": "Hosted autonomous interop leg",
+    "workflow_id": 340153673,
+    "bytes": 18045,
+    "git_blob": "5fb8ca78a4752e4d4894313d9a33d932b852ab1d",
+    "sha256": "e0c194f96c7dcacb48d64cbd506f47b02d7ccaaaef30ab5dc4e1dee2ebf0b99b",
+    "triggers": [
+      "workflow_dispatch",
+      "push:main"
+    ],
+    "pull_request_trigger_present": false,
+    "top_level_permissions": {
+      "contents": "read"
+    },
+    "jobs": [
+      {
+        "id": "counterparty",
+        "name": "counterparty execution domain",
+        "permissions": {
+          "contents": "read"
+        },
+        "holds_secret": false
+      },
+      {
+        "id": "coordinate",
+        "name": "coordination domain",
+        "permissions": {
+          "contents": "read"
+        },
+        "holds_secret": true,
+        "needs": "counterparty"
+      }
+    ]
+  },
+  "companion_workflow": {
+    "path": ".github/workflows/checks.yml",
+    "bytes": 3288,
+    "git_blob": "95138a211441a3d6c623ee5b1f1f1e63e9f2086f",
+    "note": "Unprivileged PR-safe regression suite. Holds no secret, permissions contents:read. Its pull_request trigger is safe precisely because it can reach nothing."
+  },
+  "adapter_and_tool_identities": [
+    {
+      "path": "tools/party_counterparty.py",
+      "bytes": 6909,
+      "git_blob": "b0c6210581c87cc2312c8959720f6c92c0103976",
+      "role": "counterparty-domain adapter"
+    },
+    {
+      "path": "tools/ingest_native.py",
+      "bytes": 6412,
+      "git_blob": "204497f6270974bb27777643be7922e80006db79",
+      "role": "native-result cross-check"
+    },
+    {
+      "path": "tools/stage_experiment.py",
+      "bytes": 3811,
+      "git_blob": "5e4a4fe2af363fb90f36d7e189ce44582928ba87",
+      "role": "declared-input staging"
+    },
+    {
+      "path": "tools/staging.py",
+      "bytes": 3633,
+      "git_blob": "c0aa450d39e00ab7084ae4db840dd3bc66f9e7a1",
+      "role": "staging primitives"
+    },
+    {
+      "path": "tools/publication_gate.py",
+      "bytes": 4416,
+      "git_blob": "e9921fa52a3076bdcf7d55f6d80b0b5e5a0fd14a",
+      "role": "allowlist admission and manifest freeze"
+    },
+    {
+      "path": "tools/disclosure_scan.py",
+      "bytes": 15888,
+      "git_blob": "ad015cd4481da0ebd531ccac231ae99e0e649963",
+      "role": "disclosure scan"
+    },
+    {
+      "path": "tools/post_gate_check.py",
+      "bytes": 2507,
+      "git_blob": "4a7c99fc78201e123db486f52a0e5ffb830e2fe8",
+      "role": "post-gate immutability"
+    },
+    {
+      "path": "tools/hostile_party.py",
+      "bytes": 8282,
+      "git_blob": "6ccd639309ed7628488f19845abccd46544d4ff0",
+      "role": "malicious-counterparty negative test"
+    }
+  ],
+  "wexp_side_adapter_note": "The WEXP-side adapter lives in the private tooling. Its identity is deliberately absent from this record; only the handling policy below is public.",
+  "action_pins": [
+    {
+      "action": "actions/checkout",
+      "sha": "11bd71901bbe5b1630ceea73d27597364c9af683",
+      "version": "v4.2.2"
+    },
+    {
+      "action": "actions/setup-python",
+      "sha": "42375524e23c412d93fb67b49958b491fce71c38",
+      "version": "v5"
+    },
+    {
+      "action": "actions/upload-artifact",
+      "sha": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "version": "v4.6.2"
+    },
+    {
+      "action": "actions/download-artifact",
+      "sha": "d3f86a106a0bac45b974a628896c90dbdf5c8093",
+      "version": "v4"
+    },
+    {
+      "action": "actions/create-github-app-token",
+      "sha": "af35edadc00be37caa72ed9f3e6d5f7801bfdf09",
+      "version": "v1.11.7"
+    }
+  ],
+  "action_pin_discipline": "Every uses: reference is pinned to a 40-hex commit SHA. No tag or branch reference is used anywhere in either workflow.",
+  "public_source_pins": {
+    "source": "pins.json at the pinned commit",
+    "pins_json": {
+      "bytes": 1041,
+      "git_blob": "43a78a63ab831bc0a5b10599a3ce8a613047f77c",
+      "sha256": "42c253d72d97de8bf2eca7e3493c67ebd230a01f4ebeaad457ef8fa8d51cd9b8"
+    },
+    "subject": {
+      "repository": "WEXP-dev/interop-test-subject",
+      "commit": "8753d05f139d1cf0f0f63fa7a58a1886a27098b1",
+      "visibility": "public",
+      "requires_token": false
+    },
+    "wexp_party": {
+      "repository": "WEXP-dev/wexp-ref",
+      "commit": "666bcb42713383ba47ec7a4fd593b6482787ffce",
+      "visibility": "public",
+      "requires_token": false,
+      "status": "draft-unmerged"
+    },
+    "recorded_observation": "The subject pin appears inside the retained evidence; the wexp-ref pin does not. Both are verified by value during the run, and both are bound here. Stated because 'both pins are in the evidence' would have been the convenient sentence and it is not the true one."
+  },
+  "private_tooling_identity_handling_policy": {
+    "identity_recorded_here": false,
+    "identity_recorded_in_any_public_evidence": false,
+    "access_model": "short-lived, repository-scoped, read-only GitHub App installation token",
+    "app_token_scope": {
+      "owner": "WEXP-dev",
+      "repositories": [
+        "wexp-work"
+      ],
+      "permission": "contents:read"
+    },
+    "token_lifetime": "minted per run, revoked at job end by the action's post step",
+    "checkout_persist_credentials": false,
+    "version_identity_source": "protected runtime configuration",
+    "version_identity_verified_at_runtime": true,
+    "verification_method": "comparison only — a match is reported, the identity itself is never emitted",
+    "permission_expansion_under_this_order": "NONE. GitHub App permissions were not inspected for change, requested, or modified."
+  },
+  "canary": {
+    "purpose": "INFRASTRUCTURE VALIDATION ONLY. This is the unchanged Prototype-000 X-001 exercise required by DRAFT-004 §11. INTEROP-002 was NOT run.",
+    "experiment_id": "X-001",
+    "run_id": 32702288659,
+    "run_attempt": 1,
+    "run_url": "https://github.com/WEXP-dev/interop-test-lab/actions/runs/32702288659",
+    "event": "workflow_dispatch",
+    "head_branch": "main",
+    "head_sha": "127bfa7539be6b33c78e8aeaad88362a61c227a8",
+    "started": "2026-08-24T07:36:50Z",
+    "completed": "2026-08-24T07:37:20Z",
+    "execution_status": "EXECUTED",
+    "run_conclusion": "success",
+    "job_conclusions": {
+      "counterparty execution domain": "success",
+      "coordination domain": "success"
+    },
+    "unavailable_infrastructure_step": "skipped — the pin and App-credential probes both reported available",
+    "mode": "autonomous",
+    "terminal_outcome": "MAPPING_REQUIRED",
+    "semantic_projection_sha256": "bc409c308491de92ffb2f7786c305f6c88c7785b10df9541b82a4b83c7644c5f",
+    "semantic_projection_matches_charter_18": true,
+    "semantic_projection_note": "Recomputed locally from the freshly downloaded bundle with the framework's own canonical digest helper, and equal to the value charter §18 records for the X-001 worked example. Orchestration invariance still holds at this infrastructure."
+  },
+  "gate_statuses": {
+    "publication_gate": {
+      "run_step_conclusion": "success",
+      "step": "Admit only allowlisted artifacts and freeze the manifest"
+    },
+    "disclosure_scan": {
+      "run_step_conclusion": "success",
+      "step": "Scan the frozen tree for disclosure"
+    },
+    "post_gate_immutability": {
+      "run_step_conclusion": "success",
+      "step": "Confirm nothing changed after the gate"
+    },
+    "upload": {
+      "run_step_conclusion": "success",
+      "guard": "no if: condition — a run whose gate failed cannot publish the tree the gate refused"
+    },
+    "gate_order_observed": "stage -> publication gate (allowlist + manifest) -> disclosure scan -> post-gate immutability -> upload"
+  },
+  "independent_disclosure_review": {
+    "performed_by": "coordination side, after the run, over the downloaded artifact",
+    "why": "The run scanning itself is necessary but not sufficient. This re-scan uses the same declared families against bytes that had already left the run.",
+    "scanner": "tools/disclosure_scan.py at the pinned commit, git_blob ad015cd4481da0ebd531ccac231ae99e0e649963",
+    "files_reviewed": 11,
+    "files_excluded": 0,
+    "families_applied": [
+      "personal-or-local-path",
+      "private-identity",
+      "protected-value",
+      "secret",
+      "strategic-review-trigger",
+      "unattributed-commit-identity",
+      "undecodable"
+    ],
+    "result": "CLEAN",
+    "post_gate_recheck": {
+      "entries_verified": 10,
+      "result": "UNCHANGED"
+    },
+    "additional_checks_beyond_the_scanner": {
+      "private_repository_commit_identities_searched": 400,
+      "private_repository_commit_identities_found": 0,
+      "local_filesystem_paths_found": 0,
+      "credential_or_key_material_found": 0,
+      "git_ref_or_branch_names_found": 0,
+      "private_tooling_identity_found": 0,
+      "only_mention_of_tooling": "REPRODUCTION.md prose describing the handling policy — the policy is public by design, the identity is not"
+    },
+    "non_claim": "CLEAN means no declared pattern matched the staged bytes. It is not proof that the bundle is free of every possible disclosure."
+  },
+  "retained_public_evidence": {
+    "artifact_name": "hosted-leg-evidence",
+    "artifact_id": 9510950090,
+    "bytes": 9125,
+    "artifact_digest": "sha256:03b0647ce41814cb75e29215e96837e9cff289ae9f42537bf8496a2374c1411c",
+    "expired": false,
+    "retention_days": 30,
+    "manifest": {
+      "path": "PUBLICATION-MANIFEST.json",
+      "bytes": 1807,
+      "sha256": "43745b9afc80503b158561e5d16dbc348b52e16222957d92c8331a12d6a97a40",
+      "entries": 10
+    },
+    "files": [
+      {
+        "path": "REPRODUCTION.md",
+        "bytes": 870,
+        "sha256": "fd9304c2655e487c54cf992de5e99f2a5c008c3beb3a0ebe8adbf7f41f9a51ce"
+      },
+      {
+        "path": "claims-registry.json",
+        "bytes": 1902,
+        "sha256": "0518d1d0f09d86c6566f19ce45b6cc0d982780063fff8f89d53d0cfa04ed6dec"
+      },
+      {
+        "path": "comparison.json",
+        "bytes": 776,
+        "sha256": "b1562600ee2a9e080d97c190caa31367be5d4809031135440fd2daddd6c920e5"
+      },
+      {
+        "path": "frozen-cases.json",
+        "bytes": 1208,
+        "sha256": "84e707f0b1b477540725fc831caf1f3c2f73c9b3c6d04f1ebe6c8998a0fdd539"
+      },
+      {
+        "path": "native/glyphlock/PARTY-DOMAIN.json",
+        "bytes": 603,
+        "sha256": "f05225e3860121f5ee25473820743a45bc9d495d158a49eb17abf5be8d99af6e"
+      },
+      {
+        "path": "native/glyphlock/RESULTS.json",
+        "bytes": 3014,
+        "sha256": "0a9c4e6b41fa8188b8b5fb21ff7b3a1ef81a631c63c67f117300068b9a928086"
+      },
+      {
+        "path": "outcome.json",
+        "bytes": 668,
+        "sha256": "15f1b8a1ba059fce8413c713245146fddc4ae7350c61f2deb80551402710dcef"
+      },
+      {
+        "path": "policy.json",
+        "bytes": 3616,
+        "sha256": "47b128a37fff32b39f9293c207844e3f71c9e0cac7a0d86df9f783ca4482d4ce"
+      },
+      {
+        "path": "semantic-bundle.json",
+        "bytes": 3927,
+        "sha256": "7b157aca38983f76175317a0431b4e2994f5e3e8198b6de82ade750c555d8a3d"
+      },
+      {
+        "path": "status.json",
+        "bytes": 1039,
+        "sha256": "6b71bb6122332f6c2764e29fcbfe6ed0f54698bc41ad8d0fad9f9e703dcf1109"
+      }
+    ],
+    "note": "This is X-001 canary evidence. It is not INTEROP-002 evidence and it is not published anywhere by this order."
+  },
+  "not_an_execution_authority": "No identity in this record authorizes execution. It records what was measured, so the Execution Freeze can bind an infrastructure that actually existed rather than one a charter asserted.",
+  "execution_authorized": false,
+  "publication_authorized": false
+}

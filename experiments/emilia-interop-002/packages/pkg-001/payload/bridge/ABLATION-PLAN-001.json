@@ -1,0 +1,1023 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-ABLATION-PLAN-001",
+  "status": "FROZEN_PLAN_EXECUTED_ON_OPEN_SURFACE_ONLY",
+  "bridge": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+  "method": "single-element ablation, DRAFT-004 §4 H-MIN",
+  "ablation_semantics": "Removal means the element is not in the bridge and its check does not run. It does NOT mean the bridge detects a missing part and fails closed. Only genuine output dependence propagates: an element that merely runs earlier is not treated as a dependency, because doing so would make every element look necessary and would measure the harness instead of the bridge.",
+  "admissible_necessity_evidence": [
+    "the positive control can no longer construct the intended complete input",
+    "a precommitted result changes to a less informative fail-closed result",
+    "at least one invariant is no longer preserved"
+  ],
+  "explicitly_not_claimed": [
+    "global minimality",
+    "multi-element minimality",
+    "uniqueness of this bridge",
+    "a generic minimal mapping"
+  ],
+  "b01_excluded": "The blind case is not run and is not part of this plan.",
+  "elements_total": 17,
+  "necessity_supported_on_open_surface": [
+    "BE-01",
+    "BE-02",
+    "BE-05",
+    "BE-07",
+    "BE-08",
+    "BE-09",
+    "BE-10",
+    "BE-11",
+    "BE-12",
+    "BE-13",
+    "BE-14",
+    "BE-15",
+    "BE-16",
+    "BE-17"
+  ],
+  "necessity_not_established_on_open_surface": [
+    "BE-03",
+    "BE-04",
+    "BE-06"
+  ],
+  "elements": [
+    {
+      "element_id": "BE-01",
+      "removal": "BE-01 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-02",
+      "removal": "BE-02 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_UNSUPPORTED",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_UNSUPPORTED",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-03",
+      "removal": "BE-03 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": false,
+      "necessity_on_open_surface": "NOT_ESTABLISHED",
+      "observed_consequences": []
+    },
+    {
+      "element_id": "BE-04",
+      "removal": "BE-04 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": false,
+      "necessity_on_open_surface": "NOT_ESTABLISHED",
+      "observed_consequences": []
+    },
+    {
+      "element_id": "BE-05",
+      "removal": "BE-05 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "invariant_no_longer_preserved"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-06",
+      "removal": "BE-06 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": false,
+      "necessity_on_open_surface": "NOT_ESTABLISHED",
+      "observed_consequences": []
+    },
+    {
+      "element_id": "BE-07",
+      "removal": "BE-07 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "invariant_no_longer_preserved"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-08",
+      "removal": "BE-08 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-09",
+      "removal": "BE-09 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-10",
+      "removal": "BE-10 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-11",
+      "removal": "BE-11 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_UNSUPPORTED",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_UNSUPPORTED",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-12",
+      "removal": "BE-12 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-b",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-13",
+      "removal": "BE-13 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-b",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-14",
+      "removal": "BE-14 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-b",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-15",
+      "removal": "BE-15 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 2,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "invariant_no_longer_preserved"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-16",
+      "removal": "BE-16 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 5
+          },
+          "consequence_class": "invariant_no_longer_preserved"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-17",
+      "removal": "BE-17 is absent from the bridge; its check does not run. Every other bridge byte is held constant.",
+      "discriminated_by_frozen_open_set": true,
+      "necessity_on_open_surface": "SUPPORTED",
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-b",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    }
+  ],
+  "masking_diagnostic": {
+    "note": "BE-04 and BE-06 each individually fail to be discriminated by the frozen open set, and the reason is worth stating rather than leaving as a blank. H-01-b mutates three fields at once - action_hash, action_caid and operation_id. BE-04 catches action_hash and operation_id; BE-06 catches action_caid. Remove either one alone and the other still refuses the case, so neither is individually necessary against this fixture.",
+    "observed_two_element_result": "Removing BE-04 and BE-06 together makes H-01-b construct CC-1 as supported, which would break I-01 and I-03a.",
+    "status": "DIAGNOSTIC ONLY, NOT NECESSITY EVIDENCE",
+    "why": "DRAFT-004 §4 admits single-element ablation only and explicitly makes no claim about interactions among multiple simultaneous removals. The two-element observation is recorded because it explains the gap honestly; it is not counted toward H-MIN and does not upgrade either element to SUPPORTED.",
+    "be_03_gap": "BE-03 is separate. No frozen open case carries a stale, compromised, not-yet-valid or expired source pin, so nothing in the open set can discriminate it. It is retained because EMILIA outcome-binding §§4 and 6 require refusing such sources; removing it to improve a minimality score would violate the frozen normative authority to win a number."
+  }
+}

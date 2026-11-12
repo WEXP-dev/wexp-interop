@@ -1,0 +1,31 @@
+{
+  "record_kind": "wexp-emilia-interop-002-b01-commitment-verification",
+  "case_id": "WEXP-EMILIA-INTEROP-002-B01-OPERATION-REBIND-001",
+  "commitment_record": "experiments/WEXP-EMILIA-INTEROP-002/pre-freeze/B-01-COMMITMENT.json",
+  "expected_byte_count": 7276,
+  "expected_sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+  "extraction_declared": "identity",
+  "state": "COMMITMENT_MATCH",
+  "admitted": true,
+  "checks": {
+    "byte_count_exact": true,
+    "sha256_exact": true,
+    "no_transformation_applied": true
+  },
+  "reasons": [],
+  "non_claims": [
+    "COMMITMENT_MATCH means the received bytes are the bytes committed to. It says nothing about what the case contains or what the bridge will do with it.",
+    "This gate produces no semantic result and must not be read as one."
+  ],
+  "carrier": {
+    "byte_count": 7276,
+    "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+    "preserved_verbatim": true
+  },
+  "received": {
+    "byte_count": 7276,
+    "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66"
+  },
+  "blind_case_status": "REVEALED_COMMITMENT_VERIFIED",
+  "admitted_path": "../fixtures/B-01.json"
+}

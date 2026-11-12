@@ -1,0 +1,30 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-FAIRNESS-REVIEW-ITEM-001",
+  "status": "FAIRNESS_REVIEW_ITEM",
+  "state": "PRESERVED_NOT_RESOLVED",
+  "subject": "independent_verification, on case H-03",
+
+  "fixture_position": "H-03 asserts independent_verification with supported_by_evidence false, on the stated ground that a source labelled independent_observer is a role label in the source registry, not an independent verification of the WEXP claim.",
+  "bridge_position": "The bridge agrees that a role label cannot establish IV, and does not use one. BE-10 derives IV from four things instead: a relying-party-supplied requirement the presenter may not widen, replace or select; a met quorum; canonical DER key identity distinctness from every accepted non-independent source; and declared control_domain_id distinctness likewise. The attempted expansion in H-03 is still refused as an assertion — the IV finding is derived separately, from the evidence.",
+
+  "why_this_is_not_a_defect_in_either_artifact": "Both positions reject the same thing: a label standing in for a verification. They differ on whether the relying party's declared, presenter-independent independence policy can carry the WEXP IV qualifier. Core-01 §4.3 requires the applied IV profile to define administrative, operational and technical criteria; M-13 requires that a role label alone not satisfy it. BE-10 states criteria of all three kinds. Whether they are the RIGHT criteria is a scientific question, not an error.",
+
+  "why_not_resolved_locally": "This is the question CC-1 was selected to probe. Weakening BE-10 so the fixture's rationale went unchallenged would have made the positive control unconstructible and would have been tuning the bridge to a case. Strengthening the fixture would have been editing a frozen artifact. Neither was done.",
+
+  "actions_not_taken": {
+    "bridge_changed": false,
+    "h03_changed": false,
+    "emilia_native_expectation_decided": false,
+    "emilia_contributor_contacted": false
+  },
+
+  "disclosure_chronology": {
+    "rule": "This item is presented to the EMILIA-side contributor only AFTER the Execution Freeze, when the bridge bytes can no longer move.",
+    "why": "Raising it earlier would invite a discussion whose outcome could still change the bridge, which is exactly the influence the freeze exists to remove. Raising it later, after results, would let the answer be chosen to suit them.",
+    "current_state": "NOT YET PRESENTED. The Execution Freeze is a candidate and has not been granted."
+  },
+
+  "what_the_contributor_will_be_asked": "Whether BE-10's predicate is a fair reading of EMILIA's independent-observer semantics, and what EMILIA's own native expectation for H-03 is. Not whether the WEXP claim is correct — that is the WEXP side's own question.",
+  "affects_h03_verdict": false,
+  "h03_verdict_basis": "H-03 tests refusal of claim expansion and of authority conversion. Both attempted expansions were refused as assertions and all five authority conversions were refused, so I-04 and I-05 are preserved independently of this divergence."
+}

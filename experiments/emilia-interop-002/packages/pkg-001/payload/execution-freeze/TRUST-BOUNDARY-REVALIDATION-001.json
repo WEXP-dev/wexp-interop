@@ -1,0 +1,86 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-TRUST-BOUNDARY-REVALIDATION-001",
+  "status": "REVALIDATED_AGAINST_THE_FRESH_CANARY",
+  "charter_basis": "DRAFT-004 §11.1",
+  "evidence": "Workflow bytes at WEXP-dev/interop-test-lab 127bfa7539be, plus run 32702288659 step conclusions, plus the downloaded artifact.",
+  "claim_scope": "ONLY JOB SEPARATION IS CLAIMED. Not VM isolation, not container escape resistance, not a guarantee about GitHub's own infrastructure. The security claim is not enlarged by this revalidation.",
+
+  "invariants": [
+    {
+      "invariant": "counterparty domain is a separate job, runner and filesystem",
+      "state": "HOLDS",
+      "evidence": "Two jobs: 'counterparty execution domain' and 'coordination domain', the second with needs: counterparty. GitHub-hosted jobs receive distinct runners and do not share a filesystem."
+    },
+    {
+      "invariant": "no private WEXP checkout or credential in the counterparty domain",
+      "state": "HOLDS",
+      "evidence": "The counterparty job declares permissions contents:read, references no secrets.* value, mints no token, and checks out only this public repository and the pinned public counterparty."
+    },
+    {
+      "invariant": "exchange into the coordination domain is artifact-only",
+      "state": "HOLDS",
+      "evidence": "The counterparty job ends at upload-artifact 'counterparty-native'; the coordination job begins its intake at download-artifact of that name into build/incoming/. No shared path, no shared checkout."
+    },
+    {
+      "invariant": "the coordination domain does not execute counterparty code",
+      "state": "HOLDS",
+      "evidence": "The downloaded artifact is read as untrusted data by tools/ingest_native.py. No step in the coordination job invokes anything from build/incoming/. PYTHONSAFEPATH=1 is set on every tooling step so a module dropped into this public repository cannot shadow the private package and run in its place."
+    },
+    {
+      "invariant": "publication allowlist is exact-path and wildcard-free with deny-default",
+      "state": "HOLDS",
+      "evidence": "publication/ALLOWLIST.json admits 14 exact paths, contains no wildcard character, and states that anything else fails closed. denied_classes explicitly includes 'unrevealed blind case bytes'."
+    },
+    {
+      "invariant": "semantic execution precedes publication staging",
+      "state": "HOLDS",
+      "evidence": "Step order in run 32702288659: 'Run the exercise' (15) and 'Cross-check the counterparty's native result' (16) both precede 'Stage the publication candidate' (17)."
+    },
+    {
+      "invariant": "stage -> freeze -> allowlist -> disclosure scan -> manifest -> immutability -> upload",
+      "state": "HOLDS",
+      "evidence": "Steps 17 stage, 18 allowlist admission and manifest freeze, 19 disclosure scan, 20 post-gate immutability, 21 upload. The manifest is written before the deny scan on purpose, so the scan itself falls inside the window the immutability check covers.",
+      "all_step_conclusions": "success"
+    },
+    {
+      "invariant": "no semantic mutation after the disclosure gate",
+      "state": "HOLDS",
+      "evidence": "post_gate_check reported UNCHANGED in the run, and an independent re-run of it over the downloaded artifact verified 10 manifest entries as UNCHANGED."
+    },
+    {
+      "invariant": "the upload cannot publish a tree the gate refused",
+      "state": "HOLDS",
+      "evidence": "The upload step carries no if: condition. A failed gate step stops the job before it. The only occurrence of the string always() in the workflow is inside the comment explaining why it is deliberately absent."
+    },
+    {
+      "invariant": "private tooling identity excluded from public evidence",
+      "state": "HOLDS",
+      "evidence": "The private pin is verified by comparison only. The independent re-scan found zero private repository commit identities across 400 candidates, zero ref or branch names, and zero credential material. The only occurrence of the word 'tooling' in the evidence is REPRODUCTION.md prose describing the handling policy, which is public by design."
+    },
+    {
+      "invariant": "no privileged pull_request execution",
+      "state": "HOLDS",
+      "evidence": "interop-hosted.yml triggers are workflow_dispatch and push:main only. checks.yml does carry pull_request, and that is safe precisely because it holds no secret and declares permissions contents:read, so a fork PR can reach nothing."
+    },
+    {
+      "invariant": "free public GitHub Actions contour remains valid",
+      "state": "HOLDS",
+      "evidence": "Public repository, GitHub-hosted ubuntu-latest runners, workflow_dispatch, artifacts and repository secrets. No paid-tier primitive is used."
+    },
+    {
+      "invariant": "GitHub App access remains repository-scoped and read-only",
+      "state": "HOLDS_AS_CONFIGURED",
+      "evidence": "The token step requests owner WEXP-dev, repositories: wexp-work, and pins.json records permission contents:read. The checkout that uses it sets persist-credentials: false.",
+      "honest_limit": "This is the scope the workflow REQUESTS and the record declares. The App installation's own permission set was not read from the API, because doing so is an account-surface action outside this order. No permission was requested, expanded or modified."
+    }
+  ],
+
+  "action_pin_discipline": {"state": "HOLDS", "evidence": "All five uses: references are 40-hex commit SHAs; no tag or branch reference appears in either workflow."},
+  "checkout_credential_discipline": {"state": "HOLDS", "evidence": "persist-credentials: false appears on all four checkout steps."},
+  "not_claimed": [
+    "isolation stronger than job separation",
+    "that the counterparty cannot misbehave inside its own domain",
+    "that a CLEAN disclosure scan proves the bundle free of every possible disclosure",
+    "any property of GitHub's infrastructure itself"
+  ]
+}

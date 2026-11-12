@@ -52,6 +52,29 @@ def verify_manifest(package: Path):
     return len(rows)
 
 
+def check_verdict_record(package: Path, verdict: dict):
+    """A split verdict must point at an existing record whose bytes and cited member are pinned."""
+    path = package_path(package, verdict["path"])
+    if not path.is_file():
+        raise ValueError(f"missing verdict record: {verdict['path']}")
+    data = path.read_bytes()
+    if hashlib.sha256(data).hexdigest() != verdict["sha256"]:
+        raise ValueError(f"verdict record digest mismatch: {verdict['path']}")
+    node = load_json(path)
+    for token in verdict["json_pointer"].split("/")[1:]:
+        token = token.replace("~1", "/").replace("~0", "~")
+        if not isinstance(node, dict) or token not in node:
+            raise ValueError(f"verdict record pointer does not resolve: {verdict['json_pointer']}")
+        node = node[token]
+    if not isinstance(node, dict):
+        raise ValueError("verdict record pointer must select an object")
+    for row in verdict["scopes"]:
+        scope = node.get(row["scope"])
+        if not isinstance(scope, dict) or scope.get("verdict") != row["verdict"]:
+            raise ValueError(f"card verdict differs from the verdict record: {row['scope']}")
+    return node
+
+
 def new_markdown(root: Path):
     for path in sorted(root.rglob("*.md")):
         relative = path.relative_to(root)
@@ -90,11 +113,14 @@ def execute(root: Path):
         data = archive.read_bytes()
         if len(data) != artifact["bytes"] or hashlib.sha256(data).hexdigest() != artifact["sha256"]:
             raise ValueError(f"artifact identity mismatch: {archive}")
-        for relative in [record["citation_path"], record["license"]["scope_path"],
+        license_paths = [record["license"]["scope_path"]] if "license" in record else []
+        for relative in [record["citation_path"], *license_paths,
                          record["verification"]["instructions"], *record["verification"]["evidence"],
                          *record["independence"]["evidence"]]:
             if not package_path(package, relative).is_file():
                 raise ValueError(f"missing package reference: {relative}")
+        if "verdict_record" in record["result"]:
+            check_verdict_record(package, record["result"]["verdict_record"])
         payload = package_path(package, record["payload"]["path"])
         if not payload.is_dir():
             raise ValueError("payload directory absent")

@@ -1,0 +1,70 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-COMPARISON-POLICY-001",
+  "status": "CANDIDATE_BOUND_NOT_FROZEN",
+  "charter_basis": "DRAFT-004 §9.2 requires the Execution Freeze to bind an exact comparison policy; §8 supplies the verdict vocabulary, which is reused verbatim and not extended.",
+
+  "native_output_preservation": {
+    "emilia": {
+      "rule": "The EMILIA-side native output is written to its own party domain and digested BEFORE any WEXP-side mapping reads it. The recorded digest is over the exact bytes the party produced.",
+      "mechanism": "party-domain artifact plus per-case native result digests recorded in the semantic bundle's native_result_identities",
+      "mutation_after_preservation": "PROHIBITED. A comparison that could rewrite a party's native output is not a comparison."
+    },
+    "wexp": {
+      "rule": "The WEXP-side output is the AppraisalInput and typed outcome the bridge produces, digested before comparison, with the bridge identity recorded alongside.",
+      "mechanism": "bridge typed_outcome plus canonical digest of the assembled AppraisalInput",
+      "mutation_after_preservation": "PROHIBITED."
+    },
+    "order": "preserve both -> digest both -> only then derive relations"
+  },
+
+  "case_level_relations": {
+    "source": "existing Prototype-000 framework relations, unchanged and authoritative",
+    "vocabulary": ["same_proposition_supported", "compatible", "different_abstraction", "genuine_disagreement", "mapping_absent", "not_comparable", "underdetermined"],
+    "derivation": "Per case, from the two preserved native outputs and the frozen expectations. Relations are a census; they are NOT aggregated into a single pass or fail, because they are not commensurable.",
+    "new_relation_tokens": "NONE. INTEROP-002 adds report-level axes only, never a new generic core taxonomy."
+  },
+
+  "bridge_sufficiency": {
+    "vocabulary": ["SUPPORTED", "REJECTED", "INCONCLUSIVE", "NOT_EVALUATED"],
+    "derivation_rules": [
+      "SUPPORTED requires ALL of: execution status EXECUTED; C-00 constructs the declared complete WEXP input as declared; every precommitted expectation relevant to the conclusion reproduced; every invariant I-01, I-02, I-03a, I-03b, I-04 and I-05 preserved across ALL frozen cases INCLUDING the revealed B-01.",
+      "REJECTED if the bridge cannot perform its declared positive construction, OR at least one hostile case permits a prohibited rebinding, causal-provenance break, evaluation-context misuse, phase promotion, claim expansion or authority conversion.",
+      "INCONCLUSIVE if the frozen evidence cannot decide sufficiency without overclaiming and no unsafe bridge behaviour has been established.",
+      "NOT_EVALUATED if execution did not reach a valid semantic evaluation, including every INFRASTRUCTURE_UNAVAILABLE and EXPERIMENT_INVALID case."
+    ],
+    "fail_closed_is_not_rejection": "A hostile case yielding rejection, non-constructibility, UNDETERMINED or a lower ceiling is a pre-authorized safe result. A bridge does not fail because it refuses to construct an unsafe claim.",
+    "pre_execution_state": "NOT_EVALUATED. The open surface passed, but B-01 has not been revealed or run, so sufficiency cannot be decided.",
+    "prohibited": "Deriving SUPPORTED from the open cases alone. The blind case is the part of H-SUFF that the bridge author could not see."
+  },
+
+  "local_minimality": {
+    "vocabulary": ["SUPPORTED", "REJECTED", "NOT_ESTABLISHED", "NOT_EVALUATED"],
+    "derivation_rules": [
+      "SUPPORTED requires every declared atomic element to be shown necessary by the frozen single-element ablation set, evaluated over the complete frozen case set including B-01.",
+      "REJECTED if at least one declared element can be removed while preserving all sufficiency conditions and all precommitted results relevant to the claim.",
+      "NOT_ESTABLISHED if the ablation set is incomplete or cannot decide necessity for at least one element.",
+      "NOT_EVALUATED if execution did not reach a valid ablation evaluation."
+    ],
+    "admissible_necessity_evidence": [
+      "the positive control can no longer construct the intended complete input",
+      "a precommitted result changes to a less informative fail-closed result",
+      "at least one invariant is no longer preserved"
+    ],
+    "pre_execution_evidence": {
+      "open_surface_result": "14 of 17 elements SUPPORTED, 3 NOT_ESTABLISHED (BE-03, BE-04, BE-06)",
+      "status": "EVIDENCE, NOT A VERDICT",
+      "note": "This is the measured state of the open surface before execution. It is not the final Local Minimality verdict and MUST NOT be recorded as one. If B-01 discriminates BE-03, BE-04 or BE-06, those move to SUPPORTED; if it does not, the honest final verdict on this evidence is NOT_ESTABLISHED."
+    },
+    "prohibited": [
+      "forcing H-MIN to SUPPORTED",
+      "deleting BE-03, BE-04 or BE-06 to raise the count",
+      "counting the two-element BE-04 plus BE-06 diagnostic as single-element necessity evidence",
+      "claiming global minimality, multi-element minimality, uniqueness, or a generic minimal mapping"
+    ]
+  },
+
+  "infrastructure_versus_semantics": "Infrastructure absence is never interpreted as bridge rejection, and a procedure defect is never interpreted as a semantic result. When execution status is not EXECUTED, both report-level axes are NOT_EVALUATED.",
+  "aggregation": "The two report-level axes are reported separately. Neither is collapsed into the other and neither is summarised as an overall pass.",
+  "execution_authorized": false,
+  "publication_authorized": false
+}

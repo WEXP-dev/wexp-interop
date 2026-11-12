@@ -69,12 +69,13 @@ class CatalogAdmissionTests(unittest.TestCase):
 
     def test_old_and_new_card_versions(self):
         records = load_records(ROOT)
-        self.assertEqual(len(records), 4)
+        self.assertEqual(len(records), 5)
         versions = {d['package_id'] + ':' + d['experiment_id']: d['schema_version'] for _, d in records}
         self.assertEqual(versions['pkg-001:emilia-interop-001'], '0.1.0')
         self.assertEqual(versions['pkg-001:wimse-aar-02-interop-001'], '0.1.0')
         self.assertEqual(versions['pkg-002:wimse-aar-02-interop-001'], '0.2.0')
         self.assertEqual(versions['pkg-001:scitt-receipt-boundary-001'], '0.3.0')
+        self.assertEqual(versions['pkg-001:emilia-interop-002'], '0.4.0')
 
     def test_unknown_schema_rejected(self):
         isolated = Path(self.tmp.name) / 'collection'

@@ -97,3 +97,26 @@ record and comparison, and re-derives every recorded equality from the saved obs
 and the frozen expectations under the harness set semantics. It executes no appraiser, emulator
 or Transparency Service. A passing check does not make the mapping a SCITT profile or the case
 a vector of `wexp-vectors`.
+
+## Card revision 0.4.0 and split verdicts
+
+`schemas/record-0.4.0.schema.json` is 0.3.0 with three deliberate changes; `$id`, title and the
+`schema_version` constant change accordingly. Schemas 0.1.0–0.3.0 and their cards are preserved
+and still loaded. Catalog entry shape remains 0.1.0.
+
+1. `comparison` gains `split-verdict`: the recorded result consists of separate verdicts at
+   different scopes that the source record forbids collapsing into one. It is not a synonym for
+   `not-evaluated` or any other value.
+2. With `split-verdict`, `result.verdict_record` is required (and it is allowed only then). It
+   names the package-relative record, its SHA-256, a JSON pointer to the object that holds the
+   scopes, each scope with its verdict exactly as recorded, and `not_collapsible: true`.
+   `scripts/verify_collection.py` checks the digest, resolves the pointer and compares every
+   scope verdict with the record.
+3. `license` may be absent while license terms are pending; an absent license is permitted only
+   with `publication: prepared`. A package without a recorded license is not published.
+
+The first use is `emilia-interop-002/pkg-001` (profile `emilia-archive-v1`). For it,
+`scripts/verify_emilia.py --package emilia-interop-002/pkg-001` handles a ZIP without directory
+entries, member modes without a file-type bit and the absence of a FREEZE record, by checking
+the candidate's internal manifest and pinned verdict record instead. The default invocation
+still checks INTEROP-001 unchanged.

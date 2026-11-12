@@ -1,0 +1,76 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-B01-REVEAL-GO-001",
+  "status": "EFFECTIVE",
+  "decision": "GRANTED",
+  "date": "2026-08-24",
+  "signed_by": "Mikhail Sergeev",
+  "charter_basis": "DRAFT-004 §6 B-01 admission discipline; §9.2 post-freeze clauses 1-2. Reveal authorization is an act, not an observation.",
+
+  "bound_execution_freeze": {
+    "artifact_id": "WEXP-EMILIA-INTEROP-002-EXECUTION-FREEZE-001",
+    "path": "experiments/WEXP-EMILIA-INTEROP-002/execution-freeze/EXECUTION-FREEZE-001.json",
+    "bytes": 14817,
+    "sha256": "0317bf37a564f11e587853f1f61c6ada062ad7fb1476a008db5fa539c49a4295",
+    "blob": "a71cb88f8aece33eceab232bf85b3fbc475eec85",
+    "commit": "8a124d18ed8abb03990ad1b72317b0a74bcc6384",
+    "freeze_status": "EFFECTIVE",
+    "execution_frozen": true,
+    "re_verified_before_this_decision": "All four values re-measured from the working tree and the object store. The decision proceeds only because all four matched."
+  },
+
+  "bound_prior_commitment": {
+    "case_id": "WEXP-EMILIA-INTEROP-002-B01-OPERATION-REBIND-001",
+    "attacked_invariants": ["I-01", "I-03a"],
+    "byte_count": 7276,
+    "sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+    "commitment_record": "experiments/WEXP-EMILIA-INTEROP-002/pre-freeze/B-01-COMMITMENT.json",
+    "commitment_unchanged": true,
+    "note": "These are the values the reveal will be checked against. They were fixed before the bridge existed and are not editable by anything that happens next."
+  },
+
+  "reveal_authorized": true,
+  "execution_authorized": false,
+  "publication_authorized": false,
+
+  "authorizes_exactly": [
+    "requesting the exact previously committed B-01 bytes",
+    "receiving those bytes unchanged",
+    "preserving the received carrier verbatim",
+    "verifying exact byte count and SHA-256 against the prior commitment",
+    "admitting the bytes as B-01 only after the commitment check passes"
+  ],
+
+  "does_not_authorize": [
+    "execution",
+    "publication",
+    "bridge changes",
+    "Design Freeze changes",
+    "Execution Freeze changes",
+    "alteration or repair of B-01",
+    "semantic redesign in response to the revealed case",
+    "expectation selection before commitment verification succeeds"
+  ],
+
+  "why_reveal_is_not_execution": "Seeing the case and running the case are different acts with different gates. After a successful commitment check the case stops being blind to us, but the bridge and both freezes stay immutable, and execution still requires a separate Founder EXECUTION GO after both expectations are committed.",
+
+  "immutable_under_this_decision": [
+    "bridge",
+    "Design Freeze",
+    "Execution Freeze",
+    "experiment policy",
+    "comparison policy",
+    "ablation plan",
+    "open fixtures",
+    "intended claim CC-1",
+    "positive and non-claim ceilings",
+    "permitted verdict vocabulary"
+  ],
+
+  "state_at_decision_time": {
+    "b01_bytes_present": false,
+    "blind_case_status": "NOT_RECEIVED",
+    "expectations": "NOT_YET_COMMITTED",
+    "execution": "NOT_AUTHORIZED",
+    "publication": "NOT_AUTHORIZED"
+  }
+}

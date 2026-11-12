@@ -1,0 +1,92 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-FINDINGS-STATUS-001",
+  "record_kind": "ADDITIVE_FINDINGS_STATUS",
+  "date": "2026-08-24",
+  "relationship_to_the_execution_record": {
+    "execution_record": "execution/EXECUTION-RECORD-001.json",
+    "execution_record_sha256": "600a817c0be11f1cd841c611ec3875d1f3ec2d00df1d0c39856b59ebe9eedbae",
+    "modified": false,
+    "method": "This record is ADDITIVE. The execution record is preserved byte-identical as historical evidence, exactly as commit b227d21b's NOT_RECEIVED state was preserved. A finding that turns out to be overstated is corrected by a successor record, never by editing the original."
+  },
+  "F-01": {
+    "status": "PRESERVED AND CORRECTED",
+    "as_written_in_the_execution_record": "No EMILIA native output exists in this contour, for any case.",
+    "verdict_on_that_wording": "OVERSTATED. It is true for five of the seven cases and false for two.",
+    "corrected_statement": "No EMILIA native output exists in this contour for H-01-b, H-01-c, H-02, H-03 or B-01, and no frozen INTEROP-002 procedure defines how to produce one for them. For C-00 and H-01-a, pre-existing frozen EMILIA native outputs DO exist: they were produced by EMILIA's own verifier at commit 9a04bea7 - the same commit every INTEROP-002 fixture pins - and are bound by input digest to bytes byte-identical to those two cases, inside the digest-verified INTEROP-001 final-candidate package.",
+    "how_the_error_arose": "The execution driver searched the INTEROP-002 tree, found emilia_input and emilia_baseline but no native result, and generalized to 'this contour'. It did not search the sibling INTEROP-001 package that a tracked adapter in this same repository already reads. The generalization was mine and it was too broad.",
+    "what_survives_of_F_01": "The substantive gap is real and unchanged: the frozen charter presupposes a native output from each system (section 10 step 5, section 11.1 item 3, section 16), yet no frozen INTEROP-002 procedure produces one for the five INTEROP-002-specific cases, and section 16 never asks the contributor for one. B-01 in particular has no EMILIA native output and no defined way to obtain one.",
+    "what_does_not_change": [
+      "H-SUFF",
+      "H-MIN",
+      "the B-01 observed result",
+      "the 23/23 WEXP expectation reproduction",
+      "every invariant verdict"
+    ],
+    "resolved_silently": false,
+    "put_to_the_contributor_as": "questions B and C"
+  },
+  "F-02": {
+    "status": "PRESERVED, UNRESOLVED, NOT RESOLVED BY CONVENIENCE",
+    "statement": "The frozen H-SUFF condition 'every precommitted expectation relevant to the conclusion reproduced' admits two readings.",
+    "narrow_reading": {
+      "content": "Bridge sufficiency is a property of the WEXP bridge, so only the WEXP expectation is relevant. It reproduced 23/23.",
+      "yields": "H-SUFF SUPPORTED"
+    },
+    "broad_reading": {
+      "content": "Both parties' precommitted expectations are relevant to the conclusion of a two-party interoperability experiment.",
+      "yields": "H-SUFF INCONCLUSIVE, because the EMILIA expectation for B-01 cannot be verified without an EMILIA native output for B-01, and none exists"
+    },
+    "applied_in_the_execution_record": "narrow, explicitly flagged at the time rather than chosen quietly",
+    "does_the_new_discovery_settle_it": "NO. The discovered native outputs cover C-00 and H-01-a. The EMILIA expectation at issue is the B-01 expectation, and B-01 remains without an EMILIA native output. F-02 is exactly as open as it was.",
+    "why_it_is_not_resolved_here": "Choosing the reading that yields the stronger verdict, on my own authority, is the precise failure mode this experiment was built to avoid. The reading is a joint question for the Founder and the contributor.",
+    "resolved_silently": false,
+    "put_to_the_contributor_as": "question E"
+  },
+  "F-03": {
+    "status": "PRESERVED",
+    "statement": "H-03 and C-00 assemble a byte-identical AppraisalInput (b0f77acf...). Refused expansions and refused authority conversions leave no residue in the constructed input.",
+    "unchanged": true
+  },
+  "F-04": {
+    "status": "PRESERVED",
+    "statement": "Even the complete frozen case set cannot decide BE-03 or BE-06. A limit of the case set, not a defect found in the bridge.",
+    "unchanged": true
+  },
+  "F-05": {
+    "status": "NEW, RAISED BY THE SEARCH",
+    "statement": "Case-level relations for C-00 and H-01-a are now potentially decidable against real EMILIA native outputs, rather than underdetermined.",
+    "not_done": "No relation was derived. This order prepares a fairness package; it does not authorize new comparison, and it forbids repair.",
+    "requires": "a separate Founder order if the Founder wants those two relations derived",
+    "caution": "Any such derivation must respect that the INTEROP-001 outputs were produced by correspondence under a different experiment identity, with assurance class IA-0 as that package's own adapter records. They are not INTEROP-002 execution products and must not be presented as though they were."
+  },
+  "preserved_execution_result": {
+    "B-01": {
+      "typed_outcome": "INDETERMINATE",
+      "rejection_reason_set": [
+        "exact_binding_mismatch:operation_id"
+      ],
+      "I-01": "PRESERVED",
+      "I-03a": "PRESERVED",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv": "not-evaluated"
+    },
+    "wexp_expectation": "23/23 reproduced, 0 differences",
+    "h_min": {
+      "verdict": "NOT_ESTABLISHED",
+      "supported": "15/17",
+      "not_established": [
+        "BE-03",
+        "BE-06"
+      ],
+      "BE-04_necessity_on_B-01": "SUPPORTED"
+    },
+    "h_suff": {
+      "verdict": "SUPPORTED",
+      "reading_applied": "narrow",
+      "see": "F-02"
+    },
+    "unchanged_by_this_record": true
+  },
+  "publication_authorized": false
+}

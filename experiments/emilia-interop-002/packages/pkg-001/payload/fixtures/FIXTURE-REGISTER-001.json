@@ -1,0 +1,105 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-FIXTURE-REGISTER-001",
+  "status": "OPEN_FIXTURES_BOUND_NOT_FROZEN",
+  "charter": {
+    "artifact_id": "WEXP-EMILIA-INTEROP-002-CHARTER-DRAFT-004",
+    "sha256": "814cd13fd1eae62633fc014673ee3c3d65a0048d43a25703604066b450feae61",
+    "authority": "§6 case architecture; §5 safety invariants. No case family was added and no scientific semantics beyond DRAFT-004 were introduced."
+  },
+  "fixtures": [
+    {
+      "path": "fixtures/C-00.json",
+      "bytes": 7255,
+      "sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+      "case_id": "C-00",
+      "family": "positive action-bound control",
+      "attacked_invariants": [],
+      "expected_property": "The bridge constructs the declared complete WEXP input without inventing missing source facts. A positive control that cannot be constructed is a finding about the bridge, not about either party.",
+      "provenance": "Byte-identical reuse of the published INTEROP-001 P fixture, WEXP-dev/wexp-interop source/pair-freeze/fixtures/WE-EP-P.json. Charter §6 says the positive control SHOULD reuse it; no source-identity problem blocks exact binding, so it is reused exactly rather than re-authored.",
+      "authored": false
+    },
+    {
+      "path": "fixtures/H-01-a.json",
+      "bytes": 7152,
+      "sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0",
+      "case_id": "H-01-a",
+      "family": "H-01 identity, causal-provenance, evaluation-context",
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "expected_property": "Fail closed or remain explicitly underdetermined. The independent meter's observation carries no action_caid, so the relation binding that observation to the selected action instance is absent and must not be supplied by inference.",
+      "provenance": "Byte-identical reuse of the published INTEROP-001 P-1 missing-action_caid regression, WEXP-dev/wexp-interop source/pair-freeze/fixtures/WE-EP-P-1.json. Charter §6 requires this family to include it or a byte-identical reuse of it.",
+      "authored": false
+    },
+    {
+      "path": "fixtures/H-01-b.json",
+      "bytes": 7933,
+      "sha256": "fbfb2046305ca6e9a8a3bbaf2e15c7acc30b8929d7625a3d90643c882276fe47",
+      "case_id": "H-01-b",
+      "family": "H-01 identity, causal-provenance, evaluation-context",
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "scored_independently_from": "H-01-c (I-03b)",
+      "expected_property": "Fail closed. The appraisal is made about action instance operation:plant-7:002 while the signed observations attest operation:plant-7:001. Evidence for one action instance must not be usable as evidence for another, and equality of action type is insufficient.",
+      "provenance": "Derived from C-00 by one declared mutation class, rebind_evaluated_action_instance, touching only options.expectedActionHash, options.expectedActionCaid and options.expectedOperationId. Observation bytes and Ed25519 signatures are byte-identical to C-00, so the fixture fails on causal provenance rather than on cryptography — a signature break would mask the property under test.",
+      "authored": true
+    },
+    {
+      "path": "fixtures/H-01-c.json",
+      "bytes": 7970,
+      "sha256": "4737ed60826f981beed70a34303a3a79ea40207858e55c62f1ab81fe48271aa5",
+      "case_id": "H-01-c",
+      "family": "H-01 identity, causal-provenance, evaluation-context",
+      "attacked_invariants": [
+        "I-03b"
+      ],
+      "scored_independently_from": "H-01-b (I-03a)",
+      "expected_property": "Fail closed or remain explicitly underdetermined. The observations are causally bound to the selected action instance and validly signed, and are still inadmissible: they fall outside the relying party's declared observation windows. Causal relation does not confer admissibility.",
+      "provenance": "Derived from C-00 by one declared mutation class, shift_evaluation_context_window, touching only observationWindows[*].not_before, observationWindows[*].not_after and options.now. Observation bytes and signatures are byte-identical to C-00. This is what isolates I-03b from I-03a: nothing about causal provenance changed.",
+      "authored": true
+    },
+    {
+      "path": "fixtures/H-02.json",
+      "bytes": 6299,
+      "sha256": "18350d7511035c0debd3ea5c7f02cabd3a095ba03be910dc10fa2b3b1cf314aa",
+      "case_id": "H-02",
+      "family": "H-02 phase confusion",
+      "attacked_invariants": [
+        "I-02",
+        "I-04"
+      ],
+      "expected_property": "Fail closed, preserving the phase boundary and the precommitted claim ceiling. Accepted controller status is authorization-phase evidence; it must not be promoted into a delivered-effect or execution claim.",
+      "provenance": "Derived from C-00 by one declared mutation class, remove_higher_phase_observation: the independent meter's delivered_mw observation is removed. Removal only. The surviving executor observation is byte-identical to C-00 observations[0] and remains validly signed, and predicted_effects and sourceRequirements still demand an independent_observer. No evidence was invented to fill the gap, as §6 requires.",
+      "authored": true
+    },
+    {
+      "path": "fixtures/H-03.json",
+      "bytes": 9646,
+      "sha256": "ec7904648898cf8f6590cc7d1d223516ec38dde7365e4c96168061bb2192c7fb",
+      "case_id": "H-03",
+      "family": "H-03 claim expansion and authority conversion",
+      "attacked_invariants": [
+        "I-04",
+        "I-05"
+      ],
+      "expected_property": "Fail closed, or carry both attempts through as explicitly unsupported. Completion and independent verification are not supported by the evidence and must not be silently added. Every authority-conversion request must be refused: an EP receipt, outcome observation or mapped appraisal must not become reusable permission, local authorization, Gate admission, delegated authority, or approval for a future action, and missing authority must not be inferred from successful appraisal.",
+      "provenance": "Derived from C-00 by one declared mutation class, attach_unsupported_claim_and_authority_conversion. emilia_input is byte-identical to C-00 — no evidence added, altered or removed. What is attached is an attempted claim and five attempted authority conversions, which is precisely what this family exists to test.",
+      "authored": true
+    }
+  ],
+  "verification": {
+    "declared_mutation_matches_actual_delta": "verified for every derivative; no undeclared change outside seed provenance fields",
+    "no_new_case_family": true,
+    "no_scientific_semantics_beyond_draft_004": true,
+    "optimized_against_any_imagined_blind_case": false,
+    "b01_used_or_inferred": false
+  },
+  "non_claims": [
+    "Binding these fixtures is not a Design Freeze and confers no execution or publication authority.",
+    "An expected fail-closed property is what the procedure requires, not a prediction of what the bridge will do.",
+    "No bridge exists, so none of these fixtures has been run."
+  ]
+}

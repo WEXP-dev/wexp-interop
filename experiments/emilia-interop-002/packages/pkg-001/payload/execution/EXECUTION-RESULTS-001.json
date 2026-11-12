@@ -1,0 +1,1428 @@
+{
+  "cases": [
+    {
+      "case_id": "C-00",
+      "blind": false,
+      "fixture_sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+      "attacked_invariants": [],
+      "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+      "cc1_supported": true,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "supported",
+      "accepted_observations": 2,
+      "rejected_observations": 0,
+      "rejection_reasons": [],
+      "gaps": [],
+      "appraisal_input_assembled": true,
+      "expansion_refusals": 0,
+      "authority_refusals": 0,
+      "admitted_expansions": 0,
+      "admitted_authority_conversions": 0,
+      "invariant_verdicts": {}
+    },
+    {
+      "case_id": "H-01-a",
+      "blind": false,
+      "fixture_sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0",
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "not-evaluated",
+      "accepted_observations": 1,
+      "rejected_observations": 1,
+      "rejection_reasons": [
+        "caid_premise_absent"
+      ],
+      "gaps": [
+        {
+          "detail": "independent_observer/revenue_meter",
+          "token": "source_requirement_unmet"
+        },
+        {
+          "detail": "delivered_mw@facility:plant-7",
+          "token": "prediction_group_unobserved"
+        }
+      ],
+      "appraisal_input_assembled": true,
+      "expansion_refusals": 0,
+      "authority_refusals": 0,
+      "admitted_expansions": 0,
+      "admitted_authority_conversions": 0,
+      "invariant_verdicts": {
+        "I-01": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        },
+        "I-03a": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        }
+      }
+    },
+    {
+      "case_id": "H-01-b",
+      "blind": false,
+      "fixture_sha256": "fbfb2046305ca6e9a8a3bbaf2e15c7acc30b8929d7625a3d90643c882276fe47",
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv_independence_validation": "not-evaluated",
+      "accepted_observations": 0,
+      "rejected_observations": 2,
+      "rejection_reasons": [
+        "exact_binding_mismatch:action_caid",
+        "exact_binding_mismatch:action_hash",
+        "exact_binding_mismatch:operation_id"
+      ],
+      "gaps": [
+        {
+          "detail": "executor/cosa.actuator",
+          "token": "source_requirement_unmet"
+        },
+        {
+          "detail": "independent_observer/revenue_meter",
+          "token": "source_requirement_unmet"
+        },
+        {
+          "detail": "controller_status@facility:plant-7",
+          "token": "prediction_group_unobserved"
+        },
+        {
+          "detail": "delivered_mw@facility:plant-7",
+          "token": "prediction_group_unobserved"
+        }
+      ],
+      "appraisal_input_assembled": true,
+      "expansion_refusals": 0,
+      "authority_refusals": 0,
+      "admitted_expansions": 0,
+      "admitted_authority_conversions": 0,
+      "invariant_verdicts": {
+        "I-01": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        },
+        "I-03a": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        }
+      }
+    },
+    {
+      "case_id": "H-01-c",
+      "blind": false,
+      "fixture_sha256": "4737ed60826f981beed70a34303a3a79ea40207858e55c62f1ab81fe48271aa5",
+      "attacked_invariants": [
+        "I-03b"
+      ],
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv_independence_validation": "not-evaluated",
+      "accepted_observations": 0,
+      "rejected_observations": 2,
+      "rejection_reasons": [
+        "window_mismatch:exact"
+      ],
+      "gaps": [
+        {
+          "detail": "executor/cosa.actuator",
+          "token": "source_requirement_unmet"
+        },
+        {
+          "detail": "independent_observer/revenue_meter",
+          "token": "source_requirement_unmet"
+        },
+        {
+          "detail": "controller_status@facility:plant-7",
+          "token": "prediction_group_unobserved"
+        },
+        {
+          "detail": "delivered_mw@facility:plant-7",
+          "token": "prediction_group_unobserved"
+        }
+      ],
+      "appraisal_input_assembled": true,
+      "expansion_refusals": 0,
+      "authority_refusals": 0,
+      "admitted_expansions": 0,
+      "admitted_authority_conversions": 0,
+      "invariant_verdicts": {
+        "I-03b": {
+          "preserved": true,
+          "criterion": "claim refused on evaluation context alone, with causal binding left intact"
+        }
+      }
+    },
+    {
+      "case_id": "H-02",
+      "blind": false,
+      "fixture_sha256": "18350d7511035c0debd3ea5c7f02cabd3a095ba03be910dc10fa2b3b1cf314aa",
+      "attacked_invariants": [
+        "I-02",
+        "I-04"
+      ],
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "not-evaluated",
+      "accepted_observations": 1,
+      "rejected_observations": 0,
+      "rejection_reasons": [],
+      "gaps": [
+        {
+          "detail": "independent_observer/revenue_meter",
+          "token": "source_requirement_unmet"
+        },
+        {
+          "detail": "delivered_mw@facility:plant-7",
+          "token": "prediction_group_unobserved"
+        }
+      ],
+      "appraisal_input_assembled": true,
+      "expansion_refusals": 0,
+      "authority_refusals": 0,
+      "admitted_expansions": 0,
+      "admitted_authority_conversions": 0,
+      "invariant_verdicts": {
+        "I-02": {
+          "preserved": true,
+          "criterion": "no phase promotion: claim refused and no base above observation is supported"
+        },
+        "I-04": {
+          "preserved": true,
+          "criterion": "no claim expansion admitted and the ceiling holds at observation"
+        }
+      }
+    },
+    {
+      "case_id": "H-03",
+      "blind": false,
+      "fixture_sha256": "ec7904648898cf8f6590cc7d1d223516ec38dde7365e4c96168061bb2192c7fb",
+      "attacked_invariants": [
+        "I-04",
+        "I-05"
+      ],
+      "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+      "cc1_supported": true,
+      "ceiling_base": "observation",
+      "iv_independence_validation": "supported",
+      "accepted_observations": 2,
+      "rejected_observations": 0,
+      "rejection_reasons": [],
+      "gaps": [],
+      "appraisal_input_assembled": true,
+      "expansion_refusals": 2,
+      "authority_refusals": 5,
+      "admitted_expansions": 0,
+      "admitted_authority_conversions": 0,
+      "invariant_verdicts": {
+        "I-04": {
+          "preserved": true,
+          "criterion": "no claim expansion admitted and the ceiling holds at observation"
+        },
+        "I-05": {
+          "preserved": true,
+          "criterion": "every attempted authority conversion refused; none admitted"
+        }
+      }
+    },
+    {
+      "case_id": "B-01",
+      "blind": true,
+      "fixture_sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+      "attacked_invariants": [
+        "I-01",
+        "I-03a"
+      ],
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv_independence_validation": "not-evaluated",
+      "accepted_observations": 0,
+      "rejected_observations": 2,
+      "rejection_reasons": [
+        "exact_binding_mismatch:operation_id"
+      ],
+      "gaps": [
+        {
+          "detail": "executor/cosa.actuator",
+          "token": "source_requirement_unmet"
+        },
+        {
+          "detail": "independent_observer/revenue_meter",
+          "token": "source_requirement_unmet"
+        },
+        {
+          "detail": "controller_status@facility:plant-7",
+          "token": "prediction_group_unobserved"
+        },
+        {
+          "detail": "delivered_mw@facility:plant-7",
+          "token": "prediction_group_unobserved"
+        }
+      ],
+      "appraisal_input_assembled": true,
+      "expansion_refusals": 0,
+      "authority_refusals": 0,
+      "admitted_expansions": 0,
+      "admitted_authority_conversions": 0,
+      "invariant_verdicts": {
+        "I-01": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        },
+        "I-03a": {
+          "preserved": true,
+          "criterion": "claim refused and refusal is attributable to instance binding or the CAID premise"
+        }
+      }
+    }
+  ],
+  "ablation": [
+    {
+      "element_id": "BE-01",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "C-00",
+        "H-03"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-02",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "C-00",
+        "H-01-a",
+        "H-02",
+        "H-03"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_UNSUPPORTED",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_UNSUPPORTED",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-03",
+      "necessity_on_complete_surface": "NOT_ESTABLISHED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [],
+      "observed_consequences": []
+    },
+    {
+      "element_id": "BE-04",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": true,
+      "discriminating_cases": [
+        "B-01"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "B-01",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "invariant_no_longer_preserved"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-05",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "H-01-a"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "invariant_no_longer_preserved"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-06",
+      "necessity_on_complete_surface": "NOT_ESTABLISHED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [],
+      "observed_consequences": []
+    },
+    {
+      "element_id": "BE-07",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "H-01-c"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "invariant_no_longer_preserved"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-08",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "C-00",
+        "H-03"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-09",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "C-00",
+        "H-03"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-10",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "C-00",
+        "H-03"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-11",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "C-00",
+        "H-03"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_UNSUPPORTED",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_UNSUPPORTED",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-12",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": true,
+      "discriminating_cases": [
+        "C-00",
+        "H-01-a",
+        "H-01-b",
+        "H-01-c",
+        "H-02",
+        "H-03",
+        "B-01"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-b",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "B-01",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-13",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": true,
+      "discriminating_cases": [
+        "C-00",
+        "H-01-a",
+        "H-01-b",
+        "H-01-c",
+        "H-02",
+        "H-03",
+        "B-01"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-b",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "B-01",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-14",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": true,
+      "discriminating_cases": [
+        "C-00",
+        "H-01-a",
+        "H-01-b",
+        "H-01-c",
+        "H-02",
+        "H-03",
+        "B-01"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-b",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "B-01",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-15",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "H-03"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 2,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "invariant_no_longer_preserved"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-16",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": false,
+      "discriminating_cases": [
+        "H-03"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 5
+          },
+          "consequence_class": "invariant_no_longer_preserved"
+        }
+      ]
+    },
+    {
+      "element_id": "BE-17",
+      "necessity_on_complete_surface": "SUPPORTED",
+      "discriminated_by_b01": true,
+      "discriminating_cases": [
+        "C-00",
+        "H-01-a",
+        "H-01-b",
+        "H-01-c",
+        "H-02",
+        "H-03",
+        "B-01"
+      ],
+      "observed_consequences": [
+        {
+          "case_id": "C-00",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "positive_control_no_longer_constructs"
+        },
+        {
+          "case_id": "H-01-a",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-b",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-01-c",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-02",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "H-03",
+          "before": {
+            "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+            "cc1_supported": true,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": "observation",
+            "iv": "supported",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        },
+        {
+          "case_id": "B-01",
+          "before": {
+            "typed_outcome": "INDETERMINATE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "after": {
+            "typed_outcome": "NON_CONSTRUCTIBLE",
+            "cc1_supported": false,
+            "ceiling_base": null,
+            "iv": "not-evaluated",
+            "admitted_expansions": 0,
+            "admitted_authority_conversions": 0
+          },
+          "consequence_class": "result_degraded_to_less_informative_fail_closed"
+        }
+      ]
+    }
+  ]
+}

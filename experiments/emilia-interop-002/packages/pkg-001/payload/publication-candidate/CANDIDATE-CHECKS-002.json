@@ -1,0 +1,133 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-CANDIDATE-CHECKS-002",
+  "record_kind": "DISCLOSURE_PRIVACY_REPRODUCIBILITY_REVIEW",
+  "date": "2026-08-24",
+  "candidate": {
+    "root_identity": "WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-002",
+    "bytes": 189353,
+    "sha256": "45b5061e79768c0296a8490442305eb6dd1bbc9e7abb561e22ab737c43e22dd1",
+    "members": 56
+  },
+  "predecessor": {
+    "root_identity": "WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-001",
+    "sha256": "6952b5bc895a1bd7d182e234d9343ddbe7c176e1da910fce273bcd71ddae8c8c",
+    "overwritten": false,
+    "retained": true,
+    "why_retained": "Candidate 001 is the evidence that the provenance change was an upgrade rather than a rewrite. Overwriting it would destroy exactly the thing that makes the upgrade auditable."
+  },
+  "reason_for_successor": "A provenance classification upgrade for ONE message, which lives inside the candidate and therefore changes publication bytes.",
+  "semantic_delta": {
+    "verdict": "NONE",
+    "method": "Every member of candidate 001 was compared, by digest, against candidate 002, excluding only the two candidate-metadata files that are rebuilt by construction.",
+    "carried_over_byte_identical": 53,
+    "changed": 0,
+    "removed": 0,
+    "added": [
+      "publication-candidate/COUNTERPARTY-FAIRNESS-REVIEW-002.json"
+    ],
+    "metadata_rebuilt": [
+      "PUBLICATION-ALLOWLIST-002.json",
+      "PUBLICATION-CANDIDATE-MANIFEST-002.json"
+    ],
+    "unchanged_and_verified": [
+      "B-01 result",
+      "WEXP expectation",
+      "EMILIA expectation",
+      "H-SUFF",
+      "H-MIN",
+      "BE-04 finding",
+      "H-03 resolution",
+      "F-01",
+      "F-02 scope separation",
+      "anti-tuning finding",
+      "semantic precedent",
+      "every frozen artifact",
+      "every execution artifact"
+    ]
+  },
+  "fairness_provenance": {
+    "classification": "INDEPENDENTLY_OBSERVED_IN_FOUNDER_CONTOUR",
+    "prior_classification": "FOUNDER_RELAYED_EXTERNAL_EVENT / independently_observed false",
+    "message": {
+      "gmail_message_id": "1a0353ed454b67f8",
+      "gmail_thread_id": "1a01f401f0f71580",
+      "sender": "Iman Schrock <team@emiliaprotocol.ai>",
+      "date": "2026-08-24"
+    },
+    "contour_distinction_preserved": true,
+    "local_execution_contour_gmail_authenticated": false,
+    "local_claim_made": "NONE. This record does not claim the local execution contour authenticated Gmail or read the message. It did not.",
+    "scope_of_upgrade": "exactly one message",
+    "not_upgraded": [
+      "the EMILIA precommitted expectation",
+      "the EMILIA authority correction",
+      "the B-01 commitment provenance",
+      "the B-01 commitment request state"
+    ]
+  },
+  "disclosure_review": {
+    "result": "PASS_WITH_ONE_FLAGGED_ITEM",
+    "scanned": "all 56 members, decoded from the package bytes",
+    "clean_for": [
+      "credentials, tokens, private keys",
+      "local filesystem paths",
+      "private branch and ref names",
+      "GitHub App identity values",
+      "cyrillic text",
+      "unapproved ledger bodies"
+    ],
+    "flagged_item": {
+      "item": "team@emiliaprotocol.ai",
+      "occurrences": 6,
+      "state": "PENDING_IMAN_CONFIRMATION",
+      "appears_in": [
+        "expectations/EXPECTATION-EMILIA-B01-001.json",
+        "pre-freeze/B-01-COMMITMENT.json",
+        "pre-freeze/EMILIA-AUTHORITY-CORRECTION-001.json",
+        "publication-candidate/COUNTERPARTY-FAIRNESS-REVIEW-001.json",
+        "publication-candidate/COUNTERPARTY-FAIRNESS-REVIEW-002.json",
+        "publication-candidate/PUBLICATION-CANDIDATE-MANIFEST-002.json"
+      ],
+      "not_removed_on_our_authority": true,
+      "explicitly_asked_in_the_carrier": true,
+      "if_he_objects": "A successor candidate 003 is built after his review. No in-place edit of these bytes."
+    }
+  },
+  "privacy_review": {
+    "result": "PASS",
+    "third_party_personal_data": "one named individual in his professional capacity, plus the organizational address flagged above",
+    "no_end_user_data": true,
+    "no_customer_data": true,
+    "no_billing_metadata": true,
+    "github_app_identity_present": false,
+    "operational_identifiers": "unchanged from candidate 001; canary run id and url admitted as public-repo scientific evidence, workflow and artifact ids documented as a judgment call"
+  },
+  "reproducibility_review": {
+    "result": "PASS",
+    "execution_artifacts": {
+      "method": "isolated clean re-run of the frozen driver after deleting all execution artifacts",
+      "outcome": "10 of 10 regenerated artifacts BYTE-IDENTICAL",
+      "re_derived": {
+        "B-01": "INDETERMINATE, exact_binding_mismatch:operation_id",
+        "H_MIN": "15/17 SUPPORTED",
+        "BE-04_necessity_on_B-01": "SUPPORTED"
+      }
+    },
+    "package_determinism": {
+      "builds": 2,
+      "outcome": "byte-identical",
+      "bytes": 189353,
+      "sha256": "45b5061e79768c0296a8490442305eb6dd1bbc9e7abb561e22ab737c43e22dd1"
+    }
+  },
+  "allowlist_enforcement": {
+    "matching": "EXACT_PATH_ONLY",
+    "wildcards": false,
+    "default": "DENY",
+    "admitted": 54,
+    "plus_allowlist_and_manifest": 2,
+    "total_members": 56,
+    "unexpected_members": 0
+  },
+  "publication_authorized": false
+}

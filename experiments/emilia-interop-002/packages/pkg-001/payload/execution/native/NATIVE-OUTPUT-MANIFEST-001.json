@@ -1,0 +1,111 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-NATIVE-OUTPUT-MANIFEST-001",
+  "preserved_before_any_comparison": true,
+  "order_enforced": "preserve -> digest -> compare; phase B reads only these files",
+  "cases": [
+    "C-00",
+    "H-01-a",
+    "H-01-b",
+    "H-01-c",
+    "H-02",
+    "H-03",
+    "B-01"
+  ],
+  "wexp": {
+    "C-00": {
+      "party": "WEXP",
+      "producer": "frozen bridge",
+      "bridge_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+      "bridge_spec_sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+      "bridge_impl_sha256": "845e4e43d374478a581607d3192110eb4786e9a27743d36a2b6a6541c6968386",
+      "fixture_sha256": "b552da51858d0256a562e800a81a870435d6e136c9bc28833b962b6d3723fb3e",
+      "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+      "native_output_sha256": "bca7c4ada8843ada10c61ac956d75a69cde7d6f18b167987ae9b8b77dde8945e",
+      "appraisal_input_canonical_sha256": "b0f77acf3c810879c257b84872db6f1e9bba7cb57ef3ee8368bb519782e6c52c",
+      "appraisal_input_assembled": true
+    },
+    "H-01-a": {
+      "party": "WEXP",
+      "producer": "frozen bridge",
+      "bridge_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+      "bridge_spec_sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+      "bridge_impl_sha256": "845e4e43d374478a581607d3192110eb4786e9a27743d36a2b6a6541c6968386",
+      "fixture_sha256": "67556d28d272b4b01a73e1c1465248644dd7a05460fc149aa77df92cf36403a0",
+      "typed_outcome": "INDETERMINATE",
+      "native_output_sha256": "161bb8c6aee3d88d29da9820588195a80fe2deb312bbd2aa31be983aace2fb98",
+      "appraisal_input_canonical_sha256": "3cd25ab219e8a6867506179c2a0e5fd5074ccb753e003dcb872412f689a0982f",
+      "appraisal_input_assembled": true
+    },
+    "H-01-b": {
+      "party": "WEXP",
+      "producer": "frozen bridge",
+      "bridge_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+      "bridge_spec_sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+      "bridge_impl_sha256": "845e4e43d374478a581607d3192110eb4786e9a27743d36a2b6a6541c6968386",
+      "fixture_sha256": "fbfb2046305ca6e9a8a3bbaf2e15c7acc30b8929d7625a3d90643c882276fe47",
+      "typed_outcome": "INDETERMINATE",
+      "native_output_sha256": "be8e5a4bd6cf39879a2ca690e5452864c60e67369a8d4538d2d639006d938c43",
+      "appraisal_input_canonical_sha256": "19292decb8c99cc95f5d4931eb6d7d6e3220775b3e21ab04b17c70cab51e64fe",
+      "appraisal_input_assembled": true
+    },
+    "H-01-c": {
+      "party": "WEXP",
+      "producer": "frozen bridge",
+      "bridge_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+      "bridge_spec_sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+      "bridge_impl_sha256": "845e4e43d374478a581607d3192110eb4786e9a27743d36a2b6a6541c6968386",
+      "fixture_sha256": "4737ed60826f981beed70a34303a3a79ea40207858e55c62f1ab81fe48271aa5",
+      "typed_outcome": "INDETERMINATE",
+      "native_output_sha256": "62b65767bfe33ebc404fb78f4c23c78c3d4f1860e2562bcc0b30a6e477270632",
+      "appraisal_input_canonical_sha256": "8aa790d00446bb943b2052aeecf43ad4972eb917ff810238d18fc4da80f637ad",
+      "appraisal_input_assembled": true
+    },
+    "H-02": {
+      "party": "WEXP",
+      "producer": "frozen bridge",
+      "bridge_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+      "bridge_spec_sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+      "bridge_impl_sha256": "845e4e43d374478a581607d3192110eb4786e9a27743d36a2b6a6541c6968386",
+      "fixture_sha256": "18350d7511035c0debd3ea5c7f02cabd3a095ba03be910dc10fa2b3b1cf314aa",
+      "typed_outcome": "INDETERMINATE",
+      "native_output_sha256": "1b87aac2544c04a6514ff4e56b0d771d2d74752aa1e19a547bbfa0c7dce26373",
+      "appraisal_input_canonical_sha256": "eb31717f32f4d2041002b6c1e8410b778bf10a2d19562bddeb0da98314de987d",
+      "appraisal_input_assembled": true
+    },
+    "H-03": {
+      "party": "WEXP",
+      "producer": "frozen bridge",
+      "bridge_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+      "bridge_spec_sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+      "bridge_impl_sha256": "845e4e43d374478a581607d3192110eb4786e9a27743d36a2b6a6541c6968386",
+      "fixture_sha256": "ec7904648898cf8f6590cc7d1d223516ec38dde7365e4c96168061bb2192c7fb",
+      "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+      "native_output_sha256": "a2364e637812134014b5cb432eec7ac951a4ca7d161758cf4d3964fc366d9fe5",
+      "appraisal_input_canonical_sha256": "b0f77acf3c810879c257b84872db6f1e9bba7cb57ef3ee8368bb519782e6c52c",
+      "appraisal_input_assembled": true
+    },
+    "B-01": {
+      "party": "WEXP",
+      "producer": "frozen bridge",
+      "bridge_id": "WEXP-EMILIA-INTEROP-002-BRIDGE-CANDIDATE-001",
+      "bridge_spec_sha256": "8ae49924a7a556d6b325c5e9a30ea8c0dfd1511de13dd4f026cbe097f2c64bfa",
+      "bridge_impl_sha256": "845e4e43d374478a581607d3192110eb4786e9a27743d36a2b6a6541c6968386",
+      "fixture_sha256": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+      "typed_outcome": "INDETERMINATE",
+      "native_output_sha256": "16ee77ebed572f209dd9c436f293028a8e59a29f15bd04938c636822a33ab8e3",
+      "appraisal_input_canonical_sha256": "8fd49ec52ecf93451d573b4945461cc3960e231f26601a09e0b194b031e79414",
+      "appraisal_input_assembled": true
+    }
+  },
+  "emilia": {
+    "party": "EMILIA",
+    "native_output_produced_in_this_contour": false,
+    "why": "The EMILIA native output is the result of EMILIA's own verifier run by the EMILIA side. No EMILIA implementation, conformance runner or recorded native result exists in this contour: every fixture carries emilia_input and an emilia_baseline provenance stanza, and none carries a native result. The frozen surface never defined a mechanism to produce one locally.",
+    "what_exists_instead": "A single precommitted EMILIA expectation for B-01 only, relayed by the Founder.",
+    "explicitly_not_done": [
+      "The EMILIA expectation is NOT recorded as an EMILIA native output.",
+      "EMILIA's reference implementation was NOT run to manufacture one, because a reference implementation is not the party and running it here would produce a WEXP-side artifact wearing the other party's name."
+    ],
+    "consequence": "Every case-level relation that requires two native outputs is underdetermined on the EMILIA axis. This is a limit of the record, not a result about EMILIA."
+  }
+}

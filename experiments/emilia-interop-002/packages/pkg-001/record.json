@@ -1,0 +1,117 @@
+{
+  "schema_version": "0.4.0",
+  "record_revision": 1,
+  "experiment_id": "emilia-interop-002",
+  "package_id": "pkg-001",
+  "title": "WEXP × EMILIA INTEROP-002 — historical INTEROP-002 result",
+  "summary": "Historical INTEROP-002 result from Publication Candidate 003: the frozen bridge was sufficient on seven frozen cases, while the joint WEXP × EMILIA comparison was inconclusive or not derived. The two scopes are kept separate; the package replays archived evidence without a new implementation run.",
+  "status": {
+    "integrity": "verified",
+    "execution": "archived-evidence-replayed",
+    "independent_reproduction": "not-performed",
+    "comparison": "split-verdict",
+    "publication": "prepared"
+  },
+  "publication": {
+    "version": "emilia-interop-002/pkg-001",
+    "carriers": []
+  },
+  "artifact": {
+    "path": "source-archive/WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip",
+    "format": "zip",
+    "bytes": 192089,
+    "sha256": "37412ba521b9bca9901b54142290356a0aedf8bc7cd635e731d7660916cf770e",
+    "source_url": "ni:///sha-256;N0ErpSG5vKmQG1QUIpA1agrt-Lx81jXnMddmCRbPdw4",
+    "role": "Publication Candidate 003 archive container, selected by content digest (RFC 6920 named-information URI). It has no public carrier yet; the URI identifies bytes, not a location."
+  },
+  "payload": {
+    "path": "payload",
+    "role": "verified-extraction",
+    "regular_files": 57,
+    "archive_container_metadata_preserved_in_git": false,
+    "mode_note": "All 57 archive members record permissions 0644 with no Unix file-type bit and the ZIP has no directory entries; Git represents every file as 100644 and directories are implicit. ZIP order, timestamps and extra fields remain in the ZIP."
+  },
+  "verification": {
+    "profile": "emilia-archive-v1",
+    "instructions": "REPRODUCE.md",
+    "evidence": [
+      "evidence/SOURCES.json",
+      "payload/publication-candidate/PUBLICATION-CANDIDATE-MANIFEST-003.json",
+      "payload/publication-candidate/FINAL-RECORD-002.json",
+      "payload/publication-candidate/CANDIDATE-CHECKS-002.json"
+    ],
+    "implementation_execution_performed": false
+  },
+  "independence": {
+    "scope": "No separate external reproduction of this complete package is claimed. Within the historical experiment, case B-01 was committed by the EMILIA-side contributor by SHA-256 before the bridge was authored, and the contributor reviewed the final record for fairness (PASS_WITH_PRECISIONS); the candidate records counterparty exact-byte review as not yet performed.",
+    "method": "Historical commitment, reveal and fairness-review records retained byte-for-byte; current migration verification is performed in the publisher-controlled preparation environment.",
+    "evidence": [
+      "payload/pre-freeze/B-01-COMMITMENT.json",
+      "payload/reveal/B01-COMMITMENT-VERIFICATION-001.json",
+      "payload/publication-candidate/COUNTERPARTY-FAIRNESS-REVIEW-002.json"
+    ]
+  },
+  "result": {
+    "label": "Historical INTEROP-002 result — split verdict: bridge sufficiency SUPPORTED; joint comparison INCONCLUSIVE (5/7), NOT_DERIVED (2/7)",
+    "details": "WEXP bridge sufficiency: SUPPORTED for this bridge over these seven frozen cases. Joint WEXP × EMILIA comparison: INCONCLUSIVE for H-01-b, H-01-c, H-02, H-03 and B-01, which lack a native EMILIA output; NOT_DERIVED_UNDER_THIS_ORDER for C-00 and H-01-a. The record states that these MUST NOT be collapsed into a single verdict. Local minimality NOT_ESTABLISHED (15/17).",
+    "verdict_record": {
+      "path": "payload/publication-candidate/FINAL-RECORD-002.json",
+      "sha256": "4768decf3721e2dfcfddab2028e0ea35e6352d00efb1bf24ecdaf67c7c389266",
+      "json_pointer": "/TWO_SCOPES_NOT_ONE_VERDICT",
+      "scopes": [
+        {
+          "scope": "WEXP_BRIDGE_SUFFICIENCY",
+          "verdict": "SUPPORTED"
+        },
+        {
+          "scope": "JOINT_WEXP_EMILIA_COMPARISON",
+          "verdict": "INCONCLUSIVE for every case lacking native EMILIA output"
+        }
+      ],
+      "not_collapsible": true
+    }
+  },
+  "source_pins": [
+    {
+      "title": "INTEROP-002 Publication Candidate 003",
+      "url": "ni:///sha-256;N0ErpSG5vKmQG1QUIpA1agrt-Lx81jXnMddmCRbPdw4",
+      "identity": "sha256:37412ba521b9bca9901b54142290356a0aedf8bc7cd635e731d7660916cf770e; 192089 bytes",
+      "scope": "Exact candidate archive dated 2026-08-30 in its internal manifest; not a publication, signature or timestamp."
+    },
+    {
+      "title": "WEXP Core-01 surface used by the frozen bridge",
+      "url": "https://datatracker.ietf.org/doc/draft-sergeev-wexp-core/01/",
+      "identity": "draft-sergeev-wexp-core-01; sha256:84c0a16467585c29925339a10dd287c2e67bfe21ed592826254bf424dc24f56d; semantics_version wexp-core-1",
+      "scope": "Original pin recorded in payload/bridge/BRIDGE-CANDIDATE.yaml (authorities.wexp_normative); the URL is a locator, the digest is the pin."
+    },
+    {
+      "title": "EMILIA reference commit pinned by every INTEROP-002 fixture",
+      "url": "https://github.com/emiliaprotocol/emilia-protocol/tree/9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "identity": "git-commit:9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "scope": "Original pin recorded in the fixtures; EMILIA was not run by this package."
+    }
+  ],
+  "citation_path": "CITATION.cff",
+  "limitations": [
+    "This package migration does not rerun any WEXP, EMILIA or bridge implementation and executes no archived code; the historical execution status EXECUTED remains only in payload/execution/EXECUTION-RECORD-001.json.",
+    "The two scopes of the historical result are separate claims and are not collapsed into one verdict; the comparison status split-verdict only points to the record that holds them.",
+    "Candidate 003 is a publication candidate: its own records state publication_authorized false and that counterparty exact-byte review was not yet performed. Those historical bytes are unchanged.",
+    "The selected ZIP is authoritative for archive composition; payload is its verified file-byte extraction, not the container bytes. The ZIP has no directory entries and its member modes carry no file-type bit.",
+    "No public carrier, release tag or DOI exists for this package; the Zenodo fields are intentionally empty pending a separate decision.",
+    "License terms for the archived content are not stated in Candidate 003 and are pending the contributor's confirmation; this card declares none and must not be published until they are recorded.",
+    "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): physical truth of an execution or effect",
+    "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): correctness, security, or completeness of WEXP or EMILIA",
+    "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): global minimality of the bridge",
+    "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): universal EP-WEXP interoperability",
+    "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): conformance, certification, adoption, or IETF endorsement",
+    "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): WEXP independent verification merely from an EMILIA role label",
+    "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): that an EP receipt, outcome observation, or mapped appraisal grants reusable permission, local authorization, Gate admission, delegated authority, or approval for a future action",
+    "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): a generic Bridge Framework",
+    "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): validity beyond the frozen authorities, bridge, cases, and verdict rules",
+    "Additional ceiling (verbatim from FINAL-RECORD-002): H-MIN is NOT_ESTABLISHED. The bridge is NOT shown to be minimal.",
+    "Additional ceiling (verbatim from FINAL-RECORD-002): The joint comparison is INCONCLUSIVE for five of seven cases.",
+    "Additional ceiling (verbatim from FINAL-RECORD-002): No claim above the observation base is supported on any case.",
+    "Additional ceiling (verbatim from FINAL-RECORD-002): The WEXP IV finding is a WEXP conclusion and says nothing about EMILIA's independence semantics.",
+    "Additional ceiling (verbatim from FINAL-RECORD-002): Section 13 no-generalization governs; nothing here is promoted to interop-core."
+  ]
+}

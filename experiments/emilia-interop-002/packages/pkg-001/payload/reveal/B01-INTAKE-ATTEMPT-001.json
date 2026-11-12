@@ -1,0 +1,60 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-B01-INTAKE-ATTEMPT-001",
+  "record_kind": "b01-intake-attempt",
+  "date": "2026-08-24",
+  "state": "NOT_RECEIVED",
+  "admitted": false,
+
+  "what_was_asked": "Admit the exact revealed B-01 bytes from the attachment WEXP-EMILIA-INTEROP-002-B01-OPERATION-REBIND-001.json, after commitment verification.",
+  "what_is_true": "No such file exists in this contour. The attachment was not available to be verified, so nothing was admitted.",
+
+  "search_performed_before_concluding": {
+    "by_filename": {
+      "pattern": "*B01-OPERATION-REBIND* and *B-01*.json",
+      "hits": ["pre-freeze/B-01-COMMITMENT.json", "pre-freeze/B-01-COMMITMENT.template.json"],
+      "assessment": "both are the commitment metadata and its template. Neither is the case body; the commitment record is 7276 bytes short of being one and has a different digest."
+    },
+    "by_byte_count": {
+      "target": 7276,
+      "hits": "several unrelated system files (pcre2posix.h, vendored library sources, a browser cache entry)",
+      "assessment": "no WEXP fixture among them"
+    },
+    "by_committed_digest": {
+      "target": "8a5164e1a5c3924be201b703a47be4882b09d1abe355128eb1ff7e02c9868e66",
+      "searched": ["the session upload directory", "/tmp", "Downloads", "Desktop"],
+      "hits": 0
+    },
+    "session_upload_directory": {
+      "contents": ["one .txt file containing an earlier Founder order"],
+      "b01_attachment_present": false
+    },
+    "mail_connector": {
+      "authenticated": false,
+      "consequence": "nothing could have arrived by mail and been written locally in this contour"
+    }
+  },
+
+  "verifier_run": {
+    "tool": "reveal/verify_b01_commitment.py",
+    "invocation": "--carrier <absent> --payload <absent> --extraction identity",
+    "state": "NOT_RECEIVED",
+    "reasons": ["carrier_absent"],
+    "exit_code": 1,
+    "note": "The frozen intake procedure defines NOT_RECEIVED as a state. It was reached mechanically, not asserted."
+  },
+
+  "what_was_deliberately_not_done": [
+    "No COMMITMENT_MATCH was recorded. A match requires measuring bytes, and there were no bytes to measure.",
+    "No fixture was created at fixtures/B-01.json.",
+    "No blind_case_status was advanced to REVEALED_COMMITMENT_VERIFIED.",
+    "No allowlist entry was created for a B-01 path.",
+    "No WEXP-side expectation was prepared: it requires the exact verified bytes, and inventing one from the identifier would be the precise failure the blind case exists to prevent."
+  ],
+
+  "b01_bytes_present_after_this_order": false,
+  "blind_case_status": "NOT_RECEIVED",
+  "execution_authorized": false,
+  "publication_authorized": false,
+
+  "how_to_resume": "Place the exact received carrier and payload on disk and run reveal/verify_b01_commitment.py with --admit-to. Admission happens only on COMMITMENT_MATCH, and the verifier copies byte-for-byte. Nothing about the frozen surface needs to change for that to work."
+}

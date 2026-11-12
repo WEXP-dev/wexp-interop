@@ -1,0 +1,11 @@
+{
+  "party": "EMILIA",
+  "native_output_produced_in_this_contour": false,
+  "why": "The EMILIA native output is the result of EMILIA's own verifier run by the EMILIA side. No EMILIA implementation, conformance runner or recorded native result exists in this contour: every fixture carries emilia_input and an emilia_baseline provenance stanza, and none carries a native result. The frozen surface never defined a mechanism to produce one locally.",
+  "what_exists_instead": "A single precommitted EMILIA expectation for B-01 only, relayed by the Founder.",
+  "explicitly_not_done": [
+    "The EMILIA expectation is NOT recorded as an EMILIA native output.",
+    "EMILIA's reference implementation was NOT run to manufacture one, because a reference implementation is not the party and running it here would produce a WEXP-side artifact wearing the other party's name."
+  ],
+  "consequence": "Every case-level relation that requires two native outputs is underdetermined on the EMILIA axis. This is a limit of the record, not a result about EMILIA."
+}

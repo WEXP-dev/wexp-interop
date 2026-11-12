@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this experimental interoperability record using these metadata."
+title: "WEXP × EMILIA INTEROP-002 — historical INTEROP-002 result"
+authors:
+  - family-names: Sergeev
+    given-names: Mikhail
+  - family-names: Schrock
+    given-names: Iman
+repository-code: "https://github.com/WEXP-dev/wexp-interop"
+version: "emilia-interop-002/pkg-001"
+# Prepared, not published. No release date, DOI or Zenodo record yet:
+# those fields are intentionally empty pending a separate decision.
+# License: pending the EMILIA-side contributor's confirmation; intentionally not stated.

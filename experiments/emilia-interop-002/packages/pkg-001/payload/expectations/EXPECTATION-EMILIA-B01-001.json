@@ -1,0 +1,57 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-EXPECTATION-EMILIA-B01-001",
+  "status": "COMMITTED_BEFORE_EXECUTION",
+  "party": "EMILIA",
+  "date": "2026-08-24",
+
+  "provenance": {
+    "source": "Iman Schrock <team@emiliaprotocol.ai>",
+    "role": "authorized EMILIA-side contributor, charter section 10",
+    "gmail_message_id": "1a034aabe1010057",
+    "received": "2026-08-24",
+    "evidence_class": "FOUNDER_REPORTED_EXTERNAL_EVENT",
+    "independently_observed": false,
+    "independently_observed_note": "No mail connector is authenticated in this contour, so the message itself was not read locally. The result fields below are recorded exactly as the Founder relayed them and are not claimed as locally measured evidence.",
+    "request_route": "The prepared request carrier in this contour was never sent; it remains marked NOT SENT / NOT CONTACTED. The request reached the contributor by a route outside this contour."
+  },
+
+  "expected_native_result": {
+    "valid": false,
+    "lifecycle_state": "indeterminate",
+    "outcome": null,
+    "failed_check": "exact_bindings",
+    "error": "outcome_observations_not_exactly_bound"
+  },
+
+  "verbatim_discipline": "The five fields above are the contributor's stated expectation and are recorded as given. Nothing has been added to them, reworded, or inferred into them.",
+
+  "authority_correspondence": {
+    "this_is_a_wexp_side_annotation": true,
+    "not_the_contributors_words": "The mapping below is recorded so a later reader can locate the rule the check corresponds to. It is not attributed to the contributor and does not extend his statement.",
+    "document": "draft-schrock-ep-outcome-binding-00",
+    "section": "Section 6, Verification and Reconciliation",
+    "pinned_sha256": "7bb88cdc29e628f507464ebaaf8623d524a9f96f8c6b9bd495d8783e7c808b53",
+    "rule_verbatim": "Require exact equality of receipt identifier and digest, action digest, optional CAID, consumption nonce, operation identifier, required facility, and source metadata.",
+    "indeterminate_rule_verbatim": "Missing, non-current, non-distinct, late, or window-mismatched evidence returns lifecycle_state=indeterminate and outcome=null."
+  },
+
+  "chronology": {
+    "committed_before_execution": true,
+    "b01_executed": false,
+    "formed_without_seeing_the_wexp_expectation": "The WEXP expectation was never sent to the contributor. What can be verified from this contour is that it was not transmitted from here; what happened on the contributor's side cannot be observed from here and is not claimed.",
+    "wexp_expectation_committed_at": "2026-08-24T08:58:50-07:00, commit d96e62bcd65663a135cb451dde076d5d11f9ea7b",
+    "emilia_expectation_reached_this_contour": "after that commit"
+  },
+
+  "not_altered": {
+    "reconciled_with_the_wexp_expectation": false,
+    "normalized": false,
+    "rewritten_to_agree": false
+  },
+
+  "non_claims": [
+    "This is the contributor's expectation, not a result. Nothing has been run.",
+    "It is EMILIA's own native verdict under EMILIA's own specification. It is not a prediction about the WEXP claim and must not be read as one.",
+    "It confers no execution authority."
+  ]
+}

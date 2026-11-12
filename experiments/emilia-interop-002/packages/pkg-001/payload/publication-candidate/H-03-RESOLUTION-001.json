@@ -1,0 +1,51 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-H03-RESOLUTION-001",
+  "record_kind": "H03_RESOLUTION_BY_SCOPE_SEPARATION",
+  "date": "2026-08-24",
+  "prior_state": "PRESERVED_NOT_RESOLVED, carried from the Execution Freeze through execution and the fairness package.",
+  "resolution": "RESOLVED_BY_SCOPE_SEPARATION",
+  "method": "Scope separation, NOT semantic compromise. Neither side's predicate was weakened, and no frozen artifact was altered to produce agreement.",
+  "the_four_bound_statements": [
+    "An EMILIA role label alone does NOT establish independent verification.",
+    "WEXP MAY derive IV from its frozen four-part predicate where that predicate is satisfied.",
+    "That IV is a WEXP conclusion.",
+    "That IV does NOT establish independent verification of EMILIA semantics."
+  ],
+  "why_this_is_not_a_compromise": "Both parties were already correct about different questions. The fixture's ground was that a registry role label is not evidence of independent verification - true, and the bridge never used a role label. The bridge's ground was that its own four-part predicate can support a WEXP-side IV finding - also true, and it never claimed to speak for EMILIA. The disagreement was about which system's conclusion the IV finding belongs to. Separating the scopes dissolves it without either predicate moving.",
+  "the_frozen_four_part_predicate": {
+    "element": "BE-10",
+    "parts": [
+      "a relying-party-supplied independence requirement that the presenter may not widen or select",
+      "a met quorum",
+      "canonical DER key distinctness",
+      "declared control-domain distinctness"
+    ],
+    "additional_condition": "every contributing observation independently accepted",
+    "unchanged": true
+  },
+  "consistency_with_the_frozen_ceiling": {
+    "charter_section": "14",
+    "prohibited_claim_verbatim": "WEXP independent verification merely from an EMILIA role label",
+    "reading": "The frozen charter ALREADY prohibited exactly what the first bound statement says. This resolution does not add a ceiling; it states one the charter had from the start."
+  },
+  "artifacts_not_modified": {
+    "h03_fixture": true,
+    "bridge": true,
+    "BE-10": true,
+    "design_freeze": true,
+    "execution_freeze": true,
+    "h03_measured_result": true,
+    "both_expectations": true
+  },
+  "h03_measured_result_unchanged": {
+    "typed_outcome": "CONSTRUCTED_CLAIM_SUPPORTED",
+    "I-04": "PRESERVED",
+    "I-05": "PRESERVED",
+    "note": "H-03's verdicts rest on refusal of expansion and refusal of authority conversion, both observed. They never depended on the IV question and are unaffected by this resolution."
+  },
+  "prior_records_superseded_in_state_only": [
+    "execution-freeze/H-03-FAIRNESS-REVIEW-ITEM-001.json",
+    "expectations/H-03-FAIRNESS-REQUIREMENT-001.json"
+  ],
+  "superseded_meaning": "Those records remain byte-identical and valid as history. Only the item's STATE moves from PRESERVED_NOT_RESOLVED to RESOLVED_BY_SCOPE_SEPARATION."
+}

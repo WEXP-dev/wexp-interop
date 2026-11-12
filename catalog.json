@@ -42,6 +42,47 @@
       }
     },
     {
+      "experiment_id": "emilia-interop-002",
+      "package_id": "pkg-001",
+      "title": "WEXP × EMILIA INTEROP-002 — historical INTEROP-002 result",
+      "summary": "Historical INTEROP-002 result from Publication Candidate 003: the frozen bridge was sufficient on seven frozen cases, while the joint WEXP × EMILIA comparison was inconclusive or not derived. The two scopes are kept separate; the package replays archived evidence without a new implementation run.",
+      "status": {
+        "integrity": "verified",
+        "execution": "archived-evidence-replayed",
+        "independent_reproduction": "not-performed",
+        "comparison": "split-verdict",
+        "publication": "prepared"
+      },
+      "card": "experiments/emilia-interop-002/packages/pkg-001/README.md",
+      "record": "experiments/emilia-interop-002/packages/pkg-001/record.json",
+      "record_sha256": "13b156222a6adb6665472d39172dcd4265694beea3b6f7523bb26caac2bb1ca2",
+      "citation": "experiments/emilia-interop-002/packages/pkg-001/CITATION.cff",
+      "publication": {
+        "version": "emilia-interop-002/pkg-001",
+        "carriers": []
+      },
+      "result": {
+        "label": "Historical INTEROP-002 result — split verdict: bridge sufficiency SUPPORTED; joint comparison INCONCLUSIVE (5/7), NOT_DERIVED (2/7)",
+        "details": "WEXP bridge sufficiency: SUPPORTED for this bridge over these seven frozen cases. Joint WEXP × EMILIA comparison: INCONCLUSIVE for H-01-b, H-01-c, H-02, H-03 and B-01, which lack a native EMILIA output; NOT_DERIVED_UNDER_THIS_ORDER for C-00 and H-01-a. The record states that these MUST NOT be collapsed into a single verdict. Local minimality NOT_ESTABLISHED (15/17).",
+        "verdict_record": {
+          "path": "payload/publication-candidate/FINAL-RECORD-002.json",
+          "sha256": "4768decf3721e2dfcfddab2028e0ea35e6352d00efb1bf24ecdaf67c7c389266",
+          "json_pointer": "/TWO_SCOPES_NOT_ONE_VERDICT",
+          "scopes": [
+            {
+              "scope": "WEXP_BRIDGE_SUFFICIENCY",
+              "verdict": "SUPPORTED"
+            },
+            {
+              "scope": "JOINT_WEXP_EMILIA_COMPARISON",
+              "verdict": "INCONCLUSIVE for every case lacking native EMILIA output"
+            }
+          ],
+          "not_collapsible": true
+        }
+      }
+    },
+    {
       "experiment_id": "scitt-receipt-boundary-001",
       "package_id": "pkg-001",
       "title": "SCITT Receipt as the Core-02 boundary finding, case 001",

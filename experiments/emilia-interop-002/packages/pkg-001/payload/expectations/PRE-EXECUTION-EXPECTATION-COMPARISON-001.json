@@ -1,0 +1,76 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-PRE-EXECUTION-EXPECTATION-COMPARISON-001",
+  "record_kind": "PRE_EXECUTION_EXPECTATION_COMPARISON",
+  "date": "2026-08-24",
+
+  "what_this_is": "A comparison of two independently committed expectations, recorded before anything ran.",
+  "what_this_is_not": [
+    "NOT an experiment result. Neither side has been executed.",
+    "NOT a bridge sufficiency verdict, and not a local minimality verdict.",
+    "NOT evidence that the bridge is correct.",
+    "NOT evidence of interoperability.",
+    "NOT a case-level relation. Relations are derived from native outputs after execution, not from predictions about them."
+  ],
+
+  "the_two_expectations": {
+    "emilia": {
+      "record": "EXPECTATION-EMILIA-B01-001.json",
+      "vocabulary": "EP outcome-binding",
+      "valid": false,
+      "lifecycle_state": "indeterminate",
+      "outcome": null,
+      "failed_check": "exact_bindings",
+      "error": "outcome_observations_not_exactly_bound"
+    },
+    "wexp": {
+      "record": "EXPECTATION-WEXP-B01-001.json",
+      "vocabulary": "WEXP Core-01 via the frozen bridge",
+      "typed_outcome": "INDETERMINATE",
+      "cc1_supported": false,
+      "ceiling_base": null,
+      "iv_independence_validation": "not-evaluated",
+      "rejection_reason_set": ["exact_binding_mismatch:operation_id"],
+      "i01_expected": "PRESERVED",
+      "i03a_expected": "PRESERVED"
+    }
+  },
+
+  "observed_structural_correspondence": [
+    {
+      "axis": "terminal state",
+      "emilia": "lifecycle_state indeterminate",
+      "wexp": "typed_outcome INDETERMINATE",
+      "note": "Same word, two different vocabularies. EP reaches it under its Section 6 indeterminate rule; WEXP reaches it because both relying-party source requirements are unmet and both prediction groups lack an accepted observation."
+    },
+    {
+      "axis": "outcome carried",
+      "emilia": "outcome null",
+      "wexp": "cc1_supported false, ceiling_base null",
+      "note": "Neither side expects to carry a positive result forward."
+    },
+    {
+      "axis": "attributed cause",
+      "emilia": "failed check exact_bindings; outcome_observations_not_exactly_bound",
+      "wexp": "exact_binding_mismatch:operation_id",
+      "note": "Both attribute the refusal to the observations not being exactly bound to the asserted action instance."
+    }
+  ],
+
+  "why_the_agreement_is_less_surprising_than_it_looks": {
+    "statement": "The correspondence on the attributed cause is partly BY CONSTRUCTION, not purely independent convergence, and saying so is more useful than letting it read as strong corroboration.",
+    "reason": "The bridge's BE-04 was deliberately built on EP Section 6. Mapping requirement M-06 is recorded RESOLVED with the rationale that the identity and correlation predicates are exactly the Section 6 equality set, taken conjunctively. So the WEXP side is applying a predicate it adopted from the EMILIA side.",
+    "what_would_have_been_surprising": "Two genuinely different predicates landing on the same cause. That is not what happened here.",
+    "what_is_still_informative": "That the bridge's adoption of that predicate is faithful enough that both sides expect it to fire on the same field, and that neither side expects a positive result. A divergence here would have been a real finding before execution; its absence is weaker evidence than its presence would have been."
+  },
+
+  "what_remains_genuinely_open": [
+    "Whether either expectation is correct. Both are predictions.",
+    "Whether the bridge's IV predicate is a fair reading of EMILIA's independence semantics. That is the preserved H-03 fairness item and it is untouched by this comparison.",
+    "Whether the WEXP side reaches INDETERMINATE by the route it predicts, or by some other route. The reason set is part of the expectation and can be wrong even if the terminal state is right.",
+    "Bridge sufficiency and local minimality, both NOT_EVALUATED."
+  ],
+
+  "expectations_altered_to_agree": false,
+  "reconciled": false,
+  "b01_executed": false
+}

@@ -1,0 +1,213 @@
+{
+  "artifact_id": "WEXP-EMILIA-INTEROP-002-EMILIA-AUTHORITY-CORRECTION-001",
+  "status": "BOUND",
+  "supersedes": "the proposed authority description recorded as PROPOSED_AWAITING_CONFIRMATION, in which the repository commit as a whole stood in for the authority",
+  "what_changed": "The proposal named a repository commit. The correction names a specification document and its normative sections, and demotes the commit to a reproducibility envelope. That is a narrowing, and it is the artifact-granular correction the confirmation packet asked for.",
+
+  "provenance": {
+    "source": "Iman Schrock <team@emiliaprotocol.ai>",
+    "role": "authorized EMILIA-side contributor, charter §10",
+    "gmail_message_id": "1a0315aa2999a4d1",
+    "received": "2026-08-24",
+    "evidence_class": "FOUNDER_REPORTED_EXTERNAL_EVENT",
+    "independently_observed": false,
+    "independently_observed_note": "No mail connector is authenticated in this contour, so the message itself was not read locally. The message identity is recorded as the Founder reported it and is not claimed as locally measured evidence. Every artifact the message cites WAS independently verified at the pinned source; those verifications are recorded below and are locally measured.",
+    "answers": "EMILIA-AUTHORITY-CONFIRMATION-001.md",
+    "answer_type": "CORRECTION"
+  },
+
+  "authority_classes_used": {
+    "NORMATIVE_SEMANTIC_AUTHORITY": "Defines what is true on the EMILIA side for this experiment.",
+    "REPRODUCIBILITY_ENVELOPE": "Fixes exactly which bytes of every cited artifact were read. Not authority.",
+    "NON_NORMATIVE_EXECUTABLE_FIXTURE": "A vector that can be run. Creates no semantic authority.",
+    "NON_NORMATIVE_REFERENCE_IMPLEMENTATION": "An executable interpretation. Creates no semantic authority; where it and the specification disagree, the specification wins.",
+    "TYPED_ACTION_IDENTIFIER_AUTHORITY": "Defines the typed action identifier construction the normative document relies on.",
+    "RELATED_BUT_NON_DEFINING_AUTHORITY": "Governs an adjacent concern. Explicitly NOT the document that defines this case."
+  },
+
+  "bound_authority": [
+    {
+      "classification": "NORMATIVE_SEMANTIC_AUTHORITY",
+      "document": "draft-schrock-ep-outcome-binding-00",
+      "title": "Outcome Binding for Authorized Actions and Independently Observed Effects",
+      "normative_sections": "Sections 3 through 6",
+      "repository": "emiliaprotocol/emilia-protocol",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "path": "standards/posted/draft-schrock-ep-outcome-binding-00.xml",
+      "git_blob": "51c521fe6aa2e61273b34b538440c2decc7f8b3c",
+      "bytes": 15178,
+      "sha256": "7bb88cdc29e628f507464ebaaf8623d524a9f96f8c6b9bd495d8783e7c808b53",
+      "ietf_metadata": {
+        "docName": "draft-schrock-ep-outcome-binding-00",
+        "category": "exp",
+        "ipr": "trust200902",
+        "submissionType": "IETF"
+      },
+      "verification": "VERIFIED_AT_PINNED_COMMIT"
+    },
+    {
+      "classification": "REPRODUCIBILITY_ENVELOPE",
+      "repository": "emiliaprotocol/emilia-protocol",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "resolves_publicly": true,
+      "blob_count_at_commit": 6568,
+      "role": "Fixes exactly which bytes of every cited artifact were read. It is NOT semantic authority by itself, and it is not treated as such anywhere in this package.",
+      "verification": "VERIFIED"
+    },
+    {
+      "classification": "TYPED_ACTION_IDENTIFIER_AUTHORITY",
+      "document": "draft-schrock-canonical-action-identifier-02",
+      "title": "The Canonical Action Identifier (CAID)",
+      "repository": "emiliaprotocol/emilia-protocol",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "path": "standards/posted/draft-schrock-canonical-action-identifier-02.xml",
+      "git_blob": "5fd2b22715223070ecd7a4f8820f83e25411431c",
+      "bytes": 55234,
+      "sha256": "777487b04ac473ad70ff2dd8a0c396657744bb7fd9e92499d4ec0bee67762015",
+      "ietf_metadata": {
+        "docName": "draft-schrock-canonical-action-identifier-02",
+        "category": "std"
+      },
+      "verification": "VERIFIED_AT_PINNED_COMMIT"
+    },
+    {
+      "classification": "NON_NORMATIVE_EXECUTABLE_FIXTURE",
+      "repository": "emiliaprotocol/emilia-protocol",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "path": "conformance/vectors/outcome-binding.sources.v1.json",
+      "git_blob": "d1542229050c423d564de841d5050ea35b6a8651",
+      "bytes": 34794,
+      "sha256": "6c966c4a2d1e478a5698024a6830e6fa0fa9bdf6e2b1f1b6f7bd7543d9879636",
+      "cited_vector": {
+        "id": "accept_executor_and_independent_observer",
+        "location": "vectors[0]",
+        "occurrences_of_id_in_file": 1,
+        "expect": {
+          "valid": true,
+          "lifecycle_state": "reconciled",
+          "outcome": "in_bounds",
+          "result_digest": "sha256:4ea90a5cf398ad77fe21bd5933ae85c2970cb55d1b5cd929c0f097bb9efc50b3"
+        }
+      },
+      "creates_semantic_authority": false,
+      "verification": "VERIFIED_AT_PINNED_COMMIT"
+    },
+    {
+      "classification": "NON_NORMATIVE_REFERENCE_IMPLEMENTATION",
+      "repository": "emiliaprotocol/emilia-protocol",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "path": "packages/verify/src/outcome-binding.ts",
+      "git_blob": "424a5a1e169b8a57bddac6a9d84569509401ad8a",
+      "bytes": 72532,
+      "sha256": "9a674113122f23001567eaeb673190ac4658b5273f7433e234c8ecbb5be704b0",
+      "creates_semantic_authority": false,
+      "verification": "VERIFIED_AT_PINNED_COMMIT"
+    },
+    {
+      "classification": "RELATED_BUT_NON_DEFINING_AUTHORITY",
+      "document": "draft-schrock-action-evidence-boundary-04",
+      "short_name": "AEB-04",
+      "title": "The Action Evidence Boundary for Consequential Agent Effects",
+      "repository": "emiliaprotocol/emilia-protocol",
+      "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+      "path": "standards/posted/draft-schrock-action-evidence-boundary-04.xml",
+      "git_blob": "866a328d7276cd34d7fe34a1e28754c82da7dc67",
+      "bytes": 52202,
+      "sha256": "83f97307a51e7f62200df243f765cb28ee436faae70871df9cb02b15c8d43dd5",
+      "scope": "Relevant to admission and consumption.",
+      "explicitly_not": "NOT the document that defines the B-01 observation-rebinding case. It MUST NOT be cited as the defining authority for B-01, and no INTEROP-002 result may be attributed to it.",
+      "verification": "VERIFIED_AT_PINNED_COMMIT"
+    }
+  ],
+
+  "explicit_rule": {
+    "statement": "Neither implementation bytes nor vectors create semantic authority.",
+    "source": "EMILIA-side contributor, in the correction itself",
+    "consequence": "outcome-binding.ts and outcome-binding.sources.v1.json are pinned so the reading is reproducible, and are recorded as non-normative. If either disagrees with Sections 3 through 6, the sections win. No INTEROP-002 finding may rest on implementation or vector behaviour alone."
+  },
+
+  "section_verification": {
+    "method": "The pinned XML was fetched by blob digest and its top-level section structure parsed. Sections are identified by position and anchor, so the citation 'Sections 3 through 6' is checked against the document rather than assumed.",
+    "sections_at_pinned_commit": [
+      {"n": 1, "anchor": "intro", "name": "Introduction"},
+      {"n": 2, "anchor": "terms", "name": "Terms and State Separation"},
+      {"n": 3, "anchor": "predictions", "name": "Source-Routed Predicted Effects", "cited_normative": true},
+      {"n": 4, "anchor": "observation", "name": "Outcome Observation", "cited_normative": true},
+      {"n": 5, "anchor": "source-policy", "name": "Relying-Party Source Policy", "cited_normative": true},
+      {"n": 6, "anchor": "algorithm", "name": "Verification and Reconciliation", "cited_normative": true},
+      {"n": 7, "anchor": "industrial", "name": "Industrial Curtailment Profile"},
+      {"n": 8, "anchor": "security", "name": "Security Considerations"},
+      {"n": 9, "anchor": "privacy", "name": "Privacy Considerations"},
+      {"n": 10, "anchor": "iana", "name": "IANA Considerations"},
+      {"n": 11, "anchor": "implementation", "name": "Implementation Status"}
+    ],
+    "sections_3_to_6_carry_rfc2119_requirements": true,
+    "contributor_stated_semantics_located": [
+      {
+        "semantics": "source-routed predicted effects",
+        "located_in": "§3, whose title is exactly 'Source-Routed Predicted Effects'",
+        "state": "PRESENT"
+      },
+      {
+        "semantics": "closed signed observation object",
+        "located_in": "§4: 'EP-OUTCOME-OBSERVATION-v1 is a closed I-JSON object signed with Ed25519 under the domain string \"EP-OUTCOME-OBSERVATION-v1\" followed by a zero octet.'",
+        "state": "PRESENT"
+      },
+      {
+        "semantics": "relying-party source policy",
+        "located_in": "§5, whose title is exactly 'Relying-Party Source Policy'",
+        "state": "PRESENT"
+      },
+      {
+        "semantics": "exact equality checks",
+        "located_in": "§6",
+        "state": "PRESENT"
+      }
+    ],
+    "exact_equality_sentence_verbatim": "Require exact equality of receipt identifier and digest, action digest, optional CAID, consumption nonce, operation identifier, required facility, and source metadata.",
+    "equality_fields": [
+      {"cited_as": "receipt digest", "spec_wording": "receipt identifier and digest", "state": "PRESENT"},
+      {"cited_as": "action digest", "spec_wording": "action digest", "state": "PRESENT"},
+      {"cited_as": "CAID", "spec_wording": "optional CAID", "state": "PRESENT"},
+      {"cited_as": "consumption nonce", "spec_wording": "consumption nonce", "state": "PRESENT"},
+      {"cited_as": "operation identifier", "spec_wording": "operation identifier", "state": "PRESENT"},
+      {"cited_as": "facility", "spec_wording": "required facility", "state": "PRESENT"},
+      {"cited_as": "source metadata", "spec_wording": "source metadata", "state": "PRESENT"}
+    ],
+    "wording_refinements_recorded_not_waived": "The specification says 'receipt identifier and digest' where the correction says 'receipt digest', and qualifies CAID as optional and facility as required. All seven checks are present; the specification's exact wording is what binds, and it is recorded verbatim above so no later reading has to rely on the shorthand.",
+    "all_seven_present": true
+  },
+
+  "no_silent_substitution": {
+    "rule": "Do not silently substitute a newer revision.",
+    "outcome_binding_revisions_at_pinned_commit": ["standards/posted/draft-schrock-ep-outcome-binding-00.xml"],
+    "outcome_binding_highest_revision": "00",
+    "caid_revisions_at_pinned_commit": ["00 and 01 under standards/archive/", "02 under standards/posted/"],
+    "caid_highest_posted_revision": "02",
+    "result": "Both cited revisions are the highest that exist at the pinned commit. Nothing was substituted, and nothing newer was available to substitute.",
+    "supplementary_datatracker_crosscheck": {
+      "method": "read-only public GET against the IETF Datatracker API; no submission, no contact",
+      "draft-schrock-ep-outcome-binding": "rev 00",
+      "draft-schrock-canonical-action-identifier": "rev 02",
+      "role": "Supplementary corroboration only. The binding source of truth is the pinned repository commit."
+    }
+  },
+
+  "availability_note": "draft-schrock-ep-outcome-binding-00 exists at the pinned commit as XML source only; no rendered .txt or .html sibling is present, unlike CAID-02, which has all three. This affects nothing — the XML is the pinned artifact and its digest is recorded — but it is stated so a later reader does not go looking for a render that was never there.",
+
+  "what_this_does_not_do": [
+    "It does not freeze the design. It satisfies the third of three preconditions.",
+    "It does not authorize a bridge, a reveal, an Execution Freeze, execution, or publication.",
+    "It does not make EMILIA implementation bytes or vectors authority. The contributor ruled that out explicitly and the record follows.",
+    "It does not make AEB-04 the defining document for B-01.",
+    "It does not upgrade the DRAFT-003 provenance status.",
+    "It does not license generalization beyond the frozen experiment; charter §13 still governs."
+  ],
+
+  "publication": {
+    "admitted_to_allowlist": false,
+    "reason": "This record carries correspondence provenance — a personal address and a mail message identifier. The artifact identities it binds are published through AUTHORITY-AND-SOURCE-PINS.json, which carries no correspondence metadata."
+  },
+
+  "design_frozen": false
+}

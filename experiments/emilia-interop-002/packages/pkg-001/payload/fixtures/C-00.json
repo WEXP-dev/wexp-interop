@@ -1,0 +1,179 @@
+{
+  "schema": "wexp-emilia-pair-fixture-1",
+  "artifact_id": "WEXP-EMILIA-PAIR-FREEZE-001",
+  "seed": {
+    "case_id": "WE-EP-004",
+    "agreed_description": "controller reports dispatch; independent meter reports measured effect",
+    "source_fixture": "WEXP-EMILIA-INTEROP-001/fixtures.yaml",
+    "source_fixture_sha256": "d972dbb549aaaa25e92c32a936acba4d9a686e9ca62fe6bd556b12be2962cfcc",
+    "source_case_byte_range": "[1606,2054)",
+    "source_case_bytes": 448,
+    "source_case_sha256": "be4019e2e6b587d2c2bab6f6d6bb54874b5e0fcae77f26a1a53dd10444d9ae08"
+  },
+  "emilia_baseline": {
+    "repository": "https://github.com/emiliaprotocol/emilia-protocol",
+    "commit": "9a04bea7fe680345132f6f6251fdb9a63fd8aeb2",
+    "construction_source": "conformance/vectors/outcome-binding.sources.v1.json",
+    "source_vector_id": "accept_executor_and_independent_observer"
+  },
+  "emilia_input": {
+    "predicted_effects": [
+      {
+        "effect_type": "controller_status",
+        "target": "facility:plant-7",
+        "required_source_role": "executor",
+        "required_source_class": "cosa.actuator",
+        "predicate": {
+          "op": "eq",
+          "value": "accepted"
+        }
+      },
+      {
+        "effect_type": "delivered_mw",
+        "target": "facility:plant-7",
+        "required_source_role": "independent_observer",
+        "required_source_class": "revenue_meter",
+        "predicate": {
+          "op": "gte",
+          "value": "5.0"
+        }
+      }
+    ],
+    "observations": [
+      {
+        "@version": "EP-OUTCOME-OBSERVATION-v1",
+        "receipt_id": "ep:receipt:outcome-vector-1",
+        "receipt_digest": "sha256:75ac23c83295051f72a366fbac2773abb488e11ae9377bfd7859574fbada4d45",
+        "action_hash": "sha256:d5332018e3e0caa454b9a5391a33fa57f58fcbb645ff443e112236caee4bf51a",
+        "action_caid": "caid:sha256:6666666666666666666666666666666666666666666666666666666666666666",
+        "consumption_nonce": "outcome-vector-consumption",
+        "operation_id": "operation:plant-7:001",
+        "source": {
+          "role": "executor",
+          "source_id": "ep:executor:grid-1",
+          "source_class": "cosa.actuator",
+          "facility_id": "facility:plant-7"
+        },
+        "observed_from": "2026-07-19T16:01:00.000Z",
+        "observed_until": "2026-07-19T16:01:30.000Z",
+        "attested_at": "2026-07-19T16:01:45.000Z",
+        "observed_effects": [
+          {
+            "effect_type": "controller_status",
+            "target": "facility:plant-7",
+            "value": "accepted"
+          }
+        ],
+        "observed_effects_digest": "sha256:7c7d7ece43f42d626da3c59bdeef17ca60a63685ce75d97f7f6950a1be752061",
+        "proof": {
+          "algorithm": "Ed25519",
+          "key_id": "ep:outcome-source-key:sha256:388c2c3d36281df10058e1ae630c3fd833a9f33375b7a8a266c448c369a79791",
+          "public_key": "MCowBQYDK2VwAyEAK8KACzMW4Akgn_11fasZzPCuhLx66QZU4egXEtJw9lM",
+          "signature_b64u": "4JVaWYsw66OsvV24DzjSAaYrqVZL5RlFvjBqFO_bYSa8oLwm300iUHH-gpT5YkB2C5pxKpw11apFNv_hSlMICA"
+        }
+      },
+      {
+        "@version": "EP-OUTCOME-OBSERVATION-v1",
+        "receipt_id": "ep:receipt:outcome-vector-1",
+        "receipt_digest": "sha256:75ac23c83295051f72a366fbac2773abb488e11ae9377bfd7859574fbada4d45",
+        "action_hash": "sha256:d5332018e3e0caa454b9a5391a33fa57f58fcbb645ff443e112236caee4bf51a",
+        "action_caid": "caid:sha256:6666666666666666666666666666666666666666666666666666666666666666",
+        "consumption_nonce": "outcome-vector-consumption",
+        "operation_id": "operation:plant-7:001",
+        "source": {
+          "role": "independent_observer",
+          "source_id": "ep:observer:meter-7",
+          "source_class": "revenue_meter",
+          "facility_id": "facility:plant-7"
+        },
+        "observed_from": "2026-07-19T16:01:00.000Z",
+        "observed_until": "2026-07-19T16:01:30.000Z",
+        "attested_at": "2026-07-19T16:01:45.000Z",
+        "observed_effects": [
+          {
+            "effect_type": "delivered_mw",
+            "target": "facility:plant-7",
+            "value": "5.2"
+          }
+        ],
+        "observed_effects_digest": "sha256:682bcea23c411676eb2eabc3bbcc21133bd51985b20f7b307f1f98dcea9cc906",
+        "proof": {
+          "algorithm": "Ed25519",
+          "key_id": "ep:outcome-source-key:sha256:9c8d75bfaed9ae1341258505c66b75f5724967f8e7b25d02eb1279c5e56b51ab",
+          "public_key": "MCowBQYDK2VwAyEA1i8Bah79Hk_feT60LNhEceG6nwzwTRKHtcxx9hYofLg",
+          "signature_b64u": "0Lfmjdqi0IhEhNxQjknPldAOgjjLYX10Hh0MBGlsqSnLD51YEfm2Krhki9EHX9_f8lLreWqw7_S2QxnvXLgDDw"
+        }
+      }
+    ],
+    "options": {
+      "sourceKeys": {
+        "ep:executor:grid-1": {
+          "public_key": "MCowBQYDK2VwAyEAK8KACzMW4Akgn_11fasZzPCuhLx66QZU4egXEtJw9lM",
+          "role": "executor",
+          "source_class": "cosa.actuator",
+          "facility_id": "facility:plant-7",
+          "control_domain_id": "control-domain:grid-controller",
+          "status": "active",
+          "valid_from": "2026-01-01T00:00:00.000Z",
+          "valid_to": "2027-01-01T00:00:00.000Z"
+        },
+        "ep:observer:meter-7": {
+          "public_key": "MCowBQYDK2VwAyEA1i8Bah79Hk_feT60LNhEceG6nwzwTRKHtcxx9hYofLg",
+          "role": "independent_observer",
+          "source_class": "revenue_meter",
+          "facility_id": "facility:plant-7",
+          "control_domain_id": "control-domain:revenue-meter",
+          "status": "active",
+          "valid_from": "2026-01-01T00:00:00.000Z",
+          "valid_to": "2027-01-01T00:00:00.000Z"
+        }
+      },
+      "sourceRequirements": [
+        {
+          "role": "executor",
+          "source_class": "cosa.actuator",
+          "min_distinct_sources": 1,
+          "distinct_by": [
+            "key",
+            "control_domain"
+          ]
+        },
+        {
+          "role": "independent_observer",
+          "source_class": "revenue_meter",
+          "min_distinct_sources": 1,
+          "distinct_by": [
+            "key",
+            "control_domain"
+          ]
+        }
+      ],
+      "observationWindows": [
+        {
+          "role": "executor",
+          "source_class": "cosa.actuator",
+          "relation": "exact",
+          "not_before": "2026-07-19T16:01:00.000Z",
+          "not_after": "2026-07-19T16:01:30.000Z",
+          "max_attestation_delay_ms": 30000
+        },
+        {
+          "role": "independent_observer",
+          "source_class": "revenue_meter",
+          "relation": "exact",
+          "not_before": "2026-07-19T16:01:00.000Z",
+          "not_after": "2026-07-19T16:01:30.000Z",
+          "max_attestation_delay_ms": 30000
+        }
+      ],
+      "now": "2026-07-19T16:02:00.000Z",
+      "expectedReceiptId": "ep:receipt:outcome-vector-1",
+      "expectedReceiptDigest": "sha256:75ac23c83295051f72a366fbac2773abb488e11ae9377bfd7859574fbada4d45",
+      "expectedActionHash": "sha256:d5332018e3e0caa454b9a5391a33fa57f58fcbb645ff443e112236caee4bf51a",
+      "expectedConsumptionNonce": "outcome-vector-consumption",
+      "expectedActionCaid": "caid:sha256:6666666666666666666666666666666666666666666666666666666666666666",
+      "expectedOperationId": "operation:plant-7:001",
+      "expectedFacilityId": "facility:plant-7"
+    }
+  }
+}
