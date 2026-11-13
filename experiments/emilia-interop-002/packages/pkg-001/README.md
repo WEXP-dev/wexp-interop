@@ -2,7 +2,7 @@
 
 **Historical INTEROP-002 result. Split verdict: bridge sufficiency SUPPORTED; joint WEXP × EMILIA comparison INCONCLUSIVE for five of seven cases and NOT_DERIVED for two.** The archived record states that these "MUST NOT be collapsed into a single verdict". This card keeps them apart. The [verdict record](payload/publication-candidate/FINAL-RECORD-002.json) (member `TWO_SCOPES_NOT_ONE_VERDICT`) remains unchanged.
 
-**Status: prepared, not published.** This card places Publication Candidate 003 in the common collection. The migration checks archive bytes, the candidate's internal manifest and the recorded verdicts. It adds no implementation execution and no new interoperability result.
+**Status: published on Zenodo, 12 November 2026.** [Version DOI](https://doi.org/10.5281/zenodo.24180793) identifies the exact Candidate 003 archive. This card places that historical result in the common collection. The migration checks archive bytes, the candidate's internal manifest and the recorded verdicts. It adds no implementation execution and no new interoperability result.
 
 | Dimension | Value | Scope |
 |---|---|---|
@@ -10,9 +10,9 @@
 | Execution | `archived-evidence-replayed` | `implementation_execution_performed: false` for the migration checks. The historical execution status `EXECUTED` remains in [the execution record](payload/execution/EXECUTION-RECORD-001.json). |
 | Independent reproduction | `not-performed` | No separate external reproduction of the complete package is claimed. |
 | Comparison | `split-verdict` | Two scopes held in the pinned verdict record; neither is a combined verdict. |
-| Publication | `prepared` | No public carrier, release tag or DOI. |
+| Publication | `published` | [Zenodo archival record](https://zenodo.org/records/24180793), version DOI `10.5281/zenodo.24180793`. |
 
-The [machine-readable card](record.json) uses card schema 0.4.0 and the [collection's fixed definitions](../../../../docs/COLLECTION.md).
+The [machine-readable card](record.json), revision 3, uses card schema 0.4.0 and the [collection's fixed definitions](../../../../docs/COLLECTION.md).
 
 ## The two scopes
 
@@ -59,7 +59,15 @@ SHA-256: 37412ba521b9bca9901b54142290356a0aedf8bc7cd635e731d7660916cf770e
 
 ## Publication state
 
-Prepared, not published. The candidate's own records state `publication_authorized: false` and that counterparty exact-byte review was not yet performed; those historical bytes are unchanged. **Zenodo fields (version DOI, concept DOI, record) are intentionally empty** pending a separate decision. No release tag exists.
+The exact Candidate 003 archive was published on Zenodo on **12 November 2026**.
+
+- Version DOI: [10.5281/zenodo.24180793](https://doi.org/10.5281/zenodo.24180793). Cite this DOI for these exact bytes.
+- Concept DOI: [10.5281/zenodo.24180792](https://doi.org/10.5281/zenodo.24180792), the separate INTEROP-002 version family.
+- Public record: [Zenodo 24180793](https://zenodo.org/records/24180793).
+- [Published Candidate 003 ZIP](https://zenodo.org/records/24180793/files/WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip?download=1).
+- [Publication evidence](evidence/ZENODO-PUBLICATION.json).
+
+The candidate's own records state `publication_authorized: false` and that counterparty exact-byte review was not yet performed; those historical bytes are unchanged. The later archival publication is recorded here, outside the frozen payload. It adds no implementation execution, independent reproduction or new interoperability result. No GitHub release or tag is created by this publication.
 
 ## License
 

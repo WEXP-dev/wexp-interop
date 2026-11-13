@@ -1,0 +1,141 @@
+{
+  "schema": "emilia-interop-002-zenodo-publication-001",
+  "recorded_at_utc": "2026-11-12T23:59:30.366279+00:00",
+  "source_card_commit": "c5abfcba3fdb0a4ea83434ad2f84c87ec5b7b109",
+  "record_id": "24180793",
+  "record_url": "https://zenodo.org/records/24180793",
+  "record_api": {
+    "url": "https://zenodo.org/api/records/24180793",
+    "accept": "application/vnd.inveniordm.v1+json",
+    "authenticated": false,
+    "is_published": true
+  },
+  "version_doi": "10.5281/zenodo.24180793",
+  "concept_doi": "10.5281/zenodo.24180792",
+  "publication_date": "2026-11-12",
+  "approved_metadata_match": true,
+  "metadata": {
+    "resource_type": {
+      "id": "other",
+      "title": {
+        "de": "Sonstige",
+        "en": "Other"
+      }
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Sergeev, Mikhail",
+          "given_name": "Mikhail",
+          "family_name": "Sergeev"
+        }
+      },
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Schrock, Iman",
+          "given_name": "Iman",
+          "family_name": "Schrock"
+        }
+      }
+    ],
+    "title": "WEXP × EMILIA INTEROP-002 — historical INTEROP-002 result",
+    "publisher": "Zenodo",
+    "publication_date": "2026-11-12",
+    "subjects": [
+      {
+        "subject": "WEXP"
+      },
+      {
+        "subject": "EMILIA"
+      },
+      {
+        "subject": "interoperability"
+      },
+      {
+        "subject": "archival experimental record"
+      },
+      {
+        "subject": "outcome binding"
+      },
+      {
+        "subject": "Canonical Action Identifier"
+      },
+      {
+        "subject": "frozen evidence"
+      }
+    ],
+    "languages": [
+      {
+        "id": "eng",
+        "title": {
+          "en": "English"
+        }
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/WEXP-dev/wexp-interop/blob/c5abfcba3fdb0a4ea83434ad2f84c87ec5b7b109/experiments/emilia-interop-002/packages/pkg-001/README.md",
+        "scheme": "url",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        },
+        "resource_type": {
+          "id": "other",
+          "title": {
+            "de": "Sonstige",
+            "en": "Other"
+          }
+        }
+      },
+      {
+        "identifier": "10.5281/zenodo.22056151",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "references",
+          "title": {
+            "de": "Referenziert",
+            "en": "References"
+          }
+        },
+        "resource_type": {
+          "id": "other",
+          "title": {
+            "de": "Sonstige",
+            "en": "Other"
+          }
+        }
+      }
+    ],
+    "version": "emilia-interop-002/pkg-001",
+    "rights": [
+      {
+        "title": {
+          "en": "Scoped rights — WEXP × EMILIA INTEROP-002"
+        },
+        "description": {
+          "en": "Apache-2.0 applies to the WEXP-side and EMILIA-side code and machine-readable vectors, including B-01, with the record of contributions preserved. The EMILIA-side confirmation is dated 12 November 2026. That confirmation does not separately state terms for archived narrative documents, including the charter, final report and fairness package; no broader grant is inferred. Independently owned pre-existing specifications, code, trademarks and other background material retain their own ownership and terms. See the pinned LICENSE-SCOPE.md for the exact scope. This statement does not apply CC BY 4.0 or MIT to the original Candidate 003 archive."
+        },
+        "link": "https://github.com/WEXP-dev/wexp-interop/blob/c5abfcba3fdb0a4ea83434ad2f84c87ec5b7b109/experiments/emilia-interop-002/packages/pkg-001/LICENSE-SCOPE.md"
+      }
+    ],
+    "description": "<p>Archival publication of the historical WEXP &times; EMILIA INTEROP-002 result, preserving Publication Candidate 003 dated 30 August 2026. The sole deposited file is the original WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip: 192089 bytes; SHA-256 37412ba521b9bca9901b54142290356a0aedf8bc7cd635e731d7660916cf770e. Its 57 file byte sequences are unchanged; the internal manifest binds 56 files and excludes itself. The archival preparation checks integrity and recorded verdicts without executing archived code or rerunning WEXP, EMILIA or the bridge. It establishes no new implementation result or separate external reproduction.</p>\n<p>The historical result has two distinct scopes. WEXP bridge sufficiency is SUPPORTED for this bridge over these seven frozen cases. The joint WEXP &times; EMILIA comparison is INCONCLUSIVE for H-01-b, H-01-c, H-02, H-03 and B-01, for which no native EMILIA output is established; it is NOT_DERIVED_UNDER_THIS_ORDER for C-00 and H-01-a. These scopes must not be collapsed into one verdict. Local minimality is NOT_ESTABLISHED: 15 of 17 elements were shown individually necessary. No claim above the observation base is supported.</p>\n<p>The original source pins remain in force:<br>WEXP: draft-sergeev-wexp-core-01, semantics wexp-core-1; WEXP-dev/wexp-spec commit b3465c4ec218389c9701e2fb225e8dc2f8aec234; SHA-256 84c0a16467585c29925339a10dd287c2e67bfe21ed592826254bf424dc24f56d.<br>EMILIA: emiliaprotocol/emilia-protocol commit 9a04bea7fe680345132f6f6251fdb9a63fd8aeb2; the defining authority is draft-schrock-ep-outcome-binding-00, sections 3&ndash;6, SHA-256 7bb88cdc29e628f507464ebaaf8623d524a9f96f8c6b9bd495d8783e7c808b53. The commit is a reproducibility envelope, not semantic authority by itself.<br>CAID: draft-schrock-canonical-action-identifier-02 at that EMILIA commit; SHA-256 777487b04ac473ad70ff2dd8a0c396657744bb7fd9e92499d4ec0bee67762015. The archive is not restated under later specifications.</p>\n<p>Creators are Mikhail Sergeev and Iman Schrock, in the order recorded by the current collection citation. Iman's recorded EMILIA-side contributions cover the authority review/correction, the B-01 commitment and matching reveal, and review of the final record's fairness. B-01 was committed before bridge authorship and revealed after the Execution Freeze. Commitment, reveal, fairness, attribution and existing assistance/review-provenance records remain unchanged. This archival act does not add an independent review or scientific validation claim. WEXP-side approval, bridge authorship and execution were not independent of one another, as the frozen record states.</p>\n<p>Historical status statements inside Candidate 003, including publication_authorized: false, not-yet-performed exact-byte review and pending attribution confirmation, remain unchanged as evidence of their original state. Current publication and the scoped licensing confirmation dated 12 November 2026 are additive metadata; they do not rewrite the historical record. INTEROP-001 is referenced as the predecessor experiment, not as a version of this deposit.</p>\n<p>The result establishes neither physical truth, correctness/security/completeness of either system, global bridge minimality, universal interoperability, conformance, certification, adoption, IETF endorsement, a generic bridge framework, nor validity beyond the frozen authorities, bridge, cases and verdict rules. WEXP IV is a WEXP conclusion and does not establish EMILIA independence semantics. No receipt or appraisal grants reusable permission, local authorization, Gate admission, delegated authority or approval for a future action. No finding is promoted to interop-core.</p>"
+  },
+  "archive": {
+    "file_name": "WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip",
+    "url": "https://zenodo.org/records/24180793/files/WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip?download=1",
+    "package_path": "source-archive/WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip",
+    "bytes": 192089,
+    "sha256": "37412ba521b9bca9901b54142290356a0aedf8bc7cd635e731d7660916cf770e",
+    "zenodo_checksum": "md5:7c28497ac9662065d82285eeccea3074",
+    "deposited_file_count": 1,
+    "downloaded_without_authentication": true,
+    "byte_identical_to_original_candidate_003": true
+  },
+  "verification_scope": "Publication and public-download integrity check only. The archived payload and its historical status, attribution and assistance/review provenance are unchanged. No implementation execution, independent reproduction or new interoperability result is established."
+}

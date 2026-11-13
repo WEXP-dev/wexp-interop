@@ -51,15 +51,24 @@
         "execution": "archived-evidence-replayed",
         "independent_reproduction": "not-performed",
         "comparison": "split-verdict",
-        "publication": "prepared"
+        "publication": "published"
       },
       "card": "experiments/emilia-interop-002/packages/pkg-001/README.md",
       "record": "experiments/emilia-interop-002/packages/pkg-001/record.json",
-      "record_sha256": "88315acaeae0af9bce87bfe0654fa497b40c2a9c9f3f2bfdf4208a1687bae547",
+      "record_sha256": "5faebc0166b76578f687c24b50acff2942ca6b8c47a560c1f3d6f807f731e248",
       "citation": "experiments/emilia-interop-002/packages/pkg-001/CITATION.cff",
       "publication": {
         "version": "emilia-interop-002/pkg-001",
-        "carriers": []
+        "date": "2026-11-12",
+        "carriers": [
+          {
+            "kind": "zenodo",
+            "url": "https://zenodo.org/records/24180793",
+            "identifier": "10.5281/zenodo.24180793"
+          }
+        ],
+        "version_doi": "10.5281/zenodo.24180793",
+        "concept_doi": "10.5281/zenodo.24180792"
       },
       "result": {
         "label": "Historical INTEROP-002 result — split verdict: bridge sufficiency SUPPORTED; joint comparison INCONCLUSIVE (5/7), NOT_DERIVED (2/7)",

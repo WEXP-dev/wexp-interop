@@ -1,6 +1,6 @@
 {
   "schema_version": "0.4.0",
-  "record_revision": 2,
+  "record_revision": 3,
   "experiment_id": "emilia-interop-002",
   "package_id": "pkg-001",
   "title": "WEXP × EMILIA INTEROP-002 — historical INTEROP-002 result",
@@ -10,19 +10,28 @@
     "execution": "archived-evidence-replayed",
     "independent_reproduction": "not-performed",
     "comparison": "split-verdict",
-    "publication": "prepared"
+    "publication": "published"
   },
   "publication": {
     "version": "emilia-interop-002/pkg-001",
-    "carriers": []
+    "date": "2026-11-12",
+    "carriers": [
+      {
+        "kind": "zenodo",
+        "url": "https://zenodo.org/records/24180793",
+        "identifier": "10.5281/zenodo.24180793"
+      }
+    ],
+    "version_doi": "10.5281/zenodo.24180793",
+    "concept_doi": "10.5281/zenodo.24180792"
   },
   "artifact": {
     "path": "source-archive/WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip",
     "format": "zip",
     "bytes": 192089,
     "sha256": "37412ba521b9bca9901b54142290356a0aedf8bc7cd635e731d7660916cf770e",
-    "source_url": "ni:///sha-256;N0ErpSG5vKmQG1QUIpA1agrt-Lx81jXnMddmCRbPdw4",
-    "role": "Publication Candidate 003 archive container, selected by content digest (RFC 6920 named-information URI). It has no public carrier yet; the URI identifies bytes, not a location."
+    "source_url": "https://zenodo.org/records/24180793/files/WEXP-EMILIA-INTEROP-002-PUBLICATION-CANDIDATE-003.zip?download=1",
+    "role": "Publication Candidate 003 archive container, selected by content digest and preserved byte-for-byte in the Zenodo archival publication. Historical state statements inside the ZIP are unchanged."
   },
   "payload": {
     "path": "payload",
@@ -38,7 +47,8 @@
       "evidence/SOURCES.json",
       "payload/publication-candidate/PUBLICATION-CANDIDATE-MANIFEST-003.json",
       "payload/publication-candidate/FINAL-RECORD-002.json",
-      "payload/publication-candidate/CANDIDATE-CHECKS-002.json"
+      "payload/publication-candidate/CANDIDATE-CHECKS-002.json",
+      "evidence/ZENODO-PUBLICATION.json"
     ],
     "implementation_execution_performed": false
   },
@@ -101,7 +111,7 @@
     "The two scopes of the historical result are separate claims and are not collapsed into one verdict; the comparison status split-verdict only points to the record that holds them.",
     "Candidate 003 is a publication candidate: its own records state publication_authorized false and that counterparty exact-byte review was not yet performed. Those historical bytes are unchanged.",
     "The selected ZIP is authoritative for archive composition; payload is its verified file-byte extraction, not the container bytes. The ZIP has no directory entries and its member modes carry no file-type bit.",
-    "No public carrier, release tag or DOI exists for this package; the Zenodo fields are intentionally empty pending a separate decision.",
+    "The 2026-11-12 Zenodo archival publication identifies the original Candidate 003 bytes. It adds no implementation execution, independent reproduction or new interoperability result. No GitHub release or tag is created by this archival publication.",
     "License: Apache-2.0 for code and machine-readable vectors of both sides, as confirmed on 2026-11-12; narrative documents are not separately covered by that confirmation and no broader grant is inferred.",
     "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): physical truth of an execution or effect",
     "Prohibited claim (charter section 14, verbatim from FINAL-RECORD-002): correctness, security, or completeness of WEXP or EMILIA",

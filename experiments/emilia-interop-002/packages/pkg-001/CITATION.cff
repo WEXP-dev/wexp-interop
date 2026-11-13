@@ -6,8 +6,14 @@ authors:
     given-names: Mikhail
   - family-names: Schrock
     given-names: Iman
-license: Apache-2.0
+license-url: "https://github.com/WEXP-dev/wexp-interop/blob/c5abfcba3fdb0a4ea83434ad2f84c87ec5b7b109/experiments/emilia-interop-002/packages/pkg-001/LICENSE-SCOPE.md"
 repository-code: "https://github.com/WEXP-dev/wexp-interop"
 version: "emilia-interop-002/pkg-001"
-# Prepared, not published. No release date, DOI or Zenodo record yet:
-# those fields are intentionally empty pending a separate decision.
+date-released: "2026-11-12"
+doi: "10.5281/zenodo.24180793"
+url: "https://zenodo.org/records/24180793"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24180792"
+    description: "Concept DOI for the INTEROP-002 version family; cite the version DOI above for Candidate 003."
+# The pinned license scope distinguishes code/vectors, narrative documents and background material.
