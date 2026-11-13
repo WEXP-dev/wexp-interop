@@ -31,7 +31,10 @@ point in the chronology, before execution.
 
 ## Licensing
 
-The new trial code is supplied under the collection's Apache-2.0 license.
+The new trial code is supplied under Apache-2.0
+([license text](../../../LICENSES/Apache-2.0.txt)), as declared at the pre-run
+commit; collection tooling under `scripts/` uses the separate MIT notice
+described in [the license scope](../../../LICENSES/README.md).
 Referenced historical and third-party inputs keep their existing scoped terms.
 The public Core appraiser remains in its own pinned repository; it is not
 relicensed or copied into this directory.

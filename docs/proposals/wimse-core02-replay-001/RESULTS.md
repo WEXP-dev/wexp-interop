@@ -82,6 +82,7 @@ full Core conformance, validation of real action occurrence, or a blind trial.
 No two-world operations, AAC experiment, Coverage evaluation, PostgreSQL
 profile or general cross-carrier interoperability were executed. The frozen
 historical WIMSE/EMILIA packages and their outcomes remain unchanged. This
-bounded migration record is intentionally outside the collection catalog:
-formal promotion requires a separately reviewed package card and verification
-profile, not reuse of an incompatible historical profile identifier.
+bounded migration record was written outside the collection catalog. On
+28 October 2026 it was admitted as [package 002](../../../experiments/wimse-aar-02-interop-001/packages/pkg-002/README.md)
+with its own card and verification profile `wimse-core02-migration-v1`,
+not by reuse of an incompatible historical profile identifier; admission added no run.

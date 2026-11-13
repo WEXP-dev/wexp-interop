@@ -9,7 +9,7 @@ This repository collects versioned experimental packages and their reproduction 
 | [WEXP × EMILIA INTEROP-001](experiments/emilia-interop-001/packages/pkg-001/README.md) | `pkg-001` · [version DOI](https://doi.org/10.5281/zenodo.22056151) | **Branch A — Explicit Bridge Required** | Historical controlled-fixture record; migration replays archived evidence. |
 | [WEXP × WIMSE AAR-02 INTEROP-001](experiments/wimse-aar-02-interop-001/packages/pkg-001/README.md) | `pkg-001` · [exact carrier and archive](experiments/wimse-aar-02-interop-001/packages/pkg-001/record.json) | **No local decision difference from the strong native baseline** | 130 expected case outcomes, 16 output refusals and two controlled worlds; known reference, coordinated local execution. |
 | [WIMSE AAR / Core-02 bounded migration](experiments/wimse-aar-02-interop-001/packages/pkg-002/README.md) | `pkg-002` · [retained run identities](experiments/wimse-aar-02-interop-001/packages/pkg-002/record.json) | **No local decision difference from the strong native baseline** | 130 original cases, 35 full appraisals; catalog admission adds no execution. |
-| [SCITT Receipt as the Core-02 boundary finding](experiments/scitt-receipt-boundary-001/packages/pkg-001/README.md) | `pkg-001` · [card](experiments/scitt-receipt-boundary-001/packages/pkg-001/record.json) | **Both appraisers equal the frozen expectations on all four inputs** | One pinned-emulator Receipt mapped to the boundary finding, ceiling observation; four inputs; expectations derived in isolation before any appraiser ran. |
+| [SCITT Receipt as the Core-02 boundary finding](experiments/scitt-receipt-boundary-001/packages/pkg-001/README.md) | `pkg-001` · [card](experiments/scitt-receipt-boundary-001/packages/pkg-001/record.json) | **Both appraisers equal the frozen expectations on all four inputs**; replayed on 10 November 2026 by Laurent Lemonnier in GitHub Actions in his own repository with the same published code and public expectations, with the same result (not an independent implementation; SCITT registration not repeated) | One pinned-emulator Receipt mapped to the boundary finding, ceiling observation; four inputs; expectations derived in a separate same-project session before any appraiser ran; its recorded file list is in the payload, and that it saw no implementation or corpus is an operator declaration. |
 | [WEXP × EMILIA INTEROP-002](experiments/emilia-interop-002/packages/pkg-001/README.md) | `pkg-001` · [version DOI](https://doi.org/10.5281/zenodo.24180793) · [card](experiments/emilia-interop-002/packages/pkg-001/record.json) | **Split verdict: bridge sufficiency SUPPORTED; joint comparison INCONCLUSIVE (5/7), NOT_DERIVED (2/7)** | Historical INTEROP-002 result (Candidate 003, Core-01 surface, EMILIA 9a04bea7); archived evidence replayed; exact archive published on Zenodo; Apache-2.0 confirmed for code and vectors. |
 
 An experiment's presence in this collection does not establish conformance, semantic equivalence, full interoperability, or IETF adoption. The card states what was executed, how comparison was made, and what kind of independent reproduction is available. Use those dimensions separately.
@@ -17,8 +17,8 @@ An experiment's presence in this collection does not establish conformance, sema
 ## Proposals and bounded follow-on trials
 
 [AAC completeness preparation](docs/proposals/aac-completeness-001/README.md)
-contains the proposed clarification, two examples, an upstream patch and current
-public tooling pins. No AAC integration or jointly agreed profile is claimed.
+contains the proposed clarification, two examples, an upstream patch and the
+public tooling pins observed on 28 October 2026. No AAC integration or jointly agreed profile is claimed.
 
 [WIMSE / Core-02 migration trial](docs/proposals/wimse-core02-replay-001/RESULTS.md)
 preserves the original bounded 130-case replay and its complete observations.
@@ -48,4 +48,4 @@ python3 -m venv /tmp/wexp-collection-venv
 
 Use a new virtual environment path if that example path already exists. Package-specific commands are in each package's reproduction instructions. CI verifies all collection changes; its success applies to the exact checked commit and the executed checks.
 
-The historical `wexp-emilia-interop-001` tag and release remain the identity of the existing EMILIA publication. New experiments use their own namespaced package tags and publication records.
+The historical `wexp-emilia-interop-001` tag and release remain the identity of the EMILIA INTEROP-001 publication; EMILIA INTEROP-002 is identified by its Zenodo version DOI and has no GitHub release or tag. New experiments use their own namespaced package tags and publication records.

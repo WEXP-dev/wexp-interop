@@ -46,7 +46,7 @@ Independence statements distinguish observable common code/dependencies from dec
 
 ## Cards and generated catalog
 
-Each `record.json` declares a supported schema version (`0.1.0` for historical cards, `0.2.0` or `0.3.0` below), has an integer `record_revision`, and resides outside `payload/`. Its identity must agree with its directory. Citations, reproduction instructions and evidence references are package-relative paths.
+Each `record.json` declares a supported schema version (`0.1.0` for historical cards, `0.2.0`, `0.3.0` or `0.4.0` below), has an integer `record_revision`, and resides outside `payload/`. Its identity must agree with its directory. Citations, reproduction instructions and evidence references are package-relative paths.
 
 `catalog.json` is generated only by:
 
