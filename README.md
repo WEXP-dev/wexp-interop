@@ -16,6 +16,9 @@ An experiment's presence in this collection does not establish conformance, sema
 
 ## Proposals and bounded follow-on trials
 
+New formats are taken through a fixed path: pinned bytes, mapping, freeze, run. See
+[docs/proposals/README.md](docs/proposals/README.md).
+
 [AAC completeness preparation](docs/proposals/aac-completeness-001/README.md)
 contains the proposed clarification, two examples, an upstream patch and the
 public tooling pins observed on 28 October 2026. No AAC integration or jointly agreed profile is claimed.

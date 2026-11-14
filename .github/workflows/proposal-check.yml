@@ -1,0 +1,126 @@
+name: Proposal order check and appraisal run
+
+# For every frozen proposal under docs/proposals/: verify the freeze digests,
+# verify from the commit history that the freeze was committed before the
+# evidence of a run, then run both appraisers at the pinned revisions and
+# compare every result component with the frozen expectations. If evidence of a
+# run is committed, it must equal what this run produces.
+#
+# A result that differs from its expectation is reported, not failed: that is a
+# finding about the mapping or the text. The job fails only when the order was
+# not kept, a frozen file changed, an appraiser did not complete, or committed
+# evidence is not reproducible.
+#
+# The run job holds a read-only token and no secret. On a pull request from a
+# branch of this repository a second job posts the summary as a comment; it
+# never checks out or executes anything.
+
+on:
+  pull_request:
+    paths:
+      - 'docs/proposals/**'
+      - 'scripts/proposals/**'
+      - '.github/workflows/proposal-check.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/proposals/**'
+      - 'scripts/proposals/**'
+      - '.github/workflows/proposal-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    name: order check and run
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+    steps:
+      - name: Check out the exact event commit with history
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Tooling tests
+        run: python -B -m unittest discover -s scripts/proposals -p 'test_*.py'
+      - name: Check and run every frozen proposal
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          out="$RUNNER_TEMP/proposal-summary"
+          mkdir -p "$out"
+          : > "$out/summary.md"
+          found=0
+          for freeze in docs/proposals/*/FREEZE.json; do
+            [ -f "$freeze" ] || continue
+            dir="$(dirname "$freeze")"
+            found=$((found + 1))
+            echo "::group::$dir"
+            # The order is read from the commit history, which a squash merge
+            # collapses; it is therefore checked on the pull request, where the
+            # freeze and the run are still separate commits.
+            if [ "$EVENT" = "pull_request" ]; then
+              python -B scripts/proposals/freeze_proposal.py check "$dir" --git
+            else
+              python -B scripts/proposals/freeze_proposal.py check "$dir"
+            fi
+            ref="$(python -I -c 'import json,sys; print(json.load(open(sys.argv[1]))["wexp_ref"]["commit"])' "$dir/SOURCE-PINS.json")"
+            chk="$(python -I -c 'import json,sys; print(json.load(open(sys.argv[1]))["wexp_check"]["commit"])' "$dir/SOURCE-PINS.json")"
+            case "$ref$chk" in *[!0-9a-f]*) echo "::error::pins are not commit ids"; exit 1 ;; esac
+            for pair in "wexp-ref:$ref" "wexp-check:$chk"; do
+              name="${pair%%:*}"; commit="${pair##*:}"
+              if [ ! -d "$RUNNER_TEMP/$name-$commit" ]; then
+                git clone --quiet "https://github.com/WEXP-dev/$name.git" "$RUNNER_TEMP/$name-$commit"
+                git -C "$RUNNER_TEMP/$name-$commit" checkout --quiet "$commit"
+              fi
+            done
+            python -B scripts/proposals/run_proposal.py "$dir" \
+              --wexp-ref "$RUNNER_TEMP/wexp-ref-$ref" --wexp-check "$RUNNER_TEMP/wexp-check-$chk" \
+              --compare-committed --summary "$out/summary.md"
+            echo "::endgroup::"
+          done
+          if [ "$found" -eq 0 ]; then echo "No frozen proposal in this tree." >> "$out/summary.md"; fi
+          cat "$out/summary.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Hand the summary across
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: proposal-summary
+          path: ${{ runner.temp }}/proposal-summary/
+          if-no-files-found: warn
+          retention-days: 14
+
+  comment:
+    name: post the summary
+    needs: run
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Receive the summary
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: proposal-summary
+          path: summary
+      - name: Post it on the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          [ -s summary/summary.md ] || { echo "empty summary; nothing posted"; exit 0; }
+          gh pr comment "$PR" --repo "$REPO" --body-file summary/summary.md

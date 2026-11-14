@@ -1,0 +1,85 @@
+name: Proposal skeleton
+
+# Started by a maintainer for one interoperability check. Creates the skeleton
+# of a proposal on a new branch: the pinned public files with their SHA-256 and
+# size, and templates for the mapping, the inputs and the expectations. It
+# writes no mapping and runs no appraiser.
+#
+# The inputs come from the automatic first reply on the check (repository,
+# commit and path of each pinned file). They are passed through the environment
+# and validated by the script; nothing is interpolated into a command.
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Directory name, for example atx-boundary-001'
+        required: true
+      title:
+        description: 'One plain line: what is examined'
+        required: true
+      issue:
+        description: 'Number of the check in WEXP-dev/interop-test-lab (optional)'
+        required: false
+      pins:
+        description: 'Pinned files, space separated: owner/repo@<40-hex commit>:path'
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  skeleton:
+    name: create the skeleton branch
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Check out main
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Build the skeleton
+        env:
+          SLUG: ${{ inputs.slug }}
+          TITLE: ${{ inputs.title }}
+          ISSUE: ${{ inputs.issue }}
+          PINS: ${{ inputs.pins }}
+        run: |
+          set -euo pipefail
+          args=(--slug "$SLUG" --title "$TITLE")
+          case "$ISSUE" in
+            '') ;;
+            *[!0-9]*) echo "::error::issue must be a number"; exit 1 ;;
+            *) args+=(--issue "$ISSUE") ;;
+          esac
+          set -f
+          for pin in $PINS; do args+=(--pin "$pin"); done
+          set +f
+          python -B scripts/proposals/new_proposal.py "${args[@]}"
+      - name: Commit, push the branch and open a draft pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUG: ${{ inputs.slug }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          case "$SLUG" in *[!a-z0-9-]*|'') echo "::error::unexpected slug"; exit 1 ;; esac
+          branch="proposal/$SLUG"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add "docs/proposals/$SLUG"
+          git commit --quiet -m "proposal $SLUG: skeleton with pinned public bytes"
+          git push --quiet "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" "$branch"
+          gh pr create --repo "$REPO" --base main --head "$branch" --draft \
+            --title "proposal $SLUG: mapping and expectations (draft)" \
+            --body "Skeleton created for one interoperability check. Next: the mapping and the expected results, then the freeze, then the run. See docs/proposals/README.md." \
+            || echo "::warning::the branch is pushed; open the pull request by hand (this repository does not let Actions create pull requests)"
