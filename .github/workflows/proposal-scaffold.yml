@@ -76,6 +76,8 @@ jobs:
           for pin in $PINS; do args+=(--pin "$pin"); done
           set +f
           python -B scripts/proposals/new_proposal.py "${args[@]}"
+          # The results pages are generated from the rows, so a new row changes them.
+          python -B scripts/proposals/result_table.py
       - name: Ask Software Heritage to archive the pinned repositories
         if: inputs.archive
         continue-on-error: true
@@ -103,7 +105,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
-          git add "docs/proposals/$SLUG"
+          git add "docs/proposals/$SLUG" docs/proposals/RESULTS.md docs/proposals/OPEN-READINGS.md
           git commit --quiet -m "proposal $SLUG: skeleton with pinned public bytes"
           git push --quiet "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" "$branch"
           gh pr create --repo "$REPO" --base main --head "$branch" --draft \
