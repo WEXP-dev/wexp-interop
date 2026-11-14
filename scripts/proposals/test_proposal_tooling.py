@@ -6,6 +6,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -229,6 +230,47 @@ class ResultRowTest(unittest.TestCase):
         self.assertEqual(result_table.initiated_by(saved['initiation']),
                          'Naming not yet agreed with the party; the owner of a repository of the format '
                          '(GitHub public record)')
+
+    def test_the_skeleton_lists_the_fields_of_a_pinned_file_and_none_of_its_values(self):
+        record = json.dumps({'receipt': {'id': 'SECRET-VALUE', 'signed': True, 'steps': [{'n': 1}, {'n': None}]},
+                             'tags': [], '<img src=x>|`': 2}).encode()
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = new_proposal.build('sample-topic-001', 'Sample receipts', [PIN], 26, Path(tmp),
+                                           fetch=lambda pin: record)
+            page = (directory / 'FIELDS.md').read_text()
+            self.assertIn('FIELDS.md', lib.frozen_files(directory))
+            self.assertIn('Row agreed.', (directory / 'README.md').read_text())
+        for expected in ('| `receipt.id` | string | _to decide_ |', '| `receipt.signed` | boolean |',
+                         '| `receipt.steps[].n` | null, number |', '| `tags[]` | empty list |',
+                         '(a key of 13 characters, not shown)'):
+            self.assertIn(expected, page)
+        for absent in ('SECRET-VALUE', '<img'):
+            self.assertNotIn(absent, page)
+
+    def test_a_pinned_file_that_is_not_plain_json_is_left_to_be_listed_by_hand(self):
+        for data in (b'not json', b'{"a": 1, "a": 2}', b'[' * 100000):
+            with self.subTest(data=data[:12]):
+                page = new_proposal.fields_page('Sample', [(lib.parse_pin(PIN), data)])
+                self.assertIn('List its fields by hand', page)
+
+    def test_a_check_by_a_stranger_is_not_listed_until_the_author_agreed_the_row(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            directory = new_proposal.build('sample-topic-001', 'Somebody elses format', [PIN], 26, root,
+                                           fetch=lambda pin: b'{}')
+            pages = result_table.build(root)
+            self.assertNotIn('Somebody elses format', pages['RESULTS.md'])
+            self.assertIn('1 proposal(s) not listed', pages['RESULTS.md'])
+            for name, text in pages.items():
+                (root / name).write_text(text)
+            with mock.patch.object(sys, 'argv', ['x', '--check', '--root', str(root)]):
+                self.assertEqual(result_table.main(), 0)
+            with mock.patch.object(sys, 'argv', ['x', '--check', '--publishable', '--root', str(root)]):
+                self.assertEqual(result_table.main(), 2)
+            saved = json.loads((directory / lib.RESULT_ROW).read_text())
+            saved['author_review'] = 'row-agreed'
+            (directory / lib.RESULT_ROW).write_text(json.dumps(saved))
+            self.assertIn('Somebody elses format', result_table.build(root)['RESULTS.md'])
 
     def test_the_result_row_is_not_part_of_the_freeze(self):
         with tempfile.TemporaryDirectory() as tmp:

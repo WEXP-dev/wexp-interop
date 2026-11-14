@@ -17,6 +17,7 @@ name: Proposal order check and appraisal run
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - 'docs/proposals/**'
       - 'scripts/proposals/**'
@@ -54,6 +55,11 @@ jobs:
         run: python -B -m unittest discover -s scripts/proposals -p 'test_*.py'
       - name: Result rows are valid and the results pages are what they produce
         run: python -B scripts/proposals/result_table.py --check
+      # A check asked for by a party with no established link to the format stays a draft pull
+      # request until the author of the format has agreed its row.
+      - name: Nothing that is ready to merge carries a withheld row
+        if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+        run: python -B scripts/proposals/result_table.py --check --publishable
       - name: Check and run every frozen proposal
         env:
           EVENT: ${{ github.event_name }}
