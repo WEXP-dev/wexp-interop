@@ -55,7 +55,7 @@ mapping showed to be open. The second list is input to the next revision of the 
 |---|---|---|
 | Material | public files at a commit, or an Internet-Draft revision | sent outside public channels; pinned with `--local-file` |
 | Where the proposal lives | a branch and pull request in this repository | a directory outside any public repository (`--track private --root <dir>`) |
-| Skeleton | the "Proposal skeleton" workflow, or the script | the script only; the workflow refuses nothing because it never sees private material |
+| Skeleton | the "Proposal skeleton" workflow, or the script | the script only; the workflow is for the open track |
 | Mapping, expectations, runs | public, frozen before any run | the same procedure, kept in that directory |
 | What is published | everything, with the row agreed with the author | only the disclosure the party agreed: nothing; that a check took place; or that, with the SHA-256 of the material |
 
