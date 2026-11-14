@@ -25,6 +25,8 @@ PIN_RE = re.compile(rf'^({NAME})/({NAME})@([0-9a-f]{{40}}):([A-Za-z0-9._-]+(?:/[
 RESULT_ROW = 'RESULT-ROW.json'
 FREEZE = 'FREEZE.json'
 RAW_HOST = 'raw.githubusercontent.com'
+IETF_HOST = 'www.ietf.org'
+DRAFT_RE = re.compile(r'^(draft-[a-z0-9]+(?:-[a-z0-9]+)*)-([0-9]{2})$')
 MAX_FILE_BYTES = 2 * 1024 * 1024
 CORE02_XML_SHA256 = 'de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782'
 WEXP_REF_COMMIT = '56289024c9ee748111f1f1d4f42728ffe04d8d69'
@@ -61,6 +63,30 @@ def parse_pin(text: str) -> dict:
 class _NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, *args, **kwargs):
         return None
+
+
+def parse_draft(text: str) -> dict:
+    m = DRAFT_RE.match(text.strip())
+    if not m or len(text.strip()) > 120:
+        raise ProposalError(f'an Internet-Draft is named with its two-digit revision, such as draft-example-record-02; '
+                            f'got {text[:80]!r}')
+    return {'name': m.group(1), 'revision': m.group(2),
+            'url': f'https://{IETF_HOST}/archive/id/{m.group(1)}-{m.group(2)}.txt'}
+
+
+def fetch_draft(draft: dict) -> bytes:
+    """The archived text of one Internet-Draft revision, from the IETF archive only, the same
+    address the automatic first reply pins."""
+    try:
+        opener = urllib.request.build_opener(_NoRedirect)
+        with opener.open(urllib.request.Request(draft['url'], headers={'User-Agent': 'wexp-interop-proposals'}),
+                         timeout=20) as response:
+            data = response.read(MAX_FILE_BYTES + 1)
+    except (urllib.error.URLError, OSError) as error:
+        raise ProposalError(f'cannot read {draft["name"]}-{draft["revision"]}: {error}')
+    if len(data) > MAX_FILE_BYTES:
+        raise ProposalError(f'{draft["name"]}-{draft["revision"]} is larger than {MAX_FILE_BYTES} bytes')
+    return data
 
 
 def fetch_pinned(pin: dict) -> bytes:

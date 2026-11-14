@@ -30,22 +30,23 @@ that the external format conforms or does not conform to WEXP Core.
 {origin}
 ## Steps, in order
 
-1. **Pinned bytes.** [SOURCE-PINS.json](SOURCE-PINS.json) names the exact public files this proposal
-   refers to, with SHA-256 and size, and the revisions of both appraisers.
+1. **Pinned bytes.** [SOURCE-PINS.json](SOURCE-PINS.json) names the exact public files and
+   Internet-Draft revisions this proposal refers to, with SHA-256 and size, and the revisions of both
+   appraisers. It is part of the freeze.
 2. **Mapping and expectations.** [FIELDS.md](FIELDS.md) lists the fields of the pinned files, with
    nothing decided about them. [MAPPING.md](MAPPING.md) says how the external record maps to a
    normalized Core-02 input. `inputs/<case>.json` holds `{{"id": ..., "input": ...}}` and
    `expectations/<case>.json` holds `{{"id": ..., "expected": ...}}` with all twenty result components.
    Corrections from the author go in as a new revision section of MAPPING.md.
-3. **Freeze.** `python3 -B scripts/proposals/freeze_proposal.py freeze docs/proposals/{slug}` writes
+3. **Freeze.** `python3 -B scripts/proposals/freeze_proposal.py freeze {path}` writes
    FREEZE.json. Commit it before any appraiser runs.
-4. **Run.** `python3 -B scripts/proposals/run_proposal.py docs/proposals/{slug} --wexp-ref <checkout>
+4. **Run.** `python3 -B scripts/proposals/run_proposal.py {path} --wexp-ref <checkout>
    --wexp-check <checkout> --write` runs both appraisers and writes `evidence/`. Commit it after the
    freeze. A difference from an expectation is recorded as it is; expectations are not edited after a run.
 
 5. **Result row.** [RESULT-ROW.json](RESULT-ROW.json) says what was examined, who initiated the check
    and how that is known, and whether the author of the format agreed the row. It starts as a draft
-   that names nobody. `python3 -B scripts/proposals/result_table.py` rebuilds the results page from it.
+   that names nobody. `python3 -B scripts/proposals/result_table.py{root_arg}` rebuilds the results page from it.
 
 ## For the author of the format
 
@@ -149,21 +150,36 @@ def fields_page(title: str, files: list[tuple[dict, bytes]]) -> str:
     return '\n'.join(out)
 
 
+def command_path(path: Path) -> str:
+    """How a command run from the top of this repository names ``path``."""
+    try:
+        return path.resolve().relative_to(lib.REPO_ROOT).as_posix()
+    except ValueError:
+        return str(path.resolve())
+
+
 def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path, fetch=lib.fetch_pinned,
-          relation: str = 'not-established') -> Path:
+          relation: str = 'not-established', drafts: list[str] | None = None, fetch_draft=lib.fetch_draft) -> Path:
     directory = lib.proposal_dir(slug, root)
     if directory.exists():
         raise lib.ProposalError(f'{directory.name} already exists; a proposal is never overwritten')
     if not title.strip() or len(title) > 120 or any(c in title for c in '\r\n`<>[]'):
         raise lib.ProposalError('title must be one plain line of at most 120 characters')
     parsed = [lib.parse_pin(p) for p in pins]
-    if not parsed:
-        raise lib.ProposalError('at least one --pin is required: a proposal is about exact bytes')
+    named = [lib.parse_draft(d) for d in (drafts or [])]
+    if len({(d['name'], d['revision']) for d in named}) != len(named):
+        raise lib.ProposalError('an Internet-Draft revision is named once')
+    if not parsed and not named:
+        raise lib.ProposalError('at least one --pin or --draft is required: a proposal is about exact bytes')
     files, contents = [], []
     for pin in parsed:
         data = fetch(pin)
         files.append({**pin, 'sha256': lib.sha256(data), 'bytes': len(data)})
         contents.append((pin, data))
+    documents = []
+    for draft in named:
+        data = fetch_draft(draft)
+        documents.append({**draft, 'sha256': lib.sha256(data), 'bytes': len(data)})
     if relation not in result_table.RELATIONS:
         raise lib.ProposalError(f'relation is one of {tuple(result_table.RELATIONS)}')
     # The draft row names nobody and therefore no repository or draft either; both are added with
@@ -175,10 +191,13 @@ def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path,
                   f'[WEXP-dev/interop-test-lab#{issue}](https://github.com/WEXP-dev/interop-test-lab/issues/{issue}).\n\n')
     (directory / 'inputs').mkdir(parents=True)
     (directory / 'expectations').mkdir()
-    (directory / 'README.md').write_text(README.format(title=title.strip(), slug=slug, origin=origin), encoding='utf-8')
+    root_arg = '' if root.resolve() == lib.PROPOSALS.resolve() else f' --root {command_path(root)}'
+    (directory / 'README.md').write_text(README.format(title=title.strip(), slug=slug, origin=origin,
+                                                       path=command_path(directory), root_arg=root_arg), encoding='utf-8')
     (directory / 'FIELDS.md').write_text(fields_page(title.strip(), contents), encoding='utf-8')
     (directory / 'MAPPING.md').write_text(MAPPING.format(title=title.strip(), core02=lib.CORE02_XML_SHA256), encoding='utf-8')
     pins_record = {'core02_xml_sha256': lib.CORE02_XML_SHA256, 'external_files': files,
+                   'internet_drafts': documents,
                    'wexp_ref': {'repository': 'WEXP-dev/wexp-ref', 'commit': lib.WEXP_REF_COMMIT},
                    'wexp_check': {'repository': 'WEXP-dev/wexp-check', 'commit': lib.WEXP_CHECK_COMMIT}}
     if issue is not None:
@@ -199,18 +218,22 @@ def main() -> int:
     ap.add_argument('--slug', required=True)
     ap.add_argument('--title', required=True)
     ap.add_argument('--pin', action='append', default=[])
+    ap.add_argument('--draft', action='append', default=[], help='an Internet-Draft with its revision, such as draft-example-record-02')
     ap.add_argument('--issue', type=int)
     ap.add_argument('--relation', default='not-established')
     ap.add_argument('--root', type=Path, default=lib.PROPOSALS)
     a = ap.parse_args()
     try:
-        directory = build(a.slug, a.title, a.pin, a.issue, a.root, relation=a.relation)
+        directory = build(a.slug, a.title, a.pin, a.issue, a.root, relation=a.relation, drafts=a.draft)
     except lib.ProposalError as error:
         print(f'refused: {error}', file=sys.stderr)
         return 2
     print(f'created {directory}')
-    for f in json.loads((directory / 'SOURCE-PINS.json').read_text())['external_files']:
+    record = json.loads((directory / 'SOURCE-PINS.json').read_text())
+    for f in record['external_files']:
         print(f"  {f['repository']}@{f['commit'][:8]}:{f['path']}  sha256 {f['sha256']}  {f['bytes']} bytes")
+    for d in record['internet_drafts']:
+        print(f"  {d['name']}-{d['revision']}  sha256 {d['sha256']}  {d['bytes']} bytes")
     return 0
 
 
