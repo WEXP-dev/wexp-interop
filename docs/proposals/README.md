@@ -32,8 +32,16 @@ differently when the author of a format asked for it than when a stranger did.
 | no established link | stated as such; it is not an obstacle to a check |
 
 The skeleton writes the row as a draft that names nobody. A name, and the repository or draft the
-relation refers to, are added only when the person agrees. A party who asks not to be named is
-recorded as such, with the kind of relation and no name, repository or draft.
+relation refers to, are added only when the person agrees. Until the person has answered, the row
+says that naming is not yet agreed; a row cannot be marked agreed in that state. A party who asks
+not to be named is recorded as such, with the kind of relation and no name, repository or draft.
+The kind of relation is still published, and with few possible parties it can narrow down who it
+was; say so to a party who asks not to be named.
+
+The row records who asked for the check. Who read the mapping, who agreed the row, and who ran the
+run are separate facts: the first two are kept in the pull request and in `author_review`, the
+third in the evidence. A public member of an organization is not thereby speaking for it, and one
+author of an Internet-Draft is not thereby speaking for the others.
 
 A row also records two things that outlast the check: changes the author made to their own
 specification afterwards, each with a public reference, and readings of the Core-02 text that the
@@ -58,7 +66,10 @@ request. It is a courtesy: no result depends on it.
   after a run.
 - A result row must be well formed, must not carry a name together with "not named", and must not
   be marked agreed unless the author of the format agreed it. The counts on the results page come
-  from the committed evidence, not from the row. The two pages must equal what the rows produce.
+  from the committed evidence, not from the row, and are published only for a proposal that has a
+  freeze: evidence with no freeze is refused. The two pages must equal what the rows produce.
+- The summary comment on a pull request names the commit and the run it describes. When the check
+  does not complete for a commit, the comment says so in place of the earlier result.
 
 ## What they do not hold
 

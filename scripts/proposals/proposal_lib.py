@@ -23,6 +23,7 @@ SHA_RE = re.compile(r'^[0-9a-f]{40}$')
 NAME = r'[A-Za-z0-9](?:[A-Za-z0-9._-]{0,98}[A-Za-z0-9_])?'
 PIN_RE = re.compile(rf'^({NAME})/({NAME})@([0-9a-f]{{40}}):([A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)*)$')
 RESULT_ROW = 'RESULT-ROW.json'
+FREEZE = 'FREEZE.json'
 RAW_HOST = 'raw.githubusercontent.com'
 MAX_FILE_BYTES = 2 * 1024 * 1024
 CORE02_XML_SHA256 = 'de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782'

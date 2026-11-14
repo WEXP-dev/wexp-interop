@@ -92,12 +92,6 @@ jobs:
             echo "::endgroup::"
           done
           if [ "$found" -eq 0 ]; then echo "No frozen proposal in this tree." >> "$out/summary.md"; fi
-          {
-            echo "<!-- proposal-check-summary -->"
-            echo "_Result of the latest push; this comment is replaced on every push._"
-            echo
-            cat "$out/summary.md"
-          } > "$out/comment.md"
           cat "$out/summary.md" >> "$GITHUB_STEP_SUMMARY"
       - name: Hand the summary across
         if: always()
@@ -111,7 +105,9 @@ jobs:
   comment:
     name: post the summary
     needs: run
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    # It also runs when the check did not complete, so that an earlier result does not stay
+    # under a commit it does not describe.
+    if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
@@ -119,6 +115,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Receive the summary
+        continue-on-error: true
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: proposal-summary
@@ -127,10 +124,25 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          RUN: ${{ github.run_id }}
+          SERVER: ${{ github.server_url }}
+          RESULT: ${{ needs.run.result }}
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          [ -s summary/comment.md ] || { echo "empty summary; nothing posted"; exit 0; }
+          case "$SHA" in *[!0-9a-f]*|"") echo "::error::unexpected commit id"; exit 1 ;; esac
+          mkdir -p summary
+          {
+            echo "<!-- proposal-check-summary -->"
+            echo "_Commit \`$SHA\`, [run $RUN]($SERVER/$REPO/actions/runs/$RUN). This comment describes that commit only and is replaced on every push._"
+            echo
+            if [ "$RESULT" = "success" ] && [ -s summary/summary.md ]; then
+              cat summary/summary.md
+            else
+              echo "**The check did not complete for this commit.** Results shown for earlier commits do not apply to it. The run log says where it stopped."
+            fi
+          } > summary/comment.md
           # Only the number of this workflow's own earlier comment is read back.
           earlier="$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
             --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- proposal-check-summary -->"))) | .id' | head -n 1)"

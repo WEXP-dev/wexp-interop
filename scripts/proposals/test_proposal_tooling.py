@@ -212,7 +212,7 @@ def row(**changes):
     return base
 
 
-NAMED_OWNER = {'named': True, 'initiated_by': 'Dana Example', 'relation': 'repository-owner',
+NAMED_OWNER = {'named': True, 'not_named_because': None, 'initiated_by': 'Dana Example', 'relation': 'repository-owner',
                'relation_subject': 'acme/receipts', 'established_by': 'github-public-record'}
 
 
@@ -227,7 +227,7 @@ class ResultRowTest(unittest.TestCase):
                           saved['initiation']['relation_subject']), ('draft', False, None, None))
         self.assertEqual(saved['initiation']['relation'], 'repository-owner')
         self.assertEqual(result_table.initiated_by(saved['initiation']),
-                         'A party who asked not to be named; the owner of a repository of the format '
+                         'Naming not yet agreed with the party; the owner of a repository of the format '
                          '(GitHub public record)')
 
     def test_the_result_row_is_not_part_of_the_freeze(self):
@@ -246,7 +246,20 @@ class ResultRowTest(unittest.TestCase):
                          'Dana Example, an author of Internet-Draft `draft-example-record-02` '
                          '(confirmed with the person directly)')
         self.assertEqual(said(result_table.validate(row())['initiation']),
+                         'Naming not yet agreed with the party; no established link to the format')
+        asked = result_table.validate(row(initiation={'not_named_because': 'asked-not-to-be-named'}))
+        self.assertEqual(said(asked['initiation']),
                          'A party who asked not to be named; no established link to the format')
+
+    def test_not_having_asked_about_the_name_is_kept_apart_from_a_request_not_to_be_named(self):
+        for wrong in ({'not_named_because': None}, {'not_named_because': 'other'},
+                      {**NAMED_OWNER, 'not_named_because': 'asked-not-to-be-named'}):
+            with self.subTest(wrong=wrong), self.assertRaises(lib.ProposalError):
+                result_table.validate(row(initiation=wrong))
+        with self.assertRaises(lib.ProposalError):
+            result_table.validate(row(status='agreed', summary='Two cases.', author_review='row-agreed'))
+        result_table.validate(row(status='agreed', summary='Two cases.', author_review='row-agreed',
+                                  initiation={'not_named_because': 'asked-not-to-be-named'}))
 
     def test_authorship_of_a_draft_is_never_taken_from_a_public_record_of_an_account(self):
         claim = {**NAMED_OWNER, 'relation': 'internet-draft-author', 'relation_subject': 'draft-example-record-02'}
@@ -287,6 +300,10 @@ class ResultRowTest(unittest.TestCase):
             pages = result_table.build(root)
             self.assertIn('No run committed', pages['RESULTS.md'])
             (directory / 'evidence').mkdir()
+            (directory / 'evidence' / 'comparison.json').write_text('{"cases": {}}')
+            with self.assertRaises(lib.ProposalError):
+                result_table.build(root)
+            (directory / 'FREEZE.json').write_text('{}')
             (directory / 'evidence' / 'comparison.json').write_text(json.dumps({'cases': {
                 'K1': {'expected_verdict': 'downgrade', 'wexp_ref_equals_expected': True, 'wexp_check_equals_expected': True},
                 'K2': {'expected_verdict': 'accept', 'wexp_ref_equals_expected': True, 'wexp_check_equals_expected': False}}}))

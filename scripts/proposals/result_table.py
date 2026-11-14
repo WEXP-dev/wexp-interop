@@ -58,6 +58,9 @@ ALLOWED_BASIS = {
 }
 STATUSES = ('draft', 'agreed')
 REVIEWS = ('not-requested', 'requested', 'row-agreed', 'not-applicable')
+# Why a row names nobody. Not having asked yet is a different fact from having been asked not to.
+NOT_NAMED = {'asked-not-to-be-named': 'A party who asked not to be named',
+             'naming-not-yet-agreed': 'Naming not yet agreed with the party'}
 READING_STATUSES = ('open', 'answered')
 SUBJECT_RE = re.compile(r'^(?:draft-[a-z0-9]+(?:-[a-z0-9]+)*-[0-9]{2}|' + lib.NAME + '/' + lib.NAME + ')$')
 REFERENCE_RE = re.compile(r'^https://[A-Za-z0-9.-]+/[A-Za-z0-9._~/#?=&%+:@-]*$')
@@ -82,7 +85,8 @@ def template(title: str, issue: int | None, relation: str = 'not-established', s
     row = {'schema': SCHEMA, 'examined': title, 'status': 'draft', 'author_review': 'not-requested',
            'summary': None,
            'initiation': {'channel': 'interop-check' if issue is not None else 'direct-correspondence',
-                          'interop_check_issue': issue, 'named': False, 'initiated_by': None,
+                          'interop_check_issue': issue, 'named': False,
+                          'not_named_because': 'naming-not-yet-agreed', 'initiated_by': None,
                           'relation': relation, 'relation_subject': subject,
                           'established_by': established_by or ALLOWED_BASIS[relation][0]},
            'author_spec_changes': [], 'open_readings': []}
@@ -112,6 +116,10 @@ def validate(row: dict) -> dict:
     needs_subject = '{subject}' in RELATIONS[relation]
     if type(who.get('named')) is not bool:
         raise lib.ProposalError('initiation.named is true or false')
+    if (who.get('not_named_because') in NOT_NAMED) == who['named'] or (
+            who['named'] and who.get('not_named_because') is not None):
+        raise lib.ProposalError(f'initiation.not_named_because is one of {tuple(NOT_NAMED)} when nobody is named, '
+                                'and is absent when somebody is')
     if who['named']:
         line(who.get('initiated_by'), 'initiation.initiated_by', 80)
         if needs_subject != (type(subject) is str and bool(SUBJECT_RE.match(subject))) or (not needs_subject and subject is not None):
@@ -120,6 +128,8 @@ def validate(row: dict) -> dict:
     elif who.get('initiated_by') is not None or subject is not None:
         raise lib.ProposalError('a party who is not named has neither a name nor a named repository or draft in the row')
     if row['status'] == 'agreed':
+        if who.get('not_named_because') == 'naming-not-yet-agreed':
+            raise lib.ProposalError('a row is agreed only after the party has said whether to be named')
         if row['summary'] is None:
             raise lib.ProposalError('an agreed row has a summary')
         if row['author_review'] not in ('row-agreed', 'not-applicable') or (
@@ -152,7 +162,7 @@ def initiated_by(who: dict) -> str:
     basis = ESTABLISHED[who['established_by']]
     tail = f' ({basis})' if basis else ''
     if not who['named']:
-        return f'A party who asked not to be named; {UNNAMED[who["relation"]]}{tail}'
+        return f'{NOT_NAMED[who["not_named_because"]]}; {UNNAMED[who["relation"]]}{tail}'
     return f'{who["initiated_by"]}, {RELATIONS[who["relation"]].format(subject=who["relation_subject"])}{tail}'
 
 
@@ -160,6 +170,11 @@ def run_facts(directory: Path) -> str:
     path = directory / 'evidence' / 'comparison.json'
     if not path.is_file():
         return 'No run committed'
+    # The check workflow replays only a proposal that has a freeze, so counts are published only
+    # for one: a run with no freeze before it is not a result.
+    if not (directory / lib.FREEZE).is_file():
+        raise lib.ProposalError(f'{directory.name}: evidence is committed and there is no {lib.FREEZE}; '
+                                'run counts are published only for a run on frozen inputs')
     cases = json.loads(path.read_text(encoding='utf-8'))['cases']
     verdicts = {}
     for case in cases.values():
