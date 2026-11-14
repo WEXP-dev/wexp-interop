@@ -1,6 +1,10 @@
 name: Proposal skeleton
 
-# Started by a maintainer for one interoperability check. Creates the skeleton
+# Started by a maintainer for one interoperability check on the open track. A private-track
+# proposal is never made here: it is made with scripts/proposals/new_proposal.py --track private
+# in a directory outside any public repository.
+#
+# It creates the skeleton
 # of a proposal on a new branch: the pinned public files with their SHA-256 and
 # size, templates for the mapping, the inputs and the expectations, and a draft
 # result row that records who initiated the check without naming anyone. It
@@ -33,7 +37,7 @@ on:
         description: 'What the automatic reply says about the account that opened the check'
         type: choice
         default: not-established
-        options: [not-established, repository-owner, organization-public-member, repository-contributor]
+        options: [not-established, repository-owner, organization-public-member, repository-contributor, specification-author]
       archive:
         description: 'Ask Software Heritage to archive the pinned repositories'
         type: boolean

@@ -23,9 +23,7 @@ import result_table  # noqa: E402
 
 README = '''# {title}: local proposal
 
-**Status: PROPOSAL. Not a published package.** The result row and the attribution are agreed with the
-author of the external format before anything here is described as a result. Nothing here states
-that the external format conforms or does not conform to WEXP Core.
+{banner}
 
 {origin}
 ## Steps, in order
@@ -136,7 +134,10 @@ def fields_page(title: str, files: list[tuple[dict, bytes]]) -> str:
            'not what they mean. Fill the last column while writing [MAPPING.md](MAPPING.md); a field that is '
            'deliberately not carried is written as such, not left blank. Values are not shown here.', '']
     for pin, data in files:
-        out += [f'## `{pin["repository"]}` at `{pin["commit"][:12]}`: `{pin["path"]}`', '']
+        if pin['repository'] == 'local':
+            out += [f'## Local file `material/{pin["path"]}`', '']
+        else:
+            out += [f'## `{pin["repository"]}` at `{pin["commit"][:12]}`: `{pin["path"]}`', '']
         try:
             paths = field_paths(json.loads(data, object_pairs_hook=_unique))
         except (ValueError, RecursionError, KeyError):
@@ -150,6 +151,21 @@ def fields_page(title: str, files: list[tuple[dict, bytes]]) -> str:
     return '\n'.join(out)
 
 
+BANNERS = {
+    'open': ('**Track: open. Status: PROPOSAL, not a published package.** The mapping, the expectations, the '
+             'runs and the result are public. The result row and the attribution are agreed with the author of '
+             'the external format before anything here is described as a result. Nothing here states that the '
+             'external format conforms or does not conform to WEXP Core.'),
+    'private': ('**Track: private. Do not commit this directory to a public repository.** The material, the '
+                'mapping, the expectations and the runs stay here. The only thing that may later be published is '
+                'the disclosure the party agrees to in RESULT-ROW.json: that a check took place, optionally with '
+                'the SHA-256 of the material, committed to WEXP-dev/wexp-interop as a row and a README and nothing '
+                'else. Nothing here states that the material conforms or does not conform to WEXP Core.'),
+}
+TRACKS = tuple(BANNERS)
+LOCAL_NAME = re.compile(r'^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$')
+
+
 def command_path(path: Path) -> str:
     """How a command run from the top of this repository names ``path``."""
     try:
@@ -159,7 +175,21 @@ def command_path(path: Path) -> str:
 
 
 def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path, fetch=lib.fetch_pinned,
-          relation: str = 'not-established', drafts: list[str] | None = None, fetch_draft=lib.fetch_draft) -> Path:
+          relation: str = 'not-established', drafts: list[str] | None = None, fetch_draft=lib.fetch_draft,
+          track: str = 'open', local_files: list[Path] | None = None) -> Path:
+    if track not in TRACKS:
+        raise lib.ProposalError(f'track is one of {TRACKS}')
+    local_files = local_files or []
+    if track == 'open' and local_files:
+        raise lib.ProposalError('the open track pins public bytes only; a local file belongs to the private track')
+    if track == 'private':
+        try:
+            root.resolve().relative_to(lib.REPO_ROOT)
+        except ValueError:
+            pass
+        else:
+            raise lib.ProposalError('a private proposal is made outside this repository: pass --root with a '
+                                    'directory that no public repository contains')
     directory = lib.proposal_dir(slug, root)
     if directory.exists():
         raise lib.ProposalError(f'{directory.name} already exists; a proposal is never overwritten')
@@ -169,8 +199,18 @@ def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path,
     named = [lib.parse_draft(d) for d in (drafts or [])]
     if len({(d['name'], d['revision']) for d in named}) != len(named):
         raise lib.ProposalError('an Internet-Draft revision is named once')
-    if not parsed and not named:
-        raise lib.ProposalError('at least one --pin or --draft is required: a proposal is about exact bytes')
+    if not parsed and not named and not local_files:
+        raise lib.ProposalError('at least one --pin, --draft or --local-file is required: a proposal is about exact bytes')
+    material = []
+    for path in local_files:
+        if not path.is_file() or path.is_symlink():
+            raise lib.ProposalError(f'{path.name}: a local file is a regular file, not a link')
+        data = path.read_bytes()
+        if len(data) > lib.MAX_FILE_BYTES:
+            raise lib.ProposalError(f'{path.name} is larger than {lib.MAX_FILE_BYTES} bytes')
+        if not LOCAL_NAME.match(path.name) or any(m['name'] == path.name for m in material):
+            raise lib.ProposalError(f'{path.name}: local files have distinct plain names')
+        material.append({'name': path.name, 'sha256': lib.sha256(data), 'bytes': len(data), 'data': data})
     files, contents = [], []
     for pin in parsed:
         data = fetch(pin)
@@ -184,7 +224,7 @@ def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path,
         raise lib.ProposalError(f'relation is one of {tuple(result_table.RELATIONS)}')
     # The draft row names nobody and therefore no repository or draft either; both are added with
     # the name once the person agrees to be named.
-    row = result_table.template(title.strip(), issue, relation)
+    row = result_table.template(title.strip(), issue, relation, track=track)
     origin = ''
     if issue is not None:
         origin = (f'Opened from interoperability check '
@@ -192,12 +232,18 @@ def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path,
     (directory / 'inputs').mkdir(parents=True)
     (directory / 'expectations').mkdir()
     root_arg = '' if root.resolve() == lib.PROPOSALS.resolve() else f' --root {command_path(root)}'
-    (directory / 'README.md').write_text(README.format(title=title.strip(), slug=slug, origin=origin,
+    if material:
+        (directory / 'material').mkdir()
+        for m in material:
+            (directory / 'material' / m['name']).write_bytes(m['data'])
+            contents.append(({'repository': 'local', 'commit': 'material', 'path': m['name']}, m['data']))
+    (directory / 'README.md').write_text(README.format(title=title.strip(), slug=slug, origin=origin, banner=BANNERS[track],
                                                        path=command_path(directory), root_arg=root_arg), encoding='utf-8')
     (directory / 'FIELDS.md').write_text(fields_page(title.strip(), contents), encoding='utf-8')
     (directory / 'MAPPING.md').write_text(MAPPING.format(title=title.strip(), core02=lib.CORE02_XML_SHA256), encoding='utf-8')
     pins_record = {'core02_xml_sha256': lib.CORE02_XML_SHA256, 'external_files': files,
-                   'internet_drafts': documents,
+                   'internet_drafts': documents, 'track': track,
+                   'local_files': [{k: m[k] for k in ('name', 'sha256', 'bytes')} for m in material],
                    'wexp_ref': {'repository': 'WEXP-dev/wexp-ref', 'commit': lib.WEXP_REF_COMMIT},
                    'wexp_check': {'repository': 'WEXP-dev/wexp-check', 'commit': lib.WEXP_CHECK_COMMIT}}
     if issue is not None:
@@ -222,9 +268,13 @@ def main() -> int:
     ap.add_argument('--issue', type=int)
     ap.add_argument('--relation', default='not-established')
     ap.add_argument('--root', type=Path, default=lib.PROPOSALS)
+    ap.add_argument('--track', choices=TRACKS, default='open')
+    ap.add_argument('--local-file', type=Path, action='append', default=[],
+                    help='private track only: a file received outside public channels; it is copied into material/ and pinned')
     a = ap.parse_args()
     try:
-        directory = build(a.slug, a.title, a.pin, a.issue, a.root, relation=a.relation, drafts=a.draft)
+        directory = build(a.slug, a.title, a.pin, a.issue, a.root, relation=a.relation, drafts=a.draft,
+                          track=a.track, local_files=a.local_file)
     except lib.ProposalError as error:
         print(f'refused: {error}', file=sys.stderr)
         return 2
@@ -234,6 +284,10 @@ def main() -> int:
         print(f"  {f['repository']}@{f['commit'][:8]}:{f['path']}  sha256 {f['sha256']}  {f['bytes']} bytes")
     for d in record['internet_drafts']:
         print(f"  {d['name']}-{d['revision']}  sha256 {d['sha256']}  {d['bytes']} bytes")
+    for m in record['local_files']:
+        print(f"  local {m['name']}  sha256 {m['sha256']}  {m['bytes']} bytes")
+    if a.track == 'private':
+        print('track: private. Do not commit this directory to a public repository.')
     return 0
 
 

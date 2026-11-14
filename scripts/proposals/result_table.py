@@ -31,6 +31,7 @@ RELATIONS = {
     'organization-public-member': 'a public member of the organization that owns `{subject}`',
     'repository-contributor': 'a contributor to repository `{subject}`',
     'maintainer': 'a maintainer of this repository',
+    'specification-author': 'a co-author of the WEXP specification `{subject}`',
     'not-established': 'a party with no established link to the format',
 }
 UNNAMED = {
@@ -39,6 +40,7 @@ UNNAMED = {
     'organization-public-member': 'a public member of the organization behind the format',
     'repository-contributor': 'a contributor to a repository of the format',
     'maintainer': 'a maintainer of this repository',
+    'specification-author': 'a co-author of the WEXP specification',
     'not-established': 'no established link to the format',
 }
 ESTABLISHED = {
@@ -54,8 +56,18 @@ ALLOWED_BASIS = {
     'organization-public-member': ('github-public-record', 'confirmed-with-the-person'),
     'repository-contributor': ('github-public-record', 'confirmed-with-the-person'),
     'maintainer': ('not-applicable',),
+    # A co-author of the specification is not an outside party: a check they start is recorded as such.
+    'specification-author': ('confirmed-with-the-person',),
     'not-established': ('not-established',),
 }
+# Open: everything is public. Private: the material, the mapping and the runs stay outside public
+# repositories; a row is committed here only when the party agreed to the disclosure it states.
+TRACKS = ('open', 'private')
+DISCLOSURES = {'not-yet-agreed': None,
+               'existence': 'a check took place; nothing about the material is published',
+               'existence-with-digest': 'a check took place; the SHA-256 of the material is published, the material is not'}
+PRIVATE_FILES = {'RESULT-ROW.json', 'README.md'}
+SHA_RE = re.compile(r'^[0-9a-f]{64}$')
 STATUSES = ('draft', 'agreed')
 REVIEWS = ('not-requested', 'requested', 'row-agreed', 'not-applicable')
 # Why a row names nobody. Not having asked yet is a different fact from having been asked not to.
@@ -81,7 +93,7 @@ def line(value, what: str, limit: int = 300) -> str:
 
 
 def template(title: str, issue: int | None, relation: str = 'not-established', subject: str | None = None,
-             established_by: str | None = None) -> dict:
+             established_by: str | None = None, track: str = 'open') -> dict:
     row = {'schema': SCHEMA, 'examined': title, 'status': 'draft', 'author_review': 'not-requested',
            'summary': None,
            'initiation': {'channel': 'interop-check' if issue is not None else 'direct-correspondence',
@@ -90,6 +102,8 @@ def template(title: str, issue: int | None, relation: str = 'not-established', s
                           'relation': relation, 'relation_subject': subject,
                           'established_by': established_by or ALLOWED_BASIS[relation][0]},
            'author_spec_changes': [], 'open_readings': []}
+    if track != 'open':
+        row.update({'track': track, 'disclosure': 'not-yet-agreed', 'material_sha256': []})
     validate(row)
     return row
 
@@ -127,15 +141,33 @@ def validate(row: dict) -> dict:
                                     'and is given exactly when the relation refers to one')
     elif who.get('initiated_by') is not None or subject is not None:
         raise lib.ProposalError('a party who is not named has neither a name nor a named repository or draft in the row')
+    track = row.get('track', 'open')
+    if track not in TRACKS:
+        raise lib.ProposalError(f'track is one of {TRACKS}')
+    if track == 'private':
+        disclosure, digests = row.get('disclosure'), row.get('material_sha256', [])
+        if disclosure not in DISCLOSURES:
+            raise lib.ProposalError(f'a private row states its disclosure, one of {tuple(DISCLOSURES)}')
+        if type(digests) is not list or any(not SHA_RE.match(str(d)) for d in digests) or (
+                (disclosure == 'existence-with-digest') != bool(digests)):
+            raise lib.ProposalError('material_sha256 lists SHA-256 digests exactly when the disclosure includes them')
+        if row['summary'] is not None:
+            raise lib.ProposalError('a private row has no summary: nothing about the material is published')
+        if any(r.get('cases') for r in row.get('open_readings', []) if type(r) is dict):
+            raise lib.ProposalError('an open reading from a private check names no case')
+        if (row['status'] == 'agreed') == (disclosure == 'not-yet-agreed'):
+            raise lib.ProposalError('a private row is agreed exactly when the party agreed its disclosure')
+    elif 'disclosure' in row or 'material_sha256' in row:
+        raise lib.ProposalError('disclosure and material_sha256 belong to a private row')
     if row['status'] == 'agreed':
         if who.get('not_named_because') == 'naming-not-yet-agreed':
             raise lib.ProposalError('a row is agreed only after the party has said whether to be named')
-        if row['summary'] is None:
+        if row['summary'] is None and track == 'open':
             raise lib.ProposalError('an agreed row has a summary')
         if row['author_review'] not in ('row-agreed', 'not-applicable') or (
-                row['author_review'] == 'not-applicable' and relation != 'maintainer'):
-            raise lib.ProposalError('a row is agreed only when the author of the format agreed it; '
-                                    'not-applicable is for a check a maintainer initiated on no external format')
+                row['author_review'] == 'not-applicable' and relation not in ('maintainer', 'specification-author')):
+            raise lib.ProposalError('a row is agreed only when the author of the format agreed it; not-applicable '
+                                    'is for a check that a maintainer or a WEXP co-author initiated on their own material')
     for change in row.get('author_spec_changes', []):
         if type(change) is not dict or not REFERENCE_RE.match(str(change.get('reference'))):
             raise lib.ProposalError('each author_spec_changes entry has what and a public https reference')
@@ -166,7 +198,11 @@ def initiated_by(who: dict) -> str:
     return f'{who["initiated_by"]}, {RELATIONS[who["relation"]].format(subject=who["relation_subject"])}{tail}'
 
 
-def run_facts(directory: Path) -> str:
+def run_facts(directory: Path, row: dict | None = None) -> str:
+    if row is not None and row.get('track') == 'private':
+        digests = row.get('material_sha256', [])
+        tail = '; material SHA-256 ' + ', '.join(f'`{d}`' for d in digests) if digests else ''
+        return 'Private track: the material, the mapping and the runs are not published' + tail
     path = directory / 'evidence' / 'comparison.json'
     if not path.is_file():
         return 'No run committed'
@@ -191,6 +227,13 @@ def load(root: Path) -> list[tuple[str, dict, Path]]:
     for path in sorted(root.glob(f'*/{lib.RESULT_ROW}')):
         try:
             row = validate(json.loads(path.read_text(encoding='utf-8')))
+            if row.get('track') == 'private':
+                if row['status'] != 'agreed':
+                    raise lib.ProposalError('a private check is committed here only with the disclosure the party agreed')
+                extra = sorted(p.relative_to(path.parent).as_posix() for p in path.parent.rglob('*')
+                               if p.is_file() and p.relative_to(path.parent).as_posix() not in PRIVATE_FILES)
+                if extra:
+                    raise lib.ProposalError(f'a private check publishes only its row and README; found {", ".join(extra[:5])}')
         except (ValueError, lib.ProposalError) as error:
             raise lib.ProposalError(f'{path.parent.name}/{lib.RESULT_ROW}: {error}')
         rows.append((path.parent.name, row, path.parent))
@@ -222,7 +265,7 @@ def build(root: Path = lib.PROPOSALS) -> dict[str, str]:
             origin += f'; [check {n}](https://github.com/WEXP-dev/interop-test-lab/issues/{n})'
         state = 'agreed with the author' if row['author_review'] == 'row-agreed' else (
             'agreed' if row['status'] == 'agreed' else 'draft')
-        out.append(f'| [{slug}]({slug}/README.md) | {row["examined"]} | {origin} | {run_facts(directory)} | '
+        out.append(f'| [{slug}]({slug}/README.md) | {row["examined"]} | {origin} | {run_facts(directory, row)} | '
                    f'{row["summary"] or "Not written yet"} | {state} |')
     if not rows:
         out.append('| _none yet_ | | | | | |')
