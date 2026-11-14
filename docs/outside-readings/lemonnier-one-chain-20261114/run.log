@@ -1,0 +1,82 @@
+2026-11-14T20:31:58Z
+== Seal ATTESTATION-v1 (draft-chueayen-attestation-receipts), attestation-spec @ 5c38c716f16b
+# 33 vectors, 0 mismatch(es)
+== Seal ACTION-v1
+# 34 vectors, 0 mismatch(es)
+== Seal ACTION-v1 Section 8.3: the approval record as a DPS signed outcome (aqta/approval-record)
+# action record valid under the Seal text; DPS action binding and person approval verified; 10 Section 8.2 checks true; 8 failing cases (N1-N7) fail where they should; N7b (authority_ref relabelled) verifies by design
+== One agent pass, three layers (agent-pass): DPS standing and exact approvals, Seal ACTION-v1, Agent Action Capsule
+# 40 Seal records valid; 8 DPS dimensions and 13 person signatures verified; 41 capsules verified; 7 joins true; 10 failing cases caught where expected
+== Agent Action Capsule interop cases (aac): the capsule library 0.16.0 and the Standard's reference checks, both sides and the join, cases 01 to 05 and 14 to 16
+# 8 cases as expected: 01 verified on both sides and the join; 02 and 05 reference unresolved, Standard not consulted; 03 approval absent; 04 resolution is not validity; 14 join failed; 15 and 16 required reference missing, never verified (Ivan Nestorov's review of 6 November 2026); result.json byte-identical to the committed ones
+== One plan approved as a whole, executed as steps (plan-run): one DPS exact approval, N capsules, a run manifest between them
+# 8 DPS dimensions, the issuer's seal and the person's approval of the plan verified; 3 capsules verified; 10 joins true (membership, completeness, order, resolved arguments, context chain); 14 failing cases caught where expected
+== Case 13b: the plan, approved by a real person (plan-run-real): Laurent Lemonnier's passkey assertion (WebAuthn-ES256, sign.pria.fr) over the exact person_approval bytes of the plan, pinned in signed/, verified by the Standard's check; the three capsules under it
+# one real signature: verified (signature, UP, UV, origin, rpId, key state, identity under the pinned trust policy); the run as in case 13: 8 DPS dimensions, the issuer's seal, 3 capsules verified, 10 joins true; assemble reproduces case 13 byte for byte; 24 failing cases caught where expected (case 13's 14 and 10 on the real thing), nine of them by the Standard's signatures check alone
+== A human checkpoint in the middle of the plan, under an undecided claim (plan-checkpoint): a second decision record on a context state and an adjudication in the shape of P10
+# the plan's checks again, the checkpoint record's dimensions, seal and approval verified, 15 joins true; 8 failing cases caught where expected; the adjudication is synthetic and says so; the P10 executed instance's adjudication statement (leaf 7) held at its pinned digest
+== Case 13: the approved plan and an AER-1 workflow receipt in seq-output-v1, composed (plan-workflow)
+# the plan's ten joins and five more true; three AER-1 step receipts verified; the workflow root recomputed in seq-output-v1; 6 failing cases caught where expected
+== An EP authorization bundle and a DPS decision, bound both ways (emilia-pair), at the EP author's request
+# DPS A1 and A2 verified; EP bundle SATISFIED by a verifier written from section 6.2 (steps 1 to 11); 5 joins true; 23 failing cases caught where expected (3 at the DPS/EP junction, 1 on a compromised key's signing order); the author's pinned vector (00fa00a7) predates section 3's minimum: run over its 27 cases and reported, not checked (emilia-pair/README.md)
+== PALA-1 bridge run B3 (Assault-Consulting/Palimpsests, SCITT-bridge statement v3) from the text, pinned at 131fc7ae6fdb
+# PALA-1 bridge run B3: 99/99 checks true; false: []; 0.01 s
+== P10 S2b, the replay verifier of draft-nestorov-scitt-p10-underdetermination-02, read from the text (first and second pass), pinned at 8eaa91cad1ff
+# P10 S2b outside reading, first pass: L1-L8 9/9; of 338 cases, 307 agree, 28 agree on the replay layer with their subject rows left to the second pass, 3 not reached, 0 disagree
+# P10 S2b outside reading, second pass: L1-L8 9/9; of 338 cases, 337 agree fully, 0 agree on the replay layer only, 0 agree except for the transcript bytes, 1 not reached, 0 disagree; tB byte-equal 216 of 216 Verified (0 differ, 0 not encoded); regressions against pass 1: 0
+== P10 Appendix A (M1-M35, AP1) read from the text, the profile, S1 and S2a pinned per the draft's Appendix C.1
+# Appendix A: S1 15/15, S2a coverage 72/72 with exact reason codes, TB7 72/72
+== draft-fassbender-scitt-time-anchor-08, Appendix D vectors, route 2 (no OTS software)
+real set: validated 12 headers
+five linked headers with nBits 0x207fffff after 957300 : refused
+real last header with nBits rewritten to powLimit (another nBits than the epoch's): refused
+# 4 vectors valid at height 957289; D.6 negative invalid; no validated chain unverifiable; synthetic headers with nBits 0x207fffff refused
+== draft-zambo-aer1-26, conformance kit v1.5.7 (all seven vector suites, and the seq-output-v1 workflow vectors)
+# AER-1 kit suites: valid 21/21, invalid 36/36, invalid-profile 1/1, anchored 6/6, unicode 5/5, id-binding 6/6, anchor 8/8, chain-06 7/7, chain-07 28/28, commitment 8/8, merkle 9/9, workflow-merkle-seq-output-v1 8/8; total 143/143
+== A decision record and an AER-1 receipt, composed (aer1-decision), at the author's request
+# receipt verified (independent and kit), DPS attachment, seal and approval verified, 5 joins true; 10 failing cases as expected; 4 metadata probes failed by the independent verifier and by the kit runner at this pin
+== A real AER-1 receipt (zambo.dev, 10 November 2026) and a decision record, composed (aer1-live), at the author's request; no kit code, nothing fetched
+# real receipt: output_hash and metadata_hash verify, input_hash not confirmed, verifier as is: rejected (verification_status commitment_matches, the v1 API value); (a) after the fact: cited and named, no link back, approval after the effect; (b) synthetic: all joins; 12 cases as expected
+== Case 15: an AgentInteractionRecord citing a decision record by typed digest (air): draft-emirdag-scitt-ai-agent-execution-01 Sections 5.6-5.8, 6.1, 10.1
+# two AIRs VERIFIED by the verifier written from the text (32 checks each, 5.8 four steps and 6.1/6.3/6.4), chain of two VERIFIED; DPS dimensions, seal and approval verified; 6 joins true, binding BOUND; 13 failing cases caught where expected (N8 NOT_BOUND and N9 UNRESOLVED by design)
+== Case 16: a verdict record over the signed decision chain, and a decision over a verdict (verdict-record): draft-wright-verdict-record-02 Sections 2, 3, 4, 6, 7, checker written from the text
+# DPS: A1, A2, the closing decision and the corrected pair verified (dimensions, seals, approvals); verdict version 1, the stated negative over the 150/120 chain and version 2 released by the checker written from the text; Wright's Appendix A digests reproduced and his A.2 record released, held, refused and held as his text predicts; 11 joins true; 16 failing cases as expected (N10b released and named by design)
+== Case 17: the proof behind confirm (agent-execution-evidence): draft-thaha-scitt-agent-execution-evidence-02 Sections 5, 6.7, 6.7.1, 7, 8, 9 and Appendix A, and the DPS signed outcome
+# 9 Appendix A digests reproduced from the text; Bundle of 6 receipts and 6 Signed Statements: CHECKS_PERFORMED (never PASS: steps 1, 4, 5, 7, 11-17 not performed); DPS A1, A2, seal and approval verified; route 1 bound, route 2 (proposal) bound; 7 joins true; 12 failing cases caught where expected
+== Case 18: one chain (one-chain): Thaha confirm/allow -> DPS approval and execution -> Wright verdict -> Goshi/Farley dispute packet, each verified by the verifier its text yields, twelve joins across the four
+# positive chain: CHECKS_PERFORMED, A1/A2 verified on every dimension, verdict released, packet VERIFIED, 12 joins true (+ case 17's 7); stated negative (150 executed for 120 approved): J1 false, action_binding failed, verdict not_as_approved released, packet BREACH:amount_minor VERIFIED, 12 joins true; 22 failing cases caught where expected (one approval used twice: the Standard's request_limit first; money moved with nothing recorded: only the packet, NOTHING_RECORDED); the Goshi/Farley link follows the constructions its author gave on 8 November 2026 (four cases, one per construction); since 11 November 2026 N13's directory holds the altered A2 the checker held, and N22 is an A2 whose issuer seal is broken (the verdict held on the checker's format rules), both after Darren Wright's run of 10 November
+== Case 18, independent time bound (one-chain/anchoring): five OpenTimestamps proofs of 2026-11-06T17:34:21Z over the chain's exact bytes, re-checked offline against the pinned header set by the Standard's anchoring 0.2.0 reference check and by umarise/verify_anchor.py (route 2); no calendar, explorer or node is contacted
+# 5/5 proofs verified on both routes (the signature value's subject_bytes not_checked by the reference check by design, the four document proofs outside the profile's subject kinds, checked by its OpenTimestamps path): the bytes existed before block 974838 per the held header, miner_stated_time 2026-11-06T18:44:06Z, never a time they existed at; four calendars, blocks 974838, 974839, 974842, 974847; 15 headers validated from the checkpoint; result.json byte-identical to the committed one
+== Case 18b: the same chain with a real approver (one-chain-real): Laurent Lemonnier's passkey assertion (WebAuthn-ES256, sign.pria.fr) over the exact person_approval bytes, pinned in signed/, verified by the Standard's check
+# one real signature: verified (signature, UP, UV, origin, rpId, key state, identity under the pinned trust policy); the chain as in case 18: CHECKS_PERFORMED, A1/A2 verified, verdict released, packet VERIFIED, 12 joins true; stated negative as expected; 8 failing cases caught where expected, five of them by the Standard's signatures check alone; the anchoring subjects of 6 November are untouched (stamp.sh is never run here; since 8 November the packet built differs from the anchored one, recorded in anchoring/readings.json)
+== Case 18b, independent time bound (one-chain-real/anchoring): the five proofs of 2026-11-06T19:52:59Z, the real passkey signature value among the subjects, re-checked offline against the pinned header set by both verifiers
+# 5/5 proofs verified on both routes: the signature value and the four documents existed before block 974850 per the held header, miner_stated_time 2026-11-06T20:01:21Z (signed_at 19:05:00Z, received 19:06:54Z), never a time they existed at; three blocks reached, 974850, 974877, 974890; 46 headers validated from the checkpoint; the key state check still reads the stated time
+== draft-gilda-audit-agent-audit-record-03, corpus vectors-agent-audit-record from agent-evidence-vectors 0.36.3 (anchors validated offline against the manifest's tree heads and test-chain headers; dating complete)
+# agent-audit-record-conformance: 217/217 members agree with MANIFEST (verdict, codes, derivedTier, withinLimit, set, dating: codes, datedAt, entry, receipt, delegation root); first refusal code agrees on 123/123 reject members; 0 retained members with an anchor not attempted (rfc3161 only); aggregation correspondence 1/1
+== approval-binding/v1 (the same package's vectors-approval-binding contract), verifier written from the corpus README's checks (eleven at 0.31.0, sixteen at 0.35.0: 23/23 here, 36/36 and 37/37 on 0.35.0 and PR #472 in gilda/run-approval-binding-20261107.txt)
+# approval-binding/v1: 37/37 cases agree with MANIFEST on decision and reason
+test_absent_sources_are_not_applicable (test_gilda_aggregation.AggregationTests.test_absent_sources_are_not_applicable) ... ok
+test_bad_signature_is_not_compared_as_a_valid_record (test_gilda_aggregation.AggregationTests.test_bad_signature_is_not_compared_as_a_valid_record) ... ok
+test_binds_reference_time_input_and_both_pair_fields (test_gilda_aggregation.AggregationTests.test_binds_reference_time_input_and_both_pair_fields) ... ok
+test_equal_expiry_uses_earlier_last_result (test_gilda_aggregation.AggregationTests.test_equal_expiry_uses_earlier_last_result) ... ok
+test_equivalent_offset_matches (test_gilda_aggregation.AggregationTests.test_equivalent_offset_matches) ... ok
+test_exact_fractional_seconds_and_large_age (test_gilda_aggregation.AggregationTests.test_exact_fractional_seconds_and_large_age) ... ok
+test_fr14_permutations (test_gilda_aggregation.AggregationTests.test_fr14_permutations) ... ok
+test_fr14_recomputes_whole_pair_and_matches_signed_entry (test_gilda_aggregation.AggregationTests.test_fr14_recomputes_whole_pair_and_matches_signed_entry) ... ok
+test_historical_independent_minima_fails_fr14 (test_gilda_aggregation.AggregationTests.test_historical_independent_minima_fails_fr14) ... ok
+test_invalid_sources_do_not_pass_or_change_record_verdict (test_gilda_aggregation.AggregationTests.test_invalid_sources_do_not_pass_or_change_record_verdict) ... ok
+test_never_held_uses_smallest_bound_among_never_held_only (test_gilda_aggregation.AggregationTests.test_never_held_uses_smallest_bound_among_never_held_only) ... ok
+test_source_only_mutation_fails_correspondence_not_record (test_gilda_aggregation.AggregationTests.test_source_only_mutation_fails_correspondence_not_record) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.020s
+
+OK
+== draft-izmaylov-agent-permission-receipts-02 (Provared, 31 October 2026): verifier written from the text alone (izmaylov/verify_from_text.py), vectors of provared/provared at tag v0.6.0 and at main 24cac84; none of his code is read or run
+curl: (22) The requested URL returned error: 403
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+EXIT=2
+2026-11-14T20:32:27Z

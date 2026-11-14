@@ -1,0 +1,26 @@
+2026-11-14T20:32:41Z
+== case 19: the approved plan of case 13b as RFC 9396 authorization_details, referenced by digest (rar/)
+V1_signed_spec           pass
+V2_derived_from_spec     pass
+V3_reference             pass
+V4_execution_covered     pass
+V5_rfc9396_shape         pass
+all_verified: True
+12/12 as expected
+9/9 as expected
+9/9 as expected
+== draft-mih-sokolov-cose-deterministic-encodings-00 (cose-deterministic/): a checker from the text, replaying our original 16 vectors
+943 checks, 0 failure(s)
+== A decision record and an OMP record, composed (omp-authority/): draft-veridom-omp-core-00 read from the text, our own vectors (the authors had published none on 13 November 2026)
+# 14/14 cases as expected
+== cose-deterministic/authors-vectors/: the checker on the authors' pinned vectors, and the proposed additions
+file sha256 matches the pin
+emit: 8/8 agree; verify: 25/25 agree
+open   open-label-in-crit: this checker gives failed (inconsistent-header); no expected outcome
+open   open-encoding-not-int: this checker gives failed (inconsistent-header); no expected outcome
+open   open-label-unprotected: this checker gives failed (inconsistent-header); no expected outcome
+== registration-vectors/: the fifteen Signed Statements regenerate to the committed bytes (nothing is posted anywhere)
+15 vectors written to <clone>/interop/registration-vectors/vectors
+== registration-vectors/: the policy code of service/scitt/ gives the committed table (called in memory, four settings)
+15 vectors, 4 settings: results-ts-isoluce-net.json and .md written
+EXIT=0
