@@ -1,0 +1,773 @@
+{
+ "cases": {
+  "P14": {
+   "appraisers_equal": true,
+   "expected_verdict": "accept",
+   "wexp_check_equals_expected": true,
+   "wexp_check_observed": {
+    "asserted_claim": {
+     "base": "execution",
+     "qualifiers": [
+      "IV",
+      "PROV"
+     ]
+    },
+    "asserted_claim_supported": true,
+    "boundary_ceiling": "execution",
+    "boundary_grounding": "attributed",
+    "counter_evidence": [
+     {
+      "affected_claims": [],
+      "basis_refs": [],
+      "limitations": [],
+      "reasons": [],
+      "status": "not-supplied"
+     }
+    ],
+    "evaluation_context": {
+     "evaluated_at": "2026-10-12T00:00:00Z",
+     "id": "C",
+     "profile_identifiers": [
+      "draft-sergeev-wexp-core-02/fixture-1"
+     ],
+     "trust_configuration": "core02-fixture-trust-1"
+    },
+    "evaluation_gap_entries": [],
+    "evaluation_gaps": [],
+    "evaluation_scope": [
+     {
+      "capability": "authenticity",
+      "status": "evaluated"
+     },
+     {
+      "capability": "boundary-grounding",
+      "status": "evaluated"
+     },
+     {
+      "capability": "carrier-mapping",
+      "status": "evaluated"
+     },
+     {
+      "capability": "composition",
+      "status": "evaluated"
+     },
+     {
+      "capability": "counter-evidence",
+      "status": "evaluated"
+     },
+     {
+      "capability": "execution-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "independent-verification",
+      "status": "evaluated"
+     },
+     {
+      "capability": "intent-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "invocation-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "observation-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "provenance-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "target-binding",
+      "status": "evaluated"
+     }
+    ],
+    "fatal_reasons": [],
+    "inherited_limitations": [],
+    "maximal_supported_claims": [
+     {
+      "base": "execution",
+      "qualifiers": [
+       "IV",
+       "PROV"
+      ]
+     }
+    ],
+    "recorder_relations": [],
+    "semantics_version": "wexp-core-2",
+    "substantive_reasons": [],
+    "support_entries": [
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "P(E)"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "V(E)"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": [
+        "IV",
+        "PROV"
+       ]
+      },
+      "limitations": []
+     },
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "P(E)"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": [
+        "PROV"
+       ]
+      },
+      "limitations": []
+     },
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "V(E)"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": [
+        "IV"
+       ]
+      },
+      "limitations": []
+     },
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": []
+      },
+      "limitations": []
+     }
+    ],
+    "support_relations": [
+     {
+      "relation": "equal",
+      "supported_claim": {
+       "base": "execution",
+       "qualifiers": [
+        "IV",
+        "PROV"
+       ]
+      }
+     }
+    ],
+    "supported_claims": [
+     {
+      "base": "execution",
+      "qualifiers": [
+       "IV",
+       "PROV"
+      ]
+     },
+     {
+      "base": "execution",
+      "qualifiers": [
+       "IV"
+      ]
+     },
+     {
+      "base": "execution",
+      "qualifiers": [
+       "PROV"
+      ]
+     },
+     {
+      "base": "execution",
+      "qualifiers": []
+     }
+    ],
+    "target": "T",
+    "verdict": "accept"
+   },
+   "wexp_ref_equals_expected": true,
+   "wexp_ref_observed": {
+    "asserted_claim": {
+     "base": "execution",
+     "qualifiers": [
+      "IV",
+      "PROV"
+     ]
+    },
+    "asserted_claim_supported": true,
+    "boundary_ceiling": "execution",
+    "boundary_grounding": "attributed",
+    "counter_evidence": [
+     {
+      "affected_claims": [],
+      "basis_refs": [],
+      "limitations": [],
+      "reasons": [],
+      "status": "not-supplied"
+     }
+    ],
+    "evaluation_context": {
+     "evaluated_at": "2026-10-12T00:00:00Z",
+     "id": "C",
+     "profile_identifiers": [
+      "draft-sergeev-wexp-core-02/fixture-1"
+     ],
+     "trust_configuration": "core02-fixture-trust-1"
+    },
+    "evaluation_gap_entries": [],
+    "evaluation_gaps": [],
+    "evaluation_scope": [
+     {
+      "capability": "authenticity",
+      "status": "evaluated"
+     },
+     {
+      "capability": "boundary-grounding",
+      "status": "evaluated"
+     },
+     {
+      "capability": "carrier-mapping",
+      "status": "evaluated"
+     },
+     {
+      "capability": "composition",
+      "status": "evaluated"
+     },
+     {
+      "capability": "counter-evidence",
+      "status": "evaluated"
+     },
+     {
+      "capability": "execution-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "independent-verification",
+      "status": "evaluated"
+     },
+     {
+      "capability": "intent-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "invocation-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "observation-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "provenance-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "target-binding",
+      "status": "evaluated"
+     }
+    ],
+    "fatal_reasons": [],
+    "inherited_limitations": [],
+    "maximal_supported_claims": [
+     {
+      "base": "execution",
+      "qualifiers": [
+       "IV",
+       "PROV"
+      ]
+     }
+    ],
+    "recorder_relations": [],
+    "semantics_version": "wexp-core-2",
+    "substantive_reasons": [],
+    "support_entries": [
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "P(E)"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "V(E)"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": [
+        "IV",
+        "PROV"
+       ]
+      },
+      "limitations": []
+     },
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "P(E)"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": [
+        "PROV"
+       ]
+      },
+      "limitations": []
+     },
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "V(E)"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": [
+        "IV"
+       ]
+      },
+      "limitations": []
+     },
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": []
+      },
+      "limitations": []
+     }
+    ],
+    "support_relations": [
+     {
+      "relation": "equal",
+      "supported_claim": {
+       "base": "execution",
+       "qualifiers": [
+        "IV",
+        "PROV"
+       ]
+      }
+     }
+    ],
+    "supported_claims": [
+     {
+      "base": "execution",
+      "qualifiers": [
+       "IV",
+       "PROV"
+      ]
+     },
+     {
+      "base": "execution",
+      "qualifiers": [
+       "IV"
+      ]
+     },
+     {
+      "base": "execution",
+      "qualifiers": [
+       "PROV"
+      ]
+     },
+     {
+      "base": "execution",
+      "qualifiers": []
+     }
+    ],
+    "target": "T",
+    "verdict": "accept"
+   }
+  },
+  "R34": {
+   "appraisers_equal": true,
+   "expected_verdict": "downgrade",
+   "wexp_check_equals_expected": true,
+   "wexp_check_observed": {
+    "asserted_claim": {
+     "base": "execution",
+     "qualifiers": [
+      "PROV"
+     ]
+    },
+    "asserted_claim_supported": false,
+    "boundary_ceiling": "execution",
+    "boundary_grounding": "attributed",
+    "counter_evidence": [
+     {
+      "affected_claims": [],
+      "basis_refs": [],
+      "limitations": [],
+      "reasons": [],
+      "status": "not-supplied"
+     }
+    ],
+    "evaluation_context": {
+     "evaluated_at": "2026-10-12T00:00:00Z",
+     "id": "C",
+     "profile_identifiers": [
+      "draft-sergeev-wexp-core-02/fixture-1"
+     ],
+     "trust_configuration": "core02-fixture-trust-1"
+    },
+    "evaluation_gap_entries": [
+     {
+      "affected_claims": [
+       {
+        "base": "execution",
+        "qualifiers": [
+         "PROV"
+        ]
+       }
+      ],
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "P(E)"
+       ]
+      ],
+      "evaluation_context_ref": "C",
+      "limitations": [],
+      "target": "T",
+      "token": "E_PROV_NOT_EVALUATED"
+     }
+    ],
+    "evaluation_gaps": [
+     "E_PROV_NOT_EVALUATED"
+    ],
+    "evaluation_scope": [
+     {
+      "capability": "authenticity",
+      "status": "evaluated"
+     },
+     {
+      "capability": "boundary-grounding",
+      "status": "evaluated"
+     },
+     {
+      "capability": "carrier-mapping",
+      "status": "evaluated"
+     },
+     {
+      "capability": "composition",
+      "status": "evaluated"
+     },
+     {
+      "capability": "counter-evidence",
+      "status": "evaluated"
+     },
+     {
+      "capability": "execution-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "independent-verification",
+      "status": "evaluated"
+     },
+     {
+      "capability": "intent-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "invocation-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "observation-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "provenance-support",
+      "status": "not-evaluated"
+     },
+     {
+      "capability": "target-binding",
+      "status": "evaluated"
+     }
+    ],
+    "fatal_reasons": [],
+    "inherited_limitations": [],
+    "maximal_supported_claims": [
+     {
+      "base": "execution",
+      "qualifiers": []
+     }
+    ],
+    "recorder_relations": [],
+    "semantics_version": "wexp-core-2",
+    "substantive_reasons": [],
+    "support_entries": [
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": []
+      },
+      "limitations": []
+     }
+    ],
+    "support_relations": [
+     {
+      "relation": "support-below-claim",
+      "supported_claim": {
+       "base": "execution",
+       "qualifiers": []
+      }
+     }
+    ],
+    "supported_claims": [
+     {
+      "base": "execution",
+      "qualifiers": []
+     }
+    ],
+    "target": "T",
+    "verdict": "downgrade"
+   },
+   "wexp_ref_equals_expected": true,
+   "wexp_ref_observed": {
+    "asserted_claim": {
+     "base": "execution",
+     "qualifiers": [
+      "PROV"
+     ]
+    },
+    "asserted_claim_supported": false,
+    "boundary_ceiling": "execution",
+    "boundary_grounding": "attributed",
+    "counter_evidence": [
+     {
+      "affected_claims": [],
+      "basis_refs": [],
+      "limitations": [],
+      "reasons": [],
+      "status": "not-supplied"
+     }
+    ],
+    "evaluation_context": {
+     "evaluated_at": "2026-10-12T00:00:00Z",
+     "id": "C",
+     "profile_identifiers": [
+      "draft-sergeev-wexp-core-02/fixture-1"
+     ],
+     "trust_configuration": "core02-fixture-trust-1"
+    },
+    "evaluation_gap_entries": [
+     {
+      "affected_claims": [
+       {
+        "base": "execution",
+        "qualifiers": [
+         "PROV"
+        ]
+       }
+      ],
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "P(E)"
+       ]
+      ],
+      "evaluation_context_ref": "C",
+      "limitations": [],
+      "target": "T",
+      "token": "E_PROV_NOT_EVALUATED"
+     }
+    ],
+    "evaluation_gaps": [
+     "E_PROV_NOT_EVALUATED"
+    ],
+    "evaluation_scope": [
+     {
+      "capability": "authenticity",
+      "status": "evaluated"
+     },
+     {
+      "capability": "boundary-grounding",
+      "status": "evaluated"
+     },
+     {
+      "capability": "carrier-mapping",
+      "status": "evaluated"
+     },
+     {
+      "capability": "composition",
+      "status": "evaluated"
+     },
+     {
+      "capability": "counter-evidence",
+      "status": "evaluated"
+     },
+     {
+      "capability": "execution-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "independent-verification",
+      "status": "evaluated"
+     },
+     {
+      "capability": "intent-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "invocation-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "observation-support",
+      "status": "evaluated"
+     },
+     {
+      "capability": "provenance-support",
+      "status": "not-evaluated"
+     },
+     {
+      "capability": "target-binding",
+      "status": "evaluated"
+     }
+    ],
+    "fatal_reasons": [],
+    "inherited_limitations": [],
+    "maximal_supported_claims": [
+     {
+      "base": "execution",
+      "qualifiers": []
+     }
+    ],
+    "recorder_relations": [],
+    "semantics_version": "wexp-core-2",
+    "substantive_reasons": [],
+    "support_entries": [
+     {
+      "basis_refs": [
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "E"
+       ],
+       [
+        "draft-sergeev-wexp-core-02/fixture-1",
+        "bd"
+       ]
+      ],
+      "claim": {
+       "base": "execution",
+       "qualifiers": []
+      },
+      "limitations": []
+     }
+    ],
+    "support_relations": [
+     {
+      "relation": "support-below-claim",
+      "supported_claim": {
+       "base": "execution",
+       "qualifiers": []
+      }
+     }
+    ],
+    "supported_claims": [
+     {
+      "base": "execution",
+      "qualifiers": []
+     }
+    ],
+    "target": "T",
+    "verdict": "downgrade"
+   }
+  }
+ },
+ "python": "3.14.6",
+ "wexp_check": "63bde685c54fd6329f1217708d1c211b80c3712e",
+ "wexp_ref": "56289024c9ee748111f1f1d4f42728ffe04d8d69"
+}
