@@ -110,3 +110,28 @@ jobs:
             --title "proposal $SLUG: mapping and expectations (draft)" \
             --body "${origin}Skeleton created for one interoperability check. Next: the mapping and the expected results, then the freeze, then the run. The README of the proposal has ready one-line answers for the author of the format. See docs/proposals/README.md." \
             || echo "::warning::the branch is pushed; open the pull request by hand as a draft and name the check in its body (this repository does not let Actions create pull requests)"
+
+  # Tells the person who asked that the work has started, in the check itself.
+  # The token is used here only: this job checks out nothing, runs no script of
+  # the repository, and sees none of the pinned bytes. Without the secret the
+  # job does nothing, and the maintainer leaves the note by hand.
+  tell-the-check:
+    name: leave a note in the check
+    needs: skeleton
+    if: inputs.issue != ''
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: {}
+    steps:
+      - name: Comment in the check
+        env:
+          GH_TOKEN: ${{ secrets.CHECK_COMMENT_TOKEN }}
+          ISSUE: ${{ inputs.issue }}
+          SLUG: ${{ inputs.slug }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          [ -n "$GH_TOKEN" ] || { echo "::notice::no CHECK_COMMENT_TOKEN; leave the note in the check by hand"; exit 0; }
+          case "$ISSUE" in *[!0-9]*|'') echo "::error::issue must be a number"; exit 1 ;; esac
+          case "$SLUG" in *[!a-z0-9-]*|'') echo "::error::unexpected slug"; exit 1 ;; esac
+          gh issue comment "$ISSUE" --repo WEXP-dev/interop-test-lab --body "Work on this check has started. The mapping, the expected results and later the run are kept on the branch [\`proposal/$SLUG\`](https://github.com/$REPO/tree/proposal/$SLUG) of \`$REPO\`, and its pull request is where you can read and answer. Nothing there is a result yet."
