@@ -1,0 +1,21 @@
+{
+ "core02_xml_sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+ "external_files": [
+  {
+   "bytes": 19941,
+   "commit": "4cc2e63172d49022333a9fc935812ad667a7cd9d",
+   "path": "comparison.json",
+   "repository": "WEXP-dev/wexp-check",
+   "sha256": "0dcf67b8f00b9258ca111b871c87a4d02369022369ced78b9b1b92fe3ccf7d98"
+  }
+ ],
+ "interop_check_issue": 32,
+ "wexp_check": {
+  "commit": "63bde685c54fd6329f1217708d1c211b80c3712e",
+  "repository": "WEXP-dev/wexp-check"
+ },
+ "wexp_ref": {
+  "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+  "repository": "WEXP-dev/wexp-ref"
+ }
+}
