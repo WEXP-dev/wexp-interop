@@ -29,6 +29,7 @@ differently when the author of a format asked for it than when a stranger did.
 | a public member of the organization that owns it | GitHub public record, or confirmed with the person |
 | a contributor to it | GitHub public record, or confirmed with the person |
 | a maintainer of this repository | the check maps no external format |
+| a co-author of the WEXP specification | confirmed with the person directly; a check started by a co-author is never presented as an outside party's check |
 | no established link | stated as such; it is not an obstacle to a check |
 
 The skeleton writes the row as a draft that names nobody. A name, and the repository or draft the
@@ -46,6 +47,21 @@ author of an Internet-Draft is not thereby speaking for the others.
 A row also records two things that outlast the check: changes the author made to their own
 specification afterwards, each with a public reference, and readings of the Core-02 text that the
 mapping showed to be open. The second list is input to the next revision of the draft.
+
+
+## Two tracks
+
+| | Open track | Private track |
+|---|---|---|
+| Material | public files at a commit, or an Internet-Draft revision | sent outside public channels; pinned with `--local-file` |
+| Where the proposal lives | a branch and pull request in this repository | a directory outside any public repository (`--track private --root <dir>`) |
+| Skeleton | the "Proposal skeleton" workflow, or the script | the script only; the workflow is for the open track |
+| Mapping, expectations, runs | public, frozen before any run | the same procedure, kept in that directory |
+| What is published | everything, with the row agreed with the author | only the disclosure the party agreed: nothing; that a check took place; or that, with the SHA-256 of the material |
+
+A private check that may be mentioned publicly is committed here as a directory holding only its
+`RESULT-ROW.json` and a `README.md`. The check refuses any other file in such a directory, a private row
+with a summary, and a private row whose disclosure is not yet agreed.
 
 ## Keeping the pinned bytes retrievable
 

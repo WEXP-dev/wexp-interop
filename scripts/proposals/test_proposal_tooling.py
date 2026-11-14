@@ -306,8 +306,83 @@ class ResultRowTest(unittest.TestCase):
         self.assertIn(f'run_proposal.py {here} ', text)
         self.assertIn(f'result_table.py --root {Path(tmp).resolve()}`', text)
         self.assertNotIn('docs/proposals/sample-topic-001', text)
-        default = new_proposal.README.format(title='t', slug='s', origin='', path='docs/proposals/s', root_arg='')
+        default = new_proposal.README.format(title='t', slug='s', origin='', path='docs/proposals/s', root_arg='', banner='')
         self.assertIn('result_table.py` rebuilds', default)
+
+    def test_a_private_proposal_is_made_outside_the_repository_and_pins_local_files(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            summary = Path(tmp) / 'case-summary.json'
+            summary.write_text('{"plan": {"barcodes": []}, "observed": {"barcodes": null}}')
+            data = summary.read_bytes()
+            directory = new_proposal.build('sample-topic-001', 'A private case', [], 37, Path(tmp) / 'private',
+                                           track='private', local_files=[summary], relation='specification-author')
+            pins = json.loads((directory / 'SOURCE-PINS.json').read_text())
+            row = json.loads((directory / lib.RESULT_ROW).read_text())
+            readme = (directory / 'README.md').read_text()
+            fields = (directory / 'FIELDS.md').read_text()
+            self.assertEqual((directory / 'material' / 'case-summary.json').read_bytes(), summary.read_bytes())
+            self.assertIn('material/case-summary.json', lib.frozen_files(directory))
+        self.assertEqual(pins['track'], 'private')
+        self.assertEqual(pins['local_files'], [{'name': 'case-summary.json', 'bytes': len(data),
+                                                'sha256': lib.sha256(data)}])
+        self.assertEqual((row['track'], row['disclosure'], row['status']), ('private', 'not-yet-agreed', 'draft'))
+        self.assertEqual(row['initiation']['relation'], 'specification-author')
+        self.assertIn('Do not commit this directory to a public repository', readme)
+        self.assertIn('`observed.barcodes` | null', fields)
+
+    def test_the_tracks_keep_their_material_apart(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            summary = Path(tmp) / 'case.json'
+            summary.write_text('{}')
+            with self.assertRaises(lib.ProposalError):
+                new_proposal.build('sample-topic-001', 'Open', [], None, Path(tmp), local_files=[summary])
+            with self.assertRaises(lib.ProposalError):
+                new_proposal.build('sample-topic-001', 'Private', [], None, lib.PROPOSALS, track='private',
+                                   local_files=[summary])
+            link = Path(tmp) / 'link.json'
+            link.symlink_to(summary)
+            with self.assertRaises(lib.ProposalError):
+                new_proposal.build('sample-topic-002', 'Private', [], None, Path(tmp) / 'p', track='private',
+                                   local_files=[link])
+
+    def test_a_private_check_is_published_only_as_the_disclosure_the_party_agreed(self):
+        digest = lib.sha256(b'summary')
+        notice = row(track='private', disclosure='existence-with-digest', material_sha256=[digest], status='agreed',
+                     author_review='not-applicable',
+                     initiation={'relation': 'specification-author', 'established_by': 'confirmed-with-the-person',
+                                 'not_named_because': 'asked-not-to-be-named'})
+        result_table.validate(notice)
+        for wrong in ({'summary': 'Two cases matched.'}, {'material_sha256': []},
+                      {'disclosure': 'existence'}, {'disclosure': 'not-yet-agreed'}, {'track': 'secret'}):
+            with self.subTest(wrong=wrong), self.assertRaises(lib.ProposalError):
+                result_table.validate({**notice, **wrong})
+        with self.assertRaises(lib.ProposalError):
+            result_table.validate(row(disclosure='existence'))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'private-case-001').mkdir()
+            (root / 'private-case-001' / lib.RESULT_ROW).write_text(json.dumps(notice))
+            page = result_table.build(root)['RESULTS.md']
+            self.assertIn(f'Private track: the material, the mapping and the runs are not published; material SHA-256 `{digest}`', page)
+            self.assertIn('A party who asked not to be named; a co-author of the WEXP specification', page)
+            (root / 'private-case-001' / 'MAPPING.md').write_text('leaked')
+            with self.assertRaises(lib.ProposalError):
+                result_table.build(root)
+            (root / 'private-case-001' / 'MAPPING.md').unlink()
+            draft = {**notice, 'status': 'draft', 'disclosure': 'not-yet-agreed', 'material_sha256': []}
+            (root / 'private-case-001' / lib.RESULT_ROW).write_text(json.dumps(draft))
+            with self.assertRaises(lib.ProposalError):
+                result_table.build(root)
+
+    def test_a_co_author_of_the_specification_is_recorded_as_such(self):
+        author = {'named': True, 'not_named_because': None, 'initiated_by': 'Dana Example',
+                  'relation': 'specification-author', 'relation_subject': 'draft-sergeev-wexp-core-02',
+                  'established_by': 'confirmed-with-the-person'}
+        self.assertEqual(result_table.initiated_by(result_table.validate(row(initiation=author))['initiation']),
+                         'Dana Example, a co-author of the WEXP specification `draft-sergeev-wexp-core-02` '
+                         '(confirmed with the person directly)')
+        with self.assertRaises(lib.ProposalError):
+            result_table.validate(row(initiation={**author, 'established_by': 'github-public-record'}))
 
     def test_the_result_row_is_not_part_of_the_freeze(self):
         with tempfile.TemporaryDirectory() as tmp:
