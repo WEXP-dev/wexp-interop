@@ -8,6 +8,8 @@ One row per proposal that carries a result row. A row says what a run on frozen 
 |---|---|---|---|---|---|
 | [worked-example-001](worked-example-001/README.md) | Worked example of the proposal path (two cases from the public corpus) | Mikhail Sergeev, a maintainer of this repository | 2 case(s); expected 1 accept, 1 downgrade; 2 of 2 equal the frozen expectation in both appraisers | Synthetic. Shows the path only; it maps no external format and is not a result about one. | agreed |
 
+1 proposal(s) not listed: the check was asked for by a party with no established link to the format, and the author of the format has not agreed the row.
+
 ## Changes authors made to their own specifications after a check
 
 None recorded yet.

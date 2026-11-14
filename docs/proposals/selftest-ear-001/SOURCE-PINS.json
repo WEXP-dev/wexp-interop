@@ -1,0 +1,22 @@
+{
+ "core02_xml_sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+ "external_files": [],
+ "internet_drafts": [
+  {
+   "bytes": 61183,
+   "name": "draft-ietf-rats-ear",
+   "revision": "04",
+   "sha256": "5ebec774adba9642db5da6cef7e868197c3e92dc97df25a3eceea32bb33cdfc4",
+   "url": "https://www.ietf.org/archive/id/draft-ietf-rats-ear-04.txt"
+  }
+ ],
+ "interop_check_issue": 35,
+ "wexp_check": {
+  "commit": "63bde685c54fd6329f1217708d1c211b80c3712e",
+  "repository": "WEXP-dev/wexp-check"
+ },
+ "wexp_ref": {
+  "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+  "repository": "WEXP-dev/wexp-ref"
+ }
+}

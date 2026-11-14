@@ -1,0 +1,19 @@
+{
+ "author_review": "not-requested",
+ "author_spec_changes": [],
+ "examined": "Self-test: draft pin reaches the skeleton (maintainer)",
+ "initiation": {
+  "channel": "interop-check",
+  "established_by": "not-established",
+  "initiated_by": null,
+  "interop_check_issue": 35,
+  "named": false,
+  "not_named_because": "naming-not-yet-agreed",
+  "relation": "not-established",
+  "relation_subject": null
+ },
+ "open_readings": [],
+ "schema": "wexp-interop/proposal-result-row/1",
+ "status": "draft",
+ "summary": null
+}
