@@ -12,8 +12,8 @@ name: Proposal order check and appraisal run
 # evidence is not reproducible.
 #
 # The run job holds a read-only token and no secret. On a pull request from a
-# branch of this repository a second job posts the summary as a comment; it
-# never checks out or executes anything.
+# branch of this repository a second job posts the summary as one comment and
+# replaces it on later pushes; it never checks out or executes anything.
 
 on:
   pull_request:
@@ -52,6 +52,8 @@ jobs:
           python-version: '3.12'
       - name: Tooling tests
         run: python -B -m unittest discover -s scripts/proposals -p 'test_*.py'
+      - name: Result rows are valid and the results pages are what they produce
+        run: python -B scripts/proposals/result_table.py --check
       - name: Check and run every frozen proposal
         env:
           EVENT: ${{ github.event_name }}
@@ -90,6 +92,12 @@ jobs:
             echo "::endgroup::"
           done
           if [ "$found" -eq 0 ]; then echo "No frozen proposal in this tree." >> "$out/summary.md"; fi
+          {
+            echo "<!-- proposal-check-summary -->"
+            echo "_Result of the latest push; this comment is replaced on every push._"
+            echo
+            cat "$out/summary.md"
+          } > "$out/comment.md"
           cat "$out/summary.md" >> "$GITHUB_STEP_SUMMARY"
       - name: Hand the summary across
         if: always()
@@ -122,5 +130,12 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          [ -s summary/summary.md ] || { echo "empty summary; nothing posted"; exit 0; }
-          gh pr comment "$PR" --repo "$REPO" --body-file summary/summary.md
+          [ -s summary/comment.md ] || { echo "empty summary; nothing posted"; exit 0; }
+          # Only the number of this workflow's own earlier comment is read back.
+          earlier="$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
+            --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- proposal-check-summary -->"))) | .id' | head -n 1)"
+          case "$earlier" in
+            "") gh pr comment "$PR" --repo "$REPO" --body-file summary/comment.md ;;
+            *[!0-9]*) echo "::error::unexpected comment number"; exit 1 ;;
+            *) gh api --method PATCH "repos/$REPO/issues/comments/$earlier" -F body=@summary/comment.md --silent ;;
+          esac

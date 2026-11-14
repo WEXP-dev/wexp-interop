@@ -12,6 +12,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import freeze_proposal  # noqa: E402
 import new_proposal  # noqa: E402
 import proposal_lib as lib  # noqa: E402
+import request_archive  # noqa: E402
+import result_table  # noqa: E402
 import run_proposal  # noqa: E402
 
 SHA = 'e' * 40
@@ -201,6 +203,119 @@ class RunTest(Case):
         text = run_proposal.summary(w.dir, w.run(), 'none yet')
         self.assertNotIn('<script>', text)
         self.assertIn('not an independent reproduction', text)
+
+
+def row(**changes):
+    base = result_table.template('Sample receipts', 26)
+    base.update({k: v for k, v in changes.items() if k != 'initiation'})
+    base['initiation'].update(changes.get('initiation', {}))
+    return base
+
+
+NAMED_OWNER = {'named': True, 'initiated_by': 'Dana Example', 'relation': 'repository-owner',
+               'relation_subject': 'acme/receipts', 'established_by': 'github-public-record'}
+
+
+class ResultRowTest(unittest.TestCase):
+
+    def test_the_skeleton_row_is_a_draft_that_names_nobody(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = new_proposal.build('sample-topic-001', 'Sample receipts', [PIN], 26, Path(tmp),
+                                           fetch=lambda pin: b'x', relation='repository-owner')
+            saved = json.loads((directory / lib.RESULT_ROW).read_text())
+        self.assertEqual((saved['status'], saved['initiation']['named'], saved['initiation']['initiated_by'],
+                          saved['initiation']['relation_subject']), ('draft', False, None, None))
+        self.assertEqual(saved['initiation']['relation'], 'repository-owner')
+        self.assertEqual(result_table.initiated_by(saved['initiation']),
+                         'A party who asked not to be named; the owner of a repository of the format '
+                         '(GitHub public record)')
+
+    def test_the_result_row_is_not_part_of_the_freeze(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = new_proposal.build('sample-topic-001', 'Sample receipts', [PIN], None, Path(tmp),
+                                           fetch=lambda pin: b'x')
+            self.assertNotIn(lib.RESULT_ROW, lib.frozen_files(directory))
+
+    def test_each_kind_of_initiator_is_stated_with_how_it_is_known(self):
+        said = result_table.initiated_by
+        self.assertEqual(said(result_table.validate(row(initiation=NAMED_OWNER))['initiation']),
+                         'Dana Example, the owner of repository `acme/receipts` (GitHub public record)')
+        author = {**NAMED_OWNER, 'relation': 'internet-draft-author', 'relation_subject': 'draft-example-record-02',
+                  'established_by': 'confirmed-with-the-person'}
+        self.assertEqual(said(result_table.validate(row(initiation=author))['initiation']),
+                         'Dana Example, an author of Internet-Draft `draft-example-record-02` '
+                         '(confirmed with the person directly)')
+        self.assertEqual(said(result_table.validate(row())['initiation']),
+                         'A party who asked not to be named; no established link to the format')
+
+    def test_authorship_of_a_draft_is_never_taken_from_a_public_record_of_an_account(self):
+        claim = {**NAMED_OWNER, 'relation': 'internet-draft-author', 'relation_subject': 'draft-example-record-02'}
+        with self.assertRaises(lib.ProposalError):
+            result_table.validate(row(initiation=claim))
+
+    def test_a_party_who_is_not_named_carries_no_name_and_no_repository(self):
+        for leak in ({'initiated_by': 'Dana Example'}, {'relation_subject': 'acme/receipts'}):
+            with self.subTest(leak=leak), self.assertRaises(lib.ProposalError):
+                result_table.validate(row(initiation={'relation': 'repository-owner',
+                                                      'established_by': 'github-public-record', **leak}))
+
+    def test_a_row_is_agreed_only_when_the_author_agreed_it(self):
+        with self.assertRaises(lib.ProposalError):
+            result_table.validate(row(status='agreed', summary='Two cases.', initiation=NAMED_OWNER))
+        with self.assertRaises(lib.ProposalError):
+            result_table.validate(row(status='agreed', summary='Two cases.', author_review='not-applicable',
+                                      initiation=NAMED_OWNER))
+        result_table.validate(row(status='agreed', summary='Two cases.', author_review='row-agreed',
+                                  initiation=NAMED_OWNER))
+
+    def test_a_row_cannot_say_whether_a_format_meets_core_or_carry_markup(self):
+        for text in ('The format conforms.', 'Certified.', 'An independent reproduction.',
+                     'a | b', 'line\nbreak', '<b>x</b>', 'see `x`'):
+            with self.subTest(text=text), self.assertRaises(lib.ProposalError):
+                result_table.validate(row(summary=text))
+
+    def test_the_pages_are_built_from_the_rows_and_the_committed_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            directory = new_proposal.build('sample-topic-001', 'Sample receipts', [PIN], 26, root, fetch=lambda pin: b'x')
+            saved = row(summary='Two cases on one variable.', initiation=NAMED_OWNER,
+                        author_spec_changes=[{'what': 'Clarified the binding rule.',
+                                              'reference': 'https://github.com/acme/receipts/pull/7'}],
+                        open_readings=[{'id': 'K2-scope', 'question': 'Does an excluded record count as supplied?',
+                                        'core02_lines': [360, 642], 'cases': ['K2'], 'status': 'open'}])
+            (directory / lib.RESULT_ROW).write_text(json.dumps(saved))
+            pages = result_table.build(root)
+            self.assertIn('No run committed', pages['RESULTS.md'])
+            (directory / 'evidence').mkdir()
+            (directory / 'evidence' / 'comparison.json').write_text(json.dumps({'cases': {
+                'K1': {'expected_verdict': 'downgrade', 'wexp_ref_equals_expected': True, 'wexp_check_equals_expected': True},
+                'K2': {'expected_verdict': 'accept', 'wexp_ref_equals_expected': True, 'wexp_check_equals_expected': False}}}))
+            pages = result_table.build(root)
+        results, readings = pages['RESULTS.md'], pages['OPEN-READINGS.md']
+        self.assertIn('2 case(s); expected 1 accept, 1 downgrade; 1 of 2 equal the frozen expectation', results)
+        self.assertIn('Dana Example, the owner of repository `acme/receipts` (GitHub public record); '
+                      '[check 26](https://github.com/WEXP-dev/interop-test-lab/issues/26)', results)
+        self.assertIn('| draft |', results)
+        self.assertIn('Clarified the binding rule. ([reference](https://github.com/acme/receipts/pull/7))', results)
+        self.assertIn('| `sample-topic-001/K2-scope` | Does an excluded record count as supplied? | 360, 642 |', readings)
+
+    def test_the_committed_pages_of_this_repository_are_current(self):
+        pages = result_table.build()
+        for name, text in pages.items():
+            self.assertEqual((lib.PROPOSALS / name).read_text(encoding='utf-8'), text)
+
+    def test_archive_requests_go_to_one_host_for_validated_repository_names_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            (directory / 'SOURCE-PINS.json').write_text(json.dumps({'external_files': [
+                {'repository': 'acme/receipts'}, {'repository': 'acme/receipts'}, {'repository': 'acme/other'}]}))
+            self.assertEqual(request_archive.requests_for(directory), [
+                'https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/acme/other/',
+                'https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/acme/receipts/'])
+            (directory / 'SOURCE-PINS.json').write_text(json.dumps({'external_files': [
+                {'repository': 'acme/receipts/../../x?y=1'}]}))
+            with self.assertRaises(lib.ProposalError):
+                request_archive.requests_for(directory)
 
 
 if __name__ == '__main__':

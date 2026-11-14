@@ -1,0 +1,18 @@
+{
+ "author_review": "not-applicable",
+ "author_spec_changes": [],
+ "examined": "Worked example of the proposal path (two cases from the public corpus)",
+ "initiation": {
+  "channel": "maintainer",
+  "established_by": "not-applicable",
+  "initiated_by": "Mikhail Sergeev",
+  "interop_check_issue": null,
+  "named": true,
+  "relation": "maintainer",
+  "relation_subject": null
+ },
+ "open_readings": [],
+ "schema": "wexp-interop/proposal-result-row/1",
+ "status": "agreed",
+ "summary": "Synthetic. Shows the path only; it maps no external format and is not a result about one."
+}

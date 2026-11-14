@@ -3,9 +3,11 @@
 
 usage: python3 -B scripts/proposals/new_proposal.py --slug atx-boundary-001 --title "..." \
            [--issue 26] --pin owner/repo@<commit>:path [--pin ...]
+           [--relation repository-owner]
 
 It fetches each pinned file once to record its SHA-256 and size. It writes no mapping and no
-expectation: those are the work a person does next.
+expectation: those are the work a person does next. It also writes RESULT-ROW.json as a draft that
+records who initiated the check and how that is known; nobody is named in it until they agree.
 """
 from __future__ import annotations
 
@@ -16,6 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import proposal_lib as lib  # noqa: E402
+import result_table  # noqa: E402
 
 README = '''# {title}: local proposal
 
@@ -37,6 +40,10 @@ that the external format conforms or does not conform to WEXP Core.
 4. **Run.** `python3 -B scripts/proposals/run_proposal.py docs/proposals/{slug} --wexp-ref <checkout>
    --wexp-check <checkout> --write` runs both appraisers and writes `evidence/`. Commit it after the
    freeze. A difference from an expectation is recorded as it is; expectations are not edited after a run.
+
+5. **Result row.** [RESULT-ROW.json](RESULT-ROW.json) says what was examined, who initiated the check
+   and how that is known, and whether the author of the format agreed the row. It starts as a draft
+   that names nobody. `python3 -B scripts/proposals/result_table.py` rebuilds the results page from it.
 
 Both appraisers are operated by one person. A run here is not an independent reproduction.
 '''
@@ -69,7 +76,8 @@ _Sources, with revisions. State that no appraiser ran on these inputs before FRE
 '''
 
 
-def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path, fetch=lib.fetch_pinned) -> Path:
+def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path, fetch=lib.fetch_pinned,
+          relation: str = 'not-established') -> Path:
     directory = lib.proposal_dir(slug, root)
     if directory.exists():
         raise lib.ProposalError(f'{directory.name} already exists; a proposal is never overwritten')
@@ -82,6 +90,11 @@ def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path,
     for pin in parsed:
         data = fetch(pin)
         files.append({**pin, 'sha256': lib.sha256(data), 'bytes': len(data)})
+    if relation not in result_table.RELATIONS:
+        raise lib.ProposalError(f'relation is one of {tuple(result_table.RELATIONS)}')
+    # The draft row names nobody and therefore no repository or draft either; both are added with
+    # the name once the person agrees to be named.
+    row = result_table.template(title.strip(), issue, relation)
     origin = ''
     if issue is not None:
         origin = (f'Opened from interoperability check '
@@ -99,6 +112,7 @@ def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path,
     profile = f'wexp-work/interop/{slug}/mapping-1'
     (directory / 'profiles.json').write_text(json.dumps(
         {profile: {'tokens': {}, 'relation_tokens': [], 'scope_names': []}}, indent=1, sort_keys=True) + '\n', encoding='utf-8')
+    (directory / lib.RESULT_ROW).write_text(json.dumps(row, indent=1, sort_keys=True) + '\n', encoding='utf-8')
     for sub in ('inputs', 'expectations'):
         (directory / sub / 'README.md').write_text(
             f'One `<case>.json` per case. See [../README.md](../README.md).\n', encoding='utf-8')
@@ -111,10 +125,11 @@ def main() -> int:
     ap.add_argument('--title', required=True)
     ap.add_argument('--pin', action='append', default=[])
     ap.add_argument('--issue', type=int)
+    ap.add_argument('--relation', default='not-established')
     ap.add_argument('--root', type=Path, default=lib.PROPOSALS)
     a = ap.parse_args()
     try:
-        directory = build(a.slug, a.title, a.pin, a.issue, a.root)
+        directory = build(a.slug, a.title, a.pin, a.issue, a.root, relation=a.relation)
     except lib.ProposalError as error:
         print(f'refused: {error}', file=sys.stderr)
         return 2

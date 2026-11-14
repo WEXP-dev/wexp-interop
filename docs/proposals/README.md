@@ -15,7 +15,35 @@ the author of the external format.
 | 3. Mapping | a maintainer, then the author | Write `MAPPING.md`, `inputs/` and `expectations/`. The author reads the pull request and says where the mapping misreads the format; corrections go in as a new revision section. |
 | 4. Freeze | a maintainer | `python3 -B scripts/proposals/freeze_proposal.py freeze docs/proposals/<slug>`, committed on its own. |
 | 5. Run | automatic | On every push to the pull request, the "Proposal order check and appraisal run" workflow checks the freeze, runs both appraisers at the pinned revisions and posts the result table. To keep the evidence in the tree, run `run_proposal.py --write` locally and commit `evidence/` after the freeze. |
-| 6. Result | both | The row and the attribution are agreed in the pull request before anything is published. |
+| 6. Result | both | `RESULT-ROW.json` holds the row: what was examined, a one-line summary, who initiated the check, and what the work left open. The row and the attribution are agreed in the pull request before anything is published. `python3 -B scripts/proposals/result_table.py` rebuilds [RESULTS.md](RESULTS.md) and [OPEN-READINGS.md](OPEN-READINGS.md). |
+
+## Who initiated a check
+
+Every result row states who asked for the check and how that is known, because a result reads
+differently when the author of a format asked for it than when a stranger did.
+
+| Relation to the format | How it is established |
+|---|---|
+| an author of a named Internet-Draft | confirmed with the person directly; an account name alone is never enough |
+| the owner of a named repository | GitHub public record, or confirmed with the person |
+| a public member of the organization that owns it | GitHub public record, or confirmed with the person |
+| a contributor to it | GitHub public record, or confirmed with the person |
+| a maintainer of this repository | the check maps no external format |
+| no established link | stated as such; it is not an obstacle to a check |
+
+The skeleton writes the row as a draft that names nobody. A name, and the repository or draft the
+relation refers to, are added only when the person agrees. A party who asks not to be named is
+recorded as such, with the kind of relation and no name, repository or draft.
+
+A row also records two things that outlast the check: changes the author made to their own
+specification afterwards, each with a public reference, and readings of the Core-02 text that the
+mapping showed to be open. The second list is input to the next revision of the draft.
+
+## Keeping the pinned bytes retrievable
+
+`python3 -B scripts/proposals/request_archive.py docs/proposals/<slug> --send` asks the Software
+Heritage archive to save the repositories a proposal pins. The skeleton workflow can do this on
+request. It is a courtesy: no result depends on it.
 
 ## What the checks hold
 
@@ -28,6 +56,9 @@ the author of the external format.
 - Committed evidence must equal a fresh run.
 - A result that differs from its expectation is reported and kept. Expectations are not edited
   after a run.
+- A result row must be well formed, must not carry a name together with "not named", and must not
+  be marked agreed unless the author of the format agreed it. The counts on the results page come
+  from the committed evidence, not from the row. The two pages must equal what the rows produce.
 
 ## What they do not hold
 
