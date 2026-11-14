@@ -42,3 +42,5 @@ external format correctly; that is what the author's review is for.
 - [WIMSE / Core-02 migration trial](wimse-core02-replay-001/RESULTS.md)
 
 Both predate this path and are not frozen under it.
+- [Worked example of the path](worked-example-001/README.md): two cases from the public corpus, frozen and run
+  under these checks. Synthetic; it maps no external format.
