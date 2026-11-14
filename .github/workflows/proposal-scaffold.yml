@@ -2,8 +2,10 @@ name: Proposal skeleton
 
 # Started by a maintainer for one interoperability check. Creates the skeleton
 # of a proposal on a new branch: the pinned public files with their SHA-256 and
-# size, and templates for the mapping, the inputs and the expectations. It
-# writes no mapping and runs no appraiser.
+# size, templates for the mapping, the inputs and the expectations, and a draft
+# result row that records who initiated the check without naming anyone. It
+# writes no mapping and runs no appraiser. On request it asks Software Heritage
+# to archive the pinned repositories, so the bytes stay retrievable.
 #
 # The inputs come from the automatic first reply on the check (repository,
 # commit and path of each pinned file). They are passed through the environment
@@ -24,6 +26,15 @@ on:
       pins:
         description: 'Pinned files, space separated: owner/repo@<40-hex commit>:path'
         required: true
+      relation:
+        description: 'What the automatic reply says about the account that opened the check'
+        type: choice
+        default: not-established
+        options: [not-established, repository-owner, organization-public-member, repository-contributor]
+      archive:
+        description: 'Ask Software Heritage to archive the pinned repositories'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -52,9 +63,10 @@ jobs:
           TITLE: ${{ inputs.title }}
           ISSUE: ${{ inputs.issue }}
           PINS: ${{ inputs.pins }}
+          RELATION: ${{ inputs.relation }}
         run: |
           set -euo pipefail
-          args=(--slug "$SLUG" --title "$TITLE")
+          args=(--slug "$SLUG" --title "$TITLE" --relation "$RELATION")
           case "$ISSUE" in
             '') ;;
             *[!0-9]*) echo "::error::issue must be a number"; exit 1 ;;
@@ -64,6 +76,12 @@ jobs:
           for pin in $PINS; do args+=(--pin "$pin"); done
           set +f
           python -B scripts/proposals/new_proposal.py "${args[@]}"
+      - name: Ask Software Heritage to archive the pinned repositories
+        if: inputs.archive
+        continue-on-error: true
+        env:
+          SLUG: ${{ inputs.slug }}
+        run: python -B scripts/proposals/request_archive.py "docs/proposals/$SLUG" --send
       - name: Commit, push the branch and open a draft pull request
         env:
           GH_TOKEN: ${{ github.token }}

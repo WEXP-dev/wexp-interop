@@ -22,6 +22,7 @@ CASE_RE = re.compile(r'^[A-Za-z0-9][A-Za-z0-9-]{0,31}$')
 SHA_RE = re.compile(r'^[0-9a-f]{40}$')
 NAME = r'[A-Za-z0-9](?:[A-Za-z0-9._-]{0,98}[A-Za-z0-9_])?'
 PIN_RE = re.compile(rf'^({NAME})/({NAME})@([0-9a-f]{{40}}):([A-Za-z0-9._-]+(?:/[A-Za-z0-9._-]+)*)$')
+RESULT_ROW = 'RESULT-ROW.json'
 RAW_HOST = 'raw.githubusercontent.com'
 MAX_FILE_BYTES = 2 * 1024 * 1024
 CORE02_XML_SHA256 = 'de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782'
@@ -109,11 +110,14 @@ def case_ids(directory: Path) -> list[str]:
 
 
 def frozen_files(directory: Path) -> dict[str, str]:
-    """Everything a run depends on: all files except the freeze record and the evidence of runs."""
+    """Everything a run depends on: all files except the freeze record, the evidence of runs, and the
+    result row, which is written after a run and agreed with the author."""
     out = {}
     for path in sorted(directory.rglob('*')):
         rel = path.relative_to(directory)
         if not path.is_file() or path.is_symlink() or rel.parts[0] == 'evidence' or rel.name == 'FREEZE.json':
+            continue
+        if rel.as_posix() == RESULT_ROW:
             continue
         if '__pycache__' in rel.parts:
             continue
