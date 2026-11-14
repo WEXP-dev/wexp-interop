@@ -86,10 +86,19 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           SLUG: ${{ inputs.slug }}
+          ISSUE: ${{ inputs.issue }}
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
           case "$SLUG" in *[!a-z0-9-]*|'') echo "::error::unexpected slug"; exit 1 ;; esac
+          # Naming the check in the pull request makes GitHub show this pull request in the
+          # timeline of the check, where the person who asked can see it.
+          origin=""
+          case "$ISSUE" in
+            '') ;;
+            *[!0-9]*) echo "::error::issue must be a number"; exit 1 ;;
+            *) origin="For interoperability check WEXP-dev/interop-test-lab#$ISSUE. " ;;
+          esac
           branch="proposal/$SLUG"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -99,5 +108,5 @@ jobs:
           git push --quiet "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" "$branch"
           gh pr create --repo "$REPO" --base main --head "$branch" --draft \
             --title "proposal $SLUG: mapping and expectations (draft)" \
-            --body "Skeleton created for one interoperability check. Next: the mapping and the expected results, then the freeze, then the run. See docs/proposals/README.md." \
-            || echo "::warning::the branch is pushed; open the pull request by hand (this repository does not let Actions create pull requests)"
+            --body "${origin}Skeleton created for one interoperability check. Next: the mapping and the expected results, then the freeze, then the run. The README of the proposal has ready one-line answers for the author of the format. See docs/proposals/README.md." \
+            || echo "::warning::the branch is pushed; open the pull request by hand as a draft and name the check in its body (this repository does not let Actions create pull requests)"

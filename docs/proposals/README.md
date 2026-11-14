@@ -11,7 +11,7 @@ the author of the external format.
 | Step | Who | How |
 |---|---|---|
 | 1. Ask | the author of the format | [Start an interoperability check](https://github.com/WEXP-dev/interop-test-lab/blob/main/START-HERE.md). An automatic reply pins the public files linked in the form: repository, commit, path, SHA-256, size. |
-| 2. Skeleton | a maintainer | Run the "Proposal skeleton" workflow with the pins from that reply, or `python3 -B scripts/proposals/new_proposal.py` locally. It creates `docs/proposals/<slug>/` on a branch and opens a draft pull request. |
+| 2. Skeleton | a maintainer | Run the "Proposal skeleton" workflow with the pins from that reply, or `python3 -B scripts/proposals/new_proposal.py` locally. It creates `docs/proposals/<slug>/` on a branch and opens a draft pull request. The skeleton includes `FIELDS.md`, the list of fields in the pinned files with nothing decided about them, and ready one-line answers for the author of the format. |
 | 3. Mapping | a maintainer, then the author | Write `MAPPING.md`, `inputs/` and `expectations/`. The author reads the pull request and says where the mapping misreads the format; corrections go in as a new revision section. |
 | 4. Freeze | a maintainer | `python3 -B scripts/proposals/freeze_proposal.py freeze docs/proposals/<slug>`, committed on its own. |
 | 5. Run | automatic | On every push to the pull request, the "Proposal order check and appraisal run" workflow checks the freeze, runs both appraisers at the pinned revisions and posts the result table. To keep the evidence in the tree, run `run_proposal.py --write` locally and commit `evidence/` after the freeze. |
@@ -68,6 +68,9 @@ request. It is a courtesy: no result depends on it.
   be marked agreed unless the author of the format agreed it. The counts on the results page come
   from the committed evidence, not from the row, and are published only for a proposal that has a
   freeze: evidence with no freeze is refused. The two pages must equal what the rows produce.
+- A check asked for by a party with no established link to the format is not listed on the results
+  pages, and its pull request cannot leave the draft state, until the author of the format has
+  agreed the row. Anybody can ask about anybody's format; that alone publishes nothing about it.
 - The summary comment on a pull request names the commit and the run it describes. When the check
   does not complete for a commit, the comment says so in place of the earlier result.
 

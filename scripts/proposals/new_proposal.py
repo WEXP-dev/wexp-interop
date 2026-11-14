@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -31,7 +32,8 @@ that the external format conforms or does not conform to WEXP Core.
 
 1. **Pinned bytes.** [SOURCE-PINS.json](SOURCE-PINS.json) names the exact public files this proposal
    refers to, with SHA-256 and size, and the revisions of both appraisers.
-2. **Mapping and expectations.** [MAPPING.md](MAPPING.md) says how the external record maps to a
+2. **Mapping and expectations.** [FIELDS.md](FIELDS.md) lists the fields of the pinned files, with
+   nothing decided about them. [MAPPING.md](MAPPING.md) says how the external record maps to a
    normalized Core-02 input. `inputs/<case>.json` holds `{{"id": ..., "input": ...}}` and
    `expectations/<case>.json` holds `{{"id": ..., "expected": ...}}` with all twenty result components.
    Corrections from the author go in as a new revision section of MAPPING.md.
@@ -45,6 +47,18 @@ that the external format conforms or does not conform to WEXP Core.
    and how that is known, and whether the author of the format agreed the row. It starts as a draft
    that names nobody. `python3 -B scripts/proposals/result_table.py` rebuilds the results page from it.
 
+## For the author of the format
+
+You do not need to edit anything. Answer in the pull request with one line; copy whichever applies:
+
+- `Mapping read: correct as written.`
+- `Mapping read: wrong here: <what it misreads>.`
+- `Name me as: <your name>.` or `Do not name me.`
+- `Row agreed.`
+
+Each of these is a separate answer. Agreeing that the mapping reads your format correctly is not
+agreeing the result row, and neither says anything about WEXP as a whole.
+
 Both appraisers are operated by one person. A run here is not an independent reproduction.
 '''
 
@@ -57,7 +71,8 @@ Core-02 line numbers refer to the published XML of draft-sergeev-wexp-core-02 (S
 
 1. **What the external record establishes, in its author's terms.** _To write._
 2. **What it does not name or bind** (target, action, actor). _To write._
-3. **How each part is carried into a Core-02 input,** and what is deliberately not mapped. _To write._
+3. **How each part is carried into a Core-02 input,** and what is deliberately not mapped. Every
+   field listed in [FIELDS.md](FIELDS.md) is accounted for. _To write._
 4. **What is left to the mapping and never reaches Core** (for example an upstream rejection). _To write._
 
 ## Cases and pre-run expectations
@@ -76,6 +91,64 @@ _Sources, with revisions. State that no appraiser ran on these inputs before FRE
 '''
 
 
+FIELD_KEY = re.compile(r'^[A-Za-z0-9_.:@/-]{1,80}$')
+MAX_FIELD_ROWS = 300
+MAX_FIELD_DEPTH = 12
+
+
+def _unique(pairs):
+    keys = [k for k, _ in pairs]
+    if len(set(keys)) != len(keys):
+        raise ValueError('repeated key')
+    return dict(pairs)
+
+
+def field_paths(value, prefix: str = '', depth: int = 0, out: dict | None = None) -> dict:
+    """Paths of the fields of a JSON value with the kind of each. No value is copied."""
+    out = {} if out is None else out
+    if depth > MAX_FIELD_DEPTH or len(out) >= MAX_FIELD_ROWS:
+        return out
+    if type(value) is dict:
+        for key, child in value.items():
+            name = key if FIELD_KEY.match(key) else f'(a key of {len(key)} characters, not shown)'
+            field_paths(child, f'{prefix}.{name}' if prefix else name, depth + 1, out)
+    elif type(value) is list:
+        if not value:
+            out.setdefault(f'{prefix}[]', set()).add('empty list')
+        for child in value[:50]:
+            field_paths(child, f'{prefix}[]', depth + 1, out)
+    else:
+        kind = {str: 'string', bool: 'boolean', int: 'number', float: 'number', type(None): 'null'}[type(value)]
+        if len(out) < MAX_FIELD_ROWS or prefix in out:
+            out.setdefault(prefix or '(the whole value)', set()).add(kind)
+    return out
+
+
+def fields_page(title: str, files: list[tuple[dict, bytes]]) -> str:
+    """The field inventory of the pinned files: every field once, with nothing decided about it.
+
+    This is the mechanical half of a mapping. What each field means, and whether it is carried
+    into a Core-02 input, is the work of MAPPING.md and is not attempted here.
+    """
+    out = [f'# Fields of the pinned files: {title}', '',
+           'Generated from the pinned bytes when the skeleton was made. It lists the fields that are present, '
+           'not what they mean. Fill the last column while writing [MAPPING.md](MAPPING.md); a field that is '
+           'deliberately not carried is written as such, not left blank. Values are not shown here.', '']
+    for pin, data in files:
+        out += [f'## `{pin["repository"]}` at `{pin["commit"][:12]}`: `{pin["path"]}`', '']
+        try:
+            paths = field_paths(json.loads(data, object_pairs_hook=_unique))
+        except (ValueError, RecursionError, KeyError):
+            out += ['Not read as JSON, or it repeats a key. List its fields by hand.', '']
+            continue
+        out += ['| Field | Kind | Carried into a Core-02 input as |', '|---|---|---|']
+        out += [f'| `{path}` | {", ".join(sorted(kinds))} | _to decide_ |' for path, kinds in paths.items()]
+        if len(paths) >= MAX_FIELD_ROWS:
+            out.append(f'| _more than {MAX_FIELD_ROWS} fields; the rest are not listed_ | | |')
+        out.append('')
+    return '\n'.join(out)
+
+
 def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path, fetch=lib.fetch_pinned,
           relation: str = 'not-established') -> Path:
     directory = lib.proposal_dir(slug, root)
@@ -86,10 +159,11 @@ def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path,
     parsed = [lib.parse_pin(p) for p in pins]
     if not parsed:
         raise lib.ProposalError('at least one --pin is required: a proposal is about exact bytes')
-    files = []
+    files, contents = [], []
     for pin in parsed:
         data = fetch(pin)
         files.append({**pin, 'sha256': lib.sha256(data), 'bytes': len(data)})
+        contents.append((pin, data))
     if relation not in result_table.RELATIONS:
         raise lib.ProposalError(f'relation is one of {tuple(result_table.RELATIONS)}')
     # The draft row names nobody and therefore no repository or draft either; both are added with
@@ -102,6 +176,7 @@ def build(slug: str, title: str, pins: list[str], issue: int | None, root: Path,
     (directory / 'inputs').mkdir(parents=True)
     (directory / 'expectations').mkdir()
     (directory / 'README.md').write_text(README.format(title=title.strip(), slug=slug, origin=origin), encoding='utf-8')
+    (directory / 'FIELDS.md').write_text(fields_page(title.strip(), contents), encoding='utf-8')
     (directory / 'MAPPING.md').write_text(MAPPING.format(title=title.strip(), core02=lib.CORE02_XML_SHA256), encoding='utf-8')
     pins_record = {'core02_xml_sha256': lib.CORE02_XML_SHA256, 'external_files': files,
                    'wexp_ref': {'repository': 'WEXP-dev/wexp-ref', 'commit': lib.WEXP_REF_COMMIT},
