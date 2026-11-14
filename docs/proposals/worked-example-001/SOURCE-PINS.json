@@ -1,0 +1,20 @@
+{
+ "core02_xml_sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+ "external_files": [
+  {
+   "bytes": 296485,
+   "commit": "edd67056873502a2c3cecf5dd2b8db71271c2f57",
+   "path": "vectors/WEXP-CORE-02-VECTORS-001/corpus.json",
+   "repository": "WEXP-dev/wexp-vectors",
+   "sha256": "d5d2c9d54185f04ac59ac2b5642853a6ebd00c3d28a3239d62682186f5df323f"
+  }
+ ],
+ "wexp_check": {
+  "commit": "63bde685c54fd6329f1217708d1c211b80c3712e",
+  "repository": "WEXP-dev/wexp-check"
+ },
+ "wexp_ref": {
+  "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+  "repository": "WEXP-dev/wexp-ref"
+ }
+}
