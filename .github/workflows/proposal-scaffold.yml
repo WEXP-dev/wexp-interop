@@ -24,8 +24,11 @@ on:
         description: 'Number of the check in WEXP-dev/interop-test-lab (optional)'
         required: false
       pins:
-        description: 'Pinned files, space separated: owner/repo@<40-hex commit>:path'
-        required: true
+        description: 'Pinned files, space separated: owner/repo@<40-hex commit>:path (pins or drafts, or both)'
+        required: false
+      drafts:
+        description: 'Internet-Drafts with their revision, space separated: draft-example-record-02'
+        required: false
       relation:
         description: 'What the automatic reply says about the account that opened the check'
         type: choice
@@ -47,6 +50,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    outputs:
+      pull_request: ${{ steps.publish.outputs.pull_request }}
     steps:
       - name: Check out main
         uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
@@ -63,6 +68,7 @@ jobs:
           TITLE: ${{ inputs.title }}
           ISSUE: ${{ inputs.issue }}
           PINS: ${{ inputs.pins }}
+          DRAFTS: ${{ inputs.drafts }}
           RELATION: ${{ inputs.relation }}
         run: |
           set -euo pipefail
@@ -74,6 +80,7 @@ jobs:
           esac
           set -f
           for pin in $PINS; do args+=(--pin "$pin"); done
+          for draft in $DRAFTS; do args+=(--draft "$draft"); done
           set +f
           python -B scripts/proposals/new_proposal.py "${args[@]}"
           # The results pages are generated from the rows, so a new row changes them.
@@ -85,6 +92,7 @@ jobs:
           SLUG: ${{ inputs.slug }}
         run: python -B scripts/proposals/request_archive.py "docs/proposals/$SLUG" --send
       - name: Commit, push the branch and open a draft pull request
+        id: publish
         env:
           GH_TOKEN: ${{ github.token }}
           SLUG: ${{ inputs.slug }}
@@ -108,10 +116,24 @@ jobs:
           git add "docs/proposals/$SLUG" docs/proposals/RESULTS.md docs/proposals/OPEN-READINGS.md
           git commit --quiet -m "proposal $SLUG: skeleton with pinned public bytes"
           git push --quiet "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" "$branch"
-          gh pr create --repo "$REPO" --base main --head "$branch" --draft \
-            --title "proposal $SLUG: mapping and expectations (draft)" \
-            --body "${origin}Skeleton created for one interoperability check. Next: the mapping and the expected results, then the freeze, then the run. The README of the proposal has ready one-line answers for the author of the format. See docs/proposals/README.md." \
-            || echo "::warning::the branch is pushed; open the pull request by hand as a draft and name the check in its body (this repository does not let Actions create pull requests)"
+          echo "### Proposal skeleton" >> "$GITHUB_STEP_SUMMARY"
+          echo "- branch: pushed, \`$branch\`" >> "$GITHUB_STEP_SUMMARY"
+          # Each outcome is reported on its own: a green run does not by itself mean that the
+          # pull request exists or that the check was told.
+          if url="$(gh pr create --repo "$REPO" --base main --head "$branch" --draft \
+              --title "proposal $SLUG: mapping and expectations (draft)" \
+              --body "${origin}Skeleton created for one interoperability check. Next: the mapping and the expected results, then the freeze, then the run. The README of the proposal has ready one-line answers for the author of the format. See docs/proposals/README.md.")"; then
+            case "$url" in https://github.com/*/pull/[0-9]*) ;; *) url="" ;; esac
+          else
+            url=""
+          fi
+          if [ -n "$url" ]; then
+            echo "- draft pull request: created, $url" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning::the branch is pushed and no pull request was created; open it by hand as a draft and name the check in its body"
+            echo "- draft pull request: NOT created; open it by hand" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "pull_request=$url" >> "$GITHUB_OUTPUT"
 
   # Tells the person who asked that the work has started, in the check itself.
   # The token is used here only: this job checks out nothing, runs no script of
@@ -131,9 +153,22 @@ jobs:
           ISSUE: ${{ inputs.issue }}
           SLUG: ${{ inputs.slug }}
           REPO: ${{ github.repository }}
+          PULL: ${{ needs.skeleton.outputs.pull_request }}
         run: |
           set -euo pipefail
-          [ -n "$GH_TOKEN" ] || { echo "::notice::no CHECK_COMMENT_TOKEN; leave the note in the check by hand"; exit 0; }
+          echo "### Note in the check" >> "$GITHUB_STEP_SUMMARY"
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::notice::no CHECK_COMMENT_TOKEN; leave the note in the check by hand"
+            echo "- NOT left: no token; leave it by hand" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
           case "$ISSUE" in *[!0-9]*|'') echo "::error::issue must be a number"; exit 1 ;; esac
           case "$SLUG" in *[!a-z0-9-]*|'') echo "::error::unexpected slug"; exit 1 ;; esac
-          gh issue comment "$ISSUE" --repo WEXP-dev/interop-test-lab --body "Work on this check has started. The mapping, the expected results and later the run are kept on the branch [\`proposal/$SLUG\`](https://github.com/$REPO/tree/proposal/$SLUG) of \`$REPO\`, and its pull request is where you can read and answer. Nothing there is a result yet."
+          case "$PULL" in ''|https://github.com/*/pull/[0-9]*) ;; *) echo "::error::unexpected pull request address"; exit 1 ;; esac
+          if [ -n "$PULL" ]; then
+            where="Its draft pull request, $PULL, is where you can read and answer."
+          else
+            where="A maintainer will open the pull request where you can read and answer, and link it here."
+          fi
+          gh issue comment "$ISSUE" --repo WEXP-dev/interop-test-lab --body "A maintainer has started a proposal for this check. The mapping, the expected results and later the run are kept on the branch [\`proposal/$SLUG\`](https://github.com/$REPO/tree/proposal/$SLUG) of \`$REPO\`. $where Nothing there is a result yet."
+          echo "- left in WEXP-dev/interop-test-lab#$ISSUE" >> "$GITHUB_STEP_SUMMARY"

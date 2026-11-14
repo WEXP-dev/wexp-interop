@@ -272,6 +272,43 @@ class ResultRowTest(unittest.TestCase):
             (directory / lib.RESULT_ROW).write_text(json.dumps(saved))
             self.assertIn('Somebody elses format', result_table.build(root)['RESULTS.md'])
 
+    def test_a_named_draft_revision_is_pinned_and_frozen_with_the_files(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            asked = []
+            directory = new_proposal.build('sample-topic-001', 'Sample receipts', [PIN], 26, Path(tmp),
+                                           fetch=lambda pin: b'{}', drafts=['draft-ietf-rats-ear-04'],
+                                           fetch_draft=lambda d: asked.append(d['url']) or b'draft text')
+            pins = json.loads((directory / 'SOURCE-PINS.json').read_text())
+            self.assertIn('SOURCE-PINS.json', lib.frozen_files(directory))
+        self.assertEqual(asked, ['https://www.ietf.org/archive/id/draft-ietf-rats-ear-04.txt'])
+        self.assertEqual(pins['internet_drafts'], [{
+            'name': 'draft-ietf-rats-ear', 'revision': '04', 'url': asked[0],
+            'sha256': lib.sha256(b'draft text'), 'bytes': 10}])
+
+    def test_a_draft_alone_is_enough_and_a_draft_without_revision_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = new_proposal.build('sample-topic-001', 'Sample', [], None, Path(tmp),
+                                           drafts=['draft-example-record-02'], fetch_draft=lambda d: b'x')
+            self.assertEqual(json.loads((directory / 'SOURCE-PINS.json').read_text())['external_files'], [])
+            for bad in (['draft-example-record'], ['draft-x-02; rm'], ['draft-a-01', 'draft-a-01']):
+                with self.subTest(bad=bad), self.assertRaises(lib.ProposalError):
+                    new_proposal.build('sample-topic-002', 'Sample', [], None, Path(tmp), drafts=bad,
+                                       fetch_draft=lambda d: b'x')
+            with self.assertRaises(lib.ProposalError):
+                new_proposal.build('sample-topic-003', 'Sample', [], None, Path(tmp))
+
+    def test_the_readme_names_the_directory_the_skeleton_was_made_in(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = new_proposal.build('sample-topic-001', 'Sample', [PIN], None, Path(tmp), fetch=lambda p: b'{}')
+            text = (directory / 'README.md').read_text()
+        here = str(directory.resolve())
+        self.assertIn(f'freeze_proposal.py freeze {here}`', text)
+        self.assertIn(f'run_proposal.py {here} ', text)
+        self.assertIn(f'result_table.py --root {Path(tmp).resolve()}`', text)
+        self.assertNotIn('docs/proposals/sample-topic-001', text)
+        default = new_proposal.README.format(title='t', slug='s', origin='', path='docs/proposals/s', root_arg='')
+        self.assertIn('result_table.py` rebuilds', default)
+
     def test_the_result_row_is_not_part_of_the_freeze(self):
         with tempfile.TemporaryDirectory() as tmp:
             directory = new_proposal.build('sample-topic-001', 'Sample receipts', [PIN], None, Path(tmp),
