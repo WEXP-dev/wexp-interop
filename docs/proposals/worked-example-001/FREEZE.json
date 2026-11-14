@@ -1,0 +1,16 @@
+{
+ "algorithm": "sha256",
+ "files": {
+  "MAPPING.md": "2a9d115d77ccb133d08d44d822dd32c181d4f229b18b92fea5c42e89cd5fa0be",
+  "README.md": "1ab6cf640f826fe29f7c4ab3e27f47e83414fb4973f54c14507fde1b9a160214",
+  "SOURCE-PINS.json": "b458170f1f0ae03c4ab237e4df270a0c8a5328e5f05675dff1f34e78a08f7640",
+  "expectations/P14.json": "b47466a4d086d38c63c6b91f01c34a5d08a71c5ed0900dc538c5513af9725c38",
+  "expectations/R34.json": "66cc2c95718ea0f4ebc03453716731392cd66a937f3c3c47db402c1a25904a83",
+  "expectations/README.md": "a6c62ea39164842577f05ead87be21d8fc26b2bb8ede6a806839dcdca33f55db",
+  "inputs/P14.json": "46db07cc020d44f68e7c1c83e2926bbe5eb128cbbff56a25011126e1c84fb40a",
+  "inputs/R34.json": "424c696e22d131e8f916b621e591e2dee6edb11d0c88c68bd331c378b307ba0d",
+  "inputs/README.md": "a6c62ea39164842577f05ead87be21d8fc26b2bb8ede6a806839dcdca33f55db",
+  "profiles.json": "07b586b78df7c891fd4ce1aa17d976be0f814f4aa5e870efe19aa599c1d880e9"
+ },
+ "note": "committed before the first appraiser run on any input of this proposal"
+}
