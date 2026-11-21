@@ -1,0 +1,126 @@
+{
+  "format": "aep-applicability-native-outcomes-1",
+  "logical_now": 1750000100,
+  "fresh_state_created_empty": true,
+  "case_order": [
+    "a",
+    "b",
+    "c"
+  ],
+  "cases": {
+    "a": {
+      "started_utc": "2026-11-09T14:13:06.901218+00:00",
+      "finished_utc": "2026-11-09T14:13:07.790044+00:00",
+      "returncode": 0,
+      "sample": "good",
+      "consume": true,
+      "stdout": "  [PASS] structure\n  [PASS] chain_integrity\n  [PASS] aep_signature\n  [PASS] measurements\n  [PASS] mandate\n  [PASS] replay\nVERDICT: ALLOW  (good.aep.json)\n  one-shot nonce consumed: aep-nonce-0001\n",
+      "rc": 0,
+      "verdict": "ALLOW",
+      "reason": null,
+      "logical_now": 1750000100,
+      "source_citations": [
+        {
+          "path": "evidence/basis/aep-sandbox/verify.py",
+          "lines": [
+            24,
+            26,
+            49,
+            71
+          ]
+        },
+        {
+          "path": "evidence/basis/aep-sandbox/aep/package.py",
+          "lines": [
+            113,
+            133
+          ]
+        },
+        {
+          "path": "evidence/basis/aep-sandbox/aep/mandate.py",
+          "lines": [
+            149,
+            167
+          ]
+        }
+      ],
+      "matches_native_prediction": true
+    },
+    "b": {
+      "started_utc": "2026-11-09T14:13:07.791149+00:00",
+      "finished_utc": "2026-11-09T14:13:07.848154+00:00",
+      "returncode": 2,
+      "sample": "good",
+      "consume": true,
+      "stdout": "  [PASS] structure\n  [PASS] chain_integrity\n  [PASS] aep_signature\n  [PASS] measurements\n  [PASS] mandate\n  [FAIL] replay\nVERDICT: DENY  reason=replayed  (good.aep.json)\n",
+      "rc": 2,
+      "verdict": "DENY",
+      "reason": "replayed",
+      "logical_now": 1750000100,
+      "source_citations": [
+        {
+          "path": "evidence/basis/aep-sandbox/verify.py",
+          "lines": [
+            24,
+            26,
+            49,
+            71
+          ]
+        },
+        {
+          "path": "evidence/basis/aep-sandbox/aep/package.py",
+          "lines": [
+            113,
+            133
+          ]
+        },
+        {
+          "path": "evidence/basis/aep-sandbox/aep/mandate.py",
+          "lines": [
+            149,
+            167
+          ]
+        }
+      ],
+      "matches_native_prediction": true
+    },
+    "c": {
+      "started_utc": "2026-11-09T14:13:07.849366+00:00",
+      "finished_utc": "2026-11-09T14:13:07.899762+00:00",
+      "returncode": 2,
+      "sample": "exceed-scope",
+      "consume": false,
+      "stdout": "  [PASS] structure\n  [PASS] chain_integrity\n  [PASS] aep_signature\n  [PASS] measurements\n  [FAIL] mandate\nVERDICT: DENY  reason=scope_violation  (exceed-scope.aep.json)\n",
+      "rc": 2,
+      "verdict": "DENY",
+      "reason": "scope_violation",
+      "logical_now": 1750000100,
+      "source_citations": [
+        {
+          "path": "evidence/basis/aep-sandbox/verify.py",
+          "lines": [
+            24,
+            26,
+            49,
+            71
+          ]
+        },
+        {
+          "path": "evidence/basis/aep-sandbox/aep/package.py",
+          "lines": [
+            113,
+            133
+          ]
+        },
+        {
+          "path": "evidence/basis/aep-sandbox/aep/mandate.py",
+          "lines": [
+            149,
+            167
+          ]
+        }
+      ],
+      "matches_native_prediction": true
+    }
+  }
+}

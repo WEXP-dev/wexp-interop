@@ -1,0 +1,6 @@
+  [PASS] structure
+  [PASS] chain_integrity
+  [PASS] aep_signature
+  [PASS] measurements
+  [FAIL] mandate
+VERDICT: DENY  reason=scope_violation  (exceed-scope.aep.json)

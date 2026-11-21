@@ -1,0 +1,155 @@
+{
+  "format": "aep-applicability-B-ambiguities-1",
+  "expectation_version": "v1",
+  "profile_identifier": "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+  "unresolved_ambiguities": [],
+  "disputes": [],
+  "resolved_choices": [
+    {
+      "id": "B-RC-01",
+      "topic": "Result-carrier unavailable value",
+      "issue": "Core specifies a logical unavailable value and leaves its encoding to a result carrier; the input profile does not separately name a result-carrier revision.",
+      "resolution": "B v1 explicitly encodes unavailable as the JSON string unavailable; empty sets are arrays and Boolean false remains a JSON Boolean. A carrier difference must be reported explicitly, not silently repaired.",
+      "core_xml_lines": [
+        581,
+        610,
+        611,
+        612
+      ]
+    },
+    {
+      "id": "B-RC-02",
+      "topic": "Attributed grounding admitted in C-attrib",
+      "issue": "Grounding admission alone could be mistaken for supported boundary or an observation ceiling.",
+      "resolution": "Keep the supplied unsupported boundary in both contexts. The independently stated control/coverage gate fails; neither attributed grounding nor positive observation creates a usable ceiling.",
+      "core_xml_lines": [
+        404,
+        405,
+        406,
+        407,
+        415,
+        419,
+        420
+      ]
+    },
+    {
+      "id": "B-RC-03",
+      "topic": "Unsupported boundary versus unperformed execution assessment",
+      "issue": "Both lack material, but their evaluated questions differ.",
+      "resolution": "Boundary is a completed sufficiency assessment of the supplied description and is unsupported; execution occurrence assessment needs unavailable runtime/service material and is not-evaluated. Preserve one substantive boundary reason and one execution gap.",
+      "core_xml_lines": [
+        359,
+        619,
+        621,
+        622,
+        639,
+        640
+      ]
+    },
+    {
+      "id": "B-RC-04",
+      "topic": "H2 equality scope",
+      "issue": "Equal verdicts and support sets could be mistaken for complete result equality.",
+      "resolution": "a/c differ in target and structured evaluation-gap entries, including their evidence-file reference. Asserted typed claim and the other eighteen components remain equal.",
+      "core_xml_lines": [
+        374,
+        579,
+        591,
+        592,
+        745,
+        746
+      ]
+    },
+    {
+      "id": "B-RC-05",
+      "topic": "Historical assertion and bounded domain",
+      "issue": "Replay and authority predicates evaluate propositions different from the selected historical exact-action execution assertion.",
+      "resolution": "Accept the profile separation for these six inputs only; do not generalize it to other freshness/composition claims or identify repeated real-world executions using this two-packet action tuple.",
+      "core_xml_lines": [
+        134,
+        135,
+        149,
+        264,
+        265,
+        266,
+        267,
+        268,
+        364,
+        365,
+        774
+      ],
+      "aep_sources": [
+        {
+          "path": "evidence/basis/specifications/draft-sokolov-rats-aep-composition-06.txt",
+          "lines": [
+            318,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            509,
+            510,
+            511,
+            526,
+            527,
+            528,
+            529,
+            530,
+            585,
+            586,
+            587,
+            588,
+            589
+          ]
+        },
+        {
+          "path": "evidence/basis/aep-sandbox/aep/package.py",
+          "lines": [
+            128,
+            129,
+            130,
+            131,
+            133
+          ]
+        },
+        {
+          "path": "evidence/basis/aep-sandbox/aep/mandate.py",
+          "lines": [
+            149,
+            150,
+            151,
+            152,
+            154,
+            155,
+            156,
+            157,
+            159,
+            160,
+            161,
+            163,
+            164,
+            166,
+            167
+          ]
+        }
+      ]
+    },
+    {
+      "id": "B-RC-06",
+      "topic": "Missing mapper program in B staging",
+      "issue": "PROFILE names prepare_inputs.py among revision-defining materials, but B intentionally does not receive it.",
+      "resolution": "Derive Core expectations from the complete frozen normalized inputs, normative XML and prose profile. Inspect permitted A preparation evidence as upstream evidence, but make no independent mapper-code or cryptographic-reexecution claim.",
+      "core_xml_lines": [
+        51,
+        71,
+        73,
+        382,
+        756
+      ]
+    }
+  ]
+}
