@@ -16,7 +16,7 @@
       },
       "card": "experiments/aep-applicability-001/packages/pkg-001/README.md",
       "record": "experiments/aep-applicability-001/packages/pkg-001/record.json",
-      "record_sha256": "087cf91a9dbc4acef0751695c456e9c32048680f07299e5978368bca985a9fab",
+      "record_sha256": "0dbdf73a151610af330ad99d25f7e2cb93ab6303f26f44e9889301f6dc85ca64",
       "citation": "experiments/aep-applicability-001/packages/pkg-001/CITATION.cff",
       "publication": {
         "version": "aep-applicability-001/pkg-001",
@@ -24,7 +24,7 @@
       },
       "result": {
         "label": "Two appraisers agree on 120/120 components; each matches frozen expectations on 114/120.",
-        "details": "The comparison dimension refers only to ref versus check on the same six inputs. The native verdicts are ALLOW, DENY/replayed and DENY/scope_violation. All six Core assessments downgrade, with attributed grounding, an unsupported boundary and execution not evaluated. Six frozen boundary_ceiling strings differ from the null in each appraiser's output."
+        "details": "The comparison dimension refers only to ref versus check on the same six inputs. The native verdicts are ALLOW, DENY/replayed and DENY/scope_violation. All six Core assessments downgrade, with attributed grounding, an unsupported boundary and execution not evaluated. Six frozen boundary_ceiling strings differ from the null in each appraiser's output. A separate WEXP-operated execution of the prepared public package is recorded in evidence/public-run/RUN-RECORD.json."
       }
     },
     {
