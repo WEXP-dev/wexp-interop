@@ -3,7 +3,8 @@
 One page. The appraisal is `draft-sergeev-wexp-core-02` (semantics `wexp-core-2`). The external
 format is `draft-zambo-aer1-26` (archived text SHA-256
 `7e000d80f00ad29b8e01431de562e98956f86e426b2695a34c8a215e689e53d4`, 139,318 bytes). The record is
-vector `real-04` of corpus kit 1.5.7 (`real-04.json`, SHA-256
+vector `real-04` of corpus kit 1.5.7 (`real-04.json`,
+<https://zambo.dev/aer1/corpus/v1.5.7/base/test-vectors/valid/real-04.json>, SHA-256
 `45c6af65806ad125d9ac33da9e13c737d89e1f2efde5c662cd7baa2db3ab51f8`, 994 bytes). This mapping is
 local to this case: profile identity `wexp-work/interop/aer1-real-04-001/mapping-1`, not an AER-1
 profile and not a registered WEXP mapping profile.
