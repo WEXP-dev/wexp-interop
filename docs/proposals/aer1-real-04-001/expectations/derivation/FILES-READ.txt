@@ -1,0 +1,32 @@
+Files opened in this derivation session (all inside <handoff>/):
+
+<handoff>/BRIEF.md
+<handoff>/REPRESENTATION.md
+<handoff>/FORMAT-REFERENCE-C01.json
+<handoff>/profiles.json
+<handoff>/inputs/a.json
+<handoff>/inputs/b.json
+<handoff>/inputs/c.json
+<handoff>/inputs/d.json
+<handoff>/inputs/e.json
+<handoff>/MAPPING.md
+<handoff>/spec/draft-sergeev-wexp-core-02.txt
+
+Directory listing (names and sizes only, no content): <handoff>/ (recursive).
+
+Own deliverables, written here and re-read only to validate them:
+<handoff>/out/expected/a.json
+<handoff>/out/expected/b.json
+<handoff>/out/expected/c.json
+<handoff>/out/expected/d.json
+<handoff>/out/expected/e.json
+<handoff>/out/DERIVATION.md
+<handoff>/out/AMBIGUITIES.json
+<handoff>/out/FILES-READ.txt
+
+Not opened: anything outside <handoff>/. Files named in MAPPING.md but not
+present in this directory (SOURCE-PINS.json, FREEZE.json, expectations/) were not looked for.
+No network was used. No appraiser implementation was run, imported or read. Shell use was limited
+to reading the files above (JSON well-formedness, duplicate-member check, key listing, leaf-level
+diff of the inputs, atom-binding and token-syntax listing, de-paginated search of the spec text to
+verify quotations) and to writing and checking the deliverables.
