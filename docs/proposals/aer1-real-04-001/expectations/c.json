@@ -1,0 +1,187 @@
+{
+ "expected": {
+  "asserted_claim": {
+   "base": "execution",
+   "qualifiers": [
+    "PROV"
+   ]
+  },
+  "asserted_claim_supported": false,
+  "boundary_ceiling": "execution",
+  "boundary_grounding": "asserted-only",
+  "counter_evidence": [
+   {
+    "affected_claims": [],
+    "basis_refs": [],
+    "limitations": [],
+    "reasons": [],
+    "status": "not-supplied"
+   }
+  ],
+  "evaluation_context": {
+   "evaluated_at": "2026-11-22T00:00:00Z",
+   "id": "C-aer1-real-04-001",
+   "profile_identifiers": [
+    "wexp-work/interop/aer1-real-04-001/mapping-1"
+   ],
+   "trust_configuration": "aer1-real-04-trust-asserted"
+  },
+  "evaluation_gap_entries": [
+   {
+    "affected_claims": [
+     {
+      "base": "execution",
+      "qualifiers": [
+       "PROV"
+      ]
+     }
+    ],
+    "basis_refs": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "real-04/canonical_bytes@sha256:c92e4cfdc2a00d2914d6d5c596d0936e6bfdba522a125467a08ef6ebce5974ca"
+     ]
+    ],
+    "evaluation_context_ref": "C-aer1-real-04-001",
+    "limitations": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "L-aer1-unsigned"
+     ]
+    ],
+    "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e",
+    "token": "E_PROV_NOT_EVALUATED"
+   },
+   {
+    "affected_claims": [
+     {
+      "base": "execution",
+      "qualifiers": []
+     }
+    ],
+    "basis_refs": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "real-04.json@sha256:45c6af65806ad125d9ac33da9e13c737d89e1f2efde5c662cd7baa2db3ab51f8"
+     ]
+    ],
+    "evaluation_context_ref": "C-aer1-real-04-001",
+    "limitations": [],
+    "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e",
+    "token": "P_AER1_ANCHOR_NOT_CHECKED"
+   }
+  ],
+  "evaluation_gaps": [
+   "E_PROV_NOT_EVALUATED",
+   "P_AER1_ANCHOR_NOT_CHECKED"
+  ],
+  "evaluation_scope": [
+   {
+    "capability": "carrier-mapping",
+    "status": "evaluated"
+   },
+   {
+    "capability": "authenticity",
+    "status": "evaluated"
+   },
+   {
+    "capability": "target-binding",
+    "status": "evaluated"
+   },
+   {
+    "capability": "boundary-grounding",
+    "status": "evaluated"
+   },
+   {
+    "capability": "observation-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "intent-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "invocation-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "execution-support",
+    "status": "evaluated"
+   },
+   {
+    "capability": "provenance-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "independent-verification",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "composition",
+    "status": "evaluated"
+   },
+   {
+    "capability": "counter-evidence",
+    "status": "evaluated"
+   }
+  ],
+  "fatal_reasons": [],
+  "inherited_limitations": [
+   [
+    "wexp-work/interop/aer1-real-04-001/mapping-1",
+    "L-aer1-unsigned"
+   ]
+  ],
+  "maximal_supported_claims": [
+   {
+    "base": "execution",
+    "qualifiers": []
+   }
+  ],
+  "recorder_relations": [],
+  "semantics_version": "wexp-core-2",
+  "substantive_reasons": [],
+  "support_entries": [
+   {
+    "basis_refs": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "real-04.json@sha256:45c6af65806ad125d9ac33da9e13c737d89e1f2efde5c662cd7baa2db3ab51f8"
+     ],
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "real-04/canonical_bytes@sha256:c92e4cfdc2a00d2914d6d5c596d0936e6bfdba522a125467a08ef6ebce5974ca"
+     ]
+    ],
+    "claim": {
+     "base": "execution",
+     "qualifiers": []
+    },
+    "limitations": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "L-aer1-unsigned"
+     ]
+    ]
+   }
+  ],
+  "support_relations": [
+   {
+    "relation": "support-below-claim",
+    "supported_claim": {
+     "base": "execution",
+     "qualifiers": []
+    }
+   }
+  ],
+  "supported_claims": [
+   {
+    "base": "execution",
+    "qualifiers": []
+   }
+  ],
+  "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e",
+  "verdict": "downgrade"
+ },
+ "id": "c"
+}
