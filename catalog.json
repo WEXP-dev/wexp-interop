@@ -3,6 +3,31 @@
   "generated_from": "experiments/*/packages/*/record.json",
   "packages": [
     {
+      "experiment_id": "aep-applicability-001",
+      "package_id": "pkg-001",
+      "title": "WEXP × AEP: signed sandbox records under Core-02",
+      "summary": "WEXP x AEP (Anton Sokolov): two aep-sandbox samples (signed record and mandate, no platform Evidence) mapped to Core-02 under two evaluation contexts; both appraisers agree; the execution claim stays not evaluated and the boundary unsupported, while the sandbox verifier checks authority and record authorship. Mapping checked by the AEP author against -06.",
+      "status": {
+        "integrity": "verified",
+        "execution": "local-run-completed",
+        "independent_reproduction": "not-performed",
+        "comparison": "no-local-decision-difference",
+        "publication": "prepared"
+      },
+      "card": "experiments/aep-applicability-001/packages/pkg-001/README.md",
+      "record": "experiments/aep-applicability-001/packages/pkg-001/record.json",
+      "record_sha256": "0dbdf73a151610af330ad99d25f7e2cb93ab6303f26f44e9889301f6dc85ca64",
+      "citation": "experiments/aep-applicability-001/packages/pkg-001/CITATION.cff",
+      "publication": {
+        "version": "aep-applicability-001/pkg-001",
+        "carriers": []
+      },
+      "result": {
+        "label": "Two appraisers agree on 120/120 components; each matches frozen expectations on 114/120.",
+        "details": "The comparison dimension refers only to ref versus check on the same six inputs. The native verdicts are ALLOW, DENY/replayed and DENY/scope_violation. All six Core assessments downgrade, with attributed grounding, an unsupported boundary and execution not evaluated. Six frozen boundary_ceiling strings differ from the null in each appraiser's output. A separate WEXP-operated execution of the prepared public package is recorded in evidence/public-run/RUN-RECORD.json."
+      }
+    },
+    {
       "experiment_id": "emilia-interop-001",
       "package_id": "pkg-001",
       "title": "WEXP × EMILIA INTEROP-001",

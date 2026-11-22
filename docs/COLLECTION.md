@@ -46,7 +46,7 @@ Independence statements distinguish observable common code/dependencies from dec
 
 ## Cards and generated catalog
 
-Each `record.json` declares a supported schema version (`0.1.0` for historical cards, `0.2.0`, `0.3.0` or `0.4.0` below), has an integer `record_revision`, and resides outside `payload/`. Its identity must agree with its directory. Citations, reproduction instructions and evidence references are package-relative paths.
+Each `record.json` declares a supported schema version (`0.1.0` for historical cards, `0.2.0`, `0.3.0`, `0.4.0` or `0.5.0` below), has an integer `record_revision`, and resides outside `payload/`. Its identity must agree with its directory. Citations, reproduction instructions and evidence references are package-relative paths.
 
 `catalog.json` is generated only by:
 
@@ -120,3 +120,18 @@ The first use is `emilia-interop-002/pkg-001` (profile `emilia-archive-v1`). For
 entries, member modes without a file-type bit and the absence of a FREEZE record, by checking
 the candidate's internal manifest and pinned verdict record instead. The default invocation
 still checks INTEROP-001 unchanged.
+
+## Card revision 0.5.0 and the AEP sandbox samples
+
+Version 0.5.0 adds the `aep-core02-applicability-v1` verification profile. Its
+archive contains the selected public material of a WEXP-initiated trial. The
+package inventory identifies the byte-preserved files and any public
+representations of historical records. For this package, the comparison status
+`no-local-decision-difference` compares ref with check on six named Core inputs.
+The two appraisers agree on all 120 components. Each matches the frozen
+expectations on 114. All six differences are the string `"unavailable"` versus
+JSON `null` for `boundary_ceiling`.
+
+The collection check reads the package, verifies its retained evidence and
+keeps the sandbox's three native decisions separate from the Core appraisal.
+The AEP author reviewed the AEP interpretation after the original run.

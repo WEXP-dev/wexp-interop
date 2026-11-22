@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "preparation_commit": "57105314e0dd16b30f6df2675fcd7c281dc95dab",
+  "implementation_commits": {
+    "aep-sandbox": "f6c88be63c5aa12b8e8f6bf35a378a6a5fca9cd4",
+    "wexp-ref": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+    "wexp-check": "a2fd1ffd68b234592979a8aa8965bd580ede4d76"
+  },
+  "logical_now": 1750000100,
+  "started_utc": "2026-11-22T00:21:36.100000+00:00",
+  "finished_utc": "2026-11-22T00:21:36.929597+00:00",
+  "runtime": {
+    "python": "3.14.6",
+    "implementation": "CPython",
+    "system": "Linux",
+    "architecture": "x86_64",
+    "packages": {
+      "pip": "26.1.2",
+      "cryptography": "50.0.2",
+      "cffi": "2.1.1",
+      "pycparser": "3.12"
+    }
+  },
+  "case_order": [
+    "a",
+    "b",
+    "c"
+  ],
+  "core_case_order": [
+    "a-strict",
+    "a-attrib",
+    "b-strict",
+    "b-attrib",
+    "c-strict",
+    "c-attrib"
+  ],
+  "output_sha256": {
+    "aep/a.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "aep/a.state-after.txt": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+    "aep/a.state-before.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "aep/a.stdout.txt": "9d8de0318bb0863e998483dacd2299de34f7f17fd6d44ad7464d6e09dda325c1",
+    "aep/b.rc.txt": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    "aep/b.state-after.txt": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+    "aep/b.state-before.txt": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+    "aep/b.stdout.txt": "9e300324fe15a621d18650658e26f4429ff6a28010e8bbe8a992fb0b38ad7ab7",
+    "aep/c.rc.txt": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    "aep/c.state-after.txt": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+    "aep/c.state-before.txt": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+    "aep/c.stdout.txt": "5388733992e52cd5926d46dea97a897a21ab44cf80207bb56cc2b9c48389e97e",
+    "core/check/a-attrib.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/check/a-attrib.stdout.json": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193",
+    "core/check/a-strict.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/check/a-strict.stdout.json": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a",
+    "core/check/b-attrib.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/check/b-attrib.stdout.json": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193",
+    "core/check/b-strict.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/check/b-strict.stdout.json": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a",
+    "core/check/c-attrib.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/check/c-attrib.stdout.json": "af469f832089eb88eab0d73729720115b3ad2b340cc3da33995e62e9a95c13cd",
+    "core/check/c-strict.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/check/c-strict.stdout.json": "447db3981b5ceeeba6973dd795b7cfbd3e0898eea0368ba4fdde9528ac835f45",
+    "core/ref/a-attrib.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/ref/a-attrib.stdout.json": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193",
+    "core/ref/a-strict.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/ref/a-strict.stdout.json": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a",
+    "core/ref/b-attrib.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/ref/b-attrib.stdout.json": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193",
+    "core/ref/b-strict.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/ref/b-strict.stdout.json": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a",
+    "core/ref/c-attrib.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/ref/c-attrib.stdout.json": "af469f832089eb88eab0d73729720115b3ad2b340cc3da33995e62e9a95c13cd",
+    "core/ref/c-strict.rc.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "core/ref/c-strict.stdout.json": "447db3981b5ceeeba6973dd795b7cfbd3e0898eea0368ba4fdde9528ac835f45"
+  },
+  "changed_raw_files_vs_historical": [],
+  "ref_check_differing_components": {
+    "a-strict": [],
+    "a-attrib": [],
+    "b-strict": [],
+    "b-attrib": [],
+    "c-strict": [],
+    "c-attrib": []
+  },
+  "frozen_expectation_differing_components": {
+    "ref": {
+      "a-strict": [
+        "boundary_ceiling"
+      ],
+      "a-attrib": [
+        "boundary_ceiling"
+      ],
+      "b-strict": [
+        "boundary_ceiling"
+      ],
+      "b-attrib": [
+        "boundary_ceiling"
+      ],
+      "c-strict": [
+        "boundary_ceiling"
+      ],
+      "c-attrib": [
+        "boundary_ceiling"
+      ]
+    },
+    "check": {
+      "a-strict": [
+        "boundary_ceiling"
+      ],
+      "a-attrib": [
+        "boundary_ceiling"
+      ],
+      "b-strict": [
+        "boundary_ceiling"
+      ],
+      "b-attrib": [
+        "boundary_ceiling"
+      ],
+      "c-strict": [
+        "boundary_ceiling"
+      ],
+      "c-attrib": [
+        "boundary_ceiling"
+      ]
+    }
+  },
+  "observation_scope": "Fresh execution of published code. Independent reproduction is not asserted."
+}

@@ -1,0 +1,356 @@
+{
+  "a-strict": {
+    "source_sample": "good",
+    "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+    "claimed_effect": {
+      "action": {
+        "method": "issue_refund",
+        "args": {
+          "order_id": "ORD-4471",
+          "amount": 250,
+          "currency": "EUR"
+        },
+        "context": {
+          "channel": "support-queue",
+          "ticket": "T-9012"
+        }
+      },
+      "self_reported_outcome": {
+        "status": "ok",
+        "refund_id": "RF-22317",
+        "human_signoff": false
+      }
+    },
+    "binding_predicate_passed": true,
+    "grounding": "attributed",
+    "grounding_admission_passed": false,
+    "boundary_control_coverage_material_present": false,
+    "boundary_sufficiency_assessment_completed": true,
+    "boundary_predicate_passed": false,
+    "boundary_status": "unsupported",
+    "ceiling_justified": false,
+    "execution_occurrence_assessment_performed": false,
+    "execution_gap": "execution-assessment-material-unavailable",
+    "role_candidates": {
+      "observation": true,
+      "intent": false,
+      "invocation": false,
+      "execution": true,
+      "PROV(execution)": false,
+      "IV(any base)": false
+    },
+    "candidate_search_completed": true,
+    "source_lines": [
+      "samples/good.aep.json:1-59",
+      "aep/mandate.py:81-88,149-160",
+      "draft-sokolov-rats-aep-composition-06.txt:117-126,346-348"
+    ],
+    "core_xml_lines": [
+      143,
+      149,
+      358,
+      359,
+      360,
+      361,
+      405,
+      406,
+      775,
+      778
+    ]
+  },
+  "a-attrib": {
+    "source_sample": "good",
+    "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+    "claimed_effect": {
+      "action": {
+        "method": "issue_refund",
+        "args": {
+          "order_id": "ORD-4471",
+          "amount": 250,
+          "currency": "EUR"
+        },
+        "context": {
+          "channel": "support-queue",
+          "ticket": "T-9012"
+        }
+      },
+      "self_reported_outcome": {
+        "status": "ok",
+        "refund_id": "RF-22317",
+        "human_signoff": false
+      }
+    },
+    "binding_predicate_passed": true,
+    "grounding": "attributed",
+    "grounding_admission_passed": true,
+    "boundary_control_coverage_material_present": false,
+    "boundary_sufficiency_assessment_completed": true,
+    "boundary_predicate_passed": false,
+    "boundary_status": "unsupported",
+    "ceiling_justified": false,
+    "execution_occurrence_assessment_performed": false,
+    "execution_gap": "execution-assessment-material-unavailable",
+    "role_candidates": {
+      "observation": true,
+      "intent": false,
+      "invocation": false,
+      "execution": true,
+      "PROV(execution)": false,
+      "IV(any base)": false
+    },
+    "candidate_search_completed": true,
+    "source_lines": [
+      "samples/good.aep.json:1-59",
+      "aep/mandate.py:81-88,149-160",
+      "draft-sokolov-rats-aep-composition-06.txt:117-126,346-348"
+    ],
+    "core_xml_lines": [
+      143,
+      149,
+      358,
+      359,
+      360,
+      361,
+      405,
+      406,
+      775,
+      778
+    ]
+  },
+  "b-strict": {
+    "source_sample": "good",
+    "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+    "claimed_effect": {
+      "action": {
+        "method": "issue_refund",
+        "args": {
+          "order_id": "ORD-4471",
+          "amount": 250,
+          "currency": "EUR"
+        },
+        "context": {
+          "channel": "support-queue",
+          "ticket": "T-9012"
+        }
+      },
+      "self_reported_outcome": {
+        "status": "ok",
+        "refund_id": "RF-22317",
+        "human_signoff": false
+      }
+    },
+    "binding_predicate_passed": true,
+    "grounding": "attributed",
+    "grounding_admission_passed": false,
+    "boundary_control_coverage_material_present": false,
+    "boundary_sufficiency_assessment_completed": true,
+    "boundary_predicate_passed": false,
+    "boundary_status": "unsupported",
+    "ceiling_justified": false,
+    "execution_occurrence_assessment_performed": false,
+    "execution_gap": "execution-assessment-material-unavailable",
+    "role_candidates": {
+      "observation": true,
+      "intent": false,
+      "invocation": false,
+      "execution": true,
+      "PROV(execution)": false,
+      "IV(any base)": false
+    },
+    "candidate_search_completed": true,
+    "source_lines": [
+      "samples/good.aep.json:1-59",
+      "aep/mandate.py:81-88,149-160",
+      "draft-sokolov-rats-aep-composition-06.txt:117-126,346-348"
+    ],
+    "core_xml_lines": [
+      143,
+      149,
+      358,
+      359,
+      360,
+      361,
+      405,
+      406,
+      775,
+      778
+    ]
+  },
+  "b-attrib": {
+    "source_sample": "good",
+    "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+    "claimed_effect": {
+      "action": {
+        "method": "issue_refund",
+        "args": {
+          "order_id": "ORD-4471",
+          "amount": 250,
+          "currency": "EUR"
+        },
+        "context": {
+          "channel": "support-queue",
+          "ticket": "T-9012"
+        }
+      },
+      "self_reported_outcome": {
+        "status": "ok",
+        "refund_id": "RF-22317",
+        "human_signoff": false
+      }
+    },
+    "binding_predicate_passed": true,
+    "grounding": "attributed",
+    "grounding_admission_passed": true,
+    "boundary_control_coverage_material_present": false,
+    "boundary_sufficiency_assessment_completed": true,
+    "boundary_predicate_passed": false,
+    "boundary_status": "unsupported",
+    "ceiling_justified": false,
+    "execution_occurrence_assessment_performed": false,
+    "execution_gap": "execution-assessment-material-unavailable",
+    "role_candidates": {
+      "observation": true,
+      "intent": false,
+      "invocation": false,
+      "execution": true,
+      "PROV(execution)": false,
+      "IV(any base)": false
+    },
+    "candidate_search_completed": true,
+    "source_lines": [
+      "samples/good.aep.json:1-59",
+      "aep/mandate.py:81-88,149-160",
+      "draft-sokolov-rats-aep-composition-06.txt:117-126,346-348"
+    ],
+    "core_xml_lines": [
+      143,
+      149,
+      358,
+      359,
+      360,
+      361,
+      405,
+      406,
+      775,
+      778
+    ]
+  },
+  "c-strict": {
+    "source_sample": "exceed-scope",
+    "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",9000,\"EUR\"]",
+    "claimed_effect": {
+      "action": {
+        "method": "issue_refund",
+        "args": {
+          "order_id": "ORD-4471",
+          "amount": 9000,
+          "currency": "EUR"
+        },
+        "context": {
+          "channel": "support-queue",
+          "ticket": "T-9012"
+        }
+      },
+      "self_reported_outcome": {
+        "status": "ok",
+        "refund_id": "RF-90001",
+        "human_signoff": false
+      }
+    },
+    "binding_predicate_passed": true,
+    "grounding": "attributed",
+    "grounding_admission_passed": false,
+    "boundary_control_coverage_material_present": false,
+    "boundary_sufficiency_assessment_completed": true,
+    "boundary_predicate_passed": false,
+    "boundary_status": "unsupported",
+    "ceiling_justified": false,
+    "execution_occurrence_assessment_performed": false,
+    "execution_gap": "execution-assessment-material-unavailable",
+    "role_candidates": {
+      "observation": true,
+      "intent": false,
+      "invocation": false,
+      "execution": true,
+      "PROV(execution)": false,
+      "IV(any base)": false
+    },
+    "candidate_search_completed": true,
+    "source_lines": [
+      "samples/exceed-scope.aep.json:1-59",
+      "aep/mandate.py:81-88,149-160",
+      "draft-sokolov-rats-aep-composition-06.txt:117-126,346-348"
+    ],
+    "core_xml_lines": [
+      143,
+      149,
+      358,
+      359,
+      360,
+      361,
+      405,
+      406,
+      775,
+      778
+    ]
+  },
+  "c-attrib": {
+    "source_sample": "exceed-scope",
+    "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",9000,\"EUR\"]",
+    "claimed_effect": {
+      "action": {
+        "method": "issue_refund",
+        "args": {
+          "order_id": "ORD-4471",
+          "amount": 9000,
+          "currency": "EUR"
+        },
+        "context": {
+          "channel": "support-queue",
+          "ticket": "T-9012"
+        }
+      },
+      "self_reported_outcome": {
+        "status": "ok",
+        "refund_id": "RF-90001",
+        "human_signoff": false
+      }
+    },
+    "binding_predicate_passed": true,
+    "grounding": "attributed",
+    "grounding_admission_passed": true,
+    "boundary_control_coverage_material_present": false,
+    "boundary_sufficiency_assessment_completed": true,
+    "boundary_predicate_passed": false,
+    "boundary_status": "unsupported",
+    "ceiling_justified": false,
+    "execution_occurrence_assessment_performed": false,
+    "execution_gap": "execution-assessment-material-unavailable",
+    "role_candidates": {
+      "observation": true,
+      "intent": false,
+      "invocation": false,
+      "execution": true,
+      "PROV(execution)": false,
+      "IV(any base)": false
+    },
+    "candidate_search_completed": true,
+    "source_lines": [
+      "samples/exceed-scope.aep.json:1-59",
+      "aep/mandate.py:81-88,149-160",
+      "draft-sokolov-rats-aep-composition-06.txt:117-126,346-348"
+    ],
+    "core_xml_lines": [
+      143,
+      149,
+      358,
+      359,
+      360,
+      361,
+      405,
+      406,
+      775,
+      778
+    ]
+  }
+}

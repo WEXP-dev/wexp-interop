@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Mapping and appraisal: Mikhail Sergeev (WEXP). AEP draft and sandbox: Anton Sokolov (Tyche Institute). The AEP author reviewed the mapping against draft -06 and the pinned sandbox code and did not run the appraisers."
+title: "WEXP × AEP — aep-applicability-001, package 001"
+type: dataset
+version: "aep-applicability-001/pkg-001"
+authors:
+  - family-names: "Sergeev"
+    given-names: "Mikhail"
+repository-code: "https://github.com/WEXP-dev/wexp-interop"
+abstract: "WEXP x AEP (Anton Sokolov): two aep-sandbox samples (signed record and mandate, no platform Evidence) mapped to Core-02 under two evaluation contexts; both appraisers agree; the execution claim stays not evaluated and the boundary unsupported, while the sandbox verifier checks authority and record authorship. Mapping checked by the AEP author against -06."

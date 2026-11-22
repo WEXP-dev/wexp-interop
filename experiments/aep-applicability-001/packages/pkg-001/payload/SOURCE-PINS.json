@@ -1,0 +1,56 @@
+{
+  "algorithm": "sha256",
+  "wexp_interop": {
+    "repository": "https://github.com/WEXP-dev/wexp-interop",
+    "base_branch": "main",
+    "commit": "a45c88e9e345978fa4392bfa0fd76a5e645b1751"
+  },
+  "aep_sandbox": {
+    "repository": "https://github.com/tyche-institute/aep-sandbox",
+    "commit": "f6c88be63c5aa12b8e8f6bf35a378a6a5fca9cd4",
+    "license": "LICENSES/aep-sandbox-MIT.txt"
+  },
+  "specifications": [
+    {
+      "document": "draft-sergeev-wexp-core-02",
+      "url": "https://www.ietf.org/archive/id/draft-sergeev-wexp-core-02.xml",
+      "path": "evidence/basis/specifications/draft-sergeev-wexp-core-02.xml",
+      "sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782"
+    },
+    {
+      "document": "draft-sokolov-rats-aep-composition-06",
+      "url": "https://www.ietf.org/archive/id/draft-sokolov-rats-aep-composition-06.txt",
+      "path": "evidence/basis/specifications/draft-sokolov-rats-aep-composition-06.txt",
+      "sha256": "a2561d39ddd1707d04df100137bdbff2bcde367a477e06e6068efe45572e1431"
+    }
+  ],
+  "file_hashes": {
+    "evidence/basis/aep-sandbox/README.md": "16ee1ff46978d3a26e6f0fae0474869a59f6878a6466ad6bba167a98003ac316",
+    "evidence/basis/aep-sandbox/THREAT-MODEL.md": "830cf6d42fb9727b8cbeb25fcf1cc3be64a29e51866013b0078aa128d9f20aa9",
+    "evidence/basis/aep-sandbox/aep/__init__.py": "f444e60e1ca00e4d6025f875af3cd2479a132234f09d4161303896a02f6a2fa6",
+    "evidence/basis/aep-sandbox/aep/canonical.py": "9211e311ce20511cce98c9321296784ff79a059789d964a50a93b398fb0f5b0e",
+    "evidence/basis/aep-sandbox/aep/keys.py": "b3af49aa8f168b026e7ee315bd22cdff40f5f09b89fe77355cc7b93fb39226f6",
+    "evidence/basis/aep-sandbox/aep/ledger.py": "f05eae9531cb7f597410c61cb2c8980d443e9d4eee0795abc012dff20e8922be",
+    "evidence/basis/aep-sandbox/aep/mandate.py": "608ca57270db9a04de6d2bc4e156792bc87b3b8fb7479ff1e609da51b90aa13f",
+    "evidence/basis/aep-sandbox/aep/package.py": "d7824856a43c7950fd0b41b7927f617c9062d327f88d1d86fca7e041d39060bf",
+    "evidence/basis/aep-sandbox/attacks/replay.py": "2dfd1d00fbb1d10f954d8a74ae6c39460eb4f04a1773727744f1179c13027eb6",
+    "evidence/basis/aep-sandbox/keys/trusted_issuers.json": "65dc759643b0322efa1ebbf51b86c44ab926a9fadc38843f49f1be66991049b3",
+    "evidence/basis/aep-sandbox/requirements.txt": "dd00233db394cda9dccc77ad59c74160ddba2744ca3adcbafed3d16e1d2b051a",
+    "evidence/basis/aep-sandbox/samples/exceed-scope.aep.json": "3b7f18af3e8d5cc41f40f036282cd15afe49a68d381f1a5b0bdb8c30a24998ef",
+    "evidence/basis/aep-sandbox/samples/good.aep.json": "305bc28083e99ae417a18ce35d042e2e2e66d2eaad9f840cbe34bde466a99437",
+    "evidence/basis/aep-sandbox/verify.py": "788aec85d86109a757b4b386bd792f8073b147e7da68a58d1ba04fe8d48ab29e",
+    "evidence/basis/specifications/draft-sergeev-wexp-core-02.xml": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+    "evidence/basis/specifications/draft-sokolov-rats-aep-composition-06.txt": "a2561d39ddd1707d04df100137bdbff2bcde367a477e06e6068efe45572e1431",
+    "LICENSES/aep-sandbox-MIT.txt": "652190fa74d4daac71b9dc50e0d4e324297036b1f03ebf4e2336eb6f89095b08"
+  },
+  "appraisers_for_session_C_only": {
+    "wexp-ref": {
+      "repository": "https://github.com/WEXP-dev/wexp-ref",
+      "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69"
+    },
+    "wexp-check": {
+      "repository": "https://github.com/WEXP-dev/wexp-check",
+      "commit": "a2fd1ffd68b234592979a8aa8965bd580ede4d76"
+    }
+  }
+}

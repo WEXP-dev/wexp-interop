@@ -1,0 +1,8 @@
+  [PASS] structure
+  [PASS] chain_integrity
+  [PASS] aep_signature
+  [PASS] measurements
+  [PASS] mandate
+  [PASS] replay
+VERDICT: ALLOW  (good.aep.json)
+  one-shot nonce consumed: aep-nonce-0001

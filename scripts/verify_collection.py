@@ -151,6 +151,9 @@ def execute(root: Path):
         elif record["verification"]["profile"] == "scitt-receipt-boundary-v1":
             from verify_scitt_receipt_boundary import verify_package as verify_scitt_package
             checked["scitt_receipt_boundary_evidence"] = verify_scitt_package(package, record)
+        elif record["verification"]["profile"] == "aep-core02-applicability-v1":
+            from verify_aep_core02 import verify_package as verify_aep_package
+            checked["aep_core02_saved_evidence"] = verify_aep_package(package, record)
         counts.append(checked)
     return {"status": "PASS", "scope": "cards/catalog/manifests/local links; bounded saved-evidence checks for the profiles that select them",
             "packages": counts, "local_links_checked": check_links(root),

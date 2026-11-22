@@ -1,0 +1,35 @@
+{
+  "format": "aep-applicability-B-freeze-1",
+  "role": "B",
+  "expectation_version": "v1",
+  "profile_identifier": "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+  "algorithm": "sha256",
+  "created_utc": "2026-11-09T14:04:42.177598+00:00",
+  "parent_A_commit": "8af5aa6f74e8209866a87970ada87e5c3a57e14a",
+  "input_sha256": {
+    "inputs/a-strict.json": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d",
+    "inputs/a-attrib.json": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2",
+    "inputs/b-strict.json": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d",
+    "inputs/b-attrib.json": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2",
+    "inputs/c-strict.json": "53ae8a5bd57eea9054fe13e0f36462b1e5d06fd80a59354460e12e02ea25568f",
+    "inputs/c-attrib.json": "4d48885826c80db8d0a4348d4bd470b79f49303f6f9763b2612cb7d2b36f6be4"
+  },
+  "files": {
+    "AMBIGUITIES.json": "d83eeab6b8ccbee08aa9cccda68bab38bf9b025925d698fb2752ccbc35c94c3b",
+    "DERIVATION.md": "33d87ea3cff88f91c8c25f5437807ab8f759dd0112783a367f87acebd0a6e12f",
+    "HYPOTHESES.json": "87885b4920904d547958dca99c6a3ed05a98cd96e6b3a728e50d24d06be74964",
+    "evidence/B-CHECK.py": "c3c7837d565018ec62292ee9f7aa57b825123c7a39d4046c0b6bb623b19c61a5",
+    "evidence/B-HASH-HELPER.json": "0968723ec0dd90bfc5dadf48448c567ab33eabe5822b2c67633c0c73b260c890",
+    "evidence/B-SESSION.json": "3d46b17f0cbd793a80f58a6042a236bb8626efc06d0a30e98cfd9acb3f28b746",
+    "evidence/B-VALIDATION.json": "d1ca439855ea80a3791141fdf0905b69218f366749b65e0bf215bf0c9703e112",
+    "expectations/v1/DERIVATIONS.json": "d981e66820a2f7f7700553ac155ff0be8bdf76e83a1cf3348684b3ba369f1cb6",
+    "expectations/v1/a-attrib.json": "aa8d9e022b9171fbd37410ee23bb24e4d9aad0a5df091cffbc318ebb068ad3ea",
+    "expectations/v1/a-strict.json": "a0825ccc289fb1dad2e91a2b6e7638e9f2c9f71f9b9a9659e733d55701419bce",
+    "expectations/v1/b-attrib.json": "aa8d9e022b9171fbd37410ee23bb24e4d9aad0a5df091cffbc318ebb068ad3ea",
+    "expectations/v1/b-strict.json": "a0825ccc289fb1dad2e91a2b6e7638e9f2c9f71f9b9a9659e733d55701419bce",
+    "expectations/v1/c-attrib.json": "04d6e9a7cee9774ca75e39210bade72cc0ec3fe60acd29a98c2e6c042f8b453b",
+    "expectations/v1/c-strict.json": "86da68af0de7ca7b7f043c5147cb438ba716b3ef9e2a78bef2ee3d27a7d275c5"
+  },
+  "self_binding": "This manifest is bound by B commit; its SHA-256 is reported with the full commit SHA and timestamp outside the self-referential file.",
+  "revision_rule": "No in-place edits after freeze; changes require a new version, derivation, hash inventory and commit before any corresponding comparison."
+}

@@ -1,0 +1,87 @@
+{
+  "format": "aep-applicability-run-record-1",
+  "role": "C",
+  "created_utc": "2026-11-09T14:13:08.494383+00:00",
+  "logical_appraisal_time": 1750000100,
+  "wall_clock_is_separate": true,
+  "A_commit": "8af5aa6f74e8209866a87970ada87e5c3a57e14a",
+  "A_commit_utc": "2026-11-09T13:54:51Z",
+  "B_commit": "6a519c75151da620920bb4308837c53be67b63c8",
+  "B_commit_utc": "2026-11-09T14:05:26Z",
+  "source_tracked_trees_unchanged_after_runs": true,
+  "input_sha256": {
+    "inputs/a-strict.json": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d",
+    "inputs/a-attrib.json": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2",
+    "inputs/b-strict.json": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d",
+    "inputs/b-attrib.json": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2",
+    "inputs/c-strict.json": "53ae8a5bd57eea9054fe13e0f36462b1e5d06fd80a59354460e12e02ea25568f",
+    "inputs/c-attrib.json": "4d48885826c80db8d0a4348d4bd470b79f49303f6f9763b2612cb7d2b36f6be4"
+  },
+  "frozen_expectation_sha256": {
+    "expectations/v1/a-strict.json": "a0825ccc289fb1dad2e91a2b6e7638e9f2c9f71f9b9a9659e733d55701419bce",
+    "expectations/v1/a-attrib.json": "aa8d9e022b9171fbd37410ee23bb24e4d9aad0a5df091cffbc318ebb068ad3ea",
+    "expectations/v1/b-strict.json": "a0825ccc289fb1dad2e91a2b6e7638e9f2c9f71f9b9a9659e733d55701419bce",
+    "expectations/v1/b-attrib.json": "aa8d9e022b9171fbd37410ee23bb24e4d9aad0a5df091cffbc318ebb068ad3ea",
+    "expectations/v1/c-strict.json": "86da68af0de7ca7b7f043c5147cb438ba716b3ef9e2a78bef2ee3d27a7d275c5",
+    "expectations/v1/c-attrib.json": "04d6e9a7cee9774ca75e39210bade72cc0ec3fe60acd29a98c2e6c042f8b453b"
+  },
+  "freeze_sha256": {
+    "A-FREEZE.json": "7176fbf5da0cfa7ba00846b5c3a6ca4f941f9c61703ed7d0754c0efb5b41b06d",
+    "expectations/FREEZE.json": "3a3632fe952a37617c2faa5005d957b21b44fdaeee1b0c0814d831367205c4ec"
+  },
+  "launcher_and_driver_sha256": {
+    "run_aep_verify.sh": "5c60e59da88f31eec0f62d54e86f85028562614a67b002979e1540730ae28206",
+    "run_core_appraiser.py": "a196fbd8d2f44f01a9eba707371993b4d6a5d05a9751bf5f6d61ecbf4bd38de7",
+    "run_proposal.py": "afa83f8a268505dbb69146b5ee55df506f831e8b0f8913bae9cd18758b1aed29"
+  },
+  "independent_reproduction": "not-performed",
+  "AEP_author_review": "none",
+  "participation_agreement": "not-requested",
+  "provenance": "Separate sequential AI role contexts under one operator and shared filesystem; C helper authors retained-package verifier.",
+  "comparison_summary": {
+    "case_count": 6,
+    "component_count_per_case": 20,
+    "expected_ref_mismatches": 6,
+    "expected_check_mismatches": 6,
+    "ref_check_mismatches": 0,
+    "hypotheses_match": true
+  },
+  "retained_difference": {
+    "component": "boundary_ceiling",
+    "cases": 6,
+    "expected": "unavailable",
+    "ref": null,
+    "check": null,
+    "category": "unreconciled result-carrier representation difference",
+    "frozen_choice": "AMBIGUITIES.json B-RC-01",
+    "coercion_applied": false,
+    "expectation_updated": false
+  },
+  "runtime": {
+    "platform": "macOS-15.7.9-arm64-arm-64bit-Mach-O",
+    "version": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]",
+    "packages": {
+      "cryptography": "50.0.2",
+      "pycparser": "3.12",
+      "cffi": "2.1.1",
+      "pip": "26.1.2"
+    }
+  },
+  "source_checkouts": {
+    "aep-sandbox": {
+      "origin": "https://github.com/tyche-institute/aep-sandbox.git",
+      "commit": "f6c88be63c5aa12b8e8f6bf35a378a6a5fca9cd4",
+      "tracked_status": ""
+    },
+    "wexp-ref": {
+      "origin": "https://github.com/WEXP-dev/wexp-ref.git",
+      "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+      "tracked_status": ""
+    },
+    "wexp-check": {
+      "origin": "https://github.com/WEXP-dev/wexp-check.git",
+      "commit": "a2fd1ffd68b234592979a8aa8965bd580ede4d76",
+      "tracked_status": ""
+    }
+  }
+}
