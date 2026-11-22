@@ -44,7 +44,8 @@
       "payload/INPUT-HASHES.json",
       "EXPECTED-DELTA.json",
       "CITATION-CORRECTIONS.md",
-      "evidence/AEP-REVIEW.md"
+      "evidence/AEP-REVIEW.md",
+      "evidence/public-run/RUN-RECORD.json"
     ],
     "implementation_execution_performed": true
   },
@@ -59,7 +60,7 @@
   },
   "result": {
     "label": "Two appraisers agree on 120/120 components; each matches frozen expectations on 114/120.",
-    "details": "The comparison dimension refers only to ref versus check on the same six inputs. The native verdicts are ALLOW, DENY/replayed and DENY/scope_violation. All six Core assessments downgrade, with attributed grounding, an unsupported boundary and execution not evaluated. Six frozen boundary_ceiling strings differ from the null in each appraiser's output."
+    "details": "The comparison dimension refers only to ref versus check on the same six inputs. The native verdicts are ALLOW, DENY/replayed and DENY/scope_violation. All six Core assessments downgrade, with attributed grounding, an unsupported boundary and execution not evaluated. Six frozen boundary_ceiling strings differ from the null in each appraiser's output. A separate WEXP-operated execution of the prepared public package is recorded in evidence/public-run/RUN-RECORD.json."
   },
   "source_pins": [
     {

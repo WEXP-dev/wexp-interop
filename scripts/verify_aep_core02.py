@@ -16,6 +16,7 @@ DEFAULT_PACKAGE = Path(__file__).resolve().parents[1] / "experiments" / EXPERIME
 ARCHIVE = "source-archive/AEP-CORE02-PUBLIC.zip"
 ARCHIVE_SHA256 = "126cccbc0d19753846e4997a18641a0b7fc314f81c0fa530522e458d3a8daa4e"
 INVENTORY_SHA256 = "4fb3fe4bcbca6d0fe9c9f1bfed24c644f9c85351d1875a06eb910ed6d9a11cac"
+PUBLIC_RUN_SHA256 = "eee35c5431ed454765485b8ea2caf827657c6d0bd64461f1cf6600ad8f9bacf2"
 CASES = tuple(f"{case}-{context}" for case in "abc" for context in ("strict", "attrib"))
 COMPONENTS = {
     "semantics_version", "verdict", "fatal_reasons", "target", "asserted_claim",
@@ -244,7 +245,7 @@ def compare_saved(payload):
     return case_results
 
 
-def check_public_repeat(package, record):
+def check_public_repeat(package, record, historical_differences):
     relative = "evidence/public-run/RUN-RECORD.json"
     report = package / relative
     declared = relative in record["verification"]["evidence"]
@@ -255,10 +256,9 @@ def check_public_repeat(package, record):
     raw = report.parent / "evidence"
     original = package / "payload/evidence"
     require(not report.is_symlink() and not report.parent.is_symlink(), "public repeat symlink")
+    require(sha(report.read_bytes()) == PUBLIC_RUN_SHA256, "public repeat report digest")
     saved = read_json(report)
     commit = saved["preparation_commit"]
-    require(isinstance(commit, str) and len(commit) == 40 and all(c in "0123456789abcdef" for c in commit),
-            "public repeat preparation commit")
     pins = read_json(package / "payload/SOURCE-PINS.json")
     required = {"aep-sandbox": pins["aep_sandbox"]["commit"]}
     required.update({name: pin["commit"] for name, pin in pins["appraisers_for_session_C_only"].items()})
@@ -273,8 +273,18 @@ def check_public_repeat(package, record):
         if item.is_file():
             actual.add(item.relative_to(raw).as_posix())
     require(actual == set(files), "public repeat raw file set")
+    hashes = {}
     for name in files:
-        require((raw / name).read_bytes() == (original / name).read_bytes(), "public repeat output: " + name)
+        data = (raw / name).read_bytes()
+        require(data == (original / name).read_bytes(), "public repeat output: " + name)
+        hashes[name] = sha(data)
+    require(saved["output_sha256"] == hashes and saved["changed_raw_files_vs_historical"] == []
+            and saved["status"] == "PASS" and saved["logical_now"] == 1750000100, "public repeat result")
+    require(saved["ref_check_differing_components"] ==
+            {case: row["ref_vs_check"] for case, row in historical_differences.items()}, "public repeat ref/check")
+    expected_deltas = {engine: {case: row["expected_vs_" + engine] for case, row in historical_differences.items()}
+                       for engine in ("ref", "check")}
+    require(saved["frozen_expectation_differing_components"] == expected_deltas, "public repeat ref/expectations")
     return {"historical_raw_files_matched": len(files), "preparation_commit_recorded": commit}
 
 
@@ -297,7 +307,7 @@ def verify_package(package, record=None):
     total = len(CASES) * len(COMPONENTS)
     agreements = {pair: total - sum(len(row[pair]) for row in comparison.values())
                   for pair in ("ref_vs_check", "expected_vs_ref", "expected_vs_check")}
-    repeat = check_public_repeat(package, record)
+    repeat = check_public_repeat(package, record, comparison)
     return {"status": "PASS", "public_repeat": repeat, "public_payload_files": len(files), "freeze_coverage": coverage,
             "saved_native_decisions": native, "case_contexts": len(CASES), "distinct_input_bytes": 4,
             "saved_core_appraisals": len(CASES) * 2, "component_comparisons_per_pair": total,

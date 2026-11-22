@@ -26,6 +26,10 @@ Both appraisers agreed on **120/120** result components across the six assessmen
 
 Both appraisers originated in separate AI-assisted sessions under the same WEXP operator. The tested second implementation includes documented changes made after its first corpus comparison. Anton reviewed the interpretation of AEP. This experiment has no recorded independent reproduction. [History of the second appraiser at the tested revision](https://github.com/WEXP-dev/wexp-check/blob/a2fd1ffd68b234592979a8aa8965bd580ede4d76/CHANGES-AFTER-RUN.md)
 
+## Repeat from the public selection
+
+On 22 November the WEXP side repeated the three sandbox cases and twelve Core appraisals from preparation commit `57105314e0dd16b30f6df2675fcd7c281dc95dab` on Linux x86_64 with CPython 3.14.6 and the pinned dependencies. All 36 retained output, exit-code and nonce-state files matched their historical bytes. The six ceiling-encoding differences from the original expectations persisted. The run used the same project’s implementations. [Public run record and file hashes](evidence/public-run/RUN-RECORD.json)
+
 ## Verify the public package
 
 - [Mapping](payload/MAPPING.md), [profile](payload/PROFILE.md) and [correction to the historical AEP citations](CITATION-CORRECTIONS.md)
