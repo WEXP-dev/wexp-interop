@@ -1,0 +1,31 @@
+{
+ "algorithm": "sha256",
+ "files": {
+  "FIELDS.md": "cd3b3175db648a0baf4f1f2a7fc697e2c4d4b6d42ee57469132ae14ad571f160",
+  "MAPPING.md": "b4ce7b7958bbfa667ffa48a3189ae118ffa91a6e67d0554e5ef55d7131f031cc",
+  "README.md": "70874d97d4d22a68cf79c60a545c83f0285b77867c1c2c0af7b734dd429298ca",
+  "SOURCE-PINS.json": "e7be3aaa1fd9854d5c9c6ef18b6c81f8b8829ae977a98ab90a506f7952985a1f",
+  "expectations/README.md": "a6c62ea39164842577f05ead87be21d8fc26b2bb8ede6a806839dcdca33f55db",
+  "expectations/a.json": "c8289623cc822bb5389f1243f8e8507caf0d382bb8c97c01ceb23b2481b5e78e",
+  "expectations/b.json": "ecd5db04171e908bd315793487b8b3cca2a905706423b5d5c09f0db9a8a8c215",
+  "expectations/c.json": "ef6a3c874a3e191b045f170549fa49d104e1c6a89592951a33a4629a95339048",
+  "expectations/d.json": "5bacd7c97273d2c12c3f82cd8dcb9e0639056fb46bd0e55b9bbe68b77f78d8b6",
+  "expectations/derivation/AMBIGUITIES.json": "aba861fff14c27b009e6098a3919d8e3747d9d5c3c8bccc93d23b08c04923b00",
+  "expectations/derivation/DELIVERED-SHA256SUMS.txt": "6585f1a6188e0208c74814d8e8232848b273e76be81a372fc74c2123c458c9e9",
+  "expectations/derivation/DERIVATION.md": "769a75c0dbbd722ed55e37fb9c4d3b6185a1e1876ab31c4726ab5f7b986b2021",
+  "expectations/derivation/FILES-READ.txt": "9c7e40dd9d9d4ea2f09fbf729060d79240915c20bb736742b16052637b3054c8",
+  "expectations/derivation/README.md": "c6234f461aa244a3d214b7ea84071f71435d56760975c73795b5db3bd705cf4e",
+  "expectations/derivation/handoff/BRIEF.md": "b488f27524e2466835da2c8771e6b2a91cc1d3e696d929b75ed3935de8f6e220",
+  "expectations/derivation/handoff/FORMAT-REFERENCE-C01.json": "0147c30e9492375e2d9a1dea7db85dde9d503eb5c7453d3399b1931065967aad",
+  "expectations/derivation/handoff/REPRESENTATION.md": "be98d97bdf09f7c0966b3810a131c0484402c996ffbd01b09ac76b91dd26061b",
+  "expectations/e.json": "140b3537bdd80442e18d3b4dd03ac5fb3ea57aaa8653a289e8148afe9a7f76c1",
+  "inputs/README.md": "a6c62ea39164842577f05ead87be21d8fc26b2bb8ede6a806839dcdca33f55db",
+  "inputs/a.json": "7e6b99c231c4c191ccccb25c5e7c5726af666764c008c30ea4b38dd9a79a731f",
+  "inputs/b.json": "fcdb0c857ad8cba5b4723797906837ef817007a63c514699ef4d17a259d690e3",
+  "inputs/c.json": "8b4846c79d11f5e3726b4d3228f75e527634b5bb0facd3bc9506853a8fff9d38",
+  "inputs/d.json": "f87d6e6c264262923a089bc61e2a94eee7f3aa3bd4e2777f2b06d70c70f542b5",
+  "inputs/e.json": "6fd5486102322752603062dd78c76dc9a6587d711d0a2b7967799e8d8abd4b48",
+  "profiles.json": "332d8dc1bdd33d34976ff7ca34db61d809c2e0b1f7c4c1e51482a8b8d43d2b68"
+ },
+ "note": "committed before the first appraiser run on any input of this proposal"
+}
