@@ -50,7 +50,7 @@ reports the id as unverified.
 | `boundary_finding.ceiling_base` | `execution` | the receipt is written by the party that executed the call, at its own execution boundary. That the boundary was under its control is not established: asserted-only is weaker than attribution, and "Attribution is not proof of actual boundary control" (Section 7) |
 | `base_findings` | one `execution` finding: `semantic_validation` supported when the record is well-formed under AER-1 and the recompute matches; `basis_refs` `(mapping-1, real-04 canonical bytes by digest)`; limitation `(mapping-1, L-aer1-unsigned)` | Section 4.2: each base predicate is evaluated independently. This mapping evaluates the execution predicate only; observation, intent and invocation support are marked not-evaluated |
 | `qualifier_findings` | PROV and IV, as in cases c and d below | Section 4.3 |
-| anchor outcome | "not checked": profile evaluation gap `(mapping-1, G-aer1-anchor-not-checked)`. "absent": limitation `(mapping-1, L-aer1-no-anchor)`, no gap | below, question 2 |
+| anchor outcome | "not checked": profile evaluation gap `(mapping-1, P_AER1_ANCHOR_NOT_CHECKED)`. "absent": limitation `(mapping-1, L-aer1-no-anchor)`, no gap | below, question 2 |
 
 ### The two questions in the issue
 
@@ -75,7 +75,7 @@ describes real-04. If not, case e does.
 **Independent recompute.** Anyone can recompute `output_hash`, but the recompute checks the
 commitment, which travels in the same unsigned file. It does not verify that the call executed.
 An IV finding for execution therefore has `semantic_validation = unsupported`, with that reason
-(`R-aer1-recompute-commitment-only`, case d).
+(`P_AER1_RECOMPUTE_COMMITMENT_ONLY`, case d).
 
 ### Cases
 
@@ -109,6 +109,11 @@ recorded.
 `draft-zambo-aer1-26` (pinned in [SOURCE-PINS.json](SOURCE-PINS.json)); `real-04.json` (URL,
 SHA-256 and size above); issues WEXP-dev/interop-test-lab#40 and #42; `draft-sergeev-wexp-core-02`.
 No appraiser has run on these inputs, and none runs before FREEZE.json is committed.
+
+The two profile tokens are named in the token syntax of Core-02 Section 15. A first isolated
+derivation, on an earlier version of the inputs in which they were spelled in lowercase with
+hyphens, recorded that this spelling breaks that syntax. The tokens were renamed before the freeze,
+and the expected results here were derived again from the renamed inputs.
 
 ### What the receipt does not establish
 

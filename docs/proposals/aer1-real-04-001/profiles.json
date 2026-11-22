@@ -3,10 +3,10 @@
   "relation_tokens": [],
   "scope_names": [],
   "tokens": {
-   "G-aer1-anchor-not-checked": {
+   "P_AER1_ANCHOR_NOT_CHECKED": {
     "category": "evaluation-gap"
    },
-   "R-aer1-recompute-commitment-only": {
+   "P_AER1_RECOMPUTE_COMMITMENT_ONLY": {
     "category": "substantive"
    }
   }
