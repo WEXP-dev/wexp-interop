@@ -136,7 +136,7 @@
     "evaluation_context_ref": "C-aer1-real-04-001",
     "limitations": [],
     "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e",
-    "token": "G-aer1-anchor-not-checked"
+    "token": "P_AER1_ANCHOR_NOT_CHECKED"
    }
   ],
   "qualifier_findings": [
@@ -158,7 +158,7 @@
     "qualified_base": "execution",
     "qualifier": "IV",
     "reasons": [
-     "R-aer1-recompute-commitment-only"
+     "P_AER1_RECOMPUTE_COMMITMENT_ONLY"
     ],
     "semantic_validation": "unsupported",
     "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e",
