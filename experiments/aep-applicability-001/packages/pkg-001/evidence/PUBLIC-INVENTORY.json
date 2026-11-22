@@ -1,0 +1,685 @@
+{
+  "format": "wexp-aep-public-inventory-1",
+  "private_source": {
+    "name": "AEP-CORE02-REVIEW.zip",
+    "sha256": "6cb15252e4e3256d70ad224116b095b060a04c225b8ab907be241df44dc2f548",
+    "bytes": 275569,
+    "members": 199,
+    "proposal_members": 197,
+    "path_prefix": "AEP-CORE02-REVIEW/aep-applicability-001/",
+    "omitted_review_guides": [
+      "APPRAISER-PROVENANCE.md",
+      "MAPPING-INDEX.md"
+    ],
+    "scope": "Mailed historical source and the two additional private correspondence attachments are retained outside this public package. Public verification covers the released bytes. Direct comparison with the mailed attachment requires access to that attachment."
+  },
+  "public_archive": {
+    "path": "source-archive/AEP-CORE02-PUBLIC.zip",
+    "sha256": "126cccbc0d19753846e4997a18641a0b7fc314f81c0fa530522e458d3a8daa4e",
+    "bytes": 763234,
+    "members": 85,
+    "member_prefix": "aep-applicability-001/",
+    "rebuild": "Sort the regular files below payload/ by their relative POSIX path. Write each, under the single member_prefix, to a ZIP with ZIP_STORED, a DOS timestamp of 1980-01-01 00:00:00 and Unix regular-file mode 100644. Add no directory entries, comments or extra fields."
+  },
+  "files": {
+    "A-FREEZE.json": {
+      "treatment": "exact",
+      "bytes": 4096,
+      "sha256": "7176fbf5da0cfa7ba00846b5c3a6ca4f941f9c61703ed7d0754c0efb5b41b06d",
+      "source_sha256": "7176fbf5da0cfa7ba00846b5c3a6ca4f941f9c61703ed7d0754c0efb5b41b06d"
+    },
+    "AMBIGUITIES.json": {
+      "treatment": "exact",
+      "bytes": 4745,
+      "sha256": "d83eeab6b8ccbee08aa9cccda68bab38bf9b025925d698fb2752ccbc35c94c3b",
+      "source_sha256": "d83eeab6b8ccbee08aa9cccda68bab38bf9b025925d698fb2752ccbc35c94c3b"
+    },
+    "DERIVATION.md": {
+      "treatment": "exact",
+      "bytes": 15243,
+      "sha256": "33d87ea3cff88f91c8c25f5437807ab8f759dd0112783a367f87acebd0a6e12f",
+      "source_sha256": "33d87ea3cff88f91c8c25f5437807ab8f759dd0112783a367f87acebd0a6e12f"
+    },
+    "HANDOFF.md": {
+      "treatment": "projected",
+      "bytes": 938,
+      "sha256": "cc3c1c90034b4986bd6f8b67a3f2b14ec3d952bf6faa6d76b62151e031d7aa14",
+      "source_sha256": "0672d9afe9345c0ee5530dc0c279078a0e0da34b012d98228a90bdb807001fe2",
+      "projection": "Selected original lines 3–6, 76–80 and 91–92. Added a heading and source note. The original SHA-256 is separately identified; the excerpt is outside the historical freeze."
+    },
+    "HYPOTHESES.json": {
+      "treatment": "exact",
+      "bytes": 38003,
+      "sha256": "87885b4920904d547958dca99c6a3ed05a98cd96e6b3a728e50d24d06be74964",
+      "source_sha256": "87885b4920904d547958dca99c6a3ed05a98cd96e6b3a728e50d24d06be74964"
+    },
+    "INPUT-HASHES.json": {
+      "treatment": "exact",
+      "bytes": 621,
+      "sha256": "aafe1e8d0e1112e7b813ef2cfbd8679f9744358242e4dacb4315d2c88154a7d0",
+      "source_sha256": "aafe1e8d0e1112e7b813ef2cfbd8679f9744358242e4dacb4315d2c88154a7d0"
+    },
+    "LICENSES/README.md": {
+      "treatment": "exact",
+      "bytes": 877,
+      "sha256": "0ec0363646e3bae6c32b8856506f0fdfde41c52824285e27ac3a91f73726c0b7",
+      "source_sha256": "0ec0363646e3bae6c32b8856506f0fdfde41c52824285e27ac3a91f73726c0b7"
+    },
+    "LICENSES/aep-sandbox-MIT.txt": {
+      "treatment": "exact",
+      "bytes": 1088,
+      "sha256": "652190fa74d4daac71b9dc50e0d4e324297036b1f03ebf4e2336eb6f89095b08",
+      "source_sha256": "652190fa74d4daac71b9dc50e0d4e324297036b1f03ebf4e2336eb6f89095b08"
+    },
+    "MAPPING.md": {
+      "treatment": "exact",
+      "bytes": 9248,
+      "sha256": "57652f5cbd0a0f60b0b3cdad3adfe1711061db59d170eb257ef077c62b2b2ab2",
+      "source_sha256": "57652f5cbd0a0f60b0b3cdad3adfe1711061db59d170eb257ef077c62b2b2ab2"
+    },
+    "PROFILE.md": {
+      "treatment": "exact",
+      "bytes": 16444,
+      "sha256": "6289deee1c1c3026712544a7c5566015addaf77b8e49cf4f44a6b90fc2941475",
+      "source_sha256": "6289deee1c1c3026712544a7c5566015addaf77b8e49cf4f44a6b90fc2941475"
+    },
+    "RESULTS.md": {
+      "treatment": "exact",
+      "bytes": 13845,
+      "sha256": "4e48eb2e9fb8303518b4ec2e93c1d0a1ae6a27787d1616460d6a4fb33ba59967",
+      "source_sha256": "4e48eb2e9fb8303518b4ec2e93c1d0a1ae6a27787d1616460d6a4fb33ba59967"
+    },
+    "RUN-RECORD.json": {
+      "treatment": "projected",
+      "bytes": 3919,
+      "sha256": "e721743dbc2820ee7f8da982ca243f6ea61f28dc56d776e27f1e44c0f9b02cc7",
+      "source_sha256": "f9999102c01f144f3d68deed89a76eafe635f8d3d88b3f7c12d7e946440041a7",
+      "projection": "Selected recorded chronology, freeze and launcher hashes, input and expectation hashes, source status, historical roles and comparison results. Runtime retains platform, version and packages. Checkouts retain origin, commit and tracked_status. Local paths, shell/process metadata and administrative transcripts remain private. Historical review status predates the AEP author's review."
+    },
+    "SOURCE-PINS.json": {
+      "treatment": "projected",
+      "bytes": 3465,
+      "sha256": "7787262906ad7acb74aa4f0714c9cd2ecdefa6c93e5a41c96cf6577266d4510e",
+      "source_sha256": "d24097ee2aee3d82d556414e3769b9e90fb40115d43736526c96dd0c36fcb668",
+      "projection": "Removed only the local aep_sandbox.source_checkout field. The retained historical file_hashes map includes some upstream paths outside this export."
+    },
+    "comparison.json": {
+      "treatment": "projected",
+      "bytes": 233016,
+      "sha256": "f1298a7e3c8c3ff7967cdc18b6aa9d3e0b07858e62180419f0c791652ad1949c",
+      "source_sha256": "d9e1a91647200bf47997f606db3e3e420a5c7bc7669969c7528c12e7adf31123",
+      "projection": "Within each cases.*.columns.aep_verifier_outcome removed argv, cwd, module_file, raw_files, stderr, state_before and state_after. All mapping diagnostics, Core results, component comparisons, hypotheses and summary are unchanged JSON values."
+    },
+    "evidence/AEP-OUTCOMES.json": {
+      "treatment": "projected",
+      "bytes": 3378,
+      "sha256": "9c1b8ffac1185d7e2974ee2dde1566004a24a9f57812b60b20170ccd9df88635",
+      "source_sha256": "837b10725f0ffb3dde9d0cf226c09dd38b4e2ba872dc46c758d895d210ecc22b",
+      "projection": "Removed state_path. In each case omitted argv, cwd, module_file, raw_files, stderr, state_before and state_after (host paths). Original native stdout, exit codes and nonce-state before/after are retained separately by case."
+    },
+    "evidence/MAPPING-DIAGNOSTICS.json": {
+      "treatment": "exact",
+      "bytes": 9768,
+      "sha256": "4424b545563672b06b8cc7e299e7d11cafa47feeae79d8c0b08a98c561fec746",
+      "source_sha256": "4424b545563672b06b8cc7e299e7d11cafa47feeae79d8c0b08a98c561fec746"
+    },
+    "evidence/PROFILE-CATALOG.json": {
+      "treatment": "exact",
+      "bytes": 135,
+      "sha256": "d17ef965b74caa785cd4c6ae76e3d885013cc204f01f5c0341d999e43bd6687b",
+      "source_sha256": "d17ef965b74caa785cd4c6ae76e3d885013cc204f01f5c0341d999e43bd6687b"
+    },
+    "evidence/aep/a.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/aep/a.state-after.txt": {
+      "treatment": "exact",
+      "bytes": 15,
+      "sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+      "source_sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66"
+    },
+    "evidence/aep/a.state-before.txt": {
+      "treatment": "exact",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "evidence/aep/a.stdout.txt": {
+      "treatment": "exact",
+      "bytes": 196,
+      "sha256": "9d8de0318bb0863e998483dacd2299de34f7f17fd6d44ad7464d6e09dda325c1",
+      "source_sha256": "9d8de0318bb0863e998483dacd2299de34f7f17fd6d44ad7464d6e09dda325c1"
+    },
+    "evidence/aep/b.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+      "source_sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    "evidence/aep/b.state-after.txt": {
+      "treatment": "exact",
+      "bytes": 15,
+      "sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+      "source_sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66"
+    },
+    "evidence/aep/b.state-before.txt": {
+      "treatment": "exact",
+      "bytes": 15,
+      "sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+      "source_sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66"
+    },
+    "evidence/aep/b.stdout.txt": {
+      "treatment": "exact",
+      "bytes": 170,
+      "sha256": "9e300324fe15a621d18650658e26f4429ff6a28010e8bbe8a992fb0b38ad7ab7",
+      "source_sha256": "9e300324fe15a621d18650658e26f4429ff6a28010e8bbe8a992fb0b38ad7ab7"
+    },
+    "evidence/aep/c.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+      "source_sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    "evidence/aep/c.state-after.txt": {
+      "treatment": "exact",
+      "bytes": 15,
+      "sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+      "source_sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66"
+    },
+    "evidence/aep/c.state-before.txt": {
+      "treatment": "exact",
+      "bytes": 15,
+      "sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66",
+      "source_sha256": "8677e2b83afe4ee0107657c2dd4b81f6088ff1e3f8bd77572230a1557777fd66"
+    },
+    "evidence/aep/c.stdout.txt": {
+      "treatment": "exact",
+      "bytes": 169,
+      "sha256": "5388733992e52cd5926d46dea97a897a21ab44cf80207bb56cc2b9c48389e97e",
+      "source_sha256": "5388733992e52cd5926d46dea97a897a21ab44cf80207bb56cc2b9c48389e97e"
+    },
+    "evidence/basis/aep-sandbox/LICENSE": {
+      "treatment": "exact",
+      "bytes": 1088,
+      "sha256": "652190fa74d4daac71b9dc50e0d4e324297036b1f03ebf4e2336eb6f89095b08",
+      "source_sha256": "652190fa74d4daac71b9dc50e0d4e324297036b1f03ebf4e2336eb6f89095b08"
+    },
+    "evidence/basis/aep-sandbox/aep/__init__.py": {
+      "treatment": "exact",
+      "bytes": 894,
+      "sha256": "f444e60e1ca00e4d6025f875af3cd2479a132234f09d4161303896a02f6a2fa6",
+      "source_sha256": "f444e60e1ca00e4d6025f875af3cd2479a132234f09d4161303896a02f6a2fa6"
+    },
+    "evidence/basis/aep-sandbox/aep/canonical.py": {
+      "treatment": "exact",
+      "bytes": 896,
+      "sha256": "9211e311ce20511cce98c9321296784ff79a059789d964a50a93b398fb0f5b0e",
+      "source_sha256": "9211e311ce20511cce98c9321296784ff79a059789d964a50a93b398fb0f5b0e"
+    },
+    "evidence/basis/aep-sandbox/aep/keys.py": {
+      "treatment": "exact",
+      "bytes": 2525,
+      "sha256": "b3af49aa8f168b026e7ee315bd22cdff40f5f09b89fe77355cc7b93fb39226f6",
+      "source_sha256": "b3af49aa8f168b026e7ee315bd22cdff40f5f09b89fe77355cc7b93fb39226f6"
+    },
+    "evidence/basis/aep-sandbox/aep/ledger.py": {
+      "treatment": "exact",
+      "bytes": 2803,
+      "sha256": "f05eae9531cb7f597410c61cb2c8980d443e9d4eee0795abc012dff20e8922be",
+      "source_sha256": "f05eae9531cb7f597410c61cb2c8980d443e9d4eee0795abc012dff20e8922be"
+    },
+    "evidence/basis/aep-sandbox/aep/mandate.py": {
+      "treatment": "exact",
+      "bytes": 7428,
+      "sha256": "608ca57270db9a04de6d2bc4e156792bc87b3b8fb7479ff1e609da51b90aa13f",
+      "source_sha256": "608ca57270db9a04de6d2bc4e156792bc87b3b8fb7479ff1e609da51b90aa13f"
+    },
+    "evidence/basis/aep-sandbox/aep/package.py": {
+      "treatment": "exact",
+      "bytes": 5537,
+      "sha256": "d7824856a43c7950fd0b41b7927f617c9062d327f88d1d86fca7e041d39060bf",
+      "source_sha256": "d7824856a43c7950fd0b41b7927f617c9062d327f88d1d86fca7e041d39060bf"
+    },
+    "evidence/basis/aep-sandbox/keys/trusted_issuers.json": {
+      "treatment": "exact",
+      "bytes": 123,
+      "sha256": "65dc759643b0322efa1ebbf51b86c44ab926a9fadc38843f49f1be66991049b3",
+      "source_sha256": "65dc759643b0322efa1ebbf51b86c44ab926a9fadc38843f49f1be66991049b3"
+    },
+    "evidence/basis/aep-sandbox/requirements.txt": {
+      "treatment": "exact",
+      "bytes": 154,
+      "sha256": "dd00233db394cda9dccc77ad59c74160ddba2744ca3adcbafed3d16e1d2b051a",
+      "source_sha256": "dd00233db394cda9dccc77ad59c74160ddba2744ca3adcbafed3d16e1d2b051a"
+    },
+    "evidence/basis/aep-sandbox/samples/exceed-scope.aep.json": {
+      "treatment": "exact",
+      "bytes": 2119,
+      "sha256": "3b7f18af3e8d5cc41f40f036282cd15afe49a68d381f1a5b0bdb8c30a24998ef",
+      "source_sha256": "3b7f18af3e8d5cc41f40f036282cd15afe49a68d381f1a5b0bdb8c30a24998ef"
+    },
+    "evidence/basis/aep-sandbox/samples/good.aep.json": {
+      "treatment": "exact",
+      "bytes": 2118,
+      "sha256": "305bc28083e99ae417a18ce35d042e2e2e66d2eaad9f840cbe34bde466a99437",
+      "source_sha256": "305bc28083e99ae417a18ce35d042e2e2e66d2eaad9f840cbe34bde466a99437"
+    },
+    "evidence/basis/aep-sandbox/verify.py": {
+      "treatment": "exact",
+      "bytes": 4150,
+      "sha256": "788aec85d86109a757b4b386bd792f8073b147e7da68a58d1ba04fe8d48ab29e",
+      "source_sha256": "788aec85d86109a757b4b386bd792f8073b147e7da68a58d1ba04fe8d48ab29e"
+    },
+    "evidence/basis/specifications/draft-sergeev-wexp-core-02.xml": {
+      "treatment": "exact",
+      "bytes": 136043,
+      "sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+      "source_sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782"
+    },
+    "evidence/basis/specifications/draft-sokolov-rats-aep-composition-06.txt": {
+      "treatment": "exact",
+      "bytes": 45400,
+      "sha256": "a2561d39ddd1707d04df100137bdbff2bcde367a477e06e6068efe45572e1431",
+      "source_sha256": "a2561d39ddd1707d04df100137bdbff2bcde367a477e06e6068efe45572e1431"
+    },
+    "evidence/core/check/a-attrib.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/check/a-attrib.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2949,
+      "sha256": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193",
+      "source_sha256": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193"
+    },
+    "evidence/core/check/a-strict.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/check/a-strict.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2949,
+      "sha256": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a",
+      "source_sha256": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a"
+    },
+    "evidence/core/check/b-attrib.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/check/b-attrib.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2949,
+      "sha256": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193",
+      "source_sha256": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193"
+    },
+    "evidence/core/check/b-strict.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/check/b-strict.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2949,
+      "sha256": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a",
+      "source_sha256": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a"
+    },
+    "evidence/core/check/c-attrib.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/check/c-attrib.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2951,
+      "sha256": "af469f832089eb88eab0d73729720115b3ad2b340cc3da33995e62e9a95c13cd",
+      "source_sha256": "af469f832089eb88eab0d73729720115b3ad2b340cc3da33995e62e9a95c13cd"
+    },
+    "evidence/core/check/c-strict.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/check/c-strict.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2951,
+      "sha256": "447db3981b5ceeeba6973dd795b7cfbd3e0898eea0368ba4fdde9528ac835f45",
+      "source_sha256": "447db3981b5ceeeba6973dd795b7cfbd3e0898eea0368ba4fdde9528ac835f45"
+    },
+    "evidence/core/ref/a-attrib.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/ref/a-attrib.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2949,
+      "sha256": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193",
+      "source_sha256": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193"
+    },
+    "evidence/core/ref/a-strict.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/ref/a-strict.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2949,
+      "sha256": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a",
+      "source_sha256": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a"
+    },
+    "evidence/core/ref/b-attrib.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/ref/b-attrib.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2949,
+      "sha256": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193",
+      "source_sha256": "f2035e021ae5ea73cf105b2d8810a1fd0db3eeb9d4e884a5895ab181cdf4a193"
+    },
+    "evidence/core/ref/b-strict.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/ref/b-strict.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2949,
+      "sha256": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a",
+      "source_sha256": "8730e3a71305e41cd78e7a6f23cb36d681882d1e8ae00748ec05a8ef57a95d9a"
+    },
+    "evidence/core/ref/c-attrib.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/ref/c-attrib.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2951,
+      "sha256": "af469f832089eb88eab0d73729720115b3ad2b340cc3da33995e62e9a95c13cd",
+      "source_sha256": "af469f832089eb88eab0d73729720115b3ad2b340cc3da33995e62e9a95c13cd"
+    },
+    "evidence/core/ref/c-strict.rc.txt": {
+      "treatment": "exact",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "source_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "evidence/core/ref/c-strict.stdout.json": {
+      "treatment": "exact",
+      "bytes": 2951,
+      "sha256": "447db3981b5ceeeba6973dd795b7cfbd3e0898eea0368ba4fdde9528ac835f45",
+      "source_sha256": "447db3981b5ceeeba6973dd795b7cfbd3e0898eea0368ba4fdde9528ac835f45"
+    },
+    "expectations/FREEZE.json": {
+      "treatment": "exact",
+      "bytes": 2657,
+      "sha256": "3a3632fe952a37617c2faa5005d957b21b44fdaeee1b0c0814d831367205c4ec",
+      "source_sha256": "3a3632fe952a37617c2faa5005d957b21b44fdaeee1b0c0814d831367205c4ec"
+    },
+    "expectations/v1/DERIVATIONS.json": {
+      "treatment": "exact",
+      "bytes": 76460,
+      "sha256": "d981e66820a2f7f7700553ac155ff0be8bdf76e83a1cf3348684b3ba369f1cb6",
+      "source_sha256": "d981e66820a2f7f7700553ac155ff0be8bdf76e83a1cf3348684b3ba369f1cb6"
+    },
+    "expectations/v1/a-attrib.json": {
+      "treatment": "exact",
+      "bytes": 3712,
+      "sha256": "aa8d9e022b9171fbd37410ee23bb24e4d9aad0a5df091cffbc318ebb068ad3ea",
+      "source_sha256": "aa8d9e022b9171fbd37410ee23bb24e4d9aad0a5df091cffbc318ebb068ad3ea"
+    },
+    "expectations/v1/a-strict.json": {
+      "treatment": "exact",
+      "bytes": 3712,
+      "sha256": "a0825ccc289fb1dad2e91a2b6e7638e9f2c9f71f9b9a9659e733d55701419bce",
+      "source_sha256": "a0825ccc289fb1dad2e91a2b6e7638e9f2c9f71f9b9a9659e733d55701419bce"
+    },
+    "expectations/v1/b-attrib.json": {
+      "treatment": "exact",
+      "bytes": 3712,
+      "sha256": "aa8d9e022b9171fbd37410ee23bb24e4d9aad0a5df091cffbc318ebb068ad3ea",
+      "source_sha256": "aa8d9e022b9171fbd37410ee23bb24e4d9aad0a5df091cffbc318ebb068ad3ea"
+    },
+    "expectations/v1/b-strict.json": {
+      "treatment": "exact",
+      "bytes": 3712,
+      "sha256": "a0825ccc289fb1dad2e91a2b6e7638e9f2c9f71f9b9a9659e733d55701419bce",
+      "source_sha256": "a0825ccc289fb1dad2e91a2b6e7638e9f2c9f71f9b9a9659e733d55701419bce"
+    },
+    "expectations/v1/c-attrib.json": {
+      "treatment": "exact",
+      "bytes": 3714,
+      "sha256": "04d6e9a7cee9774ca75e39210bade72cc0ec3fe60acd29a98c2e6c042f8b453b",
+      "source_sha256": "04d6e9a7cee9774ca75e39210bade72cc0ec3fe60acd29a98c2e6c042f8b453b"
+    },
+    "expectations/v1/c-strict.json": {
+      "treatment": "exact",
+      "bytes": 3714,
+      "sha256": "86da68af0de7ca7b7f043c5147cb438ba716b3ef9e2a78bef2ee3d27a7d275c5",
+      "source_sha256": "86da68af0de7ca7b7f043c5147cb438ba716b3ef9e2a78bef2ee3d27a7d275c5"
+    },
+    "inputs/a-attrib.json": {
+      "treatment": "exact",
+      "bytes": 4483,
+      "sha256": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2",
+      "source_sha256": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2"
+    },
+    "inputs/a-strict.json": {
+      "treatment": "exact",
+      "bytes": 4483,
+      "sha256": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d",
+      "source_sha256": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d"
+    },
+    "inputs/b-attrib.json": {
+      "treatment": "exact",
+      "bytes": 4483,
+      "sha256": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2",
+      "source_sha256": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2"
+    },
+    "inputs/b-strict.json": {
+      "treatment": "exact",
+      "bytes": 4483,
+      "sha256": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d",
+      "source_sha256": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d"
+    },
+    "inputs/c-attrib.json": {
+      "treatment": "exact",
+      "bytes": 4487,
+      "sha256": "4d48885826c80db8d0a4348d4bd470b79f49303f6f9763b2612cb7d2b36f6be4",
+      "source_sha256": "4d48885826c80db8d0a4348d4bd470b79f49303f6f9763b2612cb7d2b36f6be4"
+    },
+    "inputs/c-strict.json": {
+      "treatment": "exact",
+      "bytes": 4487,
+      "sha256": "53ae8a5bd57eea9054fe13e0f36462b1e5d06fd80a59354460e12e02ea25568f",
+      "source_sha256": "53ae8a5bd57eea9054fe13e0f36462b1e5d06fd80a59354460e12e02ea25568f"
+    },
+    "prepare_inputs.py": {
+      "treatment": "exact",
+      "bytes": 9549,
+      "sha256": "5b4f930702e144d46a59f1c8ccf856c3e5f1da375af95770e4365513041602a0",
+      "source_sha256": "5b4f930702e144d46a59f1c8ccf856c3e5f1da375af95770e4365513041602a0"
+    },
+    "profile-registry.json": {
+      "treatment": "exact",
+      "bytes": 465,
+      "sha256": "4e7ed3eb82a8958c92832d2709159fa94ba95feb08ff816731f92e6c06756984",
+      "source_sha256": "4e7ed3eb82a8958c92832d2709159fa94ba95feb08ff816731f92e6c06756984"
+    },
+    "run_aep_verify.sh": {
+      "treatment": "exact",
+      "bytes": 843,
+      "sha256": "5c60e59da88f31eec0f62d54e86f85028562614a67b002979e1540730ae28206",
+      "source_sha256": "5c60e59da88f31eec0f62d54e86f85028562614a67b002979e1540730ae28206"
+    },
+    "run_core_appraiser.py": {
+      "treatment": "exact",
+      "bytes": 2589,
+      "sha256": "a196fbd8d2f44f01a9eba707371993b4d6a5d05a9751bf5f6d61ecbf4bd38de7",
+      "source_sha256": "a196fbd8d2f44f01a9eba707371993b4d6a5d05a9751bf5f6d61ecbf4bd38de7"
+    }
+  },
+  "historical_freezes": {
+    "A-FREEZE.json": {
+      "historical_entries": 35,
+      "exact_entries_verifiable_here": 27,
+      "entries_projected": [
+        "HANDOFF.md",
+        "SOURCE-PINS.json"
+      ],
+      "entries_not_published": [
+        "HANDOFF.json",
+        "evidence/A-PREPARATION.json",
+        "evidence/A-SESSION.json",
+        "evidence/basis/aep-sandbox/README.md",
+        "evidence/basis/aep-sandbox/THREAT-MODEL.md",
+        "evidence/basis/aep-sandbox/attacks/replay.py"
+      ]
+    },
+    "expectations/FREEZE.json": {
+      "historical_entries": 14,
+      "exact_entries_verifiable_here": 10,
+      "entries_projected": [],
+      "entries_not_published": [
+        "evidence/B-CHECK.py",
+        "evidence/B-HASH-HELPER.json",
+        "evidence/B-SESSION.json",
+        "evidence/B-VALIDATION.json"
+      ]
+    }
+  },
+  "omitted_proposal_paths": [
+    "HANDOFF.json",
+    "README.md",
+    "REPRODUCE.md",
+    "compare_saved.py",
+    "evidence/A-PREPARATION.json",
+    "evidence/A-SESSION.json",
+    "evidence/B-CHECK.py",
+    "evidence/B-HASH-HELPER.json",
+    "evidence/B-SESSION.json",
+    "evidence/B-VALIDATION.json",
+    "evidence/C-PACKAGING.json",
+    "evidence/C-PREFLIGHT.json",
+    "evidence/C-SESSION.json",
+    "evidence/C-SOURCE-ADDITIONS.json",
+    "evidence/CORE-RUNS.json",
+    "evidence/aep/a.stderr.txt",
+    "evidence/aep/b.stderr.txt",
+    "evidence/aep/c.stderr.txt",
+    "evidence/basis/aep-sandbox/README.md",
+    "evidence/basis/aep-sandbox/THREAT-MODEL.md",
+    "evidence/basis/aep-sandbox/attacks/replay.py",
+    "evidence/collection/attempt-1-system-catalog.rc.txt",
+    "evidence/collection/attempt-1-system-catalog.stderr.txt",
+    "evidence/collection/attempt-1-system-catalog.stdout.json",
+    "evidence/collection/attempt-1-system-collection.rc.txt",
+    "evidence/collection/attempt-1-system-collection.stderr.txt",
+    "evidence/collection/attempt-1-system-collection.stdout.json",
+    "evidence/collection/attempt-1-system-commands.json",
+    "evidence/collection/attempt-2-venv-collection.rc.txt",
+    "evidence/collection/attempt-2-venv-collection.stderr.txt",
+    "evidence/collection/attempt-2-venv-collection.stdout.json",
+    "evidence/collection/attempt-2-venv-commands.json",
+    "evidence/collection/attempt-3-preserved-pass-collection.rc.txt",
+    "evidence/collection/attempt-3-preserved-pass-collection.stderr.txt",
+    "evidence/collection/attempt-3-preserved-pass-collection.stdout.json",
+    "evidence/collection/attempt-3-preserved-pass-commands.json",
+    "evidence/collection/catalog.rc.txt",
+    "evidence/collection/catalog.stderr.txt",
+    "evidence/collection/catalog.stdout.json",
+    "evidence/collection/collection.rc.txt",
+    "evidence/collection/collection.stderr.txt",
+    "evidence/collection/collection.stdout.json",
+    "evidence/collection/commands.json",
+    "evidence/collection/setup-commands.json",
+    "evidence/collection/setup-pip-freeze.rc.txt",
+    "evidence/collection/setup-pip-freeze.stderr.txt",
+    "evidence/collection/setup-pip-freeze.stdout.txt",
+    "evidence/collection/setup-requirements.rc.txt",
+    "evidence/collection/setup-requirements.stderr.txt",
+    "evidence/collection/setup-requirements.stdout.txt",
+    "evidence/collection/setup-venv.rc.txt",
+    "evidence/collection/setup-venv.stderr.txt",
+    "evidence/collection/setup-venv.stdout.txt",
+    "evidence/core/check/a-attrib.metadata.json",
+    "evidence/core/check/a-attrib.stderr.txt",
+    "evidence/core/check/a-strict.metadata.json",
+    "evidence/core/check/a-strict.stderr.txt",
+    "evidence/core/check/b-attrib.metadata.json",
+    "evidence/core/check/b-attrib.stderr.txt",
+    "evidence/core/check/b-strict.metadata.json",
+    "evidence/core/check/b-strict.stderr.txt",
+    "evidence/core/check/c-attrib.metadata.json",
+    "evidence/core/check/c-attrib.stderr.txt",
+    "evidence/core/check/c-strict.metadata.json",
+    "evidence/core/check/c-strict.stderr.txt",
+    "evidence/core/ref/a-attrib.metadata.json",
+    "evidence/core/ref/a-attrib.stderr.txt",
+    "evidence/core/ref/a-strict.metadata.json",
+    "evidence/core/ref/a-strict.stderr.txt",
+    "evidence/core/ref/b-attrib.metadata.json",
+    "evidence/core/ref/b-attrib.stderr.txt",
+    "evidence/core/ref/b-strict.metadata.json",
+    "evidence/core/ref/b-strict.stderr.txt",
+    "evidence/core/ref/c-attrib.metadata.json",
+    "evidence/core/ref/c-attrib.stderr.txt",
+    "evidence/core/ref/c-strict.metadata.json",
+    "evidence/core/ref/c-strict.stderr.txt",
+    "evidence/setup/aep-sandbox-checkout.rc.txt",
+    "evidence/setup/aep-sandbox-checkout.stderr.txt",
+    "evidence/setup/aep-sandbox-checkout.stdout.txt",
+    "evidence/setup/aep-sandbox-clone.rc.txt",
+    "evidence/setup/aep-sandbox-clone.stderr.txt",
+    "evidence/setup/aep-sandbox-clone.stdout.txt",
+    "evidence/setup/commands.json",
+    "evidence/setup/pip-freeze.rc.txt",
+    "evidence/setup/pip-freeze.stderr.txt",
+    "evidence/setup/pip-freeze.stdout.txt",
+    "evidence/setup/requirements.rc.txt",
+    "evidence/setup/requirements.stderr.txt",
+    "evidence/setup/requirements.stdout.txt",
+    "evidence/setup/venv.rc.txt",
+    "evidence/setup/venv.stderr.txt",
+    "evidence/setup/venv.stdout.txt",
+    "evidence/setup/wexp-check-checkout.rc.txt",
+    "evidence/setup/wexp-check-checkout.stderr.txt",
+    "evidence/setup/wexp-check-checkout.stdout.txt",
+    "evidence/setup/wexp-check-clone.rc.txt",
+    "evidence/setup/wexp-check-clone.stderr.txt",
+    "evidence/setup/wexp-check-clone.stdout.txt",
+    "evidence/setup/wexp-ref-checkout.rc.txt",
+    "evidence/setup/wexp-ref-checkout.stderr.txt",
+    "evidence/setup/wexp-ref-checkout.stdout.txt",
+    "evidence/setup/wexp-ref-clone.rc.txt",
+    "evidence/setup/wexp-ref-clone.stderr.txt",
+    "evidence/setup/wexp-ref-clone.stdout.txt",
+    "evidence/verification/commands.json",
+    "evidence/verification/proposal.rc.txt",
+    "evidence/verification/proposal.stderr.txt",
+    "evidence/verification/proposal.stdout.json",
+    "manifest.json",
+    "run_proposal.py",
+    "verify_proposal.py"
+  ],
+  "omission_scope": "Operator-specific environment, detailed process locations, session and administrative records, full-evidence maintenance scripts and other material not needed to repeat the public comparison. The original ZIP and all unabridged records remain private. A credit in an upstream IETF document is preserved with its public source."
+}

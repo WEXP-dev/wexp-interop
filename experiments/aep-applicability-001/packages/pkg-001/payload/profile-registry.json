@@ -1,0 +1,12 @@
+{
+  "profile_identifier": "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+  "revision": "1:r4",
+  "reason_registry": {
+    "substantive": [],
+    "evaluation-gap": [],
+    "fatal": []
+  },
+  "recorder_relation_tokens": [],
+  "evaluation_scope_extensions": [],
+  "note": "No profile-owned reason, gap or fatal tokens are emitted. Limitation local values are opaque profile-scoped atoms, not tokens. Core tokens are bound by semantics_version wexp-core-2."
+}

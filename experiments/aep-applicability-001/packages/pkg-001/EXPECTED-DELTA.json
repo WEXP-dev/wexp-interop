@@ -1,0 +1,15 @@
+{
+  "scope": "Baseline for the first run from the committed public selection. The November 9 trial and subsequent author review precede this preparation.",
+  "historical_reference": {
+    "public_inventory": "evidence/PUBLIC-INVENTORY.json",
+    "frozen_inputs": "payload/INPUT-HASHES.json",
+    "frozen_expectations": "payload/expectations/FREEZE.json",
+    "raw_native_outputs": "payload/evidence/aep/",
+    "raw_core_outputs": "payload/evidence/core/"
+  },
+  "expected_input_differences": [],
+  "expected_result_differences": [],
+  "public_composition": "The inventory identifies exact historical files and public representations. Only the public selection is shipped. Public representations are outside the byte-exact historical freeze comparison.",
+  "comparison_rule": "Run the same three native cases in order and compare the native decisions, exit codes and nonce-state snapshots. Compare every one of the six frozen inputs and the twelve observed Core result files to the historical bytes. Compare ref, check and the frozen expectations component by component using the recorded typed, set-aware rules. Preserve the six boundary_ceiling mismatches.",
+  "execution_metadata": "Record new timestamps, platform, interpreter, dependency versions and checked revisions for the public run. Checkout-specific diagnostic paths and wall-clock metadata are outside the result comparison."
+}

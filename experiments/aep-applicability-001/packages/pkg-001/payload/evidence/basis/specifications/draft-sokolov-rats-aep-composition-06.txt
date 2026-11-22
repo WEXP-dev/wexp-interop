@@ -1,0 +1,1008 @@
+
+
+
+
+Remote ATtestation ProcedureS (RATS)                          A. Sokolov
+Internet-Draft                                           Tyche Institute
+Intended status: Informational                            31 August 2026
+Expires: 4 March 2027
+
+
+  Composing Application-Layer Action Evidence with Remote Attestation
+                               Procedures
+                 draft-sokolov-rats-aep-composition-06
+
+Abstract
+
+   This document sketches a composition pattern in which an application-
+   layer "action evidence package" (AEP) -- a signed action record that
+   can be hash-linked to earlier records and that reports an action
+   taken by an automated (for example, AI-agent) system, the authority
+   under which it was taken, and its outcome -- is treated as Evidence
+   in the sense of the RATS Architecture (RFC 9334) and bound to
+   platform Evidence produced by a hardware root of trust.  The intent
+   is that a single Verifier, or a composition of Verifiers, can
+   appraise both the platform state and the application-layer record
+   together, and emit an Attestation Result that a Relying Party can use
+   to reason about _what an automated system reports it did_ and _the
+   appraised state of the platform associated with that record_. The
+   composition does not turn a self-reported action or outcome into an
+   independently observed fact; it prevents the Relying Party from
+   having to rely on an unbound operator-side log alone.  This is an
+   individual sketch intended to ask the working group whether the
+   pattern is already covered by existing mechanisms or warrants a short
+   document.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 4 March 2027.
+
+
+
+
+Sokolov                   Expires 4 March 2027                  [Page 1]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+Copyright Notice
+
+   Copyright (c) 2026 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+   2.  Conventions and Definitions . . . . . . . . . . . . . . . . .   3
+   3.  Scope . . . . . . . . . . . . . . . . . . . . . . . . . . . .   3
+   4.  Named Entities and Trust Boundaries . . . . . . . . . . . . .   3
+   5.  The Action Evidence Package . . . . . . . . . . . . . . . . .   5
+   6.  Provisional AEP EAT Claim Vocabulary  . . . . . . . . . . . .   5
+   7.  Composition with RATS . . . . . . . . . . . . . . . . . . . .   7
+   8.  Discovery and Bootstrap . . . . . . . . . . . . . . . . . . .   8
+   9.  AR4SI Projection and Application Decision . . . . . . . . . .   9
+   10. Grounded Use Case: A Bounded Payment Action . . . . . . . . .  10
+   11. Test Vectors  . . . . . . . . . . . . . . . . . . . . . . . .  10
+   12. Prototype Observations (Informative)  . . . . . . . . . . . .  11
+   13. Appraisal by an Open-Source RATS Verifier . . . . . . . . . .  12
+   14. Security Considerations . . . . . . . . . . . . . . . . . . .  14
+     14.1.  Evidence Freshness and Result Applicability Are
+            Separate . . . . . . . . . . . . . . . . . . . . . . . .  14
+   15. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  15
+   16. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  15
+   17. References  . . . . . . . . . . . . . . . . . . . . . . . . .  16
+     17.1.  Normative References . . . . . . . . . . . . . . . . . .  16
+     17.2.  Informative References . . . . . . . . . . . . . . . . .  17
+   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  18
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  18
+
+1.  Introduction
+
+   Records of automated decision-making are increasingly produced for
+   accountability purposes: an action identifier, an authorising
+   principal, inputs and tool calls, and an outcome, optionally hash-
+   linked so that later modification is detectable.  Such an action
+   evidence package (AEP) is useful but has the standard self-report
+   limitation: every field is asserted by the same software stack whose
+
+
+
+Sokolov                   Expires 4 March 2027                  [Page 2]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   integrity is in question.  The signature proves the record was
+   produced by a key the runtime holds; it does not prove what the
+   runtime _was_.
+
+   The RATS Architecture [RFC9334] separates the party that produces
+   Evidence (Attester), the party that appraises it (Verifier), and the
+   party that acts on the verdict (Relying Party).  Binding an AEP to
+   platform Evidence appraised under RATS anchors the self-report to an
+   independently appraised platform state, but does not independently
+   observe the action or its external effect.  This document describes
+   the composition and asks whether it is novel enough to specify.
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+   This document uses RATS terminology as defined in [RFC9334]: the
+   roles Attester, Verifier, Relying Party, Endorser, and Reference
+   Value Provider, and the conceptual messages Evidence, Endorsements,
+   Reference Values, and Attestation Results.
+
+3.  Scope
+
+   This document defines a composition pattern and a provisional claim
+   vocabulary.  It does not define an appraisal algorithm, mandate
+   language, discovery protocol, transparency service, or authorisation
+   policy.  In particular, a Verifier decides how Evidence supports an
+   Attestation Result, and a Relying Party decides whether that result
+   and the referenced authority permit an action.  The examples in this
+   document do not turn an application authorisation decision into a
+   RATS trustworthiness claim.
+
+4.  Named Entities and Trust Boundaries
+
+   RATS roles are functions rather than deployment units.  The following
+   entities name the functions used in this composition.  An
+   implementation can co-locate them, but it MUST preserve the role and
+   key boundaries in its evidence and policy records.
+
+   Action Principal  The person or organisation whose authority is
+      referenced by the action.  This is an application role, not a new
+      RATS role.
+
+   Mandate Issuer  The entity that signs or otherwise authenticates the
+
+
+
+Sokolov                   Expires 4 March 2027                  [Page 3]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+      bounded authority.  It can also be an Endorser only when it
+      separately vouches for capabilities of the Attester in the sense
+      of [RFC9334]; signing a mandate does not by itself produce a RATS
+      Endorsement or appraise platform Evidence.
+
+   Agent Runtime Attester  The entity that produces the AEP Evidence.
+      In the minimal deployment, it contains a software Attesting
+      Environment implemented by the action recorder and a co-located
+      runtime Target Environment whose behaviour is being reported.  Co-
+      location is permitted by [RFC9334] but leaves the AEP as a self-
+      report until it is bound to independently appraised platform
+      Evidence.
+
+   Platform Attesting Environment  The TPM- or TEE-backed combination
+      that collects Claims about the platform Target Environment,
+      protects the attestation key, and produces platform Evidence.  A
+      TPM alone does not collect Claims; the measurement component that
+      feeds it is part of the Attesting Environment.  This environment
+      binds the AEP digest or linking claim to measured state.
+
+   Verifier  The entity that appraises the AEP Evidence and platform
+      Evidence against Appraisal Policy for Evidence, Reference Values,
+      and Endorsements, and emits an Attestation Result.
+
+   AgentRuntimeEndorser  A legacy deployment label for a service that
+      may appraise runtime Evidence, validate a mandate, and issue an
+      application-layer statement binding the appraised runtime to that
+      mandate.  That statement is not a RATS Endorsement merely because
+      of the deployment label, and the label is not a new RATS role.  A
+      deployment that combines Verifier, Endorser, and application
+      binding functions MUST identify which output was produced under
+      which function, key, and policy.
+
+   Relying Party  The entity that consumes the Attestation Result and
+      application authority and decides whether to accept the action or
+      its record.
+
+   Audit Consumer  An auditor or audit service that correlates the AEP
+      with interaction, delegation, authorisation-transition, and
+      service-side records.  This aligns with the consumer role in
+      [I-D.kuehlewind-audit-architecture].
+
+   The deployment Trusted Computing Base (TCB) includes the action
+   recorder and binding gate, the Platform Attesting Environment, the
+   Verifier implementation and policies, the configured trust-anchor
+   path for Endorsements and Reference Values, and the keys used to
+   authenticate mandates and results.  Artifact stores, mirrors, and
+   transports need not be trusted for integrity when every consumed
+
+
+
+Sokolov                   Expires 4 March 2027                  [Page 4]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   object is authenticated and freshness-checked.  This TCB statement is
+   deployment guidance; TCB is not introduced as a RATS architectural
+   role.
+
+5.  The Action Evidence Package
+
+   An AEP is an application-layer, signed action record.  For the
+   purposes of this document its salient properties are: (a) it reports
+   an action, an authorising principal, and an outcome; (b) it can link
+   to a predecessor for tamper-evidence, although a hash chain alone
+   does not prevent truncation or equivocation; and (c) it is produced
+   by the same software stack that performs the action.  Property (c) is
+   precisely why it benefits from composition with platform Evidence.
+
+   More precisely, this document distinguishes the _AEP Record_ from the
+   _AEP Evidence Claims-Set_. The AEP Record can contain a richer event
+   log.  The AEP Evidence Claims-Set identifies one action and binds
+   digests of the authority, canonical action, outcome, optional
+   predecessor record, and platform Evidence.  A conversation record
+   such as [I-D.birkholz-verifiable-agent-conversations] or a
+   distributed audit record such as [I-D.kuehlewind-audit-architecture]
+   can be carried as a submodule only when encoded as one of the
+   submodule forms permitted by [RFC9711]; otherwise it can be
+   referenced by a separately defined integrity-protected digest.  It is
+   not copied wholesale into every claim.
+
+6.  Provisional AEP EAT Claim Vocabulary
+
+   The surrounding EAT Claims-Set can use the iat, exp, eat_nonce, and
+   submods claims according to [RFC9711] and the selected encoding.  The
+   following new application claims are expressed in CDDL [RFC8610] and
+   use provisional string labels for review.  The CDDL deliberately does
+   not restate the standard EAT claims: their labels and value types
+   differ between CBOR and JSON, and a full profile must select and
+   specify those encodings.  This document does not request numeric
+   claim keys or reserve an IANA code point.  In particular, the text-
+   labelled CDDL below is a vocabulary review aid and is not, by itself,
+   a valid CBOR-encoded EAT profile: [RFC9711] requires CBOR-encoded EAT
+   claim keys to use integer labels.
+
+
+
+
+
+
+
+
+
+
+
+
+Sokolov                   Expires 4 March 2027                  [Page 5]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   aep-claims = {
+     "aep_action_id" => tstr,
+     "aep_authority_ref" => digest-ref,
+     "aep_action_digest" => digest-ref,
+     "aep_outcome_digest" => digest-ref,
+     ? "aep_previous_digest" => digest-ref,
+     "aep_platform_evidence_ref" => digest-ref,
+     ? "aep_audit_context" => audit-context
+   }
+
+   digest-ref = {
+     "hash_alg" => "sha-256",
+     "digest" => bstr
+   }
+
+   audit-context = tstr
+
+   Each digest covers a deterministic byte string selected by the
+   profile using the stated hash algorithm.  The profile or vector MUST
+   identify those exact bytes and any canonicalisation rule; hashing an
+   ambiguous in-memory object or an unspecified JSON serialisation does
+   not produce an interoperable binding.
+
+   This revision does not define a complete EAT profile in the sense of
+   Section 6.3 of [RFC9711]: the encoding, serialisation, protection,
+   and claims-requirement items listed there are not settled by the
+   prototype reported here.  Section 6.2 of [RFC9711] states that the
+   eat_profile claim MUST NOT be used to identify a partial profile, so
+   this revision names none and presents the vocabulary with text labels
+   only.  Settling those items, and stating the CBOR and JSON encodings,
+   is expected before any profile identifier or numeric label assignment
+   is proposed.
+
+   Any complete profile derived from this vocabulary that claims the AEP
+   Evidence Claims-Set and platform Evidence were produced within the
+   same freshness window MUST require the eat_nonce claim in the AEP
+   Evidence.  Its Appraisal Policy for Evidence MUST compare the
+   applicable received nonce value with the expected challenge that
+   scopes the composition, and MUST reject the AEP Evidence if the claim
+   is absent or if none of the applicable received nonce values equals
+   that challenge.  Merely carrying an eat_nonce without performing this
+   comparison does not establish freshness.
+
+   aep_action_id  An identifier unique in the action producer's domain.
+      It supports duplicate and replay detection but is not, by itself,
+      proof of uniqueness.
+
+   aep_authority_ref  A digest of the exact mandate, grant, or other
+
+
+
+Sokolov                   Expires 4 March 2027                  [Page 6]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+      authority evaluated for this action.
+
+   aep_action_digest  A digest of the canonical action request as
+      observed at the point where effect can occur.
+
+   aep_outcome_digest  A digest of the canonical outcome or effect
+      record.  A success assertion without independently observable
+      effect evidence remains an application-layer claim.
+
+   aep_previous_digest  The digest of the preceding AEP Record when the
+      producer maintains a hash chain.
+
+   aep_platform_evidence_ref  The linking digest for the platform
+      Evidence or Attestation Result bound at record time.
+
+   aep_audit_context  An opaque, producer-scoped correlation handle that
+      lets an Auditor relate this record to the surrounding Interaction,
+      Delegation, and Authorization Transition Records.  Its internal
+      structure is deployment-defined:
+      [I-D.kuehlewind-audit-architecture] proposes its own context-
+      propagation fields, and this document does not restate them.  It
+      is correlation context, not an authorisation decision, and it can
+      be identifying; see Section 15.
+
+   The AEP Evidence Claims-Set MUST receive integrity protection that
+   covers the action, authority, outcome, and platform references.  This
+   revision does not select the EAT protection mechanism or algorithms;
+   a full profile must do so.  A locator, if used to retrieve a detached
+   object, is not a substitute for an integrity-protected digest.
+
+7.  Composition with RATS
+
+   The composition treats the AEP as application-layer Evidence conveyed
+   alongside platform Evidence:
+
+   1.  The platform produces hardware-rooted Evidence (for example, a
+       TPM quote over measured-boot registers, or a TEE attestation
+       token), appraised against Reference Values (for example, conveyed
+       as a Concise Reference Integrity Manifest [I-D.ietf-rats-corim])
+       and Endorsements by a Verifier.
+
+   2.  The AEP Record and an EAT carrying the AEP Evidence Claims-Set
+       are distinct payloads.  When an AEP Record is carried in a Record
+       CMW, either standalone or as an entry of a Collection CMW,
+       application/vnd.aep+zip is the Record CMW's type value.  An EAT
+       whose Claims-Set carries the AEP Evidence claims is identified by
+       the applicable EAT media type defined by [RFC9782], such as
+       application/eat+cwt or application/eat+jwt; when carried in a
+
+
+
+Sokolov                   Expires 4 March 2027                  [Page 7]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+       Record CMW, that media type is its type value.  A future complete
+       profile selects the EAT encoding and protection according to
+       [RFC9711].  A Collection CMW -- the RATS Conceptual Message
+       Wrapper [RFC9999] -- can group a platform-Evidence CMW entry with
+       a Record CMW entry carrying either the AEP Record or the EAT.
+       EAT submodules can carry a nested Claims-Set, nested token, or
+       Detached-Submodule-Digest; the last of these is a digest of a
+       detached Claims-Set and is not a generic digest wrapper for an
+       arbitrary AEP Record.
+
+   3.  A Verifier -- or, following the layered Platform-Verifier /
+       Workload-Verifier pattern of [I-D.ietf-rats-multi-verifier], a
+       platform Verifier and an application Verifier in composition --
+       appraises both and emits an Attestation Result.
+
+   The binding between the two is load-bearing: the AEP, at record time,
+   SHOULD incorporate a reference to a fresh platform appraisal (or to
+   the platform Evidence and the nonce that scoped it), so that a later
+   Relying Party can ask not only "what does the automated system report
+   that it did, and under what authority?" but "and is that report bound
+   to a platform whose state was independently attested within the same
+   freshness window?".  The [RFC9334] Section 10 freshness mechanisms --
+   nonces, synchronised-clock timestamps, and Epoch IDs/handles -- apply
+   unchanged.  A composition that makes the same-window claim using EAT
+   nonces is subject to the profile requirement in Section 6.
+
+   When the composition is modelled as Evidence for a composite or
+   layered Attester in a single Collection CMW, Section 8.2 of [RFC9999]
+   requires the Evidence messages to be cryptographically bound
+   together.  The binding need not be an outer signature: it can be
+   achieved through identifiers or linking claims, such as nonces,
+   across the collection's items.  An integrity-protected digest link
+   from the AEP Evidence to the corresponding platform Evidence can
+   contribute to that binding, but the collection designer must ensure
+   that the complete set of items is protected against substitution as
+   Section 8.2 requires.
+
+8.  Discovery and Bootstrap
+
+   This composition does not assume zero-input discovery.  Before it can
+   accept an Endorsement, Reference Value, Verifier result, mandate, or
+   AgentRuntimeEndorser output, a deployment has at least one local
+   input: for example, a configured trust anchor, a configured signed
+   trusted-list URI, or a provisioning channel.  DNS, DHCP, Web
+   discovery, and registries can distribute locators, but none creates
+   authority without a configured acceptance rule.
+
+
+
+
+
+Sokolov                   Expires 4 March 2027                  [Page 8]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   In one deployment pattern, the Relying Party starts from a configured
+   URI for a signed trusted list.  It authenticates the list to a
+   locally configured root, checks list status, validity and service
+   history, and uses the resulting entry to locate an
+   AgentRuntimeEndorser.  Authority therefore traces to the configured
+   root and policy, not merely to possession of an endpoint key.
+
+9.  AR4SI Projection and Application Decision
+
+   The composition has two outputs that must not be collapsed.  First, a
+   Verifier can emit an EAR [I-D.ietf-rats-ear] containing an AR4SI
+   trustworthiness vector [I-D.ietf-rats-ar4si] for facets it actually
+   appraised.  Second, application policy computes Authorised,
+   Unauthorised, or Indeterminate from the authority and action claims.
+   The application decision is not an AR4SI tier.
+
+   This document proposes no projection of its own.  What follows is a
+   report of the values one open-source Verifier returned when the
+   platform-side experiment was exercised against it, as described in
+   Section 13:
+
+   *  in the good state, the Verifier populated executables with the
+      affirming value 2;
+
+   *  when the selected PCR composite diverged from the provisioned
+      Reference Value, it populated executables with 33, a warning-tier
+      value, while returning an overall contraindicated status;
+
+   *  when one byte inside the signed attestation structure was altered,
+      it set 99 on every facet and returned contraindicated, recording a
+      signature-verification problem;
+
+   *  in Cases A and B the remaining facets carried the value 0.  AR4SI
+      defines that value as "No assertion": the Evidence was
+      insufficient to make a conclusion.  Although AR4SI describes an
+      absent facet as not applicable to the submitted Evidence, it says
+      that a Relying Party's appraisal policy should not distinguish
+      value 0 from no Trustworthiness Claim; neither form makes a
+      trustworthiness assertion.
+
+   No projection is proposed for the action axis either.  Whether a
+   composition of this kind warrants an additional trustworthiness
+   claim, or is better reported through the application decision alone,
+   is left as a question for the working group.
+
+   AR4SI values are signed 8-bit integers grouped into none, affirming,
+   warning, and contraindicated tiers.  The exact method by which a
+   Verifier derives them is out of scope, consistent with AR4SI.
+
+
+
+Sokolov                   Expires 4 March 2027                  [Page 9]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   Freshness is also separate: an expired result or nonce mismatch can
+   make an otherwise valid appraisal inapplicable without inventing an
+   "expired" AR4SI tier.
+
+10.  Grounded Use Case: A Bounded Payment Action
+
+   A person approves a mandate allowing an automated runtime to pay one
+   named supplier up to a fixed amount before an expiry time.  The
+   runtime later submits a payment instruction to a service.  At the
+   point where the instruction can take effect, the recorder creates an
+   AEP with: the mandate digest in aep_authority_ref; the canonical
+   instruction digest in aep_action_digest; the service result digest in
+   aep_outcome_digest; and the current platform Evidence reference in
+   aep_platform_evidence_ref.  For an authorised Auditor, the audit
+   context can correlate the AEP with records identifying the person,
+   runtime, parent approval event, and authorisation state in force.
+
+   The Verifier appraises the runtime and platform Evidence and emits an
+   EAR.  The Relying Party separately checks that the mandate is valid,
+   the supplier and amount are in scope, the action and outcome digests
+   match the records it observed, the action identifier has not been
+   consumed, and the EAR is applicable now.  An Auditor can then
+   correlate this AEP with the Interaction, Delegation, Authorization
+   Transition, and service-side Action Records described by
+   [I-D.kuehlewind-audit-architecture].  The use case is grounded
+   because each acceptance and refusal condition corresponds to an
+   observable claim or adjacent record; it does not require disclosure
+   of a model's internal reasoning.
+
+11.  Test Vectors
+
+   An implementation experiment should publish positive and negative
+   vectors for at least the following cases.  The Verifier run described
+   in Section 13 exercises the platform-axis conditions of V2 and V3 and
+   the good-state platform conditions of V1.  It does not exercise V4:
+   the run submitted no stale replay, and the unmodified reference
+   scheme performed no nonce comparison, as Section 14.1 records.  The
+   outcome-substitution case of V5, and V6 in its entirety, are
+   specified here and are not claims about that run:
+
+   V1 — known instance and approved measurement  The attestation key and
+      PCR composite match provisioned material, all AEP digests bind,
+      and the nonce is fresh.  The EAR is affirming for the supported
+      facets; application authorisation is evaluated separately.
+
+   V2 — measurement substitution  The quote remains correctly signed but
+
+
+
+
+
+Sokolov                   Expires 4 March 2027                 [Page 10]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+      the PCR composite differs from the Reference Value.  The exercised
+      Verifier reports executables=33 in the warning tier and an overall
+      contraindicated EAR status.
+
+   V3 — forged platform Evidence  One byte in the signed attestation
+      structure is changed.  Cryptographic validation fails and the
+      result is contraindicated.
+
+   V4 — stale replay  A previously valid quote is submitted in a session
+      with a different expected nonce.  Evidence appraisal must fail
+      closed even though the old signature and PCR value remain valid.
+
+   V5 — action or outcome substitution  The platform Evidence is
+      retained while the canonical action or outcome object is changed.
+      The changed object no longer matches the integrity-protected
+      digest in the AEP Evidence; when the outcome digest also
+      contributes to the signed platform Evidence, outcome substitution
+      breaks that reverse binding as well.  The Relying Party rejects
+      the record.
+
+   V6 — authority substitution or replay  The action is paired with
+      another mandate, or a consumed aep_action_id is reused.  Platform
+      appraisal can remain affirming, but application policy returns
+      Unauthorised.  This vector demonstrates why AR4SI and
+      authorisation verdicts are separate.
+
+   Each vector must identify the exact input bytes, expected layer of
+   rejection, expected EAR fields when an EAR is produced, and expected
+   application decision.  A single boolean "valid" result is
+   insufficient for cross-implementation diagnosis.
+
+12.  Prototype Observations (Informative)
+
+   The appraisal algorithms and evidence-scheme implementation are out
+   of scope.  The prototype is retained only to show that the named
+   bindings and refusal cases can be exercised and to derive the minimal
+   result report and test vectors above.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sokolov                   Expires 4 March 2027                 [Page 11]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   A small emulated feasibility check (software TPM via swtpm, with a
+   minimal Verifier stand-in) folds the hash of a synthetic AEP Record,
+   which includes its outcome digest, together with a fresh nonce into
+   an attestation-key-signed quote, with a model-artefact measurement in
+   a platform register.  It resolves the three platform-axis cases and
+   shows that the old quote fails validation when checked against
+   different expected AEP-derived qualifying data.  This is a binding-
+   sensitivity check, not an appraisal of the truth of the reported
+   outcome or a complete implementation of the AEP Evidence Claims-Set.
+   It is emulated and minimal; it demonstrates the cryptographic
+   mechanism, not a hardware-rooted guarantee.  Details are in
+   [ZENODO-AEP].
+
+13.  Appraisal by an Open-Source RATS Verifier
+
+   To compare the platform-side result vocabulary against a real
+   Attestation Result rather than a stand-in, the TPM Evidence and its
+   AEP-outcome-digest measurement were exercised against an instance of
+   the open-source Project Veraison implementation of the RATS Verifier
+   role, built and run locally.  The run did not implement the
+   provisional AEP Evidence Claims-Set, convey an AEP and platform
+   Evidence in one Collection CMW, or ask the Verifier to appraise
+   application authorisation.  It is therefore a platform-side
+   feasibility exercise, not an end-to-end implementation of the
+   composition.  This is an independent exercise of an open-source
+   implementation; it is NOT a claim that the implementation,
+   experiment, or AEP profile is conformant, and it does not imply
+   endorsement or partnership with the Veraison project.
+
+   The platform Attesting Environment used an emulated software TPM
+   (swtpm), not a hardware root of trust.  A fresh EC P-256 Attestation
+   Key (AK) was created in the swtpm; the AEP outcome digest was
+   measured into a Platform Configuration Register (PCR 4); and a
+   genuine swtpm TPM quote was produced over PCRs 1-4 with the freshness
+   nonce as qualifying data.  The quote was packed into the Verifier
+   reference TPM evidence wire format (NODE_ID || SIZE || TPMS_ATTEST ||
+   TPMT_SIGNATURE).  To exercise the unmodified reference scheme with a
+   fixed synthetic record, a Concise Reference Integrity Manifest
+   (CoRIM) was provisioned carrying two items keyed by a single instance
+   identifier: the AK public key as a trust anchor, and the record-
+   specific post-extension PCR composite digest as an experimental
+   Reference Value.  The quote was then submitted through one challenge-
+   response session per appraisal, and the Verifier returned a signed
+   EAR.  Provisioning that record-specific value was a constraint of
+   this bounded experiment, not the recommended deployment pattern: a
+   new AEP Record normally produces a new PCR value and therefore cannot
+   rely on a pre-provisioned "golden" composite for every record.
+
+
+
+
+Sokolov                   Expires 4 March 2027                 [Page 12]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   A deployment that measures per-record AEP data instead provisions the
+   approved pre-AEP platform state, including the pre-AEP value of the
+   PCR selected for the record measurement.  The Attesting Environment
+   records an event for the canonical AEP Record digest, extends that
+   measurement into the selected PCR, and quotes the resulting PCR
+   selection.  It also binds a profile-defined digest over the fresh
+   nonce and the same canonical AEP Record digest into the quote
+   qualifying data.  During appraisal, the Verifier replays the recorded
+   PCR extend from the approved pre-AEP state to reconstruct the post-
+   extension PCR value.  It combines that value with the presented
+   values of any other PCRs in the quote selection, calculates the TPM
+   PCR-selection composite digest, and compares the result with the
+   signed pcrDigest in TPMS_ATTEST.  It separately checks the qualifying
+   data against the expected nonce and AEP Record digest.  This derives
+   the expected record-specific post-extension state at appraisal time
+   instead of treating that state as a deployment-wide golden value.
+   The event log is not accepted as a stand-alone assertion: omitting,
+   reordering, or substituting its measurement events must make the
+   replayed composite disagree with the signed pcrDigest.
+
+   The verdicts below were read from the decoded EARs, which used the
+   Verifier's own profile:
+
+   *  Case A, good state with the AEP outcome digest measured into PCR
+      4: the Verifier returned ear.status "affirming" against the
+      record-specific experimental Reference Value.
+
+   *  Case B, PCR 4 re-measured with a different outcome so the PCR
+      composite digest diverges from that experimental Reference Value:
+      "contraindicated".
+
+   *  Case D, one byte flipped inside TPMS_ATTEST so the quote signature
+      no longer verifies against the AK: "contraindicated" (tampered
+      platform Evidence, rejected).
+
+   Case A was independently re-verified outside the Verifier: the quote
+   PCR digest equals the provisioned record-specific experimental value,
+   and the signature verifies against the AK public key.  These are the
+   two substantive appraisal checks independently repeated here, not an
+   exhaustive description of the Verifier's parsing and trust-anchor
+   processing.  The results confirm the observed affirming/
+   contraindicated distinction used by the test vectors; they do not
+   show that the reference scheme emitted every AR4SI facet proposed in
+   Section 9.  Freshness is a separate condition, and the reference
+   scheme used here did not enforce it, which motivates the freshness
+   consideration below.
+
+
+
+
+
+Sokolov                   Expires 4 March 2027                 [Page 13]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+14.  Security Considerations
+
+   Composition does not dissolve trust assumptions; it relocates them.
+   The platform axis depends on the provenance and protection of the
+   Attesting Environment, applicable Endorsements or directly configured
+   trust anchors, Reference Values, and the Verifier's independence.
+   The AEP axis depends on the action recorder and its signing key.
+   Platform Evidence grounds that key or recorder only when the
+   deployment measures or otherwise binds them into the appraised state;
+   the experiment reported here binds an outcome digest, not the AEP
+   signing key or the truth of the reported effect.  Binding an AEP to a
+   platform appraisal is only as fresh as the weaker of the two
+   freshness mechanisms.  Attesting a specific model or workload version
+   requires that artefact be measured into the attested state, which is
+   a deployment commitment.
+
+   If a composition claims the reverse output-binding exercised here, a
+   forged AEP outcome presented under otherwise-valid platform Evidence
+   MUST be detectable: the outcome digest must contribute to data
+   covered by the platform Evidence's integrity protection.  A one-way
+   AEP reference to platform Evidence alone does not establish that
+   property.  The feasibility note and the appraisal in Section 13
+   demonstrate the cryptographic binding in software-TPM emulation.
+   Using a hardware TPM can strengthen key protection, but it still
+   proves only that the supplied digest contributed to the quoted state;
+   the truth of the action or external effect depends on the recorder
+   and measurement path.
+
+14.1.  Evidence Freshness and Result Applicability Are Separate
+
+   The platform-side appraisal above surfaced a freshness observation
+   worth recording for implementers.  A challenge-response transport
+   supplies a session nonce, and the EAT freshness mechanisms of RFC
+   9711 are available; but whether the nonce is actually enforced
+   depends on the Verifier appraisal scheme, not on the transport.  In
+   the unmodified reference TPM scheme exercised here, the appraisal
+   performed quote-signature and PCR-reference checks, but it did not
+   compare the nonce the Attester bound into the quote qualifying data
+   (the ExtraData field of TPMS_ATTEST) against the session expected
+   nonce.  As a result, a replayed or stale quote, correctly signed over
+   a matching PCR state, could still be appraised as affirming.  The
+   unmodified run applied no freshness check at any layer: neither the
+   reference scheme nor the surrounding experiment compared the bound
+   nonce against the session expected nonce.
+
+   Evidence freshness belongs in the Verifier's Appraisal Policy for
+   Evidence.  The idiomatic remedy has two small, separable pieces and
+   applies generally to any scheme whose Evidence carries an attester-
+
+
+
+Sokolov                   Expires 4 March 2027                 [Page 14]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   bound nonce in signed qualifying data: (1) the appraisal scheme
+   surfaces the attester-bound qualifying data (here,
+   TPMS_ATTEST.ExtraData) as an extracted claim, so that an appraisal
+   policy has a value to compare; and (2) the appraisal policy compares
+   that claim against the expected nonce retained for the session and
+   returns a contraindicated verdict when they differ.  If a deployment
+   cannot perform that comparison inside the Verifier, the outer
+   application must fail closed and record the compensating check rather
+   than silently treating the otherwise-affirming result as fresh.  This
+   is an observation about a community-maintained reference scheme, not
+   a deployed production trust service.
+
+   The Relying Party has a separate freshness decision after the
+   Verifier issues an Attestation Result.  At the moment it performs an
+   operation, it decides whether that result remains applicable under
+   its Appraisal Policy for Attestation Results and its application
+   policy.  This includes any result expiry or local maximum age,
+   binding to the exact AEP, action and request context, and single-use
+   or consumed state where the application requires it.  A historical
+   record can remain cryptographically valid while no longer authorising
+   a replay.  The effective freshness of an AEP/platform composition is
+   therefore bounded by the weaker of the Evidence-appraisal window and
+   the result/action-applicability window.
+
+15.  Privacy Considerations
+
+   The actor, on-behalf-of party, trace identifiers, action, mandate,
+   outcome, platform identity, and timing can be identifying or
+   commercially sensitive even when represented only by digests.  Stable
+   identifiers can enable correlation across actions and administrative
+   domains.  A producer SHOULD disclose only claims needed by the
+   Relying Party, use context-scoped identifiers where global
+   correlation is unnecessary, and place sensitive conversation or audit
+   records in access-controlled detached objects rather than inline
+   submodules.
+
+   Digesting low-entropy fields does not anonymise them.  A party that
+   can guess a supplier, amount, tool name, or mandate text can test the
+   guess against a disclosed digest.  Profiles therefore need explicit
+   disclosure, retention, and salt/keyed-commitment decisions.  An
+   Auditor's need to reconstruct a record does not imply that every
+   Relying Party should receive the underlying conversation or authority
+   object.
+
+16.  IANA Considerations
+
+   This document requests no IANA actions.
+
+
+
+
+Sokolov                   Expires 4 March 2027                 [Page 15]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   The media type application/vnd.aep+zip, which identifies an AEP
+   carried as a Record CMW or as an entry of a Collection CMW [RFC9999],
+   was registered in the vendor tree of the "Media Types" registry on
+   2026-08-17, independently of this document; the change controller is
+   Tyche Institute.  Registration in the vendor tree records a name and
+   the party that controls it.  It is not an IETF consensus action, and
+   it implies no review of this document, nor of the format the name
+   identifies.
+
+   If a future revision requests registered EAT claim labels for the
+   provisional vocabulary of Section 6, the corresponding registrations
+   would appear here.
+
+17.  References
+
+17.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
+   [RFC8610]  Birkholz, H., Vigano, C., and C. Bormann, "Concise Data
+              Definition Language (CDDL): A Notational Convention to
+              Express Concise Binary Object Representation (CBOR) and
+              JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
+              June 2019, <https://www.rfc-editor.org/info/rfc8610>.
+
+   [RFC9334]  Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
+              W. Pan, "Remote ATtestation procedureS (RATS)
+              Architecture", RFC 9334, DOI 10.17487/RFC9334, January
+              2023, <https://www.rfc-editor.org/info/rfc9334>.
+
+   [RFC9711]  Lundblade, L., Mandyam, G., O'Donoghue, J., and C.
+              Wallace, "The Entity Attestation Token (EAT)", RFC 9711,
+              DOI 10.17487/RFC9711, April 2025,
+              <https://www.rfc-editor.org/info/rfc9711>.
+
+   [RFC9782]  Lundblade, L., Birkholz, H., and T. Fossati, "Entity
+              Attestation Token (EAT) Media Types", RFC 9782,
+              DOI 10.17487/RFC9782, May 2025,
+              <https://www.rfc-editor.org/info/rfc9782>.
+
+
+
+
+
+Sokolov                   Expires 4 March 2027                 [Page 16]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   [RFC9999]  Birkholz, H., Smith, N., Fossati, T., and H. Tschofenig,
+              "Remote ATtestation procedureS (RATS) Conceptual Message
+              Wrapper (CMW)", RFC 9999, DOI 10.17487/RFC9999, July 2026,
+              <https://www.rfc-editor.org/info/rfc9999>.
+
+17.2.  Informative References
+
+   [I-D.ietf-rats-ar4si]
+              Voit, E., Birkholz, H., Hardjono, T., Fossati, T., and V.
+              Scarlata, "Attestation Results for Secure Interactions",
+              Work in Progress, Internet-Draft, draft-ietf-rats-ar4si-
+              10, 18 May 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-rats-ar4si-10>.
+
+   [I-D.ietf-rats-ear]
+              Fossati, T., Voit, E., Trofimov, S., and H. Birkholz, "EAT
+              Attestation Results", Work in Progress, Internet-Draft,
+              draft-ietf-rats-ear-04, 26 May 2026,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-rats-
+              ear-04>.
+
+   [I-D.ietf-rats-corim]
+              Birkholz, H., Fossati, T., Deshpande, Y., Smith, N., and
+              W. Pan, "Concise Reference Integrity Manifest", Work in
+              Progress, Internet-Draft, draft-ietf-rats-corim-11, 6 July
+              2026, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              rats-corim-11>.
+
+   [I-D.ietf-rats-multi-verifier]
+              Deshpande, Y., Zhang, J., Labiod, H., and H. Birkholz,
+              "Remote Attestation with Multiple Verifiers", Work in
+              Progress, Internet-Draft, draft-ietf-rats-multi-verifier-
+              00, 5 May 2026, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-rats-multi-verifier-00>.
+
+   [I-D.birkholz-verifiable-agent-conversations]
+              Birkholz, H., Heldt, T., and O. Steele, "Verifiable Agent
+              Conversation Records", Work in Progress, Internet-Draft,
+              draft-birkholz-verifiable-agent-conversations-01, 31
+              August 2026, <https://datatracker.ietf.org/doc/html/draft-
+              birkholz-verifiable-agent-conversations-01>.
+
+
+
+
+
+
+
+
+
+
+Sokolov                   Expires 4 March 2027                 [Page 17]
+
+Internet-Draft                AEP over RATS                  August 2026
+
+
+   [I-D.kuehlewind-audit-architecture]
+              Kuehlewind, M. and H. Birkholz, "An Architecture for
+              Auditing AI Agent Delegation and Interactions", Work in
+              Progress, Internet-Draft, draft-kuehlewind-audit-
+              architecture-00, 18 May 2026,
+              <https://datatracker.ietf.org/doc/html/draft-kuehlewind-
+              audit-architecture-00>.
+
+   [ZENODO-AEP]
+              Sokolov, A., "Hardware-rooted attestation for AI-agent
+              evidence: composing IETF RATS with action evidence
+              packages", July 2026,
+              <https://doi.org/10.5281/zenodo.20818671>.
+
+Acknowledgements
+
+   Thanks to the Veraison community for the discussion that prompted
+   this sketch.
+
+Author's Address
+
+   Anton Sokolov
+   Tyche Institute
+   Tallinn
+   Estonia
+   Email: anton.sokolov@tyche.institute
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sokolov                   Expires 4 March 2027                 [Page 18]

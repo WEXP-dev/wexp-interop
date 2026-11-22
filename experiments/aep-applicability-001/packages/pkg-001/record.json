@@ -1,0 +1,109 @@
+{
+  "schema_version": "0.5.0",
+  "record_revision": 1,
+  "experiment_id": "aep-applicability-001",
+  "package_id": "pkg-001",
+  "title": "WEXP × AEP: signed sandbox records under Core-02",
+  "summary": "WEXP x AEP (Anton Sokolov): two aep-sandbox samples (signed record and mandate, no platform Evidence) mapped to Core-02 under two evaluation contexts; both appraisers agree; the execution claim stays not evaluated and the boundary unsupported, while the sandbox verifier checks authority and record authorship. Mapping checked by the AEP author against -06.",
+  "status": {
+    "integrity": "verified",
+    "execution": "local-run-completed",
+    "independent_reproduction": "not-performed",
+    "comparison": "no-local-decision-difference",
+    "publication": "prepared"
+  },
+  "publication": {
+    "version": "aep-applicability-001/pkg-001",
+    "carriers": []
+  },
+  "artifact": {
+    "path": "source-archive/AEP-CORE02-PUBLIC.zip",
+    "format": "zip",
+    "bytes": 763234,
+    "sha256": "126cccbc0d19753846e4997a18641a0b7fc314f81c0fa530522e458d3a8daa4e",
+    "source_url": "ni:///sha-256;EmzMvA0ZdThG5Jl6GGQaC3_DFPgcD6UwUi5FjTqNqk4",
+    "role": "Public selection of the source material and observations of the 9 November trial. The file inventory distinguishes original bytes from public representations."
+  },
+  "payload": {
+    "path": "payload",
+    "role": "verified-extraction",
+    "regular_files": 85,
+    "archive_container_metadata_preserved_in_git": false,
+    "mode_note": "Remove the aep-applicability-001/ prefix from ZIP entries to obtain payload paths. All extracted file bytes match the public source archive."
+  },
+  "verification": {
+    "profile": "aep-core02-applicability-v1",
+    "instructions": "REPRODUCE.md",
+    "evidence": [
+      "evidence/PUBLIC-INVENTORY.json",
+      "payload/RUN-RECORD.json",
+      "payload/comparison.json",
+      "payload/evidence/MAPPING-DIAGNOSTICS.json",
+      "payload/A-FREEZE.json",
+      "payload/expectations/FREEZE.json",
+      "payload/INPUT-HASHES.json",
+      "EXPECTED-DELTA.json",
+      "CITATION-CORRECTIONS.md",
+      "evidence/AEP-REVIEW.md"
+    ],
+    "implementation_execution_performed": true
+  },
+  "independence": {
+    "scope": "The mapping and both implementations are from the same WEXP project. No independent reproduction is recorded. Mapping and appraisal: Mikhail Sergeev (WEXP). AEP draft and sandbox: Anton Sokolov (Tyche Institute). The AEP author reviewed the mapping against draft -06 and the pinned sandbox code and did not run the appraisers.",
+    "method": "Mikhail Sergeev initiated the trial and operated both appraisers. The WEXP side froze six normalized inputs and the expected components before its historical run on 9 November. Anton Sokolov reviewed the AEP reading after execution. The two WEXP implementations share an operator, and the second pin includes documented post-corpus fixes.",
+    "evidence": [
+      "evidence/AEP-REVIEW.md",
+      "payload/A-FREEZE.json",
+      "payload/expectations/FREEZE.json"
+    ]
+  },
+  "result": {
+    "label": "Two appraisers agree on 120/120 components; each matches frozen expectations on 114/120.",
+    "details": "The comparison dimension refers only to ref versus check on the same six inputs. The native verdicts are ALLOW, DENY/replayed and DENY/scope_violation. All six Core assessments downgrade, with attributed grounding, an unsupported boundary and execution not evaluated. Six frozen boundary_ceiling strings differ from the null in each appraiser's output."
+  },
+  "source_pins": [
+    {
+      "title": "AEP sandbox",
+      "url": "https://github.com/tyche-institute/aep-sandbox/tree/f6c88be63c5aa12b8e8f6bf35a378a6a5fca9cd4",
+      "identity": "git-commit:f6c88be63c5aa12b8e8f6bf35a378a6a5fca9cd4",
+      "scope": "Historical verifier and Layer 2 samples."
+    },
+    {
+      "title": "WEXP reference appraiser",
+      "url": "https://github.com/WEXP-dev/wexp-ref/tree/56289024c9ee748111f1f1d4f42728ffe04d8d69",
+      "identity": "git-commit:56289024c9ee748111f1f1d4f42728ffe04d8d69",
+      "scope": "Historical implementation."
+    },
+    {
+      "title": "WEXP second appraiser",
+      "url": "https://github.com/WEXP-dev/wexp-check/tree/a2fd1ffd68b234592979a8aa8965bd580ede4d76",
+      "identity": "git-commit:a2fd1ffd68b234592979a8aa8965bd580ede4d76",
+      "scope": "Historical implementation including documented post-corpus fixes."
+    },
+    {
+      "title": "draft-sergeev-wexp-core-02",
+      "url": "https://www.ietf.org/archive/id/draft-sergeev-wexp-core-02.xml",
+      "identity": "sha256:de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+      "scope": "Retained version used in the trial."
+    },
+    {
+      "title": "draft-sokolov-rats-aep-composition-06",
+      "url": "https://www.ietf.org/archive/id/draft-sokolov-rats-aep-composition-06.txt",
+      "identity": "sha256:a2561d39ddd1707d04df100137bdbff2bcde367a477e06e6068efe45572e1431",
+      "scope": "Retained version used in the trial."
+    }
+  ],
+  "license": {
+    "scope_path": "LICENSE-SCOPE.md",
+    "historical_artifact_license": "Mixed, scoped by source. Retained sandbox material carries MIT and the retained specifications carry the original IETF notices. See LICENSE-SCOPE.md."
+  },
+  "citation_path": "CITATION.cff",
+  "limitations": [
+    "Six named assessments are three cases under two contexts, using two signed sandbox samples and four distinct normalized byte streams.",
+    "Neither packet contains platform Evidence. The boundary result applies only to the two tested signed-record samples.",
+    "The sandbox verifier checked authority and record authorship; AEP-06 leaves the authorization decision to the relying party.",
+    "The record and native verifier supply no independent measurement that the reported action or its external effect occurred.",
+    "Separate AI-assisted sessions shared one operator and project. The mapping review covers the AEP interpretation only. No independent reproduction is recorded.",
+    "Only the publicly selected files can be verified here. The inventory distinguishes direct historical byte checks from the preparation and execution of the public selection."
+  ]
+}

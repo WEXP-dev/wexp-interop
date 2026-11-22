@@ -1,0 +1,7 @@
+  [PASS] structure
+  [PASS] chain_integrity
+  [PASS] aep_signature
+  [PASS] measurements
+  [PASS] mandate
+  [FAIL] replay
+VERDICT: DENY  reason=replayed  (good.aep.json)

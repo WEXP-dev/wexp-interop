@@ -1,0 +1,11 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "inputs/a-strict.json": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d",
+    "inputs/a-attrib.json": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2",
+    "inputs/b-strict.json": "21a1aca467fcf7277deeb1d0b50e7a63039d5fdce4f7a6c42023fef6337b2f8d",
+    "inputs/b-attrib.json": "070e5527bf8b3d6c3227dad9978b5d7f63c48d9f39e26ad8aa5f9c0f4a54a9a2",
+    "inputs/c-strict.json": "53ae8a5bd57eea9054fe13e0f36462b1e5d06fd80a59354460e12e02ea25568f",
+    "inputs/c-attrib.json": "4d48885826c80db8d0a4348d4bd470b79f49303f6f9763b2612cb7d2b36f6be4"
+  }
+}

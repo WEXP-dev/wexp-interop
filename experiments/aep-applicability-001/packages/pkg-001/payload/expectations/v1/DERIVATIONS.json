@@ -1,0 +1,2525 @@
+{
+  "format": "aep-applicability-B-derivation-1",
+  "expectation_version": "v1",
+  "core_source": {
+    "path": "evidence/basis/specifications/draft-sergeev-wexp-core-02.xml",
+    "sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+    "line_numbering": "one-based LF-delimited lines"
+  },
+  "cases": {
+    "a-strict": {
+      "input": "inputs/a-strict.json",
+      "expected": "expectations/v1/a-strict.json",
+      "ingress": "no rejection branch applies; DERIVATION.md Admission before support",
+      "components": {
+        "semantics_version": {
+          "expected_value": "wexp-core-2",
+          "core_xml_lines": [
+            356,
+            588
+          ],
+          "input_json_pointers": [
+            "/semantics_version"
+          ],
+          "explanation": "Recognized result contract wexp-core-2."
+        },
+        "verdict": {
+          "expected_value": "downgrade",
+          "core_xml_lines": [
+            448,
+            449,
+            450,
+            451,
+            552,
+            553,
+            554,
+            555,
+            556
+          ],
+          "input_json_pointers": [
+            "/asserted_claim",
+            "/boundary_finding/status"
+          ],
+          "explanation": "Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+        },
+        "fatal_reasons": {
+          "expected_value": [],
+          "core_xml_lines": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390,
+            394,
+            515,
+            610
+          ],
+          "input_json_pointers": [
+            "/fatal_conditions"
+          ],
+          "explanation": "All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+        },
+        "target": {
+          "expected_value": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+          "core_xml_lines": [
+            134,
+            374,
+            591
+          ],
+          "input_json_pointers": [
+            "/target"
+          ],
+          "explanation": "Copy exact opaque input target; do not substitute order ID or amount-free action."
+        },
+        "asserted_claim": {
+          "expected_value": {
+            "base": "execution",
+            "qualifiers": []
+          },
+          "core_xml_lines": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            592
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Retain the same typed execution claim with empty qualifier set."
+        },
+        "asserted_claim_supported": {
+          "expected_value": false,
+          "core_xml_lines": [
+            459,
+            513,
+            514
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Exact membership in the empty supported-claim set is false."
+        },
+        "support_entries": {
+          "expected_value": [],
+          "core_xml_lines": [
+            436,
+            497,
+            498,
+            507,
+            508,
+            509,
+            510,
+            511
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No supported claim exists for a support entry."
+        },
+        "supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            407,
+            415,
+            417,
+            418,
+            419,
+            420,
+            429,
+            430,
+            431,
+            432
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings"
+          ],
+          "explanation": "Unsupported boundary prevents every base from entering B, including positive observation."
+        },
+        "maximal_supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            435,
+            513
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No members of the empty supported set can be maximal."
+        },
+        "support_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            457
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Relation array is empty when no claim is supported."
+        },
+        "boundary_ceiling": {
+          "expected_value": "unavailable",
+          "core_xml_lines": [
+            407,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Unsupported boundary has no usable ceiling; unavailable."
+        },
+        "boundary_grounding": {
+          "expected_value": "attributed",
+          "core_xml_lines": [
+            405,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/grounding"
+          ],
+          "explanation": "Input attributed grounding is preserved despite unsupported status."
+        },
+        "recorder_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            376,
+            600
+          ],
+          "input_json_pointers": [
+            "/recorder_relations"
+          ],
+          "explanation": "Input descriptive relation set is empty and remains empty."
+        },
+        "substantive_reasons": {
+          "expected_value": [
+            "E_BOUNDARY_NOT_SUPPORTED"
+          ],
+          "core_xml_lines": [
+            619,
+            621,
+            622,
+            631,
+            632,
+            637,
+            638,
+            667
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+        },
+        "evaluation_gaps": {
+          "expected_value": [
+            "E_BASE_NOT_EVALUATED"
+          ],
+          "core_xml_lines": [
+            549,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+        },
+        "evaluation_gap_entries": {
+          "expected_value": [
+            {
+              "token": "E_BASE_NOT_EVALUATED",
+              "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+              "evaluation_context_ref": "urn:wexp:aep-applicability-001:context:strict:r4",
+              "affected_claims": [
+                {
+                  "base": "execution",
+                  "qualifiers": []
+                }
+              ],
+              "basis_refs": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "aep-file:sha256:305bc28083e99ae417a18ce35d042e2e2e66d2eaad9f840cbe34bde466a99437"
+                ]
+              ],
+              "limitations": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "self-report-is-not-external-effect"
+                ],
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "execution-assessment-material-unavailable"
+                ]
+              ]
+            }
+          ],
+          "core_xml_lines": [
+            369,
+            579,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/target",
+            "/evaluation_context/id",
+            "/asserted_claim",
+            "/base_findings/1"
+          ],
+          "explanation": "Exact target/context, singleton asserted affected claim, execution basis reference and its two limitations; no optional profile current-scope marker."
+        },
+        "counter_evidence": {
+          "expected_value": [
+            {
+              "status": "not-supplied",
+              "affected_claims": [],
+              "basis_refs": [],
+              "reasons": [],
+              "limitations": []
+            }
+          ],
+          "core_xml_lines": [
+            364,
+            452,
+            610,
+            738
+          ],
+          "input_json_pointers": [
+            "/counter_evidence"
+          ],
+          "explanation": "Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+        },
+        "inherited_limitations": {
+          "expected_value": [
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "bounded-two-packet-domain"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "boundary-control-not-established"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "no-boundary-grounding-profile"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "self-report-is-not-external-effect"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "execution-assessment-material-unavailable"
+            ]
+          ],
+          "core_xml_lines": [
+            374,
+            375,
+            377,
+            437
+          ],
+          "input_json_pointers": [
+            "/inherited_limitations",
+            "/boundary_finding/limitations",
+            "/base_findings/1/limitations"
+          ],
+          "explanation": "Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+        },
+        "evaluation_context": {
+          "expected_value": {
+            "id": "urn:wexp:aep-applicability-001:context:strict:r4",
+            "evaluated_at": "unix:1750000100",
+            "trust_configuration": "urn:wexp:aep-applicability-001:trust:strict:r4",
+            "profile_identifiers": [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4"
+            ]
+          },
+          "core_xml_lines": [
+            374,
+            606
+          ],
+          "input_json_pointers": [
+            "/evaluation_context"
+          ],
+          "explanation": "Copy complete immutable profile/context/time/trust identity under exact text equality."
+        },
+        "evaluation_scope": {
+          "expected_value": [
+            {
+              "capability": "carrier-mapping",
+              "status": "evaluated"
+            },
+            {
+              "capability": "authenticity",
+              "status": "evaluated"
+            },
+            {
+              "capability": "target-binding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "boundary-grounding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "observation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "intent-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "invocation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "execution-support",
+              "status": "not-evaluated"
+            },
+            {
+              "capability": "provenance-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "independent-verification",
+              "status": "evaluated"
+            },
+            {
+              "capability": "composition",
+              "status": "evaluated"
+            },
+            {
+              "capability": "counter-evidence",
+              "status": "evaluated"
+            }
+          ],
+          "core_xml_lines": [
+            607,
+            758,
+            773,
+            774,
+            775,
+            776,
+            777,
+            778,
+            779,
+            780,
+            781,
+            782
+          ],
+          "input_json_pointers": [
+            "/evaluation_scope"
+          ],
+          "explanation": "Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+        }
+      }
+    },
+    "b-strict": {
+      "input": "inputs/b-strict.json",
+      "expected": "expectations/v1/b-strict.json",
+      "ingress": "no rejection branch applies; DERIVATION.md Admission before support",
+      "components": {
+        "semantics_version": {
+          "expected_value": "wexp-core-2",
+          "core_xml_lines": [
+            356,
+            588
+          ],
+          "input_json_pointers": [
+            "/semantics_version"
+          ],
+          "explanation": "Recognized result contract wexp-core-2."
+        },
+        "verdict": {
+          "expected_value": "downgrade",
+          "core_xml_lines": [
+            448,
+            449,
+            450,
+            451,
+            552,
+            553,
+            554,
+            555,
+            556
+          ],
+          "input_json_pointers": [
+            "/asserted_claim",
+            "/boundary_finding/status"
+          ],
+          "explanation": "Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+        },
+        "fatal_reasons": {
+          "expected_value": [],
+          "core_xml_lines": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390,
+            394,
+            515,
+            610
+          ],
+          "input_json_pointers": [
+            "/fatal_conditions"
+          ],
+          "explanation": "All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+        },
+        "target": {
+          "expected_value": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+          "core_xml_lines": [
+            134,
+            374,
+            591
+          ],
+          "input_json_pointers": [
+            "/target"
+          ],
+          "explanation": "Copy exact opaque input target; do not substitute order ID or amount-free action."
+        },
+        "asserted_claim": {
+          "expected_value": {
+            "base": "execution",
+            "qualifiers": []
+          },
+          "core_xml_lines": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            592
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Retain the same typed execution claim with empty qualifier set."
+        },
+        "asserted_claim_supported": {
+          "expected_value": false,
+          "core_xml_lines": [
+            459,
+            513,
+            514
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Exact membership in the empty supported-claim set is false."
+        },
+        "support_entries": {
+          "expected_value": [],
+          "core_xml_lines": [
+            436,
+            497,
+            498,
+            507,
+            508,
+            509,
+            510,
+            511
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No supported claim exists for a support entry."
+        },
+        "supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            407,
+            415,
+            417,
+            418,
+            419,
+            420,
+            429,
+            430,
+            431,
+            432
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings"
+          ],
+          "explanation": "Unsupported boundary prevents every base from entering B, including positive observation."
+        },
+        "maximal_supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            435,
+            513
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No members of the empty supported set can be maximal."
+        },
+        "support_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            457
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Relation array is empty when no claim is supported."
+        },
+        "boundary_ceiling": {
+          "expected_value": "unavailable",
+          "core_xml_lines": [
+            407,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Unsupported boundary has no usable ceiling; unavailable."
+        },
+        "boundary_grounding": {
+          "expected_value": "attributed",
+          "core_xml_lines": [
+            405,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/grounding"
+          ],
+          "explanation": "Input attributed grounding is preserved despite unsupported status."
+        },
+        "recorder_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            376,
+            600
+          ],
+          "input_json_pointers": [
+            "/recorder_relations"
+          ],
+          "explanation": "Input descriptive relation set is empty and remains empty."
+        },
+        "substantive_reasons": {
+          "expected_value": [
+            "E_BOUNDARY_NOT_SUPPORTED"
+          ],
+          "core_xml_lines": [
+            619,
+            621,
+            622,
+            631,
+            632,
+            637,
+            638,
+            667
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+        },
+        "evaluation_gaps": {
+          "expected_value": [
+            "E_BASE_NOT_EVALUATED"
+          ],
+          "core_xml_lines": [
+            549,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+        },
+        "evaluation_gap_entries": {
+          "expected_value": [
+            {
+              "token": "E_BASE_NOT_EVALUATED",
+              "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+              "evaluation_context_ref": "urn:wexp:aep-applicability-001:context:strict:r4",
+              "affected_claims": [
+                {
+                  "base": "execution",
+                  "qualifiers": []
+                }
+              ],
+              "basis_refs": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "aep-file:sha256:305bc28083e99ae417a18ce35d042e2e2e66d2eaad9f840cbe34bde466a99437"
+                ]
+              ],
+              "limitations": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "self-report-is-not-external-effect"
+                ],
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "execution-assessment-material-unavailable"
+                ]
+              ]
+            }
+          ],
+          "core_xml_lines": [
+            369,
+            579,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/target",
+            "/evaluation_context/id",
+            "/asserted_claim",
+            "/base_findings/1"
+          ],
+          "explanation": "Exact target/context, singleton asserted affected claim, execution basis reference and its two limitations; no optional profile current-scope marker."
+        },
+        "counter_evidence": {
+          "expected_value": [
+            {
+              "status": "not-supplied",
+              "affected_claims": [],
+              "basis_refs": [],
+              "reasons": [],
+              "limitations": []
+            }
+          ],
+          "core_xml_lines": [
+            364,
+            452,
+            610,
+            738
+          ],
+          "input_json_pointers": [
+            "/counter_evidence"
+          ],
+          "explanation": "Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+        },
+        "inherited_limitations": {
+          "expected_value": [
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "bounded-two-packet-domain"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "boundary-control-not-established"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "no-boundary-grounding-profile"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "self-report-is-not-external-effect"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "execution-assessment-material-unavailable"
+            ]
+          ],
+          "core_xml_lines": [
+            374,
+            375,
+            377,
+            437
+          ],
+          "input_json_pointers": [
+            "/inherited_limitations",
+            "/boundary_finding/limitations",
+            "/base_findings/1/limitations"
+          ],
+          "explanation": "Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+        },
+        "evaluation_context": {
+          "expected_value": {
+            "id": "urn:wexp:aep-applicability-001:context:strict:r4",
+            "evaluated_at": "unix:1750000100",
+            "trust_configuration": "urn:wexp:aep-applicability-001:trust:strict:r4",
+            "profile_identifiers": [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4"
+            ]
+          },
+          "core_xml_lines": [
+            374,
+            606
+          ],
+          "input_json_pointers": [
+            "/evaluation_context"
+          ],
+          "explanation": "Copy complete immutable profile/context/time/trust identity under exact text equality."
+        },
+        "evaluation_scope": {
+          "expected_value": [
+            {
+              "capability": "carrier-mapping",
+              "status": "evaluated"
+            },
+            {
+              "capability": "authenticity",
+              "status": "evaluated"
+            },
+            {
+              "capability": "target-binding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "boundary-grounding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "observation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "intent-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "invocation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "execution-support",
+              "status": "not-evaluated"
+            },
+            {
+              "capability": "provenance-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "independent-verification",
+              "status": "evaluated"
+            },
+            {
+              "capability": "composition",
+              "status": "evaluated"
+            },
+            {
+              "capability": "counter-evidence",
+              "status": "evaluated"
+            }
+          ],
+          "core_xml_lines": [
+            607,
+            758,
+            773,
+            774,
+            775,
+            776,
+            777,
+            778,
+            779,
+            780,
+            781,
+            782
+          ],
+          "input_json_pointers": [
+            "/evaluation_scope"
+          ],
+          "explanation": "Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+        }
+      }
+    },
+    "c-strict": {
+      "input": "inputs/c-strict.json",
+      "expected": "expectations/v1/c-strict.json",
+      "ingress": "no rejection branch applies; DERIVATION.md Admission before support",
+      "components": {
+        "semantics_version": {
+          "expected_value": "wexp-core-2",
+          "core_xml_lines": [
+            356,
+            588
+          ],
+          "input_json_pointers": [
+            "/semantics_version"
+          ],
+          "explanation": "Recognized result contract wexp-core-2."
+        },
+        "verdict": {
+          "expected_value": "downgrade",
+          "core_xml_lines": [
+            448,
+            449,
+            450,
+            451,
+            552,
+            553,
+            554,
+            555,
+            556
+          ],
+          "input_json_pointers": [
+            "/asserted_claim",
+            "/boundary_finding/status"
+          ],
+          "explanation": "Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+        },
+        "fatal_reasons": {
+          "expected_value": [],
+          "core_xml_lines": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390,
+            394,
+            515,
+            610
+          ],
+          "input_json_pointers": [
+            "/fatal_conditions"
+          ],
+          "explanation": "All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+        },
+        "target": {
+          "expected_value": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",9000,\"EUR\"]",
+          "core_xml_lines": [
+            134,
+            374,
+            591
+          ],
+          "input_json_pointers": [
+            "/target"
+          ],
+          "explanation": "Copy exact opaque input target; do not substitute order ID or amount-free action."
+        },
+        "asserted_claim": {
+          "expected_value": {
+            "base": "execution",
+            "qualifiers": []
+          },
+          "core_xml_lines": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            592
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Retain the same typed execution claim with empty qualifier set."
+        },
+        "asserted_claim_supported": {
+          "expected_value": false,
+          "core_xml_lines": [
+            459,
+            513,
+            514
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Exact membership in the empty supported-claim set is false."
+        },
+        "support_entries": {
+          "expected_value": [],
+          "core_xml_lines": [
+            436,
+            497,
+            498,
+            507,
+            508,
+            509,
+            510,
+            511
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No supported claim exists for a support entry."
+        },
+        "supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            407,
+            415,
+            417,
+            418,
+            419,
+            420,
+            429,
+            430,
+            431,
+            432
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings"
+          ],
+          "explanation": "Unsupported boundary prevents every base from entering B, including positive observation."
+        },
+        "maximal_supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            435,
+            513
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No members of the empty supported set can be maximal."
+        },
+        "support_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            457
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Relation array is empty when no claim is supported."
+        },
+        "boundary_ceiling": {
+          "expected_value": "unavailable",
+          "core_xml_lines": [
+            407,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Unsupported boundary has no usable ceiling; unavailable."
+        },
+        "boundary_grounding": {
+          "expected_value": "attributed",
+          "core_xml_lines": [
+            405,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/grounding"
+          ],
+          "explanation": "Input attributed grounding is preserved despite unsupported status."
+        },
+        "recorder_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            376,
+            600
+          ],
+          "input_json_pointers": [
+            "/recorder_relations"
+          ],
+          "explanation": "Input descriptive relation set is empty and remains empty."
+        },
+        "substantive_reasons": {
+          "expected_value": [
+            "E_BOUNDARY_NOT_SUPPORTED"
+          ],
+          "core_xml_lines": [
+            619,
+            621,
+            622,
+            631,
+            632,
+            637,
+            638,
+            667
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+        },
+        "evaluation_gaps": {
+          "expected_value": [
+            "E_BASE_NOT_EVALUATED"
+          ],
+          "core_xml_lines": [
+            549,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+        },
+        "evaluation_gap_entries": {
+          "expected_value": [
+            {
+              "token": "E_BASE_NOT_EVALUATED",
+              "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",9000,\"EUR\"]",
+              "evaluation_context_ref": "urn:wexp:aep-applicability-001:context:strict:r4",
+              "affected_claims": [
+                {
+                  "base": "execution",
+                  "qualifiers": []
+                }
+              ],
+              "basis_refs": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "aep-file:sha256:3b7f18af3e8d5cc41f40f036282cd15afe49a68d381f1a5b0bdb8c30a24998ef"
+                ]
+              ],
+              "limitations": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "self-report-is-not-external-effect"
+                ],
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "execution-assessment-material-unavailable"
+                ]
+              ]
+            }
+          ],
+          "core_xml_lines": [
+            369,
+            579,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/target",
+            "/evaluation_context/id",
+            "/asserted_claim",
+            "/base_findings/1"
+          ],
+          "explanation": "Exact target/context, singleton asserted affected claim, execution basis reference and its two limitations; no optional profile current-scope marker."
+        },
+        "counter_evidence": {
+          "expected_value": [
+            {
+              "status": "not-supplied",
+              "affected_claims": [],
+              "basis_refs": [],
+              "reasons": [],
+              "limitations": []
+            }
+          ],
+          "core_xml_lines": [
+            364,
+            452,
+            610,
+            738
+          ],
+          "input_json_pointers": [
+            "/counter_evidence"
+          ],
+          "explanation": "Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+        },
+        "inherited_limitations": {
+          "expected_value": [
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "bounded-two-packet-domain"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "boundary-control-not-established"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "no-boundary-grounding-profile"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "self-report-is-not-external-effect"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "execution-assessment-material-unavailable"
+            ]
+          ],
+          "core_xml_lines": [
+            374,
+            375,
+            377,
+            437
+          ],
+          "input_json_pointers": [
+            "/inherited_limitations",
+            "/boundary_finding/limitations",
+            "/base_findings/1/limitations"
+          ],
+          "explanation": "Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+        },
+        "evaluation_context": {
+          "expected_value": {
+            "id": "urn:wexp:aep-applicability-001:context:strict:r4",
+            "evaluated_at": "unix:1750000100",
+            "trust_configuration": "urn:wexp:aep-applicability-001:trust:strict:r4",
+            "profile_identifiers": [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4"
+            ]
+          },
+          "core_xml_lines": [
+            374,
+            606
+          ],
+          "input_json_pointers": [
+            "/evaluation_context"
+          ],
+          "explanation": "Copy complete immutable profile/context/time/trust identity under exact text equality."
+        },
+        "evaluation_scope": {
+          "expected_value": [
+            {
+              "capability": "carrier-mapping",
+              "status": "evaluated"
+            },
+            {
+              "capability": "authenticity",
+              "status": "evaluated"
+            },
+            {
+              "capability": "target-binding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "boundary-grounding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "observation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "intent-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "invocation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "execution-support",
+              "status": "not-evaluated"
+            },
+            {
+              "capability": "provenance-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "independent-verification",
+              "status": "evaluated"
+            },
+            {
+              "capability": "composition",
+              "status": "evaluated"
+            },
+            {
+              "capability": "counter-evidence",
+              "status": "evaluated"
+            }
+          ],
+          "core_xml_lines": [
+            607,
+            758,
+            773,
+            774,
+            775,
+            776,
+            777,
+            778,
+            779,
+            780,
+            781,
+            782
+          ],
+          "input_json_pointers": [
+            "/evaluation_scope"
+          ],
+          "explanation": "Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+        }
+      }
+    },
+    "a-attrib": {
+      "input": "inputs/a-attrib.json",
+      "expected": "expectations/v1/a-attrib.json",
+      "ingress": "no rejection branch applies; DERIVATION.md Admission before support",
+      "components": {
+        "semantics_version": {
+          "expected_value": "wexp-core-2",
+          "core_xml_lines": [
+            356,
+            588
+          ],
+          "input_json_pointers": [
+            "/semantics_version"
+          ],
+          "explanation": "Recognized result contract wexp-core-2."
+        },
+        "verdict": {
+          "expected_value": "downgrade",
+          "core_xml_lines": [
+            448,
+            449,
+            450,
+            451,
+            552,
+            553,
+            554,
+            555,
+            556
+          ],
+          "input_json_pointers": [
+            "/asserted_claim",
+            "/boundary_finding/status"
+          ],
+          "explanation": "Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+        },
+        "fatal_reasons": {
+          "expected_value": [],
+          "core_xml_lines": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390,
+            394,
+            515,
+            610
+          ],
+          "input_json_pointers": [
+            "/fatal_conditions"
+          ],
+          "explanation": "All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+        },
+        "target": {
+          "expected_value": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+          "core_xml_lines": [
+            134,
+            374,
+            591
+          ],
+          "input_json_pointers": [
+            "/target"
+          ],
+          "explanation": "Copy exact opaque input target; do not substitute order ID or amount-free action."
+        },
+        "asserted_claim": {
+          "expected_value": {
+            "base": "execution",
+            "qualifiers": []
+          },
+          "core_xml_lines": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            592
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Retain the same typed execution claim with empty qualifier set."
+        },
+        "asserted_claim_supported": {
+          "expected_value": false,
+          "core_xml_lines": [
+            459,
+            513,
+            514
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Exact membership in the empty supported-claim set is false."
+        },
+        "support_entries": {
+          "expected_value": [],
+          "core_xml_lines": [
+            436,
+            497,
+            498,
+            507,
+            508,
+            509,
+            510,
+            511
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No supported claim exists for a support entry."
+        },
+        "supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            407,
+            415,
+            417,
+            418,
+            419,
+            420,
+            429,
+            430,
+            431,
+            432
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings"
+          ],
+          "explanation": "Unsupported boundary prevents every base from entering B, including positive observation."
+        },
+        "maximal_supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            435,
+            513
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No members of the empty supported set can be maximal."
+        },
+        "support_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            457
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Relation array is empty when no claim is supported."
+        },
+        "boundary_ceiling": {
+          "expected_value": "unavailable",
+          "core_xml_lines": [
+            407,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Unsupported boundary has no usable ceiling; unavailable."
+        },
+        "boundary_grounding": {
+          "expected_value": "attributed",
+          "core_xml_lines": [
+            405,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/grounding"
+          ],
+          "explanation": "Input attributed grounding is preserved despite unsupported status."
+        },
+        "recorder_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            376,
+            600
+          ],
+          "input_json_pointers": [
+            "/recorder_relations"
+          ],
+          "explanation": "Input descriptive relation set is empty and remains empty."
+        },
+        "substantive_reasons": {
+          "expected_value": [
+            "E_BOUNDARY_NOT_SUPPORTED"
+          ],
+          "core_xml_lines": [
+            619,
+            621,
+            622,
+            631,
+            632,
+            637,
+            638,
+            667
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+        },
+        "evaluation_gaps": {
+          "expected_value": [
+            "E_BASE_NOT_EVALUATED"
+          ],
+          "core_xml_lines": [
+            549,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+        },
+        "evaluation_gap_entries": {
+          "expected_value": [
+            {
+              "token": "E_BASE_NOT_EVALUATED",
+              "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+              "evaluation_context_ref": "urn:wexp:aep-applicability-001:context:attrib:r4",
+              "affected_claims": [
+                {
+                  "base": "execution",
+                  "qualifiers": []
+                }
+              ],
+              "basis_refs": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "aep-file:sha256:305bc28083e99ae417a18ce35d042e2e2e66d2eaad9f840cbe34bde466a99437"
+                ]
+              ],
+              "limitations": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "self-report-is-not-external-effect"
+                ],
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "execution-assessment-material-unavailable"
+                ]
+              ]
+            }
+          ],
+          "core_xml_lines": [
+            369,
+            579,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/target",
+            "/evaluation_context/id",
+            "/asserted_claim",
+            "/base_findings/1"
+          ],
+          "explanation": "Exact target/context, singleton asserted affected claim, execution basis reference and its two limitations; no optional profile current-scope marker."
+        },
+        "counter_evidence": {
+          "expected_value": [
+            {
+              "status": "not-supplied",
+              "affected_claims": [],
+              "basis_refs": [],
+              "reasons": [],
+              "limitations": []
+            }
+          ],
+          "core_xml_lines": [
+            364,
+            452,
+            610,
+            738
+          ],
+          "input_json_pointers": [
+            "/counter_evidence"
+          ],
+          "explanation": "Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+        },
+        "inherited_limitations": {
+          "expected_value": [
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "bounded-two-packet-domain"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "boundary-control-not-established"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "no-boundary-grounding-profile"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "self-report-is-not-external-effect"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "execution-assessment-material-unavailable"
+            ]
+          ],
+          "core_xml_lines": [
+            374,
+            375,
+            377,
+            437
+          ],
+          "input_json_pointers": [
+            "/inherited_limitations",
+            "/boundary_finding/limitations",
+            "/base_findings/1/limitations"
+          ],
+          "explanation": "Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+        },
+        "evaluation_context": {
+          "expected_value": {
+            "id": "urn:wexp:aep-applicability-001:context:attrib:r4",
+            "evaluated_at": "unix:1750000100",
+            "trust_configuration": "urn:wexp:aep-applicability-001:trust:attrib:r4",
+            "profile_identifiers": [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4"
+            ]
+          },
+          "core_xml_lines": [
+            374,
+            606
+          ],
+          "input_json_pointers": [
+            "/evaluation_context"
+          ],
+          "explanation": "Copy complete immutable profile/context/time/trust identity under exact text equality."
+        },
+        "evaluation_scope": {
+          "expected_value": [
+            {
+              "capability": "carrier-mapping",
+              "status": "evaluated"
+            },
+            {
+              "capability": "authenticity",
+              "status": "evaluated"
+            },
+            {
+              "capability": "target-binding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "boundary-grounding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "observation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "intent-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "invocation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "execution-support",
+              "status": "not-evaluated"
+            },
+            {
+              "capability": "provenance-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "independent-verification",
+              "status": "evaluated"
+            },
+            {
+              "capability": "composition",
+              "status": "evaluated"
+            },
+            {
+              "capability": "counter-evidence",
+              "status": "evaluated"
+            }
+          ],
+          "core_xml_lines": [
+            607,
+            758,
+            773,
+            774,
+            775,
+            776,
+            777,
+            778,
+            779,
+            780,
+            781,
+            782
+          ],
+          "input_json_pointers": [
+            "/evaluation_scope"
+          ],
+          "explanation": "Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+        }
+      }
+    },
+    "b-attrib": {
+      "input": "inputs/b-attrib.json",
+      "expected": "expectations/v1/b-attrib.json",
+      "ingress": "no rejection branch applies; DERIVATION.md Admission before support",
+      "components": {
+        "semantics_version": {
+          "expected_value": "wexp-core-2",
+          "core_xml_lines": [
+            356,
+            588
+          ],
+          "input_json_pointers": [
+            "/semantics_version"
+          ],
+          "explanation": "Recognized result contract wexp-core-2."
+        },
+        "verdict": {
+          "expected_value": "downgrade",
+          "core_xml_lines": [
+            448,
+            449,
+            450,
+            451,
+            552,
+            553,
+            554,
+            555,
+            556
+          ],
+          "input_json_pointers": [
+            "/asserted_claim",
+            "/boundary_finding/status"
+          ],
+          "explanation": "Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+        },
+        "fatal_reasons": {
+          "expected_value": [],
+          "core_xml_lines": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390,
+            394,
+            515,
+            610
+          ],
+          "input_json_pointers": [
+            "/fatal_conditions"
+          ],
+          "explanation": "All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+        },
+        "target": {
+          "expected_value": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+          "core_xml_lines": [
+            134,
+            374,
+            591
+          ],
+          "input_json_pointers": [
+            "/target"
+          ],
+          "explanation": "Copy exact opaque input target; do not substitute order ID or amount-free action."
+        },
+        "asserted_claim": {
+          "expected_value": {
+            "base": "execution",
+            "qualifiers": []
+          },
+          "core_xml_lines": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            592
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Retain the same typed execution claim with empty qualifier set."
+        },
+        "asserted_claim_supported": {
+          "expected_value": false,
+          "core_xml_lines": [
+            459,
+            513,
+            514
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Exact membership in the empty supported-claim set is false."
+        },
+        "support_entries": {
+          "expected_value": [],
+          "core_xml_lines": [
+            436,
+            497,
+            498,
+            507,
+            508,
+            509,
+            510,
+            511
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No supported claim exists for a support entry."
+        },
+        "supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            407,
+            415,
+            417,
+            418,
+            419,
+            420,
+            429,
+            430,
+            431,
+            432
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings"
+          ],
+          "explanation": "Unsupported boundary prevents every base from entering B, including positive observation."
+        },
+        "maximal_supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            435,
+            513
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No members of the empty supported set can be maximal."
+        },
+        "support_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            457
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Relation array is empty when no claim is supported."
+        },
+        "boundary_ceiling": {
+          "expected_value": "unavailable",
+          "core_xml_lines": [
+            407,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Unsupported boundary has no usable ceiling; unavailable."
+        },
+        "boundary_grounding": {
+          "expected_value": "attributed",
+          "core_xml_lines": [
+            405,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/grounding"
+          ],
+          "explanation": "Input attributed grounding is preserved despite unsupported status."
+        },
+        "recorder_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            376,
+            600
+          ],
+          "input_json_pointers": [
+            "/recorder_relations"
+          ],
+          "explanation": "Input descriptive relation set is empty and remains empty."
+        },
+        "substantive_reasons": {
+          "expected_value": [
+            "E_BOUNDARY_NOT_SUPPORTED"
+          ],
+          "core_xml_lines": [
+            619,
+            621,
+            622,
+            631,
+            632,
+            637,
+            638,
+            667
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+        },
+        "evaluation_gaps": {
+          "expected_value": [
+            "E_BASE_NOT_EVALUATED"
+          ],
+          "core_xml_lines": [
+            549,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+        },
+        "evaluation_gap_entries": {
+          "expected_value": [
+            {
+              "token": "E_BASE_NOT_EVALUATED",
+              "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",250,\"EUR\"]",
+              "evaluation_context_ref": "urn:wexp:aep-applicability-001:context:attrib:r4",
+              "affected_claims": [
+                {
+                  "base": "execution",
+                  "qualifiers": []
+                }
+              ],
+              "basis_refs": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "aep-file:sha256:305bc28083e99ae417a18ce35d042e2e2e66d2eaad9f840cbe34bde466a99437"
+                ]
+              ],
+              "limitations": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "self-report-is-not-external-effect"
+                ],
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "execution-assessment-material-unavailable"
+                ]
+              ]
+            }
+          ],
+          "core_xml_lines": [
+            369,
+            579,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/target",
+            "/evaluation_context/id",
+            "/asserted_claim",
+            "/base_findings/1"
+          ],
+          "explanation": "Exact target/context, singleton asserted affected claim, execution basis reference and its two limitations; no optional profile current-scope marker."
+        },
+        "counter_evidence": {
+          "expected_value": [
+            {
+              "status": "not-supplied",
+              "affected_claims": [],
+              "basis_refs": [],
+              "reasons": [],
+              "limitations": []
+            }
+          ],
+          "core_xml_lines": [
+            364,
+            452,
+            610,
+            738
+          ],
+          "input_json_pointers": [
+            "/counter_evidence"
+          ],
+          "explanation": "Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+        },
+        "inherited_limitations": {
+          "expected_value": [
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "bounded-two-packet-domain"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "boundary-control-not-established"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "no-boundary-grounding-profile"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "self-report-is-not-external-effect"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "execution-assessment-material-unavailable"
+            ]
+          ],
+          "core_xml_lines": [
+            374,
+            375,
+            377,
+            437
+          ],
+          "input_json_pointers": [
+            "/inherited_limitations",
+            "/boundary_finding/limitations",
+            "/base_findings/1/limitations"
+          ],
+          "explanation": "Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+        },
+        "evaluation_context": {
+          "expected_value": {
+            "id": "urn:wexp:aep-applicability-001:context:attrib:r4",
+            "evaluated_at": "unix:1750000100",
+            "trust_configuration": "urn:wexp:aep-applicability-001:trust:attrib:r4",
+            "profile_identifiers": [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4"
+            ]
+          },
+          "core_xml_lines": [
+            374,
+            606
+          ],
+          "input_json_pointers": [
+            "/evaluation_context"
+          ],
+          "explanation": "Copy complete immutable profile/context/time/trust identity under exact text equality."
+        },
+        "evaluation_scope": {
+          "expected_value": [
+            {
+              "capability": "carrier-mapping",
+              "status": "evaluated"
+            },
+            {
+              "capability": "authenticity",
+              "status": "evaluated"
+            },
+            {
+              "capability": "target-binding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "boundary-grounding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "observation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "intent-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "invocation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "execution-support",
+              "status": "not-evaluated"
+            },
+            {
+              "capability": "provenance-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "independent-verification",
+              "status": "evaluated"
+            },
+            {
+              "capability": "composition",
+              "status": "evaluated"
+            },
+            {
+              "capability": "counter-evidence",
+              "status": "evaluated"
+            }
+          ],
+          "core_xml_lines": [
+            607,
+            758,
+            773,
+            774,
+            775,
+            776,
+            777,
+            778,
+            779,
+            780,
+            781,
+            782
+          ],
+          "input_json_pointers": [
+            "/evaluation_scope"
+          ],
+          "explanation": "Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+        }
+      }
+    },
+    "c-attrib": {
+      "input": "inputs/c-attrib.json",
+      "expected": "expectations/v1/c-attrib.json",
+      "ingress": "no rejection branch applies; DERIVATION.md Admission before support",
+      "components": {
+        "semantics_version": {
+          "expected_value": "wexp-core-2",
+          "core_xml_lines": [
+            356,
+            588
+          ],
+          "input_json_pointers": [
+            "/semantics_version"
+          ],
+          "explanation": "Recognized result contract wexp-core-2."
+        },
+        "verdict": {
+          "expected_value": "downgrade",
+          "core_xml_lines": [
+            448,
+            449,
+            450,
+            451,
+            552,
+            553,
+            554,
+            555,
+            556
+          ],
+          "input_json_pointers": [
+            "/asserted_claim",
+            "/boundary_finding/status"
+          ],
+          "explanation": "Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+        },
+        "fatal_reasons": {
+          "expected_value": [],
+          "core_xml_lines": [
+            383,
+            384,
+            385,
+            386,
+            387,
+            388,
+            389,
+            390,
+            394,
+            515,
+            610
+          ],
+          "input_json_pointers": [
+            "/fatal_conditions"
+          ],
+          "explanation": "All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+        },
+        "target": {
+          "expected_value": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",9000,\"EUR\"]",
+          "core_xml_lines": [
+            134,
+            374,
+            591
+          ],
+          "input_json_pointers": [
+            "/target"
+          ],
+          "explanation": "Copy exact opaque input target; do not substitute order ID or amount-free action."
+        },
+        "asserted_claim": {
+          "expected_value": {
+            "base": "execution",
+            "qualifiers": []
+          },
+          "core_xml_lines": [
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            592
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Retain the same typed execution claim with empty qualifier set."
+        },
+        "asserted_claim_supported": {
+          "expected_value": false,
+          "core_xml_lines": [
+            459,
+            513,
+            514
+          ],
+          "input_json_pointers": [
+            "/asserted_claim"
+          ],
+          "explanation": "Exact membership in the empty supported-claim set is false."
+        },
+        "support_entries": {
+          "expected_value": [],
+          "core_xml_lines": [
+            436,
+            497,
+            498,
+            507,
+            508,
+            509,
+            510,
+            511
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No supported claim exists for a support entry."
+        },
+        "supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            407,
+            415,
+            417,
+            418,
+            419,
+            420,
+            429,
+            430,
+            431,
+            432
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings"
+          ],
+          "explanation": "Unsupported boundary prevents every base from entering B, including positive observation."
+        },
+        "maximal_supported_claims": {
+          "expected_value": [],
+          "core_xml_lines": [
+            435,
+            513
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "No members of the empty supported set can be maximal."
+        },
+        "support_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            457
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Relation array is empty when no claim is supported."
+        },
+        "boundary_ceiling": {
+          "expected_value": "unavailable",
+          "core_xml_lines": [
+            407,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status"
+          ],
+          "explanation": "Unsupported boundary has no usable ceiling; unavailable."
+        },
+        "boundary_grounding": {
+          "expected_value": "attributed",
+          "core_xml_lines": [
+            405,
+            611
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/grounding"
+          ],
+          "explanation": "Input attributed grounding is preserved despite unsupported status."
+        },
+        "recorder_relations": {
+          "expected_value": [],
+          "core_xml_lines": [
+            376,
+            600
+          ],
+          "input_json_pointers": [
+            "/recorder_relations"
+          ],
+          "explanation": "Input descriptive relation set is empty and remains empty."
+        },
+        "substantive_reasons": {
+          "expected_value": [
+            "E_BOUNDARY_NOT_SUPPORTED"
+          ],
+          "core_xml_lines": [
+            619,
+            621,
+            622,
+            631,
+            632,
+            637,
+            638,
+            667
+          ],
+          "input_json_pointers": [
+            "/boundary_finding/status",
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+        },
+        "evaluation_gaps": {
+          "expected_value": [
+            "E_BASE_NOT_EVALUATED"
+          ],
+          "core_xml_lines": [
+            549,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/base_findings/1/semantic_validation"
+          ],
+          "explanation": "Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+        },
+        "evaluation_gap_entries": {
+          "expected_value": [
+            {
+              "token": "E_BASE_NOT_EVALUATED",
+              "target": "aep-action:[\"e1b0280c9b4d1fe7291222cfec0921a8b876ee48f682cce2dd2eaa60de48ebe8\",\"issue_refund\",\"ORD-4471\",9000,\"EUR\"]",
+              "evaluation_context_ref": "urn:wexp:aep-applicability-001:context:attrib:r4",
+              "affected_claims": [
+                {
+                  "base": "execution",
+                  "qualifiers": []
+                }
+              ],
+              "basis_refs": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "aep-file:sha256:3b7f18af3e8d5cc41f40f036282cd15afe49a68d381f1a5b0bdb8c30a24998ef"
+                ]
+              ],
+              "limitations": [
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "self-report-is-not-external-effect"
+                ],
+                [
+                  "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+                  "execution-assessment-material-unavailable"
+                ]
+              ]
+            }
+          ],
+          "core_xml_lines": [
+            369,
+            579,
+            610,
+            639,
+            640
+          ],
+          "input_json_pointers": [
+            "/target",
+            "/evaluation_context/id",
+            "/asserted_claim",
+            "/base_findings/1"
+          ],
+          "explanation": "Exact target/context, singleton asserted affected claim, execution basis reference and its two limitations; no optional profile current-scope marker."
+        },
+        "counter_evidence": {
+          "expected_value": [
+            {
+              "status": "not-supplied",
+              "affected_claims": [],
+              "basis_refs": [],
+              "reasons": [],
+              "limitations": []
+            }
+          ],
+          "core_xml_lines": [
+            364,
+            452,
+            610,
+            738
+          ],
+          "input_json_pointers": [
+            "/counter_evidence"
+          ],
+          "explanation": "Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+        },
+        "inherited_limitations": {
+          "expected_value": [
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "bounded-two-packet-domain"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "boundary-control-not-established"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "no-boundary-grounding-profile"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "self-report-is-not-external-effect"
+            ],
+            [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4",
+              "execution-assessment-material-unavailable"
+            ]
+          ],
+          "core_xml_lines": [
+            374,
+            375,
+            377,
+            437
+          ],
+          "input_json_pointers": [
+            "/inherited_limitations",
+            "/boundary_finding/limitations",
+            "/base_findings/1/limitations"
+          ],
+          "explanation": "Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+        },
+        "evaluation_context": {
+          "expected_value": {
+            "id": "urn:wexp:aep-applicability-001:context:attrib:r4",
+            "evaluated_at": "unix:1750000100",
+            "trust_configuration": "urn:wexp:aep-applicability-001:trust:attrib:r4",
+            "profile_identifiers": [
+              "urn:wexp:proposal:aep-applicability-001:profile:1:r4"
+            ]
+          },
+          "core_xml_lines": [
+            374,
+            606
+          ],
+          "input_json_pointers": [
+            "/evaluation_context"
+          ],
+          "explanation": "Copy complete immutable profile/context/time/trust identity under exact text equality."
+        },
+        "evaluation_scope": {
+          "expected_value": [
+            {
+              "capability": "carrier-mapping",
+              "status": "evaluated"
+            },
+            {
+              "capability": "authenticity",
+              "status": "evaluated"
+            },
+            {
+              "capability": "target-binding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "boundary-grounding",
+              "status": "evaluated"
+            },
+            {
+              "capability": "observation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "intent-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "invocation-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "execution-support",
+              "status": "not-evaluated"
+            },
+            {
+              "capability": "provenance-support",
+              "status": "evaluated"
+            },
+            {
+              "capability": "independent-verification",
+              "status": "evaluated"
+            },
+            {
+              "capability": "composition",
+              "status": "evaluated"
+            },
+            {
+              "capability": "counter-evidence",
+              "status": "evaluated"
+            }
+          ],
+          "core_xml_lines": [
+            607,
+            758,
+            773,
+            774,
+            775,
+            776,
+            777,
+            778,
+            779,
+            780,
+            781,
+            782
+          ],
+          "input_json_pointers": [
+            "/evaluation_scope"
+          ],
+          "explanation": "Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+        }
+      }
+    }
+  }
+}

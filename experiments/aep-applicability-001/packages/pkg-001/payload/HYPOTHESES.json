@@ -1,0 +1,1075 @@
+{
+  "format": "aep-applicability-B-hypotheses-1",
+  "expectation_version": "v1",
+  "core_source": "evidence/basis/specifications/draft-sergeev-wexp-core-02.xml",
+  "logical_equality": {
+    "sets": "unordered duplicate-free mathematical sets, with typed member equality",
+    "evaluation_scope": "unordered map keyed by exact capability identity",
+    "scoped_atoms": "ordered [profile_identifier, local_value] pair; nested arrays retain order",
+    "text": "exact Unicode scalar sequence; no normalization",
+    "booleans": "distinct from numbers",
+    "implementation": "evidence/B-CHECK.py; logical() dispatches by declared field, never sorts all arrays"
+  },
+  "H1": {
+    "statement": "For a/b within each fixed context: independently check input logical equality, then expect equality of all twenty result components.",
+    "contexts": {
+      "strict": {
+        "left": "inputs/a-strict.json",
+        "right": "inputs/b-strict.json",
+        "input_expected_relation": "equal",
+        "input_relation_observed": "logical equality verified by B-CHECK.py, also byte-identical",
+        "components": {
+          "semantics_version": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              356,
+              581,
+              588,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Recognized result contract wexp-core-2."
+          },
+          "verdict": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              448,
+              449,
+              450,
+              451,
+              552,
+              553,
+              554,
+              555,
+              556,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+          },
+          "fatal_reasons": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              383,
+              384,
+              385,
+              386,
+              387,
+              388,
+              389,
+              390,
+              394,
+              515,
+              581,
+              610,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+          },
+          "target": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              134,
+              374,
+              581,
+              591,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Copy exact opaque input target; do not substitute order ID or amount-free action."
+          },
+          "asserted_claim": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180,
+              581,
+              592,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Retain the same typed execution claim with empty qualifier set."
+          },
+          "asserted_claim_supported": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              459,
+              513,
+              514,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Exact membership in the empty supported-claim set is false."
+          },
+          "support_entries": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              436,
+              497,
+              498,
+              507,
+              508,
+              509,
+              510,
+              511,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; No supported claim exists for a support entry."
+          },
+          "supported_claims": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              407,
+              415,
+              417,
+              418,
+              419,
+              420,
+              429,
+              430,
+              431,
+              432,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Unsupported boundary prevents every base from entering B, including positive observation."
+          },
+          "maximal_supported_claims": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              435,
+              513,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; No members of the empty supported set can be maximal."
+          },
+          "support_relations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              457,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Relation array is empty when no claim is supported."
+          },
+          "boundary_ceiling": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              407,
+              581,
+              611,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Unsupported boundary has no usable ceiling; unavailable."
+          },
+          "boundary_grounding": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              405,
+              581,
+              611,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Input attributed grounding is preserved despite unsupported status."
+          },
+          "recorder_relations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              376,
+              581,
+              600,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Input descriptive relation set is empty and remains empty."
+          },
+          "substantive_reasons": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              581,
+              619,
+              621,
+              622,
+              631,
+              632,
+              637,
+              638,
+              667,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+          },
+          "evaluation_gaps": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              549,
+              581,
+              610,
+              639,
+              640,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+          },
+          "evaluation_gap_entries": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              369,
+              579,
+              581,
+              610,
+              639,
+              640,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Exact target/context, singleton asserted affected claim, execution basis reference and its two limitations; no optional profile current-scope marker."
+          },
+          "counter_evidence": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              364,
+              452,
+              581,
+              610,
+              738,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+          },
+          "inherited_limitations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              374,
+              375,
+              377,
+              437,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+          },
+          "evaluation_context": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              374,
+              581,
+              606,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Copy complete immutable profile/context/time/trust identity under exact text equality."
+          },
+          "evaluation_scope": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              581,
+              607,
+              745,
+              746,
+              758,
+              773,
+              774,
+              775,
+              776,
+              777,
+              778,
+              779,
+              780,
+              781,
+              782
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+          }
+        }
+      },
+      "attrib": {
+        "left": "inputs/a-attrib.json",
+        "right": "inputs/b-attrib.json",
+        "input_expected_relation": "equal",
+        "input_relation_observed": "logical equality verified by B-CHECK.py, also byte-identical",
+        "components": {
+          "semantics_version": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              356,
+              581,
+              588,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Recognized result contract wexp-core-2."
+          },
+          "verdict": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              448,
+              449,
+              450,
+              451,
+              552,
+              553,
+              554,
+              555,
+              556,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+          },
+          "fatal_reasons": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              383,
+              384,
+              385,
+              386,
+              387,
+              388,
+              389,
+              390,
+              394,
+              515,
+              581,
+              610,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+          },
+          "target": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              134,
+              374,
+              581,
+              591,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Copy exact opaque input target; do not substitute order ID or amount-free action."
+          },
+          "asserted_claim": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180,
+              581,
+              592,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Retain the same typed execution claim with empty qualifier set."
+          },
+          "asserted_claim_supported": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              459,
+              513,
+              514,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Exact membership in the empty supported-claim set is false."
+          },
+          "support_entries": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              436,
+              497,
+              498,
+              507,
+              508,
+              509,
+              510,
+              511,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; No supported claim exists for a support entry."
+          },
+          "supported_claims": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              407,
+              415,
+              417,
+              418,
+              419,
+              420,
+              429,
+              430,
+              431,
+              432,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Unsupported boundary prevents every base from entering B, including positive observation."
+          },
+          "maximal_supported_claims": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              435,
+              513,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; No members of the empty supported set can be maximal."
+          },
+          "support_relations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              457,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Relation array is empty when no claim is supported."
+          },
+          "boundary_ceiling": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              407,
+              581,
+              611,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Unsupported boundary has no usable ceiling; unavailable."
+          },
+          "boundary_grounding": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              405,
+              581,
+              611,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Input attributed grounding is preserved despite unsupported status."
+          },
+          "recorder_relations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              376,
+              581,
+              600,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Input descriptive relation set is empty and remains empty."
+          },
+          "substantive_reasons": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              581,
+              619,
+              621,
+              622,
+              631,
+              632,
+              637,
+              638,
+              667,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+          },
+          "evaluation_gaps": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              549,
+              581,
+              610,
+              639,
+              640,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+          },
+          "evaluation_gap_entries": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              369,
+              579,
+              581,
+              610,
+              639,
+              640,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Exact target/context, singleton asserted affected claim, execution basis reference and its two limitations; no optional profile current-scope marker."
+          },
+          "counter_evidence": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              364,
+              452,
+              581,
+              610,
+              738,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+          },
+          "inherited_limitations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              374,
+              375,
+              377,
+              437,
+              581,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+          },
+          "evaluation_context": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              374,
+              581,
+              606,
+              745,
+              746
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Copy complete immutable profile/context/time/trust identity under exact text equality."
+          },
+          "evaluation_scope": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              581,
+              607,
+              745,
+              746,
+              758,
+              773,
+              774,
+              775,
+              776,
+              777,
+              778,
+              779,
+              780,
+              781,
+              782
+            ],
+            "explanation": "The complete normalized inputs are logically equal in this context; Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+          }
+        }
+      }
+    }
+  },
+  "H2": {
+    "statement": "For a/c within each fixed context: expect eighteen equal components and two different components; no complete-appraisal equality claim.",
+    "contexts": {
+      "strict": {
+        "left": "inputs/a-strict.json",
+        "right": "inputs/c-strict.json",
+        "input_expected_relation": "different",
+        "complete_result_expected_relation": "different",
+        "equal_component_count": 18,
+        "different_component_count": 2,
+        "components": {
+          "semantics_version": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              356,
+              588
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Recognized result contract wexp-core-2."
+          },
+          "verdict": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              448,
+              449,
+              450,
+              451,
+              552,
+              553,
+              554,
+              555,
+              556
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+          },
+          "fatal_reasons": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              383,
+              384,
+              385,
+              386,
+              387,
+              388,
+              389,
+              390,
+              394,
+              515,
+              610
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+          },
+          "target": {
+            "expected_relation": "different",
+            "core_xml_lines": [
+              134,
+              374,
+              591
+            ],
+            "explanation": "a target embeds amount 250; c target embeds amount 9000. Exact opaque text differs and is copied."
+          },
+          "asserted_claim": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180,
+              592
+            ],
+            "explanation": "Both assert the identical typed pair (execution, empty qualifiers). Target is a separate component."
+          },
+          "asserted_claim_supported": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              459,
+              513,
+              514
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Exact membership in the empty supported-claim set is false."
+          },
+          "support_entries": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              436,
+              497,
+              498,
+              507,
+              508,
+              509,
+              510,
+              511
+            ],
+            "explanation": "Both support-entry sets are empty. Changed basis refs therefore survive in the gap entry, not a support entry."
+          },
+          "supported_claims": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              407,
+              415,
+              417,
+              418,
+              419,
+              420,
+              429,
+              430,
+              431,
+              432
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Unsupported boundary prevents every base from entering B, including positive observation."
+          },
+          "maximal_supported_claims": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              435,
+              513
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. No members of the empty supported set can be maximal."
+          },
+          "support_relations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              457
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Relation array is empty when no claim is supported."
+          },
+          "boundary_ceiling": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              407,
+              611
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Unsupported boundary has no usable ceiling; unavailable."
+          },
+          "boundary_grounding": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              405,
+              611
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Input attributed grounding is preserved despite unsupported status."
+          },
+          "recorder_relations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              376,
+              600
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Input descriptive relation set is empty and remains empty."
+          },
+          "substantive_reasons": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              619,
+              621,
+              622,
+              631,
+              632,
+              637,
+              638,
+              667
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+          },
+          "evaluation_gaps": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              549,
+              610,
+              639,
+              640
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+          },
+          "evaluation_gap_entries": {
+            "expected_relation": "different",
+            "core_xml_lines": [
+              369,
+              579,
+              610,
+              639,
+              640
+            ],
+            "explanation": "The singleton gap retains the different target and different sample-file basis reference. Token, context ref, affected execution claim and limitation set are equal."
+          },
+          "counter_evidence": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              364,
+              452,
+              610,
+              738
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+          },
+          "inherited_limitations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              374,
+              375,
+              377,
+              437
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+          },
+          "evaluation_context": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              374,
+              606
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Copy complete immutable profile/context/time/trust identity under exact text equality."
+          },
+          "evaluation_scope": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              607,
+              758,
+              773,
+              774,
+              775,
+              776,
+              777,
+              778,
+              779,
+              780,
+              781,
+              782
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+          }
+        }
+      },
+      "attrib": {
+        "left": "inputs/a-attrib.json",
+        "right": "inputs/c-attrib.json",
+        "input_expected_relation": "different",
+        "complete_result_expected_relation": "different",
+        "equal_component_count": 18,
+        "different_component_count": 2,
+        "components": {
+          "semantics_version": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              356,
+              588
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Recognized result contract wexp-core-2."
+          },
+          "verdict": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              448,
+              449,
+              450,
+              451,
+              552,
+              553,
+              554,
+              555,
+              556
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Safe admissible assertion is not an exact member of the empty supported set; downgrade."
+          },
+          "fatal_reasons": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              383,
+              384,
+              385,
+              386,
+              387,
+              388,
+              389,
+              390,
+              394,
+              515,
+              610
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. All ordered ingress checks pass; no supplied fatal condition and admissible assertion."
+          },
+          "target": {
+            "expected_relation": "different",
+            "core_xml_lines": [
+              134,
+              374,
+              591
+            ],
+            "explanation": "a target embeds amount 250; c target embeds amount 9000. Exact opaque text differs and is copied."
+          },
+          "asserted_claim": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180,
+              592
+            ],
+            "explanation": "Both assert the identical typed pair (execution, empty qualifiers). Target is a separate component."
+          },
+          "asserted_claim_supported": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              459,
+              513,
+              514
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Exact membership in the empty supported-claim set is false."
+          },
+          "support_entries": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              436,
+              497,
+              498,
+              507,
+              508,
+              509,
+              510,
+              511
+            ],
+            "explanation": "Both support-entry sets are empty. Changed basis refs therefore survive in the gap entry, not a support entry."
+          },
+          "supported_claims": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              407,
+              415,
+              417,
+              418,
+              419,
+              420,
+              429,
+              430,
+              431,
+              432
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Unsupported boundary prevents every base from entering B, including positive observation."
+          },
+          "maximal_supported_claims": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              435,
+              513
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. No members of the empty supported set can be maximal."
+          },
+          "support_relations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              457
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Relation array is empty when no claim is supported."
+          },
+          "boundary_ceiling": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              407,
+              611
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Unsupported boundary has no usable ceiling; unavailable."
+          },
+          "boundary_grounding": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              405,
+              611
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Input attributed grounding is preserved despite unsupported status."
+          },
+          "recorder_relations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              376,
+              600
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Input descriptive relation set is empty and remains empty."
+          },
+          "substantive_reasons": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              619,
+              621,
+              622,
+              631,
+              632,
+              637,
+              638,
+              667
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Only boundary unsupported row fires. Present not-evaluated execution is neither absent nor semantically unsupported. All supplied reason sets are empty."
+          },
+          "evaluation_gaps": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              549,
+              610,
+              639,
+              640
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Execution not-evaluated triggers one Core gap; token set projection contains only E_BASE_NOT_EVALUATED."
+          },
+          "evaluation_gap_entries": {
+            "expected_relation": "different",
+            "core_xml_lines": [
+              369,
+              579,
+              610,
+              639,
+              640
+            ],
+            "explanation": "The singleton gap retains the different target and different sample-file basis reference. Token, context ref, affected execution claim and limitation set are equal."
+          },
+          "counter_evidence": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              364,
+              452,
+              610,
+              738
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Preserve sole exact not-supplied sentinel; it does not block and does not assert global absence of counter-evidence."
+          },
+          "inherited_limitations": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              374,
+              375,
+              377,
+              437
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Union domain inheritance, two boundary limitations and two execution-gap-source limitations; all five distinct scoped atoms survive."
+          },
+          "evaluation_context": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              374,
+              606
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Copy complete immutable profile/context/time/trust identity under exact text equality."
+          },
+          "evaluation_scope": {
+            "expected_relation": "equal",
+            "core_xml_lines": [
+              607,
+              758,
+              773,
+              774,
+              775,
+              776,
+              777,
+              778,
+              779,
+              780,
+              781,
+              782
+            ],
+            "explanation": "Both cases have the same relevant statuses and logical values for this component. Preserve twelve-entry scope map; execution-support alone is not-evaluated; the map is not positive evidence or an extra diagnostic source."
+          }
+        }
+      }
+    }
+  }
+}
