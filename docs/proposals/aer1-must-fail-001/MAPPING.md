@@ -222,3 +222,23 @@ Issue #40 was opened from the AER-1 project account `zambodotdev`. In this pull 
 answered "Name me as: Brennan Zambo, an author of Internet-Draft draft-zambo-aer1-26"; that
 authorship was confirmed with him directly for aer1-real-04-001. The result row names him when it
 is written after the run.
+
+## Revision 2 (before any appraiser run)
+
+The isolated derivation of the expected results, run on the inputs of revision 1, found that
+id-alone-unverified breaks the cross-field contract of Core-02. Section 12 lists the boundary
+finding's binding among the status fields governed by `boundary-grounding`, and a base aggregate's
+binding among those governed by its base-support capability. Line 780: "A scope value of evaluated
+with a governed not-evaluated status ... violates the cross-field contract and produces
+E_PROFILE_MAPPING_INVALID." Revision 1 marked only the shared `target-binding` capability not
+evaluated, so that input would have been rejected for an error of the mapping instead of appraised.
+
+One row of the layer table changes:
+
+| AER-1 | Core-02 input |
+|---|---|
+| id verdict unverified | `target_binding` not-evaluated on the boundary and execution findings, and the three capabilities that govern those fields, `target-binding`, `boundary-grounding` and `execution-support`, not evaluated |
+
+Only the evaluation scope of `inputs/id-alone-unverified.json` changes. How AER-1 is read is
+unchanged. The expected results are derived again by a new isolated session from all fifteen inputs
+of this revision; the first session's results are not used.
