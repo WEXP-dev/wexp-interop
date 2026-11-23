@@ -1,0 +1,154 @@
+{
+ "expected": {
+  "asserted_claim": {
+   "base": "execution",
+   "qualifiers": []
+  },
+  "asserted_claim_supported": true,
+  "boundary_ceiling": "execution",
+  "boundary_grounding": "asserted-only",
+  "counter_evidence": [
+   {
+    "affected_claims": [],
+    "basis_refs": [],
+    "limitations": [],
+    "reasons": [],
+    "status": "not-supplied"
+   }
+  ],
+  "evaluation_context": {
+   "evaluated_at": "2026-11-23T00:00:00Z",
+   "id": "C-aer1-must-fail-001",
+   "profile_identifiers": [
+    "wexp-work/interop/aer1-must-fail-001/mapping-1"
+   ],
+   "trust_configuration": "aer1-must-fail-trust-asserted"
+  },
+  "evaluation_gap_entries": [],
+  "evaluation_gaps": [],
+  "evaluation_scope": [
+   {
+    "capability": "carrier-mapping",
+    "status": "evaluated"
+   },
+   {
+    "capability": "authenticity",
+    "status": "evaluated"
+   },
+   {
+    "capability": "target-binding",
+    "status": "evaluated"
+   },
+   {
+    "capability": "boundary-grounding",
+    "status": "evaluated"
+   },
+   {
+    "capability": "observation-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "intent-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "invocation-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "execution-support",
+    "status": "evaluated"
+   },
+   {
+    "capability": "provenance-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "independent-verification",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "composition",
+    "status": "evaluated"
+   },
+   {
+    "capability": "counter-evidence",
+    "status": "evaluated"
+   }
+  ],
+  "fatal_reasons": [],
+  "inherited_limitations": [
+   [
+    "wexp-work/interop/aer1-must-fail-001/mapping-1",
+    "L-aer1-unsigned"
+   ],
+   [
+    "wexp-work/interop/aer1-must-fail-001/mapping-1",
+    "L-aer1-legacy-unbound"
+   ],
+   [
+    "wexp-work/interop/aer1-must-fail-001/mapping-1",
+    "L-aer1-no-anchor"
+   ]
+  ],
+  "maximal_supported_claims": [
+   {
+    "base": "execution",
+    "qualifiers": []
+   }
+  ],
+  "recorder_relations": [],
+  "semantics_version": "wexp-core-2",
+  "substantive_reasons": [],
+  "support_entries": [
+   {
+    "basis_refs": [
+     [
+      "wexp-work/interop/aer1-must-fail-001/mapping-1",
+      "id-binding-vectors.json@sha256:78cb42cbc8be1306458f63e90e01f0e9201504ff5bf5d455a659631f21237009#id-resolution-agreement"
+     ],
+     [
+      "wexp-work/interop/aer1-must-fail-001/mapping-1",
+      "id-binding-fixture/canonical_bytes@sha256:0492c18e09059aa2e30ba0864f6aada2ef08475a5b35944cbf2a9ce46d12b9f1"
+     ]
+    ],
+    "claim": {
+     "base": "execution",
+     "qualifiers": []
+    },
+    "limitations": [
+     [
+      "wexp-work/interop/aer1-must-fail-001/mapping-1",
+      "L-aer1-unsigned"
+     ],
+     [
+      "wexp-work/interop/aer1-must-fail-001/mapping-1",
+      "L-aer1-legacy-unbound"
+     ],
+     [
+      "wexp-work/interop/aer1-must-fail-001/mapping-1",
+      "L-aer1-no-anchor"
+     ]
+    ]
+   }
+  ],
+  "support_relations": [
+   {
+    "relation": "equal",
+    "supported_claim": {
+     "base": "execution",
+     "qualifiers": []
+    }
+   }
+  ],
+  "supported_claims": [
+   {
+    "base": "execution",
+    "qualifiers": []
+   }
+  ],
+  "target": "aer1:130da435-e157-498e-af90-605866a86a27",
+  "verdict": "accept"
+ },
+ "id": "id-resolution-agreement"
+}
