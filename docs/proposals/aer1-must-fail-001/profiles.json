@@ -2,6 +2,16 @@
  "wexp-work/interop/aer1-must-fail-001/mapping-1": {
   "relation_tokens": [],
   "scope_names": [],
-  "tokens": {}
+  "tokens": {
+   "P_AER1_ANCHOR_DIGEST_MISMATCH": {
+    "category": "substantive"
+   },
+   "P_AER1_ANCHOR_NOT_CHECKED": {
+    "category": "evaluation-gap"
+   },
+   "P_AER1_ANCHOR_UNRESOLVABLE": {
+    "category": "evaluation-gap"
+   }
+  }
  }
 }
