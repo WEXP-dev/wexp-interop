@@ -92,7 +92,7 @@
    },
    {
     "capability": "boundary-grounding",
-    "status": "evaluated"
+    "status": "not-evaluated"
    },
    {
     "capability": "observation-support",
@@ -108,7 +108,7 @@
    },
    {
     "capability": "execution-support",
-    "status": "evaluated"
+    "status": "not-evaluated"
    },
    {
     "capability": "provenance-support",
