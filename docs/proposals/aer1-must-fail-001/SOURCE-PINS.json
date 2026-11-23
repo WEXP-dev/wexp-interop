@@ -1,0 +1,24 @@
+{
+ "core02_xml_sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+ "external_files": [],
+ "internet_drafts": [
+  {
+   "bytes": 139318,
+   "name": "draft-zambo-aer1",
+   "revision": "26",
+   "sha256": "7e000d80f00ad29b8e01431de562e98956f86e426b2695a34c8a215e689e53d4",
+   "url": "https://www.ietf.org/archive/id/draft-zambo-aer1-26.txt"
+  }
+ ],
+ "interop_check_issue": 40,
+ "local_files": [],
+ "track": "open",
+ "wexp_check": {
+  "commit": "63bde685c54fd6329f1217708d1c211b80c3712e",
+  "repository": "WEXP-dev/wexp-check"
+ },
+ "wexp_ref": {
+  "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+  "repository": "WEXP-dev/wexp-ref"
+ }
+}
