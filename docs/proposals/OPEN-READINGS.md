@@ -6,4 +6,4 @@ Places where mapping a real format showed that the text of draft-sergeev-wexp-co
 
 | Reading | Question | Core-02 lines | Proposal and cases | Status |
 |---|---|---|---|---|
-| _none recorded yet_ | | | | |
+| `aer1-real-04-001/grounding-acceptance` | Is acceptance of an asserted-only or attributed grounding by the evaluation context a cross-field invariant that Core checks (Section 6.2, check 4), or an obligation of the profile that Core takes as given when the boundary status is supported? Both appraisers follow the second reading; under the first, cases a, c, d and e would be rejected. | 362, 374, 388, 406 | [aer1-real-04-001](aer1-real-04-001/README.md): `a`, `c`, `d`, `e` | open |

@@ -1,0 +1,14 @@
+{
+ "wexp-work/interop/aer1-real-04-001/mapping-1": {
+  "relation_tokens": [],
+  "scope_names": [],
+  "tokens": {
+   "P_AER1_ANCHOR_NOT_CHECKED": {
+    "category": "evaluation-gap"
+   },
+   "P_AER1_RECOMPUTE_COMMITMENT_ONLY": {
+    "category": "substantive"
+   }
+  }
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "author_review": "row-agreed",
+ "author_spec_changes": [],
+ "examined": "AER-1 execution receipt real-04 (draft-zambo-aer1-26) as a Core-02 input",
+ "initiation": {
+  "channel": "interop-check",
+  "established_by": "confirmed-with-the-person",
+  "initiated_by": "Brennan Zambo",
+  "interop_check_issue": 42,
+  "named": true,
+  "not_named_because": null,
+  "relation": "internet-draft-author",
+  "relation_subject": "draft-zambo-aer1-26"
+ },
+ "open_readings": [
+  {
+   "cases": [
+    "a",
+    "c",
+    "d",
+    "e"
+   ],
+   "core02_lines": [
+    362,
+    374,
+    388,
+    406
+   ],
+   "id": "grounding-acceptance",
+   "question": "Is acceptance of an asserted-only or attributed grounding by the evaluation context a cross-field invariant that Core checks (Section 6.2, check 4), or an obligation of the profile that Core takes as given when the boundary status is supported? Both appraisers follow the second reading; under the first, cases a, c, d and e would be rejected.",
+   "status": "open"
+  }
+ ],
+ "schema": "wexp-interop/proposal-result-row/1",
+ "status": "agreed",
+ "summary": "Both appraisers equal the expected results in all five cases. Case e describes real-04 (no anchor): accept, execution supported at an asserted-only boundary, the missing anchor a limitation. Required attributed grounding (b) downgrades; PROV not evaluated (c) and IV unsupported (d) downgrade."
+}

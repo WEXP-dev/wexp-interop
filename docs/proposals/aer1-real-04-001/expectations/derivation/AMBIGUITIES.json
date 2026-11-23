@@ -1,0 +1,120 @@
+[
+ {
+  "alternative_expected": {
+   "a": {
+    "asserted_claim": null,
+    "asserted_claim_supported": false,
+    "boundary_ceiling": null,
+    "boundary_grounding": null,
+    "counter_evidence": null,
+    "evaluation_context": null,
+    "evaluation_gap_entries": [],
+    "evaluation_gaps": [],
+    "evaluation_scope": null,
+    "fatal_reasons": [
+     "E_PROFILE_MAPPING_INVALID"
+    ],
+    "inherited_limitations": null,
+    "maximal_supported_claims": [],
+    "recorder_relations": null,
+    "semantics_version": "wexp-core-2",
+    "substantive_reasons": [],
+    "support_entries": [],
+    "support_relations": [],
+    "supported_claims": [],
+    "target": null,
+    "verdict": "reject"
+   },
+   "b": "unchanged: equal to out/expected/b.json (the invariant concerns supported boundaries only)",
+   "c": {
+    "asserted_claim": null,
+    "asserted_claim_supported": false,
+    "boundary_ceiling": null,
+    "boundary_grounding": null,
+    "counter_evidence": null,
+    "evaluation_context": null,
+    "evaluation_gap_entries": [],
+    "evaluation_gaps": [],
+    "evaluation_scope": null,
+    "fatal_reasons": [
+     "E_PROFILE_MAPPING_INVALID"
+    ],
+    "inherited_limitations": null,
+    "maximal_supported_claims": [],
+    "recorder_relations": null,
+    "semantics_version": "wexp-core-2",
+    "substantive_reasons": [],
+    "support_entries": [],
+    "support_relations": [],
+    "supported_claims": [],
+    "target": null,
+    "verdict": "reject"
+   },
+   "d": {
+    "asserted_claim": null,
+    "asserted_claim_supported": false,
+    "boundary_ceiling": null,
+    "boundary_grounding": null,
+    "counter_evidence": null,
+    "evaluation_context": null,
+    "evaluation_gap_entries": [],
+    "evaluation_gaps": [],
+    "evaluation_scope": null,
+    "fatal_reasons": [
+     "E_PROFILE_MAPPING_INVALID"
+    ],
+    "inherited_limitations": null,
+    "maximal_supported_claims": [],
+    "recorder_relations": null,
+    "semantics_version": "wexp-core-2",
+    "substantive_reasons": [],
+    "support_entries": [],
+    "support_relations": [],
+    "supported_claims": [],
+    "target": null,
+    "verdict": "reject"
+   },
+   "e": {
+    "asserted_claim": null,
+    "asserted_claim_supported": false,
+    "boundary_ceiling": null,
+    "boundary_grounding": null,
+    "counter_evidence": null,
+    "evaluation_context": null,
+    "evaluation_gap_entries": [],
+    "evaluation_gaps": [],
+    "evaluation_scope": null,
+    "fatal_reasons": [
+     "E_PROFILE_MAPPING_INVALID"
+    ],
+    "inherited_limitations": null,
+    "maximal_supported_claims": [],
+    "recorder_relations": null,
+    "semantics_version": "wexp-core-2",
+    "substantive_reasons": [],
+    "support_entries": [],
+    "support_relations": [],
+    "supported_claims": [],
+    "target": null,
+    "verdict": "reject"
+   }
+  },
+  "alternative_reading": "Grounding acceptance is a cross-field invariant that Core must establish. The input supplies only the opaque atom and profiles.json defines no trust configuration, so acceptance cannot be established; check 4 fails and Core returns E_PROFILE_MAPPING_INVALID through the fixed rejection projection of section 8.4 for a, c, d and e. b is unchanged. An appraiser that learned acceptance of 'aer1-real-04-trust-asserted' out of band would reproduce the primary results.",
+  "id": "A1",
+  "primary_reading": "A profile obligation, not a Core check. Section 7 makes acceptance part of what status = supported means: 'boundary_finding.status = supported means that the boundary predicate required by the named evaluation context passed. The evaluation context MUST identify the minimum acceptable grounding.' and 'An asserted-only or attributed finding can be supported only when the evaluation context explicitly accepts that grounding class; the result still reports the weaker grounding and its limitations.' Core treats the trust configuration as an opaque atom (6.1: 'The target, evaluation-context identifier, evaluation time, and trust configuration are opaque logical atoms.'; 'Core does not interpret an opaque atom; it only compares, copies, and set-unions it using that equality.'), and the applied catalog defines no trust configuration, so Core has nothing from which to test acceptance. The sentence states no consequence, unlike the next one ('grounding = not-evaluated is valid only with status = not-evaluated; either field paired differently produces E_PROFILE_MAPPING_INVALID.'), which all five inputs satisfy. The 6.2 enumeration of cross-field invariants does not name grounding acceptance. Results: a accept, c downgrade, d downgrade, e accept, as in out/expected/.",
+  "question": "Cases a, c, d, e (boundary status supported, grounding asserted-only, opaque trust_configuration 'aer1-real-04-trust-asserted'); b is unaffected because its boundary is unsupported. Section 6 says: 'A supported boundary has a grounding value of asserted-only, attributed, or attested that the evaluation context accepts.' Is acceptance by the evaluation context a Core-checked cross-field invariant (section 6.2, check 4) that the appraiser must establish from the input, or a profile obligation that Core takes as given when status = supported?"
+ },
+ {
+  "alternative_expected": {
+   "a": "same logical value; only the context-scope member name of the copied P_AER1_ANCHOR_NOT_CHECKED entry would differ, if the carrier renames copied entries too",
+   "b": "same as a",
+   "c": "same logical value; the Core-derived E_PROV_NOT_EVALUATED entry (and possibly the copied P_AER1_ANCHOR_NOT_CHECKED entry) would carry a differently named context-scope member",
+   "d": "same as a",
+   "e": "no difference: evaluation_gap_entries is empty"
+  },
+  "alternative_reading": "A result carrier names the context-scope member differently (for example evaluation_context_id) for Core-derived entries, or for all gap entries.",
+  "id": "A2",
+  "primary_reading": "Use the member names of the input profile_evaluation_gaps entries for every gap entry: token, target, evaluation_context_ref, affected_claims, basis_refs, limitations. Profile entries are 'copied exactly only under the affected-claim predicate' (8.4), and one encoding keeps the set homogeneous. current_scope_capability is omitted where no profile gap supplies it, which is every entry here.",
+  "question": "Representation only, no Core-semantic difference. Section 8.5 fixes what an evaluation-gap entry contains ('token, target and context scope, affected claims, basis references, limitations, and the optional current_scope_capability supplied on a profile gap'), but REPRESENTATION.md and the C01 reference (whose gap set is empty) fix no JSON member names for result gap entries. What member names should evaluation_gap_entries use, in particular for the Core-derived E_PROV_NOT_EVALUATED entry in case c?"
+ }
+]

@@ -1,0 +1,172 @@
+{
+ "id": "d",
+ "input": {
+  "asserted_claim": {
+   "base": "execution",
+   "qualifiers": [
+    "IV"
+   ]
+  },
+  "base_findings": [
+   {
+    "base": "execution",
+    "basis_refs": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "real-04/canonical_bytes@sha256:c92e4cfdc2a00d2914d6d5c596d0936e6bfdba522a125467a08ef6ebce5974ca"
+     ]
+    ],
+    "evaluation_context_ref": "C-aer1-real-04-001",
+    "limitations": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "L-aer1-unsigned"
+     ]
+    ],
+    "reasons": [],
+    "semantic_validation": "supported",
+    "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e",
+    "target_binding": "supported"
+   }
+  ],
+  "boundary_finding": {
+   "basis_refs": [
+    [
+     "wexp-work/interop/aer1-real-04-001/mapping-1",
+     "real-04.json@sha256:45c6af65806ad125d9ac33da9e13c737d89e1f2efde5c662cd7baa2db3ab51f8"
+    ]
+   ],
+   "ceiling_base": "execution",
+   "evaluation_context_ref": "C-aer1-real-04-001",
+   "grounding": "asserted-only",
+   "limitations": [
+    [
+     "wexp-work/interop/aer1-real-04-001/mapping-1",
+     "L-aer1-unsigned"
+    ]
+   ],
+   "reasons": [],
+   "status": "supported",
+   "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e",
+   "target_binding": "supported"
+  },
+  "counter_evidence": [
+   {
+    "affected_claims": [],
+    "basis_refs": [],
+    "limitations": [],
+    "reasons": [],
+    "status": "not-supplied"
+   }
+  ],
+  "evaluation_context": {
+   "evaluated_at": "2026-11-22T00:00:00Z",
+   "id": "C-aer1-real-04-001",
+   "profile_identifiers": [
+    "wexp-work/interop/aer1-real-04-001/mapping-1"
+   ],
+   "trust_configuration": "aer1-real-04-trust-asserted"
+  },
+  "evaluation_scope": [
+   {
+    "capability": "carrier-mapping",
+    "status": "evaluated"
+   },
+   {
+    "capability": "authenticity",
+    "status": "evaluated"
+   },
+   {
+    "capability": "target-binding",
+    "status": "evaluated"
+   },
+   {
+    "capability": "boundary-grounding",
+    "status": "evaluated"
+   },
+   {
+    "capability": "observation-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "intent-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "invocation-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "execution-support",
+    "status": "evaluated"
+   },
+   {
+    "capability": "provenance-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "independent-verification",
+    "status": "evaluated"
+   },
+   {
+    "capability": "composition",
+    "status": "evaluated"
+   },
+   {
+    "capability": "counter-evidence",
+    "status": "evaluated"
+   }
+  ],
+  "fatal_conditions": [],
+  "inherited_limitations": [],
+  "profile_evaluation_gaps": [
+   {
+    "affected_claims": [
+     {
+      "base": "execution",
+      "qualifiers": []
+     }
+    ],
+    "basis_refs": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "real-04.json@sha256:45c6af65806ad125d9ac33da9e13c737d89e1f2efde5c662cd7baa2db3ab51f8"
+     ]
+    ],
+    "evaluation_context_ref": "C-aer1-real-04-001",
+    "limitations": [],
+    "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e",
+    "token": "P_AER1_ANCHOR_NOT_CHECKED"
+   }
+  ],
+  "qualifier_findings": [
+   {
+    "basis_refs": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "recompute-2026-11-22:sha256(canonical_bytes)=output_hash"
+     ]
+    ],
+    "evaluation_context_ref": "C-aer1-real-04-001",
+    "independence_validation": "supported",
+    "limitations": [
+     [
+      "wexp-work/interop/aer1-real-04-001/mapping-1",
+      "L-aer1-unsigned"
+     ]
+    ],
+    "qualified_base": "execution",
+    "qualifier": "IV",
+    "reasons": [
+     "P_AER1_RECOMPUTE_COMMITMENT_ONLY"
+    ],
+    "semantic_validation": "unsupported",
+    "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e",
+    "target_binding": "supported"
+   }
+  ],
+  "recorder_relations": [],
+  "semantics_version": "wexp-core-2",
+  "target": "aer1:c17b436d-0d9e-48a1-a5de-08dc80a9767e"
+ }
+}

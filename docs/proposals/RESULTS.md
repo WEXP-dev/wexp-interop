@@ -6,6 +6,7 @@ One row per proposal that carries a result row. A row says what a run on frozen 
 
 | Proposal | Examined | Initiated by | Run | Summary | Row |
 |---|---|---|---|---|---|
+| [aer1-real-04-001](aer1-real-04-001/README.md) | AER-1 execution receipt real-04 (draft-zambo-aer1-26) as a Core-02 input | Brennan Zambo, an author of Internet-Draft `draft-zambo-aer1-26` (confirmed with the person directly); [check 42](https://github.com/WEXP-dev/interop-test-lab/issues/42) | 5 case(s); expected 2 accept, 3 downgrade; 5 of 5 equal the frozen expectation in both appraisers | Both appraisers equal the expected results in all five cases. Case e describes real-04 (no anchor): accept, execution supported at an asserted-only boundary, the missing anchor a limitation. Required attributed grounding (b) downgrades; PROV not evaluated (c) and IV unsupported (d) downgrade. | agreed with the author |
 | [worked-example-001](worked-example-001/README.md) | Worked example of the proposal path (two cases from the public corpus) | Mikhail Sergeev, a maintainer of this repository | 2 case(s); expected 1 accept, 1 downgrade; 2 of 2 equal the frozen expectation in both appraisers | Synthetic. Shows the path only; it maps no external format and is not a result about one. | agreed |
 
 ## Changes authors made to their own specifications after a check
