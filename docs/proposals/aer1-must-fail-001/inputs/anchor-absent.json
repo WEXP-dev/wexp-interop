@@ -1,0 +1,138 @@
+{
+ "id": "anchor-absent",
+ "input": {
+  "asserted_claim": {
+   "base": "execution",
+   "qualifiers": []
+  },
+  "base_findings": [
+   {
+    "base": "execution",
+    "basis_refs": [
+     [
+      "wexp-work/interop/aer1-must-fail-001/mapping-1",
+      "receipt-01/canonical_bytes@sha256:c2258bdf9c34813a70166bc0e2d79b167f22f51a0adb67e218b5c868b911dca7"
+     ]
+    ],
+    "evaluation_context_ref": "C-aer1-must-fail-001",
+    "limitations": [
+     [
+      "wexp-work/interop/aer1-must-fail-001/mapping-1",
+      "L-aer1-unsigned"
+     ],
+     [
+      "wexp-work/interop/aer1-must-fail-001/mapping-1",
+      "L-aer1-legacy-unbound"
+     ],
+     [
+      "wexp-work/interop/aer1-must-fail-001/mapping-1",
+      "L-aer1-no-anchor"
+     ]
+    ],
+    "reasons": [],
+    "semantic_validation": "supported",
+    "target": "aer1:b6c63ac5-f324-4fa7-ad58-c4bf83faa86a",
+    "target_binding": "supported"
+   }
+  ],
+  "boundary_finding": {
+   "basis_refs": [
+    [
+     "wexp-work/interop/aer1-must-fail-001/mapping-1",
+     "receipt-01.json@sha256:f6f2b532a70c1969a0e70a8342ad5a9fefa5810f163b930560b4bfffb9a24931"
+    ]
+   ],
+   "ceiling_base": "execution",
+   "evaluation_context_ref": "C-aer1-must-fail-001",
+   "grounding": "asserted-only",
+   "limitations": [
+    [
+     "wexp-work/interop/aer1-must-fail-001/mapping-1",
+     "L-aer1-unsigned"
+    ],
+    [
+     "wexp-work/interop/aer1-must-fail-001/mapping-1",
+     "L-aer1-legacy-unbound"
+    ]
+   ],
+   "reasons": [],
+   "status": "supported",
+   "target": "aer1:b6c63ac5-f324-4fa7-ad58-c4bf83faa86a",
+   "target_binding": "supported"
+  },
+  "counter_evidence": [
+   {
+    "affected_claims": [],
+    "basis_refs": [],
+    "limitations": [],
+    "reasons": [],
+    "status": "not-supplied"
+   }
+  ],
+  "evaluation_context": {
+   "evaluated_at": "2026-11-23T00:00:00Z",
+   "id": "C-aer1-must-fail-001",
+   "profile_identifiers": [
+    "wexp-work/interop/aer1-must-fail-001/mapping-1"
+   ],
+   "trust_configuration": "aer1-must-fail-trust-asserted"
+  },
+  "evaluation_scope": [
+   {
+    "capability": "carrier-mapping",
+    "status": "evaluated"
+   },
+   {
+    "capability": "authenticity",
+    "status": "evaluated"
+   },
+   {
+    "capability": "target-binding",
+    "status": "evaluated"
+   },
+   {
+    "capability": "boundary-grounding",
+    "status": "evaluated"
+   },
+   {
+    "capability": "observation-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "intent-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "invocation-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "execution-support",
+    "status": "evaluated"
+   },
+   {
+    "capability": "provenance-support",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "independent-verification",
+    "status": "not-evaluated"
+   },
+   {
+    "capability": "composition",
+    "status": "evaluated"
+   },
+   {
+    "capability": "counter-evidence",
+    "status": "evaluated"
+   }
+  ],
+  "fatal_conditions": [],
+  "inherited_limitations": [],
+  "profile_evaluation_gaps": [],
+  "qualifier_findings": [],
+  "recorder_relations": [],
+  "semantics_version": "wexp-core-2",
+  "target": "aer1:b6c63ac5-f324-4fa7-ad58-c4bf83faa86a"
+ }
+}
