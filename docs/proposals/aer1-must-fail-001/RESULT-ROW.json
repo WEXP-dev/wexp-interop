@@ -1,5 +1,5 @@
 {
- "author_review": "requested",
+ "author_review": "row-agreed",
  "author_spec_changes": [],
  "examined": "AER-1 must-fail vectors (draft-zambo-aer1-26) as Core-02 inputs",
  "initiation": {
@@ -38,6 +38,6 @@
   }
  ],
  "schema": "wexp-interop/proposal-result-row/1",
- "status": "draft",
+ "status": "agreed",
  "summary": "Both appraisers equal the expected results in all 15 cases. The five invalid vectors that reach Core reject with the supplied fatal condition; the other 31 never reach it. A failed anchor downgrades as unresolved counter-evidence; a mismatched or unverified id downgrades without rejecting the input."
 }
