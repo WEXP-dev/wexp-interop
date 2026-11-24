@@ -1,19 +1,43 @@
 {
- "author_review": "not-requested",
+ "author_review": "requested",
  "author_spec_changes": [],
  "examined": "AER-1 must-fail vectors (draft-zambo-aer1-26) as Core-02 inputs",
  "initiation": {
   "channel": "interop-check",
-  "established_by": "not-established",
-  "initiated_by": null,
+  "established_by": "confirmed-with-the-person",
+  "initiated_by": "Brennan Zambo",
   "interop_check_issue": 40,
-  "named": false,
-  "not_named_because": "naming-not-yet-agreed",
-  "relation": "not-established",
-  "relation_subject": null
+  "named": true,
+  "not_named_because": null,
+  "relation": "internet-draft-author",
+  "relation_subject": "draft-zambo-aer1-26"
  },
- "open_readings": [],
+ "open_readings": [
+  {
+   "cases": [
+    "anchor-absent",
+    "anchor-not-checked",
+    "anchor-resolves",
+    "anchor-unresolvable",
+    "anchor-verification-failed",
+    "id-alone-unverified",
+    "id-expected-match",
+    "id-expected-mismatch",
+    "id-resolution-agreement",
+    "id-resolution-disagreement"
+   ],
+   "core02_lines": [
+    362,
+    374,
+    388,
+    406
+   ],
+   "id": "grounding-acceptance",
+   "question": "Is acceptance of an asserted-only grounding by the evaluation context a cross-field invariant that Core checks (Section 6.2, check 4), or an obligation of the profile that Core takes as given when the boundary status is supported? Both appraisers follow the second reading; under the first, the ten cases without a supplied fatal condition would be rejected.",
+   "status": "open"
+  }
+ ],
  "schema": "wexp-interop/proposal-result-row/1",
  "status": "draft",
- "summary": null
+ "summary": "Both appraisers equal the expected results in all 15 cases. The five invalid vectors that reach Core reject with the supplied fatal condition; the other 31 never reach it. A failed anchor downgrades as unresolved counter-evidence; a mismatched or unverified id downgrades without rejecting the input."
 }
