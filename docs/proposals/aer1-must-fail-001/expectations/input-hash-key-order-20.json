@@ -1,0 +1,27 @@
+{
+ "expected": {
+  "asserted_claim": null,
+  "asserted_claim_supported": false,
+  "boundary_ceiling": null,
+  "boundary_grounding": null,
+  "counter_evidence": null,
+  "evaluation_context": null,
+  "evaluation_gap_entries": [],
+  "evaluation_gaps": [],
+  "evaluation_scope": null,
+  "fatal_reasons": [
+   "E_INTEGRITY_INVALID"
+  ],
+  "inherited_limitations": null,
+  "maximal_supported_claims": [],
+  "recorder_relations": null,
+  "semantics_version": "wexp-core-2",
+  "substantive_reasons": [],
+  "support_entries": [],
+  "support_relations": [],
+  "supported_claims": [],
+  "target": null,
+  "verdict": "reject"
+ },
+ "id": "input-hash-key-order-20"
+}

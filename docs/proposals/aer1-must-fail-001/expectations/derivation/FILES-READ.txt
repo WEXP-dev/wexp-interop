@@ -1,0 +1,43 @@
+Files opened in this derivation session. All are inside <handoff>/.
+
+Source material, opened and read in full:
+BRIEF.md
+REPRESENTATION.md
+FORMAT-REFERENCE-C01.json
+profiles.json
+MAPPING.md (background only; not a source of any expected value)
+spec/draft-sergeev-wexp-core-02.txt
+inputs/anchor-absent.json
+inputs/anchor-not-checked.json
+inputs/anchor-resolves.json
+inputs/anchor-unresolvable.json
+inputs/anchor-verification-failed.json
+inputs/hash-mismatch.json
+inputs/id-alone-unverified.json
+inputs/id-expected-match.json
+inputs/id-expected-mismatch.json
+inputs/id-resolution-agreement.json
+inputs/id-resolution-disagreement.json
+inputs/input-hash-key-order-20.json
+inputs/input-hash-mismatch.json
+inputs/tampered-provenance.json
+inputs/version-downgrade.json
+
+Also read by shell commands, inside this directory only:
+- a file listing and byte count of the files above (find and wc at the start);
+- the inputs, profiles.json and FORMAT-REFERENCE-C01.json, re-read to print fields side by side, to
+  check JSON well-formedness (no duplicate object members) and to confirm the reference file's
+  serialization convention;
+- the spec, re-read to verify the quotes in out/DERIVATION.md.
+
+Deliverables written here and re-opened for checks:
+out/expected/*.json (fifteen files)
+out/DERIVATION.md
+out/AMBIGUITIES.json
+out/FILES-READ.txt
+
+Not opened: no file, directory, repository, package or module outside this directory was opened,
+listed or searched, apart from the Python interpreter and its standard library, used as a tool. No
+network was used. No WEXP implementation (wexp-ref, wexp-check or other), no appraiser and no test
+corpus was opened or run. The tool harness stored a truncated copy of one command's console output
+in a file outside this directory; that file was not opened.
