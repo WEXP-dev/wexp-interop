@@ -12,4 +12,4 @@ One row per proposal that carries a result row. A row says what a run on frozen 
 
 ## Changes authors made to their own specifications after a check
 
-None recorded yet.
+- [aer1-must-fail-001](aer1-must-fail-001/README.md): The recorded run used frozen kit v1.5.7. The kit author later reported v1.6.0 (metadata_hash correction) and v1.6.1 (runner-manifest correction). This note does not change the examined version or claim a rerun. ([reference](https://github.com/WEXP-dev/interop-test-lab/issues/40#issuecomment-7143241436))
