@@ -239,7 +239,8 @@ class ResultRowTest(unittest.TestCase):
                                            fetch=lambda pin: record)
             page = (directory / 'FIELDS.md').read_text()
             self.assertIn('FIELDS.md', lib.frozen_files(directory))
-            self.assertIn('Row agreed.', (directory / 'README.md').read_text())
+            self.assertIn('## Corrections', (directory / 'README.md').read_text())
+            self.assertNotIn('Row agreed.', (directory / 'README.md').read_text())
         for expected in ('| `receipt.id` | string | _to decide_ |', '| `receipt.signed` | boolean |',
                          '| `receipt.steps[].n` | null, number |', '| `tags[]` | empty list |',
                          '(a key of 13 characters, not shown)'):
