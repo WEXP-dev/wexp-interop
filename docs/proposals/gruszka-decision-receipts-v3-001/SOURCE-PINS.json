@@ -1,0 +1,24 @@
+{
+ "core02_xml_sha256": "de983051a1c6ea51ea9b7f965fe9eabf2d97af92ab2f074781bd44e3f99c8782",
+ "external_files": [],
+ "internet_drafts": [
+  {
+   "bytes": 184834,
+   "name": "draft-gruszka-audit-decision-receipts",
+   "revision": "11",
+   "sha256": "b37fab5601af97c23108afb1bb1043dc5902960cda64803296ace5c258038ac5",
+   "url": "https://www.ietf.org/archive/id/draft-gruszka-audit-decision-receipts-11.txt"
+  }
+ ],
+ "interop_check_issue": 43,
+ "local_files": [],
+ "track": "open",
+ "wexp_check": {
+  "commit": "63bde685c54fd6329f1217708d1c211b80c3712e",
+  "repository": "WEXP-dev/wexp-check"
+ },
+ "wexp_ref": {
+  "commit": "56289024c9ee748111f1f1d4f42728ffe04d8d69",
+  "repository": "WEXP-dev/wexp-ref"
+ }
+}
