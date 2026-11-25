@@ -35,7 +35,7 @@ README = '''# {title}: local proposal
    nothing decided about them. [MAPPING.md](MAPPING.md) says how the external record maps to a
    normalized Core-02 input. `inputs/<case>.json` holds `{{"id": ..., "input": ...}}` and
    `expectations/<case>.json` holds `{{"id": ..., "expected": ...}}` with all twenty result components.
-   Corrections from the author go in as a new revision section of MAPPING.md.
+   Corrections go in as a new revision section of MAPPING.md.
 3. **Freeze.** `python3 -B scripts/proposals/freeze_proposal.py freeze {path}` writes
    FREEZE.json. Commit it before any appraiser runs.
 4. **Run.** `python3 -B scripts/proposals/run_proposal.py {path} --wexp-ref <checkout>
@@ -46,17 +46,14 @@ README = '''# {title}: local proposal
    and how that is known, and whether the author of the format agreed the row. It starts as a draft
    that names nobody. `python3 -B scripts/proposals/result_table.py{root_arg}` rebuilds the results page from it.
 
-## For the author of the format
+## Corrections
 
-You do not need to edit anything. Answer in the pull request with one line; copy whichever applies:
+You do not need to edit anything. Corrections to the mapping, the inputs or the expectations are
+welcome in the pull request, in any form, from anyone who has read the pinned material. They go in as
+a new revision section of MAPPING.md before the freeze.
 
-- `Mapping read: correct as written.`
-- `Mapping read: wrong here: <what it misreads>.`
-- `Name me as: <your name>.` or `Do not name me.`
-- `Row agreed.`
-
-Each of these is a separate answer. Agreeing that the mapping reads your format correctly is not
-agreeing the result row, and neither says anything about WEXP as a whole.
+Naming and agreement of the result row are separate steps. They are asked directly, at the result-row
+stage, of the person concerned, and nobody is named before they confirm it.
 
 Both appraisers are operated by one person. A run here is not an independent reproduction.
 '''

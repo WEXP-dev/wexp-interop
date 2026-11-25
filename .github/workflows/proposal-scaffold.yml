@@ -126,7 +126,7 @@ jobs:
           # pull request exists or that the check was told.
           if url="$(gh pr create --repo "$REPO" --base main --head "$branch" --draft \
               --title "proposal $SLUG: mapping and expectations (draft)" \
-              --body "${origin}Skeleton created for one interoperability check. Next: the mapping and the expected results, then the freeze, then the run. The README of the proposal has ready one-line answers for the author of the format. See docs/proposals/README.md.")"; then
+              --body "${origin}Skeleton created for one interoperability check. Next: the mapping and the expected results, then the freeze, then the run. Corrections are welcome in the pull request, in any form. See docs/proposals/README.md.")"; then
             case "$url" in https://github.com/*/pull/[0-9]*) ;; *) url="" ;; esac
           else
             url=""
