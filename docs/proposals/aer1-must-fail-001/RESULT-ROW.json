@@ -1,6 +1,11 @@
 {
  "author_review": "row-agreed",
- "author_spec_changes": [],
+ "author_spec_changes": [
+  {
+   "reference": "https://github.com/WEXP-dev/interop-test-lab/issues/40#issuecomment-7143241436",
+   "what": "The recorded run used frozen kit v1.5.7. The kit author later reported v1.6.0 (metadata_hash correction) and v1.6.1 (runner-manifest correction). This note does not change the examined version or claim a rerun."
+  }
+ ],
  "examined": "AER-1 must-fail vectors (draft-zambo-aer1-26) as Core-02 inputs",
  "initiation": {
   "channel": "interop-check",
